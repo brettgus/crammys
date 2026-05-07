@@ -1,0 +1,2030 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0b0b0f" />
+<title>Best Picture · Flashcards</title>
+<style>
+  :root {
+    --bg: #f6f5f1;
+    --bg-elev: #ffffff;
+    --ink: #14141a;
+    --ink-soft: #5a5a66;
+    --ink-faint: #9a9aa6;
+    --line: #e6e4dd;
+    --accent: #c8a24a;
+    --accent-ink: #14141a;
+    --shadow: 0 1px 2px rgba(20,20,26,.04), 0 12px 40px rgba(20,20,26,.08);
+    --radius: 18px;
+    --card-h: clamp(360px, 62vh, 540px);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0b0f;
+    --bg-elev: #15151c;
+    --ink: #f4f3ee;
+    --ink-soft: #b6b5ad;
+    --ink-faint: #6e6d76;
+    --line: #25252e;
+    --accent: #d4b056;
+    --accent-ink: #0b0b0f;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 48px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .icon-btn {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease, transform .05s ease, color .15s ease;
+    padding: 0;
+  }
+  .icon-btn:hover { background: var(--bg-elev); color: var(--ink); border-color: var(--ink-faint); }
+  .icon-btn:active { transform: scale(.96); }
+  .icon-btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .icon-btn svg { width: 16px; height: 16px; }
+  .tools { display: inline-flex; gap: 6px; }
+
+  main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 18px 28px;
+    gap: 14px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 640px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .seg {
+    display: inline-flex;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 3px;
+  }
+  .seg button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -.005em;
+  }
+  .seg button.on { background: var(--ink); color: var(--bg); }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+  .meta .streak { color: var(--accent); font-weight: 600; }
+  .meta .chip {
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: var(--accent);
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+  .meta .chip-btn {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: .04em;
+    text-transform: none;
+    font-variant-numeric: tabular-nums;
+    transition: border-color .15s ease, color .15s ease, background .15s ease;
+    padding: 3px 9px;
+  }
+  .meta .chip-btn:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
+
+  .panel {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px 20px;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    box-shadow: 0 24px 60px rgba(0,0,0,.4);
+    color: var(--ink);
+    text-align: left;
+  }
+  .panel-title {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+  }
+  .panel-sub {
+    margin: 0 0 18px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .range-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .range-presets button {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 6px 12px;
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .range-presets button:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .range-presets button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .range-inputs label {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex: 1;
+  }
+  .range-inputs select {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .range-dash { color: var(--ink-faint); margin-top: 18px; }
+  .panel-foot {
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .panel-count em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .panel.panel-wide { max-width: 560px; }
+  .about-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .about-section h4 {
+    margin: 0 0 10px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .about-section p {
+    margin: 0 0 8px;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .about-section p a { color: var(--ink); }
+  .panel-fineprint {
+    color: var(--ink-faint) !important;
+    font-size: 12px !important;
+    font-style: italic;
+  }
+  .kbd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .kbd-grid kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-bottom-width: 2px;
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: var(--ink);
+    margin-right: 4px;
+  }
+
+  .progress-wrap {
+    width: 100%;
+    max-width: 640px;
+    height: 3px;
+    background: var(--line);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+
+  .card-stage {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    max-width: 640px;
+    perspective: 1400px;
+    position: relative;
+  }
+  .card {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform .55s cubic-bezier(.2,.8,.2,1);
+    cursor: pointer;
+  }
+  .card.flipped { transform: rotateY(180deg); }
+  /* Only the visible face is interactive; the rotated-away face mustn't intercept clicks/hovers. */
+  .card:not(.flipped) .face.back { pointer-events: none; }
+  .card.flipped .face.front { pointer-events: none; }
+
+  .face {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .face.back { transform: rotateY(180deg); }
+
+  .face .corner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ink-faint);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .star {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--ink-faint);
+    border-radius: 6px;
+    line-height: 0;
+  }
+  .star:hover { color: var(--accent); }
+  .star.on { color: var(--accent); }
+  .star svg { width: 18px; height: 18px; }
+
+  .face .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .face .body::-webkit-scrollbar { width: 6px; }
+  .face .body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+
+  .prompt {
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .question {
+    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-size: clamp(40px, 7vw, 64px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .answer {
+    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-size: clamp(28px, 5vw, 44px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .credits {
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    line-height: 1.55;
+    max-width: 56ch;
+  }
+  .credits .label { color: var(--ink-faint); margin-right: 4px; }
+  .credits em { font-style: normal; color: var(--ink); font-weight: 500; }
+  .credits .person, .credits .film {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .credits .sep { color: var(--ink-faint); margin: 0 6px; }
+
+  .nominees {
+    width: 100%;
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    text-align: left;
+  }
+  .nominees h4 {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .nominees ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .nominees li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .nominees .film em { font-style: normal; color: var(--ink); font-weight: 500; }
+  .nominees .stars { color: var(--ink-soft); }
+  .nominees .dash { color: var(--ink-faint); margin: 0 6px; }
+
+  .ext {
+    color: var(--ink-faint);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    width: 20px; height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: color .15s ease, border-color .15s ease, background .15s ease, transform .05s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .ext:hover { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+  .ext:active { transform: scale(.92); }
+  .ext svg { width: 11px; height: 11px; }
+  .answer .ext { width: 28px; height: 28px; border-radius: 8px; }
+  .answer .ext svg { width: 13px; height: 13px; }
+  .question .ext { width: 30px; height: 30px; border-radius: 8px; }
+  .question .ext svg { width: 14px; height: 14px; }
+
+  .face .footer-hint {
+    color: var(--ink-faint);
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: .04em;
+    flex-shrink: 0;
+  }
+
+  /* Image mode */
+  .image-stage {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #000;
+  }
+  .image-stage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity .2s ease;
+  }
+  .image-stage.loading img { opacity: 0; }
+  .image-stage::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
+    pointer-events: none;
+  }
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    color: #fff;
+  }
+  .image-overlay .corner { padding: 22px 24px 0; }
+  .image-overlay .corner {
+    color: rgba(255,255,255,.7);
+  }
+  .image-overlay .corner > span:first-child {
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 4px 9px;
+    border-radius: 99px;
+    color: rgba(255,255,255,.85);
+  }
+  .image-overlay .corner .star {
+    color: rgba(255,255,255,.85);
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.18);
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-overlay .corner .star.on { color: var(--accent); }
+  .image-overlay .corner .star:hover { color: var(--accent); background: rgba(0,0,0,.55); }
+  .image-overlay .image-tools {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .image-overlay .reroll {
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .15s ease, transform .05s ease;
+  }
+  .image-overlay .reroll:hover { background: rgba(0,0,0,.6); }
+  .image-overlay .reroll:active { transform: scale(.92); }
+  .image-overlay .reroll svg { width: 15px; height: 15px; }
+  .image-overlay .bottom {
+    text-align: center;
+    color: #fff;
+    padding: 16px 22px 18px;
+    background: rgba(8,8,12,.62);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .image-overlay .bottom { background: rgba(0,0,0,.78); }
+  }
+  .image-dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .image-dots span {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.32);
+    transition: background .2s ease, transform .2s ease;
+  }
+  .image-dots span.on {
+    background: rgba(255,255,255,.95);
+    transform: scale(1.35);
+  }
+  .image-overlay .bottom .prompt {
+    color: rgba(255,255,255,.85);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+  }
+  .image-overlay .bottom .footer-hint {
+    color: rgba(255,255,255,.7);
+    margin-top: 4px;
+  }
+  .image-overlay .bottom .footer-hint kbd {
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.22);
+    color: #fff;
+  }
+  .face.front.image-mode { padding: 0; background: transparent; }
+  .face.front.image-mode .corner,
+  .face.front.image-mode .body,
+  .face.front.image-mode > .footer-hint { display: none; }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 640px;
+    justify-content: space-between;
+  }
+  .nav .group { display: flex; gap: 10px; }
+  .btn {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .15s ease, border-color .15s ease, transform .05s ease;
+  }
+  .btn:hover { border-color: var(--ink-faint); }
+  .btn:active { transform: scale(.97); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn svg { width: 16px; height: 16px; }
+
+  .legend {
+    color: var(--ink-faint);
+    font-size: 12px;
+    text-align: center;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+  .legend kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-bottom-width: 2px;
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: var(--ink-soft);
+  }
+
+  /* Trailer modal */
+  .ext.play:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(6,6,10,.86);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(16px, 4vw, 48px);
+    animation: fadeIn .18s ease-out;
+  }
+  .modal-backdrop[hidden] { display: none; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal-frame {
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  }
+  .modal-frame iframe {
+    width: 100%; height: 100%;
+    border: 0; display: block;
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 36px; height: 36px;
+    background: rgba(0,0,0,.55);
+    border: 1px solid rgba(255,255,255,.18);
+    color: #fff;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background .15s ease, transform .05s ease;
+    z-index: 1;
+  }
+  .modal-close:hover { background: rgba(0,0,0,.78); }
+  .modal-close:active { transform: scale(.94); }
+  .modal-close svg { width: 18px; height: 18px; }
+
+  /* Person tooltip */
+  .credits .person, .nominees .person { cursor: pointer; }
+  .credits .person:hover em, .nominees .person:hover em { color: var(--accent); }
+  /* Movie + year hover affordance (back face only) */
+  .face.back .film[data-movie] { cursor: pointer; }
+  .face.back .film[data-movie]:hover em,
+  .face.back .film[data-movie]:hover { color: var(--accent); }
+  .face.back .year[data-year] { cursor: pointer; }
+  .face.back .year[data-year]:hover { color: var(--accent); }
+  .tip-tagline {
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    font-style: italic;
+    line-height: 1.35;
+  }
+  .tip-blurb {
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+  .tooltip {
+    position: fixed;
+    width: 320px;
+    max-width: calc(100vw - 24px);
+    background: var(--bg-elev);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 8px 36px rgba(0,0,0,.25), 0 1px 3px rgba(0,0,0,.06);
+    padding: 14px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: opacity .12s ease, transform .12s ease;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    left: 0; top: 0;
+  }
+  .tooltip.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .tip-photo {
+    width: 72px; height: 96px;
+    border-radius: 8px;
+    background: var(--line);
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-faint);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .tip-name {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -.005em;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tip-name .ext {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border-color: var(--line);
+  }
+  .tip-name .ext svg { width: 10px; height: 10px; }
+  .tip-meta { color: var(--ink-soft); font-size: 12.5px; line-height: 1.35; }
+  .tip-meta .dot { color: var(--ink-faint); margin: 0 6px; }
+  .tip-known {
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+  .tip-known .label {
+    color: var(--ink-faint);
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .tip-known em { font-style: normal; color: var(--ink); font-weight: 500; }
+  .tip-duo { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .tip-duo .row { display: flex; gap: 12px; align-items: flex-start; }
+  .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
+
+  @media (max-width: 520px) {
+    main { padding: 12px 14px 24px; }
+    .controls { gap: 8px; }
+    .seg button { padding: 6px 10px; font-size: 12px; }
+    .icon-btn { width: 30px; height: 30px; }
+    .nav .btn { padding: 9px 12px; font-size: 13px; }
+    .legend { display: none; }
+    .face { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="controls">
+      <div class="seg" role="tablist" aria-label="Direction">
+        <button id="dirYearToMovie" class="on">Year → Title</button>
+        <button id="dirMovieToYear">Title → Year</button>
+        <button id="dirImageToMovie">Image → Title</button>
+      </div>
+      <div class="meta">
+        <span id="counter">1 / 29</span>
+        <button class="chip chip-btn" id="rangeChip" title="Change year range">1996–2025</button>
+        <span id="drillChip" class="chip" hidden>drill</span>
+        <span class="streak" id="streak" title="Mastered cards">★ 0</span>
+      </div>
+      <div class="tools">
+        <button class="icon-btn" id="nomineesBtn" title="Show other nominees (N)" aria-label="Toggle other nominees">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h13M3 12h13M3 18h13"/><circle cx="20" cy="6" r="1.2"/><circle cx="20" cy="12" r="1.2"/><circle cx="20" cy="18" r="1.2"/></svg>
+        </button>
+        <button class="icon-btn" id="onlyUnknown" title="Drill unmastered only (U)" aria-label="Drill unmastered only">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" title="Toggle theme (T)" aria-label="Toggle theme"></button>
+        <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <div class="card-stage">
+      <div class="card" id="card" role="button" aria-label="Flip card" tabindex="0">
+        <div class="face front" id="frontFace">
+          <div class="corner">
+            <span id="frontTag">Ceremony</span>
+            <button class="star" id="starFront" title="Mark mastered (F)" aria-label="Mark mastered">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div class="body">
+            <div class="prompt" id="frontPrompt">What won Best Picture in</div>
+            <div class="question" id="frontText">—</div>
+          </div>
+          <div class="footer-hint">Tap or press <kbd>Space</kbd> to reveal</div>
+          <div class="image-stage" id="imageStage" hidden>
+            <img id="imageEl" alt="" />
+            <div class="image-overlay">
+              <div class="corner">
+                <span>Image</span>
+                <div class="image-tools">
+                  <button class="reroll" id="rerollBtn" title="Different image (I)" aria-label="Different image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+                  </button>
+                  <button class="star" id="starImage" title="Mark mastered (F)" aria-label="Mark mastered">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="image-dots" id="imageDots" aria-hidden="true"></div>
+                <div class="prompt">What movie is this?</div>
+                <div class="footer-hint"><kbd>Space</kbd> reveal · <kbd>I</kbd> new image</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face back">
+          <div class="corner">
+            <span id="backTag">Answer</span>
+            <button class="star" id="starBack" title="Mark mastered (F)" aria-label="Mark mastered">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div class="body" id="backBody"></div>
+          <div class="footer-hint">Tap or press <kbd>Space</kbd> to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="group">
+        <button class="btn" id="prevBtn" title="Previous (←)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Prev
+        </button>
+        <button class="btn primary" id="flipBtn" title="Flip (Space)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          Flip
+        </button>
+        <button class="btn" id="nextBtn" title="Next (→)">
+          Next
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="group">
+        <button class="btn" id="shuffleBtn" title="Shuffle (S)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          Shuffle
+        </button>
+        <button class="btn" id="resetBtn" title="Reset (R)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="aboutModal" hidden>
+      <div class="panel panel-wide" role="dialog" aria-label="About">
+        <button class="modal-close" id="aboutClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <h3 class="panel-title">Best Picture · Flashcards</h3>
+        <p class="panel-sub">A trivia cram tool covering every Academy Award Best Picture winner from <span id="aboutSpan">1947</span>–<span id="aboutSpanTo">2025</span>.</p>
+
+        <div class="about-section">
+          <h4>Keyboard shortcuts</h4>
+          <div class="kbd-grid">
+            <div><kbd>Space</kbd> flip card</div>
+            <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
+            <div><kbd>S</kbd> shuffle</div>
+            <div><kbd>R</kbd> reset deck</div>
+            <div><kbd>F</kbd> mark mastered</div>
+            <div><kbd>U</kbd> drill unmastered</div>
+            <div><kbd>N</kbd> toggle nominees</div>
+            <div><kbd>I</kbd> different image</div>
+            <div><kbd>T</kbd> toggle theme</div>
+            <div><kbd>?</kbd> this dialog</div>
+            <div><kbd>Esc</kbd> close any popup</div>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h4>Data &amp; credits</h4>
+          <p>
+            Movie metadata, posters, stills, and trailer IDs courtesy of
+            <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>.
+            Nomination history sourced from
+            <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>.
+            Person photos and bios via TMDB.
+          </p>
+          <p class="panel-fineprint">
+            This product uses the TMDB API but is not endorsed or certified by TMDB.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="rangeModal" hidden>
+      <div class="panel" role="dialog" aria-label="Year range">
+        <button class="modal-close" id="rangeClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <h3 class="panel-title">Year range</h3>
+        <p class="panel-sub">Limit the deck to a span of ceremony years.</p>
+        <div class="range-presets" id="rangePresets"></div>
+        <div class="range-inputs">
+          <label>From <select id="rangeFrom"></select></label>
+          <span class="range-dash">–</span>
+          <label>To <select id="rangeTo"></select></label>
+        </div>
+        <div class="panel-foot"><span id="rangeCount" class="panel-count"></span></div>
+      </div>
+    </div>
+
+    <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+    <div class="modal-backdrop" id="trailerModal" hidden>
+      <div class="modal-frame" role="dialog" aria-label="Trailer">
+        <button class="modal-close" id="trailerClose" aria-label="Close trailer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <iframe id="trailerFrame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="legend">
+      <kbd>Space</kbd> flip · <kbd>←</kbd>/<kbd>→</kbd> nav · <kbd>S</kbd> shuffle · <kbd>R</kbd> reset · <kbd>F</kbd> mastered · <kbd>U</kbd> drill · <kbd>N</kbd> nominees · <kbd>I</kbd> new image · <kbd>T</kbd> theme
+    </div>
+  </main>
+
+<script src="images.js"></script>
+<script src="people.js"></script>
+<script src="movies.js"></script>
+<script src="spoilers.js" onerror="window.SPOILERS={}"></script>
+<script src="deck_extension.js"></script>
+<script>
+  // Each entry: { year, movie, director, trailer, stars: [...], nominees: [{movie, stars, trailer}] }
+  const DECK_INLINE = [
+    { year: 2025, movie: "Anora", director: "Sean Baker", trailer: "8m6UrWMl18M",
+      stars: ["Mikey Madison","Mark Eydelshteyn","Yura Borisov"],
+      nominees: [
+        { movie: "The Brutalist", stars: ["Adrien Brody","Felicity Jones","Guy Pearce"], trailer: "GdRXPAHIEW4" },
+        { movie: "A Complete Unknown", stars: ["Timothée Chalamet","Edward Norton","Elle Fanning"], trailer: "ob4SHtT6cC0" },
+        { movie: "Conclave", stars: ["Ralph Fiennes","Stanley Tucci","John Lithgow"], trailer: "t915aZmyEBg" },
+        { movie: "Dune: Part Two", stars: ["Timothée Chalamet","Zendaya","Rebecca Ferguson"], trailer: "U2Qp5pL3ovA" },
+        { movie: "Emilia Pérez", stars: ["Karla Sofía Gascón","Zoe Saldaña","Selena Gomez"], trailer: "houUHc5vm4I" },
+        { movie: "I'm Still Here", stars: ["Fernanda Torres","Selton Mello"], trailer: "Eo49pAwMxKQ" },
+        { movie: "Nickel Boys", stars: ["Ethan Herisse","Brandon Wilson"], trailer: "8HZKgYknVN0" },
+        { movie: "The Substance", stars: ["Demi Moore","Margaret Qualley","Dennis Quaid"], trailer: "lR5nlovVgvQ" },
+        { movie: "Wicked", stars: ["Cynthia Erivo","Ariana Grande","Jonathan Bailey"], trailer: "pqi45Qhq3CI" },
+      ]},
+    { year: 2024, movie: "Oppenheimer", director: "Christopher Nolan", trailer: "bK6ldnjE3Y0",
+      stars: ["Cillian Murphy","Robert Downey Jr.","Emily Blunt","Matt Damon"],
+      nominees: [
+        { movie: "American Fiction", stars: ["Jeffrey Wright","Tracee Ellis Ross"], trailer: "5_4RlHpqVWM" },
+        { movie: "Anatomy of a Fall", stars: ["Sandra Hüller","Swann Arlaud"], trailer: "_MdTMA0PetA" },
+        { movie: "Barbie", stars: ["Margot Robbie","Ryan Gosling","America Ferrera"], trailer: "Y1IgAEejvqM" },
+        { movie: "The Holdovers", stars: ["Paul Giamatti","Da'Vine Joy Randolph","Dominic Sessa"], trailer: "AhKLpJmHhIg" },
+        { movie: "Killers of the Flower Moon", stars: ["Leonardo DiCaprio","Robert De Niro","Lily Gladstone"], trailer: "1oZUCkJEuvo" },
+        { movie: "Maestro", stars: ["Bradley Cooper","Carey Mulligan"], trailer: "xvmBVJhs4TA" },
+        { movie: "Past Lives", stars: ["Greta Lee","Teo Yoo","John Magaro"], trailer: "kA244xewjcI" },
+        { movie: "Poor Things", stars: ["Emma Stone","Mark Ruffalo","Willem Dafoe"], trailer: "-EfYJWRw2FM" },
+        { movie: "The Zone of Interest", stars: ["Christian Friedel","Sandra Hüller"], trailer: "GFNtVaAuVYY" },
+      ]},
+    { year: 2023, movie: "Everything Everywhere All at Once", director: "Daniel Kwan & Daniel Scheinert", trailer: "wxN1T1uxQ2g",
+      stars: ["Michelle Yeoh","Ke Huy Quan","Jamie Lee Curtis","Stephanie Hsu"],
+      nominees: [
+        { movie: "All Quiet on the Western Front", stars: ["Felix Kammerer","Albrecht Schuch"], trailer: "hf8EYbVxtCY" },
+        { movie: "Avatar: The Way of Water", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "o5F8MOz_IDw" },
+        { movie: "The Banshees of Inisherin", stars: ["Colin Farrell","Brendan Gleeson","Kerry Condon"], trailer: "9-R9u2UD3FU" },
+        { movie: "Elvis", stars: ["Austin Butler","Tom Hanks"], trailer: "ZbrmBotVIGw" },
+        { movie: "The Fabelmans", stars: ["Gabriel LaBelle","Michelle Williams","Paul Dano"], trailer: "9wAKUa487aw" },
+        { movie: "Tár", stars: ["Cate Blanchett","Nina Hoss","Noémie Merlant"], trailer: "Na6gA1RehsU" },
+        { movie: "Top Gun: Maverick", stars: ["Tom Cruise","Miles Teller","Jennifer Connelly"], trailer: "Klc__shdj88" },
+        { movie: "Triangle of Sadness", stars: ["Harris Dickinson","Charlbi Dean","Dolly de Leon"], trailer: "uYDidXdG1Wc" },
+        { movie: "Women Talking", stars: ["Rooney Mara","Claire Foy","Jessie Buckley"], trailer: "dH7Sl2h_aHs" },
+      ]},
+    { year: 2022, movie: "CODA", director: "Sian Heder", trailer: "0pmfrE1YL4I",
+      stars: ["Emilia Jones","Marlee Matlin","Troy Kotsur","Daniel Durant"],
+      nominees: [
+        { movie: "Belfast", stars: ["Jude Hill","Caitríona Balfe","Jamie Dornan"], trailer: "C658p987SQI" },
+        { movie: "Don't Look Up", stars: ["Leonardo DiCaprio","Jennifer Lawrence","Meryl Streep"], trailer: "RbIxYm3mKzI" },
+        { movie: "Drive My Car", stars: ["Hidetoshi Nishijima","Tōko Miura"], trailer: "YyDSxD51WRE" },
+        { movie: "Dune", stars: ["Timothée Chalamet","Rebecca Ferguson","Oscar Isaac"], trailer: "w0HgHet0sxg" },
+        { movie: "King Richard", stars: ["Will Smith","Aunjanue Ellis"], trailer: "_6bsugyNpDU" },
+        { movie: "Licorice Pizza", stars: ["Alana Haim","Cooper Hoffman"], trailer: "ofnXPwUPENo" },
+        { movie: "Nightmare Alley", stars: ["Bradley Cooper","Cate Blanchett","Toni Collette"], trailer: "Q81Yf46Oj3s" },
+        { movie: "The Power of the Dog", stars: ["Benedict Cumberbatch","Kirsten Dunst","Jesse Plemons"], trailer: "LRDPo0CHrko" },
+        { movie: "West Side Story", stars: ["Ansel Elgort","Rachel Zegler","Ariana DeBose"], trailer: "A5GJLwWiYSg" },
+      ]},
+    { year: 2021, movie: "Nomadland", director: "Chloé Zhao", trailer: "6sxCFZ8_d84",
+      stars: ["Frances McDormand","David Strathairn"],
+      nominees: [
+        { movie: "The Father", stars: ["Anthony Hopkins","Olivia Colman"], trailer: "g0ox9ExOA1M" },
+        { movie: "Judas and the Black Messiah", stars: ["Daniel Kaluuya","LaKeith Stanfield"], trailer: "6ivHf4ODMi4" },
+        { movie: "Mank", stars: ["Gary Oldman","Amanda Seyfried"], trailer: "aSfX-nrg-lI" },
+        { movie: "Minari", stars: ["Steven Yeun","Han Ye-ri","Youn Yuh-jung"], trailer: "KQ0gFidlro8" },
+        { movie: "Promising Young Woman", stars: ["Carey Mulligan","Bo Burnham"], trailer: "we5yV7Gc9rY" },
+        { movie: "Sound of Metal", stars: ["Riz Ahmed","Olivia Cooke"], trailer: "VFOrGkAvjAE" },
+        { movie: "The Trial of the Chicago 7", stars: ["Eddie Redmayne","Sacha Baron Cohen","Yahya Abdul-Mateen II"], trailer: "FVb6EdKDBfU" },
+      ]},
+    { year: 2020, movie: "Parasite", director: "Bong Joon-ho", trailer: "isOGD_7hNIY",
+      stars: ["Song Kang-ho","Lee Sun-kyun","Cho Yeo-jeong"],
+      nominees: [
+        { movie: "Ford v Ferrari", stars: ["Matt Damon","Christian Bale"], trailer: "I3h9Z89U9ZA" },
+        { movie: "The Irishman", stars: ["Robert De Niro","Al Pacino","Joe Pesci"], trailer: "RS3aHkkfuEI" },
+        { movie: "Jojo Rabbit", stars: ["Roman Griffin Davis","Scarlett Johansson","Taika Waititi"], trailer: "tL4McUzXfFI" },
+        { movie: "Joker", stars: ["Joaquin Phoenix","Robert De Niro"], trailer: "-RFFRxcoKfA" },
+        { movie: "Little Women", stars: ["Saoirse Ronan","Florence Pugh","Emma Watson"], trailer: "AST2-4db4ic" },
+        { movie: "Marriage Story", stars: ["Adam Driver","Scarlett Johansson"], trailer: "BHi-a1n8t7M" },
+        { movie: "1917", stars: ["George MacKay","Dean-Charles Chapman"], trailer: "gZjQROMAh_s" },
+        { movie: "Once Upon a Time in Hollywood", stars: ["Leonardo DiCaprio","Brad Pitt","Margot Robbie"], trailer: "vKgITiP1UMg" },
+      ]},
+    { year: 2019, movie: "Green Book", director: "Peter Farrelly", trailer: "QkZxoko_HC0",
+      stars: ["Viggo Mortensen","Mahershala Ali"],
+      nominees: [
+        { movie: "Black Panther", stars: ["Chadwick Boseman","Michael B. Jordan","Lupita Nyong'o"], trailer: "xjDjIWPwcPU" },
+        { movie: "BlacKkKlansman", stars: ["John David Washington","Adam Driver"], trailer: "7tgMuagdEhc" },
+        { movie: "Bohemian Rhapsody", stars: ["Rami Malek","Lucy Boynton"], trailer: "27zlBpzdOZg" },
+        { movie: "The Favourite", stars: ["Olivia Colman","Emma Stone","Rachel Weisz"], trailer: "SYb-wkehT1g" },
+        { movie: "Roma", stars: ["Yalitza Aparicio","Marina de Tavira"], trailer: "6BS27ngZtxg" },
+        { movie: "A Star Is Born", stars: ["Bradley Cooper","Lady Gaga"], trailer: "UywJmJ6ohvc" },
+        { movie: "Vice", stars: ["Christian Bale","Amy Adams","Steve Carell"], trailer: "g09a9laLh0k" },
+      ]},
+    { year: 2018, movie: "The Shape of Water", director: "Guillermo del Toro", trailer: "XFYWazblaUA",
+      stars: ["Sally Hawkins","Michael Shannon","Richard Jenkins","Octavia Spencer"],
+      nominees: [
+        { movie: "Call Me by Your Name", stars: ["Timothée Chalamet","Armie Hammer"], trailer: "Z9AYPxH5NTM" },
+        { movie: "Darkest Hour", stars: ["Gary Oldman","Kristin Scott Thomas"], trailer: "JQAYFbcgf60" },
+        { movie: "Dunkirk", stars: ["Fionn Whitehead","Tom Hardy","Mark Rylance"], trailer: "T7O7BtBnsG4" },
+        { movie: "Get Out", stars: ["Daniel Kaluuya","Allison Williams"], trailer: "gsB70ZRY-hI" },
+        { movie: "Lady Bird", stars: ["Saoirse Ronan","Laurie Metcalf"], trailer: "cNi_HC839Wo" },
+        { movie: "Phantom Thread", stars: ["Daniel Day-Lewis","Vicky Krieps"], trailer: "xNsiQMeSvMk" },
+        { movie: "The Post", stars: ["Meryl Streep","Tom Hanks"], trailer: "nrXlY6gzTTM" },
+        { movie: "Three Billboards Outside Ebbing, Missouri", stars: ["Frances McDormand","Woody Harrelson","Sam Rockwell"], trailer: "nefD7UOhLCo" },
+      ]},
+    { year: 2017, movie: "Moonlight", director: "Barry Jenkins", trailer: "9NJj12tJzqc",
+      stars: ["Mahershala Ali","Naomie Harris","Trevante Rhodes"],
+      nominees: [
+        { movie: "Arrival", stars: ["Amy Adams","Jeremy Renner"], trailer: "7W1m5ER3I1Y" },
+        { movie: "Fences", stars: ["Denzel Washington","Viola Davis"], trailer: "spCxVd9ctFs" },
+        { movie: "Hacksaw Ridge", stars: ["Andrew Garfield","Sam Worthington"], trailer: "s2-1hz1juBI" },
+        { movie: "Hell or High Water", stars: ["Chris Pine","Ben Foster","Jeff Bridges"], trailer: "igD-fXiHRRY" },
+        { movie: "Hidden Figures", stars: ["Taraji P. Henson","Octavia Spencer","Janelle Monáe"], trailer: "5wfrDhgUMGI" },
+        { movie: "La La Land", stars: ["Ryan Gosling","Emma Stone"], trailer: "0pdqf4P9MB8" },
+        { movie: "Lion", stars: ["Dev Patel","Nicole Kidman"], trailer: "GKkk-hDigTk" },
+        { movie: "Manchester by the Sea", stars: ["Casey Affleck","Michelle Williams"], trailer: "NxQmuJnrjxg" },
+      ]},
+    { year: 2016, movie: "Spotlight", director: "Tom McCarthy", trailer: "yXymzwz0V2g",
+      stars: ["Mark Ruffalo","Michael Keaton","Rachel McAdams","Liev Schreiber"],
+      nominees: [
+        { movie: "The Big Short", stars: ["Christian Bale","Steve Carell","Ryan Gosling"], trailer: "1kQc3mmtH-o" },
+        { movie: "Bridge of Spies", stars: ["Tom Hanks","Mark Rylance"], trailer: "owhBnicLZt4" },
+        { movie: "Brooklyn", stars: ["Saoirse Ronan","Domhnall Gleeson"], trailer: "IzgsaBGwap8" },
+        { movie: "Mad Max: Fury Road", stars: ["Tom Hardy","Charlize Theron"], trailer: "MonFNCgK4WE" },
+        { movie: "The Martian", stars: ["Matt Damon","Jessica Chastain"], trailer: "ej3ioOneTy8" },
+        { movie: "The Revenant", stars: ["Leonardo DiCaprio","Tom Hardy"], trailer: "EhffABvfAW0" },
+        { movie: "Room", stars: ["Brie Larson","Jacob Tremblay"], trailer: "yfBdUPAjiVQ" },
+      ]},
+    { year: 2015, movie: "Birdman", director: "Alejandro González Iñárritu", trailer: "o-sdQK_TR2g",
+      stars: ["Michael Keaton","Edward Norton","Emma Stone"],
+      nominees: [
+        { movie: "American Sniper", stars: ["Bradley Cooper","Sienna Miller"], trailer: "iq7smHSQPho" },
+        { movie: "Boyhood", stars: ["Ellar Coltrane","Patricia Arquette","Ethan Hawke"], trailer: "oNC3NYWh1vI" },
+        { movie: "The Grand Budapest Hotel", stars: ["Ralph Fiennes","Tony Revolori"], trailer: "G1jG8HUY4zI" },
+        { movie: "The Imitation Game", stars: ["Benedict Cumberbatch","Keira Knightley"], trailer: "j2jRs4EAvWM" },
+        { movie: "Selma", stars: ["David Oyelowo","Carmen Ejogo"], trailer: "kPgs2zshD9Y" },
+        { movie: "The Theory of Everything", stars: ["Eddie Redmayne","Felicity Jones"], trailer: "_EnhOKk7BxM" },
+        { movie: "Whiplash", stars: ["Miles Teller","J.K. Simmons"], trailer: "Q7kZy3T6vRM" },
+      ]},
+    { year: 2014, movie: "12 Years a Slave", director: "Steve McQueen", trailer: "z02Ie8wKKRg",
+      stars: ["Chiwetel Ejiofor","Michael Fassbender","Lupita Nyong'o"],
+      nominees: [
+        { movie: "American Hustle", stars: ["Christian Bale","Amy Adams","Bradley Cooper"], trailer: "h5Cb4SFt7gE" },
+        { movie: "Captain Phillips", stars: ["Tom Hanks","Barkhad Abdi"], trailer: "TzU3UJuV80w" },
+        { movie: "Dallas Buyers Club", stars: ["Matthew McConaughey","Jared Leto","Jennifer Garner"], trailer: "KDvPcBeOn8E" },
+        { movie: "Gravity", stars: ["Sandra Bullock","George Clooney"], trailer: "OiTiKOy59o4" },
+        { movie: "Her", stars: ["Joaquin Phoenix","Scarlett Johansson","Amy Adams"], trailer: "ne6p6MfLBxc" },
+        { movie: "Nebraska", stars: ["Bruce Dern","Will Forte"], trailer: "YvW_DmfKfSk" },
+        { movie: "Philomena", stars: ["Judi Dench","Steve Coogan"], trailer: "a8WyFLsdtNw" },
+        { movie: "The Wolf of Wall Street", stars: ["Leonardo DiCaprio","Jonah Hill","Margot Robbie"], trailer: "Slj4-Sv-YNA" },
+      ]},
+    { year: 2013, movie: "Argo", director: "Ben Affleck", trailer: "JW3WfSFgrVY",
+      stars: ["Ben Affleck","Bryan Cranston","Alan Arkin"],
+      nominees: [
+        { movie: "Amour", stars: ["Jean-Louis Trintignant","Emmanuelle Riva"], trailer: "VMOugpyFf3A" },
+        { movie: "Beasts of the Southern Wild", stars: ["Quvenzhané Wallis","Dwight Henry"], trailer: "pvqZzSMIZa0" },
+        { movie: "Django Unchained", stars: ["Jamie Foxx","Christoph Waltz","Leonardo DiCaprio"], trailer: "_iH0UBYDI4g" },
+        { movie: "Les Misérables", stars: ["Hugh Jackman","Anne Hathaway","Russell Crowe"], trailer: "28sHoKcpugw" },
+        { movie: "Life of Pi", stars: ["Suraj Sharma","Irrfan Khan"], trailer: "j9Hjrs6WQ8M" },
+        { movie: "Lincoln", stars: ["Daniel Day-Lewis","Sally Field","Tommy Lee Jones"], trailer: "nvP-ZrzA2lk" },
+        { movie: "Silver Linings Playbook", stars: ["Bradley Cooper","Jennifer Lawrence","Robert De Niro"], trailer: "EI_3ywJLQio" },
+        { movie: "Zero Dark Thirty", stars: ["Jessica Chastain","Jason Clarke"], trailer: "k7R2uVZYebE" },
+      ]},
+    { year: 2012, movie: "The Artist", director: "Michel Hazanavicius", trailer: "YB9Oq0hn5KY",
+      stars: ["Jean Dujardin","Bérénice Bejo","John Goodman"],
+      nominees: [
+        { movie: "The Descendants", stars: ["George Clooney","Shailene Woodley"], trailer: "3R7OzS54hbo" },
+        { movie: "Extremely Loud & Incredibly Close", stars: ["Tom Hanks","Sandra Bullock","Thomas Horn"], trailer: "jgp8rR2fykU" },
+        { movie: "The Help", stars: ["Emma Stone","Viola Davis","Octavia Spencer"], trailer: "3eajzW3XW7Q" },
+        { movie: "Hugo", stars: ["Asa Butterfield","Chloë Grace Moretz","Ben Kingsley"], trailer: "nZGyAx7YyYM" },
+        { movie: "Midnight in Paris", stars: ["Owen Wilson","Rachel McAdams"], trailer: "FAfR8omt-CY" },
+        { movie: "Moneyball", stars: ["Brad Pitt","Jonah Hill"], trailer: "RAG74hfW4pM" },
+        { movie: "The Tree of Life", stars: ["Brad Pitt","Sean Penn","Jessica Chastain"], trailer: "RrAz1YLh8nY" },
+        { movie: "War Horse", stars: ["Jeremy Irvine","Emily Watson"], trailer: "tafBTls8RuA" },
+      ]},
+    { year: 2011, movie: "The King's Speech", director: "Tom Hooper", trailer: "gSw6ei5tdbg",
+      stars: ["Colin Firth","Geoffrey Rush","Helena Bonham Carter"],
+      nominees: [
+        { movie: "127 Hours", stars: ["James Franco"], trailer: "OlhLOWTnVoQ" },
+        { movie: "Black Swan", stars: ["Natalie Portman","Mila Kunis","Vincent Cassel"], trailer: "2Pxc_5f27Kg" },
+        { movie: "The Fighter", stars: ["Mark Wahlberg","Christian Bale","Amy Adams"], trailer: "LRIZ4mCi5Ps" },
+        { movie: "Inception", stars: ["Leonardo DiCaprio","Joseph Gordon-Levitt","Marion Cotillard"], trailer: "JE9z-gy4De4" },
+        { movie: "The Kids Are All Right", stars: ["Annette Bening","Julianne Moore","Mark Ruffalo"], trailer: "RixlpHKfb6M" },
+        { movie: "The Social Network", stars: ["Jesse Eisenberg","Andrew Garfield","Justin Timberlake"], trailer: "lB95KLmpLR4" },
+        { movie: "Toy Story 3", stars: ["Tom Hanks","Tim Allen","Joan Cusack"], trailer: "2BlMNH1QTeE" },
+        { movie: "True Grit", stars: ["Jeff Bridges","Hailee Steinfeld","Matt Damon"], trailer: "Q5fEgKj9QNs" },
+        { movie: "Winter's Bone", stars: ["Jennifer Lawrence","John Hawkes"], trailer: "bE_X2pDRXyY" },
+      ]},
+    { year: 2010, movie: "The Hurt Locker", director: "Kathryn Bigelow", trailer: "AIbFvqFYRT4",
+      stars: ["Jeremy Renner","Anthony Mackie","Brian Geraghty"],
+      nominees: [
+        { movie: "Avatar", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "jm2sNLIPPvA" },
+        { movie: "The Blind Side", stars: ["Sandra Bullock","Quinton Aaron"], trailer: "KA56LqFszYI" },
+        { movie: "District 9", stars: ["Sharlto Copley"], trailer: "_BjWEn5yvmw" },
+        { movie: "An Education", stars: ["Carey Mulligan","Peter Sarsgaard"], trailer: "DUeYKwxTCGQ" },
+        { movie: "Inglourious Basterds", stars: ["Brad Pitt","Christoph Waltz","Mélanie Laurent"], trailer: "uSEDz-my7XQ" },
+        { movie: "Precious", stars: ["Gabourey Sidibe","Mo'Nique"], trailer: "urFY3jp759c" },
+        { movie: "A Serious Man", stars: ["Michael Stuhlbarg"], trailer: "mDKHWRbK2_Q" },
+        { movie: "Up", stars: ["Ed Asner","Christopher Plummer"], trailer: "Ajcdb4FAL7A" },
+        { movie: "Up in the Air", stars: ["George Clooney","Vera Farmiga","Anna Kendrick"], trailer: "En0DYdjMVoY" },
+      ]},
+    { year: 2009, movie: "Slumdog Millionaire", director: "Danny Boyle", trailer: "JwiU94p9XPA",
+      stars: ["Dev Patel","Freida Pinto","Anil Kapoor"],
+      nominees: [
+        { movie: "The Curious Case of Benjamin Button", stars: ["Brad Pitt","Cate Blanchett"], trailer: "lqijVXvw7_E" },
+        { movie: "Frost/Nixon", stars: ["Frank Langella","Michael Sheen"], trailer: "O9S1RKNgdLw" },
+        { movie: "Milk", stars: ["Sean Penn","James Franco","Josh Brolin"], trailer: "w5D07rmfwG0" },
+        { movie: "The Reader", stars: ["Kate Winslet","Ralph Fiennes"], trailer: "JA1J2WmFGUw" },
+      ]},
+    { year: 2008, movie: "No Country for Old Men", director: "Joel & Ethan Coen", trailer: "A0oNrgumrlE",
+      stars: ["Tommy Lee Jones","Javier Bardem","Josh Brolin"],
+      nominees: [
+        { movie: "Atonement", stars: ["Keira Knightley","James McAvoy"], trailer: "WZAttjca0b8" },
+        { movie: "Juno", stars: ["Elliot Page","Michael Cera","Jennifer Garner"], trailer: "miy1fE-8Z0U" },
+        { movie: "Michael Clayton", stars: ["George Clooney","Tilda Swinton","Tom Wilkinson"], trailer: "OKDiHrQABwI" },
+        { movie: "There Will Be Blood", stars: ["Daniel Day-Lewis","Paul Dano"], trailer: "-bEwlq_7f4s" },
+      ]},
+    { year: 2007, movie: "The Departed", director: "Martin Scorsese", trailer: "r-MiSNsCdQ4",
+      stars: ["Leonardo DiCaprio","Matt Damon","Jack Nicholson","Mark Wahlberg"],
+      nominees: [
+        { movie: "Babel", stars: ["Brad Pitt","Cate Blanchett"], trailer: "PqPNksLZIAk" },
+        { movie: "Letters from Iwo Jima", stars: ["Ken Watanabe","Kazunari Ninomiya"], trailer: "g65ewJJ1USc" },
+        { movie: "Little Miss Sunshine", stars: ["Greg Kinnear","Toni Collette","Steve Carell","Abigail Breslin"], trailer: "oabGaaCLZ5g" },
+        { movie: "The Queen", stars: ["Helen Mirren","Michael Sheen"], trailer: "BIvESE9A_gc" },
+      ]},
+    { year: 2006, movie: "Crash", director: "Paul Haggis", trailer: "dgepOrbliX4",
+      stars: ["Don Cheadle","Sandra Bullock","Matt Dillon","Thandiwe Newton"],
+      nominees: [
+        { movie: "Brokeback Mountain", stars: ["Heath Ledger","Jake Gyllenhaal"], trailer: "xZvu-SczR1Y" },
+        { movie: "Capote", stars: ["Philip Seymour Hoffman","Catherine Keener"], trailer: "vq-kLlga0EI" },
+        { movie: "Good Night, and Good Luck", stars: ["David Strathairn","George Clooney"], trailer: "1Qg9ZahBu8c" },
+        { movie: "Munich", stars: ["Eric Bana","Daniel Craig"], trailer: "OuT_uh0CAf8" },
+      ]},
+    { year: 2005, movie: "Million Dollar Baby", director: "Clint Eastwood", trailer: "5_RsHRmIRBY",
+      stars: ["Hilary Swank","Clint Eastwood","Morgan Freeman"],
+      nominees: [
+        { movie: "The Aviator", stars: ["Leonardo DiCaprio","Cate Blanchett"], trailer: "dkwypzOQf8o" },
+        { movie: "Finding Neverland", stars: ["Johnny Depp","Kate Winslet"], trailer: "m41gObaKgOw" },
+        { movie: "Ray", stars: ["Jamie Foxx","Regina King"], trailer: "jVHCQfcugdw" },
+        { movie: "Sideways", stars: ["Paul Giamatti","Thomas Haden Church","Virginia Madsen"], trailer: "FccttA8wPqc" },
+      ]},
+    { year: 2004, movie: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", trailer: "r5X-hFf6Bwo",
+      stars: ["Elijah Wood","Viggo Mortensen","Ian McKellen","Sean Astin"],
+      nominees: [
+        { movie: "Lost in Translation", stars: ["Bill Murray","Scarlett Johansson"], trailer: "1s4YQqnbnM8" },
+        { movie: "Master and Commander", stars: ["Russell Crowe","Paul Bettany"], trailer: "tHTHCNYiiHk" },
+        { movie: "Mystic River", stars: ["Sean Penn","Tim Robbins","Kevin Bacon"], trailer: "W7NktJhrRYQ" },
+        { movie: "Seabiscuit", stars: ["Tobey Maguire","Jeff Bridges"], trailer: "8fnYdEGeXbM" },
+      ]},
+    { year: 2003, movie: "Chicago", director: "Rob Marshall", trailer: "YwXWryx-oJ0",
+      stars: ["Renée Zellweger","Catherine Zeta-Jones","Richard Gere"],
+      nominees: [
+        { movie: "Gangs of New York", stars: ["Daniel Day-Lewis","Leonardo DiCaprio","Cameron Diaz"], trailer: "1bjh979vVG0" },
+        { movie: "The Hours", stars: ["Nicole Kidman","Meryl Streep","Julianne Moore"], trailer: "CkPWXUxIiXs" },
+        { movie: "The Lord of the Rings: The Two Towers", stars: ["Elijah Wood","Viggo Mortensen","Ian McKellen"], trailer: "nuTU5XcZTLA" },
+        { movie: "The Pianist", stars: ["Adrien Brody"], trailer: "og9hFxxdSOg" },
+      ]},
+    { year: 2002, movie: "A Beautiful Mind", director: "Ron Howard", trailer: "YWwAOutgWBQ",
+      stars: ["Russell Crowe","Jennifer Connelly","Ed Harris"],
+      nominees: [
+        { movie: "Gosford Park", stars: ["Maggie Smith","Helen Mirren","Clive Owen"], trailer: "o0m00hg1PKY" },
+        { movie: "In the Bedroom", stars: ["Sissy Spacek","Tom Wilkinson"], trailer: "BaLtKJiBOrg" },
+        { movie: "The Lord of the Rings: The Fellowship of the Ring", stars: ["Elijah Wood","Ian McKellen","Viggo Mortensen"], trailer: "_nZdmwHrcnw" },
+        { movie: "Moulin Rouge!", stars: ["Nicole Kidman","Ewan McGregor"], trailer: "2PpgPxjzbkA" },
+      ]},
+    { year: 2001, movie: "Gladiator", director: "Ridley Scott", trailer: "P5ieIbInFpg",
+      stars: ["Russell Crowe","Joaquin Phoenix","Connie Nielsen"],
+      nominees: [
+        { movie: "Chocolat", stars: ["Juliette Binoche","Johnny Depp"], trailer: "692hOJq1KJE" },
+        { movie: "Crouching Tiger, Hidden Dragon", stars: ["Chow Yun-fat","Michelle Yeoh","Zhang Ziyi"], trailer: "q-HrIQLdaNE" },
+        { movie: "Erin Brockovich", stars: ["Julia Roberts","Albert Finney"], trailer: "jjqUUxIy_yk" },
+        { movie: "Traffic", stars: ["Michael Douglas","Benicio del Toro","Catherine Zeta-Jones"], trailer: "sZnOWu68Vw4" },
+      ]},
+    { year: 2000, movie: "American Beauty", director: "Sam Mendes", trailer: "UI9KalErX7w",
+      stars: ["Kevin Spacey","Annette Bening","Thora Birch"],
+      nominees: [
+        { movie: "The Cider House Rules", stars: ["Tobey Maguire","Charlize Theron","Michael Caine"], trailer: "pGdZBESUSfk" },
+        { movie: "The Green Mile", stars: ["Tom Hanks","Michael Clarke Duncan"], trailer: "Bg7epsq0OIQ" },
+        { movie: "The Insider", stars: ["Al Pacino","Russell Crowe"], trailer: "P-_ZdJxgwcU" },
+        { movie: "The Sixth Sense", stars: ["Bruce Willis","Haley Joel Osment","Toni Collette"], trailer: "HXG4HTIlc1U" },
+      ]},
+    { year: 1999, movie: "Shakespeare in Love", director: "John Madden", trailer: "v5R5La5f3eo",
+      stars: ["Gwyneth Paltrow","Joseph Fiennes","Geoffrey Rush"],
+      nominees: [
+        { movie: "Elizabeth", stars: ["Cate Blanchett","Geoffrey Rush"], trailer: "DyGBwrtIamw" },
+        { movie: "Life Is Beautiful", stars: ["Roberto Benigni","Nicoletta Braschi"], trailer: "pAYEQP8gx3w" },
+        { movie: "Saving Private Ryan", stars: ["Tom Hanks","Matt Damon","Tom Sizemore"], trailer: "RYExstiQlLc" },
+        { movie: "The Thin Red Line", stars: ["Sean Penn","Jim Caviezel","Nick Nolte"], trailer: "ejm0XvT3rB8" },
+      ]},
+    { year: 1998, movie: "Titanic", director: "James Cameron", trailer: "I7c1etV7D7g",
+      stars: ["Leonardo DiCaprio","Kate Winslet","Billy Zane"],
+      nominees: [
+        { movie: "As Good as It Gets", stars: ["Jack Nicholson","Helen Hunt","Greg Kinnear"], trailer: "t2d89afgtqg" },
+        { movie: "The Full Monty", stars: ["Robert Carlyle","Tom Wilkinson"], trailer: "d6bjW9OwSQc" },
+        { movie: "Good Will Hunting", stars: ["Matt Damon","Robin Williams","Ben Affleck"], trailer: "ReIJ1lbL-Q8" },
+        { movie: "L.A. Confidential", stars: ["Russell Crowe","Guy Pearce","Kim Basinger"], trailer: "QeIoelqDzsA" },
+      ]},
+    { year: 1997, movie: "The English Patient", director: "Anthony Minghella", trailer: "Xk_LRcOFT0c",
+      stars: ["Ralph Fiennes","Kristin Scott Thomas","Juliette Binoche"],
+      nominees: [
+        { movie: "Fargo", stars: ["Frances McDormand","William H. Macy","Steve Buscemi"], trailer: "aoOZDiswNaw" },
+        { movie: "Jerry Maguire", stars: ["Tom Cruise","Renée Zellweger","Cuba Gooding Jr."], trailer: "x1V_WduwrE8" },
+        { movie: "Secrets & Lies", stars: ["Brenda Blethyn","Marianne Jean-Baptiste"], trailer: "V1e9ovKQViw" },
+        { movie: "Shine", stars: ["Geoffrey Rush","Armin Mueller-Stahl"], trailer: "NaF9JIhPgdU" },
+      ]},
+  ];
+
+  // Combined deck: hand-curated 1997-2025 first, then auto-fetched 1947-1996.
+  const DECK = DECK_INLINE.concat(window.DECK_EXTENSION || []);
+
+  const STORE_KEY = "bp-flashcards-v2";
+  // Default to the last 30 ceremony years
+  const _maxYear = Math.max(...DECK.map(e => e.year));
+  const _minYear = Math.min(...DECK.map(e => e.year));
+  const DEFAULT_RANGE = { from: _maxYear - 29, to: _maxYear };
+  const state = (() => {
+    const def = { direction: "y2m", order: null, idx: 0, mastered: [], onlyUnknown: false, theme: null, showNominees: false, range: DEFAULT_RANGE };
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+      return Object.assign(def, saved || {});
+    } catch { return def; }
+  })();
+  if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
+  if (!Array.isArray(state.order) || state.order.length !== DECK.length) {
+    state.order = shuffleArray(DECK.map((_,i)=>i));
+    state.idx = 0;
+  }
+  const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
+
+  function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // Theme
+  const sun = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+  const moon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  const setTheme = (t) => {
+    document.documentElement.setAttribute("data-theme", t);
+    state.theme = t; persist();
+    document.getElementById("themeBtn").innerHTML = t === "dark" ? sun : moon;
+  };
+  setTheme(state.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+
+  // DOM
+  const card = document.getElementById("card");
+  const frontFace = document.getElementById("frontFace");
+  const front = { text: document.getElementById("frontText"), prompt: document.getElementById("frontPrompt"), tag: document.getElementById("frontTag") };
+  const back  = { tag: document.getElementById("backTag"),  body: document.getElementById("backBody") };
+  const counter = document.getElementById("counter");
+  const streakEl = document.getElementById("streak");
+  const progress = document.getElementById("progress");
+  const starFront = document.getElementById("starFront");
+  const starBack = document.getElementById("starBack");
+  const starImage = document.getElementById("starImage");
+  const onlyUnknownBtn = document.getElementById("onlyUnknown");
+  const nomineesBtn = document.getElementById("nomineesBtn");
+  const imageStage = document.getElementById("imageStage");
+  const imageEl = document.getElementById("imageEl");
+  const rerollBtn = document.getElementById("rerollBtn");
+
+  // Image manifest (year -> { images: [{f,r,k}] })
+  const IMAGES_BY_YEAR = {};
+  (window.MOVIE_IMAGES || []).forEach(m => { IMAGES_BY_YEAR[m.year] = m; });
+  const HAS_IMAGES = Object.keys(IMAGES_BY_YEAR).length > 0;
+  if (!HAS_IMAGES) {
+    document.getElementById("dirImageToMovie").disabled = true;
+    document.getElementById("dirImageToMovie").style.opacity = .4;
+    document.getElementById("dirImageToMovie").title = "Image data not loaded — run fetch_images.py";
+  }
+  // Per-card chosen image index (so navigating away & back keeps the same image until reroll)
+  const imageChoice = new Map();
+
+  const yt = (movie) => `https://www.youtube.com/results?search_query=${encodeURIComponent(movie + " trailer")}`;
+  const imdb = (name) => {
+    const id = (window.PEOPLE || {})[name]?.imdb_id;
+    return id ? `https://www.imdb.com/name/${id}/`
+              : `https://www.imdb.com/find/?q=${encodeURIComponent(name)}&s=nm`;
+  };
+  const imdbTitle = (movie) => {
+    const id = (window.MOVIES || {})[movie]?.imdb_id;
+    return id ? `https://www.imdb.com/title/${id}/`
+              : `https://www.imdb.com/find/?q=${encodeURIComponent(movie)}&s=tt`;
+  };
+  const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="7 4 19 12 7 20 7 4"/></svg>';
+  const escapeHtml = (s) => s.replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+  const stop = `onclick="event.stopPropagation()"`;
+
+  function trailerLink(movie, vid) {
+    if (vid) {
+      return `<a class="ext play" href="https://www.youtube.com/watch?v=${vid}" target="_blank" rel="noopener" data-video-id="${vid}" data-title="${escapeHtml(movie)}" title="Watch trailer" ${stop}>${playIcon}</a>`;
+    }
+    return `<a class="ext" href="${yt(movie)}" target="_blank" rel="noopener" title="YouTube trailer search" ${stop}>${extIcon}</a>`;
+  }
+
+  const filmLink = (movie, includeImdb=false) => {
+    const t = `<a class="ext" href="${yt(movie)}" target="_blank" rel="noopener" title="YouTube trailer search" ${stop}>${extIcon}</a>`;
+    const i = includeImdb ? `<a class="ext" href="${imdbTitle(movie)}" target="_blank" rel="noopener" title="IMDb" ${stop}>${extIcon}</a>` : "";
+    return t + i;
+  };
+  const personLink = (name) => `<a class="ext" href="${imdb(name)}" target="_blank" rel="noopener" title="IMDb · ${escapeHtml(name)}" ${stop}>${extIcon}</a>`;
+
+  const filmInline = (movie, trailer) => `<span class="film" data-movie="${escapeHtml(movie)}"><em>${escapeHtml(movie)}</em>${trailerLink(movie, trailer)}</span>`;
+  const personInline = (name) => `<span class="person" data-person="${escapeHtml(name)}" tabindex="0"><em>${escapeHtml(name)}</em>${personLink(name)}</span>`;
+
+  const SPOILERS = window.SPOILERS || {};
+  function safeImagesFor(year) {
+    const entry = IMAGES_BY_YEAR[year];
+    if (!entry || !entry.images) return [];
+    const safe = entry.images.filter(img => !SPOILERS[img.f]);
+    // Fallback to all images if every image was flagged (shouldn't happen, but safety net)
+    return safe.length ? safe : entry.images;
+  }
+  function pickImage(year, opts = {}) {
+    const safe = safeImagesFor(year);
+    if (!safe.length) return null;
+    const n = safe.length;
+    let idx;
+    if (opts.reroll && imageChoice.has(year)) {
+      const prev = imageChoice.get(year);
+      idx = (prev + 1 + Math.floor(Math.random() * (n - 1))) % n;
+    } else if (imageChoice.has(year)) {
+      idx = Math.min(imageChoice.get(year), n - 1);
+    } else {
+      idx = Math.floor(Math.random() * n);
+    }
+    imageChoice.set(year, idx);
+    return safe[idx];
+  }
+
+  // When loaded over file:// we use the local cache; when hosted, use TMDB's CDN.
+  const USE_LOCAL_IMAGES = location.protocol === "file:";
+  const TMDB_W780 = "https://image.tmdb.org/t/p/w780";
+  const TMDB_W185 = "https://image.tmdb.org/t/p/w185";
+  function movieImageURL(img) {
+    if (USE_LOCAL_IMAGES) return `images/${img.f}`;
+    if (img.p) return `${TMDB_W780}${img.p}`;
+    return `images/${img.f}`; // fallback
+  }
+  function personImageURL(p) {
+    if (USE_LOCAL_IMAGES) return p.img || "";
+    if (p.tmdb_img) return `${TMDB_W185}${p.tmdb_img}`;
+    return p.img || "";
+  }
+
+  const imageDotsEl = document.getElementById("imageDots");
+  function renderImageDots(year) {
+    const safe = safeImagesFor(year);
+    if (!safe.length) { imageDotsEl.innerHTML = ""; return; }
+    const sel = imageChoice.get(year) ?? 0;
+    imageDotsEl.innerHTML = safe
+      .map((_, i) => `<span${i === sel ? ' class="on"' : ""}></span>`)
+      .join("");
+  }
+
+  function setImage(year, opts) {
+    const img = pickImage(year, opts);
+    if (!img) {
+      imageEl.removeAttribute("src");
+      imageEl.alt = "";
+      imageDotsEl.innerHTML = "";
+      return;
+    }
+    imageStage.classList.add("loading");
+    imageEl.onload = () => imageStage.classList.remove("loading");
+    imageEl.onerror = () => imageStage.classList.remove("loading");
+    imageEl.src = movieImageURL(img);
+    imageEl.alt = "";
+    renderImageDots(year);
+  }
+
+  const inRange = (y) => !state.range || (y >= state.range.from && y <= state.range.to);
+  const activeOrder = () => {
+    return state.order.filter(i => {
+      if (!inRange(DECK[i].year)) return false;
+      if (state.onlyUnknown && state.mastered.includes(i)) return false;
+      return true;
+    });
+  };
+
+  function currentCard() {
+    const ord = activeOrder();
+    if (ord.length === 0) return null;
+    state.idx = ((state.idx % ord.length) + ord.length) % ord.length;
+    return DECK[ord[state.idx]];
+  }
+
+  function render() {
+    const ord = activeOrder();
+    const c = currentCard();
+
+    if (!c) {
+      counter.textContent = "0 / 0";
+      progress.style.width = "0%";
+      streakEl.textContent = `★ ${state.mastered.length}`;
+      front.tag.textContent = "All caught up";
+      front.prompt.textContent = "";
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">All cards mastered. Tap the drill (target) icon above to study the full deck again.</span>`;
+      back.body.innerHTML = "";
+      return;
+    }
+
+    const trueIdx = state.order[state.order.indexOf(DECK.indexOf(c))]; // = DECK index
+    const deckIdx = DECK.indexOf(c);
+
+    counter.textContent = `${state.idx + 1} / ${ord.length}`;
+    progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
+    streakEl.textContent = `★ ${state.mastered.length}`;
+    document.getElementById("drillChip").hidden = !state.onlyUnknown;
+    rangeChipEl.textContent = `${state.range.from}–${state.range.to}`;
+
+    // Front
+    const isImageMode = state.direction === "i2m" && HAS_IMAGES;
+    frontFace.classList.toggle("image-mode", isImageMode);
+    imageStage.hidden = !isImageMode;
+    if (isImageMode) {
+      setImage(c.year);
+    } else if (state.direction === "y2m") {
+      front.tag.textContent = "Ceremony";
+      front.prompt.textContent = "What won Best Picture in";
+      front.text.innerHTML = `<span>${c.year}</span>`;
+    } else {
+      front.tag.textContent = "Best Picture";
+      front.prompt.textContent = "What year did this win?";
+      front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}`;
+    }
+
+    // Back
+    back.tag.textContent = state.direction === "m2y" ? "Ceremony" : "Best Picture";
+
+    let winnerBlock;
+    if (state.direction === "m2y") {
+      winnerBlock = `
+        <div class="prompt">Won Best Picture in</div>
+        <div class="answer"><span class="year" data-year="${c.year}">${c.year}</span></div>
+        <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span></div>
+      `;
+    } else {
+      // y2m and i2m show the movie as the answer
+      winnerBlock = `
+        <div class="prompt">${c.year} · Best Picture</div>
+        <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}</div>
+      `;
+    }
+
+    const directorBlock = `
+      <div class="credits">
+        <span class="label">dir.</span>
+        ${personInline(c.director)}
+      </div>`;
+
+    const starsBlock = c.stars && c.stars.length ? `
+      <div class="credits">
+        <span class="label">starring</span>
+        ${c.stars.map(personInline).join('<span class="sep">·</span>')}
+      </div>` : "";
+
+    const nomineesBlock = (state.showNominees && c.nominees && c.nominees.length) ? `
+      <div class="nominees">
+        <h4>Other nominees · ${c.year}</h4>
+        <ul>
+          ${c.nominees.map(n => `
+            <li>
+              ${filmInline(n.movie, n.trailer)}
+              <span class="dash">—</span>
+              <span class="stars">${n.stars.map(personInline).join('<span class="sep">·</span>')}</span>
+            </li>
+          `).join("")}
+        </ul>
+      </div>` : "";
+
+    back.body.innerHTML = winnerBlock + directorBlock + starsBlock + nomineesBlock;
+
+    const mastered = state.mastered.includes(deckIdx);
+    [starFront, starBack, starImage].forEach(s => s.classList.toggle("on", mastered));
+  }
+
+  function flip() { card.classList.toggle("flipped"); hideTip && hideTip(true); }
+  // When navigating while flipped, defer content swap to the midpoint of the un-flip
+  // so the user never sees the next card's back face during the animation.
+  const FLIP_MIDPOINT = 280; // ms; matches half of the .55s CSS transition
+  function unflipAndThen(fn) {
+    if (card.classList.contains("flipped")) {
+      card.classList.remove("flipped");
+      setTimeout(fn, FLIP_MIDPOINT);
+    } else {
+      fn();
+    }
+  }
+  function next() {
+    const ord = activeOrder(); if (!ord.length) return;
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      const o = activeOrder(); if (!o.length) return;
+      state.idx = (state.idx + 1) % o.length; persist(); render();
+    });
+  }
+  function prev() {
+    const ord = activeOrder(); if (!ord.length) return;
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      const o = activeOrder(); if (!o.length) return;
+      state.idx = (state.idx - 1 + o.length) % o.length; persist(); render();
+    });
+  }
+  function shuffle() {
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      state.order = shuffleArray(DECK.map((_,i)=>i));
+      state.idx = 0;
+      imageChoice.clear();
+      persist(); render();
+    });
+  }
+  function reset() {
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      state.order = shuffleArray(DECK.map((_,i)=>i));
+      state.idx = 0; state.mastered = []; state.onlyUnknown = false;
+      imageChoice.clear();
+      onlyUnknownBtn.classList.remove("on");
+      persist(); render();
+    });
+  }
+  function toggleMastered() {
+    const ord = activeOrder(); if (!ord.length) return;
+    const c = currentCard(); if (!c) return;
+    const deckIdx = DECK.indexOf(c);
+    const i = state.mastered.indexOf(deckIdx);
+    const becameMastered = i < 0;
+    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(deckIdx);
+    persist();
+    if (becameMastered) {
+      // advance after marking mastered
+      const nextOrd = activeOrder();
+      if (!nextOrd.length) { render(); return; }
+      if (card.classList.contains("flipped")) card.classList.remove("flipped");
+      // when drill mode is on, the current card is now hidden — idx already points to "next"
+      if (!state.onlyUnknown) state.idx = (state.idx + 1) % nextOrd.length;
+      else state.idx = state.idx % nextOrd.length;
+    }
+    render();
+  }
+  function toggleOnlyUnknown() {
+    state.onlyUnknown = !state.onlyUnknown;
+    state.idx = 0;
+    onlyUnknownBtn.classList.toggle("on", state.onlyUnknown);
+    persist();
+    unflipAndThen(() => render());
+  }
+  function toggleNominees() {
+    state.showNominees = !state.showNominees;
+    nomineesBtn.classList.toggle("on", state.showNominees);
+    persist(); render();
+  }
+
+  // Wire up
+  card.addEventListener("click", (e) => {
+    if (e.target.closest("a, .star, .person, .reroll")) return;
+    flip();
+  });
+  card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
+  document.getElementById("flipBtn").onclick = flip;
+  document.getElementById("nextBtn").onclick = next;
+  document.getElementById("prevBtn").onclick = prev;
+  document.getElementById("shuffleBtn").onclick = shuffle;
+  document.getElementById("resetBtn").onclick = reset;
+  document.getElementById("themeBtn").onclick = () => setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  starFront.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  starBack.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  starImage.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  rerollBtn.onclick = (e) => { e.stopPropagation(); rerollImage(); };
+  onlyUnknownBtn.onclick = toggleOnlyUnknown;
+  nomineesBtn.onclick = toggleNominees;
+  function setDirection(dir) {
+    state.direction = dir; updateDirSeg(); persist();
+    unflipAndThen(() => render());
+  }
+  document.getElementById("dirYearToMovie").onclick = () => setDirection("y2m");
+  document.getElementById("dirMovieToYear").onclick = () => setDirection("m2y");
+  document.getElementById("dirImageToMovie").onclick = () => { if (HAS_IMAGES) setDirection("i2m"); };
+  function updateDirSeg() {
+    document.getElementById("dirYearToMovie").classList.toggle("on", state.direction === "y2m");
+    document.getElementById("dirMovieToYear").classList.toggle("on", state.direction === "m2y");
+    document.getElementById("dirImageToMovie").classList.toggle("on", state.direction === "i2m");
+  }
+  function rerollImage() {
+    const c = currentCard();
+    if (!c) return;
+    setImage(c.year, { reroll: true });
+  }
+  updateDirSeg();
+  onlyUnknownBtn.classList.toggle("on", !!state.onlyUnknown);
+  nomineesBtn.classList.toggle("on", !!state.showNominees);
+
+  // Keyboard
+  window.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    switch (e.key) {
+      case " ": e.preventDefault(); flip(); break;
+      case "ArrowRight": next(); break;
+      case "ArrowLeft": prev(); break;
+      case "s": case "S": shuffle(); break;
+      case "r": case "R": reset(); break;
+      case "f": case "F": toggleMastered(); break;
+      case "u": case "U": toggleOnlyUnknown(); break;
+      case "n": case "N": toggleNominees(); break;
+      case "i": case "I": if (state.direction === "i2m") rerollImage(); break;
+      case "t": case "T": setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); break;
+    }
+  });
+
+  // Touch swipe
+  let tx = 0, ty = 0, scrollingFromTouch = false;
+  card.addEventListener("touchstart", e => { const t = e.changedTouches[0]; tx = t.clientX; ty = t.clientY; scrollingFromTouch = false; }, { passive: true });
+  card.addEventListener("touchmove", e => {
+    // if user is scrolling within back body, don't treat as swipe
+    if (e.target.closest(".body")) {
+      const body = e.target.closest(".body");
+      if (body.scrollHeight > body.clientHeight) scrollingFromTouch = true;
+    }
+  }, { passive: true });
+  card.addEventListener("touchend", e => {
+    if (scrollingFromTouch) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - tx, dy = t.clientY - ty;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next(); else prev();
+    }
+  });
+
+  // ─── About / credits modal ─────────────────────────────────────────
+  const aboutModal = document.getElementById("aboutModal");
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutClose = document.getElementById("aboutClose");
+  document.getElementById("aboutSpan").textContent = String(_minYear);
+  document.getElementById("aboutSpanTo").textContent = String(_maxYear);
+  function openAbout() { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
+  function closeAbout() { if (aboutModal.hidden) return; aboutModal.hidden = true; document.body.style.overflow = ""; }
+  aboutBtn.addEventListener("click", openAbout);
+  aboutClose.addEventListener("click", closeAbout);
+  aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
+
+  // ─── Year range modal ──────────────────────────────────────────────
+  const rangeModal = document.getElementById("rangeModal");
+  const rangeChipEl = document.getElementById("rangeChip");
+  const rangeFromSel = document.getElementById("rangeFrom");
+  const rangeToSel = document.getElementById("rangeTo");
+  const rangeCountEl = document.getElementById("rangeCount");
+  const rangeClose = document.getElementById("rangeClose");
+  const rangePresetsEl = document.getElementById("rangePresets");
+
+  // Populate year dropdowns (descending)
+  const allYears = Array.from(new Set(DECK.map(e => e.year))).sort((a,b) => b - a);
+  for (const sel of [rangeFromSel, rangeToSel]) {
+    sel.innerHTML = allYears.map(y => `<option value="${y}">${y}</option>`).join("");
+  }
+  // Presets
+  const PRESETS = [
+    { label: "Last 10 yrs", from: _maxYear - 9, to: _maxYear },
+    { label: "Last 30 yrs", from: _maxYear - 29, to: _maxYear },
+    { label: "Last 50 yrs", from: _maxYear - 49, to: _maxYear },
+    { label: `All (${_minYear}–${_maxYear})`, from: _minYear, to: _maxYear },
+  ];
+  rangePresetsEl.innerHTML = PRESETS.map((p, i) =>
+    `<button data-from="${p.from}" data-to="${p.to}">${p.label}</button>`
+  ).join("");
+
+  function syncRangeUI() {
+    rangeFromSel.value = state.range.from;
+    rangeToSel.value = state.range.to;
+    const matchCount = DECK.filter(e => inRange(e.year)).length;
+    rangeCountEl.innerHTML = `<em>${matchCount}</em> ${matchCount === 1 ? "year" : "years"} in range`;
+    rangePresetsEl.querySelectorAll("button").forEach(b => {
+      const on = +b.dataset.from === state.range.from && +b.dataset.to === state.range.to;
+      b.classList.toggle("on", on);
+    });
+  }
+
+  function applyRange(from, to) {
+    if (from > to) [from, to] = [to, from];
+    state.range = { from, to };
+    state.idx = 0;
+    persist();
+    syncRangeUI();
+    unflipAndThen(() => render());
+  }
+
+  function openRangeModal() {
+    syncRangeUI();
+    rangeModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeRangeModal() {
+    if (rangeModal.hidden) return;
+    rangeModal.hidden = true;
+    document.body.style.overflow = "";
+  }
+  rangeChipEl.addEventListener("click", openRangeModal);
+  rangeClose.addEventListener("click", closeRangeModal);
+  rangeModal.addEventListener("click", (e) => {
+    if (e.target === rangeModal) closeRangeModal();
+  });
+  rangeFromSel.addEventListener("change", () => applyRange(+rangeFromSel.value, +rangeToSel.value));
+  rangeToSel.addEventListener("change", () => applyRange(+rangeFromSel.value, +rangeToSel.value));
+  rangePresetsEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    applyRange(+b.dataset.from, +b.dataset.to);
+  });
+
+  // ─── Trailer modal ─────────────────────────────────────────────────
+  const trailerModal = document.getElementById("trailerModal");
+  const trailerFrame = document.getElementById("trailerFrame");
+  const trailerClose = document.getElementById("trailerClose");
+
+  // YouTube refuses to embed from `file://` (no Origin header → "Error 153").
+  // When loaded locally we open the watch page directly; over http(s) the embed works.
+  const CAN_EMBED = location.protocol !== "file:";
+  function openTrailer(videoId) {
+    if (!videoId) return;
+    if (!CAN_EMBED) {
+      window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank", "noopener");
+      return;
+    }
+    trailerFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    trailerModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeTrailer() {
+    if (trailerModal.hidden) return;
+    trailerFrame.src = "";
+    trailerModal.hidden = true;
+    document.body.style.overflow = "";
+  }
+  trailerClose.addEventListener("click", closeTrailer);
+  trailerModal.addEventListener("click", (e) => {
+    if (e.target === trailerModal) closeTrailer();
+  });
+  // Capture-phase intercept so this runs before the document tooltip click handler
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a.ext.play[data-video-id]");
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openTrailer(a.dataset.videoId);
+  }, true);
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "?") {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      e.preventDefault();
+      if (aboutModal.hidden) openAbout(); else closeAbout();
+      return;
+    }
+    if (e.key !== "Escape") return;
+    if (!trailerModal.hidden) closeTrailer();
+    else if (!rangeModal.hidden) closeRangeModal();
+    else if (!aboutModal.hidden) closeAbout();
+  });
+
+  // ─── Person tooltip ────────────────────────────────────────────────
+  const tip = document.getElementById("tooltip");
+  let tipAnchor = null;
+  let hideTimer = null;
+  let showTimer = null;
+  const SHOW_DELAY = 280; // gives the cursor time to pass over names without triggering
+  const PEOPLE = window.PEOPLE || {};
+
+  function fmtLifespan(p) {
+    const b = (p.born || "").slice(0, 4);
+    const d = (p.died || "").slice(0, 4);
+    if (b && d) return `${b}–${d}`;
+    if (b) return `b. ${b}`;
+    return null;
+  }
+
+  function tipHTML(el) {
+    if (el.dataset.person) return tipHTMLPerson(el.dataset.person);
+    if (el.dataset.movie) return tipHTMLMovie(el.dataset.movie);
+    if (el.dataset.year) return tipHTMLYear(+el.dataset.year);
+    return "";
+  }
+
+  function tipHTMLPerson(name) {
+    const p = (window.PEOPLE || {})[name];
+    if (!p) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
+    if (p.duo && p.duo.length) {
+      return `<div class="tip-duo">${p.duo.map(personRowHTML).join("")}</div>`;
+    }
+    return personRowHTML(p);
+  }
+
+  function truncate(str, n) {
+    if (!str || str.length <= n) return str || "";
+    const cut = str.slice(0, n);
+    const lastSpace = cut.lastIndexOf(" ");
+    return (lastSpace > n - 30 ? cut.slice(0, lastSpace) : cut) + "…";
+  }
+  function fmtRuntime(min) {
+    if (!min) return null;
+    const h = Math.floor(min/60), m = min%60;
+    return h ? `${h}h ${m}m` : `${m}m`;
+  }
+  function tipHTMLMovie(title) {
+    const m = (window.MOVIES || {})[title];
+    if (!m) return `<div class="tip-empty">No info for ${escapeHtml(title)}</div>`;
+    const meta = [
+      m.release_date ? m.release_date.slice(0,4) : null,
+      fmtRuntime(m.runtime),
+      m.rating ? `★ ${m.rating}` : null,
+    ].filter(Boolean).join('<span class="dot">·</span>');
+    const imdbHref = m.imdb_id
+      ? `https://www.imdb.com/title/${m.imdb_id}/`
+      : `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&s=tt`;
+    return `
+      <div class="tip-info" style="flex:1">
+        <div class="tip-name">
+          <span>${escapeHtml(title)}</span>
+          <a class="ext" href="${imdbHref}" target="_blank" rel="noopener" title="IMDb">${extIcon}</a>
+        </div>
+        ${m.tagline ? `<div class="tip-tagline">"${escapeHtml(m.tagline)}"</div>` : ""}
+        ${meta ? `<div class="tip-meta">${meta}</div>` : ""}
+        ${m.overview ? `<div class="tip-blurb">${escapeHtml(truncate(m.overview, 260))}</div>` : ""}
+      </div>`;
+  }
+
+  function ordinal(n) {
+    const s = ["th","st","nd","rd"], v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+  function tipHTMLYear(year) {
+    // Ceremony number: the 19th Academy Awards was held in 1947, so number = year - 1928.
+    const ceremony = year - 1928;
+    const entry = DECK.find(e => e.year === year);
+    if (!entry) return `<div class="tip-empty">${year}</div>`;
+    const noms = entry.nominees ? entry.nominees.length : 0;
+    return `
+      <div class="tip-info" style="flex:1">
+        <div class="tip-name"><span>${ordinal(ceremony)} Academy Awards</span></div>
+        <div class="tip-meta">Ceremony · ${year}</div>
+        <div class="tip-blurb">
+          <strong style="color:var(--ink)">Best Picture:</strong> ${escapeHtml(entry.movie)}<br>
+          ${noms} other ${noms === 1 ? "nominee" : "nominees"} that year.
+        </div>
+      </div>`;
+  }
+  function personRowHTML(p) {
+    if (!p) return "";
+    const photoUrl = personImageURL(p);
+    const photo = photoUrl
+      ? `<div class="tip-photo"><img src="${photoUrl}" alt=""></div>`
+      : `<div class="tip-photo">${escapeHtml((p.name||"?").trim().charAt(0))}</div>`;
+    const meta = [p.role, p.country, fmtLifespan(p)].filter(Boolean)
+      .join('<span class="dot">·</span>');
+    const known = (p.knownFor || []).map(k => `<em>${escapeHtml(k.title)}</em>${k.year ? ` <span style="color:var(--ink-faint)">(${k.year})</span>` : ""}`).join(' <span style="color:var(--ink-faint)">·</span> ');
+    return `
+      ${photo}
+      <div class="tip-info">
+        <div class="tip-name">
+          <span>${escapeHtml(p.name || "")}</span>
+          <a class="ext" href="${imdb(p.name||"")}" target="_blank" rel="noopener" title="IMDb">${extIcon}</a>
+        </div>
+        ${meta ? `<div class="tip-meta">${meta}</div>` : ""}
+        ${known ? `<div class="tip-known"><span class="label">Known for</span>${known}</div>` : ""}
+      </div>`;
+  }
+
+  const TIP_SEL = ".person[data-person], .film[data-movie], .year[data-year]";
+  function showTip(el) {
+    clearTimeout(hideTimer);
+    clearTimeout(showTimer);
+    if (tipAnchor === el && tip.classList.contains("visible")) return;
+    tip.innerHTML = tipHTML(el);
+    tip.classList.add("visible");
+    tip.setAttribute("aria-hidden", "false");
+    tipAnchor = el;
+    positionTip(el);
+  }
+  function scheduleShow(el) {
+    clearTimeout(hideTimer);
+    if (tip.classList.contains("visible")) {
+      if (tipAnchor !== el) showTip(el);
+      return;
+    }
+    clearTimeout(showTimer);
+    showTimer = setTimeout(() => showTip(el), SHOW_DELAY);
+  }
+  function cancelShow() { clearTimeout(showTimer); }
+  function positionTip(el) {
+    const r = el.getBoundingClientRect();
+    const margin = 10;
+    const tw = tip.offsetWidth;
+    const th = tip.offsetHeight;
+    let x = r.left + r.width/2 - tw/2;
+    let y = r.top - th - margin;
+    if (y < 8) y = r.bottom + margin;
+    if (y + th > window.innerHeight - 8) y = Math.max(8, window.innerHeight - th - 8);
+    x = Math.max(8, Math.min(window.innerWidth - tw - 8, x));
+    tip.style.left = `${x}px`;
+    tip.style.top = `${y}px`;
+  }
+  function hideTip(immediate) {
+    clearTimeout(hideTimer);
+    clearTimeout(showTimer);
+    if (immediate) {
+      tip.classList.remove("visible");
+      tip.setAttribute("aria-hidden", "true");
+      tipAnchor = null;
+    } else {
+      hideTimer = setTimeout(() => {
+        tip.classList.remove("visible");
+        tip.setAttribute("aria-hidden", "true");
+        tipAnchor = null;
+      }, 280);
+    }
+  }
+
+  const HOVER_DEVICE = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (HOVER_DEVICE) {
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target.closest(TIP_SEL);
+      if (el) { scheduleShow(el); return; }
+      if (e.target.closest("#tooltip")) clearTimeout(hideTimer);
+    });
+    document.addEventListener("mouseout", (e) => {
+      const from = e.target.closest(TIP_SEL) || e.target.closest("#tooltip");
+      if (!from) return;
+      const to = e.relatedTarget;
+      if (to && to.nodeType === 1) {
+        if (to.closest(TIP_SEL) || to.closest("#tooltip")) return;
+      }
+      cancelShow();
+      hideTip(false);
+    });
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(TIP_SEL) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
+      hideTip(true);
+    });
+  } else {
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(".ext")) return;
+      const el = e.target.closest(TIP_SEL);
+      if (el) {
+        e.stopPropagation();
+        if (tipAnchor === el && tip.classList.contains("visible")) hideTip(true);
+        else showTip(el);
+        return;
+      }
+      if (!e.target.closest("#tooltip")) hideTip(true);
+    });
+  }
+
+  // Reposition on scroll/resize while open
+  window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true });
+  window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
+  // Hide on Escape
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(true); });
+
+  render();
+</script>
+</body>
+</html>
