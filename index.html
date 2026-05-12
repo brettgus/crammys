@@ -231,6 +231,84 @@
     line-height: 1.55;
   }
   .about-section p a { color: var(--ink); }
+  .toggle-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    color: var(--ink);
+    font-size: 13.5px;
+    user-select: none;
+  }
+  .toggle-row input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
+  .toggle-row strong { display: block; font-weight: 600; }
+  .toggle-row em {
+    display: block;
+    font-style: normal;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+  .panel-section {
+    margin: 16px 0 10px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  /* status badges on the answer side */
+  .badge {
+    display: inline-block;
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 1px 7px;
+    border-radius: 99px;
+    font-weight: 600;
+    margin-left: 8px;
+    font-family: inherit;
+    vertical-align: middle;
+  }
+  .badge.winner { background: var(--accent); color: var(--accent-ink); }
+  .badge.nominee { background: var(--line); color: var(--ink-soft); }
+  .credits.subtle { color: var(--ink-faint); font-size: 12.5px; }
+  .credits.subtle .label { color: var(--ink-faint); }
+  /* Slate view (Year → Title back face with nominees on) */
+  .slate {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    text-align: left;
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slate-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+  .slate-row em { font-style: normal; color: var(--ink); font-weight: 500; }
+  .slate-row.winner {
+    font-size: 20px;
+  }
+  .slate-row.winner em { color: var(--ink); font-weight: 600; }
+  .slate-marker {
+    width: 18px;
+    text-align: center;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+  }
+  .slate-row.winner .slate-marker { color: var(--accent); font-size: 16px; }
   .panel-fineprint {
     color: var(--ink-faint) !important;
     font-size: 12px !important;
@@ -788,6 +866,7 @@
       <div class="meta">
         <span id="counter">1 / 29</span>
         <button class="chip chip-btn" id="rangeChip" title="Change year range">1996–2025</button>
+        <span id="nomDeckChip" class="chip" hidden>+ nominees</span>
         <span id="drillChip" class="chip" hidden>drill</span>
         <span class="streak" id="streak" title="Mastered cards">★ 0</span>
       </div>
@@ -931,8 +1010,16 @@
         <button class="modal-close" id="rangeClose" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
-        <h3 class="panel-title">Year range</h3>
-        <p class="panel-sub">Limit the deck to a span of ceremony years.</p>
+        <h3 class="panel-title">Deck</h3>
+        <p class="panel-sub">Limit by year range, and choose whether nominees are part of the deck too.</p>
+        <label class="toggle-row" id="nomineesToggleRow">
+          <input type="checkbox" id="includeNomineesChk">
+          <span>
+            <strong>Include nominees</strong>
+            <em id="nomineesToggleHint">expands the deck so every Best Picture nominee is its own card</em>
+          </span>
+        </label>
+        <h4 class="panel-section">Year range</h4>
         <div class="range-presets" id="rangePresets"></div>
         <div class="range-inputs">
           <label>From <select id="rangeFrom"></select></label>
@@ -969,324 +1056,384 @@
     { year: 2025, movie: "Anora", director: "Sean Baker", trailer: "8m6UrWMl18M",
       stars: ["Mikey Madison","Mark Eydelshteyn","Yura Borisov"],
       nominees: [
-        { movie: "The Brutalist", stars: ["Adrien Brody","Felicity Jones","Guy Pearce"], trailer: "GdRXPAHIEW4" },
-        { movie: "A Complete Unknown", stars: ["Timothée Chalamet","Edward Norton","Elle Fanning"], trailer: "ob4SHtT6cC0" },
-        { movie: "Conclave", stars: ["Ralph Fiennes","Stanley Tucci","John Lithgow"], trailer: "t915aZmyEBg" },
-        { movie: "Dune: Part Two", stars: ["Timothée Chalamet","Zendaya","Rebecca Ferguson"], trailer: "U2Qp5pL3ovA" },
-        { movie: "Emilia Pérez", stars: ["Karla Sofía Gascón","Zoe Saldaña","Selena Gomez"], trailer: "houUHc5vm4I" },
-        { movie: "I'm Still Here", stars: ["Fernanda Torres","Selton Mello"], trailer: "Eo49pAwMxKQ" },
-        { movie: "Nickel Boys", stars: ["Ethan Herisse","Brandon Wilson"], trailer: "8HZKgYknVN0" },
-        { movie: "The Substance", stars: ["Demi Moore","Margaret Qualley","Dennis Quaid"], trailer: "lR5nlovVgvQ" },
-        { movie: "Wicked", stars: ["Cynthia Erivo","Ariana Grande","Jonathan Bailey"], trailer: "pqi45Qhq3CI" },
+        { movie: "The Brutalist", stars: ["Adrien Brody","Felicity Jones","Guy Pearce"], trailer: "GdRXPAHIEW4", director: "Brady Corbet" },
+        { movie: "A Complete Unknown", stars: ["Timothée Chalamet","Edward Norton","Elle Fanning"], trailer: "ob4SHtT6cC0", director: "James Mangold" },
+        { movie: "Conclave", stars: ["Ralph Fiennes","Stanley Tucci","John Lithgow"], trailer: "t915aZmyEBg", director: "Edward Berger" },
+        { movie: "Dune: Part Two", stars: ["Timothée Chalamet","Zendaya","Rebecca Ferguson"], trailer: "U2Qp5pL3ovA", director: "Denis Villeneuve" },
+        { movie: "Emilia Pérez", stars: ["Karla Sofía Gascón","Zoe Saldaña","Selena Gomez"], trailer: "houUHc5vm4I", director: "Jacques Audiard" },
+        { movie: "I'm Still Here", stars: ["Fernanda Torres","Selton Mello"], trailer: "Eo49pAwMxKQ", director: "Walter Salles" },
+        { movie: "Nickel Boys", stars: ["Ethan Herisse","Brandon Wilson"], trailer: "8HZKgYknVN0", director: "RaMell Ross" },
+        { movie: "The Substance", stars: ["Demi Moore","Margaret Qualley","Dennis Quaid"], trailer: "lR5nlovVgvQ", director: "Coralie Fargeat" },
+        { movie: "Wicked", stars: ["Cynthia Erivo","Ariana Grande","Jonathan Bailey"], trailer: "pqi45Qhq3CI", director: "Jon M. Chu" },
       ]},
     { year: 2024, movie: "Oppenheimer", director: "Christopher Nolan", trailer: "bK6ldnjE3Y0",
       stars: ["Cillian Murphy","Robert Downey Jr.","Emily Blunt","Matt Damon"],
       nominees: [
-        { movie: "American Fiction", stars: ["Jeffrey Wright","Tracee Ellis Ross"], trailer: "5_4RlHpqVWM" },
-        { movie: "Anatomy of a Fall", stars: ["Sandra Hüller","Swann Arlaud"], trailer: "_MdTMA0PetA" },
-        { movie: "Barbie", stars: ["Margot Robbie","Ryan Gosling","America Ferrera"], trailer: "Y1IgAEejvqM" },
-        { movie: "The Holdovers", stars: ["Paul Giamatti","Da'Vine Joy Randolph","Dominic Sessa"], trailer: "AhKLpJmHhIg" },
-        { movie: "Killers of the Flower Moon", stars: ["Leonardo DiCaprio","Robert De Niro","Lily Gladstone"], trailer: "1oZUCkJEuvo" },
-        { movie: "Maestro", stars: ["Bradley Cooper","Carey Mulligan"], trailer: "xvmBVJhs4TA" },
-        { movie: "Past Lives", stars: ["Greta Lee","Teo Yoo","John Magaro"], trailer: "kA244xewjcI" },
-        { movie: "Poor Things", stars: ["Emma Stone","Mark Ruffalo","Willem Dafoe"], trailer: "-EfYJWRw2FM" },
-        { movie: "The Zone of Interest", stars: ["Christian Friedel","Sandra Hüller"], trailer: "GFNtVaAuVYY" },
+        { movie: "American Fiction", stars: ["Jeffrey Wright","Tracee Ellis Ross"], trailer: "5_4RlHpqVWM", director: "Cord Jefferson" },
+        { movie: "Anatomy of a Fall", stars: ["Sandra Hüller","Swann Arlaud"], trailer: "_MdTMA0PetA", director: "Justine Triet" },
+        { movie: "Barbie", stars: ["Margot Robbie","Ryan Gosling","America Ferrera"], trailer: "Y1IgAEejvqM", director: "Greta Gerwig" },
+        { movie: "The Holdovers", stars: ["Paul Giamatti","Da'Vine Joy Randolph","Dominic Sessa"], trailer: "AhKLpJmHhIg", director: "Alexander Payne" },
+        { movie: "Killers of the Flower Moon", stars: ["Leonardo DiCaprio","Robert De Niro","Lily Gladstone"], trailer: "1oZUCkJEuvo", director: "Martin Scorsese" },
+        { movie: "Maestro", stars: ["Bradley Cooper","Carey Mulligan"], trailer: "xvmBVJhs4TA", director: "Bradley Cooper" },
+        { movie: "Past Lives", stars: ["Greta Lee","Teo Yoo","John Magaro"], trailer: "kA244xewjcI", director: "Celine Song" },
+        { movie: "Poor Things", stars: ["Emma Stone","Mark Ruffalo","Willem Dafoe"], trailer: "-EfYJWRw2FM", director: "Yorgos Lanthimos" },
+        { movie: "The Zone of Interest", stars: ["Christian Friedel","Sandra Hüller"], trailer: "GFNtVaAuVYY", director: "Jonathan Glazer" },
       ]},
     { year: 2023, movie: "Everything Everywhere All at Once", director: "Daniel Kwan & Daniel Scheinert", trailer: "wxN1T1uxQ2g",
       stars: ["Michelle Yeoh","Ke Huy Quan","Jamie Lee Curtis","Stephanie Hsu"],
       nominees: [
-        { movie: "All Quiet on the Western Front", stars: ["Felix Kammerer","Albrecht Schuch"], trailer: "hf8EYbVxtCY" },
-        { movie: "Avatar: The Way of Water", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "o5F8MOz_IDw" },
-        { movie: "The Banshees of Inisherin", stars: ["Colin Farrell","Brendan Gleeson","Kerry Condon"], trailer: "9-R9u2UD3FU" },
-        { movie: "Elvis", stars: ["Austin Butler","Tom Hanks"], trailer: "ZbrmBotVIGw" },
-        { movie: "The Fabelmans", stars: ["Gabriel LaBelle","Michelle Williams","Paul Dano"], trailer: "9wAKUa487aw" },
-        { movie: "Tár", stars: ["Cate Blanchett","Nina Hoss","Noémie Merlant"], trailer: "Na6gA1RehsU" },
-        { movie: "Top Gun: Maverick", stars: ["Tom Cruise","Miles Teller","Jennifer Connelly"], trailer: "Klc__shdj88" },
-        { movie: "Triangle of Sadness", stars: ["Harris Dickinson","Charlbi Dean","Dolly de Leon"], trailer: "uYDidXdG1Wc" },
-        { movie: "Women Talking", stars: ["Rooney Mara","Claire Foy","Jessie Buckley"], trailer: "dH7Sl2h_aHs" },
+        { movie: "All Quiet on the Western Front", stars: ["Felix Kammerer","Albrecht Schuch"], trailer: "hf8EYbVxtCY", director: "Edward Berger" },
+        { movie: "Avatar: The Way of Water", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "o5F8MOz_IDw", director: "James Cameron" },
+        { movie: "The Banshees of Inisherin", stars: ["Colin Farrell","Brendan Gleeson","Kerry Condon"], trailer: "9-R9u2UD3FU", director: "Martin McDonagh" },
+        { movie: "Elvis", stars: ["Austin Butler","Tom Hanks"], trailer: "ZbrmBotVIGw", director: "Baz Luhrmann" },
+        { movie: "The Fabelmans", stars: ["Gabriel LaBelle","Michelle Williams","Paul Dano"], trailer: "9wAKUa487aw", director: "Steven Spielberg" },
+        { movie: "Tár", stars: ["Cate Blanchett","Nina Hoss","Noémie Merlant"], trailer: "Na6gA1RehsU", director: "Todd Field" },
+        { movie: "Top Gun: Maverick", stars: ["Tom Cruise","Miles Teller","Jennifer Connelly"], trailer: "Klc__shdj88", director: "Joseph Kosinski" },
+        { movie: "Triangle of Sadness", stars: ["Harris Dickinson","Charlbi Dean","Dolly de Leon"], trailer: "uYDidXdG1Wc", director: "Ruben Östlund" },
+        { movie: "Women Talking", stars: ["Rooney Mara","Claire Foy","Jessie Buckley"], trailer: "dH7Sl2h_aHs", director: "Sarah Polley" },
       ]},
     { year: 2022, movie: "CODA", director: "Sian Heder", trailer: "0pmfrE1YL4I",
       stars: ["Emilia Jones","Marlee Matlin","Troy Kotsur","Daniel Durant"],
       nominees: [
-        { movie: "Belfast", stars: ["Jude Hill","Caitríona Balfe","Jamie Dornan"], trailer: "C658p987SQI" },
-        { movie: "Don't Look Up", stars: ["Leonardo DiCaprio","Jennifer Lawrence","Meryl Streep"], trailer: "RbIxYm3mKzI" },
-        { movie: "Drive My Car", stars: ["Hidetoshi Nishijima","Tōko Miura"], trailer: "YyDSxD51WRE" },
-        { movie: "Dune", stars: ["Timothée Chalamet","Rebecca Ferguson","Oscar Isaac"], trailer: "w0HgHet0sxg" },
-        { movie: "King Richard", stars: ["Will Smith","Aunjanue Ellis"], trailer: "_6bsugyNpDU" },
-        { movie: "Licorice Pizza", stars: ["Alana Haim","Cooper Hoffman"], trailer: "ofnXPwUPENo" },
-        { movie: "Nightmare Alley", stars: ["Bradley Cooper","Cate Blanchett","Toni Collette"], trailer: "Q81Yf46Oj3s" },
-        { movie: "The Power of the Dog", stars: ["Benedict Cumberbatch","Kirsten Dunst","Jesse Plemons"], trailer: "LRDPo0CHrko" },
-        { movie: "West Side Story", stars: ["Ansel Elgort","Rachel Zegler","Ariana DeBose"], trailer: "A5GJLwWiYSg" },
+        { movie: "Belfast", stars: ["Jude Hill","Caitríona Balfe","Jamie Dornan"], trailer: "C658p987SQI", director: "Kenneth Branagh" },
+        { movie: "Don't Look Up", stars: ["Leonardo DiCaprio","Jennifer Lawrence","Meryl Streep"], trailer: "RbIxYm3mKzI", director: "Adam McKay" },
+        { movie: "Drive My Car", stars: ["Hidetoshi Nishijima","Tōko Miura"], trailer: "YyDSxD51WRE", director: "Ryusuke Hamaguchi" },
+        { movie: "Dune", stars: ["Timothée Chalamet","Rebecca Ferguson","Oscar Isaac"], trailer: "w0HgHet0sxg", director: "Denis Villeneuve" },
+        { movie: "King Richard", stars: ["Will Smith","Aunjanue Ellis"], trailer: "_6bsugyNpDU", director: "Reinaldo Marcus Green" },
+        { movie: "Licorice Pizza", stars: ["Alana Haim","Cooper Hoffman"], trailer: "ofnXPwUPENo", director: "Paul Thomas Anderson" },
+        { movie: "Nightmare Alley", stars: ["Bradley Cooper","Cate Blanchett","Toni Collette"], trailer: "Q81Yf46Oj3s", director: "Guillermo del Toro" },
+        { movie: "The Power of the Dog", stars: ["Benedict Cumberbatch","Kirsten Dunst","Jesse Plemons"], trailer: "LRDPo0CHrko", director: "Jane Campion" },
+        { movie: "West Side Story", stars: ["Ansel Elgort","Rachel Zegler","Ariana DeBose"], trailer: "A5GJLwWiYSg", director: "Steven Spielberg" },
       ]},
     { year: 2021, movie: "Nomadland", director: "Chloé Zhao", trailer: "6sxCFZ8_d84",
       stars: ["Frances McDormand","David Strathairn"],
       nominees: [
-        { movie: "The Father", stars: ["Anthony Hopkins","Olivia Colman"], trailer: "g0ox9ExOA1M" },
-        { movie: "Judas and the Black Messiah", stars: ["Daniel Kaluuya","LaKeith Stanfield"], trailer: "6ivHf4ODMi4" },
-        { movie: "Mank", stars: ["Gary Oldman","Amanda Seyfried"], trailer: "aSfX-nrg-lI" },
-        { movie: "Minari", stars: ["Steven Yeun","Han Ye-ri","Youn Yuh-jung"], trailer: "KQ0gFidlro8" },
-        { movie: "Promising Young Woman", stars: ["Carey Mulligan","Bo Burnham"], trailer: "we5yV7Gc9rY" },
-        { movie: "Sound of Metal", stars: ["Riz Ahmed","Olivia Cooke"], trailer: "VFOrGkAvjAE" },
-        { movie: "The Trial of the Chicago 7", stars: ["Eddie Redmayne","Sacha Baron Cohen","Yahya Abdul-Mateen II"], trailer: "FVb6EdKDBfU" },
+        { movie: "The Father", stars: ["Anthony Hopkins","Olivia Colman"], trailer: "g0ox9ExOA1M", director: "Florian Zeller" },
+        { movie: "Judas and the Black Messiah", stars: ["Daniel Kaluuya","LaKeith Stanfield"], trailer: "6ivHf4ODMi4", director: "Shaka King" },
+        { movie: "Mank", stars: ["Gary Oldman","Amanda Seyfried"], trailer: "aSfX-nrg-lI", director: "David Fincher" },
+        { movie: "Minari", stars: ["Steven Yeun","Han Ye-ri","Youn Yuh-jung"], trailer: "KQ0gFidlro8", director: "Lee Isaac Chung" },
+        { movie: "Promising Young Woman", stars: ["Carey Mulligan","Bo Burnham"], trailer: "we5yV7Gc9rY", director: "Emerald Fennell" },
+        { movie: "Sound of Metal", stars: ["Riz Ahmed","Olivia Cooke"], trailer: "VFOrGkAvjAE", director: "Darius Marder" },
+        { movie: "The Trial of the Chicago 7", stars: ["Eddie Redmayne","Sacha Baron Cohen","Yahya Abdul-Mateen II"], trailer: "FVb6EdKDBfU", director: "Aaron Sorkin" },
       ]},
     { year: 2020, movie: "Parasite", director: "Bong Joon-ho", trailer: "isOGD_7hNIY",
       stars: ["Song Kang-ho","Lee Sun-kyun","Cho Yeo-jeong"],
       nominees: [
-        { movie: "Ford v Ferrari", stars: ["Matt Damon","Christian Bale"], trailer: "I3h9Z89U9ZA" },
-        { movie: "The Irishman", stars: ["Robert De Niro","Al Pacino","Joe Pesci"], trailer: "RS3aHkkfuEI" },
-        { movie: "Jojo Rabbit", stars: ["Roman Griffin Davis","Scarlett Johansson","Taika Waititi"], trailer: "tL4McUzXfFI" },
-        { movie: "Joker", stars: ["Joaquin Phoenix","Robert De Niro"], trailer: "-RFFRxcoKfA" },
-        { movie: "Little Women", stars: ["Saoirse Ronan","Florence Pugh","Emma Watson"], trailer: "AST2-4db4ic" },
-        { movie: "Marriage Story", stars: ["Adam Driver","Scarlett Johansson"], trailer: "BHi-a1n8t7M" },
-        { movie: "1917", stars: ["George MacKay","Dean-Charles Chapman"], trailer: "gZjQROMAh_s" },
-        { movie: "Once Upon a Time in Hollywood", stars: ["Leonardo DiCaprio","Brad Pitt","Margot Robbie"], trailer: "vKgITiP1UMg" },
+        { movie: "Ford v Ferrari", stars: ["Matt Damon","Christian Bale"], trailer: "I3h9Z89U9ZA", director: "James Mangold" },
+        { movie: "The Irishman", stars: ["Robert De Niro","Al Pacino","Joe Pesci"], trailer: "RS3aHkkfuEI", director: "Martin Scorsese" },
+        { movie: "Jojo Rabbit", stars: ["Roman Griffin Davis","Scarlett Johansson","Taika Waititi"], trailer: "tL4McUzXfFI", director: "Taika Waititi" },
+        { movie: "Joker", stars: ["Joaquin Phoenix","Robert De Niro"], trailer: "-RFFRxcoKfA", director: "Todd Phillips" },
+        { movie: "Little Women", stars: ["Saoirse Ronan","Florence Pugh","Emma Watson"], trailer: "AST2-4db4ic", director: "Greta Gerwig" },
+        { movie: "Marriage Story", stars: ["Adam Driver","Scarlett Johansson"], trailer: "BHi-a1n8t7M", director: "Noah Baumbach" },
+        { movie: "1917", stars: ["George MacKay","Dean-Charles Chapman"], trailer: "gZjQROMAh_s", director: "Sam Mendes" },
+        { movie: "Once Upon a Time in Hollywood", stars: ["Leonardo DiCaprio","Brad Pitt","Margot Robbie"], trailer: "vKgITiP1UMg", director: "Quentin Tarantino" },
       ]},
     { year: 2019, movie: "Green Book", director: "Peter Farrelly", trailer: "QkZxoko_HC0",
       stars: ["Viggo Mortensen","Mahershala Ali"],
       nominees: [
-        { movie: "Black Panther", stars: ["Chadwick Boseman","Michael B. Jordan","Lupita Nyong'o"], trailer: "xjDjIWPwcPU" },
-        { movie: "BlacKkKlansman", stars: ["John David Washington","Adam Driver"], trailer: "7tgMuagdEhc" },
-        { movie: "Bohemian Rhapsody", stars: ["Rami Malek","Lucy Boynton"], trailer: "27zlBpzdOZg" },
-        { movie: "The Favourite", stars: ["Olivia Colman","Emma Stone","Rachel Weisz"], trailer: "SYb-wkehT1g" },
-        { movie: "Roma", stars: ["Yalitza Aparicio","Marina de Tavira"], trailer: "6BS27ngZtxg" },
-        { movie: "A Star Is Born", stars: ["Bradley Cooper","Lady Gaga"], trailer: "UywJmJ6ohvc" },
-        { movie: "Vice", stars: ["Christian Bale","Amy Adams","Steve Carell"], trailer: "g09a9laLh0k" },
+        { movie: "Black Panther", stars: ["Chadwick Boseman","Michael B. Jordan","Lupita Nyong'o"], trailer: "xjDjIWPwcPU", director: "Ryan Coogler" },
+        { movie: "BlacKkKlansman", stars: ["John David Washington","Adam Driver"], trailer: "7tgMuagdEhc", director: "Spike Lee" },
+        { movie: "Bohemian Rhapsody", stars: ["Rami Malek","Lucy Boynton"], trailer: "27zlBpzdOZg", director: "Bryan Singer" },
+        { movie: "The Favourite", stars: ["Olivia Colman","Emma Stone","Rachel Weisz"], trailer: "SYb-wkehT1g", director: "Yorgos Lanthimos" },
+        { movie: "Roma", stars: ["Yalitza Aparicio","Marina de Tavira"], trailer: "6BS27ngZtxg", director: "Alfonso Cuarón" },
+        { movie: "A Star Is Born", stars: ["Bradley Cooper","Lady Gaga"], trailer: "UywJmJ6ohvc", director: "Bradley Cooper" },
+        { movie: "Vice", stars: ["Christian Bale","Amy Adams","Steve Carell"], trailer: "g09a9laLh0k", director: "Adam McKay" },
       ]},
     { year: 2018, movie: "The Shape of Water", director: "Guillermo del Toro", trailer: "XFYWazblaUA",
       stars: ["Sally Hawkins","Michael Shannon","Richard Jenkins","Octavia Spencer"],
       nominees: [
-        { movie: "Call Me by Your Name", stars: ["Timothée Chalamet","Armie Hammer"], trailer: "Z9AYPxH5NTM" },
-        { movie: "Darkest Hour", stars: ["Gary Oldman","Kristin Scott Thomas"], trailer: "JQAYFbcgf60" },
-        { movie: "Dunkirk", stars: ["Fionn Whitehead","Tom Hardy","Mark Rylance"], trailer: "T7O7BtBnsG4" },
-        { movie: "Get Out", stars: ["Daniel Kaluuya","Allison Williams"], trailer: "gsB70ZRY-hI" },
-        { movie: "Lady Bird", stars: ["Saoirse Ronan","Laurie Metcalf"], trailer: "cNi_HC839Wo" },
-        { movie: "Phantom Thread", stars: ["Daniel Day-Lewis","Vicky Krieps"], trailer: "xNsiQMeSvMk" },
-        { movie: "The Post", stars: ["Meryl Streep","Tom Hanks"], trailer: "nrXlY6gzTTM" },
-        { movie: "Three Billboards Outside Ebbing, Missouri", stars: ["Frances McDormand","Woody Harrelson","Sam Rockwell"], trailer: "nefD7UOhLCo" },
+        { movie: "Call Me by Your Name", stars: ["Timothée Chalamet","Armie Hammer"], trailer: "Z9AYPxH5NTM", director: "Luca Guadagnino" },
+        { movie: "Darkest Hour", stars: ["Gary Oldman","Kristin Scott Thomas"], trailer: "JQAYFbcgf60", director: "Joe Wright" },
+        { movie: "Dunkirk", stars: ["Fionn Whitehead","Tom Hardy","Mark Rylance"], trailer: "T7O7BtBnsG4", director: "Christopher Nolan" },
+        { movie: "Get Out", stars: ["Daniel Kaluuya","Allison Williams"], trailer: "gsB70ZRY-hI", director: "Jordan Peele" },
+        { movie: "Lady Bird", stars: ["Saoirse Ronan","Laurie Metcalf"], trailer: "cNi_HC839Wo", director: "Greta Gerwig" },
+        { movie: "Phantom Thread", stars: ["Daniel Day-Lewis","Vicky Krieps"], trailer: "xNsiQMeSvMk", director: "Paul Thomas Anderson" },
+        { movie: "The Post", stars: ["Meryl Streep","Tom Hanks"], trailer: "nrXlY6gzTTM", director: "Steven Spielberg" },
+        { movie: "Three Billboards Outside Ebbing, Missouri", stars: ["Frances McDormand","Woody Harrelson","Sam Rockwell"], trailer: "nefD7UOhLCo", director: "Martin McDonagh" },
       ]},
     { year: 2017, movie: "Moonlight", director: "Barry Jenkins", trailer: "9NJj12tJzqc",
       stars: ["Mahershala Ali","Naomie Harris","Trevante Rhodes"],
       nominees: [
-        { movie: "Arrival", stars: ["Amy Adams","Jeremy Renner"], trailer: "7W1m5ER3I1Y" },
-        { movie: "Fences", stars: ["Denzel Washington","Viola Davis"], trailer: "spCxVd9ctFs" },
-        { movie: "Hacksaw Ridge", stars: ["Andrew Garfield","Sam Worthington"], trailer: "s2-1hz1juBI" },
-        { movie: "Hell or High Water", stars: ["Chris Pine","Ben Foster","Jeff Bridges"], trailer: "igD-fXiHRRY" },
-        { movie: "Hidden Figures", stars: ["Taraji P. Henson","Octavia Spencer","Janelle Monáe"], trailer: "5wfrDhgUMGI" },
-        { movie: "La La Land", stars: ["Ryan Gosling","Emma Stone"], trailer: "0pdqf4P9MB8" },
-        { movie: "Lion", stars: ["Dev Patel","Nicole Kidman"], trailer: "GKkk-hDigTk" },
-        { movie: "Manchester by the Sea", stars: ["Casey Affleck","Michelle Williams"], trailer: "NxQmuJnrjxg" },
+        { movie: "Arrival", stars: ["Amy Adams","Jeremy Renner"], trailer: "7W1m5ER3I1Y", director: "Denis Villeneuve" },
+        { movie: "Fences", stars: ["Denzel Washington","Viola Davis"], trailer: "spCxVd9ctFs", director: "Denzel Washington" },
+        { movie: "Hacksaw Ridge", stars: ["Andrew Garfield","Sam Worthington"], trailer: "s2-1hz1juBI", director: "Mel Gibson" },
+        { movie: "Hell or High Water", stars: ["Chris Pine","Ben Foster","Jeff Bridges"], trailer: "igD-fXiHRRY", director: "David Mackenzie" },
+        { movie: "Hidden Figures", stars: ["Taraji P. Henson","Octavia Spencer","Janelle Monáe"], trailer: "5wfrDhgUMGI", director: "Theodore Melfi" },
+        { movie: "La La Land", stars: ["Ryan Gosling","Emma Stone"], trailer: "0pdqf4P9MB8", director: "Damien Chazelle" },
+        { movie: "Lion", stars: ["Dev Patel","Nicole Kidman"], trailer: "GKkk-hDigTk", director: "Garth Davis" },
+        { movie: "Manchester by the Sea", stars: ["Casey Affleck","Michelle Williams"], trailer: "NxQmuJnrjxg", director: "Kenneth Lonergan" },
       ]},
     { year: 2016, movie: "Spotlight", director: "Tom McCarthy", trailer: "yXymzwz0V2g",
       stars: ["Mark Ruffalo","Michael Keaton","Rachel McAdams","Liev Schreiber"],
       nominees: [
-        { movie: "The Big Short", stars: ["Christian Bale","Steve Carell","Ryan Gosling"], trailer: "1kQc3mmtH-o" },
-        { movie: "Bridge of Spies", stars: ["Tom Hanks","Mark Rylance"], trailer: "owhBnicLZt4" },
-        { movie: "Brooklyn", stars: ["Saoirse Ronan","Domhnall Gleeson"], trailer: "IzgsaBGwap8" },
-        { movie: "Mad Max: Fury Road", stars: ["Tom Hardy","Charlize Theron"], trailer: "MonFNCgK4WE" },
-        { movie: "The Martian", stars: ["Matt Damon","Jessica Chastain"], trailer: "ej3ioOneTy8" },
-        { movie: "The Revenant", stars: ["Leonardo DiCaprio","Tom Hardy"], trailer: "EhffABvfAW0" },
-        { movie: "Room", stars: ["Brie Larson","Jacob Tremblay"], trailer: "yfBdUPAjiVQ" },
+        { movie: "The Big Short", stars: ["Christian Bale","Steve Carell","Ryan Gosling"], trailer: "1kQc3mmtH-o", director: "Adam McKay" },
+        { movie: "Bridge of Spies", stars: ["Tom Hanks","Mark Rylance"], trailer: "owhBnicLZt4", director: "Steven Spielberg" },
+        { movie: "Brooklyn", stars: ["Saoirse Ronan","Domhnall Gleeson"], trailer: "IzgsaBGwap8", director: "John Crowley" },
+        { movie: "Mad Max: Fury Road", stars: ["Tom Hardy","Charlize Theron"], trailer: "MonFNCgK4WE", director: "George Miller" },
+        { movie: "The Martian", stars: ["Matt Damon","Jessica Chastain"], trailer: "ej3ioOneTy8", director: "Ridley Scott" },
+        { movie: "The Revenant", stars: ["Leonardo DiCaprio","Tom Hardy"], trailer: "EhffABvfAW0", director: "Alejandro G. Iñárritu" },
+        { movie: "Room", stars: ["Brie Larson","Jacob Tremblay"], trailer: "yfBdUPAjiVQ", director: "Lenny Abrahamson" },
       ]},
     { year: 2015, movie: "Birdman", director: "Alejandro González Iñárritu", trailer: "o-sdQK_TR2g",
       stars: ["Michael Keaton","Edward Norton","Emma Stone"],
       nominees: [
-        { movie: "American Sniper", stars: ["Bradley Cooper","Sienna Miller"], trailer: "iq7smHSQPho" },
-        { movie: "Boyhood", stars: ["Ellar Coltrane","Patricia Arquette","Ethan Hawke"], trailer: "oNC3NYWh1vI" },
-        { movie: "The Grand Budapest Hotel", stars: ["Ralph Fiennes","Tony Revolori"], trailer: "G1jG8HUY4zI" },
-        { movie: "The Imitation Game", stars: ["Benedict Cumberbatch","Keira Knightley"], trailer: "j2jRs4EAvWM" },
-        { movie: "Selma", stars: ["David Oyelowo","Carmen Ejogo"], trailer: "kPgs2zshD9Y" },
-        { movie: "The Theory of Everything", stars: ["Eddie Redmayne","Felicity Jones"], trailer: "_EnhOKk7BxM" },
-        { movie: "Whiplash", stars: ["Miles Teller","J.K. Simmons"], trailer: "Q7kZy3T6vRM" },
+        { movie: "American Sniper", stars: ["Bradley Cooper","Sienna Miller"], trailer: "iq7smHSQPho", director: "Clint Eastwood" },
+        { movie: "Boyhood", stars: ["Ellar Coltrane","Patricia Arquette","Ethan Hawke"], trailer: "oNC3NYWh1vI", director: "Richard Linklater" },
+        { movie: "The Grand Budapest Hotel", stars: ["Ralph Fiennes","Tony Revolori"], trailer: "G1jG8HUY4zI", director: "Wes Anderson" },
+        { movie: "The Imitation Game", stars: ["Benedict Cumberbatch","Keira Knightley"], trailer: "j2jRs4EAvWM", director: "Morten Tyldum" },
+        { movie: "Selma", stars: ["David Oyelowo","Carmen Ejogo"], trailer: "kPgs2zshD9Y", director: "Ava DuVernay" },
+        { movie: "The Theory of Everything", stars: ["Eddie Redmayne","Felicity Jones"], trailer: "_EnhOKk7BxM", director: "James Marsh" },
+        { movie: "Whiplash", stars: ["Miles Teller","J.K. Simmons"], trailer: "Q7kZy3T6vRM", director: "Damien Chazelle" },
       ]},
     { year: 2014, movie: "12 Years a Slave", director: "Steve McQueen", trailer: "z02Ie8wKKRg",
       stars: ["Chiwetel Ejiofor","Michael Fassbender","Lupita Nyong'o"],
       nominees: [
-        { movie: "American Hustle", stars: ["Christian Bale","Amy Adams","Bradley Cooper"], trailer: "h5Cb4SFt7gE" },
-        { movie: "Captain Phillips", stars: ["Tom Hanks","Barkhad Abdi"], trailer: "TzU3UJuV80w" },
-        { movie: "Dallas Buyers Club", stars: ["Matthew McConaughey","Jared Leto","Jennifer Garner"], trailer: "KDvPcBeOn8E" },
-        { movie: "Gravity", stars: ["Sandra Bullock","George Clooney"], trailer: "OiTiKOy59o4" },
-        { movie: "Her", stars: ["Joaquin Phoenix","Scarlett Johansson","Amy Adams"], trailer: "ne6p6MfLBxc" },
-        { movie: "Nebraska", stars: ["Bruce Dern","Will Forte"], trailer: "YvW_DmfKfSk" },
-        { movie: "Philomena", stars: ["Judi Dench","Steve Coogan"], trailer: "a8WyFLsdtNw" },
-        { movie: "The Wolf of Wall Street", stars: ["Leonardo DiCaprio","Jonah Hill","Margot Robbie"], trailer: "Slj4-Sv-YNA" },
+        { movie: "American Hustle", stars: ["Christian Bale","Amy Adams","Bradley Cooper"], trailer: "h5Cb4SFt7gE", director: "David O. Russell" },
+        { movie: "Captain Phillips", stars: ["Tom Hanks","Barkhad Abdi"], trailer: "TzU3UJuV80w", director: "Paul Greengrass" },
+        { movie: "Dallas Buyers Club", stars: ["Matthew McConaughey","Jared Leto","Jennifer Garner"], trailer: "KDvPcBeOn8E", director: "Jean-Marc Vallée" },
+        { movie: "Gravity", stars: ["Sandra Bullock","George Clooney"], trailer: "OiTiKOy59o4", director: "Alfonso Cuarón" },
+        { movie: "Her", stars: ["Joaquin Phoenix","Scarlett Johansson","Amy Adams"], trailer: "ne6p6MfLBxc", director: "Spike Jonze" },
+        { movie: "Nebraska", stars: ["Bruce Dern","Will Forte"], trailer: "YvW_DmfKfSk", director: "Alexander Payne" },
+        { movie: "Philomena", stars: ["Judi Dench","Steve Coogan"], trailer: "a8WyFLsdtNw", director: "Stephen Frears" },
+        { movie: "The Wolf of Wall Street", stars: ["Leonardo DiCaprio","Jonah Hill","Margot Robbie"], trailer: "Slj4-Sv-YNA", director: "Martin Scorsese" },
       ]},
     { year: 2013, movie: "Argo", director: "Ben Affleck", trailer: "JW3WfSFgrVY",
       stars: ["Ben Affleck","Bryan Cranston","Alan Arkin"],
       nominees: [
-        { movie: "Amour", stars: ["Jean-Louis Trintignant","Emmanuelle Riva"], trailer: "VMOugpyFf3A" },
-        { movie: "Beasts of the Southern Wild", stars: ["Quvenzhané Wallis","Dwight Henry"], trailer: "pvqZzSMIZa0" },
-        { movie: "Django Unchained", stars: ["Jamie Foxx","Christoph Waltz","Leonardo DiCaprio"], trailer: "_iH0UBYDI4g" },
-        { movie: "Les Misérables", stars: ["Hugh Jackman","Anne Hathaway","Russell Crowe"], trailer: "28sHoKcpugw" },
-        { movie: "Life of Pi", stars: ["Suraj Sharma","Irrfan Khan"], trailer: "j9Hjrs6WQ8M" },
-        { movie: "Lincoln", stars: ["Daniel Day-Lewis","Sally Field","Tommy Lee Jones"], trailer: "nvP-ZrzA2lk" },
-        { movie: "Silver Linings Playbook", stars: ["Bradley Cooper","Jennifer Lawrence","Robert De Niro"], trailer: "EI_3ywJLQio" },
-        { movie: "Zero Dark Thirty", stars: ["Jessica Chastain","Jason Clarke"], trailer: "k7R2uVZYebE" },
+        { movie: "Amour", stars: ["Jean-Louis Trintignant","Emmanuelle Riva"], trailer: "VMOugpyFf3A", director: "Michael Haneke" },
+        { movie: "Beasts of the Southern Wild", stars: ["Quvenzhané Wallis","Dwight Henry"], trailer: "pvqZzSMIZa0", director: "Benh Zeitlin" },
+        { movie: "Django Unchained", stars: ["Jamie Foxx","Christoph Waltz","Leonardo DiCaprio"], trailer: "_iH0UBYDI4g", director: "Quentin Tarantino" },
+        { movie: "Les Misérables", stars: ["Hugh Jackman","Anne Hathaway","Russell Crowe"], trailer: "28sHoKcpugw", director: "Tom Hooper" },
+        { movie: "Life of Pi", stars: ["Suraj Sharma","Irrfan Khan"], trailer: "j9Hjrs6WQ8M", director: "Ang Lee" },
+        { movie: "Lincoln", stars: ["Daniel Day-Lewis","Sally Field","Tommy Lee Jones"], trailer: "nvP-ZrzA2lk", director: "Steven Spielberg" },
+        { movie: "Silver Linings Playbook", stars: ["Bradley Cooper","Jennifer Lawrence","Robert De Niro"], trailer: "EI_3ywJLQio", director: "David O. Russell" },
+        { movie: "Zero Dark Thirty", stars: ["Jessica Chastain","Jason Clarke"], trailer: "k7R2uVZYebE", director: "Kathryn Bigelow" },
       ]},
     { year: 2012, movie: "The Artist", director: "Michel Hazanavicius", trailer: "YB9Oq0hn5KY",
       stars: ["Jean Dujardin","Bérénice Bejo","John Goodman"],
       nominees: [
-        { movie: "The Descendants", stars: ["George Clooney","Shailene Woodley"], trailer: "3R7OzS54hbo" },
-        { movie: "Extremely Loud & Incredibly Close", stars: ["Tom Hanks","Sandra Bullock","Thomas Horn"], trailer: "jgp8rR2fykU" },
-        { movie: "The Help", stars: ["Emma Stone","Viola Davis","Octavia Spencer"], trailer: "3eajzW3XW7Q" },
-        { movie: "Hugo", stars: ["Asa Butterfield","Chloë Grace Moretz","Ben Kingsley"], trailer: "nZGyAx7YyYM" },
-        { movie: "Midnight in Paris", stars: ["Owen Wilson","Rachel McAdams"], trailer: "FAfR8omt-CY" },
-        { movie: "Moneyball", stars: ["Brad Pitt","Jonah Hill"], trailer: "RAG74hfW4pM" },
-        { movie: "The Tree of Life", stars: ["Brad Pitt","Sean Penn","Jessica Chastain"], trailer: "RrAz1YLh8nY" },
-        { movie: "War Horse", stars: ["Jeremy Irvine","Emily Watson"], trailer: "tafBTls8RuA" },
+        { movie: "The Descendants", stars: ["George Clooney","Shailene Woodley"], trailer: "3R7OzS54hbo", director: "Alexander Payne" },
+        { movie: "Extremely Loud & Incredibly Close", stars: ["Tom Hanks","Sandra Bullock","Thomas Horn"], trailer: "jgp8rR2fykU", director: "Stephen Daldry" },
+        { movie: "The Help", stars: ["Emma Stone","Viola Davis","Octavia Spencer"], trailer: "3eajzW3XW7Q", director: "Tate Taylor" },
+        { movie: "Hugo", stars: ["Asa Butterfield","Chloë Grace Moretz","Ben Kingsley"], trailer: "nZGyAx7YyYM", director: "Martin Scorsese" },
+        { movie: "Midnight in Paris", stars: ["Owen Wilson","Rachel McAdams"], trailer: "FAfR8omt-CY", director: "Woody Allen" },
+        { movie: "Moneyball", stars: ["Brad Pitt","Jonah Hill"], trailer: "RAG74hfW4pM", director: "Bennett Miller" },
+        { movie: "The Tree of Life", stars: ["Brad Pitt","Sean Penn","Jessica Chastain"], trailer: "RrAz1YLh8nY", director: "Terrence Malick" },
+        { movie: "War Horse", stars: ["Jeremy Irvine","Emily Watson"], trailer: "tafBTls8RuA", director: "Steven Spielberg" },
       ]},
     { year: 2011, movie: "The King's Speech", director: "Tom Hooper", trailer: "gSw6ei5tdbg",
       stars: ["Colin Firth","Geoffrey Rush","Helena Bonham Carter"],
       nominees: [
-        { movie: "127 Hours", stars: ["James Franco"], trailer: "OlhLOWTnVoQ" },
-        { movie: "Black Swan", stars: ["Natalie Portman","Mila Kunis","Vincent Cassel"], trailer: "2Pxc_5f27Kg" },
-        { movie: "The Fighter", stars: ["Mark Wahlberg","Christian Bale","Amy Adams"], trailer: "LRIZ4mCi5Ps" },
-        { movie: "Inception", stars: ["Leonardo DiCaprio","Joseph Gordon-Levitt","Marion Cotillard"], trailer: "JE9z-gy4De4" },
-        { movie: "The Kids Are All Right", stars: ["Annette Bening","Julianne Moore","Mark Ruffalo"], trailer: "RixlpHKfb6M" },
-        { movie: "The Social Network", stars: ["Jesse Eisenberg","Andrew Garfield","Justin Timberlake"], trailer: "lB95KLmpLR4" },
-        { movie: "Toy Story 3", stars: ["Tom Hanks","Tim Allen","Joan Cusack"], trailer: "2BlMNH1QTeE" },
-        { movie: "True Grit", stars: ["Jeff Bridges","Hailee Steinfeld","Matt Damon"], trailer: "Q5fEgKj9QNs" },
-        { movie: "Winter's Bone", stars: ["Jennifer Lawrence","John Hawkes"], trailer: "bE_X2pDRXyY" },
+        { movie: "127 Hours", stars: ["James Franco"], trailer: "OlhLOWTnVoQ", director: "Danny Boyle" },
+        { movie: "Black Swan", stars: ["Natalie Portman","Mila Kunis","Vincent Cassel"], trailer: "2Pxc_5f27Kg", director: "Darren Aronofsky" },
+        { movie: "The Fighter", stars: ["Mark Wahlberg","Christian Bale","Amy Adams"], trailer: "LRIZ4mCi5Ps", director: "David O. Russell" },
+        { movie: "Inception", stars: ["Leonardo DiCaprio","Joseph Gordon-Levitt","Marion Cotillard"], trailer: "JE9z-gy4De4", director: "Christopher Nolan" },
+        { movie: "The Kids Are All Right", stars: ["Annette Bening","Julianne Moore","Mark Ruffalo"], trailer: "RixlpHKfb6M", director: "Lisa Cholodenko" },
+        { movie: "The Social Network", stars: ["Jesse Eisenberg","Andrew Garfield","Justin Timberlake"], trailer: "lB95KLmpLR4", director: "David Fincher" },
+        { movie: "Toy Story 3", stars: ["Tom Hanks","Tim Allen","Joan Cusack"], trailer: "2BlMNH1QTeE", director: "Lee Unkrich" },
+        { movie: "True Grit", stars: ["Jeff Bridges","Hailee Steinfeld","Matt Damon"], trailer: "Q5fEgKj9QNs", director: "Joel Coen" },
+        { movie: "Winter's Bone", stars: ["Jennifer Lawrence","John Hawkes"], trailer: "bE_X2pDRXyY", director: "Debra Granik" },
       ]},
     { year: 2010, movie: "The Hurt Locker", director: "Kathryn Bigelow", trailer: "AIbFvqFYRT4",
       stars: ["Jeremy Renner","Anthony Mackie","Brian Geraghty"],
       nominees: [
-        { movie: "Avatar", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "jm2sNLIPPvA" },
-        { movie: "The Blind Side", stars: ["Sandra Bullock","Quinton Aaron"], trailer: "KA56LqFszYI" },
-        { movie: "District 9", stars: ["Sharlto Copley"], trailer: "_BjWEn5yvmw" },
-        { movie: "An Education", stars: ["Carey Mulligan","Peter Sarsgaard"], trailer: "DUeYKwxTCGQ" },
-        { movie: "Inglourious Basterds", stars: ["Brad Pitt","Christoph Waltz","Mélanie Laurent"], trailer: "uSEDz-my7XQ" },
-        { movie: "Precious", stars: ["Gabourey Sidibe","Mo'Nique"], trailer: "urFY3jp759c" },
-        { movie: "A Serious Man", stars: ["Michael Stuhlbarg"], trailer: "mDKHWRbK2_Q" },
-        { movie: "Up", stars: ["Ed Asner","Christopher Plummer"], trailer: "Ajcdb4FAL7A" },
-        { movie: "Up in the Air", stars: ["George Clooney","Vera Farmiga","Anna Kendrick"], trailer: "En0DYdjMVoY" },
+        { movie: "Avatar", stars: ["Sam Worthington","Zoe Saldaña","Sigourney Weaver"], trailer: "jm2sNLIPPvA", director: "James Cameron" },
+        { movie: "The Blind Side", stars: ["Sandra Bullock","Quinton Aaron"], trailer: "KA56LqFszYI", director: "John Lee Hancock" },
+        { movie: "District 9", stars: ["Sharlto Copley"], trailer: "_BjWEn5yvmw", director: "Neill Blomkamp" },
+        { movie: "An Education", stars: ["Carey Mulligan","Peter Sarsgaard"], trailer: "DUeYKwxTCGQ", director: "Lone Scherfig" },
+        { movie: "Inglourious Basterds", stars: ["Brad Pitt","Christoph Waltz","Mélanie Laurent"], trailer: "uSEDz-my7XQ", director: "Quentin Tarantino" },
+        { movie: "Precious", stars: ["Gabourey Sidibe","Mo'Nique"], trailer: "urFY3jp759c", director: "Lee Daniels" },
+        { movie: "A Serious Man", stars: ["Michael Stuhlbarg"], trailer: "mDKHWRbK2_Q", director: "Joel Coen" },
+        { movie: "Up", stars: ["Ed Asner","Christopher Plummer"], trailer: "Ajcdb4FAL7A", director: "Pete Docter" },
+        { movie: "Up in the Air", stars: ["George Clooney","Vera Farmiga","Anna Kendrick"], trailer: "En0DYdjMVoY", director: "Jason Reitman" },
       ]},
     { year: 2009, movie: "Slumdog Millionaire", director: "Danny Boyle", trailer: "JwiU94p9XPA",
       stars: ["Dev Patel","Freida Pinto","Anil Kapoor"],
       nominees: [
-        { movie: "The Curious Case of Benjamin Button", stars: ["Brad Pitt","Cate Blanchett"], trailer: "lqijVXvw7_E" },
-        { movie: "Frost/Nixon", stars: ["Frank Langella","Michael Sheen"], trailer: "O9S1RKNgdLw" },
-        { movie: "Milk", stars: ["Sean Penn","James Franco","Josh Brolin"], trailer: "w5D07rmfwG0" },
-        { movie: "The Reader", stars: ["Kate Winslet","Ralph Fiennes"], trailer: "JA1J2WmFGUw" },
+        { movie: "The Curious Case of Benjamin Button", stars: ["Brad Pitt","Cate Blanchett"], trailer: "lqijVXvw7_E", director: "David Fincher" },
+        { movie: "Frost/Nixon", stars: ["Frank Langella","Michael Sheen"], trailer: "O9S1RKNgdLw", director: "Ron Howard" },
+        { movie: "Milk", stars: ["Sean Penn","James Franco","Josh Brolin"], trailer: "w5D07rmfwG0", director: "Gus Van Sant" },
+        { movie: "The Reader", stars: ["Kate Winslet","Ralph Fiennes"], trailer: "JA1J2WmFGUw", director: "Stephen Daldry" },
       ]},
     { year: 2008, movie: "No Country for Old Men", director: "Joel & Ethan Coen", trailer: "A0oNrgumrlE",
       stars: ["Tommy Lee Jones","Javier Bardem","Josh Brolin"],
       nominees: [
-        { movie: "Atonement", stars: ["Keira Knightley","James McAvoy"], trailer: "WZAttjca0b8" },
-        { movie: "Juno", stars: ["Elliot Page","Michael Cera","Jennifer Garner"], trailer: "miy1fE-8Z0U" },
-        { movie: "Michael Clayton", stars: ["George Clooney","Tilda Swinton","Tom Wilkinson"], trailer: "OKDiHrQABwI" },
-        { movie: "There Will Be Blood", stars: ["Daniel Day-Lewis","Paul Dano"], trailer: "-bEwlq_7f4s" },
+        { movie: "Atonement", stars: ["Keira Knightley","James McAvoy"], trailer: "WZAttjca0b8", director: "Joe Wright" },
+        { movie: "Juno", stars: ["Elliot Page","Michael Cera","Jennifer Garner"], trailer: "miy1fE-8Z0U", director: "Jason Reitman" },
+        { movie: "Michael Clayton", stars: ["George Clooney","Tilda Swinton","Tom Wilkinson"], trailer: "OKDiHrQABwI", director: "Tony Gilroy" },
+        { movie: "There Will Be Blood", stars: ["Daniel Day-Lewis","Paul Dano"], trailer: "-bEwlq_7f4s", director: "Paul Thomas Anderson" },
       ]},
     { year: 2007, movie: "The Departed", director: "Martin Scorsese", trailer: "r-MiSNsCdQ4",
       stars: ["Leonardo DiCaprio","Matt Damon","Jack Nicholson","Mark Wahlberg"],
       nominees: [
-        { movie: "Babel", stars: ["Brad Pitt","Cate Blanchett"], trailer: "PqPNksLZIAk" },
-        { movie: "Letters from Iwo Jima", stars: ["Ken Watanabe","Kazunari Ninomiya"], trailer: "g65ewJJ1USc" },
-        { movie: "Little Miss Sunshine", stars: ["Greg Kinnear","Toni Collette","Steve Carell","Abigail Breslin"], trailer: "oabGaaCLZ5g" },
-        { movie: "The Queen", stars: ["Helen Mirren","Michael Sheen"], trailer: "BIvESE9A_gc" },
+        { movie: "Babel", stars: ["Brad Pitt","Cate Blanchett"], trailer: "PqPNksLZIAk", director: "Alejandro G. Iñárritu" },
+        { movie: "Letters from Iwo Jima", stars: ["Ken Watanabe","Kazunari Ninomiya"], trailer: "g65ewJJ1USc", director: "Clint Eastwood" },
+        { movie: "Little Miss Sunshine", stars: ["Greg Kinnear","Toni Collette","Steve Carell","Abigail Breslin"], trailer: "oabGaaCLZ5g", director: "Valerie Faris" },
+        { movie: "The Queen", stars: ["Helen Mirren","Michael Sheen"], trailer: "BIvESE9A_gc", director: "Stephen Frears" },
       ]},
     { year: 2006, movie: "Crash", director: "Paul Haggis", trailer: "dgepOrbliX4",
       stars: ["Don Cheadle","Sandra Bullock","Matt Dillon","Thandiwe Newton"],
       nominees: [
-        { movie: "Brokeback Mountain", stars: ["Heath Ledger","Jake Gyllenhaal"], trailer: "xZvu-SczR1Y" },
-        { movie: "Capote", stars: ["Philip Seymour Hoffman","Catherine Keener"], trailer: "vq-kLlga0EI" },
-        { movie: "Good Night, and Good Luck", stars: ["David Strathairn","George Clooney"], trailer: "1Qg9ZahBu8c" },
-        { movie: "Munich", stars: ["Eric Bana","Daniel Craig"], trailer: "OuT_uh0CAf8" },
+        { movie: "Brokeback Mountain", stars: ["Heath Ledger","Jake Gyllenhaal"], trailer: "xZvu-SczR1Y", director: "Ang Lee" },
+        { movie: "Capote", stars: ["Philip Seymour Hoffman","Catherine Keener"], trailer: "vq-kLlga0EI", director: "Bennett Miller" },
+        { movie: "Good Night, and Good Luck", stars: ["David Strathairn","George Clooney"], trailer: "1Qg9ZahBu8c", director: "George Clooney" },
+        { movie: "Munich", stars: ["Eric Bana","Daniel Craig"], trailer: "OuT_uh0CAf8", director: "Steven Spielberg" },
       ]},
     { year: 2005, movie: "Million Dollar Baby", director: "Clint Eastwood", trailer: "5_RsHRmIRBY",
       stars: ["Hilary Swank","Clint Eastwood","Morgan Freeman"],
       nominees: [
-        { movie: "The Aviator", stars: ["Leonardo DiCaprio","Cate Blanchett"], trailer: "dkwypzOQf8o" },
-        { movie: "Finding Neverland", stars: ["Johnny Depp","Kate Winslet"], trailer: "m41gObaKgOw" },
-        { movie: "Ray", stars: ["Jamie Foxx","Regina King"], trailer: "jVHCQfcugdw" },
-        { movie: "Sideways", stars: ["Paul Giamatti","Thomas Haden Church","Virginia Madsen"], trailer: "FccttA8wPqc" },
+        { movie: "The Aviator", stars: ["Leonardo DiCaprio","Cate Blanchett"], trailer: "dkwypzOQf8o", director: "Martin Scorsese" },
+        { movie: "Finding Neverland", stars: ["Johnny Depp","Kate Winslet"], trailer: "m41gObaKgOw", director: "Marc Forster" },
+        { movie: "Ray", stars: ["Jamie Foxx","Regina King"], trailer: "jVHCQfcugdw", director: "Taylor Hackford" },
+        { movie: "Sideways", stars: ["Paul Giamatti","Thomas Haden Church","Virginia Madsen"], trailer: "FccttA8wPqc", director: "Alexander Payne" },
       ]},
     { year: 2004, movie: "The Lord of the Rings: The Return of the King", director: "Peter Jackson", trailer: "r5X-hFf6Bwo",
       stars: ["Elijah Wood","Viggo Mortensen","Ian McKellen","Sean Astin"],
       nominees: [
-        { movie: "Lost in Translation", stars: ["Bill Murray","Scarlett Johansson"], trailer: "1s4YQqnbnM8" },
-        { movie: "Master and Commander", stars: ["Russell Crowe","Paul Bettany"], trailer: "tHTHCNYiiHk" },
-        { movie: "Mystic River", stars: ["Sean Penn","Tim Robbins","Kevin Bacon"], trailer: "W7NktJhrRYQ" },
-        { movie: "Seabiscuit", stars: ["Tobey Maguire","Jeff Bridges"], trailer: "8fnYdEGeXbM" },
+        { movie: "Lost in Translation", stars: ["Bill Murray","Scarlett Johansson"], trailer: "1s4YQqnbnM8", director: "Sofia Coppola" },
+        { movie: "Master and Commander", stars: ["Russell Crowe","Paul Bettany"], trailer: "tHTHCNYiiHk", director: "Peter Weir" },
+        { movie: "Mystic River", stars: ["Sean Penn","Tim Robbins","Kevin Bacon"], trailer: "W7NktJhrRYQ", director: "Clint Eastwood" },
+        { movie: "Seabiscuit", stars: ["Tobey Maguire","Jeff Bridges"], trailer: "8fnYdEGeXbM", director: "Gary Ross" },
       ]},
     { year: 2003, movie: "Chicago", director: "Rob Marshall", trailer: "YwXWryx-oJ0",
       stars: ["Renée Zellweger","Catherine Zeta-Jones","Richard Gere"],
       nominees: [
-        { movie: "Gangs of New York", stars: ["Daniel Day-Lewis","Leonardo DiCaprio","Cameron Diaz"], trailer: "1bjh979vVG0" },
-        { movie: "The Hours", stars: ["Nicole Kidman","Meryl Streep","Julianne Moore"], trailer: "CkPWXUxIiXs" },
-        { movie: "The Lord of the Rings: The Two Towers", stars: ["Elijah Wood","Viggo Mortensen","Ian McKellen"], trailer: "nuTU5XcZTLA" },
-        { movie: "The Pianist", stars: ["Adrien Brody"], trailer: "og9hFxxdSOg" },
+        { movie: "Gangs of New York", stars: ["Daniel Day-Lewis","Leonardo DiCaprio","Cameron Diaz"], trailer: "1bjh979vVG0", director: "Martin Scorsese" },
+        { movie: "The Hours", stars: ["Nicole Kidman","Meryl Streep","Julianne Moore"], trailer: "CkPWXUxIiXs", director: "Stephen Daldry" },
+        { movie: "The Lord of the Rings: The Two Towers", stars: ["Elijah Wood","Viggo Mortensen","Ian McKellen"], trailer: "nuTU5XcZTLA", director: "Peter Jackson" },
+        { movie: "The Pianist", stars: ["Adrien Brody"], trailer: "og9hFxxdSOg", director: "Roman Polanski" },
       ]},
     { year: 2002, movie: "A Beautiful Mind", director: "Ron Howard", trailer: "YWwAOutgWBQ",
       stars: ["Russell Crowe","Jennifer Connelly","Ed Harris"],
       nominees: [
-        { movie: "Gosford Park", stars: ["Maggie Smith","Helen Mirren","Clive Owen"], trailer: "o0m00hg1PKY" },
-        { movie: "In the Bedroom", stars: ["Sissy Spacek","Tom Wilkinson"], trailer: "BaLtKJiBOrg" },
-        { movie: "The Lord of the Rings: The Fellowship of the Ring", stars: ["Elijah Wood","Ian McKellen","Viggo Mortensen"], trailer: "_nZdmwHrcnw" },
-        { movie: "Moulin Rouge!", stars: ["Nicole Kidman","Ewan McGregor"], trailer: "2PpgPxjzbkA" },
+        { movie: "Gosford Park", stars: ["Maggie Smith","Helen Mirren","Clive Owen"], trailer: "o0m00hg1PKY", director: "Robert Altman" },
+        { movie: "In the Bedroom", stars: ["Sissy Spacek","Tom Wilkinson"], trailer: "BaLtKJiBOrg", director: "Todd Field" },
+        { movie: "The Lord of the Rings: The Fellowship of the Ring", stars: ["Elijah Wood","Ian McKellen","Viggo Mortensen"], trailer: "_nZdmwHrcnw", director: "Peter Jackson" },
+        { movie: "Moulin Rouge!", stars: ["Nicole Kidman","Ewan McGregor"], trailer: "2PpgPxjzbkA", director: "Baz Luhrmann" },
       ]},
     { year: 2001, movie: "Gladiator", director: "Ridley Scott", trailer: "P5ieIbInFpg",
       stars: ["Russell Crowe","Joaquin Phoenix","Connie Nielsen"],
       nominees: [
-        { movie: "Chocolat", stars: ["Juliette Binoche","Johnny Depp"], trailer: "692hOJq1KJE" },
-        { movie: "Crouching Tiger, Hidden Dragon", stars: ["Chow Yun-fat","Michelle Yeoh","Zhang Ziyi"], trailer: "q-HrIQLdaNE" },
-        { movie: "Erin Brockovich", stars: ["Julia Roberts","Albert Finney"], trailer: "jjqUUxIy_yk" },
-        { movie: "Traffic", stars: ["Michael Douglas","Benicio del Toro","Catherine Zeta-Jones"], trailer: "sZnOWu68Vw4" },
+        { movie: "Chocolat", stars: ["Juliette Binoche","Johnny Depp"], trailer: "692hOJq1KJE", director: "Lasse Hallström" },
+        { movie: "Crouching Tiger, Hidden Dragon", stars: ["Chow Yun-fat","Michelle Yeoh","Zhang Ziyi"], trailer: "q-HrIQLdaNE", director: "Ang Lee" },
+        { movie: "Erin Brockovich", stars: ["Julia Roberts","Albert Finney"], trailer: "jjqUUxIy_yk", director: "Steven Soderbergh" },
+        { movie: "Traffic", stars: ["Michael Douglas","Benicio del Toro","Catherine Zeta-Jones"], trailer: "sZnOWu68Vw4", director: "Steven Soderbergh" },
       ]},
     { year: 2000, movie: "American Beauty", director: "Sam Mendes", trailer: "UI9KalErX7w",
       stars: ["Kevin Spacey","Annette Bening","Thora Birch"],
       nominees: [
-        { movie: "The Cider House Rules", stars: ["Tobey Maguire","Charlize Theron","Michael Caine"], trailer: "pGdZBESUSfk" },
-        { movie: "The Green Mile", stars: ["Tom Hanks","Michael Clarke Duncan"], trailer: "Bg7epsq0OIQ" },
-        { movie: "The Insider", stars: ["Al Pacino","Russell Crowe"], trailer: "P-_ZdJxgwcU" },
-        { movie: "The Sixth Sense", stars: ["Bruce Willis","Haley Joel Osment","Toni Collette"], trailer: "HXG4HTIlc1U" },
+        { movie: "The Cider House Rules", stars: ["Tobey Maguire","Charlize Theron","Michael Caine"], trailer: "pGdZBESUSfk", director: "Lasse Hallström" },
+        { movie: "The Green Mile", stars: ["Tom Hanks","Michael Clarke Duncan"], trailer: "Bg7epsq0OIQ", director: "Frank Darabont" },
+        { movie: "The Insider", stars: ["Al Pacino","Russell Crowe"], trailer: "P-_ZdJxgwcU", director: "Michael Mann" },
+        { movie: "The Sixth Sense", stars: ["Bruce Willis","Haley Joel Osment","Toni Collette"], trailer: "HXG4HTIlc1U", director: "M. Night Shyamalan" },
       ]},
     { year: 1999, movie: "Shakespeare in Love", director: "John Madden", trailer: "v5R5La5f3eo",
       stars: ["Gwyneth Paltrow","Joseph Fiennes","Geoffrey Rush"],
       nominees: [
-        { movie: "Elizabeth", stars: ["Cate Blanchett","Geoffrey Rush"], trailer: "DyGBwrtIamw" },
-        { movie: "Life Is Beautiful", stars: ["Roberto Benigni","Nicoletta Braschi"], trailer: "pAYEQP8gx3w" },
-        { movie: "Saving Private Ryan", stars: ["Tom Hanks","Matt Damon","Tom Sizemore"], trailer: "RYExstiQlLc" },
-        { movie: "The Thin Red Line", stars: ["Sean Penn","Jim Caviezel","Nick Nolte"], trailer: "ejm0XvT3rB8" },
+        { movie: "Elizabeth", stars: ["Cate Blanchett","Geoffrey Rush"], trailer: "DyGBwrtIamw", director: "Shekhar Kapur" },
+        { movie: "Life Is Beautiful", stars: ["Roberto Benigni","Nicoletta Braschi"], trailer: "pAYEQP8gx3w", director: "Roberto Benigni" },
+        { movie: "Saving Private Ryan", stars: ["Tom Hanks","Matt Damon","Tom Sizemore"], trailer: "RYExstiQlLc", director: "Steven Spielberg" },
+        { movie: "The Thin Red Line", stars: ["Sean Penn","Jim Caviezel","Nick Nolte"], trailer: "ejm0XvT3rB8", director: "Terrence Malick" },
       ]},
     { year: 1998, movie: "Titanic", director: "James Cameron", trailer: "I7c1etV7D7g",
       stars: ["Leonardo DiCaprio","Kate Winslet","Billy Zane"],
       nominees: [
-        { movie: "As Good as It Gets", stars: ["Jack Nicholson","Helen Hunt","Greg Kinnear"], trailer: "t2d89afgtqg" },
-        { movie: "The Full Monty", stars: ["Robert Carlyle","Tom Wilkinson"], trailer: "d6bjW9OwSQc" },
-        { movie: "Good Will Hunting", stars: ["Matt Damon","Robin Williams","Ben Affleck"], trailer: "ReIJ1lbL-Q8" },
-        { movie: "L.A. Confidential", stars: ["Russell Crowe","Guy Pearce","Kim Basinger"], trailer: "QeIoelqDzsA" },
+        { movie: "As Good as It Gets", stars: ["Jack Nicholson","Helen Hunt","Greg Kinnear"], trailer: "t2d89afgtqg", director: "James L. Brooks" },
+        { movie: "The Full Monty", stars: ["Robert Carlyle","Tom Wilkinson"], trailer: "d6bjW9OwSQc", director: "Peter Cattaneo" },
+        { movie: "Good Will Hunting", stars: ["Matt Damon","Robin Williams","Ben Affleck"], trailer: "ReIJ1lbL-Q8", director: "Gus Van Sant" },
+        { movie: "L.A. Confidential", stars: ["Russell Crowe","Guy Pearce","Kim Basinger"], trailer: "QeIoelqDzsA", director: "Curtis Hanson" },
       ]},
     { year: 1997, movie: "The English Patient", director: "Anthony Minghella", trailer: "Xk_LRcOFT0c",
       stars: ["Ralph Fiennes","Kristin Scott Thomas","Juliette Binoche"],
       nominees: [
-        { movie: "Fargo", stars: ["Frances McDormand","William H. Macy","Steve Buscemi"], trailer: "aoOZDiswNaw" },
-        { movie: "Jerry Maguire", stars: ["Tom Cruise","Renée Zellweger","Cuba Gooding Jr."], trailer: "x1V_WduwrE8" },
-        { movie: "Secrets & Lies", stars: ["Brenda Blethyn","Marianne Jean-Baptiste"], trailer: "V1e9ovKQViw" },
-        { movie: "Shine", stars: ["Geoffrey Rush","Armin Mueller-Stahl"], trailer: "NaF9JIhPgdU" },
+        { movie: "Fargo", stars: ["Frances McDormand","William H. Macy","Steve Buscemi"], trailer: "aoOZDiswNaw", director: "Joel Coen" },
+        { movie: "Jerry Maguire", stars: ["Tom Cruise","Renée Zellweger","Cuba Gooding Jr."], trailer: "x1V_WduwrE8", director: "Cameron Crowe" },
+        { movie: "Secrets & Lies", stars: ["Brenda Blethyn","Marianne Jean-Baptiste"], trailer: "V1e9ovKQViw", director: "Mike Leigh" },
+        { movie: "Shine", stars: ["Geoffrey Rush","Armin Mueller-Stahl"], trailer: "NaF9JIhPgdU", director: "Scott Hicks" },
       ]},
   ];
 
   // Combined deck: hand-curated 1997-2025 first, then auto-fetched 1947-1996.
   const DECK = DECK_INLINE.concat(window.DECK_EXTENSION || []);
 
-  const STORE_KEY = "bp-flashcards-v2";
+  const STORE_KEY = "bp-flashcards-v3";
   // Default to the last 30 ceremony years
   const _maxYear = Math.max(...DECK.map(e => e.year));
   const _minYear = Math.min(...DECK.map(e => e.year));
   const DEFAULT_RANGE = { from: _maxYear - 29, to: _maxYear };
   const state = (() => {
-    const def = { direction: "y2m", order: null, idx: 0, mastered: [], onlyUnknown: false, theme: null, showNominees: false, range: DEFAULT_RANGE };
+    const def = { direction: "y2m", order: null, idx: 0, mastered: [], onlyUnknown: false, theme: null, showNominees: false, range: DEFAULT_RANGE, includeNominees: false };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       return Object.assign(def, saved || {});
     } catch { return def; }
   })();
   if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
-  if (!Array.isArray(state.order) || state.order.length !== DECK.length) {
-    state.order = shuffleArray(DECK.map((_,i)=>i));
-    state.idx = 0;
-  }
+  if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
+
+  // ─── Card pool ─────────────────────────────────────────────────────
+  // The pool is a flat list of cards: every winner, plus every nominee when the
+  // toggle is on. Each card has a stable id `${year}::${movie}`.
+  const cardId = (c) => `${c.year}::${c.movie}`;
+  function buildPool(includeNominees) {
+    const pool = [];
+    for (const w of DECK) {
+      const slate = (w.nominees || []).map(n => ({ movie: n.movie, trailer: n.trailer }));
+      pool.push({
+        year: w.year,
+        movie: w.movie,
+        director: w.director,
+        stars: w.stars,
+        trailer: w.trailer,
+        status: "winner",
+        slate,
+        winnerMovie: w.movie,
+      });
+      if (includeNominees) {
+        for (const n of w.nominees || []) {
+          pool.push({
+            year: w.year,
+            movie: n.movie,
+            director: n.director,
+            stars: n.stars,
+            trailer: n.trailer,
+            status: "nominee",
+            slate,
+            winnerMovie: w.movie,
+          });
+        }
+      }
+    }
+    return pool;
+  }
+  let POOL = buildPool(state.includeNominees);
+  let POOL_BY_ID = new Map(POOL.map(c => [cardId(c), c]));
+
+  // Validate state.order: must be an array of strings matching the pool.
+  function validateOrder() {
+    const poolIds = new Set(POOL_BY_ID.keys());
+    const ok = Array.isArray(state.order)
+      && state.order.length === POOL.length
+      && state.order.every(id => typeof id === "string" && poolIds.has(id));
+    if (!ok) {
+      state.order = shuffleArray(POOL.map(cardId));
+      state.idx = 0;
+    }
+  }
+  validateOrder();
+  // mastered is also now a list of cardIds; drop anything stale.
+  if (!Array.isArray(state.mastered)) state.mastered = [];
+  state.mastered = state.mastered.filter(x => typeof x === "string" && POOL_BY_ID.has(x));
+
+  function rebuildPool() {
+    POOL = buildPool(state.includeNominees);
+    POOL_BY_ID = new Map(POOL.map(c => [cardId(c), c]));
+    state.order = shuffleArray(POOL.map(cardId));
+    state.idx = 0;
+    state.mastered = state.mastered.filter(x => POOL_BY_ID.has(x));
+    imageChoice.clear();
+  }
 
   function shuffleArray(arr) {
     const a = arr.slice();
@@ -1324,15 +1471,16 @@
   const imageEl = document.getElementById("imageEl");
   const rerollBtn = document.getElementById("rerollBtn");
 
-  // Image manifest (year -> { images: [{f,r,k}] })
-  const IMAGES_BY_YEAR = {};
-  (window.MOVIE_IMAGES || []).forEach(m => { IMAGES_BY_YEAR[m.year] = m; });
-  const HAS_IMAGES = Object.keys(IMAGES_BY_YEAR).length > 0;
+  // Image manifest keyed by cardId so winners and nominees can both lookup.
+  const IMAGES_BY_CARD = {};
+  (window.MOVIE_IMAGES || []).forEach(m => { IMAGES_BY_CARD[`${m.year}::${m.movie}`] = m; });
+  const HAS_IMAGES = Object.keys(IMAGES_BY_CARD).length > 0;
   if (!HAS_IMAGES) {
     document.getElementById("dirImageToMovie").disabled = true;
     document.getElementById("dirImageToMovie").style.opacity = .4;
     document.getElementById("dirImageToMovie").title = "Image data not loaded — run fetch_images.py";
   }
+  const cardHasImages = (c) => !!IMAGES_BY_CARD[cardId(c)];
   // Per-card chosen image index (so navigating away & back keeps the same image until reroll)
   const imageChoice = new Map();
 
@@ -1370,27 +1518,27 @@
   const personInline = (name) => `<span class="person" data-person="${escapeHtml(name)}" tabindex="0"><em>${escapeHtml(name)}</em>${personLink(name)}</span>`;
 
   const SPOILERS = window.SPOILERS || {};
-  function safeImagesFor(year) {
-    const entry = IMAGES_BY_YEAR[year];
+  function safeImagesFor(c) {
+    const entry = IMAGES_BY_CARD[cardId(c)];
     if (!entry || !entry.images) return [];
     const safe = entry.images.filter(img => !SPOILERS[img.f]);
-    // Fallback to all images if every image was flagged (shouldn't happen, but safety net)
     return safe.length ? safe : entry.images;
   }
-  function pickImage(year, opts = {}) {
-    const safe = safeImagesFor(year);
+  function pickImage(c, opts = {}) {
+    const safe = safeImagesFor(c);
     if (!safe.length) return null;
     const n = safe.length;
+    const key = cardId(c);
     let idx;
-    if (opts.reroll && imageChoice.has(year)) {
-      const prev = imageChoice.get(year);
+    if (opts.reroll && imageChoice.has(key)) {
+      const prev = imageChoice.get(key);
       idx = (prev + 1 + Math.floor(Math.random() * (n - 1))) % n;
-    } else if (imageChoice.has(year)) {
-      idx = Math.min(imageChoice.get(year), n - 1);
+    } else if (imageChoice.has(key)) {
+      idx = Math.min(imageChoice.get(key), n - 1);
     } else {
       idx = Math.floor(Math.random() * n);
     }
-    imageChoice.set(year, idx);
+    imageChoice.set(key, idx);
     return safe[idx];
   }
 
@@ -1410,17 +1558,17 @@
   }
 
   const imageDotsEl = document.getElementById("imageDots");
-  function renderImageDots(year) {
-    const safe = safeImagesFor(year);
+  function renderImageDots(c) {
+    const safe = safeImagesFor(c);
     if (!safe.length) { imageDotsEl.innerHTML = ""; return; }
-    const sel = imageChoice.get(year) ?? 0;
+    const sel = imageChoice.get(cardId(c)) ?? 0;
     imageDotsEl.innerHTML = safe
       .map((_, i) => `<span${i === sel ? ' class="on"' : ""}></span>`)
       .join("");
   }
 
-  function setImage(year, opts) {
-    const img = pickImage(year, opts);
+  function setImage(c, opts) {
+    const img = pickImage(c, opts);
     if (!img) {
       imageEl.removeAttribute("src");
       imageEl.alt = "";
@@ -1432,14 +1580,21 @@
     imageEl.onerror = () => imageStage.classList.remove("loading");
     imageEl.src = movieImageURL(img);
     imageEl.alt = "";
-    renderImageDots(year);
+    renderImageDots(c);
   }
 
   const inRange = (y) => !state.range || (y >= state.range.from && y <= state.range.to);
   const activeOrder = () => {
-    return state.order.filter(i => {
-      if (!inRange(DECK[i].year)) return false;
-      if (state.onlyUnknown && state.mastered.includes(i)) return false;
+    return state.order.filter(id => {
+      const c = POOL_BY_ID.get(id);
+      if (!c) return false;
+      if (!inRange(c.year)) return false;
+      if (state.onlyUnknown && state.mastered.includes(id)) return false;
+      // Year → Title mode collapses to one card per year (winner-only) so each
+      // year has a unique answer. Nominee cards only appear in title/image modes.
+      if (state.direction === "y2m" && c.status === "nominee") return false;
+      // Image mode skips cards without images.
+      if (state.direction === "i2m" && !cardHasImages(c)) return false;
       return true;
     });
   };
@@ -1448,7 +1603,7 @@
     const ord = activeOrder();
     if (ord.length === 0) return null;
     state.idx = ((state.idx % ord.length) + ord.length) % ord.length;
-    return DECK[ord[state.idx]];
+    return POOL_BY_ID.get(ord[state.idx]);
   }
 
   function render() {
@@ -1466,78 +1621,113 @@
       return;
     }
 
-    const trueIdx = state.order[state.order.indexOf(DECK.indexOf(c))]; // = DECK index
-    const deckIdx = DECK.indexOf(c);
+    const cid = cardId(c);
 
     counter.textContent = `${state.idx + 1} / ${ord.length}`;
     progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
     streakEl.textContent = `★ ${state.mastered.length}`;
     document.getElementById("drillChip").hidden = !state.onlyUnknown;
+    nomDeckChip.hidden = !state.includeNominees;
     rangeChipEl.textContent = `${state.range.from}–${state.range.to}`;
 
-    // Front
+    const isWinner = c.status === "winner";
     const isImageMode = state.direction === "i2m" && HAS_IMAGES;
+    const isSlateView = state.direction === "y2m" && state.includeNominees;
+
+    // Front
     frontFace.classList.toggle("image-mode", isImageMode);
     imageStage.hidden = !isImageMode;
     if (isImageMode) {
-      setImage(c.year);
+      setImage(c);
     } else if (state.direction === "y2m") {
       front.tag.textContent = "Ceremony";
-      front.prompt.textContent = "What won Best Picture in";
+      front.prompt.textContent = isSlateView ? "Name the Best Picture slate of" : "What won Best Picture in";
       front.text.innerHTML = `<span>${c.year}</span>`;
     } else {
-      front.tag.textContent = "Best Picture";
-      front.prompt.textContent = "What year did this win?";
+      front.tag.textContent = isWinner ? "Best Picture" : "Best Picture · Nominee";
+      front.prompt.textContent = isWinner ? "What year did this win?" : "What year was this nominated?";
       front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}`;
     }
 
     // Back
-    back.tag.textContent = state.direction === "m2y" ? "Ceremony" : "Best Picture";
+    let backHTML = "";
 
-    let winnerBlock;
-    if (state.direction === "m2y") {
-      winnerBlock = `
-        <div class="prompt">Won Best Picture in</div>
-        <div class="answer"><span class="year" data-year="${c.year}">${c.year}</span></div>
-        <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span></div>
+    if (isSlateView) {
+      // Show the full slate of the year — winner highlighted, no director/cast.
+      back.tag.textContent = "Best Picture";
+      backHTML = `
+        <div class="prompt">${c.year} · Best Picture</div>
+        <div class="slate">
+          <div class="slate-row winner">
+            <span class="slate-marker">★</span>
+            <span class="film" data-movie="${escapeHtml(c.movie)}"><em>${escapeHtml(c.movie)}</em></span>
+            ${trailerLink(c.movie, c.trailer)}
+          </div>
+          ${(c.slate || []).map(n => `
+            <div class="slate-row">
+              <span class="slate-marker">·</span>
+              <span class="film" data-movie="${escapeHtml(n.movie)}"><em>${escapeHtml(n.movie)}</em></span>
+              ${trailerLink(n.movie, n.trailer)}
+            </div>
+          `).join("")}
+        </div>
       `;
     } else {
-      // y2m and i2m show the movie as the answer
-      winnerBlock = `
-        <div class="prompt">${c.year} · Best Picture</div>
-        <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}</div>
-      `;
+      // Normal back face: prompt + answer + credits + (optionally) other nominees.
+      back.tag.textContent = state.direction === "m2y" ? "Ceremony" : "Best Picture";
+
+      const statusBadge = isWinner
+        ? `<span class="badge winner">Winner ★</span>`
+        : `<span class="badge nominee">Nominated</span>`;
+
+      let answerBlock;
+      if (state.direction === "m2y") {
+        answerBlock = `
+          <div class="prompt">${isWinner ? "Won Best Picture in" : "Nominated for Best Picture in"}</div>
+          <div class="answer"><span class="year" data-year="${c.year}">${c.year}</span></div>
+          <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${statusBadge}</div>
+        `;
+      } else {
+        answerBlock = `
+          <div class="prompt">${c.year} · Best Picture ${statusBadge}</div>
+          <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}</div>
+        `;
+      }
+
+      const directorBlock = c.director ? `
+        <div class="credits">
+          <span class="label">dir.</span>
+          ${personInline(c.director)}
+        </div>` : "";
+
+      const starsBlock = c.stars && c.stars.length ? `
+        <div class="credits">
+          <span class="label">starring</span>
+          ${c.stars.map(personInline).join('<span class="sep">·</span>')}
+        </div>` : "";
+
+      const wonBlock = !isWinner ? `
+        <div class="credits subtle">
+          <span class="label">won that year:</span>
+          <span class="film" data-movie="${escapeHtml(c.winnerMovie)}"><em>${escapeHtml(c.winnerMovie)}</em></span>
+        </div>` : "";
+
+      const nomineesBlock = (state.showNominees && isWinner && c.slate && c.slate.length) ? `
+        <div class="nominees">
+          <h4>Other nominees · ${c.year}</h4>
+          <ul>
+            ${c.slate.map(n => `
+              <li>${filmInline(n.movie, n.trailer)}</li>
+            `).join("")}
+          </ul>
+        </div>` : "";
+
+      backHTML = answerBlock + directorBlock + starsBlock + wonBlock + nomineesBlock;
     }
 
-    const directorBlock = `
-      <div class="credits">
-        <span class="label">dir.</span>
-        ${personInline(c.director)}
-      </div>`;
+    back.body.innerHTML = backHTML;
 
-    const starsBlock = c.stars && c.stars.length ? `
-      <div class="credits">
-        <span class="label">starring</span>
-        ${c.stars.map(personInline).join('<span class="sep">·</span>')}
-      </div>` : "";
-
-    const nomineesBlock = (state.showNominees && c.nominees && c.nominees.length) ? `
-      <div class="nominees">
-        <h4>Other nominees · ${c.year}</h4>
-        <ul>
-          ${c.nominees.map(n => `
-            <li>
-              ${filmInline(n.movie, n.trailer)}
-              <span class="dash">—</span>
-              <span class="stars">${n.stars.map(personInline).join('<span class="sep">·</span>')}</span>
-            </li>
-          `).join("")}
-        </ul>
-      </div>` : "";
-
-    back.body.innerHTML = winnerBlock + directorBlock + starsBlock + nomineesBlock;
-
-    const mastered = state.mastered.includes(deckIdx);
+    const mastered = state.mastered.includes(cid);
     [starFront, starBack, starImage].forEach(s => s.classList.toggle("on", mastered));
   }
 
@@ -1572,7 +1762,7 @@
   function shuffle() {
     hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(DECK.map((_,i)=>i));
+      state.order = shuffleArray(POOL.map(cardId));
       state.idx = 0;
       imageChoice.clear();
       persist(); render();
@@ -1581,7 +1771,7 @@
   function reset() {
     hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(DECK.map((_,i)=>i));
+      state.order = shuffleArray(POOL.map(cardId));
       state.idx = 0; state.mastered = []; state.onlyUnknown = false;
       imageChoice.clear();
       onlyUnknownBtn.classList.remove("on");
@@ -1591,17 +1781,15 @@
   function toggleMastered() {
     const ord = activeOrder(); if (!ord.length) return;
     const c = currentCard(); if (!c) return;
-    const deckIdx = DECK.indexOf(c);
-    const i = state.mastered.indexOf(deckIdx);
+    const id = cardId(c);
+    const i = state.mastered.indexOf(id);
     const becameMastered = i < 0;
-    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(deckIdx);
+    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(id);
     persist();
     if (becameMastered) {
-      // advance after marking mastered
       const nextOrd = activeOrder();
       if (!nextOrd.length) { render(); return; }
       if (card.classList.contains("flipped")) card.classList.remove("flipped");
-      // when drill mode is on, the current card is now hidden — idx already points to "next"
       if (!state.onlyUnknown) state.idx = (state.idx + 1) % nextOrd.length;
       else state.idx = state.idx % nextOrd.length;
     }
@@ -1653,7 +1841,7 @@
   function rerollImage() {
     const c = currentCard();
     if (!c) return;
-    setImage(c.year, { reroll: true });
+    setImage(c, { reroll: true });
   }
   updateDirSeg();
   onlyUnknownBtn.classList.toggle("on", !!state.onlyUnknown);
@@ -1708,14 +1896,17 @@
   aboutClose.addEventListener("click", closeAbout);
   aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
 
-  // ─── Year range modal ──────────────────────────────────────────────
+  // ─── Year range / Deck modal ───────────────────────────────────────
   const rangeModal = document.getElementById("rangeModal");
   const rangeChipEl = document.getElementById("rangeChip");
+  const nomDeckChip = document.getElementById("nomDeckChip");
   const rangeFromSel = document.getElementById("rangeFrom");
   const rangeToSel = document.getElementById("rangeTo");
   const rangeCountEl = document.getElementById("rangeCount");
   const rangeClose = document.getElementById("rangeClose");
   const rangePresetsEl = document.getElementById("rangePresets");
+  const includeNomineesChk = document.getElementById("includeNomineesChk");
+  const nomineesToggleHint = document.getElementById("nomineesToggleHint");
 
   // Populate year dropdowns (descending)
   const allYears = Array.from(new Set(DECK.map(e => e.year))).sort((a,b) => b - a);
@@ -1736,12 +1927,21 @@
   function syncRangeUI() {
     rangeFromSel.value = state.range.from;
     rangeToSel.value = state.range.to;
-    const matchCount = DECK.filter(e => inRange(e.year)).length;
-    rangeCountEl.innerHTML = `<em>${matchCount}</em> ${matchCount === 1 ? "year" : "years"} in range`;
+    includeNomineesChk.checked = !!state.includeNominees;
+    const yearsInRange = DECK.filter(e => inRange(e.year)).length;
+    const cardsInRange = POOL.filter(c => inRange(c.year)).length;
+    rangeCountEl.innerHTML = `<em>${yearsInRange}</em> ${yearsInRange === 1 ? "year" : "years"} · <em>${cardsInRange}</em> cards in deck`;
     rangePresetsEl.querySelectorAll("button").forEach(b => {
       const on = +b.dataset.from === state.range.from && +b.dataset.to === state.range.to;
       b.classList.toggle("on", on);
     });
+  }
+  function toggleIncludeNominees() {
+    state.includeNominees = !state.includeNominees;
+    rebuildPool();
+    persist();
+    syncRangeUI();
+    unflipAndThen(() => render());
   }
 
   function applyRange(from, to) {
@@ -1775,6 +1975,7 @@
     if (!b) return;
     applyRange(+b.dataset.from, +b.dataset.to);
   });
+  includeNomineesChk.addEventListener("change", toggleIncludeNominees);
 
   // ─── Trailer modal ─────────────────────────────────────────────────
   const trailerModal = document.getElementById("trailerModal");

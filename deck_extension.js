@@ -17,7 +17,8 @@ window.DECK_EXTENSION = [
      "Bill Paxton",
      "Kevin Bacon"
     ],
-    "trailer": "B1KJ9XeZuxA"
+    "trailer": "B1KJ9XeZuxA",
+    "director": "Ron Howard"
    },
    {
     "movie": "The Postman",
@@ -26,7 +27,8 @@ window.DECK_EXTENSION = [
      "Philippe Noiret",
      "Maria Grazia Cucinotta"
     ],
-    "trailer": "0or7hSz-7gc"
+    "trailer": "0or7hSz-7gc",
+    "director": "Michael Radford"
    },
    {
     "movie": "Sense and Sensibility",
@@ -35,7 +37,8 @@ window.DECK_EXTENSION = [
      "Kate Winslet",
      "Alan Rickman"
     ],
-    "trailer": "5unqnd-CGz4"
+    "trailer": "5unqnd-CGz4",
+    "director": "Ang Lee"
    },
    {
     "movie": "Babe",
@@ -44,7 +47,8 @@ window.DECK_EXTENSION = [
      "Miriam Margolyes",
      "Danny Mann"
     ],
-    "trailer": "tVxeoUtVF0o"
+    "trailer": "tVxeoUtVF0o",
+    "director": "Chris Noonan"
    }
   ]
  },
@@ -66,7 +70,8 @@ window.DECK_EXTENSION = [
      "Samuel L. Jackson",
      "Uma Thurman"
     ],
-    "trailer": "tGpTpVyI_OQ"
+    "trailer": "tGpTpVyI_OQ",
+    "director": "Quentin Tarantino"
    },
    {
     "movie": "The Shawshank Redemption",
@@ -75,7 +80,8 @@ window.DECK_EXTENSION = [
      "Morgan Freeman",
      "Bob Gunton"
     ],
-    "trailer": "PLl99DlL6b4"
+    "trailer": "PLl99DlL6b4",
+    "director": "Frank Darabont"
    },
    {
     "movie": "Quiz Show",
@@ -84,7 +90,8 @@ window.DECK_EXTENSION = [
      "Rob Morrow",
      "Ralph Fiennes"
     ],
-    "trailer": "bj-m3Ddmn0E"
+    "trailer": "bj-m3Ddmn0E",
+    "director": "Robert Redford"
    },
    {
     "movie": "Four Weddings and a Funeral",
@@ -93,7 +100,8 @@ window.DECK_EXTENSION = [
      "Andie MacDowell",
      "Kristin Scott Thomas"
     ],
-    "trailer": "tvdlnbfaJ3E"
+    "trailer": "tvdlnbfaJ3E",
+    "director": "Mike Newell"
    }
   ]
  },
@@ -115,7 +123,8 @@ window.DECK_EXTENSION = [
      "Tommy Lee Jones",
      "Joe Pantoliano"
     ],
-    "trailer": "OlYsVq6FpuU"
+    "trailer": "OlYsVq6FpuU",
+    "director": "Andrew Davis"
    },
    {
     "movie": "The Piano",
@@ -124,7 +133,8 @@ window.DECK_EXTENSION = [
      "Harvey Keitel",
      "Sam Neill"
     ],
-    "trailer": "61ooIf1QDZo"
+    "trailer": "61ooIf1QDZo",
+    "director": "Jane Campion"
    },
    {
     "movie": "The Remains of the Day",
@@ -133,7 +143,8 @@ window.DECK_EXTENSION = [
      "Emma Thompson",
      "James Fox"
     ],
-    "trailer": "jALmEb72beg"
+    "trailer": "jALmEb72beg",
+    "director": "James Ivory"
    }
   ]
  },
@@ -155,7 +166,8 @@ window.DECK_EXTENSION = [
      "Jack Nicholson",
      "Demi Moore"
     ],
-    "trailer": "2T2pyqrr8UM"
+    "trailer": "2T2pyqrr8UM",
+    "director": "Rob Reiner"
    },
    {
     "movie": "The Crying Game",
@@ -164,7 +176,8 @@ window.DECK_EXTENSION = [
      "Miranda Richardson",
      "Jaye Davidson"
     ],
-    "trailer": "FRxmK7Q3yF4"
+    "trailer": "FRxmK7Q3yF4",
+    "director": "Neil Jordan"
    },
    {
     "movie": "Scent of a Woman",
@@ -173,7 +186,8 @@ window.DECK_EXTENSION = [
      "Chris O'Donnell",
      "James Rebhorn"
     ],
-    "trailer": "3GUvsJc3vvE"
+    "trailer": "3GUvsJc3vvE",
+    "director": "Martin Brest"
    },
    {
     "movie": "Howards End",
@@ -182,7 +196,8 @@ window.DECK_EXTENSION = [
      "Helena Bonham Carter",
      "Anthony Hopkins"
     ],
-    "trailer": "jI54a8wfPmM"
+    "trailer": "jI54a8wfPmM",
+    "director": "James Ivory"
    }
   ]
  },
@@ -204,7 +219,8 @@ window.DECK_EXTENSION = [
      "Barbra Streisand",
      "Blythe Danner"
     ],
-    "trailer": "gyy_A4wNQa8"
+    "trailer": "gyy_A4wNQa8",
+    "director": "Barbra Streisand"
    },
    {
     "movie": "Bugsy",
@@ -213,7 +229,8 @@ window.DECK_EXTENSION = [
      "Annette Bening",
      "Harvey Keitel"
     ],
-    "trailer": "btj7FNzT2j8"
+    "trailer": "btj7FNzT2j8",
+    "director": "Barry Levinson"
    },
    {
     "movie": "JFK",
@@ -222,7 +239,8 @@ window.DECK_EXTENSION = [
      "Tommy Lee Jones",
      "Gary Oldman"
     ],
-    "trailer": "s8az13Y1rUM"
+    "trailer": "s8az13Y1rUM",
+    "director": "Oliver Stone"
    },
    {
     "movie": "Beauty and the Beast",
@@ -231,7 +249,8 @@ window.DECK_EXTENSION = [
      "Robby Benson",
      "Richard White"
     ],
-    "trailer": "UUVpyeS_fVw"
+    "trailer": "UUVpyeS_fVw",
+    "director": "Gary Trousdale"
    }
   ]
  },
@@ -253,7 +272,8 @@ window.DECK_EXTENSION = [
      "Demi Moore",
      "Whoopi Goldberg"
     ],
-    "trailer": "jWvUTmvaOyU"
+    "trailer": "jWvUTmvaOyU",
+    "director": "Jerry Zucker"
    },
    {
     "movie": "GoodFellas",
@@ -262,7 +282,8 @@ window.DECK_EXTENSION = [
      "Ray Liotta",
      "Joe Pesci"
     ],
-    "trailer": "PTBRNXGQR9Q"
+    "trailer": "PTBRNXGQR9Q",
+    "director": "Martin Scorsese"
    },
    {
     "movie": "The Godfather Part III",
@@ -271,7 +292,8 @@ window.DECK_EXTENSION = [
      "Diane Keaton",
      "Talia Shire"
     ],
-    "trailer": "qQR85-nGk2M"
+    "trailer": "qQR85-nGk2M",
+    "director": "Francis Ford Coppola"
    },
    {
     "movie": "Awakenings",
@@ -280,7 +302,8 @@ window.DECK_EXTENSION = [
      "Robin Williams",
      "John Heard"
     ],
-    "trailer": "7exeVt7CaE4"
+    "trailer": "7exeVt7CaE4",
+    "director": "Penny Marshall"
    }
   ]
  },
@@ -302,7 +325,8 @@ window.DECK_EXTENSION = [
      "Robert Sean Leonard",
      "Ethan Hawke"
     ],
-    "trailer": "s_jsDreXFZU"
+    "trailer": "s_jsDreXFZU",
+    "director": "Peter Weir"
    },
    {
     "movie": "Born on the Fourth of July",
@@ -311,7 +335,8 @@ window.DECK_EXTENSION = [
      "Raymond J. Barry",
      "Caroline Kava"
     ],
-    "trailer": "75sZjnTWur0"
+    "trailer": "75sZjnTWur0",
+    "director": "Oliver Stone"
    },
    {
     "movie": "Field of Dreams",
@@ -320,7 +345,8 @@ window.DECK_EXTENSION = [
      "Amy Madigan",
      "Gaby Hoffmann"
     ],
-    "trailer": "-jUOGhUqGdk"
+    "trailer": "-jUOGhUqGdk",
+    "director": "Phil Alden Robinson"
    },
    {
     "movie": "My Left Foot: The Story of Christy Brown",
@@ -329,7 +355,8 @@ window.DECK_EXTENSION = [
      "Brenda Fricker",
      "Alison Whelan"
     ],
-    "trailer": "xj7yME23Hes"
+    "trailer": "xj7yME23Hes",
+    "director": "Jim Sheridan"
    }
   ]
  },
@@ -351,7 +378,8 @@ window.DECK_EXTENSION = [
      "Kathleen Turner",
      "Geena Davis"
     ],
-    "trailer": "lRENOT13vBM"
+    "trailer": "lRENOT13vBM",
+    "director": "Lawrence Kasdan"
    },
    {
     "movie": "Working Girl",
@@ -360,7 +388,8 @@ window.DECK_EXTENSION = [
      "Harrison Ford",
      "Sigourney Weaver"
     ],
-    "trailer": "va1UqFivi6A"
+    "trailer": "va1UqFivi6A",
+    "director": "Mike Nichols"
    },
    {
     "movie": "Dangerous Liaisons",
@@ -369,7 +398,8 @@ window.DECK_EXTENSION = [
      "John Malkovich",
      "Michelle Pfeiffer"
     ],
-    "trailer": "dO3U2dBwuWA"
+    "trailer": "dO3U2dBwuWA",
+    "director": "Stephen Frears"
    },
    {
     "movie": "Mississippi Burning",
@@ -378,7 +408,8 @@ window.DECK_EXTENSION = [
      "Willem Dafoe",
      "Frances McDormand"
     ],
-    "trailer": "0nxToB95XJg"
+    "trailer": "0nxToB95XJg",
+    "director": "Alan Parker"
    }
   ]
  },
@@ -400,7 +431,8 @@ window.DECK_EXTENSION = [
      "Glenn Close",
      "Anne Archer"
     ],
-    "trailer": "e3oF8Po4qWc"
+    "trailer": "e3oF8Po4qWc",
+    "director": "Adrian Lyne"
    },
    {
     "movie": "Moonstruck",
@@ -409,7 +441,8 @@ window.DECK_EXTENSION = [
      "Nicolas Cage",
      "Vincent Gardenia"
     ],
-    "trailer": "MN3sPq9RJKM"
+    "trailer": "MN3sPq9RJKM",
+    "director": "Norman Jewison"
    },
    {
     "movie": "Broadcast News",
@@ -418,7 +451,8 @@ window.DECK_EXTENSION = [
      "William Hurt",
      "Albert Brooks"
     ],
-    "trailer": "WXYq-X3E7Ag"
+    "trailer": "WXYq-X3E7Ag",
+    "director": "James L. Brooks"
    },
    {
     "movie": "Hope and Glory",
@@ -427,7 +461,8 @@ window.DECK_EXTENSION = [
      "Geraldine Muir",
      "Sarah Miles"
     ],
-    "trailer": "32wyLEBf60c"
+    "trailer": "32wyLEBf60c",
+    "director": "John Boorman"
    }
   ]
  },
@@ -449,7 +484,8 @@ window.DECK_EXTENSION = [
      "Julian Sands",
      "Maggie Smith"
     ],
-    "trailer": "PW6W3EsfZaE"
+    "trailer": "PW6W3EsfZaE",
+    "director": "James Ivory"
    },
    {
     "movie": "The Mission",
@@ -458,7 +494,8 @@ window.DECK_EXTENSION = [
      "Jeremy Irons",
      "Ray McAnally"
     ],
-    "trailer": "HU14R9hbUFc"
+    "trailer": "HU14R9hbUFc",
+    "director": "Roland Joffé"
    },
    {
     "movie": "Hannah and Her Sisters",
@@ -467,7 +504,8 @@ window.DECK_EXTENSION = [
      "Barbara Hershey",
      "Dianne Wiest"
     ],
-    "trailer": "8YPsjtK60ds"
+    "trailer": "8YPsjtK60ds",
+    "director": "Woody Allen"
    },
    {
     "movie": "Children of a Lesser God",
@@ -476,7 +514,8 @@ window.DECK_EXTENSION = [
      "Marlee Matlin",
      "Piper Laurie"
     ],
-    "trailer": "E0AMKG31wME"
+    "trailer": "E0AMKG31wME",
+    "director": "Randa Haines"
    }
   ]
  },
@@ -498,7 +537,8 @@ window.DECK_EXTENSION = [
      "Whoopi Goldberg",
      "Margaret Avery"
     ],
-    "trailer": "_h-efLS7VV4"
+    "trailer": "_h-efLS7VV4",
+    "director": "Steven Spielberg"
    },
    {
     "movie": "Prizzi's Honor",
@@ -507,7 +547,8 @@ window.DECK_EXTENSION = [
      "Kathleen Turner",
      "Robert Loggia"
     ],
-    "trailer": "VEz13l-ULX0"
+    "trailer": "VEz13l-ULX0",
+    "director": "John Huston"
    },
    {
     "movie": "Witness",
@@ -516,7 +557,8 @@ window.DECK_EXTENSION = [
      "Kelly McGillis",
      "Josef Sommer"
     ],
-    "trailer": "dMie2KoPVkc"
+    "trailer": "dMie2KoPVkc",
+    "director": "Peter Weir"
    },
    {
     "movie": "Kiss of the Spider Woman",
@@ -525,7 +567,8 @@ window.DECK_EXTENSION = [
      "Raúl Juliá",
      "Sonia Braga"
     ],
-    "trailer": "faiLjJOR_YE"
+    "trailer": "faiLjJOR_YE",
+    "director": "Héctor Babenco"
    }
   ]
  },
@@ -547,7 +590,8 @@ window.DECK_EXTENSION = [
      "Lindsay Crouse",
      "John Malkovich"
     ],
-    "trailer": "PzCPWZbsN2E"
+    "trailer": "PzCPWZbsN2E",
+    "director": "Robert Benton"
    },
    {
     "movie": "The Killing Fields",
@@ -556,7 +600,8 @@ window.DECK_EXTENSION = [
      "Haing S. Ngor",
      "John Malkovich"
     ],
-    "trailer": "mTfqXmVVjPU"
+    "trailer": "mTfqXmVVjPU",
+    "director": "Roland Joffé"
    },
    {
     "movie": "A Passage to India",
@@ -565,7 +610,8 @@ window.DECK_EXTENSION = [
      "Victor Banerjee",
      "Peggy Ashcroft"
     ],
-    "trailer": "7mIHIofacDg"
+    "trailer": "7mIHIofacDg",
+    "director": "David Lean"
    },
    {
     "movie": "A Soldier's Story",
@@ -574,7 +620,8 @@ window.DECK_EXTENSION = [
      "Adolph Caesar",
      "Art Evans"
     ],
-    "trailer": "pwrR_zIVFa8"
+    "trailer": "pwrR_zIVFa8",
+    "director": "Norman Jewison"
    }
   ]
  },
@@ -596,7 +643,8 @@ window.DECK_EXTENSION = [
      "Tom Courtenay",
      "Edward Fox"
     ],
-    "trailer": null
+    "trailer": null,
+    "director": "Peter Yates"
    },
    {
     "movie": "The Big Chill",
@@ -605,7 +653,8 @@ window.DECK_EXTENSION = [
      "Glenn Close",
      "Jeff Goldblum"
     ],
-    "trailer": "hHUwAZdQFBg"
+    "trailer": "hHUwAZdQFBg",
+    "director": "Lawrence Kasdan"
    },
    {
     "movie": "Tender Mercies",
@@ -614,7 +663,8 @@ window.DECK_EXTENSION = [
      "Tess Harper",
      "Betty Buckley"
     ],
-    "trailer": "Bms1Yy355gw"
+    "trailer": "Bms1Yy355gw",
+    "director": "Bruce Beresford"
    },
    {
     "movie": "The Right Stuff",
@@ -623,7 +673,8 @@ window.DECK_EXTENSION = [
      "Scott Glenn",
      "Ed Harris"
     ],
-    "trailer": "G6dFmkvEKGE"
+    "trailer": "G6dFmkvEKGE",
+    "director": "Philip Kaufman"
    }
   ]
  },
@@ -645,7 +696,8 @@ window.DECK_EXTENSION = [
      "Drew Barrymore",
      "Robert MacNaughton"
     ],
-    "trailer": "NsvdZ_z56c0"
+    "trailer": "NsvdZ_z56c0",
+    "director": "Steven Spielberg"
    },
    {
     "movie": "Tootsie",
@@ -654,7 +706,8 @@ window.DECK_EXTENSION = [
      "Jessica Lange",
      "Teri Garr"
     ],
-    "trailer": "IS-rkKwfuJU"
+    "trailer": "IS-rkKwfuJU",
+    "director": "Sydney Pollack"
    },
    {
     "movie": "Missing",
@@ -663,7 +716,8 @@ window.DECK_EXTENSION = [
      "Sissy Spacek",
      "Melanie Mayron"
     ],
-    "trailer": "HILCFL3-2ys"
+    "trailer": "HILCFL3-2ys",
+    "director": "Costa-Gavras"
    },
    {
     "movie": "The Verdict",
@@ -672,7 +726,8 @@ window.DECK_EXTENSION = [
      "Charlotte Rampling",
      "Jack Warden"
     ],
-    "trailer": "wwqUtCeODOk"
+    "trailer": "wwqUtCeODOk",
+    "director": "Sidney Lumet"
    }
   ]
  },
@@ -694,7 +749,8 @@ window.DECK_EXTENSION = [
      "Karen Allen",
      "Paul Freeman"
     ],
-    "trailer": "0xQSIdSRlAk"
+    "trailer": "0xQSIdSRlAk",
+    "director": "Steven Spielberg"
    },
    {
     "movie": "On Golden Pond",
@@ -703,7 +759,8 @@ window.DECK_EXTENSION = [
      "Henry Fonda",
      "Jane Fonda"
     ],
-    "trailer": "whi7V5qkJwQ"
+    "trailer": "whi7V5qkJwQ",
+    "director": "Mark Rydell"
    },
    {
     "movie": "Reds",
@@ -712,7 +769,8 @@ window.DECK_EXTENSION = [
      "Diane Keaton",
      "Edward Herrmann"
     ],
-    "trailer": "MLAnTuCs6_g"
+    "trailer": "MLAnTuCs6_g",
+    "director": "Warren Beatty"
    },
    {
     "movie": "Atlantic City",
@@ -721,7 +779,8 @@ window.DECK_EXTENSION = [
      "Susan Sarandon",
      "Kate Reid"
     ],
-    "trailer": "fwDjsStvBbA"
+    "trailer": "fwDjsStvBbA",
+    "director": "Louis Malle"
    }
   ]
  },
@@ -743,7 +802,8 @@ window.DECK_EXTENSION = [
      "John Hurt",
      "Anne Bancroft"
     ],
-    "trailer": "kxb_1457gGs"
+    "trailer": "kxb_1457gGs",
+    "director": "David Lynch"
    },
    {
     "movie": "Raging Bull",
@@ -752,7 +812,8 @@ window.DECK_EXTENSION = [
      "Cathy Moriarty",
      "Joe Pesci"
     ],
-    "trailer": "G5RHRg6zEhY"
+    "trailer": "G5RHRg6zEhY",
+    "director": "Martin Scorsese"
    },
    {
     "movie": "Tess",
@@ -761,7 +822,8 @@ window.DECK_EXTENSION = [
      "Peter Firth",
      "Leigh Lawson"
     ],
-    "trailer": "hKZQ7xJvTgA"
+    "trailer": "hKZQ7xJvTgA",
+    "director": "Albert Gaál"
    },
    {
     "movie": "Coal Miner's Daughter",
@@ -770,7 +832,8 @@ window.DECK_EXTENSION = [
      "Tommy Lee Jones",
      "Levon Helm"
     ],
-    "trailer": "UFPqPSQoZFE"
+    "trailer": "UFPqPSQoZFE",
+    "director": "Michael Apted"
    }
   ]
  },
@@ -792,7 +855,8 @@ window.DECK_EXTENSION = [
      "Marlon Brando",
      "Frederic Forrest"
     ],
-    "trailer": "9l-ViOOFH-s"
+    "trailer": "9l-ViOOFH-s",
+    "director": "Francis Ford Coppola"
    },
    {
     "movie": "Breaking Away",
@@ -801,7 +865,8 @@ window.DECK_EXTENSION = [
      "Dennis Quaid",
      "Daniel Stern"
     ],
-    "trailer": "ijT_4EmWETk"
+    "trailer": "ijT_4EmWETk",
+    "director": "Peter Yates"
    },
    {
     "movie": "Norma Rae",
@@ -810,7 +875,8 @@ window.DECK_EXTENSION = [
      "Beau Bridges",
      "Ron Leibman"
     ],
-    "trailer": "45CX8W9peTs"
+    "trailer": "45CX8W9peTs",
+    "director": "Martin Ritt"
    },
    {
     "movie": "All That Jazz",
@@ -819,7 +885,8 @@ window.DECK_EXTENSION = [
      "Jessica Lange",
      "Ann Reinking"
     ],
-    "trailer": "8_aIhkKlrwk"
+    "trailer": "8_aIhkKlrwk",
+    "director": "Bob Fosse"
    }
   ]
  },
@@ -841,7 +908,8 @@ window.DECK_EXTENSION = [
      "Irene Miracle",
      "Bo Hopkins"
     ],
-    "trailer": "lhuutAnXBzQ"
+    "trailer": "lhuutAnXBzQ",
+    "director": "Alan Parker"
    },
    {
     "movie": "Heaven Can Wait",
@@ -850,7 +918,8 @@ window.DECK_EXTENSION = [
      "Julie Christie",
      "James Mason"
     ],
-    "trailer": "SDLbLbsxRKQ"
+    "trailer": "SDLbLbsxRKQ",
+    "director": "Buck Henry"
    },
    {
     "movie": "Coming Home",
@@ -859,7 +928,8 @@ window.DECK_EXTENSION = [
      "Jon Voight",
      "Bruce Dern"
     ],
-    "trailer": "8sSdLNcmsBs"
+    "trailer": "8sSdLNcmsBs",
+    "director": "Hal Ashby"
    },
    {
     "movie": "An Unmarried Woman",
@@ -868,7 +938,8 @@ window.DECK_EXTENSION = [
      "Alan Bates",
      "Michael Murphy"
     ],
-    "trailer": "xneTKSwNkug"
+    "trailer": "xneTKSwNkug",
+    "director": "Paul Mazursky"
    }
   ]
  },
@@ -890,7 +961,8 @@ window.DECK_EXTENSION = [
      "Harrison Ford",
      "Carrie Fisher"
     ],
-    "trailer": "i-vsILeJ8_8"
+    "trailer": "i-vsILeJ8_8",
+    "director": "George Lucas"
    },
    {
     "movie": "The Turning Point",
@@ -899,7 +971,8 @@ window.DECK_EXTENSION = [
      "Shirley MacLaine",
      "Tom Skerritt"
     ],
-    "trailer": null
+    "trailer": null,
+    "director": "Herbert Ross"
    },
    {
     "movie": "The Goodbye Girl",
@@ -908,7 +981,8 @@ window.DECK_EXTENSION = [
      "Marsha Mason",
      "Quinn Cummings"
     ],
-    "trailer": "4wiL-ry9XMI"
+    "trailer": "4wiL-ry9XMI",
+    "director": "Herbert Ross"
    },
    {
     "movie": "Julia",
@@ -917,7 +991,8 @@ window.DECK_EXTENSION = [
      "Vanessa Redgrave",
      "Jason Robards"
     ],
-    "trailer": "U_u7Hvj14s0"
+    "trailer": "U_u7Hvj14s0",
+    "director": "Fred Zinnemann"
    }
   ]
  },
@@ -939,7 +1014,8 @@ window.DECK_EXTENSION = [
      "Jodie Foster",
      "Cybill Shepherd"
     ],
-    "trailer": "zdqCqDSTVNI"
+    "trailer": "zdqCqDSTVNI",
+    "director": "Martin Scorsese"
    },
    {
     "movie": "Bound for Glory",
@@ -948,7 +1024,8 @@ window.DECK_EXTENSION = [
      "Ronny Cox",
      "Melinda Dillon"
     ],
-    "trailer": "N938hAHUF_E"
+    "trailer": "N938hAHUF_E",
+    "director": "Hal Ashby"
    },
    {
     "movie": "All the President's Men",
@@ -957,7 +1034,8 @@ window.DECK_EXTENSION = [
      "Dustin Hoffman",
      "Jack Warden"
     ],
-    "trailer": "k5y8SW2KyTY"
+    "trailer": "k5y8SW2KyTY",
+    "director": "Alan J. Pakula"
    },
    {
     "movie": "Network",
@@ -966,7 +1044,8 @@ window.DECK_EXTENSION = [
      "William Holden",
      "Peter Finch"
     ],
-    "trailer": "T-PyQ1gMT6o"
+    "trailer": "T-PyQ1gMT6o",
+    "director": "Sidney Lumet"
    }
   ]
  },
@@ -988,7 +1067,8 @@ window.DECK_EXTENSION = [
      "Robert Shaw",
      "Richard Dreyfuss"
     ],
-    "trailer": "N9hzLQUGr34"
+    "trailer": "N9hzLQUGr34",
+    "director": "Steven Spielberg"
    },
    {
     "movie": "Dog Day Afternoon",
@@ -997,7 +1077,8 @@ window.DECK_EXTENSION = [
      "John Cazale",
      "Charles Durning"
     ],
-    "trailer": "3STmwLDDBcI"
+    "trailer": "3STmwLDDBcI",
+    "director": "Sidney Lumet"
    },
    {
     "movie": "Barry Lyndon",
@@ -1006,7 +1087,8 @@ window.DECK_EXTENSION = [
      "Marisa Berenson",
      "Patrick Magee"
     ],
-    "trailer": "JH8j_1dUlUU"
+    "trailer": "JH8j_1dUlUU",
+    "director": "Stanley Kubrick"
    }
   ]
  },
@@ -1028,7 +1110,8 @@ window.DECK_EXTENSION = [
      "Paul Newman",
      "William Holden"
     ],
-    "trailer": "nyTqrtZFWeQ"
+    "trailer": "nyTqrtZFWeQ",
+    "director": "John Guillermin"
    },
    {
     "movie": "Chinatown",
@@ -1037,7 +1120,8 @@ window.DECK_EXTENSION = [
      "Faye Dunaway",
      "John Huston"
     ],
-    "trailer": "RKdXf-fiBcw"
+    "trailer": "RKdXf-fiBcw",
+    "director": "Roman Polanski"
    },
    {
     "movie": "The Conversation",
@@ -1046,7 +1130,8 @@ window.DECK_EXTENSION = [
      "John Cazale",
      "Allen Garfield"
     ],
-    "trailer": "mDgKPQWyjRk"
+    "trailer": "mDgKPQWyjRk",
+    "director": "Francis Ford Coppola"
    },
    {
     "movie": "Lenny",
@@ -1055,7 +1140,8 @@ window.DECK_EXTENSION = [
      "Valerie Perrine",
      "Jan Miner"
     ],
-    "trailer": "0EP_sAGnkGo"
+    "trailer": "0EP_sAGnkGo",
+    "director": "Bob Fosse"
    }
   ]
  },
@@ -1077,7 +1163,8 @@ window.DECK_EXTENSION = [
      "Ron Howard",
      "Paul Le Mat"
     ],
-    "trailer": "hH0FXaU3e-A"
+    "trailer": "hH0FXaU3e-A",
+    "director": "George Lucas"
    },
    {
     "movie": "Cries and Whispers",
@@ -1086,7 +1173,8 @@ window.DECK_EXTENSION = [
      "Ingrid Thulin",
      "Kari Sylwan"
     ],
-    "trailer": "zc8f9ZlMnTU"
+    "trailer": "zc8f9ZlMnTU",
+    "director": "Ingmar Bergman"
    },
    {
     "movie": "A Touch of Class",
@@ -1095,7 +1183,8 @@ window.DECK_EXTENSION = [
      "Glenda Jackson",
      "Paul Sorvino"
     ],
-    "trailer": "RdCP7RHeYKI"
+    "trailer": "RdCP7RHeYKI",
+    "director": "Melvin Frank"
    }
   ]
  },
@@ -1117,7 +1206,8 @@ window.DECK_EXTENSION = [
      "Liv Ullmann",
      "Eddie Axberg"
     ],
-    "trailer": "AgfJTnh1vc0"
+    "trailer": "AgfJTnh1vc0",
+    "director": "Jan Troell"
    },
    {
     "movie": "Deliverance",
@@ -1126,7 +1216,8 @@ window.DECK_EXTENSION = [
      "Burt Reynolds",
      "Ned Beatty"
     ],
-    "trailer": "iuOUF1-4P3c"
+    "trailer": "iuOUF1-4P3c",
+    "director": "John Boorman"
    },
    {
     "movie": "Cabaret",
@@ -1135,7 +1226,8 @@ window.DECK_EXTENSION = [
      "Michael York",
      "Helmut Griem"
     ],
-    "trailer": "6DZ2wtichOM"
+    "trailer": "6DZ2wtichOM",
+    "director": "Bob Fosse"
    },
    {
     "movie": "Sounder",
@@ -1144,7 +1236,8 @@ window.DECK_EXTENSION = [
      "Paul Winfield",
      "Kevin Hooks"
     ],
-    "trailer": null
+    "trailer": null,
+    "director": "Martin Ritt"
    }
   ]
  },
@@ -1166,7 +1259,8 @@ window.DECK_EXTENSION = [
      "Patrick Magee",
      "Carl Duering"
     ],
-    "trailer": "T54uZPI4Z8A"
+    "trailer": "T54uZPI4Z8A",
+    "director": "Stanley Kubrick"
    },
    {
     "movie": "Nicholas and Alexandra",
@@ -1175,7 +1269,8 @@ window.DECK_EXTENSION = [
      "Janet Suzman",
      "Roderic Noble"
     ],
-    "trailer": "Lbwqgfnh2-Y"
+    "trailer": "Lbwqgfnh2-Y",
+    "director": "Franklin J. Schaffner"
    },
    {
     "movie": "Fiddler on the Roof",
@@ -1184,7 +1279,8 @@ window.DECK_EXTENSION = [
      "Norma Crane",
      "Leonard Frey"
     ],
-    "trailer": "1Aq5H3PX9xM"
+    "trailer": "1Aq5H3PX9xM",
+    "director": "Norman Jewison"
    },
    {
     "movie": "The Last Picture Show",
@@ -1193,7 +1289,8 @@ window.DECK_EXTENSION = [
      "Cybill Shepherd",
      "Jeff Bridges"
     ],
-    "trailer": "NufO2KXHbKQ"
+    "trailer": "NufO2KXHbKQ",
+    "director": "Peter Bogdanovich"
    }
   ]
  },
@@ -1215,7 +1312,8 @@ window.DECK_EXTENSION = [
      "Elliott Gould",
      "Tom Skerritt"
     ],
-    "trailer": "NJ6quIFtbXs"
+    "trailer": "NJ6quIFtbXs",
+    "director": "Robert Altman"
    },
    {
     "movie": "Airport",
@@ -1224,7 +1322,8 @@ window.DECK_EXTENSION = [
      "Dana Wynter",
      "Dean Martin"
     ],
-    "trailer": "PACKbKt8MOw"
+    "trailer": "PACKbKt8MOw",
+    "director": "George Seaton"
    },
    {
     "movie": "Love Story",
@@ -1233,7 +1332,8 @@ window.DECK_EXTENSION = [
      "Ryan O'Neal",
      "John Marley"
     ],
-    "trailer": "fgfy2guZu58"
+    "trailer": "fgfy2guZu58",
+    "director": "Arthur Hiller"
    },
    {
     "movie": "Five Easy Pieces",
@@ -1242,7 +1342,8 @@ window.DECK_EXTENSION = [
      "Karen Black",
      "Susan Anspach"
     ],
-    "trailer": "VkcXtLz-BaM"
+    "trailer": "VkcXtLz-BaM",
+    "director": "Bob Rafelson"
    }
   ]
  },
@@ -1264,7 +1365,8 @@ window.DECK_EXTENSION = [
      "Irene Papas",
      "Jean-Louis Trintignant"
     ],
-    "trailer": "7E3QUHUMe5I"
+    "trailer": "7E3QUHUMe5I",
+    "director": "Costa-Gavras"
    },
    {
     "movie": "Butch Cassidy and the Sundance Kid",
@@ -1273,7 +1375,8 @@ window.DECK_EXTENSION = [
      "Robert Redford",
      "Katharine Ross"
     ],
-    "trailer": "YdJW2UxvSFQ"
+    "trailer": "YdJW2UxvSFQ",
+    "director": "George Roy Hill"
    },
    {
     "movie": "Hello, Dolly!",
@@ -1282,7 +1385,8 @@ window.DECK_EXTENSION = [
      "Walter Matthau",
      "Michael Crawford"
     ],
-    "trailer": "OYxJKrl3uHQ"
+    "trailer": "OYxJKrl3uHQ",
+    "director": "Gene Kelly"
    },
    {
     "movie": "Anne of the Thousand Days",
@@ -1291,7 +1395,8 @@ window.DECK_EXTENSION = [
      "Geneviève Bujold",
      "Irene Papas"
     ],
-    "trailer": "c0pA8QMEEww"
+    "trailer": "c0pA8QMEEww",
+    "director": "Charles Jarrott"
    }
   ]
  },
@@ -1313,7 +1418,8 @@ window.DECK_EXTENSION = [
      "Olivia Hussey",
      "John McEnery"
     ],
-    "trailer": "gvCpDknV6Ps"
+    "trailer": "gvCpDknV6Ps",
+    "director": "Franco Zeffirelli"
    },
    {
     "movie": "Rachel, Rachel",
@@ -1322,7 +1428,8 @@ window.DECK_EXTENSION = [
      "James Olson",
      "Kate Harrington"
     ],
-    "trailer": "D_j6FYGb0_w"
+    "trailer": "D_j6FYGb0_w",
+    "director": "Paul Newman"
    },
    {
     "movie": "The Lion in Winter",
@@ -1331,7 +1438,8 @@ window.DECK_EXTENSION = [
      "Katharine Hepburn",
      "Anthony Hopkins"
     ],
-    "trailer": "Pqz3gkrmBbo"
+    "trailer": "Pqz3gkrmBbo",
+    "director": "Anthony Harvey"
    },
    {
     "movie": "Funny Girl",
@@ -1340,7 +1448,8 @@ window.DECK_EXTENSION = [
      "Omar Sharif",
      "Kay Medford"
     ],
-    "trailer": "qzOFC4XiqL0"
+    "trailer": "qzOFC4XiqL0",
+    "director": "William Wyler"
    }
   ]
  },
@@ -1362,7 +1471,8 @@ window.DECK_EXTENSION = [
      "Anne Bancroft",
      "Katharine Ross"
     ],
-    "trailer": "KVNFaxJspMQ"
+    "trailer": "KVNFaxJspMQ",
+    "director": "Mike Nichols"
    },
    {
     "movie": "Guess Who's Coming to Dinner",
@@ -1371,7 +1481,8 @@ window.DECK_EXTENSION = [
      "Sidney Poitier",
      "Katharine Hepburn"
     ],
-    "trailer": "Rg1pnX3nYc8"
+    "trailer": "Rg1pnX3nYc8",
+    "director": "Stanley Kramer"
    },
    {
     "movie": "Doctor Dolittle",
@@ -1380,7 +1491,8 @@ window.DECK_EXTENSION = [
      "Samantha Eggar",
      "Anthony Newley"
     ],
-    "trailer": "49CmzIRX1k0"
+    "trailer": "49CmzIRX1k0",
+    "director": "Richard Fleischer"
    }
   ]
  },
@@ -1402,7 +1514,8 @@ window.DECK_EXTENSION = [
      "Shelley Winters",
      "Millicent Martin"
     ],
-    "trailer": "4i49XISKA48"
+    "trailer": "4i49XISKA48",
+    "director": "Lewis Gilbert"
    },
    {
     "movie": "The Sand Pebbles",
@@ -1411,7 +1524,8 @@ window.DECK_EXTENSION = [
      "Richard Attenborough",
      "Richard Crenna"
     ],
-    "trailer": "fg_HzXTD0uM"
+    "trailer": "fg_HzXTD0uM",
+    "director": "Robert Wise"
    },
    {
     "movie": "The Russians Are Coming! The Russians Are Coming!",
@@ -1420,7 +1534,8 @@ window.DECK_EXTENSION = [
      "Eva Marie Saint",
      "Alan Arkin"
     ],
-    "trailer": "0ACDoxjj9WQ"
+    "trailer": "0ACDoxjj9WQ",
+    "director": "Norman Jewison"
    }
   ]
  },
@@ -1442,7 +1557,8 @@ window.DECK_EXTENSION = [
      "Julie Christie",
      "Geraldine Chaplin"
     ],
-    "trailer": "M1iQ5hQTR5s"
+    "trailer": "M1iQ5hQTR5s",
+    "director": "David Lean"
    },
    {
     "movie": "Ship of Fools",
@@ -1451,7 +1567,8 @@ window.DECK_EXTENSION = [
      "Simone Signoret",
      "José Ferrer"
     ],
-    "trailer": "mUFQYnMCwaQ"
+    "trailer": "mUFQYnMCwaQ",
+    "director": "Stanley Kramer"
    },
    {
     "movie": "Darling",
@@ -1460,7 +1577,8 @@ window.DECK_EXTENSION = [
      "Dirk Bogarde",
      "Laurence Harvey"
     ],
-    "trailer": "1IbxDEjGJc0"
+    "trailer": "1IbxDEjGJc0",
+    "director": "John Schlesinger"
    },
    {
     "movie": "A Thousand Clowns",
@@ -1469,7 +1587,8 @@ window.DECK_EXTENSION = [
      "Barry Gordon",
      "Barbara Harris"
     ],
-    "trailer": "IKEXGNByRQY"
+    "trailer": "IKEXGNByRQY",
+    "director": "Fred Coe"
    }
   ]
  },
@@ -1491,7 +1610,8 @@ window.DECK_EXTENSION = [
      "George C. Scott",
      "Sterling Hayden"
     ],
-    "trailer": "0rF5XftjRGM"
+    "trailer": "0rF5XftjRGM",
+    "director": "Stanley Kubrick"
    },
    {
     "movie": "Mary Poppins",
@@ -1500,7 +1620,8 @@ window.DECK_EXTENSION = [
      "Dick Van Dyke",
      "David Tomlinson"
     ],
-    "trailer": "GRsEo5iszZs"
+    "trailer": "GRsEo5iszZs",
+    "director": "Robert Stevenson"
    },
    {
     "movie": "Becket",
@@ -1509,7 +1630,8 @@ window.DECK_EXTENSION = [
      "Peter O'Toole",
      "John Gielgud"
     ],
-    "trailer": "YGN42AaT3MA"
+    "trailer": "YGN42AaT3MA",
+    "director": "Peter Glenville"
    },
    {
     "movie": "Zorba the Greek",
@@ -1518,7 +1640,8 @@ window.DECK_EXTENSION = [
      "Alan Bates",
      "Irene Papas"
     ],
-    "trailer": "8nwCqdA5HdI"
+    "trailer": "8nwCqdA5HdI",
+    "director": "Mihalis Kakogiannis"
    }
   ]
  },
@@ -1540,7 +1663,8 @@ window.DECK_EXTENSION = [
      "Richard Burton",
      "Rex Harrison"
     ],
-    "trailer": "qepcw9Abw3E"
+    "trailer": "qepcw9Abw3E",
+    "director": "Joseph L. Mankiewicz"
    },
    {
     "movie": "How the West Was Won",
@@ -1549,7 +1673,8 @@ window.DECK_EXTENSION = [
      "Lee J. Cobb",
      "Henry Fonda"
     ],
-    "trailer": "updl0L4Tayc"
+    "trailer": "updl0L4Tayc",
+    "director": "Henry Hathaway"
    },
    {
     "movie": "Lilies of the Field",
@@ -1558,7 +1683,8 @@ window.DECK_EXTENSION = [
      "Lilia Skala",
      "Lisa Mann"
     ],
-    "trailer": "l5G_dQZE01o"
+    "trailer": "l5G_dQZE01o",
+    "director": "Ralph Nelson"
    }
   ]
  },
@@ -1580,7 +1706,8 @@ window.DECK_EXTENSION = [
      "Trevor Howard",
      "Richard Harris"
     ],
-    "trailer": "Ur25pXcI52o"
+    "trailer": "Ur25pXcI52o",
+    "director": "Lewis Milestone"
    },
    {
     "movie": "To Kill a Mockingbird",
@@ -1589,7 +1716,8 @@ window.DECK_EXTENSION = [
      "Mary Badham",
      "Phillip Alford"
     ],
-    "trailer": "4-CrrtYjrbM"
+    "trailer": "4-CrrtYjrbM",
+    "director": "Robert Mulligan"
    },
    {
     "movie": "The Longest Day",
@@ -1598,7 +1726,8 @@ window.DECK_EXTENSION = [
      "Robert Mitchum",
      "Henry Fonda"
     ],
-    "trailer": "nqFn_pM5QxU"
+    "trailer": "nqFn_pM5QxU",
+    "director": "Ken Annakin"
    },
    {
     "movie": "The Music Man",
@@ -1607,7 +1736,8 @@ window.DECK_EXTENSION = [
      "Shirley Jones",
      "Buddy Hackett"
     ],
-    "trailer": "cbiBx5T2uX0"
+    "trailer": "cbiBx5T2uX0",
+    "director": "Morton DaCosta"
    }
   ]
  },
@@ -1629,7 +1759,8 @@ window.DECK_EXTENSION = [
      "David Niven",
      "Anthony Quinn"
     ],
-    "trailer": "0ORnL9WmOEo"
+    "trailer": "0ORnL9WmOEo",
+    "director": "J. Lee Thompson"
    },
    {
     "movie": "Fanny",
@@ -1638,7 +1769,8 @@ window.DECK_EXTENSION = [
      "Maurice Chevalier",
      "Charles Boyer"
     ],
-    "trailer": "Y2fwv7aX_t4"
+    "trailer": "Y2fwv7aX_t4",
+    "director": "Joshua Logan"
    }
   ]
  },
@@ -1660,7 +1792,8 @@ window.DECK_EXTENSION = [
      "Robert Mitchum",
      "Peter Ustinov"
     ],
-    "trailer": "ZD5N4oWbQM4"
+    "trailer": "ZD5N4oWbQM4",
+    "director": "Fred Zinnemann"
    },
    {
     "movie": "Elmer Gantry",
@@ -1669,7 +1802,8 @@ window.DECK_EXTENSION = [
      "Jean Simmons",
      "Arthur Kennedy"
     ],
-    "trailer": "z73HAUbQNp4"
+    "trailer": "z73HAUbQNp4",
+    "director": "Richard Brooks"
    },
    {
     "movie": "The Alamo",
@@ -1678,7 +1812,8 @@ window.DECK_EXTENSION = [
      "Richard Widmark",
      "Laurence Harvey"
     ],
-    "trailer": "_y36swJUDD4"
+    "trailer": "_y36swJUDD4",
+    "director": "John Wayne"
    },
    {
     "movie": "Sons and Lovers",
@@ -1687,7 +1822,8 @@ window.DECK_EXTENSION = [
      "Trevor Howard",
      "Dean Stockwell"
     ],
-    "trailer": "9WaL4BJI45k"
+    "trailer": "9WaL4BJI45k",
+    "director": "Jack Cardiff"
    }
   ]
  },
@@ -1709,7 +1845,8 @@ window.DECK_EXTENSION = [
      "Lee Remick",
      "Ben Gazzara"
     ],
-    "trailer": "LwX8NiXv9Hw"
+    "trailer": "LwX8NiXv9Hw",
+    "director": "Otto Preminger"
    },
    {
     "movie": "Room at the Top",
@@ -1718,7 +1855,8 @@ window.DECK_EXTENSION = [
      "Simone Signoret",
      "Heather Sears"
     ],
-    "trailer": "JPFod38mlNc"
+    "trailer": "JPFod38mlNc",
+    "director": "Jack Clayton"
    },
    {
     "movie": "The Diary of Anne Frank",
@@ -1727,7 +1865,8 @@ window.DECK_EXTENSION = [
      "Joseph Schildkraut",
      "Shelley Winters"
     ],
-    "trailer": "nLCooqzoFtA"
+    "trailer": "nLCooqzoFtA",
+    "director": "George Stevens"
    },
    {
     "movie": "The Nun's Story",
@@ -1736,7 +1875,8 @@ window.DECK_EXTENSION = [
      "Peter Finch",
      "Edith Evans"
     ],
-    "trailer": "k94PTF2VMj0"
+    "trailer": "k94PTF2VMj0",
+    "director": "Fred Zinnemann"
    }
   ]
  },
@@ -1758,7 +1898,8 @@ window.DECK_EXTENSION = [
      "Elizabeth Taylor",
      "Burl Ives"
     ],
-    "trailer": "SGvJZLJi9sU"
+    "trailer": "SGvJZLJi9sU",
+    "director": "Richard Brooks"
    },
    {
     "movie": "Auntie Mame",
@@ -1767,7 +1908,8 @@ window.DECK_EXTENSION = [
      "Forrest Tucker",
      "Coral Browne"
     ],
-    "trailer": "1MOyMORDN9E"
+    "trailer": "1MOyMORDN9E",
+    "director": "Morton DaCosta"
    },
    {
     "movie": "The Defiant Ones",
@@ -1776,7 +1918,8 @@ window.DECK_EXTENSION = [
      "Sidney Poitier",
      "Theodore Bikel"
     ],
-    "trailer": "wRWvcpX4xag"
+    "trailer": "wRWvcpX4xag",
+    "director": "Stanley Kramer"
    },
    {
     "movie": "Separate Tables",
@@ -1785,7 +1928,8 @@ window.DECK_EXTENSION = [
      "Rita Hayworth",
      "David Niven"
     ],
-    "trailer": "Aigy1ggMUxE"
+    "trailer": "Aigy1ggMUxE",
+    "director": "Delbert Mann"
    }
   ]
  },
@@ -1807,7 +1951,8 @@ window.DECK_EXTENSION = [
      "John Fiedler",
      "Lee J. Cobb"
     ],
-    "trailer": "TEN-2uTi2c0"
+    "trailer": "TEN-2uTi2c0",
+    "director": "Sidney Lumet"
    },
    {
     "movie": "Witness for the Prosecution",
@@ -1816,7 +1961,8 @@ window.DECK_EXTENSION = [
      "Marlene Dietrich",
      "Charles Laughton"
     ],
-    "trailer": "CgjVcXRDU0I"
+    "trailer": "CgjVcXRDU0I",
+    "director": "Billy Wilder"
    },
    {
     "movie": "Sayonara",
@@ -1825,7 +1971,8 @@ window.DECK_EXTENSION = [
      "Patricia Owens",
      "James Garner"
     ],
-    "trailer": "koIRJwmbtyE"
+    "trailer": "koIRJwmbtyE",
+    "director": "Joshua Logan"
    },
    {
     "movie": "Peyton Place",
@@ -1834,7 +1981,8 @@ window.DECK_EXTENSION = [
      "Hope Lange",
      "Lee Philips"
     ],
-    "trailer": "6mE98wOuyO0"
+    "trailer": "6mE98wOuyO0",
+    "director": "Mark Robson"
    }
   ]
  },
@@ -1856,7 +2004,8 @@ window.DECK_EXTENSION = [
      "Yul Brynner",
      "Rita Moreno"
     ],
-    "trailer": "YZ80o1SY71o"
+    "trailer": "YZ80o1SY71o",
+    "director": "Walter Lang"
    },
    {
     "movie": "The Ten Commandments",
@@ -1865,7 +2014,8 @@ window.DECK_EXTENSION = [
      "Yul Brynner",
      "Anne Baxter"
     ],
-    "trailer": "KBzbyIPWVT4"
+    "trailer": "KBzbyIPWVT4",
+    "director": "Cecil B. DeMille"
    },
    {
     "movie": "Giant",
@@ -1874,7 +2024,8 @@ window.DECK_EXTENSION = [
      "Rock Hudson",
      "James Dean"
     ],
-    "trailer": "SZZTWO4_wto"
+    "trailer": "SZZTWO4_wto",
+    "director": "George Stevens"
    },
    {
     "movie": "Friendly Persuasion",
@@ -1883,7 +2034,8 @@ window.DECK_EXTENSION = [
      "Dorothy McGuire",
      "Anthony Perkins"
     ],
-    "trailer": "gZvExs15jMM"
+    "trailer": "gZvExs15jMM",
+    "director": "William Wyler"
    }
   ]
  },
@@ -1905,7 +2057,8 @@ window.DECK_EXTENSION = [
      "William Holden",
      "Torin Thatcher"
     ],
-    "trailer": "6ADVQo9Q020"
+    "trailer": "6ADVQo9Q020",
+    "director": "Henry King"
    },
    {
     "movie": "The Rose Tattoo",
@@ -1914,7 +2067,8 @@ window.DECK_EXTENSION = [
      "Burt Lancaster",
      "Marisa Pavan"
     ],
-    "trailer": "DWbGNWii4i8"
+    "trailer": "DWbGNWii4i8",
+    "director": "Daniel Mann"
    },
    {
     "movie": "Picnic",
@@ -1923,7 +2077,8 @@ window.DECK_EXTENSION = [
      "Kim Novak",
      "Rosalind Russell"
     ],
-    "trailer": "bhBzakdSfeU"
+    "trailer": "bhBzakdSfeU",
+    "director": "Joshua Logan"
    },
    {
     "movie": "Mister Roberts",
@@ -1932,7 +2087,8 @@ window.DECK_EXTENSION = [
      "James Cagney",
      "William Powell"
     ],
-    "trailer": "xGEGZjkC-ZU"
+    "trailer": "xGEGZjkC-ZU",
+    "director": "John Ford"
    }
   ]
  },
@@ -1954,7 +2110,8 @@ window.DECK_EXTENSION = [
      "Howard Keel",
      "Jeff Richards"
     ],
-    "trailer": "V5LfmwVWJ1k"
+    "trailer": "V5LfmwVWJ1k",
+    "director": "Stanley Donen"
    },
    {
     "movie": "The Country Girl",
@@ -1963,7 +2120,8 @@ window.DECK_EXTENSION = [
      "Grace Kelly",
      "William Holden"
     ],
-    "trailer": "DtwNCEL05C4"
+    "trailer": "DtwNCEL05C4",
+    "director": "George Seaton"
    },
    {
     "movie": "Three Coins in the Fountain",
@@ -1972,7 +2130,8 @@ window.DECK_EXTENSION = [
      "Dorothy McGuire",
      "Jean Peters"
     ],
-    "trailer": "bienKPcoZgU"
+    "trailer": "bienKPcoZgU",
+    "director": "Jean Negulesco"
    },
    {
     "movie": "The Caine Mutiny",
@@ -1981,7 +2140,8 @@ window.DECK_EXTENSION = [
      "Robert Francis",
      "Van Johnson"
     ],
-    "trailer": "3OcS-Y6gL1I"
+    "trailer": "3OcS-Y6gL1I",
+    "director": "Edward Dmytryk"
    }
   ]
  },
@@ -2003,7 +2163,8 @@ window.DECK_EXTENSION = [
      "James Mason",
      "John Gielgud"
     ],
-    "trailer": "DcGenSlgwAM"
+    "trailer": "DcGenSlgwAM",
+    "director": "Joseph L. Mankiewicz"
    },
    {
     "movie": "The Robe",
@@ -2012,7 +2173,8 @@ window.DECK_EXTENSION = [
      "Jean Simmons",
      "Victor Mature"
     ],
-    "trailer": "1oIY05cDU5w"
+    "trailer": "1oIY05cDU5w",
+    "director": "Henry Koster"
    },
    {
     "movie": "Shane",
@@ -2021,7 +2183,8 @@ window.DECK_EXTENSION = [
      "Jean Arthur",
      "Van Heflin"
     ],
-    "trailer": "JMYo9FTcnck"
+    "trailer": "JMYo9FTcnck",
+    "director": "George Stevens"
    }
   ]
  },
@@ -2043,7 +2206,8 @@ window.DECK_EXTENSION = [
      "Thomas Mitchell",
      "Lloyd Bridges"
     ],
-    "trailer": "vFRm6xPDLFc"
+    "trailer": "vFRm6xPDLFc",
+    "director": "Fred Zinnemann"
    },
    {
     "movie": "The Quiet Man",
@@ -2052,7 +2216,8 @@ window.DECK_EXTENSION = [
      "Maureen O'Hara",
      "Victor McLaglen"
     ],
-    "trailer": "T-n873zZvMo"
+    "trailer": "T-n873zZvMo",
+    "director": "John Ford"
    },
    {
     "movie": "Ivanhoe",
@@ -2061,7 +2226,8 @@ window.DECK_EXTENSION = [
      "Elizabeth Taylor",
      "Joan Fontaine"
     ],
-    "trailer": "3Ch5eUAhPtE"
+    "trailer": "3Ch5eUAhPtE",
+    "director": "Richard Thorpe"
    },
    {
     "movie": "Moulin Rouge",
@@ -2070,7 +2236,8 @@ window.DECK_EXTENSION = [
      "Zsa Zsa Gabor",
      "Colette Marchand"
     ],
-    "trailer": "CKyh4zKkths"
+    "trailer": "CKyh4zKkths",
+    "director": "John Huston"
    }
   ]
  },
@@ -2092,7 +2259,8 @@ window.DECK_EXTENSION = [
      "Marlon Brando",
      "Kim Hunter"
     ],
-    "trailer": "U3CXLHLFvyM"
+    "trailer": "U3CXLHLFvyM",
+    "director": "Elia Kazan"
    },
    {
     "movie": "Quo Vadis",
@@ -2101,7 +2269,8 @@ window.DECK_EXTENSION = [
      "Deborah Kerr",
      "Leo Genn"
     ],
-    "trailer": "d89YbVtQFN0"
+    "trailer": "d89YbVtQFN0",
+    "director": "Mervyn LeRoy"
    },
    {
     "movie": "Decision Before Dawn",
@@ -2110,7 +2279,8 @@ window.DECK_EXTENSION = [
      "Gary Merrill",
      "Oskar Werner"
     ],
-    "trailer": "80o4lPb4tsA"
+    "trailer": "80o4lPb4tsA",
+    "director": "Anatole Litvak"
    }
   ]
  },
@@ -2132,7 +2302,8 @@ window.DECK_EXTENSION = [
      "Gloria Swanson",
      "Erich von Stroheim"
     ],
-    "trailer": "ZQWqIA1-kvA"
+    "trailer": "ZQWqIA1-kvA",
+    "director": "Billy Wilder"
    },
    {
     "movie": "Born Yesterday",
@@ -2141,7 +2312,8 @@ window.DECK_EXTENSION = [
      "Broderick Crawford",
      "William Holden"
     ],
-    "trailer": "QL3NsTHAQ8s"
+    "trailer": "QL3NsTHAQ8s",
+    "director": "George Cukor"
    },
    {
     "movie": "Father of the Bride",
@@ -2150,7 +2322,8 @@ window.DECK_EXTENSION = [
      "Joan Bennett",
      "Elizabeth Taylor"
     ],
-    "trailer": "7EMQgVqta_M"
+    "trailer": "7EMQgVqta_M",
+    "director": "Vincente Minnelli"
    },
    {
     "movie": "King Solomon's Mines",
@@ -2159,7 +2332,8 @@ window.DECK_EXTENSION = [
      "Stewart Granger",
      "Richard Carlson"
     ],
-    "trailer": "tmXgC7k-QB0"
+    "trailer": "tmXgC7k-QB0",
+    "director": "Compton Bennett"
    }
   ]
  },
@@ -2181,7 +2355,8 @@ window.DECK_EXTENSION = [
      "Linda Darnell",
      "Jeanne Crain"
     ],
-    "trailer": "Ufdm0bOCsR0"
+    "trailer": "Ufdm0bOCsR0",
+    "director": "Joseph L. Mankiewicz"
    },
    {
     "movie": "The Heiress",
@@ -2190,7 +2365,8 @@ window.DECK_EXTENSION = [
      "Montgomery Clift",
      "Ralph Richardson"
     ],
-    "trailer": "ltjOydHAO0M"
+    "trailer": "ltjOydHAO0M",
+    "director": "William Wyler"
    },
    {
     "movie": "Twelve O'Clock High",
@@ -2199,7 +2375,8 @@ window.DECK_EXTENSION = [
      "Hugh Marlowe",
      "Gary Merrill"
     ],
-    "trailer": "AGEekUoEQUM"
+    "trailer": "AGEekUoEQUM",
+    "director": "Henry King"
    },
    {
     "movie": "Battleground",
@@ -2208,7 +2385,8 @@ window.DECK_EXTENSION = [
      "John Hodiak",
      "Ricardo Montalban"
     ],
-    "trailer": "7fSsf6b9aWU"
+    "trailer": "7fSsf6b9aWU",
+    "director": "William A. Wellman"
    }
   ]
  },
@@ -2230,7 +2408,8 @@ window.DECK_EXTENSION = [
      "Walter Huston",
      "Tim Holt"
     ],
-    "trailer": "1DwXNmorsa0"
+    "trailer": "1DwXNmorsa0",
+    "director": "John Huston"
    },
    {
     "movie": "The Snake Pit",
@@ -2239,7 +2418,8 @@ window.DECK_EXTENSION = [
      "Mark Stevens",
      "Leo Genn"
     ],
-    "trailer": "1CBLJoNETqU"
+    "trailer": "1CBLJoNETqU",
+    "director": "Anatole Litvak"
    },
    {
     "movie": "The Red Shoes",
@@ -2248,7 +2428,8 @@ window.DECK_EXTENSION = [
      "Marius Goring",
      "Moira Shearer"
     ],
-    "trailer": "_mHgGU4AbOA"
+    "trailer": "_mHgGU4AbOA",
+    "director": "Michael Powell"
    },
    {
     "movie": "Johnny Belinda",
@@ -2257,7 +2438,8 @@ window.DECK_EXTENSION = [
      "Lew Ayres",
      "Charles Bickford"
     ],
-    "trailer": "arZQyXMyZ6Y"
+    "trailer": "arZQyXMyZ6Y",
+    "director": "Jean Negulesco"
    }
   ]
  },
@@ -2279,7 +2461,8 @@ window.DECK_EXTENSION = [
      "Robert Mitchum",
      "Robert Ryan"
     ],
-    "trailer": "Qf_tJx9SwMk"
+    "trailer": "Qf_tJx9SwMk",
+    "director": "Edward Dmytryk"
    },
    {
     "movie": "Great Expectations",
@@ -2288,7 +2471,8 @@ window.DECK_EXTENSION = [
      "Valerie Hobson",
      "Tony Wager"
     ],
-    "trailer": "ueGOsCoG5b8"
+    "trailer": "ueGOsCoG5b8",
+    "director": "David Lean"
    },
    {
     "movie": "Miracle on 34th Street",
@@ -2297,7 +2481,8 @@ window.DECK_EXTENSION = [
      "John Payne",
      "Edmund Gwenn"
     ],
-    "trailer": "kUwyGo6PQzY"
+    "trailer": "kUwyGo6PQzY",
+    "director": "George Seaton"
    },
    {
     "movie": "The Bishop's Wife",
@@ -2306,7 +2491,8 @@ window.DECK_EXTENSION = [
      "Loretta Young",
      "David Niven"
     ],
-    "trailer": "bgb6ZRNQTv8"
+    "trailer": "bgb6ZRNQTv8",
+    "director": "Henry Koster"
    }
   ]
  },
@@ -2328,7 +2514,8 @@ window.DECK_EXTENSION = [
      "Donna Reed",
      "Lionel Barrymore"
     ],
-    "trailer": "iLR3gZrU2Xo"
+    "trailer": "iLR3gZrU2Xo",
+    "director": "Frank Capra"
    },
    {
     "movie": "Henry V",
@@ -2337,7 +2524,8 @@ window.DECK_EXTENSION = [
      "Renée Asherson",
      "Ralph Truman"
     ],
-    "trailer": "NWzXHWzwHMM"
+    "trailer": "NWzXHWzwHMM",
+    "director": "Laurence Olivier"
    },
    {
     "movie": "The Razor's Edge",
@@ -2346,7 +2534,8 @@ window.DECK_EXTENSION = [
      "Gene Tierney",
      "Herbert Marshall"
     ],
-    "trailer": "dqYPxtmHX74"
+    "trailer": "dqYPxtmHX74",
+    "director": "Edmund Goulding"
    },
    {
     "movie": "The Yearling",
@@ -2355,7 +2544,8 @@ window.DECK_EXTENSION = [
      "Jane Wyman",
      "Claude Jarman Jr."
     ],
-    "trailer": "dwcGbxikkiw"
+    "trailer": "dwcGbxikkiw",
+    "director": "Clarence Brown"
    }
   ]
  }

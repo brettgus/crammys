@@ -101,7 +101,6 @@ def download(url, path):
 
 def load_extension():
     """Yield (year, title, tmdb_id_or_None) for the auto-fetched 1947-1996 entries."""
-    import json
     p = "deck_extension.json"
     if not os.path.exists(p): return []
     with open(p, encoding="utf-8") as f:
@@ -111,67 +110,120 @@ def load_extension():
         out.append((e["year"], e["movie"], e.get("tmdb_id")))
     return out
 
+def collect_nominee_titles():
+    """Return [(year, title)] for every nominee in DECK_INLINE + deck_extension.json."""
+    nominees = []
+    seen = set()
+    # Inline (parse HTML)
+    if os.path.exists("index.html"):
+        with open("index.html", encoding="utf-8") as f:
+            html = f.read()
+        deck = re.search(r'const DECK_INLINE = \[(.*?)\n  \];', html, re.DOTALL)
+        if deck:
+            src = deck.group(1)
+            yspans = list(re.finditer(r'\{ year: (\d{4}),', src))
+            for i, m in enumerate(yspans):
+                year = int(m.group(1))
+                bs = m.end()
+                be = yspans[i+1].start() if i+1 < len(yspans) else len(src)
+                for nom in re.finditer(r'\{ movie: "([^"]+)"', src[bs:be]):
+                    t = nom.group(1)
+                    key = (year, t)
+                    if key not in seen:
+                        seen.add(key); nominees.append((year, t))
+    # Extension
+    if os.path.exists("deck_extension.json"):
+        with open("deck_extension.json", encoding="utf-8") as f:
+            ext = json.load(f)
+        for e in ext:
+            year = e["year"]
+            for n in e.get("nominees") or []:
+                t = n["movie"]
+                key = (year, t)
+                if key not in seen:
+                    seen.add(key); nominees.append((year, t))
+    return nominees
+
+# Number of backdrops to fetch per film. Nominees get fewer (still gives image variety
+# without blowing up disk usage).
+N_BACKDROPS_WINNER = 5
+N_BACKDROPS_NOMINEE = 3
+
+def fetch_film_images(year, title, hint_id, status, manifest, ext_ids):
+    """Fetch images for a single film. Appends to `manifest`. Idempotent on disk."""
+    # Resolve TMDB id
+    if hint_id:
+        mid = hint_id
+        try:
+            m = fetch_json(f"{BASE}/movie/{mid}?api_key={API_KEY}")
+        except Exception as e:
+            print(f"  ! tmdb fetch failed: {e}"); return
+    elif title in ext_ids:
+        mid = ext_ids[title]
+        try:
+            m = fetch_json(f"{BASE}/movie/{mid}?api_key={API_KEY}")
+        except Exception as e:
+            print(f"  ! tmdb fetch failed: {e}"); return
+    else:
+        try:
+            m = find_movie(title, year)
+        except Exception as e:
+            print(f"  ! search failed: {e}"); return
+        if not m:
+            print("  ! no match"); return
+        mid = m["id"]
+
+    try:
+        images = fetch_json(f"{BASE}/movie/{mid}/images?api_key={API_KEY}&include_image_language=en,null")
+    except Exception as e:
+        print(f"  ! images fetch failed: {e}"); return
+
+    backdrops = sorted(images.get("backdrops", []), key=lambda x: x.get("vote_count", 0), reverse=True)
+    posters = sorted(images.get("posters", []), key=lambda x: x.get("vote_count", 0), reverse=True)
+
+    n_bd = N_BACKDROPS_WINNER if status == "winner" else N_BACKDROPS_NOMINEE
+    chosen = [("bd", b) for b in backdrops[:n_bd]] + [("ps", p) for p in posters[:1]]
+
+    saved = []
+    for i, (kind, img) in enumerate(chosen):
+        path_remote = img["file_path"]
+        url = f"{IMG_BASE}{path_remote}"
+        ext = os.path.splitext(path_remote)[1] or ".jpg"
+        local_name = f"{year}-{slug(title)}-{kind}-{i}{ext}"
+        local_path = os.path.join("images", local_name)
+        if download(url, local_path):
+            ratio = img.get("aspect_ratio", 1.78)
+            saved.append({"f": local_name, "p": path_remote, "r": round(ratio, 3), "k": kind})
+        time.sleep(0.04)
+
+    manifest.append({
+        "year": year,
+        "movie": title,
+        "tmdb_id": mid,
+        "status": status,
+        "images": saved,
+    })
+
 def main():
     os.makedirs("images", exist_ok=True)
     manifest = []
-    # Combine inline DECK (winners we already curated) + extension
-    full_list = list(DECK) + [(y, t) for (y, t, _mid) in load_extension()]
     ext_ids = {t: mid for (y, t, mid) in load_extension() if mid}
-    for year, title in full_list:
-        print(f"--- {year}: {title}")
-        # Prefer TMDB id from extension (resolved via Wikidata IMDb id) when available
-        if title in ext_ids:
-            mid = ext_ids[title]
-            try:
-                m = fetch_json(f"{BASE}/movie/{mid}?api_key={API_KEY}")
-            except Exception as e:
-                print(f"  ! tmdb fetch failed: {e}"); continue
-        else:
-            try:
-                m = find_movie(title, year)
-            except Exception as e:
-                print(f"  ! search failed: {e}")
-                continue
-            if not m:
-                print("  ! no match"); continue
-            mid = m["id"]
-        print(f"  TMDB id={mid} ({m.get('title','?')} · {m.get('release_date','?')})")
 
-        try:
-            images = fetch_json(f"{BASE}/movie/{mid}/images?api_key={API_KEY}&include_image_language=en,null")
-        except Exception as e:
-            print(f"  ! images fetch failed: {e}")
-            continue
+    # 1. Winners (inline DECK list + extension)
+    winners = list(DECK) + [(y, t) for (y, t, _mid) in load_extension()]
+    print(f"Winners: {len(winners)}")
+    for year, title in winners:
+        print(f"--- WIN {year}: {title}")
+        fetch_film_images(year, title, None, "winner", manifest, ext_ids)
+        time.sleep(0.08)
 
-        backdrops = sorted(images.get("backdrops", []), key=lambda x: x.get("vote_count", 0), reverse=True)
-        posters = sorted(images.get("posters", []), key=lambda x: x.get("vote_count", 0), reverse=True)
-
-        chosen = []
-        for b in backdrops[:5]:
-            chosen.append(("bd", b))
-        for p in posters[:1]:
-            chosen.append(("ps", p))
-
-        saved = []
-        for i, (kind, img) in enumerate(chosen):
-            path_remote = img["file_path"]
-            url = f"{IMG_BASE}{path_remote}"
-            ext = os.path.splitext(path_remote)[1] or ".jpg"
-            local_name = f"{year}-{slug(title)}-{kind}-{i}{ext}"
-            local_path = os.path.join("images", local_name)
-            if download(url, local_path):
-                ratio = img.get("aspect_ratio", 1.78)
-                saved.append({"f": local_name, "p": path_remote, "r": round(ratio, 3), "k": kind})
-                print(f"    + {local_name}")
-            time.sleep(0.05)
-
-        manifest.append({
-            "year": year,
-            "movie": title,
-            "tmdb_id": mid,
-            "images": saved,
-        })
-        time.sleep(0.15)
+    # 2. Nominees
+    nominees = collect_nominee_titles()
+    print(f"\nNominees: {len(nominees)}")
+    for year, title in nominees:
+        print(f"--- NOM {year}: {title}")
+        fetch_film_images(year, title, None, "nominee", manifest, ext_ids)
+        time.sleep(0.08)
 
     # Write a JS-loadable manifest so file:// avoids fetch/CORS issues
     js_payload = "window.MOVIE_IMAGES = " + json.dumps(manifest, ensure_ascii=False) + ";\n"
