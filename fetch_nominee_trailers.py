@@ -5,6 +5,7 @@ look up the movie on TMDB and inject a `trailer: "<videoId>"` field after `stars
 Idempotent: skips entries that already have a trailer field.
 """
 import urllib.request, urllib.parse, json, re, time, os, sys
+import gzip
 
 def _load_env():
     env = {}
@@ -24,9 +25,12 @@ TMDB = "https://api.themoviedb.org/3"
 UA = "BPFlashcards/1.0"
 
 def http_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json", "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def find_movie(title, year):
     # year here is the ceremony year; release year is usually ceremony - 1

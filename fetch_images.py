@@ -6,6 +6,7 @@ and write them to images/ along with a JS manifest the app can load.
 Run: python3 fetch_images.py
 """
 import urllib.request, urllib.parse, json, os, re, sys, time
+import gzip
 
 def _load_env():
     env = {}
@@ -67,9 +68,12 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 def fetch_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def find_movie(title, ceremony_year):
     if (ceremony_year, title) in ID_OVERRIDES:
@@ -110,31 +114,39 @@ def load_extension():
         out.append((e["year"], e["movie"], e.get("tmdb_id")))
     return out
 
+def collect_inline_films():
+    """Return ([winners], [nominees]) as lists of (year, title) parsed from DECK_INLINE."""
+    winners, nominees = [], []
+    seen_w, seen_n = set(), set()
+    if not os.path.exists("index.html"): return winners, nominees
+    with open("index.html", encoding="utf-8") as f:
+        html = f.read()
+    deck = re.search(r'const DECK_INLINE = \[(.*?)\n  \];', html, re.DOTALL)
+    if not deck: return winners, nominees
+    src = deck.group(1)
+    # Each year-block starts with `{ year: NNNN, movie: "Winner Title"`
+    yspans = list(re.finditer(r'\{ year: (\d{4}),\s*movie: "([^"]+)"', src))
+    for i, m in enumerate(yspans):
+        year = int(m.group(1))
+        winner_title = m.group(2)
+        if (year, winner_title) not in seen_w:
+            seen_w.add((year, winner_title)); winners.append((year, winner_title))
+        bs = m.end()
+        be = yspans[i+1].start() if i+1 < len(yspans) else len(src)
+        for nom in re.finditer(r'\{ movie: "([^"]+)"', src[bs:be]):
+            t = nom.group(1)
+            key = (year, t)
+            if key not in seen_n:
+                seen_n.add(key); nominees.append((year, t))
+    return winners, nominees
+
 def collect_nominee_titles():
-    """Return [(year, title)] for every nominee in DECK_INLINE + deck_extension.json."""
-    nominees = []
-    seen = set()
-    # Inline (parse HTML)
-    if os.path.exists("index.html"):
-        with open("index.html", encoding="utf-8") as f:
-            html = f.read()
-        deck = re.search(r'const DECK_INLINE = \[(.*?)\n  \];', html, re.DOTALL)
-        if deck:
-            src = deck.group(1)
-            yspans = list(re.finditer(r'\{ year: (\d{4}),', src))
-            for i, m in enumerate(yspans):
-                year = int(m.group(1))
-                bs = m.end()
-                be = yspans[i+1].start() if i+1 < len(yspans) else len(src)
-                for nom in re.finditer(r'\{ movie: "([^"]+)"', src[bs:be]):
-                    t = nom.group(1)
-                    key = (year, t)
-                    if key not in seen:
-                        seen.add(key); nominees.append((year, t))
-    # Extension
+    """Backwards-compat helper used by older callers."""
+    _, nominees = collect_inline_films()
     if os.path.exists("deck_extension.json"):
         with open("deck_extension.json", encoding="utf-8") as f:
             ext = json.load(f)
+        seen = set(nominees)
         for e in ext:
             year = e["year"]
             for n in e.get("nominees") or []:
@@ -209,8 +221,12 @@ def main():
     manifest = []
     ext_ids = {t: mid for (y, t, mid) in load_extension() if mid}
 
-    # 1. Winners (inline DECK list + extension)
-    winners = list(DECK) + [(y, t) for (y, t, _mid) in load_extension()]
+    # 1. Winners — parsed from DECK_INLINE (current truth) + extension (1947-1996)
+    inline_winners, _ = collect_inline_films()
+    winners = inline_winners + [(y, t) for (y, t, _mid) in load_extension()]
+    # De-dupe in case overlap
+    seen_w = set()
+    winners = [(y, t) for (y, t) in winners if (y, t) not in seen_w and not seen_w.add((y, t))]
     print(f"Winners: {len(winners)}")
     for year, title in winners:
         print(f"--- WIN {year}: {title}")
