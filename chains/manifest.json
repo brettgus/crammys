@@ -18,7 +18,8 @@
     "country": "United States",
     "logo": "chains/logos/mcdonald-s.png",
     "locations": 13500,
-    "rank": 3
+    "rank": 3,
+    "logo_filename": "McDonald's with slogan 2020.svg"
   },
   {
     "name": "Burger King",
@@ -39,7 +40,8 @@
     "country": "United States",
     "logo": "chains/logos/burger-king.png",
     "locations": 7000,
-    "rank": 6
+    "rank": 6,
+    "logo_filename": "Burger King 2020.svg"
   },
   {
     "name": "Wendy's",
@@ -59,7 +61,8 @@
     "country": "United States",
     "logo": "chains/logos/wendy-s.png",
     "locations": 6000,
-    "rank": 9
+    "rank": 9,
+    "logo_filename": "Wendy's logo 2012.svg"
   },
   {
     "name": "Five Guys",
@@ -78,9 +81,10 @@
     "origin": "Arlington County",
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/five-guys.JPG",
+    "logo": "chains/logos/five-guys.png",
     "locations": 1400,
-    "rank": 23
+    "rank": 23,
+    "logo_filename": "Five Guys logo.svg"
   },
   {
     "name": "In-N-Out Burger",
@@ -100,7 +104,8 @@
     "country": "United States",
     "logo": "chains/logos/in-n-out-burger.png",
     "locations": 400,
-    "rank": 44
+    "rank": 44,
+    "logo_filename": "InNOut 2021 logo.svg"
   },
   {
     "name": "Shake Shack",
@@ -118,9 +123,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/shake-shack.jpg",
+    "logo": "chains/logos/shake-shack.png",
     "locations": 350,
-    "rank": 46
+    "rank": 46,
+    "logo_filename": "Shake Shack logo.svg"
   },
   {
     "name": "Whataburger",
@@ -161,9 +167,10 @@
     "origin": "Sauk City",
     "parent": null,
     "country": null,
-    "logo": "chains/logos/culver-s.jpg",
+    "logo": "chains/logos/culver-s.png",
     "locations": 960,
-    "rank": 29
+    "rank": 29,
+    "logo_filename": "Culver's logo.svg"
   },
   {
     "name": "Hardee's",
@@ -222,9 +229,10 @@
     "origin": "Atlanta",
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/chick-fil-a.jpg",
+    "logo": "chains/logos/chick-fil-a.png",
     "locations": 3000,
-    "rank": 15
+    "rank": 15,
+    "logo_filename": "Chick-fil-A Logo.svg"
   },
   {
     "name": "KFC",
@@ -244,7 +252,8 @@
     "country": "United States",
     "logo": "chains/logos/kfc.png",
     "locations": 4000,
-    "rank": 11
+    "rank": 11,
+    "logo_filename": "Kfc textlogo.svg"
   },
   {
     "name": "Popeyes",
@@ -262,9 +271,10 @@
     "origin": "Miami",
     "parent": "Restaurant Brands International",
     "country": "United States",
-    "logo": "chains/logos/popeyes.jpg",
+    "logo": "chains/logos/popeyes.png",
     "locations": 2800,
-    "rank": 16
+    "rank": 16,
+    "logo_filename": "Popeyes Logo 2020.svg"
   },
   {
     "name": "Raising Cane's",
@@ -284,7 +294,8 @@
     "country": "United States",
     "logo": "chains/logos/raising-cane-s.png",
     "locations": 750,
-    "rank": 33
+    "rank": 33,
+    "logo_filename": "Raising Cane's Chicken Fingers logo.png"
   },
   {
     "name": "Wingstop",
@@ -366,7 +377,8 @@
     "country": "United States",
     "logo": "chains/logos/church-s-chicken.png",
     "locations": 1100,
-    "rank": 27
+    "rank": 27,
+    "logo_filename": "Churchs-logo.svg"
   },
   {
     "name": "Domino's Pizza",
@@ -384,9 +396,10 @@
     "origin": "Ypsilanti",
     "parent": "Bain Capital",
     "country": "United States",
-    "logo": "chains/logos/domino-s-pizza.JPG",
+    "logo": "chains/logos/domino-s-pizza.png",
     "locations": 6700,
-    "rank": 7
+    "rank": 7,
+    "logo_filename": "Domino's pizza logo.svg"
   },
   {
     "name": "Pizza Hut",
@@ -424,9 +437,10 @@
     "origin": "Jeffersontown",
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/papa-john-s-pizza.jpg",
+    "logo": "chains/logos/papa-john-s-pizza.png",
     "locations": 3300,
-    "rank": 14
+    "rank": 14,
+    "logo_filename": "Papa John's Logo 2019.svg"
   },
   {
     "name": "Little Caesars",
@@ -529,7 +543,8 @@
     "country": "United States",
     "locations": 1100,
     "rank": 26,
-    "logo": "chains/logos/papa-murphy-s.jpg"
+    "logo": "chains/logos/papa-murphy-s.png",
+    "logo_filename": "Papa Murphy's logo.svg"
   },
   {
     "name": "Subway",
@@ -549,7 +564,9 @@
     "parent": null,
     "country": "United States",
     "locations": 20100,
-    "rank": 1
+    "rank": 1,
+    "logo": "chains/logos/subway.png",
+    "logo_filename": "Subway 2016 logo.svg"
   },
   {
     "name": "Jersey Mike's Subs",
@@ -573,7 +590,8 @@
     "country": null,
     "logo": "chains/logos/jersey-mike-s-subs.png",
     "locations": 2700,
-    "rank": 17
+    "rank": 17,
+    "logo_filename": "Jersey Mike's logo.svg"
   },
   {
     "name": "Jimmy John's",
@@ -635,7 +653,8 @@
     "country": "United States",
     "logo": "chains/logos/arby-s.png",
     "locations": 3300,
-    "rank": 13
+    "rank": 13,
+    "logo_filename": "Arby's logo.svg"
   },
   {
     "name": "Quiznos",
@@ -732,9 +751,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/qdoba.jpg",
+    "logo": "chains/logos/qdoba.png",
     "locations": 730,
-    "rank": 34
+    "rank": 34,
+    "logo_filename": "Qdoba Logo.svg"
   },
   {
     "name": "Del Taco",
@@ -755,7 +775,8 @@
     "country": "United States",
     "logo": "chains/logos/del-taco.png",
     "locations": 600,
-    "rank": 37
+    "rank": 37,
+    "logo_filename": "Logo of Del Taco.png"
   },
   {
     "name": "El Pollo Loco",
@@ -838,7 +859,9 @@
     "parent": null,
     "country": "United Kingdom",
     "locations": 100,
-    "rank": 50
+    "rank": 50,
+    "logo": "chains/logos/pret-a-manger.png",
+    "logo_filename": "PretAManger logo.svg"
   },
   {
     "name": "Starbucks",
@@ -860,7 +883,8 @@
     "country": "United States",
     "logo": "chains/logos/starbucks.png",
     "locations": 16400,
-    "rank": 2
+    "rank": 2,
+    "logo_filename": "Starbucks coffee wordmark.png"
   },
   {
     "name": "Dunkin'",
@@ -919,7 +943,9 @@
     "parent": "JAB Holding Company",
     "country": "United States",
     "locations": 400,
-    "rank": 43
+    "rank": 43,
+    "logo": "chains/logos/krispy-kreme.png",
+    "logo_filename": "Logo.KrispyKreme.svg"
   },
   {
     "name": "Caribou Coffee",
@@ -999,9 +1025,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/sweetgreen.jpg",
+    "logo": "chains/logos/sweetgreen.png",
     "locations": 225,
-    "rank": 48
+    "rank": 48,
+    "logo_filename": "Sweetgreen logo.svg"
   },
   {
     "name": "CAVA",
