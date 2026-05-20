@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0b0b0f" />
+<title>Crammys · Fast Food Chains</title>
+<style>
+  :root {
+    --bg: #f6f5f1;
+    --bg-elev: #ffffff;
+    --ink: #14141a;
+    --ink-soft: #5a5a66;
+    --ink-faint: #9a9aa6;
+    --line: #e6e4dd;
+    --accent: #e64a1f;             /* fast-food red */
+    --accent-ink: #ffffff;
+    --shadow: 0 1px 2px rgba(20,20,26,.04), 0 12px 40px rgba(20,20,26,.08);
+    --radius: 18px;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0b0f;
+    --bg-elev: #15151c;
+    --ink: #f4f3ee;
+    --ink-soft: #b6b5ad;
+    --ink-faint: #6e6d76;
+    --line: #25252e;
+    --accent: #ff6740;
+    --accent-ink: #0b0b0f;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 48px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 18px 28px;
+    gap: 14px;
+  }
+
+  /* ── Header / controls ─────────────────────────────────────────── */
+  .controls {
+    display: flex; gap: 10px; align-items: center; justify-content: space-between;
+    width: 100%; max-width: 720px; flex-wrap: wrap;
+  }
+  .seg {
+    display: inline-flex; background: var(--bg-elev); border: 1px solid var(--line);
+    border-radius: 10px; padding: 3px;
+  }
+  .seg button {
+    border: 0; background: transparent; color: var(--ink-soft);
+    padding: 7px 11px; border-radius: 8px; cursor: pointer;
+    font-size: 13px; font-weight: 500;
+    font-family: inherit;
+  }
+  .seg button.on { background: var(--ink); color: var(--bg); }
+  .meta {
+    display: flex; align-items: center; gap: 12px;
+    color: var(--ink-soft); font-size: 13px; font-variant-numeric: tabular-nums;
+  }
+  .chip {
+    font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent-ink); background: var(--accent);
+    padding: 2px 8px; border-radius: 99px; font-weight: 600;
+  }
+  .chip-btn {
+    border: 1px solid var(--line); background: transparent; color: var(--ink-soft);
+    cursor: pointer; font-family: inherit; letter-spacing: .04em;
+    text-transform: none; padding: 3px 9px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .chip-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .streak { color: var(--accent); font-weight: 600; }
+  .tools { display: inline-flex; gap: 6px; }
+  .icon-btn {
+    background: transparent; border: 1px solid var(--line); color: var(--ink-soft);
+    width: 32px; height: 32px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; padding: 0;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .icon-btn:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
+  .icon-btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .icon-btn svg { width: 16px; height: 16px; }
+
+  .nav-link {
+    color: var(--ink-soft); font-size: 13px; text-decoration: none;
+    border-bottom: 1px dotted var(--ink-faint);
+  }
+  .nav-link:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+  .progress-wrap {
+    width: 100%; max-width: 720px; height: 3px;
+    background: var(--line); border-radius: 99px; overflow: hidden;
+  }
+  .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+
+  /* ── Card ──────────────────────────────────────────────────────── */
+  .card-stage {
+    flex: 1; min-height: 0;
+    width: 100%; max-width: 720px;
+    perspective: 1400px; position: relative;
+  }
+  .card {
+    position: absolute; inset: 0;
+    transform-style: preserve-3d;
+    transition: transform .55s cubic-bezier(.2,.8,.2,1);
+    cursor: pointer;
+  }
+  .card.flipped { transform: rotateY(180deg); }
+  .card:not(.flipped) .face.back { pointer-events: none; }
+  .card.flipped .face.front { pointer-events: none; }
+
+  .face {
+    position: absolute; inset: 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    padding: 24px 26px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .face.back { transform: rotateY(180deg); }
+  .face .corner {
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--ink-faint); font-size: 12px;
+    letter-spacing: .12em; text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .star {
+    background: transparent; border: 0; cursor: pointer; padding: 4px;
+    color: var(--ink-faint); border-radius: 6px; line-height: 0;
+  }
+  .star:hover { color: var(--accent); }
+  .star.on { color: var(--accent); }
+  .star svg { width: 18px; height: 18px; }
+  .face .body {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; gap: 14px;
+    overflow-y: auto; padding: 8px 0;
+  }
+  .prompt {
+    color: var(--ink-soft); font-size: 13px;
+    letter-spacing: .04em; text-transform: uppercase;
+  }
+  .question, .answer {
+    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    font-weight: 500; letter-spacing: -0.02em; line-height: 1.05;
+    font-size: clamp(36px, 6vw, 56px);
+  }
+  .answer { font-size: clamp(28px, 5vw, 44px); }
+
+  .details {
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    color: var(--ink-soft); font-size: 14px; line-height: 1.5;
+    max-width: 56ch; text-align: left;
+  }
+  .details .row { display: flex; gap: 8px; margin-bottom: 4px; }
+  .details .label {
+    color: var(--ink-faint); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; min-width: 90px; padding-top: 3px;
+  }
+  .details .val { color: var(--ink); }
+
+  .footer-hint {
+    color: var(--ink-faint); font-size: 12px; text-align: center;
+    letter-spacing: .04em; flex-shrink: 0;
+  }
+  .footer-hint kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; background: var(--bg-elev);
+    border: 1px solid var(--line); border-bottom-width: 2px;
+    padding: 1px 6px; border-radius: 5px; color: var(--ink-soft);
+  }
+
+  /* ── Logo mode ─────────────────────────────────────────────────── */
+  .logo-stage {
+    position: absolute; inset: 0;
+    border-radius: var(--radius); overflow: hidden;
+    background: var(--bg-elev);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 48px 100px;
+  }
+  .logo-stage img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    transition: opacity .2s ease;
+  }
+  .logo-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 22px 24px 0; pointer-events: none;
+  }
+  .logo-overlay .corner, .logo-overlay .bottom { pointer-events: auto; }
+  .logo-overlay .bottom {
+    background: rgba(8,8,12,.62);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    padding: 16px 22px 18px;
+    margin: 0 -24px 0;
+    text-align: center;
+  }
+  :root[data-theme="dark"] .logo-stage { background: #f4f3ee; }
+  .face.front.logo-mode { padding: 0; background: transparent; }
+  .face.front.logo-mode .corner, .face.front.logo-mode .body, .face.front.logo-mode > .footer-hint { display: none; }
+  .card.flipped .logo-stage { visibility: hidden; }
+  /* The `display: flex` rule above otherwise wins over the [hidden] attribute. */
+  .logo-stage[hidden] { display: none; }
+
+  /* ── Nav row ───────────────────────────────────────────────────── */
+  .nav {
+    display: flex; gap: 10px; width: 100%; max-width: 720px; justify-content: space-between;
+  }
+  .nav .group { display: flex; gap: 10px; }
+  .btn {
+    background: var(--bg-elev); border: 1px solid var(--line); color: var(--ink);
+    padding: 10px 14px; border-radius: 10px; cursor: pointer;
+    font-size: 14px; font-weight: 500; font-family: inherit;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .btn:hover { border-color: var(--ink-faint); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* ── Modals ────────────────────────────────────────────────────── */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(6,6,10,.72);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    z-index: 200; display: flex; align-items: center; justify-content: center;
+    padding: clamp(16px, 4vw, 48px);
+  }
+  .modal-backdrop[hidden] { display: none; }
+  .panel {
+    background: var(--bg-elev); border: 1px solid var(--line);
+    border-radius: 16px; padding: 22px 24px 20px;
+    width: 100%; max-width: 460px;
+    position: relative; box-shadow: 0 24px 60px rgba(0,0,0,.4); color: var(--ink);
+  }
+  .modal-close {
+    position: absolute; top: 10px; right: 10px;
+    width: 36px; height: 36px;
+    background: transparent; border: 1px solid var(--line);
+    color: var(--ink); border-radius: 9px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  .modal-close:hover { background: var(--bg); }
+  .modal-close svg { width: 18px; height: 18px; }
+  .panel-title { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+  .panel-sub { margin: 0 0 16px; color: var(--ink-soft); font-size: 13px; }
+  .cat-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .cat-grid label {
+    display: flex; gap: 8px; align-items: center;
+    padding: 8px 10px; border: 1px solid var(--line);
+    border-radius: 8px; cursor: pointer;
+    font-size: 13.5px; color: var(--ink);
+  }
+  .cat-grid input { accent-color: var(--accent); }
+</style>
+</head>
+<body>
+  <main>
+    <div class="controls">
+      <div class="seg" role="tablist" aria-label="Mode">
+        <button data-mode="n2y" class="on">Name → Year</button>
+        <button data-mode="n2f">Name → Founder</button>
+        <button data-mode="n2h">Name → HQ</button>
+        <button data-mode="l2n">Logo → Name</button>
+      </div>
+      <div class="meta">
+        <span id="counter">1 / 50</span>
+        <button class="chip chip-btn" id="catChip" title="Filter categories">All</button>
+        <span id="drillChip" class="chip" hidden>drill</span>
+        <span class="streak" id="streak" title="Mastered">★ 0</span>
+      </div>
+      <div class="tools">
+        <a class="nav-link" href="index.html" title="Switch to Best Picture deck">Best Picture →</a>
+        <button class="icon-btn" id="drillBtn" title="Drill unmastered only">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" title="Toggle theme"></button>
+      </div>
+    </div>
+
+    <div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+
+    <div class="card-stage">
+      <div class="card" id="card" role="button" aria-label="Flip card" tabindex="0">
+        <div class="face front" id="frontFace">
+          <div class="corner">
+            <span id="frontTag">Chain</span>
+            <button class="star" id="starFront" title="Mark mastered">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div class="body">
+            <div class="prompt" id="frontPrompt">When was</div>
+            <div class="question" id="frontText">—</div>
+            <div class="prompt" id="frontSuffix"></div>
+          </div>
+          <div class="footer-hint">Tap or press <kbd>Space</kbd> to reveal</div>
+          <div class="logo-stage" id="logoStage" hidden>
+            <img id="logoEl" alt="" />
+            <div class="logo-overlay">
+              <div class="corner">
+                <span>Logo</span>
+                <button class="star" id="starLogo" title="Mark mastered">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </button>
+              </div>
+              <div class="bottom">
+                <div class="prompt">What chain is this?</div>
+                <div class="footer-hint"><kbd>Space</kbd> to reveal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face back">
+          <div class="corner">
+            <span id="backTag">Answer</span>
+            <button class="star" id="starBack" title="Mark mastered">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </button>
+          </div>
+          <div class="body" id="backBody"></div>
+          <div class="footer-hint">Tap or press <kbd>Space</kbd> to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="group">
+        <button class="btn" id="prevBtn">‹ Prev</button>
+        <button class="btn primary" id="flipBtn">Flip</button>
+        <button class="btn" id="nextBtn">Next ›</button>
+      </div>
+      <div class="group">
+        <button class="btn" id="shuffleBtn">Shuffle</button>
+        <button class="btn" id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="catModal" hidden>
+      <div class="panel" role="dialog" aria-label="Categories">
+        <button class="modal-close" id="catClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h3 class="panel-title">Categories</h3>
+        <p class="panel-sub">Pick which kinds of chains belong in the deck.</p>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+    </div>
+  </main>
+
+<script src="chains.js"></script>
+<script>
+  // ─── State ─────────────────────────────────────────────────────────
+  const STORE_KEY = "crammys-chains-v1";
+  const CHAINS = window.CHAINS_DECK || [];
+  if (!CHAINS.length) {
+    document.querySelector(".card-stage").innerHTML =
+      `<div style="text-align:center;padding:60px 20px;color:var(--ink-soft)">No chain data yet — run <code>python3 fetch_chains.py</code> to populate <code>chains.js</code>.</div>`;
+    throw new Error("chains.js empty");
+  }
+
+  const cardId = (c) => c.name;
+
+  function shuffleArray(a) {
+    a = a.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+
+  const ALL_CATS = Array.from(new Set(CHAINS.map(c => c.category))).sort();
+  const state = (() => {
+    const def = { mode: "n2y", idx: 0, order: null, mastered: [], drill: false, theme: null, cats: ALL_CATS.slice() };
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+      return Object.assign(def, saved || {});
+    } catch { return def; }
+  })();
+  if (!Array.isArray(state.cats) || !state.cats.length) state.cats = ALL_CATS.slice();
+  if (!Array.isArray(state.mastered)) state.mastered = [];
+  const allIds = CHAINS.map(cardId);
+  const isValidOrder = Array.isArray(state.order) && state.order.length === allIds.length
+    && state.order.every(id => allIds.includes(id));
+  if (!isValidOrder) { state.order = shuffleArray(allIds); state.idx = 0; }
+  const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
+
+  // ─── Theme ─────────────────────────────────────────────────────────
+  const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+  const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  function setTheme(t) {
+    document.documentElement.setAttribute("data-theme", t);
+    state.theme = t; persist();
+    document.getElementById("themeBtn").innerHTML = t === "dark" ? SUN : MOON;
+  }
+  setTheme(state.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+
+  // ─── DOM refs ──────────────────────────────────────────────────────
+  const card = document.getElementById("card");
+  const frontFace = document.getElementById("frontFace");
+  const front = {
+    prompt: document.getElementById("frontPrompt"),
+    text: document.getElementById("frontText"),
+    suffix: document.getElementById("frontSuffix"),
+    tag: document.getElementById("frontTag"),
+  };
+  const back = { tag: document.getElementById("backTag"), body: document.getElementById("backBody") };
+  const counter = document.getElementById("counter");
+  const streakEl = document.getElementById("streak");
+  const progress = document.getElementById("progress");
+  const catChipEl = document.getElementById("catChip");
+  const drillChip = document.getElementById("drillChip");
+  const drillBtn = document.getElementById("drillBtn");
+  const starFront = document.getElementById("starFront");
+  const starBack = document.getElementById("starBack");
+  const starLogo = document.getElementById("starLogo");
+  const logoStage = document.getElementById("logoStage");
+  const logoEl = document.getElementById("logoEl");
+
+  // ─── Helpers ───────────────────────────────────────────────────────
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+  }
+  function fmtList(arr) {
+    if (!arr || !arr.length) return "—";
+    if (arr.length === 1) return arr[0];
+    if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
+    return arr.slice(0,-1).join(", ") + ", and " + arr[arr.length-1];
+  }
+  const inCat = (c) => state.cats.includes(c.category);
+  function activeOrder() {
+    return state.order.filter(id => {
+      const c = BY_ID.get(id); if (!c) return false;
+      if (!inCat(c)) return false;
+      if (state.drill && state.mastered.includes(id)) return false;
+      if (state.mode === "n2y" && !c.founded) return false;
+      if (state.mode === "n2f" && (!c.founders || !c.founders.length)) return false;
+      if (state.mode === "n2h" && !c.hq) return false;
+      if (state.mode === "l2n" && !c.logo) return false;
+      return true;
+    });
+  }
+  function currentCard() {
+    const ord = activeOrder();
+    if (!ord.length) return null;
+    state.idx = ((state.idx % ord.length) + ord.length) % ord.length;
+    return BY_ID.get(ord[state.idx]);
+  }
+
+  const USE_LOCAL = location.protocol === "file:";
+  function logoUrl(c) {
+    if (USE_LOCAL) return c.logo || c.logo_url || "";
+    return c.logo_url || c.logo || "";
+  }
+
+  // ─── Render ────────────────────────────────────────────────────────
+  function render() {
+    const ord = activeOrder();
+    const c = currentCard();
+    if (!c) {
+      counter.textContent = "0 / 0";
+      progress.style.width = "0%";
+      front.tag.textContent = "Empty deck";
+      front.prompt.textContent = "";
+      front.text.textContent = "No chains match the current filter / mode.";
+      front.suffix.textContent = "";
+      back.body.innerHTML = "";
+      return;
+    }
+    const id = cardId(c);
+    counter.textContent = `${state.idx + 1} / ${ord.length}`;
+    progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
+    streakEl.textContent = `★ ${state.mastered.length}`;
+    drillChip.hidden = !state.drill;
+    catChipEl.textContent = state.cats.length === ALL_CATS.length ? "All" : `${state.cats.length} cat`;
+
+    const isLogo = state.mode === "l2n";
+    frontFace.classList.toggle("logo-mode", isLogo);
+    logoStage.hidden = !isLogo;
+
+    if (isLogo) {
+      logoEl.src = logoUrl(c);
+    } else {
+      front.tag.textContent = "Chain";
+      front.suffix.textContent = "";
+      if (state.mode === "n2y") {
+        front.prompt.textContent = "When was";
+        front.text.textContent = c.name;
+        front.suffix.textContent = "founded?";
+      } else if (state.mode === "n2f") {
+        front.prompt.textContent = "Who founded";
+        front.text.textContent = c.name + "?";
+      } else if (state.mode === "n2h") {
+        front.prompt.textContent = "Where is";
+        front.text.textContent = c.name;
+        front.suffix.textContent = "headquartered?";
+      }
+    }
+
+    // Back face: show the answer + chain details
+    let answer = "";
+    if (state.mode === "n2y") {
+      back.tag.textContent = "Founded";
+      answer = `<div class="prompt">${escapeHtml(c.name)} was founded in</div>
+                <div class="answer">${c.founded}</div>`;
+    } else if (state.mode === "n2f") {
+      back.tag.textContent = "Founder";
+      answer = `<div class="prompt">${escapeHtml(c.name)} was founded by</div>
+                <div class="answer">${escapeHtml(fmtList(c.founders))}</div>`;
+    } else if (state.mode === "n2h") {
+      back.tag.textContent = "HQ";
+      answer = `<div class="prompt">${escapeHtml(c.name)} is headquartered in</div>
+                <div class="answer">${escapeHtml(c.hq || "—")}</div>`;
+    } else if (state.mode === "l2n") {
+      back.tag.textContent = "Chain";
+      answer = `<div class="prompt">This logo is</div>
+                <div class="answer">${escapeHtml(c.name)}</div>`;
+    }
+    const details = `
+      <div class="details">
+        <div class="row"><span class="label">Founded</span><span class="val">${c.founded || "—"}${c.origin ? ` in ${escapeHtml(c.origin)}` : ""}</span></div>
+        ${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${escapeHtml(fmtList(c.founders))}</span></div>` : ""}
+        ${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}${c.country ? `, ${escapeHtml(c.country)}` : ""}</span></div>` : ""}
+        ${c.parent ? `<div class="row"><span class="label">Parent</span><span class="val">${escapeHtml(c.parent)}</span></div>` : ""}
+        <div class="row"><span class="label">Category</span><span class="val">${escapeHtml(c.category)}</span></div>
+        ${c.summary ? `<div class="row"><span class="label">About</span><span class="val">${escapeHtml(c.summary)}</span></div>` : ""}
+      </div>`;
+    back.body.innerHTML = answer + details;
+
+    const mastered = state.mastered.includes(id);
+    [starFront, starBack, starLogo].forEach(s => s.classList.toggle("on", mastered));
+  }
+
+  // ─── Actions ───────────────────────────────────────────────────────
+  function flip() { card.classList.toggle("flipped"); }
+  const FLIP_MID = 280;
+  function unflipAndThen(fn) {
+    if (card.classList.contains("flipped")) {
+      card.classList.remove("flipped");
+      setTimeout(fn, FLIP_MID);
+    } else fn();
+  }
+  function next() {
+    const ord = activeOrder(); if (!ord.length) return;
+    unflipAndThen(() => {
+      const o = activeOrder(); state.idx = (state.idx + 1) % o.length;
+      persist(); render();
+    });
+  }
+  function prev() {
+    const ord = activeOrder(); if (!ord.length) return;
+    unflipAndThen(() => {
+      const o = activeOrder(); state.idx = (state.idx - 1 + o.length) % o.length;
+      persist(); render();
+    });
+  }
+  function shuffle() {
+    unflipAndThen(() => {
+      state.order = shuffleArray(allIds); state.idx = 0;
+      persist(); render();
+    });
+  }
+  function reset() {
+    unflipAndThen(() => {
+      state.order = shuffleArray(allIds); state.idx = 0;
+      state.mastered = []; state.drill = false;
+      drillBtn.classList.remove("on");
+      persist(); render();
+    });
+  }
+  function toggleMastered() {
+    const c = currentCard(); if (!c) return;
+    const id = cardId(c);
+    const i = state.mastered.indexOf(id);
+    const becameMastered = i < 0;
+    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(id);
+    persist();
+    if (becameMastered) {
+      const ord = activeOrder();
+      if (ord.length) {
+        if (card.classList.contains("flipped")) card.classList.remove("flipped");
+        if (!state.drill) state.idx = (state.idx + 1) % ord.length;
+        else state.idx = state.idx % ord.length;
+      }
+    }
+    render();
+  }
+  function toggleDrill() {
+    state.drill = !state.drill; state.idx = 0;
+    drillBtn.classList.toggle("on", state.drill);
+    persist();
+    unflipAndThen(render);
+  }
+  function setMode(m) {
+    state.mode = m; state.idx = 0;
+    document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m));
+    persist();
+    unflipAndThen(render);
+  }
+
+  // ─── Wire UI ───────────────────────────────────────────────────────
+  card.addEventListener("click", (e) => {
+    if (e.target.closest(".star, a, button")) return;
+    flip();
+  });
+  document.getElementById("flipBtn").onclick = flip;
+  document.getElementById("nextBtn").onclick = next;
+  document.getElementById("prevBtn").onclick = prev;
+  document.getElementById("shuffleBtn").onclick = shuffle;
+  document.getElementById("resetBtn").onclick = reset;
+  starFront.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  starBack.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  starLogo.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
+  drillBtn.onclick = toggleDrill;
+  document.getElementById("themeBtn").onclick = () =>
+    setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  document.querySelectorAll(".seg button").forEach(b => b.onclick = () => setMode(b.dataset.mode));
+  drillBtn.classList.toggle("on", !!state.drill);
+  document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === state.mode));
+
+  // Categories modal
+  const catModal = document.getElementById("catModal");
+  const catGrid = document.getElementById("catGrid");
+  function syncCatGrid() {
+    catGrid.innerHTML = ALL_CATS.map(cat => `
+      <label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${cat}</span></label>
+    `).join("");
+    catGrid.querySelectorAll("input").forEach(inp => inp.onchange = () => {
+      const c = inp.value;
+      if (inp.checked && !state.cats.includes(c)) state.cats.push(c);
+      else if (!inp.checked) state.cats = state.cats.filter(x => x !== c);
+      if (!state.cats.length) state.cats = [c];   // never empty
+      state.idx = 0; persist(); render();
+    });
+  }
+  catChipEl.onclick = () => { syncCatGrid(); catModal.hidden = false; document.body.style.overflow = "hidden"; };
+  document.getElementById("catClose").onclick = () => { catModal.hidden = true; document.body.style.overflow = ""; };
+  catModal.onclick = (e) => { if (e.target === catModal) { catModal.hidden = true; document.body.style.overflow = ""; } };
+
+  // Keyboard
+  window.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    switch (e.key) {
+      case " ": e.preventDefault(); flip(); break;
+      case "ArrowRight": next(); break;
+      case "ArrowLeft": prev(); break;
+      case "s": case "S": shuffle(); break;
+      case "r": case "R": reset(); break;
+      case "f": case "F": toggleMastered(); break;
+      case "u": case "U": toggleDrill(); break;
+      case "t": case "T": setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); break;
+      case "Escape": if (!catModal.hidden) { catModal.hidden = true; document.body.style.overflow = ""; } break;
+    }
+  });
+
+  render();
+</script>
+</body>
+</html>
