@@ -6,6 +6,7 @@ Writes people.js (window.PEOPLE = {...}) and people/*.jpg for the app.
 Run: python3 fetch_people.py
 """
 import urllib.request, urllib.parse, json, os, re, sys, time
+import gzip
 
 def _load_env():
     env = {}
@@ -40,9 +41,12 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 def fetch_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def download(url, path):
     if os.path.exists(path) and os.path.getsize(path) > 1024:

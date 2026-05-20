@@ -7,7 +7,7 @@ Backfill: add a `director: "Name"` field to every nominee in both
 Uses TMDB to look up each nominee's director by title + ceremony year.
 Idempotent: skips nominees that already have a director field.
 """
-import os, json, re, time, urllib.request, urllib.parse, sys
+import os, json, re, time, urllib.request, urllib.parse, sys, gzip
 
 def _load_env():
     env = {}
@@ -27,9 +27,12 @@ if not API_KEY:
 TMDB = "https://api.themoviedb.org/3"
 
 def http_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "BP/1.0", "Accept": "application/json"})
+    req = urllib.request.Request(url, headers={"User-Agent": "BP/1.0", "Accept": "application/json", "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def find_movie_id(title, ceremony_year):
     for ry in (ceremony_year - 1, ceremony_year, ceremony_year - 2):

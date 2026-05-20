@@ -6,6 +6,7 @@ in the deck — winners and nominees — and write movies.js for the app.
 Output: movies.js with window.MOVIES keyed by title.
 """
 import urllib.request, urllib.parse, json, re, os, time
+import gzip
 
 def _load_env():
     env = {}
@@ -25,9 +26,12 @@ TMDB = "https://api.themoviedb.org/3"
 UA = "BPFlashcards/1.0"
 
 def http_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json", "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def find_movie(title, year):
     for ry in (year - 1, year, year - 2):

@@ -10,6 +10,7 @@ Output: deck_extension.js → window.DECK_EXTENSION = [{ year, movie, director,
                                                         stars, trailer, nominees: [...] }]
 """
 import urllib.request, urllib.parse, json, re, os, sys, time
+import gzip
 
 def _load_env():
     env = {}
@@ -60,7 +61,10 @@ def http_json(url, headers=None, timeout=60):
     if headers: h.update(headers)
     req = urllib.request.Request(url, headers=h)
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read())
+        data = r.read()
+        if r.headers.get("Content-Encoding") == "gzip":
+            data = gzip.decompress(data)
+        return json.loads(data)
 
 def fetch_wikidata():
     url = WIKIDATA + "?" + urllib.parse.urlencode({"query": SPARQL, "format": "json"})

@@ -526,7 +526,12 @@
     border-radius: var(--radius);
     overflow: hidden;
     background: #000;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
+  /* Belt-and-suspenders: hide the image-stage entirely when the card is flipped
+     to prevent any descendant from rendering its (mirrored) back side. */
+  .card.flipped .image-stage { visibility: hidden; }
   .image-stage img {
     position: absolute;
     inset: 0;
@@ -1053,6 +1058,19 @@
 <script>
   // Each entry: { year, movie, director, trailer, stars: [...], nominees: [{movie, stars, trailer}] }
   const DECK_INLINE = [
+    { year: 2026, movie: "One Battle After Another", director: "Paul Thomas Anderson", trailer: "feOQFKv2Lw4",
+      stars: ["Leonardo DiCaprio","Sean Penn","Chase Infiniti"],
+      nominees: [
+        { movie: "Bugonia", stars: ["Emma Stone","Jesse Plemons","Aidan Delbis"], trailer: "7VBigr-JHB0", director: "Yorgos Lanthimos" },
+        { movie: "F1", stars: ["Brad Pitt","Damson Idris","Javier Bardem"], trailer: "8yh9BPUBbbQ", director: "Joseph Kosinski" },
+        { movie: "Frankenstein", stars: ["Oscar Isaac","Jacob Elordi","Christoph Waltz"], trailer: "9WZllcEgWrM", director: "Guillermo del Toro" },
+        { movie: "Hamnet", stars: ["Jessie Buckley","Paul Mescal","Emily Watson"], trailer: "xYcgQMxQwmk", director: "Chloé Zhao" },
+        { movie: "Marty Supreme", stars: ["Timothée Chalamet","Gwyneth Paltrow","Odessa A'zion"], trailer: "s9gSuKaKcqM", director: "Josh Safdie" },
+        { movie: "The Secret Agent", stars: ["Wagner Moura","Alice Carvalho","Gabriel Leone"], trailer: "9UfrzDKrhEc", director: "Kleber Mendonça Filho" },
+        { movie: "Sentimental Value", stars: ["Renate Reinsve","Stellan Skarsgård","Inga Ibsdotter Lilleaas"], trailer: "zBFstFXdk90", director: "Joachim Trier" },
+        { movie: "Sinners", stars: ["Michael B. Jordan","Hailee Steinfeld","Miles Caton"], trailer: "7joulECTx_U", director: "Ryan Coogler" },
+        { movie: "Train Dreams", stars: ["Joel Edgerton","Felicity Jones","Nathaniel Arcand"], trailer: "6voWeM-xQ4Y", director: "Clint Bentley" },
+      ]},
     { year: 2025, movie: "Anora", director: "Sean Baker", trailer: "8m6UrWMl18M",
       stars: ["Mikey Madison","Mark Eydelshteyn","Yura Borisov"],
       nominees: [
@@ -1369,6 +1387,8 @@
     } catch { return def; }
   })();
   if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
+  // Auto-stretch a saved range to include any newly added years (e.g. a fresh ceremony)
+  if (state.range.to < _maxYear) state.range.to = _maxYear;
   if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
 
