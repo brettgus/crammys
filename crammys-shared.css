@@ -282,16 +282,159 @@ main {
 }
 .seg button.on { background: var(--ink); color: var(--bg); }
 
-/* ── Nav row ───────────────────────────────────────────────────────── */
+/* ── Nav row (context-aware: empty on front, rate buttons on back) ─── */
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   width: 100%;
   max-width: 640px;
-  justify-content: space-between;
+  min-height: 0;
 }
+.nav .nav-back {
+  display: none;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+.nav.show-back .nav-back { display: flex; }
 .nav .group { display: flex; gap: 10px; }
+
+/* Rate (Tier 2 scoring) buttons that appear on the back face */
+.rate-btn {
+  flex: 1;
+  justify-content: center;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.rate-btn svg { width: 18px; height: 18px; }
+.rate-missed { background: var(--bg-elev); color: var(--ink); }
+.rate-missed:hover {
+  background: rgba(239, 68, 68, .08);
+  border-color: rgba(239, 68, 68, .35);
+  color: rgb(220, 50, 50);
+}
+:root[data-theme="dark"] .rate-missed:hover {
+  background: rgba(239, 68, 68, .18);
+  color: rgb(255, 130, 130);
+}
+.rate-got { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.rate-got:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* Floating side arrows next to the card-stage (desktop pointer-friendly nav). */
+.card-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 64px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .55;
+  transition: opacity .15s ease, color .15s ease, background .15s ease, border-color .15s ease, transform .05s ease;
+  z-index: 5;
+}
+.card-arrow:hover { opacity: 1; color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
+.card-arrow:active { transform: translateY(-50%) scale(.95); }
+.card-arrow svg { width: 22px; height: 22px; }
+.card-arrow-prev { left: -52px; }
+.card-arrow-next { right: -52px; }
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  .card-arrow { display: none; }
+}
+
+/* Footer-hint variants: keyboard-flavored on desktop, gesture-flavored on touch */
+.hint-touch { display: none; }
+@media (hover: none), (pointer: coarse), (max-width: 760px) {
+  .hint-desktop { display: none; }
+  .hint-touch { display: inline; }
+}
+
+/* Top-bar right cluster (chip + tool icons) */
+.right-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+/* Combined deck-info chip (counter · range · w/ nominees) */
+.chip-btn.deck-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.chip-btn.deck-info .chip-sep { color: var(--ink-faint); }
+.chip-btn.deck-info .chip-extras { color: var(--accent); font-weight: 600; }
+.chip-btn.deck-info .chip-extras:empty { display: none; }
+
+/* Card-corner score indicator (renders nothing when empty) */
+.score-stars {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.score-stars:empty { display: none; }
+
+/* Settings modal: toggle row */
+.toggle-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 13.5px;
+  user-select: none;
+}
+.toggle-row input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
+.toggle-row strong { display: block; font-weight: 600; }
+.toggle-row em {
+  display: block;
+  font-style: normal;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  margin-top: 2px;
+}
+
+/* Panel foot (count summary on the left, destructive link on the right) */
+.panel-foot {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+}
+.link-danger {
+  background: transparent;
+  border: 0;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12.5px;
+  padding: 2px 4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.link-danger:hover { color: rgb(220, 50, 50); }
+:root[data-theme="dark"] .link-danger:hover { color: rgb(255, 130, 130); }
 
 .legend {
   color: var(--ink-faint);
