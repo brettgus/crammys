@@ -309,7 +309,97 @@
   .question .ext { width: 30px; height: 30px; border-radius: 8px; }
   .question .ext svg { width: 14px; height: 14px; }
 
-  
+  /* Combined deck info chip (counter + range, opens Deck modal) */
+  .chip-btn.deck-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .chip-btn.deck-info .chip-sep { color: var(--ink-faint); }
+  .chip-btn.deck-info .chip-extras { color: var(--accent); font-weight: 600; }
+  .chip-btn.deck-info .chip-extras:empty { display: none; }
+
+  /* Overflow menu (⋯) */
+  .menu-wrap { position: relative; }
+  .overflow-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 200px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,.25);
+    padding: 6px;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .12s ease, transform .12s ease;
+    pointer-events: none;
+  }
+  .overflow-menu[data-open="true"] { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .overflow-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 13.5px;
+    text-align: left;
+    cursor: pointer;
+  }
+  .overflow-menu button:hover { background: var(--bg); }
+  .overflow-menu button svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--ink-soft); }
+  .overflow-menu hr { border: 0; border-top: 1px solid var(--line); margin: 6px 4px; }
+
+  /* Score dots on the card corner (replaces ★ star) */
+  .score-dots { display: inline-flex; gap: 3px; align-items: center; height: 18px; }
+  .score-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    transition: background .2s ease;
+  }
+  .score-dots span.on { background: var(--accent); }
+  .score-dots span.retired { background: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+
+  /* Nav row — context-aware */
+  .nav { width: 100%; max-width: 640px; }
+  .nav .nav-front, .nav .nav-back {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  .nav .nav-back { display: none; }
+  .nav.show-back .nav-front { display: none; }
+  .nav.show-back .nav-back { display: flex; }
+  .btn-wide { flex: 1; justify-content: center; }
+  .nav-front .btn:not(.btn-wide) { padding: 10px 12px; }
+  .nav-front .btn:not(.btn-wide) svg { width: 18px; height: 18px; }
+
+  .rate-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .rate-btn svg { width: 18px; height: 18px; }
+  .rate-missed { background: var(--bg-elev); color: var(--ink); }
+  .rate-missed:hover { background: rgba(239, 68, 68, .08); border-color: rgba(239, 68, 68, .35); color: rgb(220, 50, 50); }
+  :root[data-theme="dark"] .rate-missed:hover { background: rgba(239, 68, 68, .18); color: rgb(255, 130, 130); }
+  .rate-got { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .rate-got:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 
   /* Image mode */
   .image-stage {
@@ -595,24 +685,17 @@
         <button id="dirMovieToYear">Title → Year</button>
         <button id="dirImageToMovie">Image → Title</button>
       </div>
-      <div class="meta">
+      <button class="chip chip-btn deck-info" id="rangeChip" title="Change deck range / nominees">
         <span id="counter">1 / 29</span>
-        <button class="chip chip-btn" id="rangeChip" title="Change year range">1996–2025</button>
-        <span id="nomDeckChip" class="chip" hidden>+ nominees</span>
-        <span id="drillChip" class="chip" hidden>drill</span>
-        <span class="streak" id="streak" title="Mastered cards">★ 0</span>
-      </div>
-      <div class="tools">
-        <button class="icon-btn" id="nomineesBtn" title="Show other nominees (N)" aria-label="Toggle other nominees">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h13M3 12h13M3 18h13"/><circle cx="20" cy="6" r="1.2"/><circle cx="20" cy="12" r="1.2"/><circle cx="20" cy="18" r="1.2"/></svg>
+        <span class="chip-sep">·</span>
+        <span id="rangeText">1996–2025</span>
+        <span id="rangeExtras" class="chip-extras"></span>
+      </button>
+      <div class="menu-wrap">
+        <button class="icon-btn" id="menuBtn" aria-haspopup="menu" aria-expanded="false" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="19" cy="12" r="1.4" fill="currentColor"/></svg>
         </button>
-        <button class="icon-btn" id="onlyUnknown" title="Drill unmastered only (U)" aria-label="Drill unmastered only">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
-        </button>
-        <button class="icon-btn" id="themeBtn" title="Toggle theme (T)" aria-label="Toggle theme"></button>
-        <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
-        </button>
+        <div class="overflow-menu" id="overflowMenu" role="menu" hidden></div>
       </div>
     </div>
 
@@ -625,9 +708,7 @@
         <div class="face front" id="frontFace">
           <div class="corner">
             <span id="frontTag">Ceremony</span>
-            <button class="star" id="starFront" title="Mark mastered (F)" aria-label="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-dots" id="scoreDotsFront" title="How well you know this card" aria-hidden="true"></span>
           </div>
           <div class="body">
             <div class="prompt" id="frontPrompt">What won Best Picture in</div>
@@ -643,9 +724,6 @@
                   <button class="reroll" id="rerollBtn" title="Different image (I)" aria-label="Different image">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
                   </button>
-                  <button class="star" id="starImage" title="Mark mastered (F)" aria-label="Mark mastered">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  </button>
                 </div>
               </div>
               <div class="bottom">
@@ -659,39 +737,36 @@
         <div class="face back">
           <div class="corner">
             <span id="backTag">Answer</span>
-            <button class="star" id="starBack" title="Mark mastered (F)" aria-label="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-dots" id="scoreDotsBack" title="How well you know this card" aria-hidden="true"></span>
           </div>
           <div class="body" id="backBody"></div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to flip back</div>
+          <div class="footer-hint">Tap to flip back · <kbd>1</kbd> missed · <kbd>2</kbd> got it</div>
         </div>
       </div>
     </div>
 
-    <div class="nav">
-      <div class="group">
-        <button class="btn" id="prevBtn" title="Previous (←)">
+    <div class="nav" id="navRow">
+      <!-- Shown when card is on the front (question side) -->
+      <div class="nav-front">
+        <button class="btn" id="prevBtn" title="Previous (←)" aria-label="Previous">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-          Prev
         </button>
-        <button class="btn primary" id="flipBtn" title="Flip (Space)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
-          Flip
+        <button class="btn primary btn-wide" id="flipBtn" title="Flip (Space)">
+          Reveal
         </button>
-        <button class="btn" id="nextBtn" title="Next (→)">
-          Next
+        <button class="btn" id="nextBtn" title="Next (→)" aria-label="Next">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
-      <div class="group">
-        <button class="btn" id="shuffleBtn" title="Shuffle (S)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
-          Shuffle
+      <!-- Shown when card is on the back (answer side) -->
+      <div class="nav-back">
+        <button class="btn rate-btn rate-missed" id="missedBtn" title="Missed (1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6L18 18M18 6L6 18"/></svg>
+          Missed
         </button>
-        <button class="btn" id="resetBtn" title="Reset (R)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>
-          Reset
+        <button class="btn rate-btn rate-got" id="gotBtn" title="Got it (2)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+          Got it
         </button>
       </div>
     </div>
@@ -707,13 +782,13 @@
         <div class="about-section">
           <h4>Keyboard shortcuts</h4>
           <div class="kbd-grid">
-            <div><kbd>Space</kbd> flip card</div>
+            <div><kbd>Space</kbd> reveal answer</div>
             <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
+            <div><kbd>1</kbd> mark missed</div>
+            <div><kbd>2</kbd> mark got it</div>
             <div><kbd>S</kbd> shuffle</div>
-            <div><kbd>R</kbd> reset deck</div>
-            <div><kbd>F</kbd> mark mastered</div>
-            <div><kbd>U</kbd> drill unmastered</div>
-            <div><kbd>N</kbd> toggle nominees</div>
+            <div><kbd>R</kbd> reset progress</div>
+            <div><kbd>N</kbd> toggle nominees on back</div>
             <div><kbd>I</kbd> different image</div>
             <div><kbd>T</kbd> toggle theme</div>
             <div><kbd>?</kbd> this dialog</div>
@@ -772,9 +847,6 @@
       </div>
     </div>
 
-    <div class="legend">
-      <kbd>Space</kbd> flip · <kbd>←</kbd>/<kbd>→</kbd> nav · <kbd>S</kbd> shuffle · <kbd>R</kbd> reset · <kbd>F</kbd> mastered · <kbd>U</kbd> drill · <kbd>N</kbd> nominees · <kbd>I</kbd> new image · <kbd>T</kbd> theme
-    </div>
   </main>
 
 <script src="images.js"></script>
@@ -1101,23 +1173,36 @@
   // Combined deck: hand-curated 1997-2025 first, then auto-fetched 1947-1996.
   const DECK = DECK_INLINE.concat(window.DECK_EXTENSION || []);
 
-  const STORE_KEY = "bp-flashcards-v3";
+  const STORE_KEY = "bp-flashcards-v4";
   // Default to the last 30 ceremony years
   const _maxYear = Math.max(...DECK.map(e => e.year));
   const _minYear = Math.min(...DECK.map(e => e.year));
   const DEFAULT_RANGE = { from: _maxYear - 29, to: _maxYear };
+  const SCORE_RETIRED = 3;        // cards at this score graduate out of the active pool
+  const SCORE_WEIGHTS = [4, 2, 1, 0];  // weight given to each score level when shuffling
   const state = (() => {
-    const def = { direction: "y2m", order: null, idx: 0, mastered: [], onlyUnknown: false, theme: null, showNominees: false, range: DEFAULT_RANGE, includeNominees: false };
+    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-      return Object.assign(def, saved || {});
+      let s = Object.assign(def, saved || {});
+      // v3 → v4: migrate mastered (array of cardIds) → scores (map)
+      if (!s.scores || typeof s.scores !== "object") s.scores = {};
+      if (Array.isArray(s.mastered)) {
+        for (const id of s.mastered) if (typeof id === "string") s.scores[id] = SCORE_RETIRED;
+        delete s.mastered;
+      }
+      // Strip legacy fields
+      delete s.onlyUnknown; delete s.showNominees; delete s.theme;
+      return s;
     } catch { return def; }
   })();
   if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
-  // Auto-stretch a saved range to include any newly added years (e.g. a fresh ceremony)
   if (state.range.to < _maxYear) state.range.to = _maxYear;
   if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
+  if (!state.scores || typeof state.scores !== "object") state.scores = {};
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  const scoreOf = (id) => state.scores[id] || 0;
+  const setScore = (id, s) => { state.scores[id] = Math.max(0, Math.min(SCORE_RETIRED, s)); persist(); };
 
   // ─── Card pool ─────────────────────────────────────────────────────
   // The pool is a flat list of cards: every winner, plus every nominee when the
@@ -1169,16 +1254,12 @@
     }
   }
   validateOrder();
-  // mastered is also now a list of cardIds; drop anything stale.
-  if (!Array.isArray(state.mastered)) state.mastered = [];
-  state.mastered = state.mastered.filter(x => typeof x === "string" && POOL_BY_ID.has(x));
 
   function rebuildPool() {
     POOL = buildPool(state.includeNominees);
     POOL_BY_ID = new Map(POOL.map(c => [cardId(c), c]));
-    state.order = shuffleArray(POOL.map(cardId));
+    state.order = weightedShuffle(POOL.map(cardId));
     state.idx = 0;
-    state.mastered = state.mastered.filter(x => POOL_BY_ID.has(x));
     imageChoice.clear();
   }
 
@@ -1190,6 +1271,17 @@
     }
     return a;
   }
+  // Shuffle that biases low-score cards earlier in the order. Cards keep their
+  // identity; this just rearranges. (Retired cards are filtered out at activeOrder().)
+  function weightedShuffle(ids) {
+    return ids
+      .map(id => {
+        const w = SCORE_WEIGHTS[Math.min(scoreOf(id), SCORE_WEIGHTS.length - 1)] || 0.1;
+        return [id, Math.random() / w]; // smaller w → larger sort key → later in order; we want low score = early so use random / weight
+      })
+      .sort((a, b) => a[1] - b[1])
+      .map(x => x[0]);
+  }
 
   // Theme is owned by crammys-shared.js (it sets the icon on #themeBtn and
   // persists choice across deck pages).
@@ -1200,13 +1292,12 @@
   const front = { text: document.getElementById("frontText"), prompt: document.getElementById("frontPrompt"), tag: document.getElementById("frontTag") };
   const back  = { tag: document.getElementById("backTag"),  body: document.getElementById("backBody") };
   const counter = document.getElementById("counter");
-  const streakEl = document.getElementById("streak");
+  const rangeTextEl = document.getElementById("rangeText");
+  const rangeExtrasEl = document.getElementById("rangeExtras");
   const progress = document.getElementById("progress");
-  const starFront = document.getElementById("starFront");
-  const starBack = document.getElementById("starBack");
-  const starImage = document.getElementById("starImage");
-  const onlyUnknownBtn = document.getElementById("onlyUnknown");
-  const nomineesBtn = document.getElementById("nomineesBtn");
+  const scoreDotsFront = document.getElementById("scoreDotsFront");
+  const scoreDotsBack = document.getElementById("scoreDotsBack");
+  const navRow = document.getElementById("navRow");
   const imageStage = document.getElementById("imageStage");
   const imageEl = document.getElementById("imageEl");
   const rerollBtn = document.getElementById("rerollBtn");
@@ -1329,15 +1420,28 @@
       const c = POOL_BY_ID.get(id);
       if (!c) return false;
       if (!inRange(c.year)) return false;
-      if (state.onlyUnknown && state.mastered.includes(id)) return false;
-      // Year → Title mode collapses to one card per year (winner-only) so each
-      // year has a unique answer. Nominee cards only appear in title/image modes.
+      // Retired cards (score === SCORE_RETIRED) graduate out of the pool.
+      if (scoreOf(id) >= SCORE_RETIRED) return false;
+      // Year → Title mode collapses to winners-only so each year has one answer.
       if (state.direction === "y2m" && c.status === "nominee") return false;
       // Image mode skips cards without images.
       if (state.direction === "i2m" && !cardHasImages(c)) return false;
       return true;
     });
   };
+  // Total count of "learned" cards in range (excluding nominee cards in y2m).
+  function learnedAndTotal() {
+    let learned = 0, total = 0;
+    for (const id of state.order) {
+      const c = POOL_BY_ID.get(id);
+      if (!c) continue;
+      if (!inRange(c.year)) continue;
+      if (state.direction === "y2m" && c.status === "nominee") continue;
+      total++;
+      if (scoreOf(id) >= SCORE_RETIRED) learned++;
+    }
+    return { learned, total };
+  }
 
   function currentCard() {
     const ord = activeOrder();
@@ -1348,27 +1452,27 @@
 
   function render() {
     const ord = activeOrder();
+    const { learned, total } = learnedAndTotal();
     const c = currentCard();
 
+    // Always refresh the deck-info chip
+    rangeTextEl.textContent = `${state.range.from}–${state.range.to}`;
+    rangeExtrasEl.textContent = state.includeNominees ? "· w/ nominees" : "";
+
     if (!c) {
-      counter.textContent = "0 / 0";
-      progress.style.width = "0%";
-      streakEl.textContent = `★ ${state.mastered.length}`;
+      counter.textContent = `${learned} / ${total}`;
+      progress.style.width = total ? `${(learned / total) * 100}%` : "0%";
       front.tag.textContent = "All caught up";
       front.prompt.textContent = "";
-      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">All cards mastered. Tap the drill (target) icon above to study the full deck again.</span>`;
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every card in this range is learned. Tap the ⋯ menu and choose <em>Reset progress</em> to start over, or expand the year range.</span>`;
       back.body.innerHTML = "";
+      renderScoreDots(null);
       return;
     }
 
     const cid = cardId(c);
-
     counter.textContent = `${state.idx + 1} / ${ord.length}`;
     progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
-    streakEl.textContent = `★ ${state.mastered.length}`;
-    document.getElementById("drillChip").hidden = !state.onlyUnknown;
-    nomDeckChip.hidden = !state.includeNominees;
-    rangeChipEl.textContent = `${state.range.from}–${state.range.to}`;
 
     const isWinner = c.status === "winner";
     const isImageMode = state.direction === "i2m" && HAS_IMAGES;
@@ -1452,7 +1556,7 @@
           <span class="film" data-movie="${escapeHtml(c.winnerMovie)}"><em>${escapeHtml(c.winnerMovie)}</em></span>
         </div>` : "";
 
-      const nomineesBlock = (state.showNominees && isWinner && c.slate && c.slate.length) ? `
+      const nomineesBlock = (isWinner && c.slate && c.slate.length) ? `
         <div class="nominees">
           <h4>Other nominees · ${c.year}</h4>
           <ul>
@@ -1466,22 +1570,34 @@
     }
 
     back.body.innerHTML = backHTML;
-
-    const mastered = state.mastered.includes(cid);
-    [starFront, starBack, starImage].forEach(s => s.classList.toggle("on", mastered));
+    renderScoreDots(c);
   }
 
-  function flip() { card.classList.toggle("flipped"); hideTip && hideTip(true); }
-  // When navigating while flipped, defer content swap to the midpoint of the un-flip
-  // so the user never sees the next card's back face during the animation.
-  const FLIP_MIDPOINT = 280; // ms; matches half of the .55s CSS transition
+  function renderScoreDots(c) {
+    const score = c ? scoreOf(cardId(c)) : 0;
+    const html = [0, 1, 2].map(i =>
+      `<span class="${i < score ? (score === SCORE_RETIRED ? "retired" : "on") : ""}"></span>`
+    ).join("");
+    if (scoreDotsFront) scoreDotsFront.innerHTML = html;
+    if (scoreDotsBack)  scoreDotsBack.innerHTML  = html;
+  }
+
+  // Sync the nav row to the card state (front vs back)
+  function syncNav() {
+    navRow.classList.toggle("show-back", card.classList.contains("flipped"));
+  }
+  function flip() {
+    card.classList.toggle("flipped");
+    syncNav();
+    hideTip && hideTip(true);
+  }
+  const FLIP_MIDPOINT = 280;
   function unflipAndThen(fn) {
     if (card.classList.contains("flipped")) {
       card.classList.remove("flipped");
+      syncNav();
       setTimeout(fn, FLIP_MIDPOINT);
-    } else {
-      fn();
-    }
+    } else fn();
   }
   function next() {
     const ord = activeOrder(); if (!ord.length) return;
@@ -1502,70 +1618,53 @@
   function shuffle() {
     hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(POOL.map(cardId));
+      state.order = weightedShuffle(POOL.map(cardId));
       state.idx = 0;
       imageChoice.clear();
       persist(); render();
     });
   }
   function reset() {
+    if (!confirm("Reset all progress on this deck? This clears the score for every card.")) return;
     hideTip && hideTip(true);
     unflipAndThen(() => {
       state.order = shuffleArray(POOL.map(cardId));
-      state.idx = 0; state.mastered = []; state.onlyUnknown = false;
+      state.idx = 0;
+      state.scores = {};
       imageChoice.clear();
-      onlyUnknownBtn.classList.remove("on");
       persist(); render();
     });
   }
-  function toggleMastered() {
-    const ord = activeOrder(); if (!ord.length) return;
+  // Tier-2 rating: ✓ Got it bumps score, ✗ Missed resets it. Either advances the card.
+  function rate(delta) {
     const c = currentCard(); if (!c) return;
     const id = cardId(c);
-    const i = state.mastered.indexOf(id);
-    const becameMastered = i < 0;
-    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(id);
-    persist();
-    if (becameMastered) {
-      const nextOrd = activeOrder();
-      if (!nextOrd.length) { render(); return; }
-      if (card.classList.contains("flipped")) card.classList.remove("flipped");
-      if (!state.onlyUnknown) state.idx = (state.idx + 1) % nextOrd.length;
-      else state.idx = state.idx % nextOrd.length;
-    }
-    render();
+    if (delta > 0) setScore(id, scoreOf(id) + 1);
+    else setScore(id, 0);
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      const o = activeOrder();
+      if (!o.length) { render(); return; }
+      // Move idx forward — the current card may have retired (score 3) so look at the new ord.
+      state.idx = state.idx % o.length;
+      persist(); render();
+    });
   }
-  function toggleOnlyUnknown() {
-    state.onlyUnknown = !state.onlyUnknown;
-    state.idx = 0;
-    onlyUnknownBtn.classList.toggle("on", state.onlyUnknown);
-    persist();
-    unflipAndThen(() => render());
-  }
-  function toggleNominees() {
-    state.showNominees = !state.showNominees;
-    nomineesBtn.classList.toggle("on", state.showNominees);
-    persist(); render();
-  }
+  const gotIt = () => rate(+1);
+  const missed = () => rate(-1);
 
   // Wire up
   card.addEventListener("click", (e) => {
-    if (e.target.closest("a, .star, .person, .reroll")) return;
+    if (e.target.closest("a, .person, .reroll")) return;
     flip();
   });
   card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
   document.getElementById("flipBtn").onclick = flip;
   document.getElementById("nextBtn").onclick = next;
   document.getElementById("prevBtn").onclick = prev;
-  document.getElementById("shuffleBtn").onclick = shuffle;
-  document.getElementById("resetBtn").onclick = reset;
-  // themeBtn click is handled by crammys-shared.js
-  starFront.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starBack.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starImage.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  rerollBtn.onclick = (e) => { e.stopPropagation(); rerollImage(); };
-  onlyUnknownBtn.onclick = toggleOnlyUnknown;
-  nomineesBtn.onclick = toggleNominees;
+  document.getElementById("gotBtn").onclick = (e) => { e.stopPropagation(); gotIt(); };
+  document.getElementById("missedBtn").onclick = (e) => { e.stopPropagation(); missed(); };
+  document.getElementById("rerollBtn").onclick = (e) => { e.stopPropagation(); rerollImage(); };
   function setDirection(dir) {
     state.direction = dir; updateDirSeg(); persist();
     unflipAndThen(() => render());
@@ -1584,22 +1683,20 @@
     setImage(c, { reroll: true });
   }
   updateDirSeg();
-  onlyUnknownBtn.classList.toggle("on", !!state.onlyUnknown);
-  nomineesBtn.classList.toggle("on", !!state.showNominees);
+  syncNav();
 
   // Keyboard
   window.addEventListener("keydown", (e) => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     switch (e.key) {
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
       case "ArrowLeft": prev(); break;
+      case "1": if (card.classList.contains("flipped")) missed(); break;
+      case "2": if (card.classList.contains("flipped")) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
-      case "f": case "F": toggleMastered(); break;
-      case "u": case "U": toggleOnlyUnknown(); break;
-      case "n": case "N": toggleNominees(); break;
       case "i": case "I": if (state.direction === "i2m") rerollImage(); break;
       case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
     }
@@ -1626,20 +1723,56 @@
 
   // ─── About / credits modal ─────────────────────────────────────────
   const aboutModal = document.getElementById("aboutModal");
-  const aboutBtn = document.getElementById("aboutBtn");
   const aboutClose = document.getElementById("aboutClose");
   document.getElementById("aboutSpan").textContent = String(_minYear);
   document.getElementById("aboutSpanTo").textContent = String(_maxYear);
   function openAbout() { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
   function closeAbout() { if (aboutModal.hidden) return; aboutModal.hidden = true; document.body.style.overflow = ""; }
-  aboutBtn.addEventListener("click", openAbout);
   aboutClose.addEventListener("click", closeAbout);
   aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
+
+  // ─── Overflow ⋯ menu ───────────────────────────────────────────────
+  const menuBtn = document.getElementById("menuBtn");
+  const overflowMenu = document.getElementById("overflowMenu");
+  const ICONS = {
+    theme:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    shuffle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>',
+    reset:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>',
+    about:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>',
+  };
+  overflowMenu.innerHTML = `
+    <button data-act="theme">${ICONS.theme}<span>Toggle theme</span></button>
+    <button data-act="shuffle">${ICONS.shuffle}<span>Shuffle</span></button>
+    <hr>
+    <button data-act="about">${ICONS.about}<span>About &amp; shortcuts</span></button>
+    <button data-act="reset">${ICONS.reset}<span>Reset progress</span></button>
+  `;
+  function openMenu()  { overflowMenu.hidden = false; requestAnimationFrame(() => overflowMenu.dataset.open = "true"); menuBtn.setAttribute("aria-expanded","true"); }
+  function closeMenu() { overflowMenu.dataset.open = "false"; menuBtn.setAttribute("aria-expanded","false"); setTimeout(() => overflowMenu.hidden = true, 120); }
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    (overflowMenu.dataset.open === "true" ? closeMenu : openMenu)();
+  });
+  document.addEventListener("click", (e) => {
+    if (overflowMenu.dataset.open === "true" && !overflowMenu.contains(e.target) && e.target !== menuBtn) closeMenu();
+  });
+  overflowMenu.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    closeMenu();
+    const a = b.dataset.act;
+    if (a === "theme") (window.CRAMMYS_toggleTheme || (()=>{}))();
+    else if (a === "shuffle") shuffle();
+    else if (a === "reset") reset();
+    else if (a === "about") openAbout();
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overflowMenu.dataset.open === "true") closeMenu();
+  });
 
   // ─── Year range / Deck modal ───────────────────────────────────────
   const rangeModal = document.getElementById("rangeModal");
   const rangeChipEl = document.getElementById("rangeChip");
-  const nomDeckChip = document.getElementById("nomDeckChip");
   const rangeFromSel = document.getElementById("rangeFrom");
   const rangeToSel = document.getElementById("rangeTo");
   const rangeCountEl = document.getElementById("rangeCount");
