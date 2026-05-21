@@ -609,8 +609,19 @@
     margin-bottom: 2px;
   }
   .tip-known em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .tip-duo { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-  .tip-duo .row { display: flex; gap: 12px; align-items: flex-start; }
+  /* Director-duo tooltip — each person gets a compact self-contained row.
+     Two members render side-by-side on desktop (tooltip widens for them),
+     stack vertically on narrow viewports. */
+  .tooltip:has(.tip-duo) { width: 400px; }  /* widen for two-column duo */
+  .tip-duo { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+  .duo-member { display: flex; gap: 10px; align-items: flex-start; min-width: 0; flex: 1; }
+  .duo-member .tip-photo { width: 52px; height: 52px; flex-shrink: 0; }
+  .duo-member .tip-info { min-width: 0; }
+  .duo-member .tip-info .tip-name { font-size: 14px; }
+  .duo-member .tip-info .tip-meta { font-size: 11.5px; line-height: 1.3; }
+  @media (min-width: 480px) {
+    .tip-duo { flex-direction: row; gap: 14px; }
+  }
   .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
   </style>
 </head>
@@ -1896,9 +1907,29 @@
     const p = (window.PEOPLE || {})[name];
     if (!p) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
     if (p.duo && p.duo.length) {
-      return `<div class="tip-duo">${p.duo.map(personRowHTML).join("")}</div>`;
+      return `<div class="tip-duo">${p.duo.map(duoMemberHTML).join("")}</div>`;
     }
     return personRowHTML(p);
+  }
+  function duoMemberHTML(p) {
+    if (!p) return "";
+    const photoUrl = personImageURL(p);
+    const photo = photoUrl
+      ? `<div class="tip-photo"><img src="${photoUrl}" alt=""></div>`
+      : `<div class="tip-photo">${escapeHtml((p.name||"?").trim().charAt(0))}</div>`;
+    const meta = [p.role, p.country, fmtLifespan(p)].filter(Boolean)
+      .join('<span class="dot">·</span>');
+    return `
+      <div class="duo-member">
+        ${photo}
+        <div class="tip-info">
+          <div class="tip-name">
+            <span>${escapeHtml(p.name || "")}</span>
+            <a class="ext" href="${imdb(p.name||"")}" target="_blank" rel="noopener" title="IMDb">${extIcon}</a>
+          </div>
+          ${meta ? `<div class="tip-meta">${meta}</div>` : ""}
+        </div>
+      </div>`;
   }
 
   function truncate(str, n) {
