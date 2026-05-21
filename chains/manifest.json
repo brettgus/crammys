@@ -12,7 +12,7 @@
       "Peter Buck"
     ],
     "founded": 1965,
-    "hq": "Milford",
+    "hq": "Milford, CT",
     "origin": "Bridgeport",
     "parent": null,
     "country": "United States",
@@ -35,7 +35,7 @@
       "Zev Siegl"
     ],
     "founded": 1971,
-    "hq": "Seattle",
+    "hq": "Seattle, WA",
     "origin": "Pike Place Market",
     "parent": null,
     "country": "United States",
@@ -57,7 +57,7 @@
       "Richard and Maurice McDonald"
     ],
     "founded": 1940,
-    "hq": "Chicago",
+    "hq": "Chicago, IL",
     "origin": "San Bernardino",
     "parent": null,
     "country": "United States",
@@ -78,7 +78,7 @@
       "William Rosenberg"
     ],
     "founded": 1950,
-    "hq": "Canton",
+    "hq": "Canton, MA",
     "origin": "Quincy",
     "parent": null,
     "country": "United States",
@@ -99,7 +99,7 @@
       "Glen Bell"
     ],
     "founded": 1962,
-    "hq": "Irvine",
+    "hq": "Irvine, CA",
     "origin": "Downey",
     "parent": "Yum! Brands",
     "country": "United States",
@@ -121,7 +121,7 @@
       "David Edgerton"
     ],
     "founded": 1954,
-    "hq": "Miami-Dade County",
+    "hq": "Miami-Dade County, FL",
     "origin": "Miami",
     "parent": "Restaurant Brands International",
     "country": "United States",
@@ -142,7 +142,7 @@
       "Tom Monaghan"
     ],
     "founded": 1960,
-    "hq": "Ann Arbor Charter Township",
+    "hq": "Ann Arbor Charter Township, MI",
     "origin": "Ypsilanti",
     "parent": "Bain Capital",
     "country": "United States",
@@ -184,7 +184,7 @@
       "Dave Thomas"
     ],
     "founded": 1969,
-    "hq": "Dublin",
+    "hq": "Dublin, OH",
     "origin": "Columbus",
     "parent": null,
     "country": "United States",
@@ -206,7 +206,7 @@
       "Marian Ilitch"
     ],
     "founded": 1959,
-    "hq": "Detroit",
+    "hq": "Detroit, MI",
     "origin": "Garden City",
     "parent": null,
     "country": "United States",
@@ -227,7 +227,7 @@
       "Colonel Sanders"
     ],
     "founded": 1930,
-    "hq": "Louisville",
+    "hq": "Louisville, KY",
     "origin": "North Corbin",
     "parent": "Yum! Brands",
     "country": "United States",
@@ -248,7 +248,7 @@
       "Steve Ells"
     ],
     "founded": 1993,
-    "hq": "Denver",
+    "hq": "Denver, CO",
     "origin": "Denver",
     "parent": null,
     "country": "United States",
@@ -269,7 +269,7 @@
       "John Schnatter"
     ],
     "founded": 1984,
-    "hq": "Louisville",
+    "hq": "Louisville, KY",
     "origin": "Jeffersontown",
     "parent": null,
     "country": "United States",
@@ -291,7 +291,7 @@
       "Leroy Raffel"
     ],
     "founded": 1964,
-    "hq": "Sandy Springs",
+    "hq": "Sandy Springs, GA",
     "origin": "Boardman",
     "parent": "Inspire Brands",
     "country": "United States",
@@ -354,7 +354,7 @@
       "Peter Cancro"
     ],
     "founded": 1956,
-    "hq": "Manasquan",
+    "hq": "Manasquan, NJ",
     "origin": null,
     "parent": null,
     "country": null,
@@ -376,7 +376,7 @@
       "James P. Liautaud"
     ],
     "founded": 1983,
-    "hq": "Champaign",
+    "hq": "Champaign, IL",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -397,7 +397,7 @@
       "Andrew Cherng"
     ],
     "founded": 1973,
-    "hq": "Rosemead",
+    "hq": "Rosemead, CA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -420,7 +420,7 @@
       "Ron Shaich"
     ],
     "founded": 1987,
-    "hq": "Sunset Hills",
+    "hq": "Sunset Hills, MO",
     "origin": null,
     "parent": "JAB Holding Company",
     "country": "United States",
@@ -442,7 +442,7 @@
       "Bernadette Fiaschetti"
     ],
     "founded": 1994,
-    "hq": "Dallas",
+    "hq": "Dallas, TX",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -463,7 +463,7 @@
       "Wilbur Hardee"
     ],
     "founded": 1960,
-    "hq": "St. Louis",
+    "hq": "St. Louis, MO",
     "origin": "Rocky Mount",
     "parent": "CKE Restaurants",
     "country": "United States",
@@ -485,7 +485,7 @@
       "Janie Murrell"
     ],
     "founded": 1986,
-    "hq": "Lorton",
+    "hq": "Lorton, VA",
     "origin": "Arlington County",
     "parent": null,
     "country": "United States",
@@ -507,7 +507,7 @@
       "Chris Sorensen"
     ],
     "founded": 1994,
-    "hq": "Jacksonville",
+    "hq": "Jacksonville, FL",
     "origin": null,
     "parent": "Restaurant Brands International",
     "country": "United States",
@@ -529,7 +529,7 @@
       "Margaret Karcher"
     ],
     "founded": 1941,
-    "hq": "Carpinteria",
+    "hq": "Carpinteria, CA",
     "origin": "Anaheim",
     "parent": "CKE Restaurants",
     "country": null,
@@ -550,7 +550,7 @@
       "George W. Church, Sr."
     ],
     "founded": 1952,
-    "hq": "Sandy Springs",
+    "hq": "Sandy Springs, GA",
     "origin": "San Antonio",
     "parent": "Arcapita",
     "country": "United States",
@@ -571,7 +571,7 @@
       "Terry Collins"
     ],
     "founded": 1981,
-    "hq": "Vancouver",
+    "hq": "Vancouver, WA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -592,7 +592,7 @@
       "Pasquale \"Pat\" Giammarco"
     ],
     "founded": 1978,
-    "hq": "Toledo",
+    "hq": "Toledo, OH",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -616,7 +616,7 @@
       "Ruth Culver"
     ],
     "founded": 1984,
-    "hq": "Prairie du Sac",
+    "hq": "Prairie du Sac, WI",
     "origin": "Sauk City",
     "parent": null,
     "country": null,
@@ -638,7 +638,7 @@
       "Tony Townley"
     ],
     "founded": 1990,
-    "hq": "Athens",
+    "hq": "Athens, GA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -659,7 +659,7 @@
       "Harmon Dobson"
     ],
     "founded": 1950,
-    "hq": "San Antonio",
+    "hq": "San Antonio, TX",
     "origin": "Corpus Christi",
     "parent": null,
     "country": "United States",
@@ -680,7 +680,7 @@
       "Arthur Randall"
     ],
     "founded": 1977,
-    "hq": "Charlotte",
+    "hq": "Charlotte, NC",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -701,7 +701,7 @@
       "Todd Graves"
     ],
     "founded": 1996,
-    "hq": "Baton Rouge",
+    "hq": "Baton Rouge, LA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -723,7 +723,7 @@
       "Robert Hauser"
     ],
     "founded": 1995,
-    "hq": "Wheat Ridge",
+    "hq": "Wheat Ridge, CO",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -744,7 +744,7 @@
       "Robert Hammer"
     ],
     "founded": 1995,
-    "hq": "Lakewood",
+    "hq": "Lakewood, CO",
     "origin": "Golden",
     "parent": "Coffee & Bagel Brands",
     "country": "United States",
@@ -766,7 +766,7 @@
       "Ron Joyce"
     ],
     "founded": 1964,
-    "hq": "Oakville",
+    "hq": "Oakville, ON",
     "origin": "Hamilton",
     "parent": "Restaurant Brands International",
     "country": "Canada",
@@ -788,7 +788,7 @@
       "David Jameson"
     ],
     "founded": 1965,
-    "hq": "Lake Forest",
+    "hq": "Lake Forest, CA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -810,7 +810,7 @@
       "Ally Svenson"
     ],
     "founded": 2008,
-    "hq": "Seattle",
+    "hq": "Seattle, WA",
     "origin": "Seattle",
     "parent": "Elite Restaurant Group, Inc.",
     "country": "United States",
@@ -831,7 +831,7 @@
       "Juan Francisco Ochoa"
     ],
     "founded": 1975,
-    "hq": "Irvine",
+    "hq": "Irvine, CA",
     "origin": "Los Angeles",
     "parent": null,
     "country": "United States",
@@ -853,7 +853,7 @@
       "Kim Puckett"
     ],
     "founded": 1992,
-    "hq": "Brooklyn Center",
+    "hq": "Brooklyn Center, MN",
     "origin": null,
     "parent": "Coffee & Bagel Brands",
     "country": "United States",
@@ -874,7 +874,7 @@
       "Aaron Kennedy"
     ],
     "founded": 2005,
-    "hq": "Broomfield",
+    "hq": "Broomfield, CO",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -895,7 +895,7 @@
       "Bryant Keil"
     ],
     "founded": 1977,
-    "hq": "Chicago",
+    "hq": "Chicago, IL",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -916,7 +916,7 @@
       "Harry Snyder"
     ],
     "founded": 1948,
-    "hq": "Irvine",
+    "hq": "Irvine, CA",
     "origin": "Baldwin Park",
     "parent": null,
     "country": "United States",
@@ -937,7 +937,7 @@
       "Vernon Rudolph"
     ],
     "founded": 1937,
-    "hq": "Winston-Salem",
+    "hq": "Winston-Salem, NC",
     "origin": "Winston-Salem",
     "parent": "JAB Holding Company",
     "country": "United States",
@@ -958,7 +958,7 @@
       "Danny Meyer"
     ],
     "founded": 2004,
-    "hq": "New York City",
+    "hq": "New York City, NY",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -1004,7 +1004,7 @@
       "Rick Wetzel"
     ],
     "founded": 2011,
-    "hq": "Pasadena",
+    "hq": "Pasadena, CA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -1027,7 +1027,7 @@
       "Jonathan Neman"
     ],
     "founded": 2007,
-    "hq": "Culver City",
+    "hq": "Culver City, CA",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -1048,7 +1048,7 @@
       "Jimmy Lambatos"
     ],
     "founded": 1981,
-    "hq": "Denver",
+    "hq": "Denver, CO",
     "origin": null,
     "parent": null,
     "country": "United States",
@@ -1069,7 +1069,7 @@
       "Jeffrey Hyman"
     ],
     "founded": 2002,
-    "hq": "London",
+    "hq": "London, UK",
     "origin": "London",
     "parent": null,
     "country": "United Kingdom",
@@ -1090,7 +1090,7 @@
       "Bill Wang"
     ],
     "founded": 2000,
-    "hq": "Scottsdale",
+    "hq": "Scottsdale, AZ",
     "origin": null,
     "parent": null,
     "country": "United States",

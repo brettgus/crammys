@@ -193,17 +193,28 @@
   .ext:hover { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
   .ext svg { width: 12px; height: 12px; }
 
-  /* Small logo next to chain details on the back face */
-  .back-logo {
-    display: flex; justify-content: center;
-    margin: 10px 0 6px;
-  }
-  .back-logo img {
-    max-width: 140px; max-height: 60px; object-fit: contain;
+  /* Mini logo rendered inline with the chain name in the answer prompt */
+  .inline-logo {
+    max-height: 1.6em;
+    max-width: 64px;
+    object-fit: contain;
+    vertical-align: -0.35em;
     background: var(--bg);
-    padding: 6px 10px; border-radius: 8px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-right: 6px;
   }
-  :root[data-theme="dark"] .back-logo img { background: #f4f3ee; }
+  :root[data-theme="dark"] .inline-logo { background: #f4f3ee; }
+  .chain-name { margin-right: 4px; }
+  /* Auto-shrink long answer values so multi-word city names don't overflow. */
+  .answer {
+    word-break: break-word;
+    hyphens: auto;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  /* When the answer is unusually long (>20 chars), step the font down a notch */
+  .answer.long { font-size: clamp(22px, 3.8vw, 34px); }
 
   .footer-hint {
     color: var(--ink-faint); font-size: 12px; text-align: center;
@@ -627,38 +638,42 @@
       ? `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" onclick="event.stopPropagation()">${extIcon}</a>`
       : "";
 
-    // Small logo next to the chain name on the back face (skip in Logo mode
-    // since the front already shows it big).
-    const smallLogo = (state.mode !== "l2n" && c.logo)
-      ? `<img class="mini-logo" src="${logoUrl(c)}" alt="">`
+    // Mini logo to render inline with the chain name (skip in Logo mode since
+    // the big logo on the front already gave it away).
+    const inlineLogo = (state.mode !== "l2n" && c.logo)
+      ? `<img class="inline-logo" src="${logoUrl(c)}" alt="">`
       : "";
+    const nameWithLogo = `${inlineLogo}<span class="chain-name">${escapeHtml(c.name)}</span>${wikiLink}`;
+
+    // Pick an answer-class size: long values get shrunk to avoid overflow.
+    const answerClass = (v) => "answer" + (String(v || "").length > 20 ? " long" : "");
 
     // Back face: show the answer + chain details
     let answer = "";
     if (state.mode === "n2y") {
       back.tag.textContent = "Founded";
-      answer = `<div class="prompt">${escapeHtml(c.name)} ${wikiLink} was founded in</div>
-                <div class="answer">${c.founded}</div>`;
+      answer = `<div class="prompt">${nameWithLogo} was founded in</div>
+                <div class="${answerClass(c.founded)}">${c.founded}</div>`;
     } else if (state.mode === "n2f") {
       back.tag.textContent = "Founder";
-      answer = `<div class="prompt">${escapeHtml(c.name)} ${wikiLink} was founded by</div>
-                <div class="answer">${escapeHtml(fmtList(c.founders))}</div>`;
+      const fs = fmtList(c.founders);
+      answer = `<div class="prompt">${nameWithLogo} was founded by</div>
+                <div class="${answerClass(fs)}">${escapeHtml(fs)}</div>`;
     } else if (state.mode === "n2h") {
       back.tag.textContent = "HQ";
-      answer = `<div class="prompt">${escapeHtml(c.name)} ${wikiLink} is headquartered in</div>
-                <div class="answer">${escapeHtml(c.hq || "—")}</div>`;
+      answer = `<div class="prompt">${nameWithLogo} is headquartered in</div>
+                <div class="${answerClass(c.hq)}">${escapeHtml(c.hq || "—")}</div>`;
     } else if (state.mode === "l2n") {
       back.tag.textContent = "Chain";
       answer = `<div class="prompt">This logo is</div>
-                <div class="answer">${escapeHtml(c.name)} ${wikiLink}</div>`;
+                <div class="${answerClass(c.name)}">${escapeHtml(c.name)} ${wikiLink}</div>`;
     }
 
     const details = `
-      ${smallLogo ? `<div class="back-logo">${smallLogo}</div>` : ""}
       <div class="details">
         <div class="row"><span class="label">Founded</span><span class="val">${c.founded || "—"}${c.origin ? ` in ${escapeHtml(c.origin)}` : ""}</span></div>
         ${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${escapeHtml(fmtList(c.founders))}</span></div>` : ""}
-        ${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}${c.country ? `, ${escapeHtml(c.country)}` : ""}</span></div>` : ""}
+        ${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}${(c.country && c.country !== "United States") ? `, ${escapeHtml(c.country)}` : ""}</span></div>` : ""}
         ${c.parent ? `<div class="row"><span class="label">Parent</span><span class="val">${escapeHtml(c.parent)}</span></div>` : ""}
         <div class="row"><span class="label">Category</span><span class="val">${escapeHtml(c.category)} · <em>#${catPos} of ${catSize}</em></span></div>
         ${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em style="color:var(--ink-faint)">(rank #${c.rank})</em></span></div>` : ""}
