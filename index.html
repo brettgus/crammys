@@ -1097,8 +1097,8 @@
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
       case "ArrowLeft": prev(); break;
-      case "n": case "N": if (card.classList.contains("flipped")) missed(); break;
-      case "y": case "Y": if (card.classList.contains("flipped")) gotIt(); break;
+      case "n": case "N": missed(); break;
+      case "y": case "Y": gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
       case "ArrowDown": stepImage(+1); break;
