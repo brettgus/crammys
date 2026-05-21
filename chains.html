@@ -604,10 +604,23 @@
     if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
     return arr.slice(0,-1).join(", ") + ", and " + arr[arr.length-1];
   }
-  // Wrap each name in a .founder span so the tooltip handler picks it up.
+  // Wrap each name in a .founder span (only when we have bio data for them).
+  // Without data we render plain text — no tooltip, no underline, no "no entry" popup.
+  function hasFounderData(name) {
+    const f = (window.FOUNDERS || {})[name];
+    if (!f || f.unresolved) return false;
+    const d = (f.description || "").toLowerCase();
+    const s = (f.summary || "").toLowerCase();
+    // Filter disambiguation-page entries — they describe a name, not a person.
+    if (d.includes("topics referred to") || d.includes("may refer to")) return false;
+    if (s.startsWith("topics referred to") || s.includes("may refer to")) return false;
+    return !!(f.summary || f.description);
+  }
   function fmtFounderList(arr) {
     if (!arr || !arr.length) return "—";
-    const spans = arr.map(n => `<span class="founder" data-founder="${escapeHtml(n)}">${escapeHtml(n)}</span>`);
+    const spans = arr.map(n => hasFounderData(n)
+      ? `<span class="founder" data-founder="${escapeHtml(n)}">${escapeHtml(n)}</span>`
+      : escapeHtml(n));
     if (spans.length === 1) return spans[0];
     if (spans.length === 2) return `${spans[0]} and ${spans[1]}`;
     return spans.slice(0,-1).join(", ") + ", and " + spans[spans.length-1];
@@ -929,10 +942,12 @@
   const extIconA = extIcon;
   function tipHTML(name) {
     const f = FOUNDERS[name];
-    if (!f) return `<div class="tip-empty">No Wikipedia entry for ${escapeHtml(name)}</div>`;
+    if (!f) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
+    // Only render the photo block when we have an actual image — drop the
+    // initial-in-a-square placeholder, the layout collapses gracefully.
     const photo = f.thumb
       ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>`
-      : `<div class="tip-photo">${escapeHtml((f.name||"?").charAt(0))}</div>`;
+      : "";
     const linkHTML = f.page
       ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIconA}</a>`
       : "";
