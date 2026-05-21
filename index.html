@@ -1107,21 +1107,23 @@
     }
   });
 
-  // Touch swipe
-  let tx = 0, ty = 0, scrollingFromTouch = false;
-  card.addEventListener("touchstart", e => { const t = e.changedTouches[0]; tx = t.clientX; ty = t.clientY; scrollingFromTouch = false; }, { passive: true });
+  // Touch swipe — tracks max horizontal vs vertical motion so vertical scrolling
+  // on the back face never blocks a horizontal swipe between cards.
+  let tx = 0, ty = 0, dxMax = 0, dyMax = 0;
+  card.addEventListener("touchstart", e => {
+    const t = e.changedTouches[0];
+    tx = t.clientX; ty = t.clientY;
+    dxMax = 0; dyMax = 0;
+  }, { passive: true });
   card.addEventListener("touchmove", e => {
-    // if user is scrolling within back body, don't treat as swipe
-    if (e.target.closest(".body")) {
-      const body = e.target.closest(".body");
-      if (body.scrollHeight > body.clientHeight) scrollingFromTouch = true;
-    }
+    const t = e.changedTouches[0];
+    dxMax = Math.max(dxMax, Math.abs(t.clientX - tx));
+    dyMax = Math.max(dyMax, Math.abs(t.clientY - ty));
   }, { passive: true });
   card.addEventListener("touchend", e => {
-    if (scrollingFromTouch) return;
     const t = e.changedTouches[0];
-    const dx = t.clientX - tx, dy = t.clientY - ty;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    const dx = t.clientX - tx;
+    if (Math.abs(dx) > 50 && dxMax > dyMax * 1.5) {
       if (dx < 0) next(); else prev();
     }
   });
