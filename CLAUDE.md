@@ -48,6 +48,37 @@ out to need per-deck overrides.
   git worktree (`git worktree add /tmp/crammys-main main`) instead of
   switching their checkout's branch.
 
+## Building a new deck page
+
+A new deck (e.g. `chains.html`) inherits the entire visual identity from
+the shared files. Conventions:
+
+**Must follow:**
+- Use the existing design tokens (`--bg`, `--ink`, `--accent`, etc.). Don't
+  introduce new colors or fonts.
+- Reuse `.card-stage` / `.card` / `.face` / `.face.back` for the flip system.
+- Reuse `.rate-btn` / `.rate-missed` / `.rate-got` for the got-it/missed flow.
+- Reuse the modal system (`.modal-backdrop` + `.panel`) for popups.
+- Reuse `.btn`, `.icon-btn`, `.seg`, `.chip`, `.chip-btn` for buttons /
+  segmented controls / chips. Don't invent parallel styles for the same
+  affordances.
+- Set `window.CURRENT_DECK = "<id>"` in a tiny `<script>` in the head, before
+  loading `crammys-shared.js`.
+- Register the deck in `crammys-shared.js`'s `DECKS` array so the deck-switcher
+  dropdown lists it.
+
+**May diverge on (keeping the divergent styles inline):**
+- The direction-segment options. ("Year → Title" doesn't apply to chains;
+  chains might be "Logo → Name", "Name → Founded", etc.)
+- Card content layout for the deck's specific data shape.
+- The contents of the deck-info chip and deck-specific modal panels.
+- Image / media affordances unique to that deck (movie stills for BP,
+  logo grid for chains).
+
+**If a divergent style becomes reusable** — say chains invents a "two-column
+stat panel" that BP would also want — promote it to `crammys-shared.css` and
+let the existing decks adopt it.
+
 ## Annual refresh (after each Oscars ceremony)
 
 ```sh
