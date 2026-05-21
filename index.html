@@ -990,15 +990,30 @@
       setTimeout(fn, FLIP_MIDPOINT);
     } else fn();
   }
+  // When the user finishes a full cycle through the deck (advances past the
+  // last active card back to the first), reshuffle with weights so the next
+  // pass favors low-score cards.
+  function advanceWithCycleReshuffle(o, fromIdx) {
+    const nextIdx = (fromIdx + 1) % o.length;
+    const wrapped = o.length > 1 && fromIdx === o.length - 1 && nextIdx === 0;
+    if (wrapped) {
+      state.order = weightedShuffle(POOL.map(cardId));
+      imageChoice.clear();
+      return 0;
+    }
+    return nextIdx;
+  }
   function next() {
     const ord = activeOrder(); if (!ord.length) return;
     hideTip && hideTip(true);
     unflipAndThen(() => {
       const o = activeOrder(); if (!o.length) return;
-      state.idx = (state.idx + 1) % o.length; persist(); render();
+      state.idx = advanceWithCycleReshuffle(o, state.idx % o.length);
+      persist(); render();
     });
   }
   function prev() {
+    // prev is plain navigation — no cycle reshuffling on backward steps
     const ord = activeOrder(); if (!ord.length) return;
     hideTip && hideTip(true);
     unflipAndThen(() => {
@@ -1037,12 +1052,13 @@
       const o = activeOrder();
       if (!o.length) { render(); return; }
       // Always advance to the next card after rating.
-      // - If the rated card is still in the pool (score < retired), bump idx forward.
+      // - If the rated card is still in the pool (score < retired), bump idx forward
+      //   — and reshuffle (weighted) when we wrap around to the start of the deck.
       // - If it just retired, idx already points at the next-in-line (the pool shrank
       //   by one and everything shifted left), so leave idx alone.
       const currentIdx = state.idx % o.length;
       if (o[currentIdx] === id) {
-        state.idx = (currentIdx + 1) % o.length;
+        state.idx = advanceWithCycleReshuffle(o, currentIdx);
       } else {
         state.idx = currentIdx;
       }
