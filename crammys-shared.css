@@ -607,3 +607,491 @@ main {
   .legend { display: none; }
   .face { padding: 20px; }
 }
+
+/* ── Migrated feature styles (from index.html inline) ────────────── */
+/* Deck switcher */
+
+.range-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.range-presets button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.range-presets button:hover { color: var(--ink); border-color: var(--ink-faint); }
+.range-presets button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.range-inputs label {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  flex: 1;
+}
+.range-inputs select {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.range-dash { color: var(--ink-faint); margin-top: 18px; }
+
+.panel-count em {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.about-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.about-section h4 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+.about-section p {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.about-section p a { color: var(--ink); }
+
+/* status badges on the answer side */
+.badge {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 1px 7px;
+  border-radius: 99px;
+  font-weight: 600;
+  margin-left: 8px;
+  font-family: inherit;
+  vertical-align: middle;
+}
+.badge.winner { background: var(--accent); color: var(--accent-ink); }
+.badge.nominee { background: var(--line); color: var(--ink-soft); }
+.credits.subtle { color: var(--ink-faint); font-size: 12.5px; }
+.credits.subtle .label { color: var(--ink-faint); }
+/* Slate view (Year → Title back face with nominees on) */
+.slate {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  text-align: left;
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slate-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+.slate-row em { font-style: normal; color: var(--ink); font-weight: 500; }
+.slate-row.winner {
+  font-size: 20px;
+}
+.slate-row.winner em { color: var(--ink); font-weight: 600; }
+.slate-marker {
+  width: 18px;
+  text-align: center;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+.slate-row.winner .slate-marker { color: var(--accent); font-size: 16px; }
+.panel-fineprint {
+  color: var(--ink-faint) !important;
+  font-size: 12px !important;
+  font-style: italic;
+}
+.kbd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 18px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+.kbd-grid kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  color: var(--ink);
+  margin-right: 4px;
+}
+
+/* Only the visible face is interactive; the rotated-away face mustn't intercept clicks/hovers. */
+
+.credits {
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 56ch;
+}
+.credits .label { color: var(--ink-faint); margin-right: 4px; }
+.credits em { font-style: normal; color: var(--ink); font-weight: 500; }
+.credits .person, .credits .film {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.credits .sep { color: var(--ink-faint); margin: 0 6px; }
+
+.nominees {
+  width: 100%;
+  /* Sit below the main credits but with clear breathing room — not glued
+     to the credits, not pinned to the bottom. */
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+}
+.nominees h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+.nominee-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 6px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+.nominee-list .film { white-space: nowrap; }
+.nominee-sep { color: var(--ink-faint); padding: 0 2px; user-select: none; }
+.nominees .film em { font-style: normal; color: var(--ink); font-weight: 500; }
+
+.answer .ext { width: 28px; height: 28px; border-radius: 8px; }
+.answer .ext svg { width: 13px; height: 13px; }
+.question .ext { width: 30px; height: 30px; border-radius: 8px; }
+.question .ext svg { width: 14px; height: 14px; }
+
+/* Combined deck info chip (counter + range, opens Deck modal) */
+
+/* Group on the right side of the controls row */
+
+/* Score stars in the card corner — only show when you've gotten this card right at least once.
+   1 = single filled star, 2 = two filled stars. Empty = nothing rendered. */
+
+/* Nav row — only used for the rate buttons on the back face.
+   Front side keeps the row empty; navigation is via side arrows / swipe / keys. */
+.nav { width: 100%; max-width: 640px; min-height: 0; }
+
+/* Footer-hint variants: keyboard-flavored on desktop, gesture-flavored on touch */
+
+/* Floating side arrows next to the card (desktop pointer-friendly nav).
+   Hidden on touch / narrow viewports — those use swipe + tap. */
+.card-stage { position: relative; }
+
+/* Hide on devices without hover/fine pointer (mobile, tablets) */
+
+/* Image mode */
+.image-stage {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+/* Belt-and-suspenders: hide the image-stage entirely when the card is flipped
+   to prevent any descendant from rendering its (mirrored) back side. */
+.card.flipped .image-stage { visibility: hidden; }
+.image-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity .2s ease;
+}
+.image-stage.loading img { opacity: 0; }
+.image-stage::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
+  pointer-events: none;
+}
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  color: #fff;
+}
+.image-overlay .corner { padding: 22px 24px 0; }
+.image-overlay .corner {
+  color: rgba(255,255,255,.7);
+}
+.image-overlay .corner > span:first-child {
+  background: rgba(0,0,0,.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 9px;
+  border-radius: 99px;
+  color: rgba(255,255,255,.85);
+}
+.image-overlay .corner .star {
+  color: rgba(255,255,255,.85);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.18);
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-overlay .corner .star.on { color: var(--accent); }
+.image-overlay .corner .star:hover { color: var(--accent); background: rgba(0,0,0,.55); }
+.image-overlay .bottom {
+  text-align: center;
+  color: #fff;
+  padding: 16px 22px 18px;
+  background: rgba(8,8,12,.62);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .image-overlay .bottom { background: rgba(0,0,0,.78); }
+}
+/* Bottom controls row: dots + photo-stack button, side by side */
+.image-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.image-dots {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.image-dots span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.32);
+  transition: background .2s ease, transform .2s ease;
+  display: inline-block;
+}
+.image-dots span.on {
+  background: rgba(255,255,255,.95);
+  transform: scale(1.35);
+}
+.image-stack-btn {
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.9);
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, transform .05s ease;
+  flex-shrink: 0;
+}
+.image-stack-btn:hover { background: rgba(0,0,0,.6); color: #fff; }
+.image-stack-btn:active { transform: scale(.92); }
+.image-stack-btn svg { width: 14px; height: 14px; }
+.image-overlay .bottom .prompt {
+  color: rgba(255,255,255,.85);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.image-overlay .bottom .footer-hint {
+  color: rgba(255,255,255,.7);
+  margin-top: 4px;
+}
+.image-overlay .bottom .footer-hint kbd {
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.22);
+  color: #fff;
+}
+.face.front.image-mode { padding: 0; background: transparent; }
+.face.front.image-mode .corner,
+.face.front.image-mode .body,
+.face.front.image-mode > .footer-hint { display: none; }
+
+/* Trailer modal */
+.ext.play:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
+
+.modal-frame {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.modal-frame iframe {
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+
+/* Person tooltip */
+.credits .person, .nominees .person { cursor: pointer; }
+.credits .person:hover em, .nominees .person:hover em { color: var(--accent); }
+/* Movie + year hover affordance (back face only) */
+.face.back .film[data-movie] { cursor: pointer; }
+.face.back .film[data-movie]:hover em,
+.face.back .film[data-movie]:hover { color: var(--accent); }
+.face.back .year[data-year] { cursor: pointer; }
+.face.back .year[data-year]:hover { color: var(--accent); }
+.tip-tagline {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.35;
+}
+.tip-blurb {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.tooltip {
+  position: fixed;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  background: var(--bg-elev);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 8px 36px rgba(0,0,0,.25), 0 1px 3px rgba(0,0,0,.06);
+  padding: 14px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  left: 0; top: 0;
+}
+.tooltip.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.tip-photo {
+  width: 72px; height: 96px;
+  border-radius: 8px;
+  background: var(--line);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-faint);
+  font-size: 22px;
+  font-weight: 600;
+}
+/* Movie posters keep the 2:3 ratio so the artwork isn't squished */
+.tip-photo.tip-poster {
+  width: 64px; height: 96px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.tip-name {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -.005em;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tip-name .ext {
+  width: 18px; height: 18px;
+  border-radius: 5px;
+  border-color: var(--line);
+}
+.tip-name .ext svg { width: 10px; height: 10px; }
+.tip-meta { color: var(--ink-soft); font-size: 12.5px; line-height: 1.35; }
+.tip-meta .dot { color: var(--ink-faint); margin: 0 6px; }
+.tip-known {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.tip-known .label {
+  color: var(--ink-faint);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+.tip-known em { font-style: normal; color: var(--ink); font-weight: 500; }
+/* Director-duo tooltip — each person gets a compact self-contained row.
+   Two members render side-by-side on desktop (tooltip widens for them),
+   stack vertically on narrow viewports. */
+.tooltip:has(.tip-duo) { width: 400px; }  /* widen for two-column duo */
+.tip-duo { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.duo-member { display: flex; gap: 10px; align-items: flex-start; min-width: 0; flex: 1; }
+.duo-member .tip-photo { width: 52px; height: 52px; flex-shrink: 0; }
+.duo-member .tip-info { min-width: 0; }
+.duo-member .tip-info .tip-name { font-size: 14px; }
+.duo-member .tip-info .tip-meta { font-size: 11.5px; line-height: 1.3; }
+@media (min-width: 480px) {
+  .tip-duo { flex-direction: row; gap: 14px; }
+}
+.tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }

@@ -5,34 +5,48 @@ This repo hosts multiple flashcard decks. Each deck is its own HTML file
 
 ## File responsibilities
 
-- **`crammys-shared.css`** — visual identity and cross-deck UI primitives:
-  design tokens, base layout, the card-flip system, generic buttons /
-  chips / segments / modals / dropdowns, footer-hint variants, side
-  card-arrows, the rate buttons, etc. **Anything another deck would
-  also want.** When in doubt, read the file: its section headers list
-  what's already there.
+- **`crammys-shared.css`** — visual identity and **all** generic CSS.
+  Holds tokens, base layout, the card-flip system, buttons, chips,
+  segments, modals, the deck switcher, footer-hint variants, side
+  card-arrows, rate buttons, the tooltip skeleton, image-mode overlay,
+  trailer-modal frame, credits / nominee-list / slate / badge patterns,
+  about-modal contents — anything that's purely visual logic. Section
+  headers (`/* ── Section ───── */`) list what's already there.
 
 - **`crammys-shared.js`** — cross-deck behavior: `DECKS` registry, theme
   toggle + persistence, deck-switcher dropdown wiring. Each deck page
   sets `window.CURRENT_DECK` before loading it.
 
-- **Per-page inline `<style>` and `<script>`** — deck-specific feature
-  CSS and JS (anything coupled to that deck's data shape or unique
-  modes).
+- **Per-page inline `<style>` and `<script>`** — deck-specific *behavior*.
+  Inline `<style>` should be near-empty; inline `<script>` holds the
+  deck's render logic, data fetching, and event wiring (anything that
+  references that deck's data shape).
 
 ## Routing decisions
 
-When adding CSS or JS, ask:
+**Default to shared, especially for CSS.** Inline CSS is a smell — an
+unused rule in shared is inert and costs nothing; a missing-from-shared
+rule means future decks have to either duplicate or rediscover it.
 
-> Would another deck want this exact rule / function?
+When adding a CSS rule, the question is:
 
-- **Yes** → put it in the shared file.
-- **No** (it references a class or data shape unique to one deck) →
-  inline in that deck's page.
+> Is this rule about a generic visual / interaction pattern, or is it
+> tightly coupled to one deck's data shape?
 
-Borderline cases default to **inline + add a TODO** to promote later;
-that's reversible and safer than putting something in shared that turns
-out to need per-deck overrides.
+- **Generic** (layout, spacing, typography, hover behavior, button
+  shapes, modal contents, grids, lists, tooltips, badges) →
+  `crammys-shared.css` with a **deck-neutral class name**
+  (`.detail-grid`, not `.restaurant-detail-grid`).
+- **Coupled to one deck's data** (selector hardcodes a deck-specific
+  class, or only makes sense alongside that deck's content) → inline.
+
+The only legitimate reason to inline CSS is "naming this generically
+would force a deck-specific concept into the shared file." If you can
+rename the class to be deck-neutral, the rule belongs in shared.
+
+For **JS**: cross-deck behaviors (theme, deck switcher) → shared.
+Deck-specific render logic / event wiring → inline. JS that references
+DOM IDs unique to one deck stays inline.
 
 ## Workflow notes
 
@@ -67,17 +81,21 @@ the shared files. Conventions:
 - Register the deck in `crammys-shared.js`'s `DECKS` array so the deck-switcher
   dropdown lists it.
 
-**May diverge on (keeping the divergent styles inline):**
+**May diverge on (where the divergence is *behavior*, not visual style):**
 - The direction-segment options. ("Year → Title" doesn't apply to chains;
-  chains might be "Logo → Name", "Name → Founded", etc.)
-- Card content layout for the deck's specific data shape.
-- The contents of the deck-info chip and deck-specific modal panels.
-- Image / media affordances unique to that deck (movie stills for BP,
-  logo grid for chains).
+  chains might be "Logo → Name", "Name → Founded", etc.) Markup goes in
+  the page; the segment styling is already shared.
+- Card content layout — markup in the page, styling in shared.
+- The contents of the deck-info chip and deck-specific modal panels —
+  markup in the page, styling in shared.
+- Image / media affordances unique to that deck — chains' logo-grid
+  markup goes in the page, but the visual styling (grid layout, hover
+  lift, etc.) should be a generic shared rule the page references.
 
-**If a divergent style becomes reusable** — say chains invents a "two-column
-stat panel" that BP would also want — promote it to `crammys-shared.css` and
-let the existing decks adopt it.
+**Add to shared whenever you invent a generic visual primitive.** Chains
+needs a "two-column stat panel"? Add `.stat-panel` to shared — BP and any
+future deck can adopt it later. Don't inline it just because today only
+one deck uses it.
 
 ## Annual refresh (after each Oscars ceremony)
 
