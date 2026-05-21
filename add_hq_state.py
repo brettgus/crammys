@@ -71,26 +71,87 @@ HQ_STATE = {
     "Baton Rouge":      "LA",
     "Winston-Salem":    "NC",
     "Culver City":      "CA",
+    # Origin cities (founding location) not already in the HQ list:
+    "Bridgeport":       "CT",
+    "Pike Place Market":"WA",
+    "San Bernardino":   "CA",
+    "Quincy":           "MA",
+    "Downey":           "CA",
+    "Ypsilanti":        "MI",
+    "Wichita":          "KS",
+    "Columbus":         "OH",
+    "Garden City":      "MI",
+    "North Corbin":     "KY",
+    "Jeffersontown":    "KY",
+    "Boardman":         "OH",
+    "Rocky Mount":      "NC",
+    "Arlington County": "VA",
+    "Anaheim":          "CA",
+    "Sauk City":        "WI",
+    "Corpus Christi":   "TX",
+    "Golden":           "CO",
+    "Hamilton":         "ON",
+    "Bellevue (WA)":    "WA",
+    "Brentwood":        "CA",
+    "Boise":            "ID",
+    "Burlington":       "VT",
+    "Cleveland":        "OH",
+    "Decatur":          "AL",
+    "Denver (CO)":      "CO",
+    "Highland Park":    "IL",
+    "Indianapolis":     "IN",
+    "Lakewood (CO)":    "CO",
+    "Madison":          "WI",
+    "Mansfield":        "OH",
+    "Memphis":          "TN",
+    "Milwaukee":        "WI",
+    "Minneapolis":      "MN",
+    "Nashville":        "TN",
+    "Norwood":          "OH",
+    "Oklahoma City":    "OK",
+    "Phoenix":          "AZ",
+    "Pittsburgh":       "PA",
+    "Point Pleasant":   "NJ",
+    "Portland":         "OR",
+    "Reno":             "NV",
+    "Salt Lake City":   "UT",
+    "Sandusky":         "OH",
+    "Tampa":            "FL",
+    "Tucson":           "AZ",
+    "Tulsa":            "OK",
+    "Wilmington":       "DE",
+    "Worcester":        "MA",
 }
+
+def add_state(city):
+    if not city: return None
+    if "," in city: return city
+    s = HQ_STATE.get(city)
+    if s is None: return city  # leave alone (None means "already a state name")
+    return f"{city}, {s}" if s else None
 
 def main():
     with open("chains/manifest.json") as f:
         chains = json.load(f)
     for c in chains:
+        # HQ
         hq = c.get("hq")
-        if not hq: continue
-        # Skip if it already has a comma + region (e.g. "Washington, D.C.")
-        if "," in hq:
-            continue
-        if hq not in HQ_STATE:
-            print(f"  ! {c['name']:30}  no state mapping for HQ='{hq}'")
-            continue
-        state = HQ_STATE[hq]
-        if state is None:
-            # hq is already state-only (e.g. Chick-fil-A → "Georgia"); leave as-is
-            continue
-        c["hq"] = f"{hq}, {state}"
-        print(f"  {c['name']:30}  {hq}  →  {c['hq']}")
+        if hq and "," not in hq:
+            v = add_state(hq)
+            if v and v != hq:
+                c["hq"] = v
+                print(f"  HQ  {c['name']:30}  {hq}  →  {v}")
+            elif hq not in HQ_STATE:
+                print(f"  ! HQ  {c['name']:30}  no state mapping for '{hq}'")
+        # Origin (founding city)
+        origin = c.get("origin")
+        if origin and "," not in origin:
+            v = add_state(origin)
+            if v and v != origin:
+                c["origin"] = v
+                print(f"  OR  {c['name']:30}  {origin}  →  {v}")
+            elif origin not in HQ_STATE:
+                print(f"  ! OR  {c['name']:30}  no state mapping for '{origin}'")
     with open("chains/manifest.json", "w") as f:
         json.dump(chains, f, ensure_ascii=False, indent=2)
     with open("chains.js", "w") as f:

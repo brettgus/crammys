@@ -340,6 +340,41 @@
     color: var(--ink-soft); font-size: 13px; line-height: 1.55;
   }
   .about-section p a { color: var(--ink); }
+
+  /* Founder hover tooltip */
+  .founder { cursor: pointer; border-bottom: 1px dotted var(--ink-faint); transition: color .15s ease; }
+  .founder:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .tooltip {
+    position: fixed;
+    width: 320px; max-width: calc(100vw - 24px);
+    background: var(--bg-elev); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 8px 36px rgba(0,0,0,.25), 0 1px 3px rgba(0,0,0,.06);
+    padding: 14px;
+    z-index: 100;
+    opacity: 0; transform: translateY(4px); pointer-events: none;
+    transition: opacity .12s ease, transform .12s ease;
+    display: flex; gap: 12px; align-items: flex-start;
+    left: 0; top: 0;
+  }
+  .tooltip.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .tip-photo {
+    width: 64px; height: 86px; border-radius: 8px;
+    background: var(--line); flex-shrink: 0; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-faint); font-size: 22px; font-weight: 600;
+  }
+  .tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .tip-name {
+    font-weight: 600; font-size: 15px; line-height: 1.2;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .tip-name .ext { width: 18px; height: 18px; border-radius: 5px; }
+  .tip-name .ext svg { width: 10px; height: 10px; }
+  .tip-meta { color: var(--ink-soft); font-size: 12.5px; line-height: 1.35; }
+  .tip-blurb { color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; margin-top: 4px; }
+  .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
 </style>
 </head>
 <body>
@@ -428,6 +463,8 @@
       </div>
     </div>
 
+    <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
     <div class="modal-backdrop" id="aboutModal" hidden>
       <div class="panel" role="dialog" aria-label="About">
         <button class="modal-close" id="aboutClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
@@ -470,6 +507,7 @@
   </main>
 
 <script src="chains.js"></script>
+<script src="founders.js" onerror="window.FOUNDERS={}"></script>
 <script>
   // ─── State ─────────────────────────────────────────────────────────
   const STORE_KEY = "crammys-chains-v1";
@@ -543,6 +581,20 @@
   // ─── Helpers ───────────────────────────────────────────────────────
   const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
 
+  // Pretty display label for the internal category slugs
+  const CATEGORY_LABELS = {
+    "burgers":     "Burgers",
+    "chicken":     "Chicken",
+    "pizza":       "Pizza",
+    "sandwich":    "Sandwiches",
+    "mexican":     "Mexican",
+    "coffee":      "Coffee",
+    "bakery-cafe": "Bakery-café",
+    "asian":       "Asian",
+    "fast-casual": "Fast casual",
+  };
+  const catLabel = (slug) => CATEGORY_LABELS[slug] || slug;
+
   function escapeHtml(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
   }
@@ -551,6 +603,14 @@
     if (arr.length === 1) return arr[0];
     if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
     return arr.slice(0,-1).join(", ") + ", and " + arr[arr.length-1];
+  }
+  // Wrap each name in a .founder span so the tooltip handler picks it up.
+  function fmtFounderList(arr) {
+    if (!arr || !arr.length) return "—";
+    const spans = arr.map(n => `<span class="founder" data-founder="${escapeHtml(n)}">${escapeHtml(n)}</span>`);
+    if (spans.length === 1) return spans[0];
+    if (spans.length === 2) return `${spans[0]} and ${spans[1]}`;
+    return spans.slice(0,-1).join(", ") + ", and " + spans[spans.length-1];
   }
   const inCat = (c) => state.cats.includes(c.category);
   const inTopN = (c) => !state.topN || (c.rank && c.rank <= state.topN);
@@ -658,9 +718,10 @@
                 <div class="${answerClass(c.founded)}">${inlineLogo}<span>${c.founded}</span></div>`;
     } else if (state.mode === "n2f") {
       back.tag.textContent = "Founder";
-      const fs = fmtList(c.founders);
+      const fsHTML = fmtFounderList(c.founders);
+      const fsText = fmtList(c.founders);
       answer = `<div class="prompt">${nameInPrompt} was founded by</div>
-                <div class="${answerClass(fs)}">${inlineLogo}<span>${escapeHtml(fs)}</span></div>`;
+                <div class="${answerClass(fsText)}">${inlineLogo}<span>${fsHTML}</span></div>`;
     } else if (state.mode === "n2h") {
       back.tag.textContent = "HQ";
       answer = `<div class="prompt">${nameInPrompt} is headquartered in</div>
@@ -671,14 +732,22 @@
                 <div class="${answerClass(c.name)}">${escapeHtml(c.name)} ${wikiLink}</div>`;
     }
 
+    // Founded row: "City, ST (year)" if we have both, otherwise just whichever piece.
+    const foundedVal = (() => {
+      if (c.origin && c.founded) return `${escapeHtml(c.origin)} <em>(${c.founded})</em>`;
+      if (c.origin) return escapeHtml(c.origin);
+      if (c.founded) return String(c.founded);
+      return "—";
+    })();
+
     const details = `
       <div class="details">
-        <div class="row"><span class="label">Founded</span><span class="val">${c.founded || "—"}${c.origin ? ` in ${escapeHtml(c.origin)}` : ""}</span></div>
-        ${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${escapeHtml(fmtList(c.founders))}</span></div>` : ""}
+        <div class="row"><span class="label">Founded</span><span class="val">${foundedVal}</span></div>
         ${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}${(c.country && c.country !== "United States") ? `, ${escapeHtml(c.country)}` : ""}</span></div>` : ""}
+        ${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${fmtFounderList(c.founders)}</span></div>` : ""}
         ${c.parent ? `<div class="row"><span class="label">Parent</span><span class="val">${escapeHtml(c.parent)}</span></div>` : ""}
-        <div class="row"><span class="label">Category</span><span class="val">${escapeHtml(c.category)} · <em>#${catPos} of ${catSize}</em></span></div>
-        ${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em style="color:var(--ink-faint)">(rank #${c.rank})</em></span></div>` : ""}
+        <div class="row"><span class="label">Category</span><span class="val">${escapeHtml(catLabel(c.category))} <em>(#${catPos} of ${catSize} by US locations)</em></span></div>
+        ${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em>(#${c.rank} of ${CHAINS.length} overall)</em></span></div>` : ""}
         ${c.summary ? `<div class="row"><span class="label">About</span><span class="val">${escapeHtml(c.summary)}</span></div>` : ""}
       </div>`;
     back.body.innerHTML = answer + details;
@@ -811,7 +880,7 @@
   const catGrid = document.getElementById("catGrid");
   function syncCatGrid() {
     catGrid.innerHTML = ALL_CATS.map(cat => `
-      <label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${cat}</span></label>
+      <label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${catLabel(cat)}</span></label>
     `).join("");
     catGrid.querySelectorAll("input").forEach(inp => inp.onchange = () => {
       const c = inp.value;
@@ -850,6 +919,95 @@
         break;
     }
   });
+
+  // ─── Founder tooltip ────────────────────────────────────────────────
+  const tip = document.getElementById("tooltip");
+  const FOUNDERS = window.FOUNDERS || {};
+  let tipAnchor = null, hideTimer = null, showTimer = null;
+  const SHOW_DELAY = 280;
+
+  const extIconA = extIcon;
+  function tipHTML(name) {
+    const f = FOUNDERS[name];
+    if (!f) return `<div class="tip-empty">No Wikipedia entry for ${escapeHtml(name)}</div>`;
+    const photo = f.thumb
+      ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>`
+      : `<div class="tip-photo">${escapeHtml((f.name||"?").charAt(0))}</div>`;
+    const linkHTML = f.page
+      ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIconA}</a>`
+      : "";
+    return `
+      ${photo}
+      <div class="tip-info">
+        <div class="tip-name"><span>${escapeHtml(f.name || name)}</span>${linkHTML}</div>
+        ${f.description ? `<div class="tip-meta">${escapeHtml(f.description)}</div>` : ""}
+        ${f.summary ? `<div class="tip-blurb">${escapeHtml(f.summary)}…</div>` : ""}
+      </div>`;
+  }
+  function positionTip(el) {
+    const r = el.getBoundingClientRect();
+    const tw = tip.offsetWidth, th = tip.offsetHeight, m = 10;
+    let x = r.left + r.width/2 - tw/2;
+    let y = r.top - th - m;
+    if (y < 8) y = r.bottom + m;
+    if (y + th > window.innerHeight - 8) y = Math.max(8, window.innerHeight - th - 8);
+    x = Math.max(8, Math.min(window.innerWidth - tw - 8, x));
+    tip.style.left = `${x}px`; tip.style.top = `${y}px`;
+  }
+  function showTip(el) {
+    clearTimeout(hideTimer); clearTimeout(showTimer);
+    if (tipAnchor === el && tip.classList.contains("visible")) return;
+    tip.innerHTML = tipHTML(el.dataset.founder);
+    tip.classList.add("visible");
+    tipAnchor = el;
+    positionTip(el);
+  }
+  function scheduleShow(el) {
+    clearTimeout(hideTimer);
+    if (tip.classList.contains("visible")) { if (tipAnchor !== el) showTip(el); return; }
+    clearTimeout(showTimer);
+    showTimer = setTimeout(() => showTip(el), SHOW_DELAY);
+  }
+  function hideTip(immediate) {
+    clearTimeout(hideTimer); clearTimeout(showTimer);
+    if (immediate) { tip.classList.remove("visible"); tipAnchor = null; }
+    else hideTimer = setTimeout(() => { tip.classList.remove("visible"); tipAnchor = null; }, 280);
+  }
+  const HOVER_DEVICE = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const SEL = ".founder[data-founder]";
+  if (HOVER_DEVICE) {
+    document.addEventListener("mouseover", e => {
+      const el = e.target.closest(SEL);
+      if (el) { scheduleShow(el); return; }
+      if (e.target.closest("#tooltip")) clearTimeout(hideTimer);
+    });
+    document.addEventListener("mouseout", e => {
+      const from = e.target.closest(SEL) || e.target.closest("#tooltip");
+      if (!from) return;
+      const to = e.relatedTarget;
+      if (to && to.nodeType === 1 && (to.closest(SEL) || to.closest("#tooltip"))) return;
+      clearTimeout(showTimer);
+      hideTip(false);
+    });
+    document.addEventListener("click", e => {
+      if (e.target.closest(SEL) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
+      hideTip(true);
+    });
+  } else {
+    document.addEventListener("click", e => {
+      if (e.target.closest(".ext")) return;
+      const el = e.target.closest(SEL);
+      if (el) {
+        e.stopPropagation();
+        if (tipAnchor === el && tip.classList.contains("visible")) hideTip(true);
+        else showTip(el);
+        return;
+      }
+      if (!e.target.closest("#tooltip")) hideTip(true);
+    });
+  }
+  window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true });
+  window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
 
   render();
 </script>
