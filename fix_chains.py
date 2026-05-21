@@ -69,6 +69,11 @@ KNOWN_FOUNDERS = {
     "Noodles & Company": ["Aaron Kennedy"],
     "MOD Pizza":        ["Scott Svenson", "Ally Svenson"],
     "Blaze Pizza":      ["Elise Wetzel", "Rick Wetzel"],
+    # Parser earlier grabbed phrases that mentioned the original company name
+    # ("St. Louis Bread Company", "Mike's Giant Submarine Shop"). These are
+    # the actual people:
+    "Panera Bread":         ["Ken Rosenthal", "Louis Kane", "Ron Shaich"],
+    "Jersey Mike's Subs":   ["Peter Cancro"],
 }
 
 # ── (2) Locations parsing ──────────────────────────────────────────
@@ -174,7 +179,7 @@ def main():
     with open("chains/manifest.json", encoding="utf-8") as f:
         chains = json.load(f)
 
-    # (1) Founder fixups
+    # (1) Founder fixups (always overwrite with curated when present)
     for c in chains:
         if c["name"] in KNOWN_FOUNDERS:
             old = c.get("founders") or []
@@ -182,6 +187,10 @@ def main():
             if old != new:
                 print(f"  founders: {c['name']}  {old} → {new}")
                 c["founders"] = new
+        # Strip clearly-wrong rows from any leftover noisy parses
+        if c.get("founders"):
+            bad_markers = ("Company", "Shop", "Restaurant", "Inc.")
+            c["founders"] = [f for f in c["founders"] if not any(b in f for b in bad_markers)] or c["founders"]
 
     # (2) Locations + rank (overwrite any previous values; using curated US estimates)
     print("\n--- Locations ---")
