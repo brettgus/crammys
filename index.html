@@ -290,15 +290,19 @@
     color: var(--ink-faint);
     font-weight: 600;
   }
-  .nominees ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-  .nominees li {
-    font-size: 13px;
+  .nominee-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 6px;
     line-height: 1.5;
     color: var(--ink-soft);
+    font-size: 13px;
   }
+  .nominee-list .film { white-space: nowrap; }
+  .nominee-sep { color: var(--ink-faint); padding: 0 2px; user-select: none; }
   .nominees .film em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .nominees .stars { color: var(--ink-soft); }
-  .nominees .dash { color: var(--ink-faint); margin: 0 6px; }
 
   
   
@@ -321,56 +325,49 @@
   .chip-btn.deck-info .chip-sep { color: var(--ink-faint); }
   .chip-btn.deck-info .chip-extras { color: var(--accent); font-weight: 600; }
   .chip-btn.deck-info .chip-extras:empty { display: none; }
-
-  /* Overflow menu (⋯) */
-  .menu-wrap { position: relative; }
-  .overflow-menu {
-    position: absolute;
-    top: calc(100% + 6px);
-    right: 0;
-    min-width: 200px;
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    box-shadow: 0 12px 36px rgba(0,0,0,.25);
-    padding: 6px;
-    z-index: 50;
-    opacity: 0;
-    transform: translateY(-4px);
-    transition: opacity .12s ease, transform .12s ease;
-    pointer-events: none;
+  /* Group on the right side of the controls row */
+  .right-cluster {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
   }
-  .overflow-menu[data-open="true"] { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .overflow-menu button {
+  .panel-foot {
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    margin-top: 4px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .link-danger {
     background: transparent;
     border: 0;
-    padding: 8px 10px;
-    border-radius: 8px;
-    color: var(--ink);
-    font-family: inherit;
-    font-size: 13.5px;
-    text-align: left;
+    color: var(--ink-faint);
     cursor: pointer;
+    font-family: inherit;
+    font-size: 12.5px;
+    padding: 2px 4px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
   }
-  .overflow-menu button:hover { background: var(--bg); }
-  .overflow-menu button svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--ink-soft); }
-  .overflow-menu hr { border: 0; border-top: 1px solid var(--line); margin: 6px 4px; }
-
-  /* Score dots on the card corner (replaces ★ star) */
-  .score-dots { display: inline-flex; gap: 3px; align-items: center; height: 18px; }
-  .score-dots span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--line);
-    transition: background .2s ease;
+  .link-danger:hover { color: rgb(220, 50, 50); }
+  :root[data-theme="dark"] .link-danger:hover { color: rgb(255, 130, 130); }
+  /* Score stars in the card corner — only show when you've gotten this card right at least once.
+     1 = single filled star, 2 = two filled stars. Empty = nothing rendered. */
+  .score-stars {
+    display: inline-flex;
+    gap: 2px;
+    align-items: center;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 1;
   }
-  .score-dots span.on { background: var(--accent); }
-  .score-dots span.retired { background: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+  .score-stars:empty { display: none; }
 
   /* Nav row — context-aware */
   .nav { width: 100%; max-width: 640px; }
@@ -685,17 +682,22 @@
         <button id="dirMovieToYear">Title → Year</button>
         <button id="dirImageToMovie">Image → Title</button>
       </div>
-      <button class="chip chip-btn deck-info" id="rangeChip" title="Change deck range / nominees">
-        <span id="counter">1 / 29</span>
-        <span class="chip-sep">·</span>
-        <span id="rangeText">1996–2025</span>
-        <span id="rangeExtras" class="chip-extras"></span>
-      </button>
-      <div class="menu-wrap">
-        <button class="icon-btn" id="menuBtn" aria-haspopup="menu" aria-expanded="false" title="Menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="19" cy="12" r="1.4" fill="currentColor"/></svg>
+      <div class="right-cluster">
+        <button class="chip chip-btn deck-info" id="rangeChip" title="Change deck range / nominees">
+          <span id="counter">1 / 29</span>
+          <span class="chip-sep">·</span>
+          <span id="rangeText">1996–2025</span>
+          <span id="rangeExtras" class="chip-extras"></span>
         </button>
-        <div class="overflow-menu" id="overflowMenu" role="menu" hidden></div>
+        <div class="tools">
+          <button class="icon-btn" id="shuffleIconBtn" title="Shuffle (S)" aria-label="Shuffle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          </button>
+          <button class="icon-btn" id="themeBtn" title="Toggle theme (T)" aria-label="Toggle theme"></button>
+          <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -708,7 +710,7 @@
         <div class="face front" id="frontFace">
           <div class="corner">
             <span id="frontTag">Ceremony</span>
-            <span class="score-dots" id="scoreDotsFront" title="How well you know this card" aria-hidden="true"></span>
+            <span class="score-stars" id="scoreStarsFront" aria-hidden="true"></span>
           </div>
           <div class="body">
             <div class="prompt" id="frontPrompt">What won Best Picture in</div>
@@ -737,7 +739,7 @@
         <div class="face back">
           <div class="corner">
             <span id="backTag">Answer</span>
-            <span class="score-dots" id="scoreDotsBack" title="How well you know this card" aria-hidden="true"></span>
+            <span class="score-stars" id="scoreStarsBack" aria-hidden="true"></span>
           </div>
           <div class="body" id="backBody"></div>
           <div class="footer-hint">Tap to flip back · <kbd>1</kbd> missed · <kbd>2</kbd> got it</div>
@@ -833,7 +835,10 @@
           <span class="range-dash">–</span>
           <label>To <select id="rangeTo"></select></label>
         </div>
-        <div class="panel-foot"><span id="rangeCount" class="panel-count"></span></div>
+        <div class="panel-foot">
+          <span id="rangeCount" class="panel-count"></span>
+          <button class="link-danger" id="resetProgressBtn" title="Reset all card scores">Reset progress</button>
+        </div>
       </div>
     </div>
 
@@ -1295,9 +1300,9 @@
   const rangeTextEl = document.getElementById("rangeText");
   const rangeExtrasEl = document.getElementById("rangeExtras");
   const progress = document.getElementById("progress");
-  const scoreDotsFront = document.getElementById("scoreDotsFront");
-  const scoreDotsBack = document.getElementById("scoreDotsBack");
   const navRow = document.getElementById("navRow");
+  const scoreStarsFront = document.getElementById("scoreStarsFront");
+  const scoreStarsBack = document.getElementById("scoreStarsBack");
   const imageStage = document.getElementById("imageStage");
   const imageEl = document.getElementById("imageEl");
   const rerollBtn = document.getElementById("rerollBtn");
@@ -1466,7 +1471,7 @@
       front.prompt.textContent = "";
       front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every card in this range is learned. Tap the ⋯ menu and choose <em>Reset progress</em> to start over, or expand the year range.</span>`;
       back.body.innerHTML = "";
-      renderScoreDots(null);
+      renderScoreStars(null);
       return;
     }
 
@@ -1559,27 +1564,25 @@
       const nomineesBlock = (isWinner && c.slate && c.slate.length) ? `
         <div class="nominees">
           <h4>Other nominees · ${c.year}</h4>
-          <ul>
-            ${c.slate.map(n => `
-              <li>${filmInline(n.movie, n.trailer)}</li>
-            `).join("")}
-          </ul>
+          <div class="nominee-list">
+            ${c.slate.map(n => filmInline(n.movie, n.trailer)).join('<span class="nominee-sep">·</span>')}
+          </div>
         </div>` : "";
 
       backHTML = answerBlock + directorBlock + starsBlock + wonBlock + nomineesBlock;
     }
 
     back.body.innerHTML = backHTML;
-    renderScoreDots(c);
+    renderScoreStars(c);
   }
 
-  function renderScoreDots(c) {
+  function renderScoreStars(c) {
     const score = c ? scoreOf(cardId(c)) : 0;
-    const html = [0, 1, 2].map(i =>
-      `<span class="${i < score ? (score === SCORE_RETIRED ? "retired" : "on") : ""}"></span>`
-    ).join("");
-    if (scoreDotsFront) scoreDotsFront.innerHTML = html;
-    if (scoreDotsBack)  scoreDotsBack.innerHTML  = html;
+    // Only render when score > 0. Below SCORE_RETIRED (3) we show 1 or 2 stars;
+    // score=3 cards are retired and not in the active pool.
+    const html = score > 0 ? "★".repeat(Math.min(score, SCORE_RETIRED - 1)) : "";
+    if (scoreStarsFront) scoreStarsFront.innerHTML = html;
+    if (scoreStarsBack)  scoreStarsBack.innerHTML  = html;
   }
 
   // Sync the nav row to the card state (front vs back)
@@ -1731,44 +1734,10 @@
   aboutClose.addEventListener("click", closeAbout);
   aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
 
-  // ─── Overflow ⋯ menu ───────────────────────────────────────────────
-  const menuBtn = document.getElementById("menuBtn");
-  const overflowMenu = document.getElementById("overflowMenu");
-  const ICONS = {
-    theme:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
-    shuffle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>',
-    reset:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>',
-    about:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>',
-  };
-  overflowMenu.innerHTML = `
-    <button data-act="theme">${ICONS.theme}<span>Toggle theme</span></button>
-    <button data-act="shuffle">${ICONS.shuffle}<span>Shuffle</span></button>
-    <hr>
-    <button data-act="about">${ICONS.about}<span>About &amp; shortcuts</span></button>
-    <button data-act="reset">${ICONS.reset}<span>Reset progress</span></button>
-  `;
-  function openMenu()  { overflowMenu.hidden = false; requestAnimationFrame(() => overflowMenu.dataset.open = "true"); menuBtn.setAttribute("aria-expanded","true"); }
-  function closeMenu() { overflowMenu.dataset.open = "false"; menuBtn.setAttribute("aria-expanded","false"); setTimeout(() => overflowMenu.hidden = true, 120); }
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    (overflowMenu.dataset.open === "true" ? closeMenu : openMenu)();
-  });
-  document.addEventListener("click", (e) => {
-    if (overflowMenu.dataset.open === "true" && !overflowMenu.contains(e.target) && e.target !== menuBtn) closeMenu();
-  });
-  overflowMenu.addEventListener("click", (e) => {
-    const b = e.target.closest("button[data-act]");
-    if (!b) return;
-    closeMenu();
-    const a = b.dataset.act;
-    if (a === "theme") (window.CRAMMYS_toggleTheme || (()=>{}))();
-    else if (a === "shuffle") shuffle();
-    else if (a === "reset") reset();
-    else if (a === "about") openAbout();
-  });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overflowMenu.dataset.open === "true") closeMenu();
-  });
+  // Visible icon buttons: Shuffle, Theme, About
+  document.getElementById("shuffleIconBtn").addEventListener("click", shuffle);
+  document.getElementById("aboutBtn").addEventListener("click", openAbout);
+  // themeBtn click handled by crammys-shared.js
 
   // ─── Year range / Deck modal ───────────────────────────────────────
   const rangeModal = document.getElementById("rangeModal");
@@ -1849,6 +1818,10 @@
     applyRange(+b.dataset.from, +b.dataset.to);
   });
   includeNomineesChk.addEventListener("change", toggleIncludeNominees);
+  document.getElementById("resetProgressBtn").addEventListener("click", () => {
+    closeRangeModal();
+    reset();
+  });
 
   // ─── Trailer modal ─────────────────────────────────────────────────
   const trailerModal = document.getElementById("trailerModal");
