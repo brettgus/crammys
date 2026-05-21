@@ -638,10 +638,10 @@
           <span id="rangeExtras" class="chip-extras"></span>
         </button>
         <div class="tools">
-          <button class="icon-btn" id="shuffleIconBtn" title="Shuffle (S)" aria-label="Shuffle">
+          <button class="icon-btn" id="shuffleIconBtn" title="Re-shuffle (S)" aria-label="Re-shuffle">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
           </button>
-          <button class="icon-btn" id="themeBtn" title="Toggle theme (T)" aria-label="Toggle theme"></button>
+          <button class="icon-btn" id="themeBtn" title="Light / dark mode (T)" aria-label="Light / dark mode"></button>
           <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
           </button>
@@ -703,7 +703,7 @@
           </div>
           <div class="body" id="backBody"></div>
           <div class="footer-hint">
-            <span class="hint-desktop">Tap to flip back · <kbd>1</kbd> missed · <kbd>2</kbd> got it</span>
+            <span class="hint-desktop">Tap to flip back · <kbd>Y</kbd> got it · <kbd>N</kbd> missed</span>
             <span class="hint-touch">Tap to flip back</span>
           </div>
         </div>
@@ -738,11 +738,10 @@
           <div class="kbd-grid">
             <div><kbd>Space</kbd> reveal answer</div>
             <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
-            <div><kbd>1</kbd> mark missed</div>
-            <div><kbd>2</kbd> mark got it</div>
+            <div><kbd>Y</kbd> got it</div>
+            <div><kbd>N</kbd> missed</div>
             <div><kbd>S</kbd> shuffle</div>
             <div><kbd>R</kbd> reset progress</div>
-            <div><kbd>N</kbd> toggle nominees on back</div>
             <div><kbd>↑</kbd> <kbd>↓</kbd> cycle images (image mode)</div>
             <div><kbd>T</kbd> toggle theme</div>
             <div><kbd>?</kbd> this dialog</div>
@@ -789,7 +788,7 @@
         </div>
         <div class="panel-foot">
           <span id="rangeCount" class="panel-count"></span>
-          <button class="link-danger" id="resetProgressBtn" title="Reset all card scores">Reset progress</button>
+          <button class="link-danger" id="resetProgressBtn" title="Clear every card's score and start fresh">Start over</button>
         </div>
       </div>
     </div>
@@ -1285,14 +1284,31 @@
   };
   const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
   const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="7 4 19 12 7 20 7 4"/></svg>';
+  // Image-search icon — mountain + sun inside a rectangle (universal "photo" glyph)
+  const imageIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M21 16l-5-5-7 7"/></svg>';
   const escapeHtml = (s) => s.replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
   const stop = `onclick="event.stopPropagation()"`;
+
+  // Google Images query for a movie. Uses release year from MOVIES if available.
+  function googleImagesURL(movie) {
+    const m = (window.MOVIES || {})[movie];
+    const y = m && m.release_date ? m.release_date.slice(0, 4) : null;
+    const q = y ? `"${movie}" (${y})` : `"${movie}" movie`;
+    return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(q)}`;
+  }
+  function imageSearchLink(movie) {
+    return `<a class="ext" href="${googleImagesURL(movie)}" target="_blank" rel="noopener" title="Image search · ${escapeHtml(movie)}" ${stop}>${imageIcon}</a>`;
+  }
 
   function trailerLink(movie, vid) {
     if (vid) {
       return `<a class="ext play" href="https://www.youtube.com/watch?v=${vid}" target="_blank" rel="noopener" data-video-id="${vid}" data-title="${escapeHtml(movie)}" title="Watch trailer" ${stop}>${playIcon}</a>`;
     }
     return `<a class="ext" href="${yt(movie)}" target="_blank" rel="noopener" title="YouTube trailer search" ${stop}>${extIcon}</a>`;
+  }
+  // Combined: trailer + image-search icons for a film name
+  function movieLinks(movie, vid) {
+    return trailerLink(movie, vid) + imageSearchLink(movie);
   }
 
   const filmLink = (movie, includeImdb=false) => {
@@ -1302,7 +1318,7 @@
   };
   const personLink = (name) => `<a class="ext" href="${imdb(name)}" target="_blank" rel="noopener" title="IMDb · ${escapeHtml(name)}" ${stop}>${extIcon}</a>`;
 
-  const filmInline = (movie, trailer) => `<span class="film" data-movie="${escapeHtml(movie)}"><em>${escapeHtml(movie)}</em>${trailerLink(movie, trailer)}</span>`;
+  const filmInline = (movie, trailer) => `<span class="film" data-movie="${escapeHtml(movie)}"><em>${escapeHtml(movie)}</em>${movieLinks(movie, trailer)}</span>`;
   const personInline = (name) => `<span class="person" data-person="${escapeHtml(name)}" tabindex="0"><em>${escapeHtml(name)}</em>${personLink(name)}</span>`;
 
   const SPOILERS = window.SPOILERS || {};
@@ -1436,7 +1452,7 @@
       progress.style.width = total ? `${(learned / total) * 100}%` : "0%";
       front.tag.textContent = "All caught up";
       front.prompt.textContent = "";
-      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every card in this range is learned. Tap the ⋯ menu and choose <em>Reset progress</em> to start over, or expand the year range.</span>`;
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every card in this range is learned. Open the deck chip and click <em>Start over</em>, or expand the year range.</span>`;
       back.body.innerHTML = "";
       renderScoreStars(null);
       return;
@@ -1462,7 +1478,7 @@
     } else {
       front.tag.textContent = isWinner ? "Best Picture" : "Best Picture · Nominee";
       front.prompt.textContent = isWinner ? "What year did this win?" : "What year was this nominated?";
-      front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}`;
+      front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}`;
     }
 
     // Back
@@ -1477,13 +1493,13 @@
           <div class="slate-row winner">
             <span class="slate-marker">★</span>
             <span class="film" data-movie="${escapeHtml(c.movie)}"><em>${escapeHtml(c.movie)}</em></span>
-            ${trailerLink(c.movie, c.trailer)}
+            ${movieLinks(c.movie, c.trailer)}
           </div>
           ${(c.slate || []).map(n => `
             <div class="slate-row">
               <span class="slate-marker">·</span>
               <span class="film" data-movie="${escapeHtml(n.movie)}"><em>${escapeHtml(n.movie)}</em></span>
-              ${trailerLink(n.movie, n.trailer)}
+              ${movieLinks(n.movie, n.trailer)}
             </div>
           `).join("")}
         </div>
@@ -1506,7 +1522,7 @@
       } else {
         answerBlock = `
           <div class="prompt">${c.year} · Best Picture ${statusBadge}</div>
-          <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}</div>
+          <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}</div>
         `;
       }
 
@@ -1595,7 +1611,7 @@
     });
   }
   function reset() {
-    if (!confirm("Reset all progress on this deck? This clears the score for every card.")) return;
+    if (!confirm("Start over and forget which cards you've gotten right? This clears every card's score.")) return;
     hideTip && hideTip(true);
     unflipAndThen(() => {
       state.order = shuffleArray(POOL.map(cardId));
@@ -1676,8 +1692,8 @@
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
       case "ArrowLeft": prev(); break;
-      case "1": if (card.classList.contains("flipped")) missed(); break;
-      case "2": if (card.classList.contains("flipped")) gotIt(); break;
+      case "n": case "N": if (card.classList.contains("flipped")) missed(); break;
+      case "y": case "Y": if (card.classList.contains("flipped")) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
       case "ArrowDown": stepImage(+1); break;
