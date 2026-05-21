@@ -380,6 +380,13 @@
   }
   .nav.show-back .nav-back { display: flex; }
 
+  /* Footer-hint variants: keyboard-flavored on desktop, gesture-flavored on touch */
+  .hint-touch { display: none; }
+  @media (hover: none), (pointer: coarse), (max-width: 760px) {
+    .hint-desktop { display: none; }
+    .hint-touch { display: inline; }
+  }
+
   /* Floating side arrows next to the card (desktop pointer-friendly nav).
      Hidden on touch / narrow viewports — those use swipe + tap. */
   .card-stage { position: relative; }
@@ -754,7 +761,10 @@
             <div class="prompt" id="frontPrompt">What won Best Picture in</div>
             <div class="question" id="frontText">—</div>
           </div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to reveal</div>
+          <div class="footer-hint">
+            <span class="hint-desktop"><kbd>Space</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> navigate</span>
+            <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+          </div>
           <div class="image-stage" id="imageStage" hidden>
             <img id="imageEl" alt="" />
             <div class="image-overlay">
@@ -769,7 +779,10 @@
               <div class="bottom">
                 <div class="image-dots" id="imageDots" aria-hidden="true"></div>
                 <div class="prompt">What movie is this?</div>
-                <div class="footer-hint"><kbd>Space</kbd> reveal · <kbd>I</kbd> new image</div>
+                <div class="footer-hint">
+                  <span class="hint-desktop"><kbd>Space</kbd> reveal · <kbd>I</kbd> new image</span>
+                  <span class="hint-touch">Tap to reveal · 🎲 for a different image</span>
+                </div>
               </div>
             </div>
           </div>
@@ -780,7 +793,10 @@
             <span class="score-stars" id="scoreStarsBack" aria-hidden="true"></span>
           </div>
           <div class="body" id="backBody"></div>
-          <div class="footer-hint">Tap to flip back · <kbd>1</kbd> missed · <kbd>2</kbd> got it</div>
+          <div class="footer-hint">
+            <span class="hint-desktop">Tap to flip back · <kbd>1</kbd> missed · <kbd>2</kbd> got it</span>
+            <span class="hint-touch">Tap to flip back</span>
+          </div>
         </div>
       </div>
     </div>
