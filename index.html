@@ -5,887 +5,52 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0b0b0f" />
 <title>Best Picture · Flashcards</title>
-<style>
-  :root {
-    --bg: #f6f5f1;
-    --bg-elev: #ffffff;
-    --ink: #14141a;
-    --ink-soft: #5a5a66;
-    --ink-faint: #9a9aa6;
-    --line: #e6e4dd;
-    --accent: #c8a24a;
-    --accent-ink: #14141a;
-    --shadow: 0 1px 2px rgba(20,20,26,.04), 0 12px 40px rgba(20,20,26,.08);
-    --radius: 18px;
-    --card-h: clamp(360px, 62vh, 540px);
-  }
-  :root[data-theme="dark"] {
-    --bg: #0b0b0f;
-    --bg-elev: #15151c;
-    --ink: #f4f3ee;
-    --ink-soft: #b6b5ad;
-    --ink-faint: #6e6d76;
-    --line: #25252e;
-    --accent: #d4b056;
-    --accent-ink: #0b0b0f;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 48px rgba(0,0,0,.5);
-  }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
-    overflow: hidden;
-  }
-  .icon-btn {
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--ink-soft);
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background .15s ease, border-color .15s ease, transform .05s ease, color .15s ease;
-    padding: 0;
-  }
-  .icon-btn:hover { background: var(--bg-elev); color: var(--ink); border-color: var(--ink-faint); }
-  .icon-btn:active { transform: scale(.96); }
-  .icon-btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .icon-btn svg { width: 16px; height: 16px; }
-  .tools { display: inline-flex; gap: 6px; }
-
-  main {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 18px 18px 28px;
-    gap: 14px;
-  }
-
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 640px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .seg {
-    display: inline-flex;
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 3px;
-  }
-  .seg button {
-    border: 0;
-    background: transparent;
-    color: var(--ink-soft);
-    padding: 7px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: -.005em;
-  }
-  .seg button.on { background: var(--ink); color: var(--bg); }
-  .meta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: var(--ink-soft);
-    font-size: 13px;
-    font-variant-numeric: tabular-nums;
-  }
-  .meta .streak { color: var(--accent); font-weight: 600; }
-  .meta .chip {
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--accent-ink);
-    background: var(--accent);
-    padding: 2px 8px;
-    border-radius: 99px;
-    font-weight: 600;
-  }
-  .meta .chip-btn {
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--ink-soft);
-    cursor: pointer;
-    font-family: inherit;
-    letter-spacing: .04em;
-    text-transform: none;
-    font-variant-numeric: tabular-nums;
-    transition: border-color .15s ease, color .15s ease, background .15s ease;
-    padding: 3px 9px;
-  }
-  .meta .chip-btn:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
-
-  .panel {
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 22px 24px 20px;
-    width: 100%;
-    max-width: 460px;
-    position: relative;
-    box-shadow: 0 24px 60px rgba(0,0,0,.4);
-    color: var(--ink);
-    text-align: left;
-  }
-  .panel-title {
-    margin: 0 0 4px;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -.01em;
-  }
-  .panel-sub {
-    margin: 0 0 18px;
-    color: var(--ink-soft);
-    font-size: 13px;
-  }
-  .range-presets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 16px;
-  }
-  .range-presets button {
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--ink-soft);
-    padding: 6px 12px;
-    border-radius: 99px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    transition: background .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .range-presets button:hover { color: var(--ink); border-color: var(--ink-faint); }
-  .range-presets button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .range-inputs {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-  .range-inputs label {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    flex: 1;
-  }
-  .range-inputs select {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    padding: 8px 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  .range-dash { color: var(--ink-faint); margin-top: 18px; }
-  .panel-foot {
-    border-top: 1px solid var(--line);
-    padding-top: 12px;
-    color: var(--ink-soft);
-    font-size: 12.5px;
-  }
-  .panel-count em {
-    font-style: normal;
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .panel.panel-wide { max-width: 560px; }
-  .about-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-  .about-section h4 {
-    margin: 0 0 10px;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    font-weight: 600;
-  }
-  .about-section p {
-    margin: 0 0 8px;
-    color: var(--ink-soft);
-    font-size: 13.5px;
-    line-height: 1.55;
-  }
-  .about-section p a { color: var(--ink); }
-  .toggle-row {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 12px 14px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    margin-bottom: 16px;
-    cursor: pointer;
-    color: var(--ink);
-    font-size: 13.5px;
-    user-select: none;
-  }
-  .toggle-row input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
-  .toggle-row strong { display: block; font-weight: 600; }
-  .toggle-row em {
-    display: block;
-    font-style: normal;
-    color: var(--ink-soft);
-    font-size: 12.5px;
-    margin-top: 2px;
-  }
-  .panel-section {
-    margin: 16px 0 10px;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    font-weight: 600;
-  }
-  /* status badges on the answer side */
-  .badge {
-    display: inline-block;
-    font-size: 10.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    padding: 1px 7px;
-    border-radius: 99px;
-    font-weight: 600;
-    margin-left: 8px;
-    font-family: inherit;
-    vertical-align: middle;
-  }
-  .badge.winner { background: var(--accent); color: var(--accent-ink); }
-  .badge.nominee { background: var(--line); color: var(--ink-soft); }
-  .credits.subtle { color: var(--ink-faint); font-size: 12.5px; }
-  .credits.subtle .label { color: var(--ink-faint); }
-  /* Slate view (Year → Title back face with nominees on) */
-  .slate {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 8px;
-    text-align: left;
-    max-width: 56ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .slate-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 17px;
-    color: var(--ink-soft);
-    line-height: 1.3;
-  }
-  .slate-row em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .slate-row.winner {
-    font-size: 20px;
-  }
-  .slate-row.winner em { color: var(--ink); font-weight: 600; }
-  .slate-marker {
-    width: 18px;
-    text-align: center;
-    color: var(--ink-faint);
-    flex-shrink: 0;
-  }
-  .slate-row.winner .slate-marker { color: var(--accent); font-size: 16px; }
-  .panel-fineprint {
-    color: var(--ink-faint) !important;
-    font-size: 12px !important;
-    font-style: italic;
-  }
-  .kbd-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 18px;
-    color: var(--ink-soft);
-    font-size: 13px;
-  }
-  .kbd-grid kbd {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-bottom-width: 2px;
-    padding: 1px 6px;
-    border-radius: 5px;
-    color: var(--ink);
-    margin-right: 4px;
-  }
-
-  .progress-wrap {
-    width: 100%;
-    max-width: 640px;
-    height: 3px;
-    background: var(--line);
-    border-radius: 99px;
-    overflow: hidden;
-  }
-  .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
-
-  .card-stage {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    max-width: 640px;
-    perspective: 1400px;
-    position: relative;
-  }
-  .card {
-    position: absolute;
-    inset: 0;
-    transform-style: preserve-3d;
-    transition: transform .55s cubic-bezier(.2,.8,.2,1);
-    cursor: pointer;
-  }
-  .card.flipped { transform: rotateY(180deg); }
-  /* Only the visible face is interactive; the rotated-away face mustn't intercept clicks/hovers. */
-  .card:not(.flipped) .face.back { pointer-events: none; }
-  .card.flipped .face.front { pointer-events: none; }
-
-  .face {
-    position: absolute;
-    inset: 0;
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    padding: 24px 26px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-width: 0;
-  }
-  .face.back { transform: rotateY(180deg); }
-
-  .face .corner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--ink-faint);
-    font-size: 12px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    flex-shrink: 0;
-  }
-  .star {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    padding: 4px;
-    color: var(--ink-faint);
-    border-radius: 6px;
-    line-height: 0;
-  }
-  .star:hover { color: var(--accent); }
-  .star.on { color: var(--accent); }
-  .star svg { width: 18px; height: 18px; }
-
-  .face .body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 12px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 8px 0;
-    -webkit-overflow-scrolling: touch;
-  }
-  .face .body::-webkit-scrollbar { width: 6px; }
-  .face .body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
-
-  .prompt {
-    color: var(--ink-soft);
-    font-size: 13px;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-  }
-  .question {
-    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    font-size: clamp(40px, 7vw, 64px);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .answer {
-    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    font-size: clamp(28px, 5vw, 44px);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .credits {
-    color: var(--ink-soft);
-    font-size: 13.5px;
-    line-height: 1.55;
-    max-width: 56ch;
-  }
-  .credits .label { color: var(--ink-faint); margin-right: 4px; }
-  .credits em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .credits .person, .credits .film {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    white-space: nowrap;
-  }
-  .credits .sep { color: var(--ink-faint); margin: 0 6px; }
-
-  .nominees {
-    width: 100%;
-    margin-top: 6px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--line);
-    text-align: left;
-  }
-  .nominees h4 {
-    margin: 0 0 8px;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    font-weight: 600;
-  }
-  .nominees ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-  .nominees li {
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-  .nominees .film em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .nominees .stars { color: var(--ink-soft); }
-  .nominees .dash { color: var(--ink-faint); margin: 0 6px; }
-
-  .ext {
-    color: var(--ink-faint);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    width: 20px; height: 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    transition: color .15s ease, border-color .15s ease, background .15s ease, transform .05s ease;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-  .ext:hover { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
-  .ext:active { transform: scale(.92); }
-  .ext svg { width: 11px; height: 11px; }
-  .answer .ext { width: 28px; height: 28px; border-radius: 8px; }
-  .answer .ext svg { width: 13px; height: 13px; }
-  .question .ext { width: 30px; height: 30px; border-radius: 8px; }
-  .question .ext svg { width: 14px; height: 14px; }
-
-  .face .footer-hint {
-    color: var(--ink-faint);
-    font-size: 12px;
-    text-align: center;
-    letter-spacing: .04em;
-    flex-shrink: 0;
-  }
-
-  /* Image mode */
-  .image-stage {
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius);
-    overflow: hidden;
-    background: #000;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  /* Belt-and-suspenders: hide the image-stage entirely when the card is flipped
-     to prevent any descendant from rendering its (mirrored) back side. */
-  .card.flipped .image-stage { visibility: hidden; }
-  .image-stage img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity .2s ease;
-  }
-  .image-stage.loading img { opacity: 0; }
-  .image-stage::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; top: 0;
-    height: 90px;
-    background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
-    pointer-events: none;
-  }
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 2;
-    color: #fff;
-  }
-  .image-overlay .corner { padding: 22px 24px 0; }
-  .image-overlay .corner {
-    color: rgba(255,255,255,.7);
-  }
-  .image-overlay .corner > span:first-child {
-    background: rgba(0,0,0,.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 4px 9px;
-    border-radius: 99px;
-    color: rgba(255,255,255,.85);
-  }
-  .image-overlay .corner .star {
-    color: rgba(255,255,255,.85);
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,.18);
-    width: 30px; height: 30px;
-    border-radius: 8px;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .image-overlay .corner .star.on { color: var(--accent); }
-  .image-overlay .corner .star:hover { color: var(--accent); background: rgba(0,0,0,.55); }
-  .image-overlay .image-tools {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .image-overlay .reroll {
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,.2);
-    color: #fff;
-    width: 30px; height: 30px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background .15s ease, transform .05s ease;
-  }
-  .image-overlay .reroll:hover { background: rgba(0,0,0,.6); }
-  .image-overlay .reroll:active { transform: scale(.92); }
-  .image-overlay .reroll svg { width: 15px; height: 15px; }
-  .image-overlay .bottom {
-    text-align: center;
-    color: #fff;
-    padding: 16px 22px 18px;
-    background: rgba(8,8,12,.62);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border-top: 1px solid rgba(255,255,255,.08);
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-  }
-  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .image-overlay .bottom { background: rgba(0,0,0,.78); }
-  }
-  .image-dots {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .image-dots span {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.32);
-    transition: background .2s ease, transform .2s ease;
-  }
-  .image-dots span.on {
-    background: rgba(255,255,255,.95);
-    transform: scale(1.35);
-  }
-  .image-overlay .bottom .prompt {
-    color: rgba(255,255,255,.85);
-    font-size: 12px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    text-shadow: 0 1px 2px rgba(0,0,0,.4);
-  }
-  .image-overlay .bottom .footer-hint {
-    color: rgba(255,255,255,.7);
-    margin-top: 4px;
-  }
-  .image-overlay .bottom .footer-hint kbd {
-    background: rgba(255,255,255,.14);
-    border: 1px solid rgba(255,255,255,.22);
-    color: #fff;
-  }
-  .face.front.image-mode { padding: 0; background: transparent; }
-  .face.front.image-mode .corner,
-  .face.front.image-mode .body,
-  .face.front.image-mode > .footer-hint { display: none; }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 640px;
-    justify-content: space-between;
-  }
-  .nav .group { display: flex; gap: 10px; }
-  .btn {
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    padding: 10px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: background .15s ease, border-color .15s ease, transform .05s ease;
-  }
-  .btn:hover { border-color: var(--ink-faint); }
-  .btn:active { transform: scale(.97); }
-  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .btn svg { width: 16px; height: 16px; }
-
-  .legend {
-    color: var(--ink-faint);
-    font-size: 12px;
-    text-align: center;
-    max-width: 640px;
-    line-height: 1.7;
-  }
-  .legend kbd {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-bottom-width: 2px;
-    padding: 1px 6px;
-    border-radius: 5px;
-    color: var(--ink-soft);
-  }
-
-  /* Trailer modal */
-  .ext.play:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(6,6,10,.86);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(16px, 4vw, 48px);
-    animation: fadeIn .18s ease-out;
-  }
-  .modal-backdrop[hidden] { display: none; }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .modal-frame {
-    width: 100%;
-    max-width: 1100px;
-    aspect-ratio: 16 / 9;
-    background: #000;
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 30px 80px rgba(0,0,0,.6);
-  }
-  .modal-frame iframe {
-    width: 100%; height: 100%;
-    border: 0; display: block;
-  }
-  .modal-close {
-    position: absolute;
-    top: 10px; right: 10px;
-    width: 36px; height: 36px;
-    background: rgba(0,0,0,.55);
-    border: 1px solid rgba(255,255,255,.18);
-    color: #fff;
-    border-radius: 9px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background .15s ease, transform .05s ease;
-    z-index: 1;
-  }
-  .modal-close:hover { background: rgba(0,0,0,.78); }
-  .modal-close:active { transform: scale(.94); }
-  .modal-close svg { width: 18px; height: 18px; }
-
-  /* Person tooltip */
-  .credits .person, .nominees .person { cursor: pointer; }
-  .credits .person:hover em, .nominees .person:hover em { color: var(--accent); }
-  /* Movie + year hover affordance (back face only) */
-  .face.back .film[data-movie] { cursor: pointer; }
-  .face.back .film[data-movie]:hover em,
-  .face.back .film[data-movie]:hover { color: var(--accent); }
-  .face.back .year[data-year] { cursor: pointer; }
-  .face.back .year[data-year]:hover { color: var(--accent); }
-  .tip-tagline {
-    color: var(--ink-soft);
-    font-size: 12.5px;
-    font-style: italic;
-    line-height: 1.35;
-  }
-  .tip-blurb {
-    color: var(--ink-soft);
-    font-size: 12.5px;
-    line-height: 1.5;
-    margin-top: 6px;
-  }
-  .tooltip {
-    position: fixed;
-    width: 320px;
-    max-width: calc(100vw - 24px);
-    background: var(--bg-elev);
-    color: var(--ink);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    box-shadow: 0 8px 36px rgba(0,0,0,.25), 0 1px 3px rgba(0,0,0,.06);
-    padding: 14px;
-    z-index: 100;
-    opacity: 0;
-    transform: translateY(4px);
-    pointer-events: none;
-    transition: opacity .12s ease, transform .12s ease;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    left: 0; top: 0;
-  }
-  .tooltip.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .tip-photo {
-    width: 72px; height: 96px;
-    border-radius: 8px;
-    background: var(--line);
-    flex-shrink: 0;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--ink-faint);
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
-  .tip-name {
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -.005em;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .tip-name .ext {
-    width: 18px; height: 18px;
-    border-radius: 5px;
-    border-color: var(--line);
-  }
-  .tip-name .ext svg { width: 10px; height: 10px; }
-  .tip-meta { color: var(--ink-soft); font-size: 12.5px; line-height: 1.35; }
-  .tip-meta .dot { color: var(--ink-faint); margin: 0 6px; }
-  .tip-known {
-    color: var(--ink-soft);
-    font-size: 12.5px;
-    line-height: 1.4;
-    margin-top: 4px;
-  }
-  .tip-known .label {
-    color: var(--ink-faint);
-    font-size: 10.5px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2px;
-  }
-  .tip-known em { font-style: normal; color: var(--ink); font-weight: 500; }
-  .tip-duo { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-  .tip-duo .row { display: flex; gap: 12px; align-items: flex-start; }
-  .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
-
-  @media (max-width: 520px) {
-    main { padding: 12px 14px 24px; }
-    .controls { gap: 8px; }
-    .seg button { padding: 6px 10px; font-size: 12px; }
-    .icon-btn { width: 30px; height: 30px; }
-    .nav .btn { padding: 9px 12px; font-size: 13px; }
-    .legend { display: none; }
-    .face { padding: 20px; }
-  }
-</style>
+<link rel="stylesheet" href="crammys-shared.css">
+<script>
+  // Anti-FOUC: apply saved theme before any paint.
+  (function () {
+    try {
+      var t = localStorage.getItem("crammys-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+  window.CURRENT_DECK = "bestpicture";
+</script>
+<script src="crammys-shared.js" defer></script>
+<style></style>
 </head>
 <body>
   <main>
     <div class="controls">
+      <div class="deck-switcher">
+        <button class="deck-btn" id="deckBtn" aria-haspopup="menu" aria-expanded="false" title="Switch deck">
+          <span class="deck-emoji" id="deckEmoji">🎬</span>
+          <span class="deck-name" id="deckName">Best Picture</span>
+          <svg class="deck-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="deck-menu" id="deckMenu" role="menu" hidden></div>
+      </div>
       <div class="seg" role="tablist" aria-label="Direction">
         <button id="dirYearToMovie" class="on">Year → Title</button>
         <button id="dirMovieToYear">Title → Year</button>
         <button id="dirImageToMovie">Image → Title</button>
       </div>
-      <div class="meta">
-        <span id="counter">1 / 29</span>
-        <button class="chip chip-btn" id="rangeChip" title="Change year range">1996–2025</button>
-        <span id="nomDeckChip" class="chip" hidden>+ nominees</span>
-        <span id="drillChip" class="chip" hidden>drill</span>
-        <span class="streak" id="streak" title="Mastered cards">★ 0</span>
-      </div>
-      <div class="tools">
-        <button class="icon-btn" id="nomineesBtn" title="Show other nominees (N)" aria-label="Toggle other nominees">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h13M3 12h13M3 18h13"/><circle cx="20" cy="6" r="1.2"/><circle cx="20" cy="12" r="1.2"/><circle cx="20" cy="18" r="1.2"/></svg>
+      <div class="right-cluster">
+        <button class="chip chip-btn deck-info" id="rangeChip" title="Change deck range / nominees">
+          <span id="counter">1 / 29</span>
+          <span class="chip-sep">·</span>
+          <span id="rangeText">1996–2025</span>
+          <span id="rangeExtras" class="chip-extras"></span>
         </button>
-        <button class="icon-btn" id="onlyUnknown" title="Drill unmastered only (U)" aria-label="Drill unmastered only">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
-        </button>
-        <button class="icon-btn" id="themeBtn" title="Toggle theme (T)" aria-label="Toggle theme"></button>
-        <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
-        </button>
+        <div class="tools">
+          <button class="icon-btn" id="shuffleIconBtn" title="Re-shuffle (S)" aria-label="Re-shuffle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          </button>
+          <button class="icon-btn" id="themeBtn" title="Light / dark mode (T)" aria-label="Light / dark mode"></button>
+          <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -894,37 +59,44 @@
     </div>
 
     <div class="card-stage">
+      <button class="card-arrow card-arrow-prev" id="prevBtn" title="Previous (←)" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="card-arrow card-arrow-next" id="nextBtn" title="Next (→)" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
       <div class="card" id="card" role="button" aria-label="Flip card" tabindex="0">
         <div class="face front" id="frontFace">
           <div class="corner">
             <span id="frontTag">Ceremony</span>
-            <button class="star" id="starFront" title="Mark mastered (F)" aria-label="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-stars" id="scoreStarsFront" aria-hidden="true"></span>
           </div>
           <div class="body">
             <div class="prompt" id="frontPrompt">What won Best Picture in</div>
             <div class="question" id="frontText">—</div>
           </div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to reveal</div>
+          <div class="footer-hint">
+            <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal · <kbd>←</kbd> <kbd>→</kbd> navigate</span>
+            <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+          </div>
           <div class="image-stage" id="imageStage" hidden>
             <img id="imageEl" alt="" />
             <div class="image-overlay">
               <div class="corner">
                 <span>Image</span>
-                <div class="image-tools">
-                  <button class="reroll" id="rerollBtn" title="Different image (I)" aria-label="Different image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
-                  </button>
-                  <button class="star" id="starImage" title="Mark mastered (F)" aria-label="Mark mastered">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  </button>
-                </div>
               </div>
               <div class="bottom">
-                <div class="image-dots" id="imageDots" aria-hidden="true"></div>
+                <div class="image-controls">
+                  <span class="image-dots" id="imageDots" aria-hidden="true"></span>
+                  <button class="image-stack-btn" id="rerollBtn" title="More images" aria-label="More images">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg>
+                  </button>
+                </div>
                 <div class="prompt">What movie is this?</div>
-                <div class="footer-hint"><kbd>Space</kbd> reveal · <kbd>I</kbd> new image</div>
+                <div class="footer-hint">
+                  <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal</span>
+                  <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+                </div>
               </div>
             </div>
           </div>
@@ -932,39 +104,28 @@
         <div class="face back">
           <div class="corner">
             <span id="backTag">Answer</span>
-            <button class="star" id="starBack" title="Mark mastered (F)" aria-label="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-stars" id="scoreStarsBack" aria-hidden="true"></span>
           </div>
           <div class="body" id="backBody"></div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to flip back</div>
+          <div class="footer-hint">
+            <span class="hint-desktop">Tap to flip back · <kbd>Y</kbd> got it · <kbd>N</kbd> missed</span>
+            <span class="hint-touch">Tap to flip back</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="nav">
-      <div class="group">
-        <button class="btn" id="prevBtn" title="Previous (←)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-          Prev
+    <div class="nav" id="navRow">
+      <!-- Front side: no buttons; tap the card / Space / swipe / arrow keys / side arrows -->
+      <!-- Back side: rate the card -->
+      <div class="nav-back">
+        <button class="btn rate-btn rate-missed" id="missedBtn" title="Missed (1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6L18 18M18 6L6 18"/></svg>
+          Missed
         </button>
-        <button class="btn primary" id="flipBtn" title="Flip (Space)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
-          Flip
-        </button>
-        <button class="btn" id="nextBtn" title="Next (→)">
-          Next
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-      <div class="group">
-        <button class="btn" id="shuffleBtn" title="Shuffle (S)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
-          Shuffle
-        </button>
-        <button class="btn" id="resetBtn" title="Reset (R)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/></svg>
-          Reset
+        <button class="btn rate-btn rate-got" id="gotBtn" title="Got it (2)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+          Got it
         </button>
       </div>
     </div>
@@ -980,14 +141,13 @@
         <div class="about-section">
           <h4>Keyboard shortcuts</h4>
           <div class="kbd-grid">
-            <div><kbd>Space</kbd> flip card</div>
+            <div><kbd>Space</kbd> reveal answer</div>
             <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
+            <div><kbd>Y</kbd> got it</div>
+            <div><kbd>N</kbd> missed</div>
             <div><kbd>S</kbd> shuffle</div>
-            <div><kbd>R</kbd> reset deck</div>
-            <div><kbd>F</kbd> mark mastered</div>
-            <div><kbd>U</kbd> drill unmastered</div>
-            <div><kbd>N</kbd> toggle nominees</div>
-            <div><kbd>I</kbd> different image</div>
+            <div><kbd>R</kbd> reset progress</div>
+            <div><kbd>↑</kbd> <kbd>↓</kbd> cycle images (image mode)</div>
             <div><kbd>T</kbd> toggle theme</div>
             <div><kbd>?</kbd> this dialog</div>
             <div><kbd>Esc</kbd> close any popup</div>
@@ -1031,7 +191,10 @@
           <span class="range-dash">–</span>
           <label>To <select id="rangeTo"></select></label>
         </div>
-        <div class="panel-foot"><span id="rangeCount" class="panel-count"></span></div>
+        <div class="panel-foot">
+          <span id="rangeCount" class="panel-count"></span>
+          <button class="link-danger" id="resetProgressBtn" title="Clear every card's score and start fresh">Start over</button>
+        </div>
       </div>
     </div>
 
@@ -1045,9 +208,6 @@
       </div>
     </div>
 
-    <div class="legend">
-      <kbd>Space</kbd> flip · <kbd>←</kbd>/<kbd>→</kbd> nav · <kbd>S</kbd> shuffle · <kbd>R</kbd> reset · <kbd>F</kbd> mastered · <kbd>U</kbd> drill · <kbd>N</kbd> nominees · <kbd>I</kbd> new image · <kbd>T</kbd> theme
-    </div>
   </main>
 
 <script src="images.js"></script>
@@ -1374,23 +534,36 @@
   // Combined deck: hand-curated 1997-2025 first, then auto-fetched 1947-1996.
   const DECK = DECK_INLINE.concat(window.DECK_EXTENSION || []);
 
-  const STORE_KEY = "bp-flashcards-v3";
+  const STORE_KEY = "bp-flashcards-v4";
   // Default to the last 30 ceremony years
   const _maxYear = Math.max(...DECK.map(e => e.year));
   const _minYear = Math.min(...DECK.map(e => e.year));
   const DEFAULT_RANGE = { from: _maxYear - 29, to: _maxYear };
+  const SCORE_RETIRED = 3;        // cards at this score graduate out of the active pool
+  const SCORE_WEIGHTS = [4, 2, 1, 0];  // weight given to each score level when shuffling
   const state = (() => {
-    const def = { direction: "y2m", order: null, idx: 0, mastered: [], onlyUnknown: false, theme: null, showNominees: false, range: DEFAULT_RANGE, includeNominees: false };
+    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-      return Object.assign(def, saved || {});
+      let s = Object.assign(def, saved || {});
+      // v3 → v4: migrate mastered (array of cardIds) → scores (map)
+      if (!s.scores || typeof s.scores !== "object") s.scores = {};
+      if (Array.isArray(s.mastered)) {
+        for (const id of s.mastered) if (typeof id === "string") s.scores[id] = SCORE_RETIRED;
+        delete s.mastered;
+      }
+      // Strip legacy fields
+      delete s.onlyUnknown; delete s.showNominees; delete s.theme;
+      return s;
     } catch { return def; }
   })();
   if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
-  // Auto-stretch a saved range to include any newly added years (e.g. a fresh ceremony)
   if (state.range.to < _maxYear) state.range.to = _maxYear;
   if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
+  if (!state.scores || typeof state.scores !== "object") state.scores = {};
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  const scoreOf = (id) => state.scores[id] || 0;
+  const setScore = (id, s) => { state.scores[id] = Math.max(0, Math.min(SCORE_RETIRED, s)); persist(); };
 
   // ─── Card pool ─────────────────────────────────────────────────────
   // The pool is a flat list of cards: every winner, plus every nominee when the
@@ -1442,16 +615,12 @@
     }
   }
   validateOrder();
-  // mastered is also now a list of cardIds; drop anything stale.
-  if (!Array.isArray(state.mastered)) state.mastered = [];
-  state.mastered = state.mastered.filter(x => typeof x === "string" && POOL_BY_ID.has(x));
 
   function rebuildPool() {
     POOL = buildPool(state.includeNominees);
     POOL_BY_ID = new Map(POOL.map(c => [cardId(c), c]));
-    state.order = shuffleArray(POOL.map(cardId));
+    state.order = weightedShuffle(POOL.map(cardId));
     state.idx = 0;
-    state.mastered = state.mastered.filter(x => POOL_BY_ID.has(x));
     imageChoice.clear();
   }
 
@@ -1463,16 +632,20 @@
     }
     return a;
   }
+  // Shuffle that biases low-score cards earlier in the order. Cards keep their
+  // identity; this just rearranges. (Retired cards are filtered out at activeOrder().)
+  function weightedShuffle(ids) {
+    return ids
+      .map(id => {
+        const w = SCORE_WEIGHTS[Math.min(scoreOf(id), SCORE_WEIGHTS.length - 1)] || 0.1;
+        return [id, Math.random() / w]; // smaller w → larger sort key → later in order; we want low score = early so use random / weight
+      })
+      .sort((a, b) => a[1] - b[1])
+      .map(x => x[0]);
+  }
 
-  // Theme
-  const sun = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
-  const moon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  const setTheme = (t) => {
-    document.documentElement.setAttribute("data-theme", t);
-    state.theme = t; persist();
-    document.getElementById("themeBtn").innerHTML = t === "dark" ? sun : moon;
-  };
-  setTheme(state.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  // Theme is owned by crammys-shared.js (it sets the icon on #themeBtn and
+  // persists choice across deck pages).
 
   // DOM
   const card = document.getElementById("card");
@@ -1480,13 +653,12 @@
   const front = { text: document.getElementById("frontText"), prompt: document.getElementById("frontPrompt"), tag: document.getElementById("frontTag") };
   const back  = { tag: document.getElementById("backTag"),  body: document.getElementById("backBody") };
   const counter = document.getElementById("counter");
-  const streakEl = document.getElementById("streak");
+  const rangeTextEl = document.getElementById("rangeText");
+  const rangeExtrasEl = document.getElementById("rangeExtras");
   const progress = document.getElementById("progress");
-  const starFront = document.getElementById("starFront");
-  const starBack = document.getElementById("starBack");
-  const starImage = document.getElementById("starImage");
-  const onlyUnknownBtn = document.getElementById("onlyUnknown");
-  const nomineesBtn = document.getElementById("nomineesBtn");
+  const navRow = document.getElementById("navRow");
+  const scoreStarsFront = document.getElementById("scoreStarsFront");
+  const scoreStarsBack = document.getElementById("scoreStarsBack");
   const imageStage = document.getElementById("imageStage");
   const imageEl = document.getElementById("imageEl");
   const rerollBtn = document.getElementById("rerollBtn");
@@ -1517,14 +689,31 @@
   };
   const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
   const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="7 4 19 12 7 20 7 4"/></svg>';
+  // Image-search icon — mountain + sun inside a rectangle (universal "photo" glyph)
+  const imageIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M21 16l-5-5-7 7"/></svg>';
   const escapeHtml = (s) => s.replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
   const stop = `onclick="event.stopPropagation()"`;
+
+  // Google Images query for a movie. Uses release year from MOVIES if available.
+  function googleImagesURL(movie) {
+    const m = (window.MOVIES || {})[movie];
+    const y = m && m.release_date ? m.release_date.slice(0, 4) : null;
+    const q = y ? `"${movie}" (${y})` : `"${movie}" movie`;
+    return `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(q)}`;
+  }
+  function imageSearchLink(movie) {
+    return `<a class="ext" href="${googleImagesURL(movie)}" target="_blank" rel="noopener" title="Image search · ${escapeHtml(movie)}" ${stop}>${imageIcon}</a>`;
+  }
 
   function trailerLink(movie, vid) {
     if (vid) {
       return `<a class="ext play" href="https://www.youtube.com/watch?v=${vid}" target="_blank" rel="noopener" data-video-id="${vid}" data-title="${escapeHtml(movie)}" title="Watch trailer" ${stop}>${playIcon}</a>`;
     }
     return `<a class="ext" href="${yt(movie)}" target="_blank" rel="noopener" title="YouTube trailer search" ${stop}>${extIcon}</a>`;
+  }
+  // Combined: trailer + image-search icons for a film name
+  function movieLinks(movie, vid) {
+    return trailerLink(movie, vid) + imageSearchLink(movie);
   }
 
   const filmLink = (movie, includeImdb=false) => {
@@ -1534,7 +723,7 @@
   };
   const personLink = (name) => `<a class="ext" href="${imdb(name)}" target="_blank" rel="noopener" title="IMDb · ${escapeHtml(name)}" ${stop}>${extIcon}</a>`;
 
-  const filmInline = (movie, trailer) => `<span class="film" data-movie="${escapeHtml(movie)}"><em>${escapeHtml(movie)}</em>${trailerLink(movie, trailer)}</span>`;
+  const filmInline = (movie, trailer) => `<span class="film" data-movie="${escapeHtml(movie)}"><em>${escapeHtml(movie)}</em>${movieLinks(movie, trailer)}</span>`;
   const personInline = (name) => `<span class="person" data-person="${escapeHtml(name)}" tabindex="0"><em>${escapeHtml(name)}</em>${personLink(name)}</span>`;
 
   const SPOILERS = window.SPOILERS || {};
@@ -1550,7 +739,11 @@
     const n = safe.length;
     const key = cardId(c);
     let idx;
-    if (opts.reroll && imageChoice.has(key)) {
+    if (typeof opts.step === "number" && imageChoice.has(key)) {
+      // Sequential step (used by Up/Down keys)
+      idx = ((imageChoice.get(key) + opts.step) % n + n) % n;
+    } else if (opts.reroll && imageChoice.has(key)) {
+      // Random different image (used by the photo-stack button)
       const prev = imageChoice.get(key);
       idx = (prev + 1 + Math.floor(Math.random() * (n - 1))) % n;
     } else if (imageChoice.has(key)) {
@@ -1566,10 +759,21 @@
   const USE_LOCAL_IMAGES = location.protocol === "file:";
   const TMDB_W780 = "https://image.tmdb.org/t/p/w780";
   const TMDB_W185 = "https://image.tmdb.org/t/p/w185";
-  function movieImageURL(img) {
+  function movieImageURL(img, size) {
     if (USE_LOCAL_IMAGES) return `images/${img.f}`;
-    if (img.p) return `${TMDB_W780}${img.p}`;
+    const dim = size || "w780";
+    if (img.p) return `https://image.tmdb.org/t/p/${dim}${img.p}`;
     return `images/${img.f}`; // fallback
+  }
+  // Best small image for a movie title (poster preferred, then backdrop).
+  // Used for the movie / year hover tooltips.
+  function thumbForMovie(title) {
+    for (const entry of (window.MOVIE_IMAGES || [])) {
+      if (entry.movie !== title) continue;
+      const poster = (entry.images || []).find(i => i.k === "ps");
+      return poster || entry.images[0] || null;
+    }
+    return null;
   }
   function personImageURL(p) {
     if (USE_LOCAL_IMAGES) return p.img || "";
@@ -1609,15 +813,28 @@
       const c = POOL_BY_ID.get(id);
       if (!c) return false;
       if (!inRange(c.year)) return false;
-      if (state.onlyUnknown && state.mastered.includes(id)) return false;
-      // Year → Title mode collapses to one card per year (winner-only) so each
-      // year has a unique answer. Nominee cards only appear in title/image modes.
+      // Retired cards (score === SCORE_RETIRED) graduate out of the pool.
+      if (scoreOf(id) >= SCORE_RETIRED) return false;
+      // Year → Title mode collapses to winners-only so each year has one answer.
       if (state.direction === "y2m" && c.status === "nominee") return false;
       // Image mode skips cards without images.
       if (state.direction === "i2m" && !cardHasImages(c)) return false;
       return true;
     });
   };
+  // Total count of "learned" cards in range (excluding nominee cards in y2m).
+  function learnedAndTotal() {
+    let learned = 0, total = 0;
+    for (const id of state.order) {
+      const c = POOL_BY_ID.get(id);
+      if (!c) continue;
+      if (!inRange(c.year)) continue;
+      if (state.direction === "y2m" && c.status === "nominee") continue;
+      total++;
+      if (scoreOf(id) >= SCORE_RETIRED) learned++;
+    }
+    return { learned, total };
+  }
 
   function currentCard() {
     const ord = activeOrder();
@@ -1628,27 +845,27 @@
 
   function render() {
     const ord = activeOrder();
+    const { learned, total } = learnedAndTotal();
     const c = currentCard();
 
+    // Always refresh the deck-info chip
+    rangeTextEl.textContent = `${state.range.from}–${state.range.to}`;
+    rangeExtrasEl.textContent = state.includeNominees ? "· w/ nominees" : "";
+
     if (!c) {
-      counter.textContent = "0 / 0";
-      progress.style.width = "0%";
-      streakEl.textContent = `★ ${state.mastered.length}`;
+      counter.textContent = `${learned} / ${total}`;
+      progress.style.width = total ? `${(learned / total) * 100}%` : "0%";
       front.tag.textContent = "All caught up";
       front.prompt.textContent = "";
-      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">All cards mastered. Tap the drill (target) icon above to study the full deck again.</span>`;
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every card in this range is learned. Open the deck chip and click <em>Start over</em>, or expand the year range.</span>`;
       back.body.innerHTML = "";
+      renderScoreStars(null);
       return;
     }
 
     const cid = cardId(c);
-
     counter.textContent = `${state.idx + 1} / ${ord.length}`;
     progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
-    streakEl.textContent = `★ ${state.mastered.length}`;
-    document.getElementById("drillChip").hidden = !state.onlyUnknown;
-    nomDeckChip.hidden = !state.includeNominees;
-    rangeChipEl.textContent = `${state.range.from}–${state.range.to}`;
 
     const isWinner = c.status === "winner";
     const isImageMode = state.direction === "i2m" && HAS_IMAGES;
@@ -1666,7 +883,7 @@
     } else {
       front.tag.textContent = isWinner ? "Best Picture" : "Best Picture · Nominee";
       front.prompt.textContent = isWinner ? "What year did this win?" : "What year was this nominated?";
-      front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}`;
+      front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}`;
     }
 
     // Back
@@ -1681,13 +898,13 @@
           <div class="slate-row winner">
             <span class="slate-marker">★</span>
             <span class="film" data-movie="${escapeHtml(c.movie)}"><em>${escapeHtml(c.movie)}</em></span>
-            ${trailerLink(c.movie, c.trailer)}
+            ${movieLinks(c.movie, c.trailer)}
           </div>
           ${(c.slate || []).map(n => `
             <div class="slate-row">
               <span class="slate-marker">·</span>
               <span class="film" data-movie="${escapeHtml(n.movie)}"><em>${escapeHtml(n.movie)}</em></span>
-              ${trailerLink(n.movie, n.trailer)}
+              ${movieLinks(n.movie, n.trailer)}
             </div>
           `).join("")}
         </div>
@@ -1710,7 +927,7 @@
       } else {
         answerBlock = `
           <div class="prompt">${c.year} · Best Picture ${statusBadge}</div>
-          <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${trailerLink(c.movie, c.trailer)}</div>
+          <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}</div>
         `;
       }
 
@@ -1732,36 +949,46 @@
           <span class="film" data-movie="${escapeHtml(c.winnerMovie)}"><em>${escapeHtml(c.winnerMovie)}</em></span>
         </div>` : "";
 
-      const nomineesBlock = (state.showNominees && isWinner && c.slate && c.slate.length) ? `
+      const nomineesBlock = (isWinner && c.slate && c.slate.length) ? `
         <div class="nominees">
           <h4>Other nominees · ${c.year}</h4>
-          <ul>
-            ${c.slate.map(n => `
-              <li>${filmInline(n.movie, n.trailer)}</li>
-            `).join("")}
-          </ul>
+          <div class="nominee-list">
+            ${c.slate.map(n => filmInline(n.movie, n.trailer)).join('<span class="nominee-sep">·</span>')}
+          </div>
         </div>` : "";
 
       backHTML = answerBlock + directorBlock + starsBlock + wonBlock + nomineesBlock;
     }
 
     back.body.innerHTML = backHTML;
-
-    const mastered = state.mastered.includes(cid);
-    [starFront, starBack, starImage].forEach(s => s.classList.toggle("on", mastered));
+    renderScoreStars(c);
   }
 
-  function flip() { card.classList.toggle("flipped"); hideTip && hideTip(true); }
-  // When navigating while flipped, defer content swap to the midpoint of the un-flip
-  // so the user never sees the next card's back face during the animation.
-  const FLIP_MIDPOINT = 280; // ms; matches half of the .55s CSS transition
+  function renderScoreStars(c) {
+    const score = c ? scoreOf(cardId(c)) : 0;
+    // Only render when score > 0. Below SCORE_RETIRED (3) we show 1 or 2 stars;
+    // score=3 cards are retired and not in the active pool.
+    const html = score > 0 ? "★".repeat(Math.min(score, SCORE_RETIRED - 1)) : "";
+    if (scoreStarsFront) scoreStarsFront.innerHTML = html;
+    if (scoreStarsBack)  scoreStarsBack.innerHTML  = html;
+  }
+
+  // Sync the nav row to the card state (front vs back)
+  function syncNav() {
+    navRow.classList.toggle("show-back", card.classList.contains("flipped"));
+  }
+  function flip() {
+    card.classList.toggle("flipped");
+    syncNav();
+    hideTip && hideTip(true);
+  }
+  const FLIP_MIDPOINT = 280;
   function unflipAndThen(fn) {
     if (card.classList.contains("flipped")) {
       card.classList.remove("flipped");
+      syncNav();
       setTimeout(fn, FLIP_MIDPOINT);
-    } else {
-      fn();
-    }
+    } else fn();
   }
   function next() {
     const ord = activeOrder(); if (!ord.length) return;
@@ -1782,70 +1009,60 @@
   function shuffle() {
     hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(POOL.map(cardId));
+      state.order = weightedShuffle(POOL.map(cardId));
       state.idx = 0;
       imageChoice.clear();
       persist(); render();
     });
   }
   function reset() {
+    if (!confirm("Start over and forget which cards you've gotten right? This clears every card's score.")) return;
     hideTip && hideTip(true);
     unflipAndThen(() => {
       state.order = shuffleArray(POOL.map(cardId));
-      state.idx = 0; state.mastered = []; state.onlyUnknown = false;
+      state.idx = 0;
+      state.scores = {};
       imageChoice.clear();
-      onlyUnknownBtn.classList.remove("on");
       persist(); render();
     });
   }
-  function toggleMastered() {
-    const ord = activeOrder(); if (!ord.length) return;
+  // Tier-2 rating: ✓ Got it bumps score, ✗ Missed resets it. Either advances the card.
+  function rate(delta) {
     const c = currentCard(); if (!c) return;
     const id = cardId(c);
-    const i = state.mastered.indexOf(id);
-    const becameMastered = i < 0;
-    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(id);
-    persist();
-    if (becameMastered) {
-      const nextOrd = activeOrder();
-      if (!nextOrd.length) { render(); return; }
-      if (card.classList.contains("flipped")) card.classList.remove("flipped");
-      if (!state.onlyUnknown) state.idx = (state.idx + 1) % nextOrd.length;
-      else state.idx = state.idx % nextOrd.length;
-    }
-    render();
+    if (delta > 0) setScore(id, scoreOf(id) + 1);
+    else setScore(id, 0);
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      const o = activeOrder();
+      if (!o.length) { render(); return; }
+      // Always advance to the next card after rating.
+      // - If the rated card is still in the pool (score < retired), bump idx forward.
+      // - If it just retired, idx already points at the next-in-line (the pool shrank
+      //   by one and everything shifted left), so leave idx alone.
+      const currentIdx = state.idx % o.length;
+      if (o[currentIdx] === id) {
+        state.idx = (currentIdx + 1) % o.length;
+      } else {
+        state.idx = currentIdx;
+      }
+      persist(); render();
+    });
   }
-  function toggleOnlyUnknown() {
-    state.onlyUnknown = !state.onlyUnknown;
-    state.idx = 0;
-    onlyUnknownBtn.classList.toggle("on", state.onlyUnknown);
-    persist();
-    unflipAndThen(() => render());
-  }
-  function toggleNominees() {
-    state.showNominees = !state.showNominees;
-    nomineesBtn.classList.toggle("on", state.showNominees);
-    persist(); render();
-  }
+  const gotIt = () => rate(+1);
+  const missed = () => rate(-1);
 
   // Wire up
   card.addEventListener("click", (e) => {
-    if (e.target.closest("a, .star, .person, .reroll")) return;
+    if (e.target.closest("a, .person, .reroll")) return;
     flip();
   });
   card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
-  document.getElementById("flipBtn").onclick = flip;
   document.getElementById("nextBtn").onclick = next;
   document.getElementById("prevBtn").onclick = prev;
-  document.getElementById("shuffleBtn").onclick = shuffle;
-  document.getElementById("resetBtn").onclick = reset;
-  document.getElementById("themeBtn").onclick = () => setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
-  starFront.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starBack.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starImage.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  rerollBtn.onclick = (e) => { e.stopPropagation(); rerollImage(); };
-  onlyUnknownBtn.onclick = toggleOnlyUnknown;
-  nomineesBtn.onclick = toggleNominees;
+  document.getElementById("gotBtn").onclick = (e) => { e.stopPropagation(); gotIt(); };
+  document.getElementById("missedBtn").onclick = (e) => { e.stopPropagation(); missed(); };
+  document.getElementById("rerollBtn").onclick = (e) => { e.stopPropagation(); rerollImage(); };
   function setDirection(dir) {
     state.direction = dir; updateDirSeg(); persist();
     unflipAndThen(() => render());
@@ -1863,25 +1080,30 @@
     if (!c) return;
     setImage(c, { reroll: true });
   }
+  function stepImage(delta) {
+    if (state.direction !== "i2m") return;
+    const c = currentCard();
+    if (!c) return;
+    setImage(c, { step: delta });
+  }
   updateDirSeg();
-  onlyUnknownBtn.classList.toggle("on", !!state.onlyUnknown);
-  nomineesBtn.classList.toggle("on", !!state.showNominees);
+  syncNav();
 
   // Keyboard
   window.addEventListener("keydown", (e) => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     switch (e.key) {
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
       case "ArrowLeft": prev(); break;
+      case "n": case "N": if (card.classList.contains("flipped")) missed(); break;
+      case "y": case "Y": if (card.classList.contains("flipped")) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
-      case "f": case "F": toggleMastered(); break;
-      case "u": case "U": toggleOnlyUnknown(); break;
-      case "n": case "N": toggleNominees(); break;
-      case "i": case "I": if (state.direction === "i2m") rerollImage(); break;
-      case "t": case "T": setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); break;
+      case "ArrowDown": stepImage(+1); break;
+      case "ArrowUp":   stepImage(-1); break;
+      case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
     }
   });
 
@@ -1906,20 +1128,22 @@
 
   // ─── About / credits modal ─────────────────────────────────────────
   const aboutModal = document.getElementById("aboutModal");
-  const aboutBtn = document.getElementById("aboutBtn");
   const aboutClose = document.getElementById("aboutClose");
   document.getElementById("aboutSpan").textContent = String(_minYear);
   document.getElementById("aboutSpanTo").textContent = String(_maxYear);
   function openAbout() { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
   function closeAbout() { if (aboutModal.hidden) return; aboutModal.hidden = true; document.body.style.overflow = ""; }
-  aboutBtn.addEventListener("click", openAbout);
   aboutClose.addEventListener("click", closeAbout);
   aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
+
+  // Visible icon buttons: Shuffle, Theme, About
+  document.getElementById("shuffleIconBtn").addEventListener("click", shuffle);
+  document.getElementById("aboutBtn").addEventListener("click", openAbout);
+  // themeBtn click handled by crammys-shared.js
 
   // ─── Year range / Deck modal ───────────────────────────────────────
   const rangeModal = document.getElementById("rangeModal");
   const rangeChipEl = document.getElementById("rangeChip");
-  const nomDeckChip = document.getElementById("nomDeckChip");
   const rangeFromSel = document.getElementById("rangeFrom");
   const rangeToSel = document.getElementById("rangeTo");
   const rangeCountEl = document.getElementById("rangeCount");
@@ -1996,6 +1220,10 @@
     applyRange(+b.dataset.from, +b.dataset.to);
   });
   includeNomineesChk.addEventListener("change", toggleIncludeNominees);
+  document.getElementById("resetProgressBtn").addEventListener("click", () => {
+    closeRangeModal();
+    reset();
+  });
 
   // ─── Trailer modal ─────────────────────────────────────────────────
   const trailerModal = document.getElementById("trailerModal");
@@ -2073,9 +1301,29 @@
     const p = (window.PEOPLE || {})[name];
     if (!p) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
     if (p.duo && p.duo.length) {
-      return `<div class="tip-duo">${p.duo.map(personRowHTML).join("")}</div>`;
+      return `<div class="tip-duo">${p.duo.map(duoMemberHTML).join("")}</div>`;
     }
     return personRowHTML(p);
+  }
+  function duoMemberHTML(p) {
+    if (!p) return "";
+    const photoUrl = personImageURL(p);
+    const photo = photoUrl
+      ? `<div class="tip-photo"><img src="${photoUrl}" alt=""></div>`
+      : `<div class="tip-photo">${escapeHtml((p.name||"?").trim().charAt(0))}</div>`;
+    const meta = [p.role, p.country, fmtLifespan(p)].filter(Boolean)
+      .join('<span class="dot">·</span>');
+    return `
+      <div class="duo-member">
+        ${photo}
+        <div class="tip-info">
+          <div class="tip-name">
+            <span>${escapeHtml(p.name || "")}</span>
+            <a class="ext" href="${imdb(p.name||"")}" target="_blank" rel="noopener" title="IMDb">${extIcon}</a>
+          </div>
+          ${meta ? `<div class="tip-meta">${meta}</div>` : ""}
+        </div>
+      </div>`;
   }
 
   function truncate(str, n) {
@@ -2089,6 +1337,11 @@
     const h = Math.floor(min/60), m = min%60;
     return h ? `${h}h ${m}m` : `${m}m`;
   }
+  function moviePosterHTML(title) {
+    const img = thumbForMovie(title);
+    if (!img) return "";
+    return `<div class="tip-photo tip-poster"><img src="${movieImageURL(img, "w342")}" alt="" loading="lazy"></div>`;
+  }
   function tipHTMLMovie(title) {
     const m = (window.MOVIES || {})[title];
     if (!m) return `<div class="tip-empty">No info for ${escapeHtml(title)}</div>`;
@@ -2101,6 +1354,7 @@
       ? `https://www.imdb.com/title/${m.imdb_id}/`
       : `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&s=tt`;
     return `
+      ${moviePosterHTML(title)}
       <div class="tip-info" style="flex:1">
         <div class="tip-name">
           <span>${escapeHtml(title)}</span>
@@ -2117,12 +1371,12 @@
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
   function tipHTMLYear(year) {
-    // Ceremony number: the 19th Academy Awards was held in 1947, so number = year - 1928.
     const ceremony = year - 1928;
     const entry = DECK.find(e => e.year === year);
     if (!entry) return `<div class="tip-empty">${year}</div>`;
     const noms = entry.nominees ? entry.nominees.length : 0;
     return `
+      ${moviePosterHTML(entry.movie)}
       <div class="tip-info" style="flex:1">
         <div class="tip-name"><span>${ordinal(ceremony)} Academy Awards</span></div>
         <div class="tip-meta">Ceremony · ${year}</div>
@@ -2244,6 +1498,8 @@
   window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
   // Hide on Escape
   window.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(true); });
+
+  // Deck switcher is handled by crammys-shared.js (using window.CURRENT_DECK).
 
   render();
 </script>
