@@ -369,20 +369,47 @@
   }
   .score-stars:empty { display: none; }
 
-  /* Nav row — context-aware */
-  .nav { width: 100%; max-width: 640px; }
-  .nav .nav-front, .nav .nav-back {
-    display: flex;
+  /* Nav row — only used for the rate buttons on the back face.
+     Front side keeps the row empty; navigation is via side arrows / swipe / keys. */
+  .nav { width: 100%; max-width: 640px; min-height: 0; }
+  .nav .nav-back {
+    display: none;
     gap: 10px;
     width: 100%;
     align-items: center;
   }
-  .nav .nav-back { display: none; }
-  .nav.show-back .nav-front { display: none; }
   .nav.show-back .nav-back { display: flex; }
-  .btn-wide { flex: 1; justify-content: center; }
-  .nav-front .btn:not(.btn-wide) { padding: 10px 12px; }
-  .nav-front .btn:not(.btn-wide) svg { width: 18px; height: 18px; }
+
+  /* Floating side arrows next to the card (desktop pointer-friendly nav).
+     Hidden on touch / narrow viewports — those use swipe + tap. */
+  .card-stage { position: relative; }
+  .card-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 64px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .55;
+    transition: opacity .15s ease, color .15s ease, background .15s ease, border-color .15s ease, transform .05s ease;
+    z-index: 5;
+  }
+  .card-arrow:hover { opacity: 1; color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
+  .card-arrow:active { transform: translateY(-50%) scale(.95); }
+  .card-arrow svg { width: 22px; height: 22px; }
+  .card-arrow-prev { left: -52px; }
+  .card-arrow-next { right: -52px; }
+  /* Hide on devices without hover/fine pointer (mobile, tablets) */
+  @media (hover: none), (pointer: coarse), (max-width: 760px) {
+    .card-arrow { display: none; }
+  }
 
   .rate-btn {
     flex: 1;
@@ -706,6 +733,12 @@
     </div>
 
     <div class="card-stage">
+      <button class="card-arrow card-arrow-prev" id="prevBtn" title="Previous (←)" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="card-arrow card-arrow-next" id="nextBtn" title="Next (→)" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
       <div class="card" id="card" role="button" aria-label="Flip card" tabindex="0">
         <div class="face front" id="frontFace">
           <div class="corner">
@@ -748,19 +781,8 @@
     </div>
 
     <div class="nav" id="navRow">
-      <!-- Shown when card is on the front (question side) -->
-      <div class="nav-front">
-        <button class="btn" id="prevBtn" title="Previous (←)" aria-label="Previous">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="btn primary btn-wide" id="flipBtn" title="Flip (Space)">
-          Reveal
-        </button>
-        <button class="btn" id="nextBtn" title="Next (→)" aria-label="Next">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-      <!-- Shown when card is on the back (answer side) -->
+      <!-- Front side: no buttons; tap the card / Space / swipe / arrow keys / side arrows -->
+      <!-- Back side: rate the card -->
       <div class="nav-back">
         <button class="btn rate-btn rate-missed" id="missedBtn" title="Missed (1)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6L18 18M18 6L6 18"/></svg>
@@ -1662,7 +1684,6 @@
     flip();
   });
   card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
-  document.getElementById("flipBtn").onclick = flip;
   document.getElementById("nextBtn").onclick = next;
   document.getElementById("prevBtn").onclick = prev;
   document.getElementById("gotBtn").onclick = (e) => { e.stopPropagation(); gotIt(); };
