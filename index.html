@@ -63,6 +63,63 @@
   .icon-btn svg { width: 16px; height: 16px; }
   .tools { display: inline-flex; gap: 6px; }
 
+  /* Deck switcher */
+  .deck-switcher { position: relative; }
+  .deck-btn {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 6px 10px 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .deck-btn:hover { border-color: var(--ink-faint); }
+  .deck-btn .deck-emoji { font-size: 16px; line-height: 1; }
+  .deck-btn .deck-caret { width: 14px; height: 14px; color: var(--ink-faint); }
+  .deck-btn[aria-expanded="true"] { border-color: var(--ink-faint); background: var(--bg); }
+
+  .deck-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 240px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,.25);
+    padding: 6px;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .12s ease, transform .12s ease;
+    pointer-events: none;
+  }
+  .deck-menu[data-open="true"] { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .deck-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13.5px;
+    cursor: pointer;
+  }
+  .deck-menu a:hover { background: var(--bg); }
+  .deck-menu a .deck-emoji { font-size: 17px; line-height: 1; }
+  .deck-menu a .deck-tag { flex: 1; }
+  .deck-menu a .deck-check { width: 14px; height: 14px; color: var(--accent); opacity: 0; }
+  .deck-menu a.current .deck-check { opacity: 1; }
+  .deck-menu a.current { background: var(--bg); }
+
   main {
     flex: 1;
     min-height: 0;
@@ -863,6 +920,14 @@
 <body>
   <main>
     <div class="controls">
+      <div class="deck-switcher">
+        <button class="deck-btn" id="deckBtn" aria-haspopup="menu" aria-expanded="false" title="Switch deck">
+          <span class="deck-emoji" id="deckEmoji">🎬</span>
+          <span class="deck-name" id="deckName">Best Picture</span>
+          <svg class="deck-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="deck-menu" id="deckMenu" role="menu" hidden></div>
+      </div>
       <div class="seg" role="tablist" aria-label="Direction">
         <button id="dirYearToMovie" class="on">Year → Title</button>
         <button id="dirMovieToYear">Title → Year</button>
@@ -1050,6 +1115,16 @@
     </div>
   </main>
 
+<script>
+  // ─── Deck registry ─────────────────────────────────────────────────
+  // Edit DECKS to add a new flashcard collection (each gets its own HTML page).
+  // The CURRENT_DECK constant tells this page which one is "self".
+  const DECKS = [
+    { id: "bestpicture", name: "Best Picture",       emoji: "🎬", url: "index.html" },
+    { id: "chains",      name: "Restaurant Chains",  emoji: "🍔", url: "chains.html" },
+  ];
+  const CURRENT_DECK = "bestpicture";
+</script>
 <script src="images.js"></script>
 <script src="people.js"></script>
 <script src="movies.js"></script>
@@ -2244,6 +2319,34 @@
   window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
   // Hide on Escape
   window.addEventListener("keydown", (e) => { if (e.key === "Escape") hideTip(true); });
+
+  // ─── Deck switcher dropdown ────────────────────────────────────────
+  (function setupDeckSwitcher() {
+    const list = (typeof DECKS !== "undefined" && DECKS) || [];
+    const here = (typeof CURRENT_DECK !== "undefined" && CURRENT_DECK) || "";
+    if (!list.length) return;
+    const btn = document.getElementById("deckBtn");
+    const menu = document.getElementById("deckMenu");
+    const nameEl = document.getElementById("deckName");
+    const emojiEl = document.getElementById("deckEmoji");
+    if (!btn || !menu || !nameEl || !emojiEl) return;
+    const self = list.find(d => d.id === here) || list[0];
+    nameEl.textContent = self.name;
+    emojiEl.textContent = self.emoji;
+    const checkIcon = '<svg class="deck-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+    menu.innerHTML = list.map(d => `
+      <a href="${d.url}" class="${d.id === here ? "current" : ""}" role="menuitem">
+        <span class="deck-emoji">${d.emoji}</span>
+        <span class="deck-tag">${d.name}</span>
+        ${checkIcon}
+      </a>
+    `).join("");
+    function open()  { menu.hidden = false; requestAnimationFrame(() => menu.dataset.open = "true"); btn.setAttribute("aria-expanded","true"); }
+    function close() { menu.dataset.open = "false"; btn.setAttribute("aria-expanded","false"); setTimeout(() => { menu.hidden = true; }, 120); }
+    btn.addEventListener("click", (e) => { e.stopPropagation(); (menu.dataset.open === "true" ? close() : open()); });
+    document.addEventListener("click", (e) => { if (menu.dataset.open === "true" && !menu.contains(e.target) && e.target !== btn) close(); });
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape" && menu.dataset.open === "true") close(); });
+  })();
 
   render();
 </script>
