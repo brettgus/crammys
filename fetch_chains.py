@@ -105,6 +105,16 @@ CHAINS = [
     ("Sweetgreen",          "Sweetgreen",                "fast-casual"),
     ("CAVA",                "Cava_(restaurant)",         "fast-casual"),
     ("Noodles & Company",   "Noodles_%26_Company",       "fast-casual"),
+    # Dessert / treats
+    ("Cinnabon",            "Cinnabon",                  "dessert"),
+    ("Cold Stone Creamery", "Cold_Stone_Creamery",       "dessert"),
+    ("Baskin-Robbins",      "Baskin-Robbins",            "dessert"),
+    ("Dairy Queen",         "Dairy_Queen",               "dessert"),
+    ("Auntie Anne's",       "Auntie_Anne's",             "dessert"),
+    ("Dippin' Dots",        "Dippin'_Dots",              "dessert"),
+    ("Carvel",              "Carvel",                    "dessert"),
+    ("Wetzel's Pretzels",   "Wetzel's_Pretzels",         "dessert"),
+    ("Jamba",               "Jamba_Juice",               "dessert"),
 ]
 
 # ── Wikidata helpers ──────────────────────────────────────────────────

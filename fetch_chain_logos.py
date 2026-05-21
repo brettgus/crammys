@@ -67,6 +67,10 @@ MANUAL_LOGOS = {
     "Potbelly Sandwich Shop":"Potbelly Sandwich Shop logo.svg",
     "Quiznos":               "Quiznos logo.svg",
     "Pei Wei Asian Diner":   "Pei Wei Asian Diner (logo).svg",
+    # Dessert / treats — chains whose Wikidata P154 is missing or whose article
+    # is at a non-default slug (Carvel → Carvel (franchise)).
+    "Carvel":                "Carvel logo.svg",
+    "Jamba":                 "Jamba logo.svg",
 }
 
 # ── Wikidata: find P154 logo filename ───────────────────────────────

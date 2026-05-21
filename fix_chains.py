@@ -74,6 +74,14 @@ KNOWN_FOUNDERS = {
     # the actual people:
     "Panera Bread":         ["Ken Rosenthal", "Louis Kane", "Ron Shaich"],
     "Jersey Mike's Subs":   ["Peter Cancro"],
+    # Dessert / treats — Wikidata P112 was empty for most of these
+    "Cinnabon":             ["Rich Komen", "Ray Lindstrom"],
+    "Cold Stone Creamery":  ["Donald Sutherland", "Susan Sutherland"],
+    "Dairy Queen":          ["J.F. McCullough", "Alex McCullough"],
+    "Dippin' Dots":         ["Curt Jones"],
+    "Carvel":               ["Tom Carvel"],
+    "Wetzel's Pretzels":    ["Rick Wetzel", "Bill Phelps"],
+    "Jamba":                ["Kirk Perron"],
 }
 
 # ── (2) Locations parsing ──────────────────────────────────────────
@@ -156,6 +164,39 @@ KNOWN_LOCATIONS = {
     "CAVA":                   350,
     "Noodles & Company":      450,
     "Pret a Manger":          100,
+    # Dessert / treats
+    "Cinnabon":             1500,
+    "Cold Stone Creamery":  1000,
+    "Baskin-Robbins":       2500,
+    "Dairy Queen":          4300,
+    "Auntie Anne's":        1500,
+    "Dippin' Dots":          340,
+    "Carvel":                300,
+    "Wetzel's Pretzels":     370,
+    "Jamba":                 720,
+}
+
+# Hand-known HQs for chains whose Wikidata P159 points at a parent company
+# rather than the brand's own HQ. Applied during fix_chains.py.
+KNOWN_HQ = {
+    "Pizza Hut":      ("Plano", "TX", "United States"),
+    "Popeyes":        ("Miami", "FL", "United States"),
+    # Wikidata returned a building name ("Lancaster U.S. Post Office building")
+    # — strip back to the city.
+    "Auntie Anne's":  ("Lancaster", "PA", "United States"),
+    # Wikidata blank for Carvel — owned by Atlantic Food Brands / GFG, HQ in Atlanta.
+    "Carvel":         ("Atlanta", "GA", "United States"),
+}
+
+# Hand-known founding dates / origin cities for chains Wikidata didn't return.
+KNOWN_FOUNDED = {
+    "Carvel": 1934,
+}
+KNOWN_ORIGIN = {
+    "Carvel":               "Hartsdale",
+    "Dairy Queen":          "Joliet",       # IL — first store
+    "Auntie Anne's":        "Downingtown",  # PA — first stand
+    "Dippin' Dots":         "Lexington",    # KY founding lab
 }
 
 def fetch_locations_for(c):
@@ -191,6 +232,23 @@ def main():
         if c.get("founders"):
             bad_markers = ("Company", "Shop", "Restaurant", "Inc.")
             c["founders"] = [f for f in c["founders"] if not any(b in f for b in bad_markers)] or c["founders"]
+
+    # (1b) HQ overrides — fill in chains whose Wikidata P159 was missing,
+    # returned a building name, or pointed at the parent's HQ instead of the
+    # brand's. Also fill in founded year / origin city when Wikidata blank.
+    for c in chains:
+        if c["name"] in KNOWN_HQ:
+            hq, _state, country = KNOWN_HQ[c["name"]]
+            if c.get("hq") != hq:
+                print(f"  HQ:  {c['name']}  {c.get('hq') or '(none)'} → {hq}")
+                c["hq"] = hq
+                c["country"] = country
+        if c["name"] in KNOWN_FOUNDED and not c.get("founded"):
+            c["founded"] = KNOWN_FOUNDED[c["name"]]
+            print(f"  FOUND: {c['name']}  → {c['founded']}")
+        if c["name"] in KNOWN_ORIGIN and not c.get("origin"):
+            c["origin"] = KNOWN_ORIGIN[c["name"]]
+            print(f"  ORIG: {c['name']}  → {c['origin']}")
 
     # (2) Locations + rank (overwrite any previous values; using curated US estimates)
     print("\n--- Locations ---")

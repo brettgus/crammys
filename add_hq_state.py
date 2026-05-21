@@ -121,6 +121,47 @@ HQ_STATE = {
     "Tulsa":            "OK",
     "Wilmington":       "DE",
     "Worcester":        "MA",
+    # Dessert / treats batch
+    "Sandy Springs":    "GA",   # Cinnabon (also Church's; idempotent)
+    "Scottsdale":       "AZ",   # Cold Stone Creamery
+    "Canton (MA)":      "MA",
+    "Edina":            "MN",   # Dairy Queen
+    "Lancaster":        "PA",   # Auntie Anne's
+    "Paducah":          "KY",   # Dippin' Dots
+    "Greenwich":        "CT",   # Carvel HQ
+    "Hartsdale":        "NY",   # Carvel founding city
+    "Pasadena (CA)":    "CA",
+    "Houston":          "TX",   # Wetzel's Pretzels
+    "Emeryville":       "CA",   # Jamba Juice
+    "Frisco":           "TX",   # Jamba (newer HQ; brand moved)
+    "Whittier":         "CA",   # Cold Stone founding city (also possible)
+    "Tempe":            "AZ",   # Cold Stone founding city
+    "Glendale":         "CA",   # Baskin-Robbins
+    "Burbank":          "CA",
+    "Long Beach":       "CA",
+    "Ontario":          "CA",
+    "Riverside":        "CA",
+    "Pomona":           "CA",
+    "Joplin":           "MO",
+    "Wichita Falls":    "TX",
+    "Yermo":            "CA",   # Del Taco founding city
+    "Carpinteria (CA)": "CA",
+    "Atlanta":          "GA",   # idempotent — already there
+    "Hartsdale":        "NY",   # Carvel origin
+    "Joliet":           "IL",   # Dairy Queen origin
+    "Downingtown":      "PA",   # Auntie Anne's origin
+    "Lexington":        "KY",   # Dippin' Dots origin
+    "San Luis Obispo":  "CA",   # Jamba origin
+    "Redondo Beach":    "CA",   # Wetzel's Pretzels origin
+    "Pasadena":         "CA",
+    "Emeryville":       "CA",
+    "Edina":            "MN",
+    "Paducah":          "KY",
+    "Scottsdale":       "AZ",
+    "Tempe":            "AZ",
+    "Lancaster":        "PA",
+    "Canton":           "MA",   # already there too
+    "Seattle":          "WA",   # Cinnabon origin
 }
 
 def add_state(city):

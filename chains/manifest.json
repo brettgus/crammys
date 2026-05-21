@@ -163,10 +163,10 @@
       "Dan and Frank Carney"
     ],
     "founded": 1958,
-    "hq": null,
+    "hq": "Plano, TX",
     "origin": "Wichita, KS",
     "parent": "Yum! Brands",
-    "country": null,
+    "country": "United States",
     "locations": 6600,
     "rank": 8,
     "logo": "chains/logos/pizza-hut.png",
@@ -216,6 +216,28 @@
     "logo_filename": "Little Caesars logo.svg"
   },
   {
+    "name": "Dairy Queen",
+    "category": "dessert",
+    "wiki_id": "Q1141226",
+    "wiki_slug": "Dairy_Queen",
+    "description": "American multinational fast food chain",
+    "summary": "International Dairy Queen, Inc. (DQ) is an American multinational fast food restaurant chain founded in 1940 and headquartered in Bloomington, Minnesota. The first Dairy Queen was owned and operated by Sherb Noble and opened on June 22, 1940, in Joliet, Illinois. It serves a variety of hot and fried food, as well as or",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dairy_Queen_logo.svg/250px-Dairy_Queen_logo.svg.png",
+    "founders": [
+      "J.F. McCullough",
+      "Alex McCullough"
+    ],
+    "founded": 1940,
+    "hq": "Edina, MN",
+    "origin": "Joliet, IL",
+    "parent": "Berkshire Hathaway",
+    "country": "United States",
+    "logo": "chains/logos/dairy-queen.png",
+    "logo_filename": "Dairy Queen logo.svg",
+    "locations": 4300,
+    "rank": 11
+  },
+  {
     "name": "KFC",
     "category": "chicken",
     "wiki_id": "Q524757",
@@ -233,7 +255,7 @@
     "country": "United States",
     "logo": "chains/logos/kfc.png",
     "locations": 4000,
-    "rank": 11,
+    "rank": 12,
     "logo_filename": "Kfc textlogo.svg"
   },
   {
@@ -254,8 +276,8 @@
     "country": "United States",
     "logo": "chains/logos/chipotle-mexican-grill.png",
     "locations": 3400,
-    "rank": 12,
-    "logo_filename": "250px-Chipotle_Mexican_Grill_logo.svg.png"
+    "rank": 13,
+    "logo_filename": "Chipotle Mexican Grill logo.svg"
   },
   {
     "name": "Papa John's Pizza",
@@ -275,7 +297,7 @@
     "country": "United States",
     "logo": "chains/logos/papa-john-s-pizza.png",
     "locations": 3300,
-    "rank": 13,
+    "rank": 14,
     "logo_filename": "Papa John's Logo 2019.svg"
   },
   {
@@ -297,7 +319,7 @@
     "country": "United States",
     "logo": "chains/logos/arby-s.png",
     "locations": 3300,
-    "rank": 14,
+    "rank": 15,
     "logo_filename": "Arby's logo.svg"
   },
   {
@@ -318,7 +340,7 @@
     "country": "United States",
     "logo": "chains/logos/chick-fil-a.png",
     "locations": 3000,
-    "rank": 15,
+    "rank": 16,
     "logo_filename": "Chick-fil-A Logo.svg"
   },
   {
@@ -333,13 +355,13 @@
       "Al Copeland"
     ],
     "founded": 1972,
-    "hq": null,
+    "hq": "Miami, FL",
     "origin": "Miami, FL",
     "parent": "Restaurant Brands International",
     "country": "United States",
     "logo": "chains/logos/popeyes.png",
     "locations": 2800,
-    "rank": 16,
+    "rank": 17,
     "logo_filename": "Popeyes Logo 2020.svg"
   },
   {
@@ -360,7 +382,7 @@
     "country": null,
     "logo": "chains/logos/jersey-mike-s-subs.png",
     "locations": 2700,
-    "rank": 17,
+    "rank": 18,
     "logo_filename": "Jersey Mike's logo.svg"
   },
   {
@@ -382,8 +404,30 @@
     "country": "United States",
     "logo": "chains/logos/jimmy-john-s.png",
     "locations": 2700,
-    "rank": 18,
+    "rank": 19,
     "logo_filename": "Jimmy Johns logo.svg"
+  },
+  {
+    "name": "Baskin-Robbins",
+    "category": "dessert",
+    "wiki_id": "Q584601",
+    "wiki_slug": "Baskin-Robbins",
+    "description": "US international ice cream parlor chain",
+    "summary": "Baskin-Robbins, Inc. is an American multinational chain of ice cream and cake specialty shops owned by Inspire Brands. Baskin-Robbins was founded in 1945 by Burt Baskin and Irv Robbins in Glendale, California. Its headquarters are in Canton, Massachusetts, and shared with sibling brand Dunkin' Donuts. It is the world's",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Baskin-Robbins_logo_2022.svg/3840px-Baskin-Robbins_logo_2022.svg.png",
+    "founders": [
+      "Burt Baskin",
+      "Irv Robbins"
+    ],
+    "founded": 1945,
+    "hq": "Canton, MA",
+    "origin": "Glendale, CA",
+    "parent": "Inspire Brands",
+    "country": "United States",
+    "logo": "chains/logos/baskin-robbins.png",
+    "logo_filename": "Baskin-Robbins logo 2022.svg",
+    "locations": 2500,
+    "rank": 20
   },
   {
     "name": "Panda Express",
@@ -403,7 +447,7 @@
     "country": "United States",
     "logo": "chains/logos/panda-express.png",
     "locations": 2400,
-    "rank": 19,
+    "rank": 21,
     "logo_filename": "Panda Express logo.svg"
   },
   {
@@ -426,7 +470,7 @@
     "country": "United States",
     "logo": "chains/logos/panera-bread.png",
     "locations": 2200,
-    "rank": 20,
+    "rank": 22,
     "logo_filename": "Panera Bread wordmark.svg"
   },
   {
@@ -448,7 +492,7 @@
     "country": "United States",
     "logo": "chains/logos/wingstop.png",
     "locations": 1900,
-    "rank": 21,
+    "rank": 23,
     "logo_filename": "Wingstop logo.svg"
   },
   {
@@ -469,8 +513,51 @@
     "country": "United States",
     "logo": "chains/logos/hardee-s.png",
     "locations": 1800,
-    "rank": 22,
+    "rank": 24,
     "logo_filename": "Hardee brand logo.svg"
+  },
+  {
+    "name": "Cinnabon",
+    "category": "dessert",
+    "wiki_id": "Q1092539",
+    "wiki_slug": "Cinnabon",
+    "description": "American baked goods store chain",
+    "summary": "Cinnabon, Inc., is an American chain of baked goods stores and kiosks, normally found in areas with high pedestrian traffic, such as malls, airports and rest stops. The company's signature item is the cinnamon roll. As of December 2017, there were more than 1,200 Cinnabon bakeries operating in 48 countries. Its headqua",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Cinnabon.jpg/3840px-Cinnabon.jpg",
+    "founders": [
+      "Rich Komen",
+      "Ray Lindstrom"
+    ],
+    "founded": 1985,
+    "hq": "Atlanta, GA",
+    "origin": "Seattle, WA",
+    "parent": "Focus Brands",
+    "country": null,
+    "logo": "chains/logos/cinnabon.png",
+    "logo_filename": "Cinnabon logo.svg",
+    "locations": 1500,
+    "rank": 25
+  },
+  {
+    "name": "Auntie Anne's",
+    "category": "dessert",
+    "wiki_id": "Q4822010",
+    "wiki_slug": "Auntie_Anne's",
+    "description": "U.S. restaurant chain",
+    "summary": "Auntie Anne's is an American franchised chain of pretzel shops founded by Anne F. Beiler and her husband, Jonas, in 1988. Auntie Anne's serves products such as pretzels, dips, and beverages. They also offer Pretzels & More Homemade Baking Mix for those who want to make their pretzels at home. The chain has more than 1,",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Auntie_Anne%27s_in_King_of_Prussia_Mall.jpeg/3840px-Auntie_Anne%27s_in_King_of_Prussia_Mall.jpeg",
+    "founders": [
+      "Anne F. Beiler"
+    ],
+    "founded": 1988,
+    "hq": "Lancaster, PA",
+    "origin": "Downingtown, PA",
+    "parent": null,
+    "country": "United States",
+    "logo": "chains/logos/auntie-anne-s.png",
+    "logo_filename": "Auntie Anne's logo and slogan.png",
+    "locations": 1500,
+    "rank": 26
   },
   {
     "name": "Five Guys",
@@ -491,7 +578,7 @@
     "country": "United States",
     "logo": "chains/logos/five-guys.png",
     "locations": 1400,
-    "rank": 23,
+    "rank": 27,
     "logo_filename": "Five Guys logo.svg"
   },
   {
@@ -512,7 +599,7 @@
     "parent": "Restaurant Brands International",
     "country": "United States",
     "locations": 1300,
-    "rank": 24,
+    "rank": 28,
     "logo": "chains/logos/firehouse-subs.png",
     "logo_filename": "Firehosue Subs Logo 2024.png"
   },
@@ -535,7 +622,7 @@
     "country": null,
     "logo": "chains/logos/carl-s-jr.png",
     "locations": 1100,
-    "rank": 25,
+    "rank": 29,
     "logo_filename": "Carl's Jr logo.svg"
   },
   {
@@ -556,7 +643,7 @@
     "country": "United States",
     "logo": "chains/logos/church-s-chicken.png",
     "locations": 1100,
-    "rank": 26,
+    "rank": 30,
     "logo_filename": "Churchs-logo.svg"
   },
   {
@@ -576,7 +663,7 @@
     "parent": null,
     "country": "United States",
     "locations": 1100,
-    "rank": 27,
+    "rank": 31,
     "logo": "chains/logos/papa-murphy-s.png",
     "logo_filename": "Papa Murphy's logo.svg"
   },
@@ -598,8 +685,29 @@
     "country": "United States",
     "logo": "chains/logos/marco-s-pizza.png",
     "locations": 1000,
-    "rank": 28,
+    "rank": 32,
     "logo_filename": "Marco's Pizza Logo.svg"
+  },
+  {
+    "name": "Cold Stone Creamery",
+    "category": "dessert",
+    "wiki_id": "Q1094923",
+    "wiki_slug": "Cold_Stone_Creamery",
+    "description": "American ice cream chain",
+    "summary": "Cold Stone Creamery, Inc. is an American international ice cream parlor chain. Headquartered in Scottsdale, Arizona, the company is owned and operated by Kahala Brands. The company's main product is premium ice cream made with approximately 12–14% butterfat, made on location and customized for patrons at time of order.",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/ColdstoneCreameryHudsonOhio.JPG",
+    "founders": [
+      "Donald Sutherland",
+      "Susan Sutherland"
+    ],
+    "founded": 1988,
+    "hq": "Scottsdale, AZ",
+    "origin": "Tempe, AZ",
+    "parent": "Kahala Brands",
+    "country": "United States",
+    "logo": "chains/logos/cold-stone-creamery.JPG",
+    "locations": 1000,
+    "rank": 33
   },
   {
     "name": "Culver's",
@@ -622,7 +730,7 @@
     "country": null,
     "logo": "chains/logos/culver-s.png",
     "locations": 960,
-    "rank": 29,
+    "rank": 34,
     "logo_filename": "Culver's logo.svg"
   },
   {
@@ -644,7 +752,7 @@
     "country": "United States",
     "logo": "chains/logos/zaxby-s.png",
     "locations": 940,
-    "rank": 30,
+    "rank": 35,
     "logo_filename": "Zaxby's logo.png"
   },
   {
@@ -665,7 +773,7 @@
     "country": "United States",
     "logo": "chains/logos/whataburger.png",
     "locations": 900,
-    "rank": 31,
+    "rank": 36,
     "logo_filename": "Whataburger logo.svg"
   },
   {
@@ -686,7 +794,7 @@
     "country": "United States",
     "logo": "chains/logos/bojangles.png",
     "locations": 800,
-    "rank": 32,
+    "rank": 37,
     "logo_filename": "250px-Bojangles_2020.svg.png"
   },
   {
@@ -707,7 +815,7 @@
     "country": "United States",
     "logo": "chains/logos/raising-cane-s.png",
     "locations": 750,
-    "rank": 33,
+    "rank": 38,
     "logo_filename": "Raising Cane's Chicken Fingers logo.png"
   },
   {
@@ -729,8 +837,29 @@
     "country": "United States",
     "logo": "chains/logos/qdoba.png",
     "locations": 730,
-    "rank": 34,
+    "rank": 39,
     "logo_filename": "Qdoba Logo.svg"
+  },
+  {
+    "name": "Jamba",
+    "category": "dessert",
+    "wiki_id": "Q3088784",
+    "wiki_slug": "Jamba_Juice",
+    "description": "American beverage chain",
+    "summary": "Jamba, formerly known as Jamba Juice, is an American quick-service restaurant and juice bar chain that sells blended fruit and vegetable juices, smoothies, and other food products. The first Jamba location, originally named Juice Club, opened in 1990 in San Luis Obispo, California. Jamba is owned by GoTo Foods, an affi",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Jamba_tokyo.jpg",
+    "founders": [
+      "Kirk Perron"
+    ],
+    "founded": 1990,
+    "hq": "Emeryville, CA",
+    "origin": "San Luis Obispo, CA",
+    "parent": null,
+    "country": "United States",
+    "locations": 720,
+    "rank": 40,
+    "logo": "chains/logos/jamba.png",
+    "logo_filename": "Jamba logo.svg"
   },
   {
     "name": "Einstein Bros. Bagels",
@@ -749,7 +878,7 @@
     "parent": "Coffee & Bagel Brands",
     "country": "United States",
     "locations": 650,
-    "rank": 35,
+    "rank": 41,
     "logo": "chains/logos/einstein-bros-bagels.png",
     "logo_filename": "Einstein Bros. Bagels (logo).svg"
   },
@@ -771,7 +900,7 @@
     "parent": "Restaurant Brands International",
     "country": "Canada",
     "locations": 650,
-    "rank": 36,
+    "rank": 42,
     "logo": "chains/logos/tim-hortons.png",
     "logo_filename": "Tim Hortons Logo.svg"
   },
@@ -794,7 +923,7 @@
     "country": "United States",
     "logo": "chains/logos/del-taco.png",
     "locations": 600,
-    "rank": 37,
+    "rank": 43,
     "logo_filename": "Logo of Del Taco.png"
   },
   {
@@ -816,7 +945,7 @@
     "country": "United States",
     "logo": "chains/logos/mod-pizza.png",
     "locations": 500,
-    "rank": 38,
+    "rank": 44,
     "logo_filename": "MOD Pizza logo.svg"
   },
   {
@@ -837,7 +966,7 @@
     "country": "United States",
     "logo": "chains/logos/el-pollo-loco.jpg",
     "locations": 500,
-    "rank": 39,
+    "rank": 45,
     "logo_filename": "El_Pollo_Loco_Logo.jpg"
   },
   {
@@ -859,7 +988,7 @@
     "country": "United States",
     "logo": "chains/logos/caribou-coffee.png",
     "locations": 500,
-    "rank": 40,
+    "rank": 46,
     "logo_filename": "Caribou1.svg"
   },
   {
@@ -879,7 +1008,7 @@
     "parent": null,
     "country": "United States",
     "locations": 450,
-    "rank": 41,
+    "rank": 47,
     "logo": "chains/logos/noodles-company.png",
     "logo_filename": "250px-Noodles_&_Company_logo.png"
   },
@@ -900,7 +1029,7 @@
     "parent": null,
     "country": "United States",
     "locations": 425,
-    "rank": 42,
+    "rank": 48,
     "logo": "chains/logos/potbelly-sandwich-shop.png",
     "logo_filename": "Potbelly Sandwich Shop logo.svg"
   },
@@ -922,7 +1051,7 @@
     "country": "United States",
     "logo": "chains/logos/in-n-out-burger.png",
     "locations": 400,
-    "rank": 43,
+    "rank": 49,
     "logo_filename": "InNOut 2021 logo.svg"
   },
   {
@@ -942,9 +1071,30 @@
     "parent": "JAB Holding Company",
     "country": "United States",
     "locations": 400,
-    "rank": 44,
+    "rank": 50,
     "logo": "chains/logos/krispy-kreme.png",
     "logo_filename": "Logo.KrispyKreme.svg"
+  },
+  {
+    "name": "Wetzel's Pretzels",
+    "category": "dessert",
+    "wiki_id": "Q7990205",
+    "wiki_slug": "Wetzel's_Pretzels",
+    "description": "American restaurant chain",
+    "summary": "Wetzel's Pretzels is an American chain of fast-food restaurants, specializing in pretzels and hot dogs. The chain has more than 370 locations across the United States, Canada, Central America, Southeast Asia, and formerly in Finland. The chain is mostly located in shopping malls, airports, theme parks, stadiums, and fo",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Wetzel%27s_Pretzels_-_Tysons_Corner_Mall_%286923513884%29.jpg/3840px-Wetzel%27s_Pretzels_-_Tysons_Corner_Mall_%286923513884%29.jpg",
+    "founders": [
+      "Rick Wetzel",
+      "Bill Phelps"
+    ],
+    "founded": 1994,
+    "hq": "Pasadena, CA",
+    "origin": "Redondo Beach, CA",
+    "parent": null,
+    "country": "United States",
+    "logo": "chains/logos/wetzel-s-pretzels.jpg",
+    "locations": 370,
+    "rank": 51
   },
   {
     "name": "Shake Shack",
@@ -964,7 +1114,7 @@
     "country": "United States",
     "logo": "chains/logos/shake-shack.png",
     "locations": 350,
-    "rank": 45,
+    "rank": 52,
     "logo_filename": "Shake Shack logo.svg"
   },
   {
@@ -988,8 +1138,28 @@
     "country": "United States",
     "logo": "chains/logos/cava.png",
     "locations": 350,
-    "rank": 46,
+    "rank": 53,
     "logo_filename": "250px-CavaGroup2022.png"
+  },
+  {
+    "name": "Dippin' Dots",
+    "category": "dessert",
+    "wiki_id": "Q3029195",
+    "wiki_slug": "Dippin'_Dots",
+    "description": "Ice cream brand",
+    "summary": "Dippin' Dots is an ice cream snack invented by Curt Jones in 1988. The confection is created by flash freezing ice cream mix in liquid nitrogen. The snack is made by Dippin' Dots, Inc., headquartered in Paducah, Kentucky. Dippin' Dots are sold in 14 countries, including Honduras and Luxembourg.",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/en/b/b2/Dippin%27_Dots_logo.png",
+    "founders": [
+      "Curt Jones"
+    ],
+    "founded": 1995,
+    "hq": "Paducah, KY",
+    "origin": "Lexington, KY",
+    "parent": null,
+    "country": "United States",
+    "logo": "chains/logos/dippin-dots.png",
+    "locations": 340,
+    "rank": 54
   },
   {
     "name": "Blaze Pizza",
@@ -1010,8 +1180,29 @@
     "country": "United States",
     "logo": "chains/logos/blaze-pizza.png",
     "locations": 300,
-    "rank": 47,
+    "rank": 55,
     "logo_filename": "Blaze pizza logo.svg"
+  },
+  {
+    "name": "Carvel",
+    "category": "dessert",
+    "wiki_id": "Q5047517",
+    "wiki_slug": "Carvel",
+    "description": "Topics referred to by the same term",
+    "summary": "Carvel or Carvell may refer to:",
+    "logo_url": null,
+    "founders": [
+      "Tom Carvel"
+    ],
+    "founded": 1934,
+    "hq": "Atlanta, GA",
+    "origin": "Hartsdale, NY",
+    "parent": null,
+    "country": "United States",
+    "locations": 300,
+    "rank": 56,
+    "logo": "chains/logos/carvel.png",
+    "logo_filename": "Carvel logo.svg"
   },
   {
     "name": "Sweetgreen",
@@ -1033,7 +1224,7 @@
     "country": "United States",
     "logo": "chains/logos/sweetgreen.png",
     "locations": 225,
-    "rank": 48,
+    "rank": 57,
     "logo_filename": "Sweetgreen logo.svg"
   },
   {
@@ -1053,7 +1244,7 @@
     "parent": null,
     "country": "United States",
     "locations": 150,
-    "rank": 49,
+    "rank": 58,
     "logo": "chains/logos/quiznos.png",
     "logo_filename": "Quiznos logo.svg"
   },
@@ -1074,7 +1265,7 @@
     "parent": null,
     "country": "United Kingdom",
     "locations": 100,
-    "rank": 50,
+    "rank": 59,
     "logo": "chains/logos/pret-a-manger.png",
     "logo_filename": "PretAManger logo.svg"
   },
@@ -1095,7 +1286,7 @@
     "parent": null,
     "country": "United States",
     "locations": 100,
-    "rank": 51,
+    "rank": 60,
     "logo": "chains/logos/pei-wei-asian-diner.png",
     "logo_filename": "Pei Wei Asian Diner (logo).svg"
   }
