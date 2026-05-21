@@ -78,6 +78,7 @@
         <button data-mode="n2y">Name → Founded</button>
         <button data-mode="n2f">Name → Founder</button>
         <button data-mode="n2h">Name → HQ</button>
+        <button data-mode="study">Study</button>
       </div>
       <div class="right-cluster">
         <button class="chip chip-btn deck-info" id="deckChip" title="Change deck contents">
@@ -87,9 +88,6 @@
           <span id="scopeExtras" class="chip-extras"></span>
         </button>
         <div class="tools">
-          <button class="icon-btn" id="learnBtn" title="Learn mode — see the answers without quizzing (L)" aria-label="Learn mode">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a1 1 0 0 1 1-1h4a3 3 0 0 1 3 3v13"/><path d="M20 19V5a1 1 0 0 0-1-1h-4a3 3 0 0 0-3 3v13"/><path d="M3 19h18"/></svg>
-          </button>
           <button class="icon-btn" id="shuffleIconBtn" title="Re-shuffle (S)" aria-label="Re-shuffle">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
           </button>
@@ -189,7 +187,7 @@
             <div><kbd>N</kbd> missed</div>
             <div><kbd>S</kbd> shuffle</div>
             <div><kbd>R</kbd> reset progress</div>
-            <div><kbd>L</kbd> learn mode</div>
+            <div><kbd>L</kbd> toggle Study mode</div>
             <div><kbd>T</kbd> toggle theme</div>
             <div><kbd>?</kbd> this dialog</div>
             <div><kbd>Esc</kbd> close any popup</div>
@@ -257,7 +255,7 @@
   const SCORE_WEIGHTS = [4, 2, 1, 0];   // weighting per score level when shuffling
 
   const state = (() => {
-    const def = { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0, learn: false };
+    const def = { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0, lastMode: "l2n" };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       let s = Object.assign(def, saved || {});
@@ -267,6 +265,13 @@
         for (const n of s.mastered) if (typeof n === "string") s.scores[n] = SCORE_RETIRED;
         delete s.mastered;
       }
+      // v2.x: learn-mode toggle became the "study" mode in the segmented control
+      if (s.learn === true) {
+        s.lastMode = s.mode && s.mode !== "study" ? s.mode : "l2n";
+        s.mode = "study";
+      }
+      delete s.learn;
+      if (!s.lastMode || s.lastMode === "study") s.lastMode = "l2n";
       delete s.drill; delete s.theme;
       return s;
     } catch { return def; }
@@ -465,7 +470,7 @@
       logoEl.src = logoUrl(c);
       logoEl.alt = "";
     } else {
-      front.tag.textContent = "Chain";
+      front.tag.textContent = isStudy() ? "Study" : "Chain";
       front.suffix.textContent = "";
       if (state.mode === "n2y") {
         front.prompt.textContent = "When was";
@@ -478,6 +483,10 @@
         front.prompt.textContent = "Where is";
         front.text.textContent = c.name;
         front.suffix.textContent = "headquartered?";
+      } else {
+        // study (or any unknown mode): chain name only
+        front.prompt.textContent = "";
+        front.text.textContent = c.name;
       }
     }
 
@@ -538,12 +547,12 @@
       </div>`;
     back.body.innerHTML = answer + details;
 
-    // Footer hint adapts to learn mode (no flip-back, no rating)
+    // Footer hint adapts to study mode (no flip-back, no rating)
     const backHint = document.getElementById("backFooterHint");
-    if (state.learn) {
+    if (isStudy()) {
       backHint.innerHTML =
-        `<span class="hint-desktop">Learn mode · <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>L</kbd> exit</span>` +
-        `<span class="hint-touch">Learn mode · swipe to navigate</span>`;
+        `<span class="hint-desktop">Study mode · <kbd>←</kbd> <kbd>→</kbd> navigate · pick a quiz mode to start rating</span>` +
+        `<span class="hint-touch">Study mode · swipe to navigate</span>`;
     } else {
       backHint.innerHTML =
         `<span class="hint-desktop">Tap to flip back · <kbd>Y</kbd> got it · <kbd>N</kbd> missed</span>` +
@@ -560,37 +569,29 @@
     if (scoreStarsBack)  scoreStarsBack.innerHTML  = html;
   }
 
+  const isStudy = () => state.mode === "study";
   function syncNav() {
-    // Hide the rate-buttons row in learn mode — no quizzing happening.
+    // Hide the rate-buttons row in study mode — no quizzing happening.
     navRow.classList.toggle("show-back",
-      card.classList.contains("flipped") && !state.learn);
+      card.classList.contains("flipped") && !isStudy());
   }
 
   // ─── Actions ───────────────────────────────────────────────────────
   function flip() {
-    if (state.learn) return;  // card stays flipped to the answer side
+    if (isStudy()) return;  // card stays flipped to the answer side
     card.classList.toggle("flipped");
     syncNav();
     hideTip && hideTip(true);
   }
   const FLIP_MIDPOINT = 280;
   function unflipAndThen(fn) {
-    // Learn mode keeps the card flipped — no animation, just swap content.
-    if (state.learn) { fn(); return; }
+    // Study mode keeps the card flipped — no animation, just swap content.
+    if (isStudy()) { fn(); return; }
     if (card.classList.contains("flipped")) {
       card.classList.remove("flipped");
       syncNav();
       setTimeout(fn, FLIP_MIDPOINT);
     } else fn();
-  }
-  function toggleLearn() {
-    state.learn = !state.learn;
-    document.getElementById("learnBtn").classList.toggle("on", state.learn);
-    if (state.learn) card.classList.add("flipped");
-    else             card.classList.remove("flipped");
-    syncNav();
-    persist();
-    render();
   }
   function next() {
     const ord = activeOrder(); if (!ord.length) return;
@@ -647,11 +648,25 @@
   const gotIt = () => rate(+1);
   const missed = () => rate(-1);
   function setMode(m) {
+    if (m === state.mode) return;
+    const wasStudy = state.mode === "study";
+    const goingStudy = m === "study";
+    if (!goingStudy) state.lastMode = m;     // remember last quiz mode
     state.mode = m;
     state.idx = 0;
     document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m));
     persist();
-    unflipAndThen(render);
+    if (goingStudy) {
+      card.classList.add("flipped");
+      syncNav();
+      render();
+    } else if (wasStudy) {
+      card.classList.remove("flipped");
+      syncNav();
+      render();
+    } else {
+      unflipAndThen(render);
+    }
   }
 
   // ─── Wire UI ───────────────────────────────────────────────────────
@@ -667,12 +682,8 @@
   document.querySelectorAll(".seg button").forEach(b => b.onclick = () => setMode(b.dataset.mode));
   document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === state.mode));
   document.getElementById("shuffleIconBtn").addEventListener("click", shuffle);
-  document.getElementById("learnBtn").addEventListener("click", toggleLearn);
-  // Apply persisted learn state on initial load (flip class + button highlight)
-  if (state.learn) {
-    card.classList.add("flipped");
-    document.getElementById("learnBtn").classList.add("on");
-  }
+  // Apply persisted study mode on initial load (card lands flipped to the answer)
+  if (isStudy()) card.classList.add("flipped");
   // themeBtn handled by crammys-shared.js
   syncNav();
 
@@ -747,12 +758,14 @@
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
       case "ArrowLeft":  prev(); break;
-      case "n": case "N": if (card.classList.contains("flipped") && !state.learn) missed(); break;
-      case "y": case "Y": if (card.classList.contains("flipped") && !state.learn) gotIt(); break;
+      case "n": case "N": if (card.classList.contains("flipped") && !isStudy()) missed(); break;
+      case "y": case "Y": if (card.classList.contains("flipped") && !isStudy()) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
       case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
-      case "l": case "L": toggleLearn(); break;
+      case "l": case "L":
+        setMode(isStudy() ? (state.lastMode || "l2n") : "study");
+        break;
       case "?":
         if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
         e.preventDefault();
