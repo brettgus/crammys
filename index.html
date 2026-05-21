@@ -654,6 +654,11 @@
     font-size: 22px;
     font-weight: 600;
   }
+  /* Movie posters keep the 2:3 ratio so the artwork isn't squished */
+  .tip-photo.tip-poster {
+    width: 64px; height: 96px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
   .tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
   .tip-name {
@@ -1404,10 +1409,21 @@
   const USE_LOCAL_IMAGES = location.protocol === "file:";
   const TMDB_W780 = "https://image.tmdb.org/t/p/w780";
   const TMDB_W185 = "https://image.tmdb.org/t/p/w185";
-  function movieImageURL(img) {
+  function movieImageURL(img, size) {
     if (USE_LOCAL_IMAGES) return `images/${img.f}`;
-    if (img.p) return `${TMDB_W780}${img.p}`;
+    const dim = size || "w780";
+    if (img.p) return `https://image.tmdb.org/t/p/${dim}${img.p}`;
     return `images/${img.f}`; // fallback
+  }
+  // Best small image for a movie title (poster preferred, then backdrop).
+  // Used for the movie / year hover tooltips.
+  function thumbForMovie(title) {
+    for (const entry of (window.MOVIE_IMAGES || [])) {
+      if (entry.movie !== title) continue;
+      const poster = (entry.images || []).find(i => i.k === "ps");
+      return poster || entry.images[0] || null;
+    }
+    return null;
   }
   function personImageURL(p) {
     if (USE_LOCAL_IMAGES) return p.img || "";
@@ -1936,6 +1952,11 @@
     const h = Math.floor(min/60), m = min%60;
     return h ? `${h}h ${m}m` : `${m}m`;
   }
+  function moviePosterHTML(title) {
+    const img = thumbForMovie(title);
+    if (!img) return "";
+    return `<div class="tip-photo tip-poster"><img src="${movieImageURL(img, "w342")}" alt="" loading="lazy"></div>`;
+  }
   function tipHTMLMovie(title) {
     const m = (window.MOVIES || {})[title];
     if (!m) return `<div class="tip-empty">No info for ${escapeHtml(title)}</div>`;
@@ -1948,6 +1969,7 @@
       ? `https://www.imdb.com/title/${m.imdb_id}/`
       : `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&s=tt`;
     return `
+      ${moviePosterHTML(title)}
       <div class="tip-info" style="flex:1">
         <div class="tip-name">
           <span>${escapeHtml(title)}</span>
@@ -1964,12 +1986,12 @@
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
   function tipHTMLYear(year) {
-    // Ceremony number: the 19th Academy Awards was held in 1947, so number = year - 1928.
     const ceremony = year - 1928;
     const entry = DECK.find(e => e.year === year);
     if (!entry) return `<div class="tip-empty">${year}</div>`;
     const noms = entry.nominees ? entry.nominees.length : 0;
     return `
+      ${moviePosterHTML(entry.movie)}
       <div class="tip-info" style="flex:1">
         <div class="tip-name"><span>${ordinal(ceremony)} Academy Awards</span></div>
         <div class="tip-meta">Ceremony · ${year}</div>
