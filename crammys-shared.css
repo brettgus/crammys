@@ -650,22 +650,15 @@ main {
 /* ── Image-stage variants ──────────────────────────────────────────── */
 /* `.image-stage` (above) is built for full-bleed photos on a dark
    background. `.image-stage.brand` is the logo-friendly variant — light
-   background, object-fit: contain, comfortable padding around the mark. */
-.image-stage.brand {
-  background: var(--bg-elev);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 48px 100px;
-}
+   background, object-fit: contain, comfortable padding around the mark.
+   We *inherit* the base `.image-stage img` absolute positioning rather
+   than flex-centering — flex inside an absolutely-positioned container
+   computes intrinsic-sized images to 0×0 in some browsers. */
+.image-stage.brand { background: var(--bg-elev); }
 .image-stage.brand::after { display: none; }   /* no dark gradient over a logo */
 .image-stage.brand img {
-  position: static;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  object-fit: contain;        /* override the base's cover */
+  padding: 40px 32px 90px;    /* breathing room; 90px so the bottom overlay doesn't cover */
 }
 :root[data-theme="dark"] .image-stage.brand { background: #f4f3ee; }
 
