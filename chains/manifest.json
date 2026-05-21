@@ -82,9 +82,10 @@
     "origin": "Quincy",
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/dunkin.jpg",
+    "logo": "chains/logos/dunkin.png",
     "locations": 9500,
-    "rank": 4
+    "rank": 4,
+    "logo_filename": "Dunkin' logo.svg"
   },
   {
     "name": "Taco Bell",
@@ -104,7 +105,8 @@
     "country": "United States",
     "logo": "chains/logos/taco-bell.png",
     "locations": 7900,
-    "rank": 5
+    "rank": 5,
+    "logo_filename": "Taco Bell 2023.svg"
   },
   {
     "name": "Burger King",
@@ -167,7 +169,8 @@
     "country": null,
     "locations": 6600,
     "rank": 8,
-    "logo": "chains/logos/pizza-hut.png"
+    "logo": "chains/logos/pizza-hut.png",
+    "logo_filename": "Pizza Hut classic logo.svg"
   },
   {
     "name": "Wendy's",
@@ -209,7 +212,8 @@
     "country": "United States",
     "locations": 4400,
     "rank": 10,
-    "logo": "chains/logos/little-caesars.jpg"
+    "logo": "chains/logos/little-caesars.png",
+    "logo_filename": "Little Caesars logo.svg"
   },
   {
     "name": "KFC",
@@ -250,7 +254,8 @@
     "country": "United States",
     "logo": "chains/logos/chipotle-mexican-grill.png",
     "locations": 3400,
-    "rank": 12
+    "rank": 12,
+    "logo_filename": "250px-Chipotle_Mexican_Grill_logo.svg.png"
   },
   {
     "name": "Papa John's Pizza",
@@ -377,7 +382,8 @@
     "country": "United States",
     "logo": "chains/logos/jimmy-john-s.png",
     "locations": 2700,
-    "rank": 18
+    "rank": 18,
+    "logo_filename": "Jimmy Johns logo.svg"
   },
   {
     "name": "Panda Express",
@@ -395,9 +401,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/panda-express.jpg",
+    "logo": "chains/logos/panda-express.png",
     "locations": 2400,
-    "rank": 19
+    "rank": 19,
+    "logo_filename": "Panda Express logo.svg"
   },
   {
     "name": "Panera Bread",
@@ -417,9 +424,10 @@
     "origin": null,
     "parent": "JAB Holding Company",
     "country": "United States",
-    "logo": "chains/logos/panera-bread.jpg",
+    "logo": "chains/logos/panera-bread.png",
     "locations": 2200,
-    "rank": 20
+    "rank": 20,
+    "logo_filename": "Panera Bread wordmark.svg"
   },
   {
     "name": "Wingstop",
@@ -440,7 +448,8 @@
     "country": "United States",
     "logo": "chains/logos/wingstop.png",
     "locations": 1900,
-    "rank": 21
+    "rank": 21,
+    "logo_filename": "Wingstop logo.svg"
   },
   {
     "name": "Hardee's",
@@ -458,9 +467,10 @@
     "origin": "Rocky Mount",
     "parent": "CKE Restaurants",
     "country": "United States",
-    "logo": "chains/logos/hardee-s.jpg",
+    "logo": "chains/logos/hardee-s.png",
     "locations": 1800,
-    "rank": 22
+    "rank": 22,
+    "logo_filename": "Hardee brand logo.svg"
   },
   {
     "name": "Five Guys",
@@ -502,7 +512,9 @@
     "parent": "Restaurant Brands International",
     "country": "United States",
     "locations": 1300,
-    "rank": 24
+    "rank": 24,
+    "logo": "chains/logos/firehouse-subs.png",
+    "logo_filename": "Firehosue Subs Logo 2024.png"
   },
   {
     "name": "Carl's Jr.",
@@ -521,9 +533,10 @@
     "origin": "Anaheim",
     "parent": "CKE Restaurants",
     "country": null,
-    "logo": "chains/logos/carl-s-jr.jpg",
+    "logo": "chains/logos/carl-s-jr.png",
     "locations": 1100,
-    "rank": 25
+    "rank": 25,
+    "logo_filename": "Carl's Jr logo.svg"
   },
   {
     "name": "Church's Chicken",
@@ -585,7 +598,8 @@
     "country": "United States",
     "logo": "chains/logos/marco-s-pizza.png",
     "locations": 1000,
-    "rank": 28
+    "rank": 28,
+    "logo_filename": "Marco's Pizza Logo.svg"
   },
   {
     "name": "Culver's",
@@ -630,7 +644,8 @@
     "country": "United States",
     "logo": "chains/logos/zaxby-s.png",
     "locations": 940,
-    "rank": 30
+    "rank": 30,
+    "logo_filename": "Zaxby's logo.png"
   },
   {
     "name": "Whataburger",
@@ -650,7 +665,8 @@
     "country": "United States",
     "logo": "chains/logos/whataburger.png",
     "locations": 900,
-    "rank": 31
+    "rank": 31,
+    "logo_filename": "Whataburger logo.svg"
   },
   {
     "name": "Bojangles'",
@@ -668,9 +684,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/bojangles.jpg",
+    "logo": "chains/logos/bojangles.png",
     "locations": 800,
-    "rank": 32
+    "rank": 32,
+    "logo_filename": "250px-Bojangles_2020.svg.png"
   },
   {
     "name": "Raising Cane's",
@@ -732,7 +749,9 @@
     "parent": "Coffee & Bagel Brands",
     "country": "United States",
     "locations": 650,
-    "rank": 35
+    "rank": 35,
+    "logo": "chains/logos/einstein-bros-bagels.png",
+    "logo_filename": "Einstein Bros. Bagels (logo).svg"
   },
   {
     "name": "Tim Hortons",
@@ -752,7 +771,9 @@
     "parent": "Restaurant Brands International",
     "country": "Canada",
     "locations": 650,
-    "rank": 36
+    "rank": 36,
+    "logo": "chains/logos/tim-hortons.png",
+    "logo_filename": "Tim Hortons Logo.svg"
   },
   {
     "name": "Del Taco",
@@ -795,7 +816,8 @@
     "country": "United States",
     "logo": "chains/logos/mod-pizza.png",
     "locations": 500,
-    "rank": 38
+    "rank": 38,
+    "logo_filename": "MOD Pizza logo.svg"
   },
   {
     "name": "El Pollo Loco",
@@ -813,9 +835,10 @@
     "origin": "Los Angeles",
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/el-pollo-loco.png",
+    "logo": "chains/logos/el-pollo-loco.jpg",
     "locations": 500,
-    "rank": 39
+    "rank": 39,
+    "logo_filename": "El_Pollo_Loco_Logo.jpg"
   },
   {
     "name": "Caribou Coffee",
@@ -836,7 +859,8 @@
     "country": "United States",
     "logo": "chains/logos/caribou-coffee.png",
     "locations": 500,
-    "rank": 40
+    "rank": 40,
+    "logo_filename": "Caribou1.svg"
   },
   {
     "name": "Noodles & Company",
@@ -855,7 +879,9 @@
     "parent": null,
     "country": "United States",
     "locations": 450,
-    "rank": 41
+    "rank": 41,
+    "logo": "chains/logos/noodles-company.png",
+    "logo_filename": "250px-Noodles_&_Company_logo.png"
   },
   {
     "name": "Potbelly Sandwich Shop",
@@ -874,7 +900,9 @@
     "parent": null,
     "country": "United States",
     "locations": 425,
-    "rank": 42
+    "rank": 42,
+    "logo": "chains/logos/potbelly-sandwich-shop.png",
+    "logo_filename": "Potbelly Sandwich Shop logo.svg"
   },
   {
     "name": "In-N-Out Burger",
@@ -958,9 +986,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/cava.jpg",
+    "logo": "chains/logos/cava.png",
     "locations": 350,
-    "rank": 46
+    "rank": 46,
+    "logo_filename": "250px-CavaGroup2022.png"
   },
   {
     "name": "Blaze Pizza",
@@ -979,9 +1008,10 @@
     "origin": null,
     "parent": null,
     "country": "United States",
-    "logo": "chains/logos/blaze-pizza.jpg",
+    "logo": "chains/logos/blaze-pizza.png",
     "locations": 300,
-    "rank": 47
+    "rank": 47,
+    "logo_filename": "Blaze pizza logo.svg"
   },
   {
     "name": "Sweetgreen",
@@ -1023,7 +1053,9 @@
     "parent": null,
     "country": "United States",
     "locations": 150,
-    "rank": 49
+    "rank": 49,
+    "logo": "chains/logos/quiznos.png",
+    "logo_filename": "Quiznos logo.svg"
   },
   {
     "name": "Pret a Manger",
@@ -1063,6 +1095,8 @@
     "parent": null,
     "country": "United States",
     "locations": 100,
-    "rank": 51
+    "rank": 51,
+    "logo": "chains/logos/pei-wei-asian-diner.png",
+    "logo_filename": "Pei Wei Asian Diner (logo).svg"
   }
 ]

@@ -37,6 +37,38 @@ def http_json(url):
         data = gzip.decompress(data)
     return json.loads(data)
 
+# Hand-picked Wikimedia Commons logo filenames for chains where Wikidata's
+# P154 is missing or the auto-fetched lead image is a storefront photo, not
+# the brand mark. Verified by opening each on commons.wikimedia.org.
+MANUAL_LOGOS = {
+    # Filenames scraped from each chain's Wikipedia infobox via find_infobox_logos.py.
+    "Subway":                "Subway 2016 logo.svg",
+    "Dunkin'":               "Dunkin' logo.svg",
+    "Taco Bell":             "Taco Bell 2023.svg",
+    "Little Caesars":        "Little Caesars logo.svg",
+    "Chipotle Mexican Grill":"Chipotle Mexican Grill logo.svg",
+    "Panda Express":         "Panda Express logo.svg",
+    "Wingstop":              "Wingstop logo.svg",
+    "Marco's Pizza":         "Marco's Pizza Logo.svg",
+    "Zaxby's":               "Zaxby's logo.png",
+    "Panera Bread":          "Panera Bread logo 2014.svg",
+    "Hardee's":              "Hardee's logo.svg",
+    "Carl's Jr.":            "Carl's Jr logo.svg",
+    "Bojangles'":            "Bojangles' logo 2019.svg",
+    "CAVA":                  "Cava Group logo.svg",
+    "Blaze Pizza":           "Blaze pizza logo.svg",
+    "Firehouse Subs":        "Firehouse Subs logo.svg",
+    "Einstein Bros. Bagels": "Einstein Bros. Bagels (logo).svg",
+    "Tim Hortons":           "Tim Hortons logo 2024.svg",
+    "MOD Pizza":             "MOD Pizza logo.svg",
+    "El Pollo Loco":         "El Pollo Loco logo 2014.svg",
+    "Caribou Coffee":        "Caribou1.svg",
+    "Noodles & Company":     "Noodles & Company logo 2018.svg",
+    "Potbelly Sandwich Shop":"Potbelly Sandwich Shop logo.svg",
+    "Quiznos":               "Quiznos logo.svg",
+    "Pei Wei Asian Diner":   "Pei Wei Asian Diner (logo).svg",
+}
+
 # ── Wikidata: find P154 logo filename ───────────────────────────────
 def wikidata_logo(qid):
     if not qid: return None
@@ -58,27 +90,32 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 def download_commons_file(filename, target_dir, display):
-    """Hit Special:FilePath which 302s to the canonical Commons URL. Also
-    derives the local extension from the redirected URL."""
+    """Try Wikimedia Commons first via Special:FilePath, fall back to en.wikipedia.org
+    for files hosted there under fair-use (most US chain logos)."""
     safe = urllib.parse.quote(filename.replace(' ', '_'))
-    # width=600 keeps SVG/PNG sized for our card. For SVG, Commons re-renders to PNG.
-    url = f"https://commons.wikimedia.org/wiki/Special:FilePath/{safe}?width=600"
-    try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": "Crammys/1.0 (personal flashcard app)",
-        })
-        with urllib.request.urlopen(req, timeout=45) as r:
-            data = r.read()
-            final_url = r.url
-    except Exception as e:
-        print(f"  ! download failed: {e}")
-        return None
-    ext = os.path.splitext(urllib.parse.urlparse(final_url).path)[1] or ".png"
-    if ext.lower() not in (".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"): ext = ".png"
-    path = os.path.join(target_dir, f"{slug(display)}{ext}")
-    with open(path, "wb") as f:
-        f.write(data)
-    return path
+    for host in ("commons.wikimedia.org", "en.wikipedia.org"):
+        url = f"https://{host}/wiki/Special:FilePath/{safe}?width=600"
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Crammys/1.0 (personal flashcard app)",
+            })
+            with urllib.request.urlopen(req, timeout=45) as r:
+                data = r.read()
+                final_url = r.url
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                continue   # try the next host
+            print(f"  ! download failed: {e}"); return None
+        except Exception as e:
+            print(f"  ! download failed: {e}"); return None
+        ext = os.path.splitext(urllib.parse.urlparse(final_url).path)[1] or ".png"
+        if ext.lower() not in (".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif"): ext = ".png"
+        path = os.path.join(target_dir, f"{slug(display)}{ext}")
+        with open(path, "wb") as f:
+            f.write(data)
+        return path
+    print(f"  ! download failed: 404 on both Commons and en.wikipedia.org")
+    return None
 
 # ── Main ────────────────────────────────────────────────────────────
 def main():
@@ -93,6 +130,28 @@ def main():
     upgraded = 0
     added = 0
     for c in chains:
+        # Prefer the manual override when present (replaces storefront photos
+        # and fills in chains with no P154).
+        manual = MANUAL_LOGOS.get(c["name"])
+        if manual:
+            # Only re-download if we haven't already stored this filename.
+            if c.get("logo_filename") == manual and c.get("logo") and os.path.exists(c["logo"]):
+                continue
+            new_path = download_commons_file(manual, target_dir, c["name"])
+            if new_path:
+                old = c.get("logo")
+                if old and old != new_path and os.path.exists(old):
+                    try: os.remove(old)
+                    except: pass
+                c["logo"] = new_path
+                c["logo_filename"] = manual
+                if old: upgraded += 1
+                else:   added += 1
+                print(f"  ★ {c['name']}: {manual}")
+                time.sleep(2.5)
+                continue
+            time.sleep(2.5)
+            # If manual download failed, fall through to Wikidata
         qid = c.get("wiki_id")
         if not qid:
             continue
