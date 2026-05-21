@@ -178,7 +178,9 @@ def fetch_chain(display, wiki, category):
         "wiki_id": qid,
         "wiki_slug": wiki,
         "description": description,
-        "summary": extract[:320] if extract else None,
+        # Store the full extract — chains.html slices to 320 for the card row
+        # and shows the full thing in a hover tooltip on the truncation `…`.
+        "summary": extract.strip() if extract else None,
         "logo_url": original or thumb,
     }
 
