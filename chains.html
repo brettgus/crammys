@@ -499,11 +499,13 @@
     return BY_ID.get(ord[state.idx]);
   }
 
-  const USE_LOCAL = location.protocol === "file:";
-  function logoUrl(c) {
-    if (USE_LOCAL) return c.logo || c.logo_url || "";
-    return c.logo_url || c.logo || "";
-  }
+  // Always prefer the curated local logo file. The chain logos are small
+  // (~40KB each, 51 total) so we commit them to the repo and ship them with
+  // the static site — no need for a CDN fallback like the movie stills.
+  // `c.logo_url` is left in the manifest for provenance only; it's the
+  // original Wikipedia pageimage which is often a storefront photo, not the
+  // brand mark we downloaded into c.logo.
+  function logoUrl(c) { return c.logo || c.logo_url || ""; }
 
   // ─── Render ────────────────────────────────────────────────────────
   function render() {
