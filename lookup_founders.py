@@ -15,6 +15,26 @@ import os, json, re, time, urllib.request, urllib.parse, urllib.error, gzip
 
 UA = "Crammys/1.0 (personal flashcard app; github.com/brettgus/crammys)"
 
+# Founders confirmed (via prior runs) to have no usable Wikipedia article.
+# Reruns skip these so we don't burn rate-limit budget on guaranteed misses.
+# To re-confirm if someone got a new article: remove them from this set.
+KNOWN_NO_ARTICLE = {
+    "Aaron Kennedy", "Alex McCullough", "Ally Svenson", "Anthony Miller",
+    "Antonio Swad", "Arthur Randall", "Bernadette Fiaschetti", "Bill Phelps",
+    "Bill Wang", "Brett Schulman", "Bryant Keil", "Chris Sorensen",
+    "Curt Jones", "Dan and Frank Carney", "David Jameson", "Dimitri Moshovitis",
+    "Donald Sutherland", "Ed Hackbarth", "Elise Wetzel", "Forrest Raffel",
+    "George Culver", "Ike Grigoropoulos", "J.F. McCullough", "Janie Murrell",
+    "Jeffrey Hyman", "Jerry Murrell", "Jimmy Lambatos", "John Puckett",
+    "Jonathan Neman", "Juan Francisco Ochoa", "Ken Rosenthal", "Kim Puckett",
+    "Lea Culver", "Leroy Raffel", "Louis Kane", "Margaret Karcher",
+    "Nathaniel Ru", "Nicolas Jammet", 'Pasquale "Pat" Giammarco',
+    "Peter Cancro", "Ray Lindstrom", "Rich Komen", "Rick Wetzel",
+    "Robert Hammer", "Robert Hauser", "Robin Sorensen", "Ruth Culver",
+    "Scott Svenson", "Susan Sutherland", "Ted Xenohristos", "Terry Collins",
+    "Tony Townley", "Wilbur Hardee", "Zach McLeroy",
+}
+
 def _write_partial(results):
     """Atomic-ish write: tmp + rename so we never leave a half-flushed file."""
     payload = "window.FOUNDERS = " + json.dumps(results, ensure_ascii=False) + ";\n"
@@ -211,10 +231,20 @@ def main():
         if e.get("unresolved"): return True
         if not (e.get("summary") or e.get("description")): return True
         return False
-    todo = [(n, chain, slug) for n, (chain, slug) in pairs.items() if needs_resolve(n)]
-    print(f"Resolving {len(todo)}/{len(pairs)} founders (REST search, sequential, 1.2s pacing).\n")
-
+    # Skip founders we've already confirmed have no Wikipedia article.
     out = dict(existing)
+    skipped = 0
+    for name in list(pairs):
+        if name in KNOWN_NO_ARTICLE and name not in out:
+            out[name] = {"name": name, "unresolved": True}
+            skipped += 1
+
+    todo = [(n, chain, slug) for n, (chain, slug) in pairs.items()
+            if n not in KNOWN_NO_ARTICLE and needs_resolve(n)]
+    print(f"Resolving {len(todo)}/{len(pairs)} founders "
+          f"({skipped} pre-marked as no-article, "
+          f"{len(pairs)-len(todo)-skipped} already cached).\n")
+
     saved_count = 0
 
     # Sequential search — Wikipedia's REST search is rate-limit-prickly. The
