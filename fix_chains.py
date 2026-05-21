@@ -186,6 +186,8 @@ KNOWN_HQ = {
     "Auntie Anne's":  ("Lancaster", "PA", "United States"),
     # Wikidata blank for Carvel — owned by Atlantic Food Brands / GFG, HQ in Atlanta.
     "Carvel":         ("Atlanta", "GA", "United States"),
+    # Wikidata had just "Georgia" (the state). Actual HQ is in College Park, GA.
+    "Chick-fil-A":    ("College Park", "GA", "United States"),
 }
 
 # Hand-known founding dates / origin cities for chains Wikidata didn't return.
@@ -194,9 +196,50 @@ KNOWN_FOUNDED = {
 }
 KNOWN_ORIGIN = {
     "Carvel":               "Hartsdale",
-    "Dairy Queen":          "Joliet",       # IL — first store
-    "Auntie Anne's":        "Downingtown",  # PA — first stand
-    "Dippin' Dots":         "Lexington",    # KY founding lab
+    "Dairy Queen":          "Joliet",        # IL — first store
+    "Auntie Anne's":        "Downingtown",   # PA — first stand
+    "Dippin' Dots":         "Lexington",     # KY founding lab
+    # Founding cities for chains whose Wikidata P740 was empty:
+    "Jersey Mike's Subs":   "Point Pleasant",   # NJ — 1956 as Mike's Subs
+    "Jimmy John's":         "Charleston",       # IL
+    "Panda Express":        "Glendale",         # CA — Glendale Galleria, 1983
+    "Panera Bread":         "Kirkwood",         # MO — as St. Louis Bread Company
+    "Wingstop":             "Garland",          # TX
+    "Firehouse Subs":       "Jacksonville",     # FL — same as HQ
+    "Papa Murphy's":        "Hillsboro",        # OR
+    "Marco's Pizza":        "Oregon",           # OH — Toledo suburb
+    "Zaxby's":              "Statesboro",       # GA
+    "Bojangles'":           "Charlotte",        # NC — same as HQ
+    "Raising Cane's":       "Baton Rouge",      # LA — near LSU
+    "Qdoba":                "Denver",           # CO
+    "Caribou Coffee":       "Edina",            # MN — first cafe
+    "Noodles & Company":    "Madison",          # WI
+    "Potbelly Sandwich Shop": "Chicago",        # IL — same as HQ
+    "Shake Shack":          "New York City",    # Madison Square Park
+    "CAVA":                 "Rockville",        # MD — original full-service
+    "Blaze Pizza":          "Irvine",           # CA
+    "Sweetgreen":           "Washington, D.C.", # founding location
+    "Quiznos":              "Denver",           # CO — same as HQ
+    "Pei Wei Asian Diner":  "Scottsdale",       # AZ — same as HQ
+    "Del Taco":             "Yermo",            # CA — founding city
+}
+
+# Hand-known parent companies for chains where Wikidata P749 was empty
+# but the chain IS owned by a holding/private-equity parent.
+KNOWN_PARENT = {
+    "Jimmy John's":         "Inspire Brands",
+    "Panera Bread":         "JAB Holding Company",
+    "Auntie Anne's":        "GoTo Foods",        # parent of Cinnabon, Carvel, Jamba too
+    "Carvel":               "GoTo Foods",
+    "Jamba":                "GoTo Foods",
+    "Cinnabon":             "GoTo Foods",
+    "Jersey Mike's Subs":   "Blackstone",        # bought 2024
+    "Sonic Drive-In":       "Inspire Brands",
+    "Buffalo Wild Wings":   "Inspire Brands",
+    "Dunkin'":              "Inspire Brands",
+    "Baskin-Robbins":       "Inspire Brands",
+    "Arby's":               "Inspire Brands",    # already might be set
+    "Pret a Manger":        "JAB Holding Company",
 }
 
 def fetch_locations_for(c):
@@ -249,6 +292,9 @@ def main():
         if c["name"] in KNOWN_ORIGIN and not c.get("origin"):
             c["origin"] = KNOWN_ORIGIN[c["name"]]
             print(f"  ORIG: {c['name']}  → {c['origin']}")
+        if c["name"] in KNOWN_PARENT and not c.get("parent"):
+            c["parent"] = KNOWN_PARENT[c["name"]]
+            print(f"  PAR:  {c['name']}  → {c['parent']}")
 
     # (2) Locations + rank (overwrite any previous values; using curated US estimates)
     print("\n--- Locations ---")

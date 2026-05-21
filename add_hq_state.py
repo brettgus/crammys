@@ -162,6 +162,15 @@ HQ_STATE = {
     "Lancaster":        "PA",
     "Canton":           "MA",   # already there too
     "Seattle":          "WA",   # Cinnabon origin
+    # Origin-city additions for the most recent missing-field audit
+    "Kirkwood":         "MO",   # Panera origin
+    "Charleston":       "IL",   # Jimmy John's origin
+    "Garland":          "TX",   # Wingstop origin
+    "Hillsboro":        "OR",   # Papa Murphy's origin
+    "Oregon":           "OH",   # Marco's Pizza origin (the Toledo suburb)
+    "Statesboro":       "GA",   # Zaxby's origin
+    "Rockville":        "MD",   # CAVA origin
+    "College Park":     "GA",   # Chick-fil-A HQ
 }
 
 def add_state(city):
