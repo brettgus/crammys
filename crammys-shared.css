@@ -1197,3 +1197,40 @@ main {
   .tip-duo { flex-direction: row; gap: 14px; }
 }
 .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
+
+/* ── Study-mode memory anchor (poster + blurb on back face) ─────────── */
+.study-anchor {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  text-align: left;
+  max-width: 480px;
+  width: 100%;
+}
+.study-photo {
+  width: 96px;
+  flex: 0 0 96px;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.22);
+  background: var(--line);
+}
+.study-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.study-blurb {
+  flex: 1 1 auto;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (max-width: 540px) {
+  .study-anchor { gap: 10px; max-width: 100%; }
+  .study-photo { width: 78px; flex: 0 0 78px; }
+  .study-blurb { -webkit-line-clamp: 5; font-size: 12.5px; }
+}

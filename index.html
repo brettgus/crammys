@@ -186,6 +186,13 @@
             <em id="nomineesToggleHint">expands the deck so every Best Picture nominee is its own card</em>
           </span>
         </label>
+        <label class="toggle-row" id="yearBasisRow">
+          <input type="checkbox" id="yearBasisChk">
+          <span>
+            <strong>Show film-release year</strong>
+            <em>Instead of the ceremony year — e.g. <i>Forrest Gump</i> shows 1994, not 1995</em>
+          </span>
+        </label>
         <h4 class="panel-section">Year range</h4>
         <div class="range-presets" id="rangePresets"></div>
         <div class="range-inputs">
@@ -544,7 +551,7 @@
   const SCORE_RETIRED = 3;        // cards at this score graduate out of the active pool
   const SCORE_WEIGHTS = [4, 2, 1, 0];  // weight given to each score level when shuffling
   const state = (() => {
-    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false, lastDir: "y2m" };
+    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false, lastDir: "y2m", yearBasis: "ceremony" };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       let s = Object.assign(def, saved || {});
@@ -567,8 +574,14 @@
     } catch { return def; }
   })();
   if (!state.range || typeof state.range.from !== "number") state.range = { ...DEFAULT_RANGE };
-  if (state.range.to < _maxYear) state.range.to = _maxYear;
+  // Saved range is respected as-is.  Adding a new ceremony year doesn't
+  // silently expand the user's chosen upper bound — they pick when to
+  // include it via the deck modal.  Clamp bounds to the valid year range.
+  state.range.from = Math.max(_minYear, Math.min(_maxYear, state.range.from));
+  state.range.to   = Math.max(_minYear, Math.min(_maxYear, state.range.to));
+  if (state.range.from > state.range.to) state.range.from = state.range.to;
   if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
+  if (state.yearBasis !== "film") state.yearBasis = "ceremony";
   if (!state.scores || typeof state.scores !== "object") state.scores = {};
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
   const scoreOf = (id) => state.scores[id] || 0;
@@ -858,7 +871,7 @@
     const c = currentCard();
 
     // Always refresh the deck-info chip
-    rangeTextEl.textContent = `${state.range.from}–${state.range.to}`;
+    rangeTextEl.textContent = `${showYear(state.range.from)}–${showYear(state.range.to)}`;
     rangeExtrasEl.textContent = state.includeNominees ? "· w/ nominees" : "";
 
     if (!c) {
@@ -888,7 +901,7 @@
     } else if (state.direction === "y2m" || state.direction === "study") {
       front.tag.textContent = state.direction === "study" ? "Study" : "Ceremony";
       front.prompt.textContent = isSlateView ? "Name the Best Picture slate of" : "What won Best Picture in";
-      front.text.innerHTML = `<span>${c.year}</span>`;
+      front.text.innerHTML = `<span>${showYear(c.year)}</span>`;
     } else {
       front.tag.textContent = isWinner ? "Best Picture" : "Best Picture · Nominee";
       front.prompt.textContent = isWinner ? "What year did this win?" : "What year was this nominated?";
@@ -902,7 +915,7 @@
       // Show the full slate of the year — winner highlighted, no director/cast.
       back.tag.textContent = "Best Picture";
       backHTML = `
-        <div class="prompt">${c.year} · Best Picture</div>
+        <div class="prompt">${showYear(c.year)} · Best Picture</div>
         <div class="slate">
           <div class="slate-row winner">
             <span class="slate-marker">★</span>
@@ -930,12 +943,12 @@
       if (state.direction === "m2y") {
         answerBlock = `
           <div class="prompt">${isWinner ? "Won Best Picture in" : "Nominated for Best Picture in"}</div>
-          <div class="answer"><span class="year" data-year="${c.year}">${c.year}</span></div>
+          <div class="answer"><span class="year" data-year="${c.year}">${showYear(c.year)}</span></div>
           <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${movieLinks(c.movie, c.trailer)} ${statusBadge}</div>
         `;
       } else {
         answerBlock = `
-          <div class="prompt">${c.year} · Best Picture ${statusBadge}</div>
+          <div class="prompt">${showYear(c.year)} · Best Picture ${statusBadge}</div>
           <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}</div>
         `;
       }
@@ -960,13 +973,13 @@
 
       const nomineesBlock = (isWinner && c.slate && c.slate.length) ? `
         <div class="nominees">
-          <h4>Other nominees · ${c.year}</h4>
+          <h4>Other nominees · ${showYear(c.year)}</h4>
           <div class="nominee-list">
             ${c.slate.map(n => filmInline(n.movie, n.trailer)).join('<span class="nominee-sep">·</span>')}
           </div>
         </div>` : "";
 
-      backHTML = answerBlock + directorBlock + starsBlock + wonBlock + nomineesBlock;
+      backHTML = studyAnchorHTML(c) + answerBlock + directorBlock + starsBlock + wonBlock + nomineesBlock;
     }
 
     back.body.innerHTML = backHTML;
@@ -1222,27 +1235,36 @@
   const rangePresetsEl = document.getElementById("rangePresets");
   const includeNomineesChk = document.getElementById("includeNomineesChk");
   const nomineesToggleHint = document.getElementById("nomineesToggleHint");
+  const yearBasisChk = document.getElementById("yearBasisChk");
 
-  // Populate year dropdowns (descending)
+  // Populate year dropdowns (descending). Option value stays in ceremony
+  // years (the canonical key); the visible label flips when the user
+  // switches to film-release basis.
   const allYears = Array.from(new Set(DECK.map(e => e.year))).sort((a,b) => b - a);
-  for (const sel of [rangeFromSel, rangeToSel]) {
-    sel.innerHTML = allYears.map(y => `<option value="${y}">${y}</option>`).join("");
-  }
-  // Presets
   const PRESETS = [
     { label: "Last 10 yrs", from: _maxYear - 9, to: _maxYear },
     { label: "Last 30 yrs", from: _maxYear - 29, to: _maxYear },
     { label: "Last 50 yrs", from: _maxYear - 49, to: _maxYear },
-    { label: `All (${_minYear}–${_maxYear})`, from: _minYear, to: _maxYear },
+    { label: "All",         from: _minYear,     to: _maxYear, isAll: true },
   ];
-  rangePresetsEl.innerHTML = PRESETS.map((p, i) =>
-    `<button data-from="${p.from}" data-to="${p.to}">${p.label}</button>`
-  ).join("");
+  function populateYearPickers() {
+    for (const sel of [rangeFromSel, rangeToSel]) {
+      const cur = sel.value;
+      sel.innerHTML = allYears.map(y => `<option value="${y}">${showYear(y)}</option>`).join("");
+      if (cur) sel.value = cur;
+    }
+    rangePresetsEl.innerHTML = PRESETS.map(p => {
+      const label = p.isAll ? `All (${showYear(p.from)}–${showYear(p.to)})` : p.label;
+      return `<button data-from="${p.from}" data-to="${p.to}">${label}</button>`;
+    }).join("");
+  }
+  populateYearPickers();
 
   function syncRangeUI() {
     rangeFromSel.value = state.range.from;
     rangeToSel.value = state.range.to;
     includeNomineesChk.checked = !!state.includeNominees;
+    yearBasisChk.checked = state.yearBasis === "film";
     const yearsInRange = DECK.filter(e => inRange(e.year)).length;
     const cardsInRange = POOL.filter(c => inRange(c.year)).length;
     rangeCountEl.innerHTML = `<em>${yearsInRange}</em> ${yearsInRange === 1 ? "year" : "years"} · <em>${cardsInRange}</em> cards in deck`;
@@ -1250,6 +1272,13 @@
       const on = +b.dataset.from === state.range.from && +b.dataset.to === state.range.to;
       b.classList.toggle("on", on);
     });
+  }
+  function toggleYearBasis() {
+    state.yearBasis = state.yearBasis === "film" ? "ceremony" : "film";
+    persist();
+    populateYearPickers();
+    syncRangeUI();
+    unflipAndThen(() => render());
   }
   function toggleIncludeNominees() {
     state.includeNominees = !state.includeNominees;
@@ -1291,6 +1320,7 @@
     applyRange(+b.dataset.from, +b.dataset.to);
   });
   includeNomineesChk.addEventListener("change", toggleIncludeNominees);
+  yearBasisChk.addEventListener("change", toggleYearBasis);
   document.getElementById("resetProgressBtn").addEventListener("click", () => {
     closeRangeModal();
     reset();
@@ -1412,6 +1442,27 @@
     const img = thumbForMovie(title);
     if (!img) return "";
     return `<div class="tip-photo tip-poster"><img src="${movieImageURL(img, "w342")}" alt="" loading="lazy"></div>`;
+  }
+  // Year shown on cards / chips. The card data is keyed by ceremony year
+  // (e.g. 1995 for Forrest Gump), but the user can opt to view film-release
+  // years instead via the deck modal — most people remember films by
+  // release year, not the ceremony that followed.
+  const showYear = (cy) => state.yearBasis === "film" ? cy - 1 : cy;
+  // Study mode: surface a poster + synopsis at the top of the back face
+  // as a memory anchor.  Best-effort — silently skipped when we don't
+  // have either asset cached for the card.
+  function studyAnchorHTML(c) {
+    if (!isStudy()) return "";
+    const img = thumbForMovie(c.movie);
+    const m = (window.MOVIES || {})[c.movie];
+    if (!img && !m?.overview) return "";
+    const photo = img
+      ? `<div class="study-photo"><img src="${movieImageURL(img, "w342")}" alt="" loading="lazy"></div>`
+      : "";
+    const blurb = m?.overview
+      ? `<div class="study-blurb">${escapeHtml(m.overview)}</div>`
+      : "";
+    return `<div class="study-anchor">${photo}${blurb}</div>`;
   }
   function tipHTMLMovie(title) {
     const m = (window.MOVIES || {})[title];
