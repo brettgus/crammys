@@ -1447,7 +1447,7 @@
   // (e.g. 1995 for Forrest Gump), but the user can opt to view film-release
   // years instead via the deck modal — most people remember films by
   // release year, not the ceremony that followed.
-  const showYear = (cy) => state.yearBasis === "film" ? cy - 1 : cy;
+  function showYear(cy) { return state.yearBasis === "film" ? cy - 1 : cy; }
   // Study mode: surface a poster + synopsis at the top of the back face
   // as a memory anchor.  Best-effort — silently skipped when we don't
   // have either asset cached for the card.
