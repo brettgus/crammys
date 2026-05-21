@@ -4,436 +4,108 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0b0b0f" />
-<title>Crammys · Fast Food Chains</title>
+<title>Crammys · Restaurant Chains</title>
+<link rel="stylesheet" href="crammys-shared.css">
+<script>
+  // Anti-FOUC: apply saved theme before any paint.
+  (function () {
+    try {
+      var t = localStorage.getItem("crammys-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+  window.CURRENT_DECK = "chains";
+</script>
+<script src="crammys-shared.js" defer></script>
 <style>
-  :root {
-    --bg: #f6f5f1;
-    --bg-elev: #ffffff;
-    --ink: #14141a;
-    --ink-soft: #5a5a66;
-    --ink-faint: #9a9aa6;
-    --line: #e6e4dd;
-    --accent: #e64a1f;             /* fast-food red */
-    --accent-ink: #ffffff;
-    --shadow: 0 1px 2px rgba(20,20,26,.04), 0 12px 40px rgba(20,20,26,.08);
-    --radius: 18px;
-  }
-  :root[data-theme="dark"] {
-    --bg: #0b0b0f;
-    --bg-elev: #15151c;
-    --ink: #f4f3ee;
-    --ink-soft: #b6b5ad;
-    --ink-faint: #6e6d76;
-    --line: #25252e;
-    --accent: #ff6740;
-    --accent-ink: #0b0b0f;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 48px rgba(0,0,0,.5);
-  }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    flex-direction: column;
-    height: 100dvh;
-    overflow: hidden;
-  }
-  main {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 18px 18px 28px;
-    gap: 14px;
-  }
-
-  /* ── Header / controls ─────────────────────────────────────────── */
-  .controls {
-    display: flex; gap: 10px; align-items: center; justify-content: space-between;
-    width: 100%; max-width: 720px; flex-wrap: wrap;
-  }
-  .seg {
-    display: inline-flex; background: var(--bg-elev); border: 1px solid var(--line);
-    border-radius: 10px; padding: 3px;
-  }
-  .seg button {
-    border: 0; background: transparent; color: var(--ink-soft);
-    padding: 7px 11px; border-radius: 8px; cursor: pointer;
-    font-size: 13px; font-weight: 500;
-    font-family: inherit;
-  }
-  .seg button.on { background: var(--ink); color: var(--bg); }
-  .meta {
-    display: flex; align-items: center; gap: 12px;
-    color: var(--ink-soft); font-size: 13px; font-variant-numeric: tabular-nums;
-  }
-  .chip {
-    font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent-ink); background: var(--accent);
-    padding: 2px 8px; border-radius: 99px; font-weight: 600;
-  }
-  .chip-btn {
-    border: 1px solid var(--line); background: transparent; color: var(--ink-soft);
-    cursor: pointer; font-family: inherit; letter-spacing: .04em;
-    text-transform: none; padding: 3px 9px;
-    transition: border-color .15s ease, color .15s ease;
-  }
-  .chip-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
-  .streak { color: var(--accent); font-weight: 600; }
-  .tools { display: inline-flex; gap: 6px; }
-  .icon-btn {
-    background: transparent; border: 1px solid var(--line); color: var(--ink-soft);
-    width: 32px; height: 32px; border-radius: 8px;
-    display: inline-flex; align-items: center; justify-content: center;
-    cursor: pointer; padding: 0;
-    transition: background .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .icon-btn:hover { color: var(--ink); border-color: var(--ink-faint); background: var(--bg-elev); }
-  .icon-btn.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .icon-btn svg { width: 16px; height: 16px; }
-
-  .nav-link {
-    color: var(--ink-soft); font-size: 13px; text-decoration: none;
+  /* Tooltip target: hovered chain founders pop a Wikipedia summary panel.
+     Keep tight to "founder name" only — generic .tip-target lives in shared. */
+  .founder { /* alias — same behavior as .tip-target */
+    cursor: pointer;
     border-bottom: 1px dotted var(--ink-faint);
+    transition: color .15s ease, border-bottom-color .15s ease;
   }
-  .nav-link:hover { color: var(--ink); border-color: var(--ink-soft); }
-
-  .progress-wrap {
-    width: 100%; max-width: 720px; height: 3px;
-    background: var(--line); border-radius: 99px; overflow: hidden;
-  }
-  .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
-
-  /* ── Card ──────────────────────────────────────────────────────── */
-  .card-stage {
-    flex: 1; min-height: 0;
-    width: 100%; max-width: 720px;
-    perspective: 1400px; position: relative;
-  }
-  .card {
-    position: absolute; inset: 0;
-    transform-style: preserve-3d;
-    transition: transform .55s cubic-bezier(.2,.8,.2,1);
-    cursor: pointer;
-  }
-  .card.flipped { transform: rotateY(180deg); }
-  .card:not(.flipped) .face.back { pointer-events: none; }
-  .card.flipped .face.front { pointer-events: none; }
-
-  .face {
-    position: absolute; inset: 0;
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    padding: 24px 26px;
-    display: flex; flex-direction: column;
-    overflow: hidden;
-    min-width: 0;
-  }
-  .face.back { transform: rotateY(180deg); }
-  .face .corner {
-    display: flex; align-items: center; justify-content: space-between;
-    color: var(--ink-faint); font-size: 12px;
-    letter-spacing: .12em; text-transform: uppercase;
-    flex-shrink: 0;
-  }
-  .star {
-    background: transparent; border: 0; cursor: pointer; padding: 4px;
-    color: var(--ink-faint); border-radius: 6px; line-height: 0;
-  }
-  .star:hover { color: var(--accent); }
-  .star.on { color: var(--accent); }
-  .star svg { width: 18px; height: 18px; }
-  .face .body {
-    flex: 1; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; text-align: center; gap: 14px;
-    overflow-y: auto; padding: 8px 0;
-  }
-  .prompt {
-    color: var(--ink-soft); font-size: 13px;
-    letter-spacing: .04em; text-transform: uppercase;
-  }
-  .question, .answer {
-    font-family: "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
-    font-weight: 500; letter-spacing: -0.02em; line-height: 1.05;
-    font-size: clamp(36px, 6vw, 56px);
-  }
-  .answer { font-size: clamp(28px, 5vw, 44px); }
-
-  .details {
-    margin-top: 14px; padding-top: 14px;
-    border-top: 1px dashed var(--line);
-    color: var(--ink-soft); font-size: 14px; line-height: 1.5;
-    max-width: 56ch; text-align: left;
-  }
-  .details .row { display: flex; gap: 8px; margin-bottom: 4px; }
-  .details .label {
-    color: var(--ink-faint); font-size: 11px; letter-spacing: .14em;
-    text-transform: uppercase; min-width: 90px; padding-top: 3px;
-  }
-  .details .val { color: var(--ink); }
-  .details .val em { font-style: normal; color: var(--ink-soft); font-weight: 500; }
-
-  /* External link icon (Wikipedia) inline with the chain name */
-  .ext {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 22px; height: 22px; border-radius: 6px;
-    color: var(--ink-faint); border: 1px solid var(--line); background: transparent;
-    text-decoration: none; vertical-align: middle;
-    transition: color .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .ext:hover { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
-  .ext svg { width: 12px; height: 12px; }
-
-  /* Mini logo rendered inline with the answer text */
-  .inline-logo {
-    max-height: 0.9em;            /* scales with the answer font-size */
-    max-width: 1.8em;
-    object-fit: contain;
-    vertical-align: -0.05em;
-    background: var(--bg);
-    padding: 3px 5px;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  :root[data-theme="dark"] .inline-logo { background: #f4f3ee; }
-  .answer { display: inline-flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
-  .chain-name { margin-right: 4px; }
-  /* Auto-shrink long answer values so multi-word city names don't overflow. */
-  .answer {
-    word-break: break-word;
-    hyphens: auto;
-    text-wrap: balance;
-    overflow-wrap: anywhere;
-  }
-  /* When the answer is unusually long (>20 chars), step the font down a notch */
-  .answer.long { font-size: clamp(22px, 3.8vw, 34px); }
-
-  .footer-hint {
-    color: var(--ink-faint); font-size: 12px; text-align: center;
-    letter-spacing: .04em; flex-shrink: 0;
-  }
-  .footer-hint kbd {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px; background: var(--bg-elev);
-    border: 1px solid var(--line); border-bottom-width: 2px;
-    padding: 1px 6px; border-radius: 5px; color: var(--ink-soft);
-  }
-
-  /* ── Logo mode ─────────────────────────────────────────────────── */
-  .logo-stage {
-    position: absolute; inset: 0;
-    border-radius: var(--radius); overflow: hidden;
-    background: var(--bg-elev);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    display: flex; align-items: center; justify-content: center;
-    padding: 60px 48px 100px;
-  }
-  .logo-stage img {
-    max-width: 100%; max-height: 100%; object-fit: contain;
-    transition: opacity .2s ease;
-  }
-  .logo-overlay {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; justify-content: space-between;
-    padding: 22px 24px 0; pointer-events: none;
-  }
-  .logo-overlay .corner, .logo-overlay .bottom { pointer-events: auto; }
-  .logo-overlay .bottom {
-    background: rgba(8,8,12,.62);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border-top: 1px solid rgba(255,255,255,.08);
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-    padding: 16px 22px 18px;
-    margin: 0 -24px 0;
-    text-align: center;
-  }
-  :root[data-theme="dark"] .logo-stage { background: #f4f3ee; }
-  .face.front.logo-mode { padding: 0; background: transparent; }
-  .face.front.logo-mode .corner, .face.front.logo-mode .body, .face.front.logo-mode > .footer-hint { display: none; }
-  .card.flipped .logo-stage { visibility: hidden; }
-  /* The `display: flex` rule above otherwise wins over the [hidden] attribute. */
-  .logo-stage[hidden] { display: none; }
-
-  /* ── Nav row ───────────────────────────────────────────────────── */
-  .nav {
-    display: flex; gap: 10px; width: 100%; max-width: 720px; justify-content: space-between;
-  }
-  .nav .group { display: flex; gap: 10px; }
-  .btn {
-    background: var(--bg-elev); border: 1px solid var(--line); color: var(--ink);
-    padding: 10px 14px; border-radius: 10px; cursor: pointer;
-    font-size: 14px; font-weight: 500; font-family: inherit;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: background .15s ease, border-color .15s ease;
-  }
-  .btn:hover { border-color: var(--ink-faint); }
-  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .btn svg { width: 16px; height: 16px; }
-
-  /* ── Modals ────────────────────────────────────────────────────── */
-  .modal-backdrop {
-    position: fixed; inset: 0;
-    background: rgba(6,6,10,.72);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    z-index: 200; display: flex; align-items: center; justify-content: center;
-    padding: clamp(16px, 4vw, 48px);
-  }
-  .modal-backdrop[hidden] { display: none; }
-  .panel {
-    background: var(--bg-elev); border: 1px solid var(--line);
-    border-radius: 16px; padding: 22px 24px 20px;
-    width: 100%; max-width: 460px;
-    position: relative; box-shadow: 0 24px 60px rgba(0,0,0,.4); color: var(--ink);
-  }
-  .modal-close {
-    position: absolute; top: 10px; right: 10px;
-    width: 36px; height: 36px;
-    background: transparent; border: 1px solid var(--line);
-    color: var(--ink); border-radius: 9px;
-    display: inline-flex; align-items: center; justify-content: center;
-    cursor: pointer;
-  }
-  .modal-close:hover { background: var(--bg); }
-  .modal-close svg { width: 18px; height: 18px; }
-  .panel-title { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
-  .panel-sub { margin: 0 0 16px; color: var(--ink-soft); font-size: 13px; }
-  .cat-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-  }
-  .cat-grid label {
-    display: flex; gap: 8px; align-items: center;
-    padding: 8px 10px; border: 1px solid var(--line);
-    border-radius: 8px; cursor: pointer;
-    font-size: 13.5px; color: var(--ink);
-  }
-  .cat-grid input { accent-color: var(--accent); }
-  .top-presets { display: flex; flex-wrap: wrap; gap: 6px; }
-  .top-presets button {
-    background: transparent; border: 1px solid var(--line); color: var(--ink-soft);
-    padding: 8px 14px; border-radius: 99px; cursor: pointer;
-    font-size: 13px; font-weight: 500; font-family: inherit;
-    transition: background .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .top-presets button:hover { color: var(--ink); border-color: var(--ink-faint); }
-  .top-presets button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-
-  .about-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-  .about-section h4 {
-    margin: 0 0 8px;
-    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--ink-faint); font-weight: 600;
-  }
-  .about-section p {
-    margin: 0 0 8px;
-    color: var(--ink-soft); font-size: 13px; line-height: 1.55;
-  }
-  .about-section p a { color: var(--ink); }
-
-  /* Founder hover tooltip */
-  .founder { cursor: pointer; border-bottom: 1px dotted var(--ink-faint); transition: color .15s ease; }
   .founder:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  .tooltip {
-    position: fixed;
-    width: 320px; max-width: calc(100vw - 24px);
-    background: var(--bg-elev); color: var(--ink);
-    border: 1px solid var(--line); border-radius: 14px;
-    box-shadow: 0 8px 36px rgba(0,0,0,.25), 0 1px 3px rgba(0,0,0,.06);
-    padding: 14px;
-    z-index: 100;
-    opacity: 0; transform: translateY(4px); pointer-events: none;
-    transition: opacity .12s ease, transform .12s ease;
-    display: flex; gap: 12px; align-items: flex-start;
-    left: 0; top: 0;
-  }
-  .tooltip.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  .tip-photo {
-    width: 64px; height: 86px; border-radius: 8px;
-    background: var(--line); flex-shrink: 0; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--ink-faint); font-size: 22px; font-weight: 600;
-  }
-  .tip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tip-info { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
-  .tip-name {
-    font-weight: 600; font-size: 15px; line-height: 1.2;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .tip-name .ext { width: 18px; height: 18px; border-radius: 5px; }
-  .tip-name .ext svg { width: 10px; height: 10px; }
-  .tip-meta { color: var(--ink-soft); font-size: 12.5px; line-height: 1.35; }
-  .tip-blurb { color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; margin-top: 4px; }
-  .tip-empty { color: var(--ink-soft); font-size: 13px; padding: 4px 2px; }
+  /* Auto-shrink long answer values (multi-word HQs) so they don't overflow. */
+  .answer.long { font-size: clamp(22px, 3.8vw, 34px); }
 </style>
 </head>
 <body>
   <main>
     <div class="controls">
-      <div class="seg" role="tablist" aria-label="Mode">
-        <button data-mode="n2y" class="on">Name → Year</button>
+      <div class="deck-switcher">
+        <button class="deck-btn" id="deckBtn" aria-haspopup="menu" aria-expanded="false" title="Switch deck">
+          <span class="deck-emoji" id="deckEmoji">🍔</span>
+          <span class="deck-name" id="deckName">Restaurant Chains</span>
+          <svg class="deck-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="deck-menu" id="deckMenu" role="menu" hidden></div>
+      </div>
+      <div class="seg" role="tablist" aria-label="Direction">
+        <button data-mode="l2n" class="on">Logo → Name</button>
+        <button data-mode="n2y">Name → Founded</button>
         <button data-mode="n2f">Name → Founder</button>
         <button data-mode="n2h">Name → HQ</button>
-        <button data-mode="l2n">Logo → Name</button>
       </div>
-      <div class="meta">
-        <span id="counter">1 / 51</span>
-        <button class="chip chip-btn" id="topChip" title="Limit to top-N chains">All 51</button>
-        <button class="chip chip-btn" id="catChip" title="Filter categories">All</button>
-        <span id="drillChip" class="chip" hidden>drill</span>
-        <span class="streak" id="streak" title="Mastered">★ 0</span>
-      </div>
-      <div class="tools">
-        <a class="nav-link" href="index.html" title="Switch to Best Picture deck">Best Picture →</a>
-        <button class="icon-btn" id="drillBtn" title="Drill unmastered only">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+      <div class="right-cluster">
+        <button class="chip chip-btn deck-info" id="deckChip" title="Change deck contents">
+          <span id="counter">1 / 51</span>
+          <span class="chip-sep">·</span>
+          <span id="scopeText">All 51</span>
+          <span id="scopeExtras" class="chip-extras"></span>
         </button>
-        <button class="icon-btn" id="themeBtn" title="Toggle theme"></button>
-        <button class="icon-btn" id="aboutBtn" title="About / credits">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
-        </button>
+        <div class="tools">
+          <button class="icon-btn" id="shuffleIconBtn" title="Re-shuffle (S)" aria-label="Re-shuffle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          </button>
+          <button class="icon-btn" id="themeBtn" title="Light / dark mode (T)" aria-label="Light / dark mode"></button>
+          <button class="icon-btn" id="aboutBtn" title="About / shortcuts (?)" aria-label="About">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.7 1.2c0 1.5-2.2 1.7-2.2 3.3"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></svg>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar" id="progress"></div>
+    </div>
 
     <div class="card-stage">
+      <button class="card-arrow card-arrow-prev" id="prevBtn" title="Previous (←)" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="card-arrow card-arrow-next" id="nextBtn" title="Next (→)" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
       <div class="card" id="card" role="button" aria-label="Flip card" tabindex="0">
         <div class="face front" id="frontFace">
           <div class="corner">
             <span id="frontTag">Chain</span>
-            <button class="star" id="starFront" title="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-stars" id="scoreStarsFront" aria-hidden="true"></span>
           </div>
           <div class="body">
             <div class="prompt" id="frontPrompt">When was</div>
             <div class="question" id="frontText">—</div>
             <div class="prompt" id="frontSuffix"></div>
           </div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to reveal</div>
-          <div class="logo-stage" id="logoStage" hidden>
+          <div class="footer-hint">
+            <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal · <kbd>←</kbd> <kbd>→</kbd> navigate</span>
+            <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+          </div>
+          <!-- Logo-mode overlay: reuse shared .image-stage with the `.brand` variant
+               (light background, object-fit:contain). -->
+          <div class="image-stage brand" id="logoStage" hidden>
             <img id="logoEl" alt="" />
-            <div class="logo-overlay">
+            <div class="image-overlay">
               <div class="corner">
                 <span>Logo</span>
-                <button class="star" id="starLogo" title="Mark mastered">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                </button>
               </div>
               <div class="bottom">
                 <div class="prompt">What chain is this?</div>
-                <div class="footer-hint"><kbd>Space</kbd> to reveal</div>
+                <div class="footer-hint">
+                  <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal</span>
+                  <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+                </div>
               </div>
             </div>
           </div>
@@ -441,76 +113,98 @@
         <div class="face back">
           <div class="corner">
             <span id="backTag">Answer</span>
-            <button class="star" id="starBack" title="Mark mastered">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </button>
+            <span class="score-stars" id="scoreStarsBack" aria-hidden="true"></span>
           </div>
           <div class="body" id="backBody"></div>
-          <div class="footer-hint">Tap or press <kbd>Space</kbd> to flip back</div>
+          <div class="footer-hint">
+            <span class="hint-desktop">Tap to flip back · <kbd>Y</kbd> got it · <kbd>N</kbd> missed</span>
+            <span class="hint-touch">Tap to flip back</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="nav">
-      <div class="group">
-        <button class="btn" id="prevBtn">‹ Prev</button>
-        <button class="btn primary" id="flipBtn">Flip</button>
-        <button class="btn" id="nextBtn">Next ›</button>
+    <div class="nav" id="navRow">
+      <div class="nav-back">
+        <button class="btn rate-btn rate-missed" id="missedBtn" title="Missed (N)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6L18 18M18 6L6 18"/></svg>
+          Missed
+        </button>
+        <button class="btn rate-btn rate-got" id="gotBtn" title="Got it (Y)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+          Got it
+        </button>
       </div>
-      <div class="group">
-        <button class="btn" id="shuffleBtn">Shuffle</button>
-        <button class="btn" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="modal-backdrop" id="aboutModal" hidden>
+      <div class="panel panel-wide" role="dialog" aria-label="About">
+        <button class="modal-close" id="aboutClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <h3 class="panel-title">Restaurant Chains · Crammys</h3>
+        <p class="panel-sub">A flashcard deck for cramming <span id="chainsCount">51</span> of the largest US fast-food and fast-casual chains.</p>
+
+        <div class="about-section">
+          <h4>Keyboard shortcuts</h4>
+          <div class="kbd-grid">
+            <div><kbd>Space</kbd> reveal answer</div>
+            <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
+            <div><kbd>Y</kbd> got it</div>
+            <div><kbd>N</kbd> missed</div>
+            <div><kbd>S</kbd> shuffle</div>
+            <div><kbd>R</kbd> reset progress</div>
+            <div><kbd>T</kbd> toggle theme</div>
+            <div><kbd>?</kbd> this dialog</div>
+            <div><kbd>Esc</kbd> close any popup</div>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h4>Data &amp; credits</h4>
+          <p>
+            Founders, founding years, HQs, parents, and summaries from
+            <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> and
+            <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+            (text licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-SA&nbsp;4.0</a>).
+            Logos via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>; each is a registered trademark of its respective owner.
+          </p>
+          <p class="panel-fineprint">
+            US store-count estimates curated by hand from public QSR / investor sources, then sorted by location count for ranking.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="deckModal" hidden>
+      <div class="panel" role="dialog" aria-label="Deck">
+        <button class="modal-close" id="deckClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <h3 class="panel-title">Deck</h3>
+        <p class="panel-sub">Limit the deck by store count and category.</p>
+
+        <h4 class="panel-section">Top N by US locations</h4>
+        <div class="preset-row" id="topPresets"></div>
+
+        <h4 class="panel-section">Categories</h4>
+        <div class="option-grid" id="catGrid"></div>
+
+        <div class="panel-foot">
+          <span id="deckCount" class="panel-count"></span>
+          <button class="link-danger" id="resetProgressBtn" title="Clear every card's score and start fresh">Start over</button>
+        </div>
       </div>
     </div>
 
     <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
-
-    <div class="modal-backdrop" id="aboutModal" hidden>
-      <div class="panel" role="dialog" aria-label="About">
-        <button class="modal-close" id="aboutClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-        <h3 class="panel-title">Crammys · Fast Food Chains</h3>
-        <p class="panel-sub">A flashcard deck for cramming 51 of the largest US fast-food and fast-casual chains.</p>
-        <div class="about-section">
-          <h4>Modes</h4>
-          <p>Name → Year, Name → Founder, Name → HQ, and Logo → Name. Filter by category or top-N store count from the chips above.</p>
-        </div>
-        <div class="about-section">
-          <h4>Data &amp; credits</h4>
-          <p>
-            Founders, founding years, HQ, parents, and summaries from
-            <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> and
-            <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a> (text licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>).
-            Logos via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>; each is a registered trademark of its respective owner.
-          </p>
-          <p>US store count estimates curated by hand from public QSR / investor sources, then sorted by location count for ranking.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-backdrop" id="topModal" hidden>
-      <div class="panel" role="dialog" aria-label="Top N chains">
-        <button class="modal-close" id="topClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-        <h3 class="panel-title">Limit deck size</h3>
-        <p class="panel-sub">Keep only the largest chains by US store count.</p>
-        <div class="top-presets" id="topPresets"></div>
-      </div>
-    </div>
-
-    <div class="modal-backdrop" id="catModal" hidden>
-      <div class="panel" role="dialog" aria-label="Categories">
-        <button class="modal-close" id="catClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-        <h3 class="panel-title">Categories</h3>
-        <p class="panel-sub">Pick which kinds of chains belong in the deck.</p>
-        <div class="cat-grid" id="catGrid"></div>
-      </div>
-    </div>
   </main>
 
 <script src="chains.js"></script>
 <script src="founders.js" onerror="window.FOUNDERS={}"></script>
 <script>
-  // ─── State ─────────────────────────────────────────────────────────
-  const STORE_KEY = "crammys-chains-v1";
+  // ─── Data + state ──────────────────────────────────────────────────
+  const STORE_KEY = "crammys-chains-v2";
   const CHAINS = window.CHAINS_DECK || [];
   if (!CHAINS.length) {
     document.querySelector(".card-stage").innerHTML =
@@ -519,69 +213,83 @@
   }
 
   const cardId = (c) => c.name;
-
-  function shuffleArray(a) {
-    a = a.slice();
-    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
-    return a;
-  }
-
   const ALL_CATS = Array.from(new Set(CHAINS.map(c => c.category))).sort();
   const MAX_RANK = Math.max(...CHAINS.map(c => c.rank || 0));
+  const TOTAL = CHAINS.length;
+
+  const SCORE_RETIRED = 3;
+  const SCORE_WEIGHTS = [4, 2, 1, 0];   // weighting per score level when shuffling
+
   const state = (() => {
-    const def = { mode: "n2y", idx: 0, order: null, mastered: [], drill: false, theme: null, cats: ALL_CATS.slice(), topN: 0 };
+    const def = { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0 };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-      return Object.assign(def, saved || {});
+      let s = Object.assign(def, saved || {});
+      // v1 → v2: migrate `mastered` (array) → `scores` (map of name → score 0..3)
+      if (!s.scores || typeof s.scores !== "object") s.scores = {};
+      if (Array.isArray(s.mastered)) {
+        for (const n of s.mastered) if (typeof n === "string") s.scores[n] = SCORE_RETIRED;
+        delete s.mastered;
+      }
+      delete s.drill; delete s.theme;
+      return s;
     } catch { return def; }
   })();
   if (!Array.isArray(state.cats) || !state.cats.length) state.cats = ALL_CATS.slice();
-  if (typeof state.topN !== "number") state.topN = 0;  // 0 = all
-  if (!Array.isArray(state.mastered)) state.mastered = [];
-  const allIds = CHAINS.map(cardId);
-  const isValidOrder = Array.isArray(state.order) && state.order.length === allIds.length
-    && state.order.every(id => allIds.includes(id));
-  if (!isValidOrder) { state.order = shuffleArray(allIds); state.idx = 0; }
+  if (typeof state.topN !== "number") state.topN = 0;
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
-  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
+  const scoreOf = (id) => state.scores[id] || 0;
+  const setScore = (id, s) => { state.scores[id] = Math.max(0, Math.min(SCORE_RETIRED, s)); persist(); };
 
-  // ─── Theme ─────────────────────────────────────────────────────────
-  const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
-  const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  function setTheme(t) {
-    document.documentElement.setAttribute("data-theme", t);
-    state.theme = t; persist();
-    document.getElementById("themeBtn").innerHTML = t === "dark" ? SUN : MOON;
+  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
+  function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
-  setTheme(state.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  function weightedShuffle(ids) {
+    return ids
+      .map(id => {
+        const w = SCORE_WEIGHTS[Math.min(scoreOf(id), SCORE_WEIGHTS.length - 1)] || 0.1;
+        return [id, Math.random() / w];
+      })
+      .sort((a, b) => a[1] - b[1])
+      .map(x => x[0]);
+  }
+  const allIds = CHAINS.map(cardId);
+  const idSet = new Set(allIds);
+  const isValidOrder = Array.isArray(state.order) && state.order.length === allIds.length
+    && state.order.every(id => typeof id === "string" && idSet.has(id));
+  if (!isValidOrder) { state.order = weightedShuffle(allIds); state.idx = 0; }
 
   // ─── DOM refs ──────────────────────────────────────────────────────
   const card = document.getElementById("card");
   const frontFace = document.getElementById("frontFace");
   const front = {
     prompt: document.getElementById("frontPrompt"),
-    text: document.getElementById("frontText"),
+    text:   document.getElementById("frontText"),
     suffix: document.getElementById("frontSuffix"),
-    tag: document.getElementById("frontTag"),
+    tag:    document.getElementById("frontTag"),
   };
   const back = { tag: document.getElementById("backTag"), body: document.getElementById("backBody") };
   const counter = document.getElementById("counter");
-  const streakEl = document.getElementById("streak");
+  const scopeText = document.getElementById("scopeText");
+  const scopeExtras = document.getElementById("scopeExtras");
   const progress = document.getElementById("progress");
-  const catChipEl = document.getElementById("catChip");
-  const topChipEl = document.getElementById("topChip");
-  const drillChip = document.getElementById("drillChip");
-  const drillBtn = document.getElementById("drillBtn");
-  const starFront = document.getElementById("starFront");
-  const starBack = document.getElementById("starBack");
-  const starLogo = document.getElementById("starLogo");
+  const navRow = document.getElementById("navRow");
   const logoStage = document.getElementById("logoStage");
   const logoEl = document.getElementById("logoEl");
+  const scoreStarsFront = document.getElementById("scoreStarsFront");
+  const scoreStarsBack = document.getElementById("scoreStarsBack");
 
   // ─── Helpers ───────────────────────────────────────────────────────
   const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  const escapeHtml = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+  const stop = `onclick="event.stopPropagation()"`;
 
-  // Pretty display label for the internal category slugs
   const CATEGORY_LABELS = {
     "burgers":     "Burgers",
     "chicken":     "Chicken",
@@ -595,23 +303,17 @@
   };
   const catLabel = (slug) => CATEGORY_LABELS[slug] || slug;
 
-  function escapeHtml(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
-  }
   function fmtList(arr) {
     if (!arr || !arr.length) return "—";
     if (arr.length === 1) return arr[0];
     if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
-    return arr.slice(0,-1).join(", ") + ", and " + arr[arr.length-1];
+    return arr.slice(0, -1).join(", ") + ", and " + arr[arr.length - 1];
   }
-  // Wrap each name in a .founder span (only when we have bio data for them).
-  // Without data we render plain text — no tooltip, no underline, no "no entry" popup.
   function hasFounderData(name) {
     const f = (window.FOUNDERS || {})[name];
     if (!f || f.unresolved) return false;
     const d = (f.description || "").toLowerCase();
     const s = (f.summary || "").toLowerCase();
-    // Filter disambiguation-page entries — they describe a name, not a person.
     if (d.includes("topics referred to") || d.includes("may refer to")) return false;
     if (s.startsWith("topics referred to") || s.includes("may refer to")) return false;
     return !!(f.summary || f.description);
@@ -623,8 +325,10 @@
       : escapeHtml(n));
     if (spans.length === 1) return spans[0];
     if (spans.length === 2) return `${spans[0]} and ${spans[1]}`;
-    return spans.slice(0,-1).join(", ") + ", and " + spans[spans.length-1];
+    return spans.slice(0, -1).join(", ") + ", and " + spans[spans.length - 1];
   }
+
+  // Active filters
   const inCat = (c) => state.cats.includes(c.category);
   const inTopN = (c) => !state.topN || (c.rank && c.rank <= state.topN);
   function activeOrder() {
@@ -632,13 +336,24 @@
       const c = BY_ID.get(id); if (!c) return false;
       if (!inCat(c)) return false;
       if (!inTopN(c)) return false;
-      if (state.drill && state.mastered.includes(id)) return false;
+      if (scoreOf(id) >= SCORE_RETIRED) return false;
+      // Per-mode availability — only show cards that have the field
       if (state.mode === "n2y" && !c.founded) return false;
       if (state.mode === "n2f" && (!c.founders || !c.founders.length)) return false;
       if (state.mode === "n2h" && !c.hq) return false;
       if (state.mode === "l2n" && !c.logo) return false;
       return true;
     });
+  }
+  function inScope(c) { return inCat(c) && inTopN(c); }
+  function learnedAndTotal() {
+    let learned = 0, total = 0;
+    for (const id of state.order) {
+      const c = BY_ID.get(id); if (!c || !inScope(c)) continue;
+      total++;
+      if (scoreOf(id) >= SCORE_RETIRED) learned++;
+    }
+    return { learned, total };
   }
   function currentCard() {
     const ord = activeOrder();
@@ -647,42 +362,49 @@
     return BY_ID.get(ord[state.idx]);
   }
 
-  // Always prefer the curated local logo file. The chain logos are small
-  // (~40KB each, 51 total) so we commit them to the repo and ship them with
-  // the static site — no need for a CDN fallback like the movie stills.
-  // `c.logo_url` is left in the manifest for provenance only; it's the
-  // original Wikipedia pageimage which is often a storefront photo, not the
+  // Always prefer the curated local logo file. Commit-sized (~40KB each).
+  // `c.logo_url` is left in the manifest for provenance only; it's often the
+  // original Wikipedia pageimage which can be a storefront photo, not the
   // brand mark we downloaded into c.logo.
-  function logoUrl(c) { return c.logo || c.logo_url || ""; }
+  const logoUrl = (c) => c.logo || c.logo_url || "";
 
   // ─── Render ────────────────────────────────────────────────────────
   function render() {
     const ord = activeOrder();
+    const { learned, total } = learnedAndTotal();
     const c = currentCard();
+
+    // Always refresh the deck-info chip
+    scopeText.textContent = state.topN ? `Top ${state.topN}` : `All ${TOTAL}`;
+    const offCats = ALL_CATS.length - state.cats.length;
+    scopeExtras.textContent = offCats > 0 ? `· ${state.cats.length}/${ALL_CATS.length} cat` : "";
+
     if (!c) {
-      counter.textContent = "0 / 0";
-      progress.style.width = "0%";
-      front.tag.textContent = "Empty deck";
+      counter.textContent = `${learned} / ${total}`;
+      progress.style.width = total ? `${(learned / total) * 100}%` : "0%";
+      frontFace.classList.remove("image-mode");
+      logoStage.hidden = true;
+      front.tag.textContent = "All caught up";
       front.prompt.textContent = "";
-      front.text.textContent = "No chains match the current filter / mode.";
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every chain in this scope is learned. Open the deck chip and click <em>Start over</em>, or expand the filter.</span>`;
       front.suffix.textContent = "";
       back.body.innerHTML = "";
+      renderScoreStars(null);
       return;
     }
+
     const id = cardId(c);
     counter.textContent = `${state.idx + 1} / ${ord.length}`;
     progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
-    streakEl.textContent = `★ ${state.mastered.length}`;
-    drillChip.hidden = !state.drill;
-    catChipEl.textContent = state.cats.length === ALL_CATS.length ? "All" : `${state.cats.length} cat`;
-    topChipEl.textContent = state.topN ? `Top ${state.topN}` : `All ${MAX_RANK}`;
 
+    // ─── Front face ────────────────────────────────
     const isLogo = state.mode === "l2n";
-    frontFace.classList.toggle("logo-mode", isLogo);
+    frontFace.classList.toggle("image-mode", isLogo);
     logoStage.hidden = !isLogo;
 
     if (isLogo) {
       logoEl.src = logoUrl(c);
+      logoEl.alt = "";
     } else {
       front.tag.textContent = "Chain";
       front.suffix.textContent = "";
@@ -700,30 +422,23 @@
       }
     }
 
-    // Position within category (e.g. "#3 of 8 burgers")
+    // ─── Back face ─────────────────────────────────
+    // Position-within-category trivia for the detail row
     const sameCat = CHAINS.filter(x => x.category === c.category)
       .sort((a, b) => (a.rank || 999) - (b.rank || 999));
     const catPos = sameCat.findIndex(x => x.name === c.name) + 1;
     const catSize = sameCat.length;
 
-    // External link out to Wikipedia for the curious-er-than-this-card user
     const wikiUrl = c.wiki_slug ? `https://en.wikipedia.org/wiki/${c.wiki_slug}` : null;
     const wikiLink = wikiUrl
-      ? `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" onclick="event.stopPropagation()">${extIcon}</a>`
+      ? `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon}</a>`
       : "";
-
-    // Mini logo to render inline with the *answer* (right next to the
-    // headline value, where the eye lands). Skipped in Logo mode since the
-    // big front-face image already showed it.
     const inlineLogo = (state.mode !== "l2n" && c.logo)
       ? `<img class="inline-logo" src="${logoUrl(c)}" alt="">`
       : "";
-    const nameInPrompt = `<span class="chain-name">${escapeHtml(c.name)}</span>${wikiLink}`;
-
-    // Pick an answer-class size: long values get shrunk to avoid overflow.
+    const nameInPrompt = `<span>${escapeHtml(c.name)}</span> ${wikiLink}`;
     const answerClass = (v) => "answer" + (String(v || "").length > 20 ? " long" : "");
 
-    // Back face: show the answer + chain details
     let answer = "";
     if (state.mode === "n2y") {
       back.tag.textContent = "Founded";
@@ -731,8 +446,8 @@
                 <div class="${answerClass(c.founded)}">${inlineLogo}<span>${c.founded}</span></div>`;
     } else if (state.mode === "n2f") {
       back.tag.textContent = "Founder";
-      const fsHTML = fmtFounderList(c.founders);
       const fsText = fmtList(c.founders);
+      const fsHTML = fmtFounderList(c.founders);
       answer = `<div class="prompt">${nameInPrompt} was founded by</div>
                 <div class="${answerClass(fsText)}">${inlineLogo}<span>${fsHTML}</span></div>`;
     } else if (state.mode === "n2h") {
@@ -742,10 +457,9 @@
     } else if (state.mode === "l2n") {
       back.tag.textContent = "Chain";
       answer = `<div class="prompt">This logo is</div>
-                <div class="${answerClass(c.name)}">${escapeHtml(c.name)} ${wikiLink}</div>`;
+                <div class="${answerClass(c.name)}"><span>${escapeHtml(c.name)}</span> ${wikiLink}</div>`;
     }
 
-    // Founded row: "City, ST (year)" if we have both, otherwise just whichever piece.
     const foundedVal = (() => {
       if (c.origin && c.founded) return `${escapeHtml(c.origin)} <em>(${c.founded})</em>`;
       if (c.origin) return escapeHtml(c.origin);
@@ -754,83 +468,100 @@
     })();
 
     const details = `
-      <div class="details">
+      <div class="detail-grid">
         <div class="row"><span class="label">Founded</span><span class="val">${foundedVal}</span></div>
         ${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}${(c.country && c.country !== "United States") ? `, ${escapeHtml(c.country)}` : ""}</span></div>` : ""}
         ${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${fmtFounderList(c.founders)}</span></div>` : ""}
         ${c.parent ? `<div class="row"><span class="label">Parent</span><span class="val">${escapeHtml(c.parent)}</span></div>` : ""}
         <div class="row"><span class="label">Category</span><span class="val">${escapeHtml(catLabel(c.category))} <em>(#${catPos} of ${catSize} by US locations)</em></span></div>
-        ${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em>(#${c.rank} of ${CHAINS.length} overall)</em></span></div>` : ""}
+        ${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em>(#${c.rank} of ${TOTAL} overall)</em></span></div>` : ""}
         ${c.summary ? `<div class="row"><span class="label">About</span><span class="val">${escapeHtml(c.summary)}</span></div>` : ""}
       </div>`;
     back.body.innerHTML = answer + details;
 
-    const mastered = state.mastered.includes(id);
-    [starFront, starBack, starLogo].forEach(s => s.classList.toggle("on", mastered));
+    renderScoreStars(c);
   }
 
+  function renderScoreStars(c) {
+    const score = c ? scoreOf(cardId(c)) : 0;
+    const html = score > 0 ? "★".repeat(Math.min(score, SCORE_RETIRED - 1)) : "";
+    if (scoreStarsFront) scoreStarsFront.innerHTML = html;
+    if (scoreStarsBack)  scoreStarsBack.innerHTML  = html;
+  }
+
+  function syncNav() { navRow.classList.toggle("show-back", card.classList.contains("flipped")); }
+
   // ─── Actions ───────────────────────────────────────────────────────
-  function flip() { card.classList.toggle("flipped"); }
-  const FLIP_MID = 280;
+  function flip() {
+    card.classList.toggle("flipped");
+    syncNav();
+    hideTip && hideTip(true);
+  }
+  const FLIP_MIDPOINT = 280;
   function unflipAndThen(fn) {
     if (card.classList.contains("flipped")) {
       card.classList.remove("flipped");
-      setTimeout(fn, FLIP_MID);
+      syncNav();
+      setTimeout(fn, FLIP_MIDPOINT);
     } else fn();
   }
   function next() {
     const ord = activeOrder(); if (!ord.length) return;
+    hideTip && hideTip(true);
     unflipAndThen(() => {
-      const o = activeOrder(); state.idx = (state.idx + 1) % o.length;
-      persist(); render();
+      const o = activeOrder(); if (!o.length) return;
+      state.idx = (state.idx + 1) % o.length; persist(); render();
     });
   }
   function prev() {
     const ord = activeOrder(); if (!ord.length) return;
+    hideTip && hideTip(true);
     unflipAndThen(() => {
-      const o = activeOrder(); state.idx = (state.idx - 1 + o.length) % o.length;
-      persist(); render();
+      const o = activeOrder(); if (!o.length) return;
+      state.idx = (state.idx - 1 + o.length) % o.length; persist(); render();
     });
   }
   function shuffle() {
+    hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(allIds); state.idx = 0;
+      state.order = weightedShuffle(allIds);
+      state.idx = 0;
       persist(); render();
     });
   }
   function reset() {
+    if (!confirm("Start over and forget which chains you've gotten right? This clears every card's score.")) return;
+    hideTip && hideTip(true);
     unflipAndThen(() => {
-      state.order = shuffleArray(allIds); state.idx = 0;
-      state.mastered = []; state.drill = false;
-      drillBtn.classList.remove("on");
+      state.order = shuffleArray(allIds);
+      state.idx = 0;
+      state.scores = {};
       persist(); render();
     });
   }
-  function toggleMastered() {
+  function rate(delta) {
     const c = currentCard(); if (!c) return;
     const id = cardId(c);
-    const i = state.mastered.indexOf(id);
-    const becameMastered = i < 0;
-    if (i >= 0) state.mastered.splice(i, 1); else state.mastered.push(id);
-    persist();
-    if (becameMastered) {
-      const ord = activeOrder();
-      if (ord.length) {
-        if (card.classList.contains("flipped")) card.classList.remove("flipped");
-        if (!state.drill) state.idx = (state.idx + 1) % ord.length;
-        else state.idx = state.idx % ord.length;
+    if (delta > 0) setScore(id, scoreOf(id) + 1);
+    else setScore(id, 0);
+    hideTip && hideTip(true);
+    unflipAndThen(() => {
+      const o = activeOrder();
+      if (!o.length) { render(); return; }
+      const currentIdx = state.idx % o.length;
+      if (o[currentIdx] === id) {
+        state.idx = (currentIdx + 1) % o.length;
+      } else {
+        state.idx = currentIdx;
       }
-    }
-    render();
+      persist(); render();
+    });
   }
-  function toggleDrill() {
-    state.drill = !state.drill; state.idx = 0;
-    drillBtn.classList.toggle("on", state.drill);
-    persist();
-    unflipAndThen(render);
-  }
+  const gotIt = () => rate(+1);
+  const missed = () => rate(-1);
   function setMode(m) {
-    state.mode = m; state.idx = 0;
+    state.mode = m;
+    state.idx = 0;
     document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m));
     persist();
     unflipAndThen(render);
@@ -838,123 +569,144 @@
 
   // ─── Wire UI ───────────────────────────────────────────────────────
   card.addEventListener("click", (e) => {
-    if (e.target.closest(".star, a, button")) return;
+    if (e.target.closest("a, .founder, button")) return;
     flip();
   });
-  document.getElementById("flipBtn").onclick = flip;
+  card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
   document.getElementById("nextBtn").onclick = next;
   document.getElementById("prevBtn").onclick = prev;
-  document.getElementById("shuffleBtn").onclick = shuffle;
-  document.getElementById("resetBtn").onclick = reset;
-  starFront.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starBack.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  starLogo.onclick = (e) => { e.stopPropagation(); toggleMastered(); };
-  drillBtn.onclick = toggleDrill;
-  document.getElementById("themeBtn").onclick = () =>
-    setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  document.getElementById("gotBtn").onclick = (e) => { e.stopPropagation(); gotIt(); };
+  document.getElementById("missedBtn").onclick = (e) => { e.stopPropagation(); missed(); };
   document.querySelectorAll(".seg button").forEach(b => b.onclick = () => setMode(b.dataset.mode));
-  drillBtn.classList.toggle("on", !!state.drill);
   document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === state.mode));
+  document.getElementById("shuffleIconBtn").addEventListener("click", shuffle);
+  // themeBtn handled by crammys-shared.js
+  syncNav();
 
-  // About modal
+  // ─── About modal ──────────────────────────────────────────────────
   const aboutModal = document.getElementById("aboutModal");
-  document.getElementById("aboutBtn").onclick = () => { aboutModal.hidden = false; document.body.style.overflow = "hidden"; };
-  document.getElementById("aboutClose").onclick = () => { aboutModal.hidden = true; document.body.style.overflow = ""; };
-  aboutModal.onclick = (e) => { if (e.target === aboutModal) { aboutModal.hidden = true; document.body.style.overflow = ""; } };
+  document.getElementById("chainsCount").textContent = String(TOTAL);
+  function openAbout()  { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
+  function closeAbout() { if (aboutModal.hidden) return; aboutModal.hidden = true; document.body.style.overflow = ""; }
+  document.getElementById("aboutBtn").addEventListener("click", openAbout);
+  document.getElementById("aboutClose").addEventListener("click", closeAbout);
+  aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
 
-  // Top-N modal
-  const topModal = document.getElementById("topModal");
+  // ─── Deck modal (top-N + categories + start-over) ────────────────
+  const deckModal = document.getElementById("deckModal");
+  const deckChip  = document.getElementById("deckChip");
   const topPresetsEl = document.getElementById("topPresets");
+  const catGridEl    = document.getElementById("catGrid");
+  const deckCountEl  = document.getElementById("deckCount");
   const TOP_PRESETS = [
     { label: "Top 10", n: 10 },
     { label: "Top 25", n: 25 },
     { label: "Top 50", n: 50 },
-    { label: `All ${MAX_RANK}`, n: 0 },
+    { label: `All ${TOTAL}`, n: 0 },
   ];
-  function syncTopPresets() {
+  function syncDeckModal() {
+    // Top-N row
     topPresetsEl.innerHTML = TOP_PRESETS.map(p =>
       `<button data-n="${p.n}" class="${p.n === state.topN ? 'on' : ''}">${p.label}</button>`
     ).join("");
+    // Category checkboxes
+    catGridEl.innerHTML = ALL_CATS.map(cat =>
+      `<label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${catLabel(cat)}</span></label>`
+    ).join("");
+    // Card count in current scope
+    const n = CHAINS.filter(inScope).length;
+    deckCountEl.innerHTML = `<em>${n}</em> ${n === 1 ? "chain" : "chains"} in deck`;
   }
-  topChipEl.onclick = () => { syncTopPresets(); topModal.hidden = false; document.body.style.overflow = "hidden"; };
-  document.getElementById("topClose").onclick = () => { topModal.hidden = true; document.body.style.overflow = ""; };
-  topModal.onclick = (e) => { if (e.target === topModal) { topModal.hidden = true; document.body.style.overflow = ""; } };
+  function openDeck()  { syncDeckModal(); deckModal.hidden = false; document.body.style.overflow = "hidden"; }
+  function closeDeck() { if (deckModal.hidden) return; deckModal.hidden = true; document.body.style.overflow = ""; }
+  deckChip.addEventListener("click", openDeck);
+  document.getElementById("deckClose").addEventListener("click", closeDeck);
+  deckModal.addEventListener("click", (e) => { if (e.target === deckModal) closeDeck(); });
   topPresetsEl.addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     state.topN = +b.dataset.n;
     state.idx = 0;
     persist();
-    syncTopPresets();
+    syncDeckModal();
     unflipAndThen(render);
   });
+  catGridEl.addEventListener("change", (e) => {
+    const inp = e.target.closest("input"); if (!inp) return;
+    const cat = inp.value;
+    if (inp.checked && !state.cats.includes(cat)) state.cats.push(cat);
+    else if (!inp.checked) state.cats = state.cats.filter(x => x !== cat);
+    if (!state.cats.length) state.cats = [cat];   // never leave the deck empty
+    state.idx = 0;
+    persist();
+    syncDeckModal();
+    unflipAndThen(render);
+  });
+  document.getElementById("resetProgressBtn").addEventListener("click", () => {
+    closeDeck();
+    reset();
+  });
 
-  // Categories modal
-  const catModal = document.getElementById("catModal");
-  const catGrid = document.getElementById("catGrid");
-  function syncCatGrid() {
-    catGrid.innerHTML = ALL_CATS.map(cat => `
-      <label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${catLabel(cat)}</span></label>
-    `).join("");
-    catGrid.querySelectorAll("input").forEach(inp => inp.onchange = () => {
-      const c = inp.value;
-      if (inp.checked && !state.cats.includes(c)) state.cats.push(c);
-      else if (!inp.checked) state.cats = state.cats.filter(x => x !== c);
-      if (!state.cats.length) state.cats = [c];   // never empty
-      state.idx = 0; persist(); render();
-    });
-  }
-  catChipEl.onclick = () => { syncCatGrid(); catModal.hidden = false; document.body.style.overflow = "hidden"; };
-  document.getElementById("catClose").onclick = () => { catModal.hidden = true; document.body.style.overflow = ""; };
-  catModal.onclick = (e) => { if (e.target === catModal) { catModal.hidden = true; document.body.style.overflow = ""; } };
-
-  // Keyboard
+  // ─── Keyboard ─────────────────────────────────────────────────────
   window.addEventListener("keydown", (e) => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     switch (e.key) {
       case " ": e.preventDefault(); flip(); break;
       case "ArrowRight": next(); break;
-      case "ArrowLeft": prev(); break;
+      case "ArrowLeft":  prev(); break;
+      case "n": case "N": if (card.classList.contains("flipped")) missed(); break;
+      case "y": case "Y": if (card.classList.contains("flipped")) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
-      case "f": case "F": toggleMastered(); break;
-      case "u": case "U": toggleDrill(); break;
-      case "t": case "T": setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); break;
-      case "Escape":
-        if (!aboutModal.hidden) { aboutModal.hidden = true; document.body.style.overflow = ""; }
-        else if (!topModal.hidden) { topModal.hidden = true; document.body.style.overflow = ""; }
-        else if (!catModal.hidden) { catModal.hidden = true; document.body.style.overflow = ""; }
-        break;
+      case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
       case "?":
+        if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
         e.preventDefault();
-        if (aboutModal.hidden) { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
-        else { aboutModal.hidden = true; document.body.style.overflow = ""; }
+        if (aboutModal.hidden) openAbout(); else closeAbout();
+        break;
+      case "Escape":
+        if (!aboutModal.hidden) closeAbout();
+        else if (!deckModal.hidden) closeDeck();
+        else hideTip(true);
         break;
     }
   });
 
-  // ─── Founder tooltip ────────────────────────────────────────────────
+  // ─── Touch swipe ──────────────────────────────────────────────────
+  let tx = 0, ty = 0, scrollingFromTouch = false;
+  card.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0]; tx = t.clientX; ty = t.clientY;
+    scrollingFromTouch = false;
+  }, { passive: true });
+  card.addEventListener("touchmove", (e) => {
+    const body = e.target.closest(".body");
+    if (body && body.scrollHeight > body.clientHeight) scrollingFromTouch = true;
+  }, { passive: true });
+  card.addEventListener("touchend", (e) => {
+    if (scrollingFromTouch) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - tx, dy = t.clientY - ty;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next(); else prev();
+    }
+  });
+
+  // ─── Founder tooltip (uses shared .tooltip skeleton) ──────────────
   const tip = document.getElementById("tooltip");
-  const FOUNDERS = window.FOUNDERS || {};
   let tipAnchor = null, hideTimer = null, showTimer = null;
   const SHOW_DELAY = 280;
 
-  const extIconA = extIcon;
   function tipHTML(name) {
-    const f = FOUNDERS[name];
+    const f = (window.FOUNDERS || {})[name];
     if (!f) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
-    // Only render the photo block when we have an actual image — drop the
-    // initial-in-a-square placeholder, the layout collapses gracefully.
-    const photo = f.thumb
-      ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>`
-      : "";
-    const linkHTML = f.page
-      ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIconA}</a>`
+    const photo = f.thumb ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>` : "";
+    const link  = f.page
+      ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIcon}</a>`
       : "";
     return `
       ${photo}
       <div class="tip-info">
-        <div class="tip-name"><span>${escapeHtml(f.name || name)}</span>${linkHTML}</div>
+        <div class="tip-name"><span>${escapeHtml(f.name || name)}</span>${link}</div>
         ${f.description ? `<div class="tip-meta">${escapeHtml(f.description)}</div>` : ""}
         ${f.summary ? `<div class="tip-blurb">${escapeHtml(f.summary)}…</div>` : ""}
       </div>`;
@@ -962,7 +714,7 @@
   function positionTip(el) {
     const r = el.getBoundingClientRect();
     const tw = tip.offsetWidth, th = tip.offsetHeight, m = 10;
-    let x = r.left + r.width/2 - tw/2;
+    let x = r.left + r.width / 2 - tw / 2;
     let y = r.top - th - m;
     if (y < 8) y = r.bottom + m;
     if (y + th > window.innerHeight - 8) y = Math.max(8, window.innerHeight - th - 8);
@@ -974,6 +726,7 @@
     if (tipAnchor === el && tip.classList.contains("visible")) return;
     tip.innerHTML = tipHTML(el.dataset.founder);
     tip.classList.add("visible");
+    tip.setAttribute("aria-hidden", "false");
     tipAnchor = el;
     positionTip(el);
   }
@@ -985,33 +738,42 @@
   }
   function hideTip(immediate) {
     clearTimeout(hideTimer); clearTimeout(showTimer);
-    if (immediate) { tip.classList.remove("visible"); tipAnchor = null; }
-    else hideTimer = setTimeout(() => { tip.classList.remove("visible"); tipAnchor = null; }, 280);
+    if (immediate) {
+      tip.classList.remove("visible");
+      tip.setAttribute("aria-hidden", "true");
+      tipAnchor = null;
+    } else {
+      hideTimer = setTimeout(() => {
+        tip.classList.remove("visible");
+        tip.setAttribute("aria-hidden", "true");
+        tipAnchor = null;
+      }, 280);
+    }
   }
   const HOVER_DEVICE = matchMedia("(hover: hover) and (pointer: fine)").matches;
-  const SEL = ".founder[data-founder]";
+  const TIP_SEL = ".founder[data-founder]";
   if (HOVER_DEVICE) {
-    document.addEventListener("mouseover", e => {
-      const el = e.target.closest(SEL);
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target.closest(TIP_SEL);
       if (el) { scheduleShow(el); return; }
       if (e.target.closest("#tooltip")) clearTimeout(hideTimer);
     });
-    document.addEventListener("mouseout", e => {
-      const from = e.target.closest(SEL) || e.target.closest("#tooltip");
+    document.addEventListener("mouseout", (e) => {
+      const from = e.target.closest(TIP_SEL) || e.target.closest("#tooltip");
       if (!from) return;
       const to = e.relatedTarget;
-      if (to && to.nodeType === 1 && (to.closest(SEL) || to.closest("#tooltip"))) return;
+      if (to && to.nodeType === 1 && (to.closest(TIP_SEL) || to.closest("#tooltip"))) return;
       clearTimeout(showTimer);
       hideTip(false);
     });
-    document.addEventListener("click", e => {
-      if (e.target.closest(SEL) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(TIP_SEL) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
       hideTip(true);
     });
   } else {
-    document.addEventListener("click", e => {
+    document.addEventListener("click", (e) => {
       if (e.target.closest(".ext")) return;
-      const el = e.target.closest(SEL);
+      const el = e.target.closest(TIP_SEL);
       if (el) {
         e.stopPropagation();
         if (tipAnchor === el && tip.classList.contains("visible")) hideTip(true);
@@ -1023,6 +785,8 @@
   }
   window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true });
   window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
+
+  // Deck switcher dropdown is wired by crammys-shared.js (uses window.CURRENT_DECK).
 
   render();
 </script>

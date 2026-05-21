@@ -597,6 +597,115 @@ main {
 .deck-menu a.current .deck-check { opacity: 1; }
 .deck-menu a.current { background: var(--bg); }
 
+/* ── Generic answer/detail patterns ────────────────────────────────── */
+/* Two-column label/value list — works for any deck that wants a back-face
+   "stats" panel under the answer. */
+.detail-grid {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 56ch;
+  text-align: left;
+  width: 100%;
+}
+.detail-grid .row { display: flex; gap: 8px; margin-bottom: 4px; }
+.detail-grid .label {
+  color: var(--ink-faint);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  min-width: 90px;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+.detail-grid .val { color: var(--ink); flex: 1; }
+.detail-grid .val em { font-style: normal; color: var(--ink-soft); font-weight: 500; }
+
+/* Inline mini-image (e.g. small brand logo) next to text in an answer line.
+   Sizes against the surrounding font so it scales with the answer's clamp(). */
+.inline-logo {
+  max-height: 0.9em;
+  max-width: 1.8em;
+  object-fit: contain;
+  vertical-align: -0.05em;
+  background: var(--bg);
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+:root[data-theme="dark"] .inline-logo { background: #f4f3ee; }
+
+/* Hover affordance for any tooltip target (founder name, person, term, …).
+   Decks attach `data-…` attrs and reuse the shared tooltip skeleton. */
+.tip-target {
+  cursor: pointer;
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: color .15s ease, border-bottom-color .15s ease;
+}
+.tip-target:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Image-stage variants ──────────────────────────────────────────── */
+/* `.image-stage` (above) is built for full-bleed photos on a dark
+   background. `.image-stage.brand` is the logo-friendly variant — light
+   background, object-fit: contain, comfortable padding around the mark. */
+.image-stage.brand {
+  background: var(--bg-elev);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px 100px;
+}
+.image-stage.brand::after { display: none; }   /* no dark gradient over a logo */
+.image-stage.brand img {
+  position: static;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+:root[data-theme="dark"] .image-stage.brand { background: #f4f3ee; }
+
+/* Deck-modal preset rows: pill-shaped picker buttons (used by year range
+   and top-N filters today; available to any deck that wants a preset row). */
+.preset-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.preset-row button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.preset-row button:hover { color: var(--ink); border-color: var(--ink-faint); }
+.preset-row button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+/* Deck-modal checkbox grid (used by chains' category filter; deck-neutral). */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.option-grid label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.option-grid input { accent-color: var(--accent); }
+
 /* ── Mobile tightening ─────────────────────────────────────────────── */
 @media (max-width: 520px) {
   main { padding: 12px 14px 24px; }
