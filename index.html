@@ -499,28 +499,6 @@
   }
   .image-overlay .corner .star.on { color: var(--accent); }
   .image-overlay .corner .star:hover { color: var(--accent); background: rgba(0,0,0,.55); }
-  .image-overlay .image-tools {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .image-overlay .reroll {
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,.2);
-    color: #fff;
-    width: 30px; height: 30px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background .15s ease, transform .05s ease;
-  }
-  .image-overlay .reroll:hover { background: rgba(0,0,0,.6); }
-  .image-overlay .reroll:active { transform: scale(.92); }
-  .image-overlay .reroll svg { width: 15px; height: 15px; }
   .image-overlay .bottom {
     text-align: center;
     color: #fff;
@@ -535,22 +513,48 @@
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .image-overlay .bottom { background: rgba(0,0,0,.78); }
   }
-  .image-dots {
+  /* Bottom controls row: dots + photo-stack button, side by side */
+  .image-controls {
     display: flex;
-    gap: 6px;
+    align-items: center;
     justify-content: center;
+    gap: 12px;
     margin-bottom: 10px;
+  }
+  .image-dots {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
   }
   .image-dots span {
     width: 6px; height: 6px;
     border-radius: 50%;
     background: rgba(255,255,255,.32);
     transition: background .2s ease, transform .2s ease;
+    display: inline-block;
   }
   .image-dots span.on {
     background: rgba(255,255,255,.95);
     transform: scale(1.35);
   }
+  .image-stack-btn {
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.9);
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, transform .05s ease;
+    flex-shrink: 0;
+  }
+  .image-stack-btn:hover { background: rgba(0,0,0,.6); color: #fff; }
+  .image-stack-btn:active { transform: scale(.92); }
+  .image-stack-btn svg { width: 14px; height: 14px; }
   .image-overlay .bottom .prompt {
     color: rgba(255,255,255,.85);
     font-size: 12px;
@@ -762,7 +766,7 @@
             <div class="question" id="frontText">—</div>
           </div>
           <div class="footer-hint">
-            <span class="hint-desktop"><kbd>Space</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> navigate</span>
+            <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal · <kbd>←</kbd> <kbd>→</kbd> navigate</span>
             <span class="hint-touch">Tap to reveal · swipe to navigate</span>
           </div>
           <div class="image-stage" id="imageStage" hidden>
@@ -770,18 +774,18 @@
             <div class="image-overlay">
               <div class="corner">
                 <span>Image</span>
-                <div class="image-tools">
-                  <button class="reroll" id="rerollBtn" title="Different image (I)" aria-label="Different image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20l17-17"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
-                  </button>
-                </div>
               </div>
               <div class="bottom">
-                <div class="image-dots" id="imageDots" aria-hidden="true"></div>
+                <div class="image-controls">
+                  <span class="image-dots" id="imageDots" aria-hidden="true"></span>
+                  <button class="image-stack-btn" id="rerollBtn" title="More images" aria-label="More images">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg>
+                  </button>
+                </div>
                 <div class="prompt">What movie is this?</div>
                 <div class="footer-hint">
-                  <span class="hint-desktop"><kbd>Space</kbd> reveal · <kbd>I</kbd> new image</span>
-                  <span class="hint-touch">Tap to reveal · 🎲 for a different image</span>
+                  <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal</span>
+                  <span class="hint-touch">Tap to reveal · swipe to navigate</span>
                 </div>
               </div>
             </div>
@@ -834,7 +838,7 @@
             <div><kbd>S</kbd> shuffle</div>
             <div><kbd>R</kbd> reset progress</div>
             <div><kbd>N</kbd> toggle nominees on back</div>
-            <div><kbd>I</kbd> different image</div>
+            <div><kbd>↑</kbd> <kbd>↓</kbd> cycle images (image mode)</div>
             <div><kbd>T</kbd> toggle theme</div>
             <div><kbd>?</kbd> this dialog</div>
             <div><kbd>Esc</kbd> close any popup</div>
@@ -1409,7 +1413,11 @@
     const n = safe.length;
     const key = cardId(c);
     let idx;
-    if (opts.reroll && imageChoice.has(key)) {
+    if (typeof opts.step === "number" && imageChoice.has(key)) {
+      // Sequential step (used by Up/Down keys)
+      idx = ((imageChoice.get(key) + opts.step) % n + n) % n;
+    } else if (opts.reroll && imageChoice.has(key)) {
+      // Random different image (used by the photo-stack button)
       const prev = imageChoice.get(key);
       idx = (prev + 1 + Math.floor(Math.random() * (n - 1))) % n;
     } else if (imageChoice.has(key)) {
@@ -1738,6 +1746,12 @@
     if (!c) return;
     setImage(c, { reroll: true });
   }
+  function stepImage(delta) {
+    if (state.direction !== "i2m") return;
+    const c = currentCard();
+    if (!c) return;
+    setImage(c, { step: delta });
+  }
   updateDirSeg();
   syncNav();
 
@@ -1753,7 +1767,8 @@
       case "2": if (card.classList.contains("flipped")) gotIt(); break;
       case "s": case "S": shuffle(); break;
       case "r": case "R": reset(); break;
-      case "i": case "I": if (state.direction === "i2m") rerollImage(); break;
+      case "ArrowDown": stepImage(+1); break;
+      case "ArrowUp":   stepImage(-1); break;
       case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
     }
   });
