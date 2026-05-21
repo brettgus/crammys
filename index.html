@@ -922,7 +922,7 @@
         answerBlock = `
           <div class="prompt">${isWinner ? "Won Best Picture in" : "Nominated for Best Picture in"}</div>
           <div class="answer"><span class="year" data-year="${c.year}">${c.year}</span></div>
-          <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${statusBadge}</div>
+          <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${movieLinks(c.movie, c.trailer)} ${statusBadge}</div>
         `;
       } else {
         answerBlock = `
