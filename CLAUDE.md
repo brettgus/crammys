@@ -1,52 +1,121 @@
 # Crammys — working notes for Claude Code sessions
 
-This repo hosts multiple flashcard decks. Each deck is its own HTML file
-(e.g. `index.html`, `chains.html`) that loads a shared design system.
+Single-page flashcard app. One HTML shell (`index.html`) loads deck
+modules via hash routing (`#bestpicture`, `#chains`). No build step —
+native ES modules, served on GitHub Pages.
+
+## Architecture
+
+```
+index.html              ← SPA shell: shared DOM skeleton + router
+deck-engine.js          ← DeckEngine class (state, scoring, flip, nav, swipe, tooltips)
+decks/
+  bestpicture.js        ← BP deck module (exports meta, segments, modals, init)
+  bestpicture-data.js   ← BP static data (DECK_INLINE array)
+  chains.js             ← Chains deck module
+crammys-shared.css      ← visual identity, all generic CSS
+crammys-shared.js       ← theme toggle, deck-switcher dropdown wiring
+chains.html             ← redirect stub → index.html#chains
+```
 
 ## File responsibilities
+
+- **`index.html`** — SPA shell. Contains the shared card structure
+  (controls bar, card-stage, nav row, tooltip element), an inline
+  `<style>` for deck-specific CSS that doesn't generalize, and a
+  `<script type="module">` router that reads `location.hash`, imports
+  the deck module, injects its HTML (segments, overlays, modals), and
+  calls `init({ signal })`.
+
+- **`deck-engine.js`** — ES module exporting `DeckEngine` class,
+  `shuffleArray`, `escapeHtml`, `loadScript`. The engine handles:
+  localStorage state, scoring/retirement, weighted shuffle, card flip
+  animation, next/prev/rate, touch swipe, tooltip system, keyboard
+  bindings, modal open/close helpers. All `bind*` methods accept an
+  `AbortSignal` for clean teardown on deck switch.
+
+- **`decks/<name>.js`** — each deck module exports:
+  - `meta` — `{ id, emoji, name }` for the switcher/title
+  - `segments` — HTML string injected into `.seg` container
+  - `frontExtras` — HTML for front-face overlays (logo stage, image stage)
+  - `modals` — HTML for deck-specific modal backdrops
+  - `init({ signal })` — async function that loads data scripts, creates
+    a DeckEngine instance, wires events, and renders. The `signal`
+    (from AbortController) is passed to all addEventListener calls so
+    the shell can tear down the deck on switch.
 
 - **`crammys-shared.css`** — visual identity and **all** generic CSS.
   Holds tokens, base layout, the card-flip system, buttons, chips,
   segments, modals, the deck switcher, footer-hint variants, side
   card-arrows, rate buttons, the tooltip skeleton, image-mode overlay,
   trailer-modal frame, credits / nominee-list / slate / badge patterns,
-  about-modal contents — anything that's purely visual logic. Section
-  headers (`/* ── Section ───── */`) list what's already there.
+  about-modal contents.
 
 - **`crammys-shared.js`** — cross-deck behavior: `DECKS` registry, theme
-  toggle + persistence, deck-switcher dropdown wiring. Each deck page
-  sets `window.CURRENT_DECK` before loading it.
+  toggle + persistence, deck-switcher dropdown wiring.
 
-- **Per-page inline `<style>` and `<script>`** — deck-specific *behavior*.
-  Inline `<style>` should be near-empty; inline `<script>` holds the
-  deck's render logic, data fetching, and event wiring (anything that
-  references that deck's data shape).
+## Adding a new deck
 
-## Routing decisions
+1. Create `decks/<name>.js` (and optionally `decks/<name>-data.js` for
+   large static data). Export `meta`, `segments`, `frontExtras`, `modals`,
+   and `init({ signal })`.
 
-**Default to shared, especially for CSS.** Inline CSS is a smell — an
-unused rule in shared is inert and costs nothing; a missing-from-shared
-rule means future decks have to either duplicate or rediscover it.
+2. Register it in `index.html`'s `DECKS` array:
+   ```js
+   { id: "<name>", path: "./decks/<name>.js" }
+   ```
 
-When adding a CSS rule, the question is:
+3. Register it in `crammys-shared.js`'s `DECKS` array so the
+   deck-switcher dropdown lists it.
 
-> Is this rule about a generic visual / interaction pattern, or is it
-> tightly coupled to one deck's data shape?
+4. (Optional) Create a `<name>.html` redirect stub for backwards compat.
+
+### Deck module conventions
+
+- Import `DeckEngine`, `escapeHtml`, `loadScript` from `../deck-engine.js`.
+- Load data scripts with `await loadScript("data-file.js")` — they
+  assign to `window.*` and will be ready when the promise resolves.
+- Create the engine with deck-specific config: `storeKey`, `cardId`,
+  `activeFilter`, `inScopeFilter`, `isStudyMode`, `render`.
+- Pass `signal` to `engine.bindStandardUI()`, `engine.bindKeyboard()`,
+  `engine.bindTooltips()`, and all `addEventListener()` calls.
+- Use standardized DOM IDs from the shell: `#card`, `#navRow`,
+  `#frontFace`, `#frontTag`, `#frontPrompt`, `#frontText`,
+  `#frontExtras`, `#backTag`, `#backBody`, `#backFooterHint`,
+  `#counter`, `#scopeText`, `#scopeExtras`, `#deckChip`, `#progress`,
+  `#scoreStarsFront`, `#scoreStarsBack`, `#tooltip`.
+
+### DeckEngine constructor config
+
+```js
+new DeckEngine({
+  storeKey,           // localStorage key
+  defaultState,       // initial state shape
+  migrateState,       // (state) => state — version migrations
+  allIds,             // string[] of all card IDs
+  byId,              // Map<id, card>
+  cardId,            // (card) => string
+  activeFilter,      // (id, state) => boolean — which cards are in play
+  inScopeFilter,     // (id, state) => boolean — which cards count for learned/total
+  isStudyMode,       // (state) => boolean
+  render,            // () => void — called after any state change
+  onBeforeNavigate,  // () => void — e.g. hide tooltips
+  reshuffleOnWrap,   // boolean — reshuffle when advancing past last card
+  onShuffle,         // () => void — e.g. clear image choices
+  cardEl, navRowEl, scoreStarsFrontEl, scoreStarsBackEl,
+})
+```
+
+## CSS routing decisions
+
+**Default to shared.** Inline CSS is a smell — an unused rule in shared
+is inert and costs nothing; a missing-from-shared rule means future decks
+have to either duplicate or rediscover it.
 
 - **Generic** (layout, spacing, typography, hover behavior, button
   shapes, modal contents, grids, lists, tooltips, badges) →
-  `crammys-shared.css` with a **deck-neutral class name**
-  (`.detail-grid`, not `.restaurant-detail-grid`).
-- **Coupled to one deck's data** (selector hardcodes a deck-specific
-  class, or only makes sense alongside that deck's content) → inline.
-
-The only legitimate reason to inline CSS is "naming this generically
-would force a deck-specific concept into the shared file." If you can
-rename the class to be deck-neutral, the rule belongs in shared.
-
-For **JS**: cross-deck behaviors (theme, deck switcher) → shared.
-Deck-specific render logic / event wiring → inline. JS that references
-DOM IDs unique to one deck stays inline.
+  `crammys-shared.css` with a deck-neutral class name.
+- **Coupled to one deck's data** → inline `<style>` in the shell.
 
 ## Workflow notes
 
@@ -57,51 +126,17 @@ DOM IDs unique to one deck stays inline.
   the local cache.
 - Secrets live in `.env`. `.env.example` shows the shape. Never commit
   `.env`.
+- ES modules require `http(s)://` — `file://` won't work (CORS). Use
+  `python3 -m http.server` or GitHub Pages for local testing.
 - If the user has another Claude Code session active on a different
   branch in this same working tree, do `main`-side edits in a temporary
-  git worktree (`git worktree add /tmp/crammys-main main`) instead of
-  switching their checkout's branch.
-
-## Building a new deck page
-
-A new deck (e.g. `chains.html`) inherits the entire visual identity from
-the shared files. Conventions:
-
-**Must follow:**
-- Use the existing design tokens (`--bg`, `--ink`, `--accent`, etc.). Don't
-  introduce new colors or fonts.
-- Reuse `.card-stage` / `.card` / `.face` / `.face.back` for the flip system.
-- Reuse `.rate-btn` / `.rate-missed` / `.rate-got` for the got-it/missed flow.
-- Reuse the modal system (`.modal-backdrop` + `.panel`) for popups.
-- Reuse `.btn`, `.icon-btn`, `.seg`, `.chip`, `.chip-btn` for buttons /
-  segmented controls / chips. Don't invent parallel styles for the same
-  affordances.
-- Set `window.CURRENT_DECK = "<id>"` in a tiny `<script>` in the head, before
-  loading `crammys-shared.js`.
-- Register the deck in `crammys-shared.js`'s `DECKS` array so the deck-switcher
-  dropdown lists it.
-
-**May diverge on (where the divergence is *behavior*, not visual style):**
-- The direction-segment options. ("Year → Title" doesn't apply to chains;
-  chains might be "Logo → Name", "Name → Founded", etc.) Markup goes in
-  the page; the segment styling is already shared.
-- Card content layout — markup in the page, styling in shared.
-- The contents of the deck-info chip and deck-specific modal panels —
-  markup in the page, styling in shared.
-- Image / media affordances unique to that deck — chains' logo-grid
-  markup goes in the page, but the visual styling (grid layout, hover
-  lift, etc.) should be a generic shared rule the page references.
-
-**Add to shared whenever you invent a generic visual primitive.** Chains
-needs a "two-column stat panel"? Add `.stat-panel` to shared — BP and any
-future deck can adopt it later. Don't inline it just because today only
-one deck uses it.
+  git worktree instead of switching their checkout's branch.
 
 ## Annual refresh (after each Oscars ceremony)
 
 ```sh
 python3 fetch_one_year.py <year>   # scaffold the DECK_INLINE snippet for that year
-# paste it into index.html, then:
+# paste it into decks/bestpicture-data.js, then:
 python3 fetch_movies.py && python3 fetch_images.py && \
 python3 fetch_people.py && python3 scan_spoilers.py
 ```

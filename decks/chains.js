@@ -1,0 +1,291 @@
+import { DeckEngine, loadScript, shuffleArray, escapeHtml } from '../deck-engine.js';
+
+export const meta = { id: "chains", emoji: "🍔", name: "Restaurant Chains" };
+
+export const segments = `
+  <button data-mode="l2n" class="on">Logo → Name</button>
+  <button data-mode="n2y">Name → Founded</button>
+  <button data-mode="n2f">Name → Founder</button>
+  <button data-mode="n2h">Name → HQ</button>
+  <button data-mode="study">Study</button>`;
+
+export const frontExtras = `
+  <div class="prompt" id="frontSuffix"></div>
+  <div class="image-stage brand" id="logoStage" hidden>
+    <img id="logoEl" alt="" />
+    <div class="image-overlay">
+      <div class="corner"><span>Logo</span></div>
+      <div class="bottom">
+        <div class="prompt">What chain is this?</div>
+        <div class="footer-hint">
+          <span class="hint-desktop"><kbd>Space</kbd> or tap to reveal</span>
+          <span class="hint-touch">Tap to reveal · swipe to navigate</span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+export const modals = `
+  <div class="modal-backdrop" id="aboutModal" hidden>
+    <div class="panel panel-wide" role="dialog" aria-label="About">
+      <button class="modal-close" id="aboutClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="panel-title">Restaurant Chains · Crammys</h3>
+      <p class="panel-sub">A flashcard deck for cramming <span id="chainsCount">51</span> of the largest US fast-food and fast-casual chains.</p>
+      <div class="about-section">
+        <h4>Keyboard shortcuts</h4>
+        <div class="kbd-grid">
+          <div><kbd>Space</kbd> reveal answer</div>
+          <div><kbd>←</kbd> <kbd>→</kbd> previous / next</div>
+          <div><kbd>Y</kbd> got it</div>
+          <div><kbd>N</kbd> missed</div>
+          <div><kbd>S</kbd> shuffle</div>
+          <div><kbd>R</kbd> reset progress</div>
+          <div><kbd>L</kbd> toggle Study mode</div>
+          <div><kbd>T</kbd> toggle theme</div>
+          <div><kbd>?</kbd> this dialog</div>
+          <div><kbd>Esc</kbd> close any popup</div>
+        </div>
+      </div>
+      <div class="about-section">
+        <h4>Data &amp; credits</h4>
+        <p>Founders, founding years, HQs, parents, and summaries from
+          <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> and
+          <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+          (text licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-SA&nbsp;4.0</a>).
+          Logos via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>; each is a registered trademark of its respective owner.</p>
+        <p class="panel-fineprint">US store-count estimates curated by hand from public QSR / investor sources, then sorted by location count for ranking.</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop" id="deckModal" hidden>
+    <div class="panel" role="dialog" aria-label="Deck">
+      <button class="modal-close" id="deckClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="panel-title">Deck</h3>
+      <p class="panel-sub">Limit the deck by store count and category.</p>
+      <h4 class="panel-section">Top N by US locations</h4>
+      <div class="preset-row" id="topPresets"></div>
+      <h4 class="panel-section">Categories</h4>
+      <div class="option-grid" id="catGrid"></div>
+      <div class="panel-foot">
+        <span id="deckCount" class="panel-count"></span>
+        <button class="link-danger" id="resetProgressBtn" title="Clear every card's score and start fresh">Start over</button>
+      </div>
+    </div>
+  </div>`;
+
+export async function init({ signal }) {
+  await Promise.all([
+    loadScript("chains.js"),
+    loadScript("founders.js", { onerror: () => { window.FOUNDERS = {}; } }),
+  ]);
+
+  const CHAINS = window.CHAINS_DECK || [];
+  if (!CHAINS.length) {
+    document.querySelector(".card-stage").innerHTML =
+      `<div style="text-align:center;padding:60px 20px;color:var(--ink-soft)">No chain data yet — run <code>python3 fetch_chains.py</code> to populate <code>chains.js</code>.</div>`;
+    return;
+  }
+
+  const cardId = (c) => c.name;
+  const ALL_CATS = Array.from(new Set(CHAINS.map(c => c.category))).sort();
+  const TOTAL = CHAINS.length;
+  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
+  const allIds = CHAINS.map(cardId);
+  const SCORE_RETIRED = 3;
+
+  const engine = new DeckEngine({
+    storeKey: "crammys-chains-v2",
+    defaultState: { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0, lastMode: "l2n" },
+    migrateState(s) {
+      if (!s.scores || typeof s.scores !== "object") s.scores = {};
+      if (Array.isArray(s.mastered)) {
+        for (const n of s.mastered) if (typeof n === "string") s.scores[n] = SCORE_RETIRED;
+        delete s.mastered;
+      }
+      if (s.learn === true) { s.lastMode = s.mode && s.mode !== "study" ? s.mode : "l2n"; s.mode = "study"; }
+      delete s.learn;
+      if (!s.lastMode || s.lastMode === "study") s.lastMode = "l2n";
+      delete s.drill; delete s.theme;
+      if (!Array.isArray(s.cats) || !s.cats.length) s.cats = ALL_CATS.slice();
+      if (typeof s.topN !== "number") s.topN = 0;
+      return s;
+    },
+    allIds, byId: BY_ID, cardId,
+    activeFilter(id, state) {
+      const c = BY_ID.get(id); if (!c) return false;
+      if (!state.cats.includes(c.category)) return false;
+      if (state.topN && (!c.rank || c.rank > state.topN)) return false;
+      if (engine.scoreOf(id) >= SCORE_RETIRED) return false;
+      if (state.mode === "n2y" && !c.founded) return false;
+      if (state.mode === "n2f" && (!c.founders || !c.founders.length)) return false;
+      if (state.mode === "n2h" && !c.hq) return false;
+      if (state.mode === "l2n" && !c.logo) return false;
+      return true;
+    },
+    inScopeFilter(id, state) {
+      const c = BY_ID.get(id); if (!c) return false;
+      if (!state.cats.includes(c.category)) return false;
+      if (state.topN && (!c.rank || c.rank > state.topN)) return false;
+      return true;
+    },
+    isStudyMode: (state) => state.mode === "study",
+    render: () => render(),
+    onBeforeNavigate: () => hideTip(true),
+    cardEl: document.getElementById("card"),
+    navRowEl: document.getElementById("navRow"),
+    scoreStarsFrontEl: document.getElementById("scoreStarsFront"),
+    scoreStarsBackEl: document.getElementById("scoreStarsBack"),
+  });
+
+  const state = engine.state;
+  const frontFace = document.getElementById("frontFace");
+  const front = { prompt: document.getElementById("frontPrompt"), text: document.getElementById("frontText"), suffix: document.getElementById("frontSuffix"), tag: document.getElementById("frontTag") };
+  const back = { tag: document.getElementById("backTag"), body: document.getElementById("backBody") };
+  const counter = document.getElementById("counter");
+  const scopeText = document.getElementById("scopeText");
+  const scopeExtras = document.getElementById("scopeExtras");
+  const progress = document.getElementById("progress");
+  const logoStage = document.getElementById("logoStage");
+  const logoEl = document.getElementById("logoEl");
+
+  const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  const stop = `onclick="event.stopPropagation()"`;
+  const CATEGORY_LABELS = { "burgers": "Burgers", "chicken": "Chicken", "pizza": "Pizza", "sandwich": "Sandwiches", "mexican": "Mexican", "coffee": "Coffee", "bakery-cafe": "Bakery-café", "asian": "Asian", "fast-casual": "Fast casual", "dessert": "Dessert" };
+  const catLabel = (slug) => CATEGORY_LABELS[slug] || slug;
+
+  function fmtList(arr) { if (!arr || !arr.length) return "—"; if (arr.length === 1) return arr[0]; if (arr.length === 2) return `${arr[0]} and ${arr[1]}`; return arr.slice(0, -1).join(", ") + ", and " + arr[arr.length - 1]; }
+  function hasFounderData(name) { const f = (window.FOUNDERS || {})[name]; if (!f || f.unresolved) return false; const d = (f.description || "").toLowerCase(); const s = (f.summary || "").toLowerCase(); if (d.includes("topics referred to") || d.includes("may refer to")) return false; if (s.startsWith("topics referred to") || s.includes("may refer to")) return false; return !!(f.summary || f.description); }
+  function fmtFounderList(arr) {
+    if (!arr || !arr.length) return "—";
+    const spans = arr.map(n => hasFounderData(n) ? `<span class="founder" data-founder="${escapeHtml(n)}">${escapeHtml(n)}</span>` : escapeHtml(n));
+    if (spans.length === 1) return spans[0]; if (spans.length === 2) return `${spans[0]} and ${spans[1]}`; return spans.slice(0, -1).join(", ") + ", and " + spans[spans.length - 1];
+  }
+  const SUMMARY_PREVIEW_CHARS = 320;
+  function previewSummary(s) { if (!s) return ""; if (s.length <= SUMMARY_PREVIEW_CHARS) return escapeHtml(s); const cut = s.slice(0, SUMMARY_PREVIEW_CHARS); const lastSpace = cut.lastIndexOf(" "); const safe = lastSpace > SUMMARY_PREVIEW_CHARS - 50 ? cut.slice(0, lastSpace) : cut; return escapeHtml(safe); }
+  function renderSummary(c) { const full = c.summary || ""; const truncated = full.length > SUMMARY_PREVIEW_CHARS; const preview = previewSummary(full); if (!truncated) return preview; return preview + ` <button class="more-toggle" data-summary="${escapeHtml(full)}" data-wiki-slug="${escapeHtml(c.wiki_slug || '')}" type="button" aria-label="Read full intro">…</button>`; }
+  const logoUrl = (c) => c.logo || c.logo_url || "";
+  function inScope(c) { if (!state.cats.includes(c.category)) return false; if (state.topN && (!c.rank || c.rank > state.topN)) return false; return true; }
+
+  function render() {
+    const ord = engine.activeOrder();
+    const { learned, total } = engine.learnedAndTotal();
+    const c = engine.currentCard();
+    scopeText.textContent = state.topN ? `Top ${state.topN}` : `All ${TOTAL}`;
+    const offCats = ALL_CATS.length - state.cats.length;
+    scopeExtras.textContent = offCats > 0 ? `· ${state.cats.length}/${ALL_CATS.length} cat` : "";
+    if (!c) {
+      counter.textContent = `${learned} / ${total}`; progress.style.width = total ? `${(learned / total) * 100}%` : "0%";
+      frontFace.classList.remove("image-mode"); logoStage.hidden = true;
+      front.tag.textContent = "All caught up"; front.prompt.textContent = "";
+      front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every chain in this scope is learned. Open the deck chip and click <em>Start over</em>, or expand the filter.</span>`;
+      front.suffix.textContent = ""; back.body.innerHTML = ""; engine.renderScoreStars(null); return;
+    }
+    counter.textContent = `${state.idx + 1} / ${ord.length}`; progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
+    const isLogo = state.mode === "l2n";
+    frontFace.classList.toggle("image-mode", isLogo); logoStage.hidden = !isLogo;
+    if (isLogo) { logoEl.src = logoUrl(c); logoEl.alt = ""; }
+    else {
+      front.tag.textContent = engine.isStudy() ? "Study" : "Chain"; front.suffix.textContent = "";
+      if (state.mode === "n2y") { front.prompt.textContent = "When was"; front.text.textContent = c.name; front.suffix.textContent = "founded?"; }
+      else if (state.mode === "n2f") { front.prompt.textContent = "Who founded"; front.text.textContent = c.name + "?"; }
+      else if (state.mode === "n2h") { front.prompt.textContent = "Where is"; front.text.textContent = c.name; front.suffix.textContent = "headquartered?"; }
+      else { front.prompt.textContent = ""; front.text.textContent = c.name; }
+    }
+    const sameCat = CHAINS.filter(x => x.category === c.category).sort((a, b) => (a.rank || 999) - (b.rank || 999));
+    const catPos = sameCat.findIndex(x => x.name === c.name) + 1; const catSize = sameCat.length;
+    const wikiUrl = c.wiki_slug ? `https://en.wikipedia.org/wiki/${c.wiki_slug}` : null;
+    const wikiLink = wikiUrl ? `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon}</a>` : "";
+    const inlineLogo = (state.mode !== "l2n" && c.logo) ? `<img class="inline-logo" src="${logoUrl(c)}" alt="">` : "";
+    const nameInPrompt = `<span>${escapeHtml(c.name)}</span> ${wikiLink}`;
+    const answerClass = (v) => "answer" + (String(v || "").length > 20 ? " long" : "");
+    let answer = "";
+    if (state.mode === "n2y") { back.tag.textContent = "Founded"; answer = `<div class="prompt">${nameInPrompt} was founded in</div><div class="${answerClass(c.founded)}">${inlineLogo}<span>${c.founded}</span></div>`; }
+    else if (state.mode === "n2f") { back.tag.textContent = "Founder"; const fsHTML = fmtFounderList(c.founders); answer = `<div class="prompt">${nameInPrompt} was founded by</div><div class="${answerClass(fmtList(c.founders))}">${inlineLogo}<span>${fsHTML}</span></div>`; }
+    else if (state.mode === "n2h") { back.tag.textContent = "HQ"; answer = `<div class="prompt">${nameInPrompt} is headquartered in</div><div class="${answerClass(c.hq)}">${inlineLogo}<span>${escapeHtml(c.hq || "—")}</span></div>`; }
+    else if (state.mode === "l2n") { back.tag.textContent = "Chain"; answer = `<div class="prompt">This logo is</div><div class="${answerClass(c.name)}"><span>${escapeHtml(c.name)}</span> ${wikiLink}</div>`; }
+    const foundedVal = (() => { if (c.origin && c.founded) return `${escapeHtml(c.origin)} <em>(${c.founded})</em>`; if (c.origin) return escapeHtml(c.origin); if (c.founded) return String(c.founded); return "—"; })();
+    const details = `<div class="detail-grid"><div class="row"><span class="label">Founded</span><span class="val">${foundedVal}</span></div>${c.hq ? `<div class="row"><span class="label">HQ</span><span class="val">${escapeHtml(c.hq)}</span></div>` : ""}${c.founders && c.founders.length ? `<div class="row"><span class="label">Founders</span><span class="val">${fmtFounderList(c.founders)}</span></div>` : ""}${c.parent ? `<div class="row"><span class="label">Parent</span><span class="val">${escapeHtml(c.parent)}</span></div>` : ""}<div class="row"><span class="label">Category</span><span class="val">${escapeHtml(catLabel(c.category))} <em>(#${catPos} of ${catSize} by US locations)</em></span></div>${c.locations ? `<div class="row"><span class="label">US locations</span><span class="val">~${c.locations.toLocaleString()} <em>(#${c.rank} of ${TOTAL} overall)</em></span></div>` : ""}${c.summary ? `<div class="row"><span class="label">About</span><span class="val">${renderSummary(c)}</span></div>` : ""}</div>`;
+    back.body.innerHTML = answer + details;
+    const backHint = document.getElementById("backFooterHint");
+    if (engine.isStudy()) backHint.innerHTML = `<span class="hint-desktop">Study mode · <kbd>←</kbd> <kbd>→</kbd> navigate · pick a quiz mode to start rating</span><span class="hint-touch">Study mode · swipe to navigate</span>`;
+    else backHint.innerHTML = `<span class="hint-desktop">Tap to flip back · <kbd>Y</kbd> got it · <kbd>N</kbd> missed</span><span class="hint-touch">Tap to flip back</span>`;
+    engine.renderScoreStars(c);
+  }
+
+  // Mode switching
+  function setMode(m) {
+    if (m === state.mode) return;
+    const wasStudy = state.mode === "study"; const goingStudy = m === "study";
+    if (!goingStudy) state.lastMode = m;
+    state.mode = m; state.idx = 0;
+    document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m));
+    engine.persist();
+    if (goingStudy) { engine.cardEl.classList.add("flipped"); engine.syncNav(); render(); }
+    else if (wasStudy) { engine.cardEl.classList.remove("flipped"); engine.syncNav(); render(); }
+    else engine.unflipAndThen(render);
+  }
+
+  // Wire UI
+  engine.bindStandardUI({ nextBtn: document.getElementById("nextBtn"), prevBtn: document.getElementById("prevBtn"), gotBtn: document.getElementById("gotBtn"), missedBtn: document.getElementById("missedBtn"), shuffleBtn: document.getElementById("shuffleIconBtn"), cardClickIgnore: "a, .founder, button", signal });
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode), { signal }));
+  document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === state.mode));
+
+  // About modal
+  const aboutModal = document.getElementById("aboutModal");
+  document.getElementById("chainsCount").textContent = String(TOTAL);
+  const { open: openAbout, close: closeAbout } = DeckEngine.bindModal(aboutModal, document.getElementById("aboutClose"), document.getElementById("aboutBtn"));
+
+  // Deck modal
+  const deckModal = document.getElementById("deckModal");
+  const topPresetsEl = document.getElementById("topPresets");
+  const catGridEl = document.getElementById("catGrid");
+  const deckCountEl = document.getElementById("deckCount");
+  const TOP_PRESETS = [{ label: "Top 10", n: 10 }, { label: "Top 25", n: 25 }, { label: "Top 50", n: 50 }, { label: `All ${TOTAL}`, n: 0 }];
+  function syncDeckModal() {
+    topPresetsEl.innerHTML = TOP_PRESETS.map(p => `<button data-n="${p.n}" class="${p.n === state.topN ? 'on' : ''}">${p.label}</button>`).join("");
+    catGridEl.innerHTML = ALL_CATS.map(cat => `<label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${catLabel(cat)}</span></label>`).join("");
+    deckCountEl.innerHTML = `<em>${CHAINS.filter(inScope).length}</em> chains in deck`;
+  }
+  const { close: closeDeck } = DeckEngine.bindModal(deckModal, document.getElementById("deckClose"));
+  document.getElementById("deckChip").addEventListener("click", () => { syncDeckModal(); DeckEngine.openModal(deckModal); }, { signal });
+  topPresetsEl.addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; state.topN = +b.dataset.n; state.idx = 0; engine.persist(); syncDeckModal(); engine.unflipAndThen(render); }, { signal });
+  catGridEl.addEventListener("change", (e) => { const inp = e.target.closest("input"); if (!inp) return; const cat = inp.value; if (inp.checked && !state.cats.includes(cat)) state.cats.push(cat); else if (!inp.checked) state.cats = state.cats.filter(x => x !== cat); if (!state.cats.length) state.cats = [cat]; state.idx = 0; engine.persist(); syncDeckModal(); engine.unflipAndThen(render); }, { signal });
+  document.getElementById("resetProgressBtn").addEventListener("click", () => { closeDeck(); engine.reset(); }, { signal });
+
+  // Keyboard
+  engine.bindKeyboard({ signal, extraKeys(e) {
+    switch (e.key) {
+      case "n": case "N": if (engine.cardEl.classList.contains("flipped") && !engine.isStudy()) engine.missed(); return true;
+      case "y": case "Y": if (engine.cardEl.classList.contains("flipped") && !engine.isStudy()) engine.gotIt(); return true;
+      case "l": case "L": setMode(engine.isStudy() ? (state.lastMode || "l2n") : "study"); return true;
+      case "?": e.preventDefault(); if (aboutModal.hidden) openAbout(); else closeAbout(); return true;
+      case "Escape": if (!aboutModal.hidden) closeAbout(); else if (!deckModal.hidden) closeDeck(); else hideTip(true); return true;
+    }
+    return false;
+  }});
+
+  // Tooltip
+  function tipHTML(el) {
+    if (el.dataset.founder) {
+      const f = (window.FOUNDERS || {})[el.dataset.founder];
+      if (!f) return `<div class="tip-empty">No info for ${escapeHtml(el.dataset.founder)}</div>`;
+      const photo = f.thumb ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>` : "";
+      const link = f.page ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIcon}</a>` : "";
+      return `${photo}<div class="tip-info"><div class="tip-name"><span>${escapeHtml(f.name || el.dataset.founder)}</span>${link}</div>${f.description ? `<div class="tip-meta">${escapeHtml(f.description)}</div>` : ""}${f.summary ? `<div class="tip-blurb">${escapeHtml(f.summary)}…</div>` : ""}</div>`;
+    }
+    if (el.dataset.summary) {
+      const url = el.dataset.wikiSlug ? `https://en.wikipedia.org/wiki/${el.dataset.wikiSlug}` : null;
+      const wikiLink = url ? `<div class="tip-wiki-link"><a href="${url}" target="_blank" rel="noopener">Read more on Wikipedia ${extIcon}</a></div>` : "";
+      return `<div class="tip-info" style="flex:1"><div class="tip-blurb">${escapeHtml(el.dataset.summary)}</div>${wikiLink}</div>`;
+    }
+    return "";
+  }
+  const tipEl = document.getElementById("tooltip");
+  const hideTip = engine.bindTooltips({ tipEl, selector: ".founder[data-founder], .more-toggle[data-summary]", signal, tipHTML(el) { tipEl.classList.toggle("tip-summary", !!el.dataset.summary); return tipHTML(el); } });
+
+  render();
+}
