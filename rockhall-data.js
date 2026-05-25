@@ -18,7 +18,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a9bc0a53-8ed9-4e3e-ba6b-1cd04b94521f",
   spotify: "1wNkMmCAKqLRipNCmJxYZ2",
   inductedBy: "Norm N. Nite and Scott Muni",
-  summary: "Albert James \"Alan\" Freed (December 15, 1921 – January 20, 1965) was an American disc jockey. He also produced and promoted large traveling concerts with various acts, helping to spread the importance of rock and roll music throughout North America, including popularizing the term \"rock and roll\"."
+  summary: "Albert James \"Alan\" Freed (December 15, 1921 – January 20, 1965) was an American disc jockey. He also produced and promoted large traveling concerts with various acts, helping to spread the importance of rock and roll music throughout North America, including popularizing the term \"rock and roll\".",
   wikipedia: "https://en.wikipedia.org/wiki/Alan_Freed",
 },
 {
@@ -40,7 +40,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5260e08d-2a8b-47f0-a88f-77d888b69fe9",
   spotify: "3wYyutjgII8LJVVOLrGI0D",
   inductedBy: "John Fogerty",
-  summary: "Charles Hardin Holley (September 7, 1936 – February 3, 1959), known professionally by his stage name Buddy Holly, was an American singer, songwriter, and musician who was a central and pioneering figure of rock and roll. He was born to a musical family in Lubbock, Texas, during the Great Depression, and learned to play guitar and sing alongside his two siblings."
+  summary: "Charles Hardin Holley (September 7, 1936 – February 3, 1959), known professionally by his stage name Buddy Holly, was an American singer, songwriter, and musician who was a central and pioneering figure of rock and roll. He was born to a musical family in Lubbock, Texas, during the Great Depression, and learned to play guitar and sing alongside his two siblings.",
   wikipedia: "https://en.wikipedia.org/wiki/Buddy_Holly",
 },
 {
@@ -62,7 +62,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "592a3b6d-c42b-4567-99c9-ecf63bd66499",
   spotify: "293zczrfYafIItmnmM3coR",
   inductedBy: "Keith Richards",
-  summary: "Charles Edward Anderson Berry (October 18, 1926 – March 18, 2017) was an American guitarist, singer, and songwriter who was one of the pioneers of rock and roll. Nicknamed the \"Father of Rock and Roll\", he refined and developed rhythm and blues into the major elements that made rock and roll distinctive with songs such as \"Maybellene\" (1955), \"Roll Over Beethoven\" (1956), \"Rock and Roll Music\" (1957), and \"Johnny B. Goode\" (1958)."
+  summary: "Charles Edward Anderson Berry (October 18, 1926 – March 18, 2017) was an American guitarist, singer, and songwriter who was one of the pioneers of rock and roll. Nicknamed the \"Father of Rock and Roll\", he refined and developed rhythm and blues into the major elements that made rock and roll distinctive with songs such as \"Maybellene\" (1955), \"Roll Over Beethoven\" (1956), \"Rock and Roll Music\" (1957), and \"Johnny B. Goode\" (1958).",
   wikipedia: "https://en.wikipedia.org/wiki/Chuck_Berry",
 },
 {
@@ -84,7 +84,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "01809552-4f87-45b0-afff-2c6f0730a3be",
   spotify: "43ZHCT0cAZBISjO8DG9PnE",
   inductedBy: "Julian and Sean Lennon",
-  summary: "Elvis Aaron Presley (January 8, 1935 – August 16, 1977) was an American singer and actor. Referred to as the \"King of Rock and Roll\", he is widely regarded as one of the most culturally significant figures of the 20th century. Presley's energetic and sexually provocative performance style, combined with a mix of influences across color lines during a transformative era in race relations, brought both great success and initial controversy."
+  summary: "Elvis Aaron Presley (January 8, 1935 – August 16, 1977) was an American singer and actor. Referred to as the \"King of Rock and Roll\", he is widely regarded as one of the most culturally significant figures of the 20th century. Presley's energetic and sexually provocative performance style, combined with a mix of influences across color lines during a transformative era in race relations, brought both great success and initial controversy.",
   wikipedia: "https://en.wikipedia.org/wiki/Elvis_Presley",
 },
 {
@@ -106,7 +106,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e787de5d-49e2-4b1f-9bde-1fd3a671b971",
   spotify: "09C0xjtosNAIXP36wTnWxd",
   inductedBy: "Billy Joel",
-  summary: "Antoine Caliste Domino Jr. (February 26, 1928 – October 24, 2017), known as Fats Domino, was an American singer-songwriter and pianist. One of the pioneers of rock and roll music, Domino sold more than 65 million records. Born in New Orleans to a French Creole family, Domino signed to Imperial Records in 1949. His first single \"The Fat Man\" is cited by some historians as the first rock and roll single and the first to sell more than 1 million copies."
+  summary: "Antoine Caliste Domino Jr. (February 26, 1928 – October 24, 2017), known as Fats Domino, was an American singer-songwriter and pianist. One of the pioneers of rock and roll music, Domino sold more than 65 million records. Born in New Orleans to a French Creole family, Domino signed to Imperial Records in 1949. His first single \"The Fat Man\" is cited by some historians as the first rock and roll single and the first to sell more than 1 million copies.",
   wikipedia: "https://en.wikipedia.org/wiki/Fats_Domino",
 },
 {
@@ -128,7 +128,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "20ff3303-4fe2-4a47-a1b6-291e26aa3438",
   spotify: "7GaxyUddsPok8BuhxN6OUW",
   inductedBy: "Steve Winwood",
-  summary: "James Joseph Brown (May 3, 1933 – December 25, 2006) was an American singer, songwriter, dancer, musician, and record producer. The central progenitor of funk music and a major figure of 20th-century music, he is referred to by various nicknames, among them \"Mr. Dynamite\", \"the Hardest-Working Man in Show Business\", \"Minister of New Super Heavy Funk\", \"Godfather of Soul\", \"King of Soul\", and \"Soul Brother No. 1\"."
+  summary: "James Joseph Brown (May 3, 1933 – December 25, 2006) was an American singer, songwriter, dancer, musician, and record producer. The central progenitor of funk music and a major figure of 20th-century music, he is referred to by various nicknames, among them \"Mr. Dynamite\", \"the Hardest-Working Man in Show Business\", \"Minister of New Super Heavy Funk\", \"Godfather of Soul\", \"King of Soul\", and \"Soul Brother No. 1\".",
   wikipedia: "https://en.wikipedia.org/wiki/James_Brown",
 },
 {
@@ -150,7 +150,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b59ac58d-036e-4bba-8112-c32a34c4575b",
   spotify: "2zyz0VJqrDXeFDIyrfVXSo",
   inductedBy: "Hank Williams Jr.",
-  summary: "Jerry Lee Lewis (September 29, 1935 – October 28, 2022) was an American pianist, singer, and songwriter. Nicknamed \"The Killer\", he was described as \"rock 'n' roll's first great wild man\". A pioneer of rock and roll and rockabilly music, Lewis made his first recordings in 1952 at Cosimo Matassa's J&M Studio in New Orleans, Louisiana, and early recordings in 1956 at Sun Records in Memphis, Tennessee. He later became known for his chart topping country music recordings from the 1960s and 1970s."
+  summary: "Jerry Lee Lewis (September 29, 1935 – October 28, 2022) was an American pianist, singer, and songwriter. Nicknamed \"The Killer\", he was described as \"rock 'n' roll's first great wild man\". A pioneer of rock and roll and rockabilly music, Lewis made his first recordings in 1952 at Cosimo Matassa's J&M Studio in New Orleans, Louisiana, and early recordings in 1956 at Sun Records in Memphis, Tennessee. He later became known for his chart topping country music recordings from the 1960s and 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Lee_Lewis",
 },
 {
@@ -172,7 +172,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "394492c0-cecf-40a8-b676-0e5706317fab",
   spotify: "0Y0ZlznP6vzTS1qAm5dvTN",
   inductedBy: "Jerry Wexler",
-  summary: "James Charles Rodgers ((1897-09-08)September 8, 1897 – (1933-05-26)May 26, 1933) was an American singer, songwriter, and musician who rose to popularity in the late 1920s. Known as Jimmie Rodgers and widely regarded as the \"Father of Country Music\", he is best known for his distinctive yodeling. Rodgers was known as \"The Singing Brakeman\" and \"America's Blue Yodeler\". He has been cited as an inspiration by many artists, and he has been inducted into multiple halls of fame."
+  summary: "James Charles Rodgers ((1897-09-08)September 8, 1897 – (1933-05-26)May 26, 1933) was an American singer, songwriter, and musician who rose to popularity in the late 1920s. Known as Jimmie Rodgers and widely regarded as the \"Father of Country Music\", he is best known for his distinctive yodeling. Rodgers was known as \"The Singing Brakeman\" and \"America's Blue Yodeler\". He has been cited as an inspiration by many artists, and he has been inducted into multiple halls of fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmie_Rodgers",
 },
 {
@@ -194,7 +194,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "78a7f57a-a276-45f6-b63c-96d941e244d2",
   spotify: "5Htb3OCSbYrsNjXgFP1LqD",
   inductedBy: "Ahmet Ertegun",
-  summary: "James Edward Yancey (February 20, c. 1895 – September 17, 1951) was an American boogie-woogie pianist, composer, and lyricist. One reviewer described him as \"one of the pioneers of this raucous, rapid-fire, eight-to-the-bar piano style\"."
+  summary: "James Edward Yancey (February 20, c. 1895 – September 17, 1951) was an American boogie-woogie pianist, composer, and lyricist. One reviewer described him as \"one of the pioneers of this raucous, rapid-fire, eight-to-the-bar piano style\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Yancey",
 },
 {
@@ -216,7 +216,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7cbf5d10-e341-4b20-9514-e16f622cf6aa",
   spotify: "471Ycbmda1lAuLMscQvxMR",
   inductedBy: "Ahmet Ertegun",
-  summary: "John Henry Hammond Jr. (December 15, 1910 – July 10, 1987) was an American record producer, civil rights activist, and music critic active from the 1930s to the early 1980s. As a talent scout, Hammond became one of the most influential figures in 20th-century popular music. He is the father of blues musician John P. Hammond."
+  summary: "John Henry Hammond Jr. (December 15, 1910 – July 10, 1987) was an American record producer, civil rights activist, and music critic active from the 1930s to the early 1980s. As a talent scout, Hammond became one of the most influential figures in 20th-century popular music. He is the father of blues musician John P. Hammond.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Henry_Hammond",
 },
 {
@@ -238,7 +238,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "95c2339b-8277-49a6-9aaf-08d8eeeaa0be",
   spotify: "4xls23Ye9WR9yy3yYMpAMm",
   inductedBy: "Roberta Flack",
-  summary: "Richard Wayne Penniman (December 5, 1932 – May 9, 2020), better known by his stage name Little Richard, was an American singer-songwriter and pianist. He was an influential figure in popular music and culture for seven decades. Referred to as the \"Architect of Rock and Roll\", Richard's most celebrated work dates from the mid-1950s, when his charismatic showmanship and dynamic music, characterized by frenetic piano playing, pounding backbeat and powerful raspy vocals, laid the foundation for rock…"
+  summary: "Richard Wayne Penniman (December 5, 1932 – May 9, 2020), better known by his stage name Little Richard, was an American singer-songwriter and pianist. He was an influential figure in popular music and culture for seven decades. Referred to as the \"Architect of Rock and Roll\", Richard's most celebrated work dates from the mid-1950s, when his charismatic showmanship and dynamic music, characterized by frenetic piano playing, pounding backbeat and powerful raspy vocals, laid the foundation for rock…",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Richard",
 },
 {
@@ -260,7 +260,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2ce02909-598b-44ef-a456-151ba0a3bd70",
   spotify: "5JCiKwFQCn6JzxIb6LTR1G",
   inductedBy: "Quincy Jones",
-  summary: "Ray Charles Robinson (September 23, 1930 – June 10, 2004) was an American singer, songwriter, and pianist. He is regarded as one of the most iconic and influential musicians of the 20th century and was often referred to by contemporaries as \"The Genius\". Among friends and fellow musicians, Charles preferred being called \"Brother Ray\". He lost his vision as a child, possibly due to glaucoma, and consequently wore dark glasses."
+  summary: "Ray Charles Robinson (September 23, 1930 – June 10, 2004) was an American singer, songwriter, and pianist. He is regarded as one of the most iconic and influential musicians of the 20th century and was often referred to by contemporaries as \"The Genius\". Among friends and fellow musicians, Charles preferred being called \"Brother Ray\". He lost his vision as a child, possibly due to glaucoma, and consequently wore dark glasses.",
   wikipedia: "https://en.wikipedia.org/wiki/Ray_Charles",
 },
 {
@@ -282,7 +282,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "16f11bc1-9a25-46f0-b2d4-0c2b1ebdd16f",
   spotify: "0f8MDDzIc6M4uH1xH0o0gy",
   inductedBy: "Robert Palmer",
-  summary: "Robert Leroy Johnson (May 8, 1911 – August 16, 1938) was an American blues musician and songwriter. His singing, guitar playing and songwriting on his landmark 1936 and 1937 recordings have influenced later generations of musicians. Although his recording career spanned only seven months, he is recognized as a master of the blues, particularly the Delta blues style, and as one of the most influential musicians of the 20th century."
+  summary: "Robert Leroy Johnson (May 8, 1911 – August 16, 1938) was an American blues musician and songwriter. His singing, guitar playing and songwriting on his landmark 1936 and 1937 recordings have influenced later generations of musicians. Although his recording career spanned only seven months, he is recognized as a master of the blues, particularly the Delta blues style, and as one of the most influential musicians of the 20th century.",
   wikipedia: "https://en.wikipedia.org/wiki/Robert_Johnson",
 },
 {
@@ -304,7 +304,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6c8fd0be-d961-454c-aee0-4366a6dbc993",
   spotify: "6hnWRPzGGKiapVX1UCdEAC",
   inductedBy: "Herb Alpert",
-  summary: "Samuel Cooke (né Cook; January 22, 1931 – December 11, 1964) was an American soul singer and songwriter. Considered one of the most influential soul artists of all time, Cooke is commonly referred to as the \"King of Soul\" for his distinctive vocals, pioneering contributions to the genre, and significance in popular music."
+  summary: "Samuel Cooke (né Cook; January 22, 1931 – December 11, 1964) was an American soul singer and songwriter. Considered one of the most influential soul artists of all time, Cooke is commonly referred to as the \"King of Soul\" for his distinctive vocals, pioneering contributions to the genre, and significance in popular music.",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_Cooke",
 },
 {
@@ -326,7 +326,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "19af19b7-5018-4dd8-bf3f-6c17a2ee4098",
   spotify: "6Epdio7Ic0zhZkhXHFc8qa",
   inductedBy: "Jerry Lee Lewis",
-  summary: "Samuel Cornelius Phillips (January 5, 1923 – July 30, 2003) was an American disc jockey, songwriter and record producer. He was the founder of Sun Records and Sun Studio in Memphis, Tennessee, where he produced recordings by Elvis Presley, Roy Orbison, Jerry Lee Lewis, Carl Perkins, Johnny Cash, and Howlin' Wolf. Phillips played a major role in the development of rock and roll during the 1950s, launching the career of Presley. In 1969, he sold Sun to Shelby Singleton."
+  summary: "Samuel Cornelius Phillips (January 5, 1923 – July 30, 2003) was an American disc jockey, songwriter and record producer. He was the founder of Sun Records and Sun Studio in Memphis, Tennessee, where he produced recordings by Elvis Presley, Roy Orbison, Jerry Lee Lewis, Carl Perkins, Johnny Cash, and Howlin' Wolf. Phillips played a major role in the development of rock and roll during the 1950s, launching the career of Presley. In 1969, he sold Sun to Shelby Singleton.",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_Phillips",
 },
 {
@@ -348,7 +348,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
   spotify: "3WrFJ7ztbogyGnTHbHJFl2",
   inductedBy: "Mick Jagger",
-  summary: "The Beatles were an English rock band formed in Liverpool in 1960. The band comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr. They are regarded as the most influential band in popular music and were integral to the development of 1960s counterculture and the recognition of popular music as an art form. Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways."
+  summary: "The Beatles were an English rock band formed in Liverpool in 1960. The band comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr. They are regarded as the most influential band in popular music and were integral to the development of 1960s counterculture and the recognition of popular music as an art form. Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Beatles",
 },
 {
@@ -370,7 +370,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "091ec508-877f-4e3c-92a3-10903bbbc7ad",
   spotify: "4ACplpEqD6JIVgKrafauzs",
   inductedBy: "Neil Young",
-  summary: "The Everly Brothers were an American musical duo known for steel-string acoustic guitar playing and close-harmony singing. Consisting of Isaac Donald \"Don\" Everly and Phillip \"Phil\" Everly, the duo combined elements of rock and roll, country, and pop, becoming pioneers of country rock."
+  summary: "The Everly Brothers were an American musical duo known for steel-string acoustic guitar playing and close-harmony singing. Consisting of Isaac Donald \"Don\" Everly and Phillip \"Phil\" Everly, the duo combined elements of rock and roll, country, and pop, becoming pioneers of country rock.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Everly_Brothers",
 },
 {
@@ -392,7 +392,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f24331eb-da48-430b-ad7d-48796a5b6255",
   spotify: null,
   inductedBy: "Jann Wenner and Walter Yetnikoff",
-  summary: "Ahmet Ertegun ( AH-met AIR-tə-gən; Turkish: Ahmet Zahrettin Sebuhi Ertegün, pronounced [ahˈmet æɾteˈɟyn]; July 31, 1923 – December 14, 2006) was a Turkish-American businessman, songwriter, record executive and philanthropist."
+  summary: "Ahmet Ertegun ( AH-met AIR-tə-gən; Turkish: Ahmet Zahrettin Sebuhi Ertegün, pronounced [ahˈmet æɾteˈɟyn]; July 31, 1923 – December 14, 2006) was a Turkish-American businessman, songwriter, record executive and philanthropist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ahmet_Ertegun",
 },
 {
@@ -414,7 +414,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2f9ecbed-27be-40e6-abca-6de49d50299e",
   spotify: "7nwUJBm0HE4ZxD3f5cy5ok",
   inductedBy: "Keith Richards",
-  summary: "Aretha Louise Franklin ( ə-REE-thə; March 25, 1942 – August 16, 2018) was an American singer, songwriter and pianist. Regarded as the \"Queen of Soul\", she was twice named by Rolling Stone magazine as the greatest singer of all time."
+  summary: "Aretha Louise Franklin ( ə-REE-thə; March 25, 1942 – August 16, 2018) was an American singer, songwriter and pianist. Regarded as the \"Queen of Soul\", she was twice named by Rolling Stone magazine as the greatest singer of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Aretha_Franklin",
 },
 {
@@ -436,7 +436,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b123ba15-c4a5-4281-8117-2e57f8f02496",
   spotify: "1DTgcOxytJHD8p17mhSgd7",
   inductedBy: "Doc Pomus",
-  summary: "Joseph Vernon \"Big Joe\" Turner Jr. (May 18, 1911 – November 24, 1985) was an American blues shouter from Kansas City, Missouri. Turner's greatest fame was due to his rock and roll recordings in the 1950s, particularly \"Shake, Rattle and Roll\", but his career as a performer endured from the 1920s into the 1980s."
+  summary: "Joseph Vernon \"Big Joe\" Turner Jr. (May 18, 1911 – November 24, 1985) was an American blues shouter from Kansas City, Missouri. Turner's greatest fame was due to his rock and roll recordings in the 1950s, particularly \"Shake, Rattle and Roll\", but his career as a performer endured from the 1920s into the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Big_Joe_Turner",
 },
 {
@@ -458,7 +458,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2c8ddf66-bca7-4ed5-8ef6-b5d55b3fd3ff",
   spotify: "7BnMxaZViClraNJfDkTXlq",
   inductedBy: "Chuck Berry",
-  summary: "William John Clifton Haley (; July 6, 1925 – February 9, 1981) was an American rock and roll musician. He is credited by many with first popularizing this form of music in the early 1950s with his group Bill Haley & His Comets and million-selling hits such as \"Rock Around the Clock\", \"See You Later, Alligator\", \"Shake, Rattle and Roll\", \"Rocket 88\", \"Skinny Minnie\", and \"Razzle Dazzle\". Haley has sold over 60 million records worldwide."
+  summary: "William John Clifton Haley (; July 6, 1925 – February 9, 1981) was an American rock and roll musician. He is credited by many with first popularizing this form of music in the early 1950s with his group Bill Haley & His Comets and million-selling hits such as \"Rock Around the Clock\", \"See You Later, Alligator\", \"Shake, Rattle and Roll\", \"Rocket 88\", \"Skinny Minnie\", and \"Razzle Dazzle\". Haley has sold over 60 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Haley",
 },
 {
@@ -480,7 +480,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bf659d74-0b61-488c-8a7d-594f43bed9e0",
   spotify: "2bmixwMZXlkl2sbIbOfviq",
   inductedBy: "ZZ Top",
-  summary: "Ellas Otha Bates (December 30, 1928 – June 2, 2008), known professionally as Bo Diddley, was an American guitarist, singer and songwriter who played a key role in the transition from the blues to rock and roll. He influenced many artists, including Buddy Holly, the Beatles, the Rolling Stones, the Animals, George Thorogood, Syd Barrett, Tom Petty, and the Clash."
+  summary: "Ellas Otha Bates (December 30, 1928 – June 2, 2008), known professionally as Bo Diddley, was an American guitarist, singer and songwriter who played a key role in the transition from the blues to rock and roll. He influenced many artists, including Buddy Holly, the Beatles, the Rolling Stones, the Animals, George Thorogood, Syd Barrett, Tom Petty, and the Clash.",
   wikipedia: "https://en.wikipedia.org/wiki/Bo_Diddley",
 },
 {
@@ -502,7 +502,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "068bd7ab-c38e-4fae-8ed2-cb0c153ed68f",
   spotify: "5hIClg6noTaCzMu2s5wp4f",
   inductedBy: "Sam Phillips",
-  summary: "Carl Lee Perkins (April 9, 1932 – January 19, 1998) was an American country, rockabilly, and rock and roll guitarist, singer and songwriter.  A rockabilly great and pioneer of rock and roll, he began his recording career at the Sun Studio in Memphis in 1954. Among his best known songs are \"Blue Suede Shoes\", \"Honey Don't\", \"Matchbox\" and \"Everybody's Trying to Be My Baby\"."
+  summary: "Carl Lee Perkins (April 9, 1932 – January 19, 1998) was an American country, rockabilly, and rock and roll guitarist, singer and songwriter.  A rockabilly great and pioneer of rock and roll, he began his recording career at the Sun Studio in Memphis in 1954. Among his best known songs are \"Blue Suede Shoes\", \"Honey Don't\", \"Matchbox\" and \"Everybody's Trying to Be My Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Carl_Perkins",
 },
 {
@@ -524,7 +524,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3c562ee6-4855-4a11-8411-5e9e6c10586a",
   spotify: "4WL6MC4jDW7w7K9hfc4MVS",
   inductedBy: "Ben E. King",
-  summary: "Clyde Lensley McPhatter (November 15, 1932 – June 13, 1972) was an American rhythm and blues, soul, and rock and roll singer. He was one of the most widely imitated R&B singers of the 1950s and early 1960s and was a key figure in the shaping of doo-wop and R&B."
+  summary: "Clyde Lensley McPhatter (November 15, 1932 – June 13, 1972) was an American rhythm and blues, soul, and rock and roll singer. He was one of the most widely imitated R&B singers of the 1950s and early 1960s and was a key figure in the shaping of doo-wop and R&B.",
   wikipedia: "https://en.wikipedia.org/wiki/Clyde_McPhatter",
 },
 {
@@ -546,7 +546,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "17995d1c-5b3c-4ee9-98f5-105ee3b4ada1",
   spotify: "1p0t3JtUTayV2wb1RGN9mO",
   inductedBy: "Mick Jones",
-  summary: "Edward Ray Cochran ( KOK-rən; October 3, 1938 – April 17, 1960) was an American rock and roll musician. His songs, such as \"Twenty Flight Rock\", \"Summertime Blues\", \"C'mon Everybody\" and \"Somethin' Else\", captured teenage frustration and desire in the mid-1950s and early 1960s. He experimented with multitrack recording, distortion techniques and overdubbing, even on his earliest singles. Cochran played the guitar, piano, bass, and drums."
+  summary: "Edward Ray Cochran ( KOK-rən; October 3, 1938 – April 17, 1960) was an American rock and roll musician. His songs, such as \"Twenty Flight Rock\", \"Summertime Blues\", \"C'mon Everybody\" and \"Somethin' Else\", captured teenage frustration and desire in the mid-1950s and early 1960s. He experimented with multitrack recording, distortion techniques and overdubbing, even on his earliest singles. Cochran played the guitar, piano, bass, and drums.",
   wikipedia: "https://en.wikipedia.org/wiki/Eddie_Cochran",
 },
 {
@@ -568,7 +568,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "906bddec-bc73-49f8-ac1e-eaee691c6cf9",
   spotify: "1FClsNYBUoNFtGgzeG74dW",
   inductedBy: "Seymour Stein",
-  summary: "Hiram \"Hank\" Williams (September 17, 1923 – January 1, 1953) was an American singer, songwriter, and musician. An early pioneer of country music, he is regarded as one of the most significant and influential musicians of the 20th century. Williams recorded 55 singles that reached the top 10 of the Billboard Country & Western Best Sellers chart, 5 of which were released posthumously, and 12 of which reached No.1."
+  summary: "Hiram \"Hank\" Williams (September 17, 1923 – January 1, 1953) was an American singer, songwriter, and musician. An early pioneer of country music, he is regarded as one of the most significant and influential musicians of the 20th century. Williams recorded 55 singles that reached the top 10 of the Billboard Country & Western Best Sellers chart, 5 of which were released posthumously, and 12 of which reached No.1.",
   wikipedia: "https://en.wikipedia.org/wiki/Hank_Williams",
 },
 {
@@ -590,7 +590,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f0bf4fa0-028e-452f-82d3-7d4375e105dd",
   spotify: "4VnomLtKTm9Ahe1tZfmZju",
   inductedBy: "Peter Wolf",
-  summary: "Jack Leroy Wilson Jr. (June 9, 1934 – January 21, 1984) was an American singer who was a prominent figure in the transition of rhythm and blues into soul. Nicknamed \"Mr. Excitement\", he was considered a master showman and one of the most dynamic singers and performers in the 20th century. Among his hits are \"Lonely Teardrops,\" \"Baby Workout,\" \"Reet Petite\", \"I Get the Sweetest Feeling\" and \"(Your Love Keeps Lifting Me) Higher and Higher\"."
+  summary: "Jack Leroy Wilson Jr. (June 9, 1934 – January 21, 1984) was an American singer who was a prominent figure in the transition of rhythm and blues into soul. Nicknamed \"Mr. Excitement\", he was considered a master showman and one of the most dynamic singers and performers in the 20th century. Among his hits are \"Lonely Teardrops,\" \"Baby Workout,\" \"Reet Petite\", \"I Get the Sweetest Feeling\" and \"(Your Love Keeps Lifting Me) Higher and Higher\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jackie_Wilson",
 },
 {
@@ -612,7 +612,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cad43f86-226e-4e6a-84f9-3219b48ad242",
   spotify: "67yXeG7xPSVu9PtzHJ5AS8",
   inductedBy: "Jann Wenner",
-  summary: "Gerald Wexler (January 10, 1917 – August 15, 2008) was a music journalist turned music producer, and was a major influence on American popular music from the 1950s through the 1980s. He coined the term \"rhythm and blues\", and was integral in signing and/or producing many of the biggest acts of the time, including Ray Charles, the Allman Brothers, Chris Connor, Aretha Franklin, Led Zeppelin, Wilson Pickett, Dire Straits, Dusty Springfield and Bob Dylan."
+  summary: "Gerald Wexler (January 10, 1917 – August 15, 2008) was a music journalist turned music producer, and was a major influence on American popular music from the 1950s through the 1980s. He coined the term \"rhythm and blues\", and was integral in signing and/or producing many of the biggest acts of the time, including Ray Charles, the Allman Brothers, Chris Connor, Aretha Franklin, Led Zeppelin, Wilson Pickett, Dire Straits, Dusty Springfield and Bob Dylan.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Wexler",
 },
 {
@@ -634,7 +634,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "507a43b4-a58c-4f49-8d2a-5750208c52ae",
   spotify: null,
   inductedBy: "Norm N. Nite and Scott Muni",
-  summary: "Leiber and Stoller were an American songwriting and record-production duo, consisting of lyricist Jerome Leiber (; April 25, 1933 – August 22, 2011) and composer Michael Stoller (born March 13, 1933). As well as many R&B and pop hits, they wrote numerous standards for Broadway."
+  summary: "Leiber and Stoller were an American songwriting and record-production duo, consisting of lyricist Jerome Leiber (; April 25, 1933 – August 22, 2011) and composer Michael Stoller (born March 13, 1933). As well as many R&B and pop hits, they wrote numerous standards for Broadway.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Leiber_and_Mike_Stoller",
 },
 {
@@ -656,7 +656,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c50309a7-ab85-4085-b2cc-8ff72e649e1a",
   spotify: null,
   inductedBy: "Ewart Abner",
-  summary: "Leonard Samuel Chess (born Lejzor Szmuel Czyż; March 12, 1917 – October 16, 1969) was a Polish-American record company executive and the founder of Chess Records alongside his brother Phil. He was influential in the development of the recording industry, and electric blues, Chicago blues, and rock and roll."
+  summary: "Leonard Samuel Chess (born Lejzor Szmuel Czyż; March 12, 1917 – October 16, 1969) was a Polish-American record company executive and the founder of Chess Records alongside his brother Phil. He was influential in the development of the recording industry, and electric blues, Chicago blues, and rock and roll.",
   wikipedia: "https://en.wikipedia.org/wiki/Leonard_Chess",
 },
 {
@@ -678,7 +678,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b8b30699-7814-4fd1-ab75-6f22f5da0fac",
   spotify: "2nRbxpnBMMbtMBWH5QdqH2",
   inductedBy: "Seymour Stein",
-  summary: "Louis Thomas Jordan (July 8, 1908 – February 4, 1975) was an American jazz, blues and jump blues saxophonist, vocalist, songwriter and bandleader who was popular from the late 1930s to the early 1950s. Known as \"the King of the Jukebox\", he earned his highest profile towards the end of the swing era."
+  summary: "Louis Thomas Jordan (July 8, 1908 – February 4, 1975) was an American jazz, blues and jump blues saxophonist, vocalist, songwriter and bandleader who was popular from the late 1930s to the early 1950s. Known as \"the King of the Jukebox\", he earned his highest profile towards the end of the swing era.",
   wikipedia: "https://en.wikipedia.org/wiki/Louis_Jordan",
 },
 {
@@ -700,7 +700,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "afdb7919-059d-43c1-b668-ba1d265e7e42",
   spotify: "3koiLjNrgRTNbOwViDipeA",
   inductedBy: "Nick Ashford and Valerie Simpson",
-  summary: "Marvin Pentz Gaye Jr. (né Gay; April 2, 1939 – April 1, 1984) was an American R&B and soul singer, songwriter, musician, and record producer. Commonly referred to as the \"Prince of Motown\" and \"Prince of Soul\", he helped to shape the sound of Motown and soul music in the 1960s and 1970s. A cultural icon, Gaye is often considered one of the greatest singers and songwriters of all time."
+  summary: "Marvin Pentz Gaye Jr. (né Gay; April 2, 1939 – April 1, 1984) was an American R&B and soul singer, songwriter, musician, and record producer. Commonly referred to as the \"Prince of Motown\" and \"Prince of Soul\", he helped to shape the sound of Motown and soul music in the 1960s and 1970s. A cultural icon, Gaye is often considered one of the greatest singers and songwriters of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Marvin_Gaye",
 },
 {
@@ -722,7 +722,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f86f1f07-d182-45ce-ae93-ef610880ca72",
   spotify: "4y6J8jwRAwO4dssiSmN91R",
   inductedBy: "Paul Butterfield",
-  summary: "McKinley Morganfield (April 4, 1913 – April 30, 1983), better known as Muddy Waters, was an American blues singer-songwriter and musician who was an important figure in the post-World War II blues scene, and is often cited as the \"father of modern Chicago blues\". His style of playing has been described as \"raining down Delta beatitude\"."
+  summary: "McKinley Morganfield (April 4, 1913 – April 30, 1983), better known as Muddy Waters, was an American blues singer-songwriter and musician who was an important figure in the post-World War II blues scene, and is often cited as the \"father of modern Chicago blues\". His style of playing has been described as \"raining down Delta beatitude\".",
   wikipedia: "https://en.wikipedia.org/wiki/Muddy_Waters",
 },
 {
@@ -744,7 +744,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0b511854-c21c-4af1-9c31-e3fc178ded61",
   spotify: "73sSFVlM6pkweLXE8qw1OS",
   inductedBy: "John Fogerty",
-  summary: "Eric Hilliard \"Ricky\" or “Rick” Nelson (May 8, 1940 – December 31, 1985) was an American musician and actor. From age eight, he starred alongside his family in the radio and television series The Adventures of Ozzie and Harriet. In 1957, he began a long and successful career as a popular recording artist."
+  summary: "Eric Hilliard \"Ricky\" or “Rick” Nelson (May 8, 1940 – December 31, 1985) was an American musician and actor. From age eight, he starred alongside his family in the radio and television series The Adventures of Ozzie and Harriet. In 1957, he began a long and successful career as a popular recording artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ricky_Nelson",
 },
 {
@@ -766,7 +766,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0bbbc496-c7b5-4b3f-bb6d-bd312827d6e5",
   spotify: "0JDkhL4rjiPNEp92jAgJnS",
   inductedBy: "Bruce Springsteen",
-  summary: "Roy Kelton Orbison (April 23, 1936 – December 6, 1988) was an American singer, songwriter and guitarist known for his distinctive and powerful voice, complex song structures, and dark, emotional ballads. Orbison's most successful periods were in the early 1960s and the late 1980s. Many of Orbison's songs conveyed vulnerability at a time when most male performers projected strength. He performed with minimal motion and in black clothes, matching his dyed black hair and dark sunglasses."
+  summary: "Roy Kelton Orbison (April 23, 1936 – December 6, 1988) was an American singer, songwriter and guitarist known for his distinctive and powerful voice, complex song structures, and dark, emotional ballads. Orbison's most successful periods were in the early 1960s and the late 1980s. Many of Orbison's songs conveyed vulnerability at a time when most male performers projected strength. He performed with minimal motion and in black clothes, matching his dyed black hair and dark sunglasses.",
   wikipedia: "https://en.wikipedia.org/wiki/Roy_Orbison",
 },
 {
@@ -788,7 +788,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c19ff12b-058f-44a8-b245-b0efb4752925",
   spotify: "0h9smro0z3HqUbD94jotU8",
   inductedBy: "Daryl Hall and John Oates",
-  summary: "William \"Smokey\" Robinson Jr. (born February 19, 1940) is an American R&B and soul singer, songwriter, and record producer. He was the founder and frontman of the pioneering Motown vocal group the Miracles, for which he was also chief songwriter and producer. He led the group from its 1955 origins, when they were called the Five Chimes, until 1972, when he retired from the group to focus on his role as Motown Records vice president."
+  summary: "William \"Smokey\" Robinson Jr. (born February 19, 1940) is an American R&B and soul singer, songwriter, and record producer. He was the founder and frontman of the pioneering Motown vocal group the Miracles, for which he was also chief songwriter and producer. He led the group from its 1955 origins, when they were called the Five Chimes, until 1972, when he retired from the group to focus on his role as Motown Records vice president.",
   wikipedia: "https://en.wikipedia.org/wiki/Smokey_Robinson",
 },
 {
@@ -810,7 +810,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f1a3fb4a-fff6-4556-a290-3704b109da90",
   spotify: "6nPKmEbQmR8jGZEm7ArOFX",
   inductedBy: "Seymour Stein",
-  summary: "Aaron Thibeaux \"T-Bone\" Walker (May 28, 1910 – March 16, 1975) was an American blues musician, composer, songwriter and bandleader, who was a pioneer and innovator of the jump blues, West Coast blues, and electric blues sounds. In 2018  Rolling Stone magazine ranked him number 67 on its list of \"The 100 Greatest Guitarists of All Time\"."
+  summary: "Aaron Thibeaux \"T-Bone\" Walker (May 28, 1910 – March 16, 1975) was an American blues musician, composer, songwriter and bandleader, who was a pioneer and innovator of the jump blues, West Coast blues, and electric blues sounds. In 2018  Rolling Stone magazine ranked him number 67 on its list of \"The 100 Greatest Guitarists of All Time\".",
   wikipedia: "https://en.wikipedia.org/wiki/T-Bone_Walker",
 },
 {
@@ -832,7 +832,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c174f353-4666-4dfb-af54-5cc70b8afd55",
   spotify: "3QZKZBEmr54lAVI5XvmjnM",
   inductedBy: "Lester Sill",
-  summary: "The Coasters are an American rhythm and blues/rock and roll vocal group who had a string of hits in the late 1950s. With hits including \"Searchin'\", \"Young Blood\", \"Charlie Brown\", \"Poison Ivy\", and \"Yakety Yak\", their most memorable songs were written by the songwriting and producing team of Leiber and Stoller. Although the Coasters originated outside of mainstream doo-wop, their records were so frequently imitated that they became an important part of the doo-wop legacy through the 1960s."
+  summary: "The Coasters are an American rhythm and blues/rock and roll vocal group who had a string of hits in the late 1950s. With hits including \"Searchin'\", \"Young Blood\", \"Charlie Brown\", \"Poison Ivy\", and \"Yakety Yak\", their most memorable songs were written by the songwriting and producing team of Leiber and Stoller. Although the Coasters originated outside of mainstream doo-wop, their records were so frequently imitated that they became an important part of the doo-wop legacy through the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Coasters",
 },
 {
@@ -854,7 +854,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "55bc7f0d-bc56-4a5e-8555-77557bb757cd",
   spotify: "4xRLKAf96K6YdGDWjY6ra8",
   inductedBy: "Ahmet Ertegun",
-  summary: "Berry Gordy III (born November 28, 1929), also known as Berry Gordy Jr., is an American retired record executive, record producer, songwriter, film producer, and television producer. He is best known as the founder of the Motown record label and its subsidiaries, which was the highest-earning African-American business for decades."
+  summary: "Berry Gordy III (born November 28, 1929), also known as Berry Gordy Jr., is an American retired record executive, record producer, songwriter, film producer, and television producer. He is best known as the founder of the Motown record label and its subsidiaries, which was the highest-earning African-American business for decades.",
   wikipedia: "https://en.wikipedia.org/wiki/Berry_Gordy",
 },
 {
@@ -876,7 +876,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "72c536dc-7137-4477-a521-567eeb840fa8",
   spotify: "74ASZWbe4lXaubB36ztrGX",
   inductedBy: "Bruce Springsteen",
-  summary: "Bob Dylan (legally Robert Dylan; born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter. Described as one of the greatest songwriters of all time, Dylan has been a major figure in popular culture over his 69-year career. With an estimated 125 million records sold worldwide, he is one of the best-selling musicians."
+  summary: "Bob Dylan (legally Robert Dylan; born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter. Described as one of the greatest songwriters of all time, Dylan has been a major figure in popular culture over his 69-year career. With an estimated 125 million records sold worldwide, he is one of the best-selling musicians.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Dylan",
 },
 {
@@ -898,7 +898,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f671ebd2-917d-466f-b7bc-07c60e4d8990",
   spotify: "2hkZGvBotqZ7uBBUnBwmLC",
   inductedBy: "Jeff Beck",
-  summary: "Lester William Polsfuss (June 9, 1915 – August 12, 2009), known as Les Paul, was an American jazz, country, and blues guitarist, songwriter, luthier, and inventor. He was one of the pioneers of the solid-body electric guitar, and his prototype, called the Log, served as inspiration for the Gibson Les Paul. Paul taught himself how to play guitar, and while he is mainly known for jazz and popular music, he had an early career in country music."
+  summary: "Lester William Polsfuss (June 9, 1915 – August 12, 2009), known as Les Paul, was an American jazz, country, and blues guitarist, songwriter, luthier, and inventor. He was one of the pioneers of the solid-body electric guitar, and his prototype, called the Log, served as inspiration for the Gibson Les Paul. Paul taught himself how to play guitar, and while he is mainly known for jazz and popular music, he had an early career in country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Les_Paul",
 },
 {
@@ -920,7 +920,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ebfc1398-8d96-47e3-82c3-f782abcdb13d",
   spotify: "3oDbviiivRWhXwIE8hxkVV",
   inductedBy: "Elton John",
-  summary: "The Beach Boys are an American rock band formed in Hawthorne, California, in 1961. The group's founding members consisted of brothers Brian, Dennis, and Carl Wilson, their cousin Mike Love, and their friend Al Jardine. One of the most popular and influential acts of the rock era, they are known for their musical ingenuity, vocal harmonies, and lyrics initially reflecting a southern California youth culture of surfing, cars, and romance dubbed the \"California sound\"."
+  summary: "The Beach Boys are an American rock band formed in Hawthorne, California, in 1961. The group's founding members consisted of brothers Brian, Dennis, and Carl Wilson, their cousin Mike Love, and their friend Al Jardine. One of the most popular and influential acts of the rock era, they are known for their musical ingenuity, vocal harmonies, and lyrics initially reflecting a southern California youth culture of surfing, cars, and romance dubbed the \"California sound\".",
   wikipedia: "https://en.wikipedia.org/wiki/The_Beach_Boys",
 },
 {
@@ -942,7 +942,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9e2d3f58-0653-4007-bcb7-1746fcdd9363",
   spotify: "1FqqOl9itIUpXr4jZPIVoT",
   inductedBy: "Billy Joel",
-  summary: "The Drifters are an American pop and R&B/soul vocal group. They were originally formed as a backing group for Clyde McPhatter, formerly the lead tenor of Billy Ward and his Dominoes in 1953. The second group of Drifters, formed in 1959 and led by Ben E. King, were originally an up-and-coming group named the Five Crowns. After 1965, members moved between both groups, and many of these formed other groups of Drifters as well."
+  summary: "The Drifters are an American pop and R&B/soul vocal group. They were originally formed as a backing group for Clyde McPhatter, formerly the lead tenor of Billy Ward and his Dominoes in 1953. The second group of Drifters, formed in 1959 and led by Ben E. King, were originally an up-and-coming group named the Five Crowns. After 1965, members moved between both groups, and many of these formed other groups of Drifters as well.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Drifters",
 },
 {
@@ -964,7 +964,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c1aa2ec9-53e7-4d90-8d36-bac75832e986",
   spotify: "57bUPid8xztkieZfS7OlEV",
   inductedBy: "Little Richard",
-  summary: "The Supremes were an American girl group formed in Detroit, Michigan, in 1959 as the Primettes. The premier act of Motown Records during the 1960s, the Supremes were the most commercially successful of Motown's acts and the most successful American vocal group, with twelve number 1 singles on the Billboard Hot 100. Most of these hits were written and produced by Motown's main songwriting and production team, Holland–Dozier–Holland."
+  summary: "The Supremes were an American girl group formed in Detroit, Michigan, in 1959 as the Primettes. The premier act of Motown Records during the 1960s, the Supremes were the most commercially successful of Motown's acts and the most successful American vocal group, with twelve number 1 singles on the Billboard Hot 100. Most of these hits were written and produced by Motown's main songwriting and production team, Holland–Dozier–Holland.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Supremes",
 },
 {
@@ -986,7 +986,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cbd827e1-4e38-427e-a436-642683433732",
   spotify: "4rAgFKtlTr66ic18YZZyF1",
   inductedBy: "Neil Young",
-  summary: "Woodrow Wilson Guthrie (; July 14, 1912 – October 3, 1967) was an American singer, songwriter,  and composer widely considered one of the most significant figures in American folk music. His work focused on themes of American socialism and anti-fascism and has inspired many generations politically and musically with songs such as \"This Land Is Your Land\" and \"Tear the Fascists Down\"."
+  summary: "Woodrow Wilson Guthrie (; July 14, 1912 – October 3, 1967) was an American singer, songwriter,  and composer widely considered one of the most significant figures in American folk music. His work focused on themes of American socialism and anti-fascism and has inspired many generations politically and musically with songs such as \"This Land Is Your Land\" and \"Tear the Fascists Down\".",
   wikipedia: "https://en.wikipedia.org/wiki/Woody_Guthrie",
 },
 {
@@ -1008,7 +1008,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ffa28768-ecda-42c6-ac49-6ce5c7d33043",
   spotify: "5ESobCkc6JI4tIMxQttqeg",
   inductedBy: "Anita Baker",
-  summary: "Bessie Smith (April 15, 1892 – September 26, 1937) was an African-American blues singer widely renowned during the Jazz Age. Nicknamed the \"Empress of the Blues\" and formerly Queen of the Blues, she was the most popular female blues singer of the 1930s. Inducted into the Rock and Roll Hall of Fame in 1989, she is often regarded as one of the greatest singers of her era and was a major influence on fellow blues singers, as well as jazz vocalists."
+  summary: "Bessie Smith (April 15, 1892 – September 26, 1937) was an African-American blues singer widely renowned during the Jazz Age. Nicknamed the \"Empress of the Blues\" and formerly Queen of the Blues, she was the most popular female blues singer of the 1930s. Inducted into the Rock and Roll Hall of Fame in 1989, she is often regarded as one of the greatest singers of her era and was a major influence on fellow blues singers, as well as jazz vocalists.",
   wikipedia: "https://en.wikipedia.org/wiki/Bessie_Smith",
 },
 {
@@ -1030,7 +1030,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "89efeadd-8080-4cf9-af33-2e68a173df02",
   spotify: "15FyiY3ChN0QRspHIQYq0W",
   inductedBy: "Lou Reed",
-  summary: "Dion Francis DiMucci (born July 18, 1939), better known mononymously as Dion, is an American singer and songwriter. His music incorporates elements of doo-wop, pop, rock, R&B, folk and blues. Initially the lead singer of the vocal group Dion and the Belmonts, Dion embarked on a solo career, and was one of the most prominent rock and roll performers of the pre-British Invasion era."
+  summary: "Dion Francis DiMucci (born July 18, 1939), better known mononymously as Dion, is an American singer and songwriter. His music incorporates elements of doo-wop, pop, rock, R&B, folk and blues. Initially the lead singer of the vocal group Dion and the Belmonts, Dion embarked on a solo career, and was one of the most prominent rock and roll performers of the pre-British Invasion era.",
   wikipedia: "https://en.wikipedia.org/wiki/Dion_DiMucci",
 },
 {
@@ -1052,7 +1052,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "82b1f5fd-cd31-41a9-b5d4-7e33f0eb9751",
   spotify: "60df5JBRRPcnSpsIMxxwQm",
   inductedBy: "Little Richard",
-  summary: "Otis Ray Redding Jr. (September 9, 1941 – December 10, 1967) was an American singer and songwriter. He is regarded as one of the greatest singers in the history of American popular music and a seminal artist in soul music and rhythm and blues. Nicknamed the \"King of Soul\", Redding's style of singing drew inspiration from the gospel music that preceded the genre. His vocal style influenced many other soul artists of the 1960s."
+  summary: "Otis Ray Redding Jr. (September 9, 1941 – December 10, 1967) was an American singer and songwriter. He is regarded as one of the greatest singers in the history of American popular music and a seminal artist in soul music and rhythm and blues. Nicknamed the \"King of Soul\", Redding's style of singing drew inspiration from the gospel music that preceded the genre. His vocal style influenced many other soul artists of the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Otis_Redding",
 },
 {
@@ -1074,7 +1074,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e7b587f7-e678-47c1-81dd-e7bb7855b0f9",
   spotify: "3jVMgT4X7YeuYE4aludcmE",
   inductedBy: "Tina Turner",
-  summary: "Harvey Phillip Spector (December 26, 1939 – January 16, 2021) was an American record producer and songwriter primarily known for his Wall of Sound production style in the 1960s, followed by his trials and imprisonment for murder after the 2000s. Considered the first music producer auteur, he is the most successful American producer of the 1960s and widely regarded as one of the most influential figures in pop music history."
+  summary: "Harvey Phillip Spector (December 26, 1939 – January 16, 2021) was an American record producer and songwriter primarily known for his Wall of Sound production style in the 1960s, followed by his trials and imprisonment for murder after the 2000s. Considered the first music producer auteur, he is the most successful American producer of the 1960s and widely regarded as one of the most influential figures in pop music history.",
   wikipedia: "https://en.wikipedia.org/wiki/Phil_Spector",
 },
 {
@@ -1096,7 +1096,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e",
   spotify: "7guDJrEfX3qb6FEbdPA5qi",
   inductedBy: "Paul Simon",
-  summary: "Stevland Hardaway Morris ( STEEV-lənd; né Judkins; born May 13, 1950), known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz."
+  summary: "Stevland Hardaway Morris ( STEEV-lənd; né Judkins; born May 13, 1950), known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz.",
   wikipedia: "https://en.wikipedia.org/wiki/Stevie_Wonder",
 },
 {
@@ -1118,7 +1118,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "75f47650-8a52-494a-8334-c5279bc6db09",
   spotify: "5bOsFzuJ6QZMr86ezC4oXY",
   inductedBy: "Bobby McFerrin",
-  summary: "The Ink Spots were an American vocal pop group who gained international fame in the 1930s and 1940s. Their unique musical style predated the rhythm and blues and rock and roll musical genres, and the subgenre doo-wop. The Ink Spots were widely accepted in both the white and black communities, largely due to the ballad style introduced to the group by lead singer Bill Kenny."
+  summary: "The Ink Spots were an American vocal pop group who gained international fame in the 1930s and 1940s. Their unique musical style predated the rhythm and blues and rock and roll musical genres, and the subgenre doo-wop. The Ink Spots were widely accepted in both the white and black communities, largely due to the ballad style introduced to the group by lead singer Bill Kenny.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ink_Spots",
 },
 {
@@ -1140,7 +1140,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b071f9fa-14b0-4217-8e97-eb41da73f598",
   spotify: "22bE4uQ6baNwSHPVcDxLCe",
   inductedBy: "Pete Townshend",
-  summary: "The Rolling Stones are an English rock band formed in London in 1962. Active for over six decades, they are one of the most popular, influential, and enduring bands of the rock era. In the early 1960s, the band pioneered the gritty, rhythmically driven sound that came to define hard rock."
+  summary: "The Rolling Stones are an English rock band formed in London in 1962. Active for over six decades, they are one of the most popular, influential, and enduring bands of the rock era. In the early 1960s, the band pioneered the gritty, rhythmically driven sound that came to define hard rock.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Rolling_Stones",
 },
 {
@@ -1162,7 +1162,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5aa8b4de-5e87-40c1-b230-e29e415578ec",
   spotify: "1bZKspL8h396R1WihOiPb5",
   inductedBy: "Al Green",
-  summary: "The Soul Stirrers were an American gospel music group, whose career spans over 90 years. The group was a pioneer in the development of the quartet style of gospel, and a major influence on soul, R&B, doo-wop, and Southern soul, some of the secular music that owed much to gospel."
+  summary: "The Soul Stirrers were an American gospel music group, whose career spans over 90 years. The group was a pioneer in the development of the quartet style of gospel, and a major influence on soul, R&B, doo-wop, and Southern soul, some of the secular music that owed much to gospel.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Soul_Stirrers",
 },
 {
@@ -1184,7 +1184,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d8df96ae-8fcf-4997-b3e6-e5d1aaf0f69e",
   spotify: "3RwQ26hR2tJtA8F9p2n7jG",
   inductedBy: "Daryl Hall and John Oates",
-  summary: "The Temptations are an American vocal group formed in Detroit, Michigan, in 1961 as The Elgins, known for their string of successful singles and albums with Motown from the 1960s to  the mid-1970s. The group's work with producer Norman Whitfield, beginning with the Top 10 hit single \"Cloud Nine\" in October 1968, pioneered psychedelic soul, and was significant in the evolution of R&B and soul music. The group members were known for their choreography, distinct harmonies, and dress style."
+  summary: "The Temptations are an American vocal group formed in Detroit, Michigan, in 1961 as The Elgins, known for their string of successful singles and albums with Motown from the 1960s to  the mid-1970s. The group's work with producer Norman Whitfield, beginning with the Top 10 hit single \"Cloud Nine\" in October 1968, pioneered psychedelic soul, and was significant in the evolution of R&B and soul music. The group members were known for their choreography, distinct harmonies, and dress style.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Temptations",
 },
 {
@@ -1206,7 +1206,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bf6c29f5-b69f-4842-9031-37f9645d365d",
   spotify: "319yZVtYM9MBGqmSQnMyY6",
   inductedBy: "Ben E. King",
-  summary: "Carole King Klein (born Carol Joan Klein; February 9, 1942) is an American singer-songwriter and musician renowned for her extensive contributions to popular music. She wrote or co-wrote 118 songs that charted on the Billboard Hot 100 during the latter half of the 20th century and 61 songs that reached the UK charts, establishing her as the most successful female songwriter on the UK singles charts from 1962 to 2005."
+  summary: "Carole King Klein (born Carol Joan Klein; February 9, 1942) is an American singer-songwriter and musician renowned for her extensive contributions to popular music. She wrote or co-wrote 118 songs that charted on the Billboard Hot 100 during the latter half of the 20th century and 61 songs that reached the UK charts, establishing her as the most successful female songwriter on the UK singles charts from 1962 to 2005.",
   wikipedia: "https://en.wikipedia.org/wiki/Carole_King",
 },
 {
@@ -1228,7 +1228,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "98607588-f641-4d2b-b10b-03152c8dbc13",
   spotify: "0WdDpEeDIDmtYh5sqRrdI6",
   inductedBy: "Vernon Reid",
-  summary: "Charles Henry Christian (July 29, 1916 – March 2, 1942) was an American swing and jazz guitarist. He was among the first electric guitarists and was a key figure in the development of bebop and cool jazz. He gained national exposure as a member of the Benny Goodman Sextet and Orchestra from August 1939 to June 1941. His single-string technique, combined with early adoption of the electric guitar, helped bring the guitar out of the rhythm section and into the forefront as a solo instrument."
+  summary: "Charles Henry Christian (July 29, 1916 – March 2, 1942) was an American swing and jazz guitarist. He was among the first electric guitarists and was a key figure in the development of bebop and cool jazz. He gained national exposure as a member of the Benny Goodman Sextet and Orchestra from August 1939 to June 1941. His single-string technique, combined with early adoption of the electric guitar, helped bring the guitar out of the rhythm section and into the forefront as a solo instrument.",
   wikipedia: "https://en.wikipedia.org/wiki/Charlie_Christian",
 },
 {
@@ -1250,7 +1250,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0d21b01f-21f2-419b-8d98-4158ba0c0aa4",
   spotify: "7fIvjotigTGWqjIz6EP1i4",
   inductedBy: "Stevie Wonder",
-  summary: "The Four Tops are an American vocal group formed in Detroit, Michigan, in 1953 as the Four Aims. They were one of the most commercially successful American pop music groups of the 1960s and helped propel Motown Records to international fame. The group's repertoire has incorporated elements of soul, R&B, disco, adult contemporary, doo-wop, jazz, and show tunes."
+  summary: "The Four Tops are an American vocal group formed in Detroit, Michigan, in 1953 as the Four Aims. They were one of the most commercially successful American pop music groups of the 1960s and helped propel Motown Records to international fame. The group's repertoire has incorporated elements of soul, R&B, disco, adult contemporary, doo-wop, jazz, and show tunes.",
   wikipedia: "https://en.wikipedia.org/wiki/Four_Tops",
 },
 {
@@ -1272,7 +1272,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d5709a02-30e0-4967-92ba-e584d8c21c72",
   spotify: "09KTuJGTA2nISzHxnmYzRv",
   inductedBy: "Ben E. King",
-  summary: "Gerald Goffin (February 11, 1939 – June 19, 2014) was an American lyricist. Collaborating initially with his first wife, Carole King, he co-wrote many international pop hits of the early and mid-1960s, including the US No. 1 hits \"Will You Love Me Tomorrow\", \"Take Good Care of My Baby\", \"The Loco-Motion\", and \"Go Away Little Girl\".  It was later said of Goffin that his gift was \"to find words that expressed what many young people were feeling but were unable to articulate.\""
+  summary: "Gerald Goffin (February 11, 1939 – June 19, 2014) was an American lyricist. Collaborating initially with his first wife, Carole King, he co-wrote many international pop hits of the early and mid-1960s, including the US No. 1 hits \"Will You Love Me Tomorrow\", \"Take Good Care of My Baby\", \"The Loco-Motion\", and \"Go Away Little Girl\".  It was later said of Goffin that his gift was \"to find words that expressed what many young people were feeling but were unable to articulate.\"",
   wikipedia: "https://en.wikipedia.org/wiki/Gerry_Goffin",
 },
 {
@@ -1294,7 +1294,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "dbcc2052-7085-48ba-9c00-850b61978ada",
   spotify: "3R0XvRGDJEL5cGXVLiAbDB",
   inductedBy: "Boz Scaggs",
-  summary: "Hank Ballard (born John Henry Kendricks; November 18, 1927 – March 2, 2003) was an American singer and songwriter, the lead vocalist of the Midnighters and one of the first rock and roll artists to emerge in the early 1950s. John Henry played an integral part in the development of the genre, releasing the hit singles \"Work with Me, Annie\" and answer songs \"Annie Had a Baby\" and \"Annie's Aunt Fannie\" with his Midnighters."
+  summary: "Hank Ballard (born John Henry Kendricks; November 18, 1927 – March 2, 2003) was an American singer and songwriter, the lead vocalist of the Midnighters and one of the first rock and roll artists to emerge in the early 1950s. John Henry played an integral part in the development of the genre, releasing the hit singles \"Work with Me, Annie\" and answer songs \"Annie Had a Baby\" and \"Annie's Aunt Fannie\" with his Midnighters.",
   wikipedia: "https://en.wikipedia.org/wiki/Hank_Ballard",
 },
 {
@@ -1316,7 +1316,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "09b8a2f8-f5b2-4e9f-a5a5-bc93b938d51b",
   spotify: null,
   inductedBy: "Diana Ross",
-  summary: "Holland–Dozier–Holland, often abbreviated as H-D-H, was a songwriting and production team consisting of Lamont Dozier and brothers Brian and Eddie Holland.  The trio wrote, arranged and produced many songs that helped define the Motown sound in the 1960s. During their tenure at Motown Records from 1962 to 1967, Dozier and Brian Holland were the composers and producers for each song, and Eddie Holland wrote the lyrics and arranged the vocals."
+  summary: "Holland–Dozier–Holland, often abbreviated as H-D-H, was a songwriting and production team consisting of Lamont Dozier and brothers Brian and Eddie Holland.  The trio wrote, arranged and produced many songs that helped define the Motown sound in the 1960s. During their tenure at Motown Records from 1962 to 1967, Dozier and Brian Holland were the composers and producers for each song, and Eddie Holland wrote the lyrics and arranged the vocals.",
   wikipedia: "https://en.wikipedia.org/wiki/Holland%E2%80%93Dozier%E2%80%93Holland",
 },
 {
@@ -1338,7 +1338,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "eea8a864-fcda-4602-9569-38ab446decd6",
   spotify: "19eLuQmk9aCobbVDHc6eek",
   inductedBy: "Rickie Lee Jones",
-  summary: "Louis Daniel Armstrong (August 4, 1901 – July 6, 1971), nicknamed \"Satchmo\", \"Satch\", and \"Pops\", was an American jazz and blues trumpeter and vocalist. Among the most influential figures in jazz, his career spanned five decades and several eras in the history of the genre. Armstrong received numerous accolades including the Grammy Award for Best Male Vocal Performance for Hello, Dolly! in 1965, as well as a posthumous win for the Grammy Lifetime Achievement Award in 1972."
+  summary: "Louis Daniel Armstrong (August 4, 1901 – July 6, 1971), nicknamed \"Satchmo\", \"Satch\", and \"Pops\", was an American jazz and blues trumpeter and vocalist. Among the most influential figures in jazz, his career spanned five decades and several eras in the history of the genre. Armstrong received numerous accolades including the Grammy Award for Best Male Vocal Performance for Hello, Dolly! in 1965, as well as a posthumous win for the Grammy Lifetime Achievement Award in 1972.",
   wikipedia: "https://en.wikipedia.org/wiki/Louis_Armstrong",
 },
 {
@@ -1360,7 +1360,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e1deae56-c8f0-4e73-8264-f4b02dfc051c",
   spotify: "1ygXiRxKSfb927vhBH1ruH",
   inductedBy: "Bonnie Raitt",
-  summary: "Gertrude \"Ma\" Rainey (née Pridgett; April 26, 1886 – December 22, 1939) was an American blues singer and influential early-blues recording artist. Dubbed the \"Mother of the Blues\", she bridged earlier vaudeville and the authentic expression of southern blues, influencing a generation of blues singers. Rainey was known for her powerful vocal abilities, energetic disposition, majestic phrasing, and a \"moaning\" style of singing."
+  summary: "Gertrude \"Ma\" Rainey (née Pridgett; April 26, 1886 – December 22, 1939) was an American blues singer and influential early-blues recording artist. Dubbed the \"Mother of the Blues\", she bridged earlier vaudeville and the authentic expression of southern blues, influencing a generation of blues singers. Rainey was known for her powerful vocal abilities, energetic disposition, majestic phrasing, and a \"moaning\" style of singing.",
   wikipedia: "https://en.wikipedia.org/wiki/Ma_Rainey",
 },
 {
@@ -1382,7 +1382,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5d02f264-e225-41ff-83f7-d9b1f0b1874a",
   spotify: "70cRZdQywnSFp9pnc2WTCE",
   inductedBy: "James Taylor",
-  summary: "Simon & Garfunkel were an American musical duo comprising the singer-songwriter Paul Simon and the singer Art Garfunkel. They were one of the best-selling musical acts of the 1960s. Their recordings include three U.S. number-one singles—\"The Sound of Silence\" and the two Record of the Year Grammy winners \"Mrs. Robinson\" and \"Bridge over Troubled Water\"—as well as \"Homeward Bound\", \"I Am a Rock\", \"Scarborough Fair/Canticle\", \"A Hazy Shade of Winter\", \"America\", \"The Boxer\" and \"Cecilia\"."
+  summary: "Simon & Garfunkel were an American musical duo comprising the singer-songwriter Paul Simon and the singer Art Garfunkel. They were one of the best-selling musical acts of the 1960s. Their recordings include three U.S. number-one singles—\"The Sound of Silence\" and the two Record of the Year Grammy winners \"Mrs. Robinson\" and \"Bridge over Troubled Water\"—as well as \"Homeward Bound\", \"I Am a Rock\", \"Scarborough Fair/Canticle\", \"A Hazy Shade of Winter\", \"America\", \"The Boxer\" and \"Cecilia\".",
   wikipedia: "https://en.wikipedia.org/wiki/Simon_%26_Garfunkel",
 },
 {
@@ -1404,7 +1404,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3f64d38c-1ad4-4fb0-941e-7f4b51d4c9e6",
   spotify: "6mcrZQmgzFGRWf7C0SObou",
   inductedBy: "Bob Crewe",
-  summary: "The Four Seasons are an American rock band formed in 1960 in Newark, New Jersey. Since 1970, they have also been known at times as Frankie Valli and the Four Seasons. They are one of the best-selling musical groups of all time, having sold an estimated 100 million records worldwide."
+  summary: "The Four Seasons are an American rock band formed in 1960 in Newark, New Jersey. Since 1970, they have also been known at times as Frankie Valli and the Four Seasons. They are one of the best-selling musical groups of all time, having sold an estimated 100 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Four_Seasons_%28band%29",
 },
 {
@@ -1426,7 +1426,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "17b53d9f-5c63-4a09-a593-dde4608e0db9",
   spotify: "1SQRv42e4PjEYfPhS0Tk9E",
   inductedBy: "Graham Nash",
-  summary: "The Kinks were an English rock band formed in London in 1962. The band's original line-up comprised brothers Ray Davies (lead vocals, rhythm guitar) and Dave Davies (lead guitar, vocals), Pete Quaife (bass), and Mick Avory (drums, percussion). Emerging during the height of British rhythm and blues and Merseybeat, their breakthrough third single, the Ray Davies-penned \"You Really Got Me\" (1964), became an international hit, topping the charts in the United Kingdom and reaching the Top 10 in the U…"
+  summary: "The Kinks were an English rock band formed in London in 1962. The band's original line-up comprised brothers Ray Davies (lead vocals, rhythm guitar) and Dave Davies (lead guitar, vocals), Pete Quaife (bass), and Mick Avory (drums, percussion). Emerging during the height of British rhythm and blues and Merseybeat, their breakthrough third single, the Ray Davies-penned \"You Really Got Me\" (1964), became an international hit, topping the charts in the United Kingdom and reaching the Top 10 in the U…",
   wikipedia: "https://en.wikipedia.org/wiki/The_Kinks",
 },
 {
@@ -1448,7 +1448,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3fb55c03-3ad9-4341-8d0b-7c4c49aefca0",
   spotify: "6KWcxMWVNVIYbdOQyJtsSy",
   inductedBy: "Phil Spector",
-  summary: "The Platters are an American rhythm and blues vocal group formed in 1952. They are one of the most successful vocal bands of the early rock and roll era. Their distinctive sound bridges the pre-rock Tin Pan Alley tradition and the new burgeoning genre."
+  summary: "The Platters are an American rhythm and blues vocal group formed in 1952. They are one of the most successful vocal bands of the early rock and roll era. Their distinctive sound bridges the pre-rock Tin Pan Alley tradition and the new burgeoning genre.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Platters",
 },
 {
@@ -1470,7 +1470,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9fdaa16b-a6c4-4831-b87c-bc9ca8ce7eaa",
   spotify: "67ea9eGLXYMsO2eYQRui3w",
   inductedBy: "U2",
-  summary: "The Who are an English rock band formed in London in 1964. Their classic lineup (1964–1978) consisted of lead vocalist Roger Daltrey, guitarist Pete Townshend, bassist John Entwistle, and drummer Keith Moon. Considered one of the most influential rock bands of the 20th century, their contributions to rock music include the development of the Marshall stack, large public address systems, the use of synthesisers, Entwistle's and Moon's influential playing styles, Townshend's feedback and power cho…"
+  summary: "The Who are an English rock band formed in London in 1964. Their classic lineup (1964–1978) consisted of lead vocalist Roger Daltrey, guitarist Pete Townshend, bassist John Entwistle, and drummer Keith Moon. Considered one of the most influential rock bands of the 20th century, their contributions to rock music include the development of the Marshall stack, large public address systems, the use of synthesisers, Entwistle's and Moon's influential playing styles, Townshend's feedback and power cho…",
   wikipedia: "https://en.wikipedia.org/wiki/The_Who",
 },
 {
@@ -1492,7 +1492,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9ad119e3-8a03-41a9-9ba8-fa754390b81d",
   spotify: "4J7xpEpjniTZGE73PxVfkw",
   inductedBy: "The Neville Brothers",
-  summary: "David Louis Bartholomew (December 24, 1918 – June 23, 2019) was an American musician, bandleader, composer, arranger, and record producer. He was prominent in the music of New Orleans throughout the second half of the 20th century. Originally a trumpeter, he was active in many musical genres, including rhythm and blues (R&B), big band, swing music, rock and roll, New Orleans jazz, and Dixieland."
+  summary: "David Louis Bartholomew (December 24, 1918 – June 23, 2019) was an American musician, bandleader, composer, arranger, and record producer. He was prominent in the music of New Orleans throughout the second half of the 20th century. Originally a trumpeter, he was active in many musical genres, including rhythm and blues (R&B), big band, swing music, rock and roll, New Orleans jazz, and Dixieland.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Bartholomew",
 },
 {
@@ -1514,7 +1514,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ca5b38c2-f39d-45a4-ad3d-daf4448846ef",
   spotify: "0Wxy5Qka8BN9crcFkiAxSR",
   inductedBy: "Robert Cray",
-  summary: "Chester Arthur Burnett (June 10, 1910 – January 10, 1976), better known by his stage name Howlin' Wolf, was an American blues singer, guitarist and harmonica player. He was at the forefront of transforming acoustic Delta blues into electric Chicago blues, and over a four-decade career, recorded blues, rhythm and blues, rock and roll, and psychedelic rock. He is regarded as one of the most influential blues musicians ever."
+  summary: "Chester Arthur Burnett (June 10, 1910 – January 10, 1976), better known by his stage name Howlin' Wolf, was an American blues singer, guitarist and harmonica player. He was at the forefront of transforming acoustic Delta blues into electric Chicago blues, and over a four-decade career, recorded blues, rhythm and blues, rock and roll, and psychedelic rock. He is regarded as one of the most influential blues musicians ever.",
   wikipedia: "https://en.wikipedia.org/wiki/Howlin%27_Wolf",
 },
 {
@@ -1536,7 +1536,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1c7b3786-b99a-40ab-81e4-f3056da19e13",
   spotify: "1ZikppG9dPedbIgMfnfx8k",
   inductedBy: "Phil Spector",
-  summary: "Ike & Tina Turner was an American musical duo composed of husband-and-wife Ike Turner and Tina Turner. From 1960 to 1976, they performed live as the Ike & Tina Turner Revue, supported by the Kings of Rhythm and backing vocalists, the Ikettes. They were regarded as \"one of the most potent live acts on the R&B circuit\" and \"leading exponents\" of soul music."
+  summary: "Ike & Tina Turner was an American musical duo composed of husband-and-wife Ike Turner and Tina Turner. From 1960 to 1976, they performed live as the Ike & Tina Turner Revue, supported by the Kings of Rhythm and backing vocalists, the Ikettes. They were regarded as \"one of the most potent live acts on the R&B circuit\" and \"leading exponents\" of soul music.",
   wikipedia: "https://en.wikipedia.org/wiki/Ike_%26_Tina_Turner",
 },
 {
@@ -1558,7 +1558,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "018d8a5e-76c7-450d-a0a1-a97f8c26466f",
   spotify: "41ZMMuFFLPTVPkUsSI5KlV",
   inductedBy: "ZZ Top",
-  summary: "Mathis James Reed (September 6, 1925 – August 29, 1976) was an American blues musician and songwriter. His particular style of electric blues was popular with a wide variety of audiences. Reed's songs such as  \"Honest I Do\" (1957), \"Baby What You Want Me to Do\" (1960), \"Big Boss Man\" (1961), and \"Bright Lights, Big City\" (1961) appeared on both Billboard magazine's R&B and Hot 100 singles charts."
+  summary: "Mathis James Reed (September 6, 1925 – August 29, 1976) was an American blues musician and songwriter. His particular style of electric blues was popular with a wide variety of audiences. Reed's songs such as  \"Honest I Do\" (1957), \"Baby What You Want Me to Do\" (1960), \"Big Boss Man\" (1961), and \"Bright Lights, Big City\" (1961) appeared on both Billboard magazine's R&B and Hot 100 singles charts.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Reed",
 },
 {
@@ -1580,7 +1580,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b0122194-c49a-46a1-ade7-84d1d76bd8e9",
   spotify: "1yNOfXGQNGjAynk77wv85x",
   inductedBy: "Bonnie Raitt",
-  summary: "John Lee Hooker (August 22, 1912 or 1917 – June 21, 2001) was an American blues singer, songwriter, and guitarist. The son of a sharecropper, he rose to prominence performing an electric guitar-style adaptation of Delta blues that he developed in Detroit. Hooker often incorporated other elements, including talking blues and early North Mississippi hill country blues. He developed his own driving-rhythm boogie style, distinct from the 1930s–1940s piano-derived boogie-woogie."
+  summary: "John Lee Hooker (August 22, 1912 or 1917 – June 21, 2001) was an American blues singer, songwriter, and guitarist. The son of a sharecropper, he rose to prominence performing an electric guitar-style adaptation of Delta blues that he developed in Detroit. Hooker often incorporated other elements, including talking blues and early North Mississippi hill country blues. He developed his own driving-rhythm boogie style, distinct from the 1930s–1940s piano-derived boogie-woogie.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Lee_Hooker",
 },
 {
@@ -1602,7 +1602,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "affa0adf-7be7-4944-b30d-a09baeb7dd28",
   spotify: "0V6zo2mJw9FdwWLClKC9yw",
   inductedBy: "Chaka Khan",
-  summary: "Delores LaVern Baker (born Delores Evans; November 11, 1929 – March 10, 1997) was an American rhythm and blues singer who had several hit records on the pop charts in the 1950s and early 1960s. Her most successful records were \"Tweedle Dee\" (1955), \"Jim Dandy\" (1956), and \"I Cried a Tear\" (1958)."
+  summary: "Delores LaVern Baker (born Delores Evans; November 11, 1929 – March 10, 1997) was an American rhythm and blues singer who had several hit records on the pop charts in the 1950s and early 1960s. Her most successful records were \"Tweedle Dee\" (1955), \"Jim Dandy\" (1956), and \"I Cried a Tear\" (1958).",
   wikipedia: "https://en.wikipedia.org/wiki/LaVern_Baker",
 },
 {
@@ -1624,7 +1624,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b677b2ba-41bc-4aaa-91b4-5665b27af445",
   spotify: null,
   inductedBy: null,
-  summary: "Nesuhi Ertegun (Turkish spelling: Nesuhi Ertegün; November 26, 1917 – July 15, 1989) was a Turkish-American record producer and executive of Atlantic Records and WEA International."
+  summary: "Nesuhi Ertegun (Turkish spelling: Nesuhi Ertegün; November 26, 1917 – July 15, 1989) was a Turkish-American record producer and executive of Atlantic Records and WEA International.",
   wikipedia: "https://en.wikipedia.org/wiki/Nesuhi_Ertegun",
 },
 {
@@ -1646,7 +1646,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5d31e3d6-afc7-4a42-8b0b-1109f842ec98",
   spotify: "5zmogLPDdmpKAwhrS7V0p3",
   inductedBy: "Hank Ballard",
-  summary: "Ralph Basso Jr. (May 1, 1911 – March 5, 1997), known as Ralph Bass, was an American rhythm-and-blues record producer and talent scout for several independent labels. He was a pioneer in bringing African American music into the American mainstream. During his career he worked in key roles for Black & White Records, Savoy Records, King Records, Federal Records, and Chess Records, recording many leading performers, including Etta James, Sam Cooke, James Brown, Earl Bostic, and groups such as the Pl…"
+  summary: "Ralph Basso Jr. (May 1, 1911 – March 5, 1997), known as Ralph Bass, was an American rhythm-and-blues record producer and talent scout for several independent labels. He was a pioneer in bringing African American music into the American mainstream. During his career he worked in key roles for Black & White Records, Savoy Records, King Records, Federal Records, and Chess Records, recording many leading performers, including Etta James, Sam Cooke, James Brown, Earl Bostic, and groups such as the Pl…",
   wikipedia: "https://en.wikipedia.org/wiki/Ralph_Bass",
 },
 {
@@ -1668,7 +1668,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2819834e-4e08-47b0-a2c4-b7672318e8f0",
   spotify: "1PCZpxHJz7WAMF8EEq8bfc",
   inductedBy: "Don Henley",
-  summary: "The Byrds ( BURDZ) were an American rock band formed in Los Angeles, California, in 1964. The band underwent multiple lineup changes; frontman Roger McGuinn (known as Jim McGuinn until mid-1967) was the sole consistent member. For a short time in the mid-1960s, the Byrds were among the most popular groups in the world, with critics considering them to be among the most influential rock acts of their era."
+  summary: "The Byrds ( BURDZ) were an American rock band formed in Los Angeles, California, in 1964. The band underwent multiple lineup changes; frontman Roger McGuinn (known as Jim McGuinn until mid-1967) was the sole consistent member. For a short time in the mid-1960s, the Byrds were among the most popular groups in the world, with critics considering them to be among the most influential rock acts of their era.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Byrds",
 },
 {
@@ -1690,7 +1690,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8af64037-6d26-4d24-afd8-7e085abb01b1",
   spotify: "1b1N51wmSK0ckxFAMPSSHO",
   inductedBy: "Tracy Chapman",
-  summary: "The Impressions were an American music group originally formed in 1958. Their repertoire includes gospel,  R&B, doo-wop, and soul."
+  summary: "The Impressions were an American music group originally formed in 1958. Their repertoire includes gospel,  R&B, doo-wop, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Impressions",
 },
 {
@@ -1712,7 +1712,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fc6214b3-6d82-4803-be74-01ece1723e42",
   spotify: "0N5PyKJzS3M1XNlaCL7bbE",
   inductedBy: "Bobby Brown",
-  summary: "Wilson Pickett (March 18, 1941 – January 19, 2006) was an American singer and songwriter."
+  summary: "Wilson Pickett (March 18, 1941 – January 19, 2006) was an American singer and songwriter.",
   wikipedia: "https://en.wikipedia.org/wiki/Wilson_Pickett",
 },
 {
@@ -1734,7 +1734,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6c7e61bd-ee82-4bef-b7fc-59461011afcf",
   spotify: "0PbF1RQd7ZYAngy63cXWt7",
   inductedBy: "Carlos Santana",
-  summary: "Bill Graham (born Wulf Wolodia Grajonca; January 8, 1931 – October 25, 1991) was a German-born American impresario and rock concert promoter."
+  summary: "Bill Graham (born Wulf Wolodia Grajonca; January 8, 1931 – October 25, 1991) was a German-born American impresario and rock concert promoter.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Graham_%28promoter%29",
 },
 {
@@ -1756,7 +1756,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "66ebc271-6a26-4fe7-848b-f217da119d92",
   spotify: "48nwxUvPJZkm8uPa7xMzmj",
   inductedBy: "B.B. King",
-  summary: "Robert Calvin Bland (born Robert Calvin Brooks; January 27, 1930 – June 23, 2013), known professionally as Bobby \"Blue\" Bland, was an American blues singer. Bland developed a sound that mixed gospel with the blues and R&B. He was described as \"among the great storytellers of blues and soul music..."
+  summary: "Robert Calvin Bland (born Robert Calvin Brooks; January 27, 1930 – June 23, 2013), known professionally as Bobby \"Blue\" Bland, was an American blues singer. Bland developed a sound that mixed gospel with the blues and R&B. He was described as \"among the great storytellers of blues and soul music...",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Bland",
 },
 {
@@ -1778,7 +1778,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "377015fb-c02f-4b05-960b-e0df6a7ea99e",
   spotify: "2vDV0T8sxx2ENnKXds75e5",
   inductedBy: "Jim Stewart",
-  summary: "Booker T. & the M.G.'s were an American instrumental, R&B, and jazz band formed in Memphis, Tennessee, in 1962. The band helped shape the sound of Southern soul and Memphis soul. The original members of the group were Booker T. Jones (organ, piano), Steve Cropper (guitar), Lewie Steinberg (bass), and Al Jackson Jr. (drums)."
+  summary: "Booker T. & the M.G.'s were an American instrumental, R&B, and jazz band formed in Memphis, Tennessee, in 1962. The band helped shape the sound of Southern soul and Memphis soul. The original members of the group were Booker T. Jones (organ, piano), Steve Cropper (guitar), Lewie Steinberg (bass), and Al Jackson Jr. (drums).",
   wikipedia: "https://en.wikipedia.org/wiki/Booker_T._%26_the_M.G.%27s",
 },
 {
@@ -1800,7 +1800,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5780ff53-6dfa-4835-80dc-71c7316208a5",
   spotify: "1kz64yPMg5Fz2HYvFhjAEd",
   inductedBy: "Phil Spector",
-  summary: "Jerome Solon Felder (June 27, 1925 – March 14, 1991), known professionally as Doc Pomus, was an American blues singer and songwriter. He is best known as the co-writer of many rock and roll hits. Pomus was inducted into the Rock and Roll Hall of Fame as a non-performer in 1992, the Songwriters Hall of Fame (1992), and the Blues Hall of Fame (2012)."
+  summary: "Jerome Solon Felder (June 27, 1925 – March 14, 1991), known professionally as Doc Pomus, was an American blues singer and songwriter. He is best known as the co-writer of many rock and roll hits. Pomus was inducted into the Rock and Roll Hall of Fame as a non-performer in 1992, the Songwriters Hall of Fame (1992), and the Blues Hall of Fame (2012).",
   wikipedia: "https://en.wikipedia.org/wiki/Doc_Pomus",
 },
 {
@@ -1822,7 +1822,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6fbd2cfb-5f9c-497c-8e06-3c6668367681",
   spotify: "0q9kpdDkEA3H17gcRMjgVS",
   inductedBy: "Robbie Robertson",
-  summary: "Elmore James (né Brooks; January 27, 1918 – May 24, 1963) was an American blues guitarist, singer, songwriter, and bandleader. Noted for his use of loud amplification and his stirring voice, James was inducted into the Rock and Roll Hall of Fame in 1992. His slide guitar technique earned him the nickname \"King of the Slide Guitar\"."
+  summary: "Elmore James (né Brooks; January 27, 1918 – May 24, 1963) was an American blues guitarist, singer, songwriter, and bandleader. Noted for his use of loud amplification and his stirring voice, James was inducted into the Rock and Roll Hall of Fame in 1992. His slide guitar technique earned him the nickname \"King of the Slide Guitar\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elmore_James",
 },
 {
@@ -1844,7 +1844,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d43d12a1-2dc9-4257-a2fd-0a3bb1081b86",
   spotify: "6kACVPfCOnqzgfEF5ryl0x",
   inductedBy: "Lyle Lovett",
-  summary: "John R. Cash (born J. R. Cash; February 26, 1932 – September 12, 2003) was an American singer-songwriter. Most of his music contains themes of sorrow, moral tribulation, and redemption, especially songs from the later stages of his career. He was known for his deep, calm, bass-baritone voice, the distinctive sound of his backing band, the Tennessee Three, that was characterized by its train-like chugging guitar rhythms, a rebelliousness coupled with an increasingly somber and humble demeanor, an…"
+  summary: "John R. Cash (born J. R. Cash; February 26, 1932 – September 12, 2003) was an American singer-songwriter. Most of his music contains themes of sorrow, moral tribulation, and redemption, especially songs from the later stages of his career. He was known for his deep, calm, bass-baritone voice, the distinctive sound of his backing band, the Tennessee Three, that was characterized by its train-like chugging guitar rhythms, a rebelliousness coupled with an increasingly somber and humble demeanor, an…",
   wikipedia: "https://en.wikipedia.org/wiki/Johnny_Cash",
 },
 {
@@ -1866,7 +1866,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: null,
   spotify: null,
   inductedBy: "Keith Richards",
-  summary: "Clarence Leonidas Fender (August 10, 1909 – March 21, 1991) was an American inventor and founder of the Fender Musical Instruments Corporation. Fender designed the company's iconic early instruments: the Fender Telecaster, the first mass-produced solid-body electric guitar; the Fender Stratocaster, among the most iconic electric guitars; and the Fender Precision Bass, which set the standard for electric basses."
+  summary: "Clarence Leonidas Fender (August 10, 1909 – March 21, 1991) was an American inventor and founder of the Fender Musical Instruments Corporation. Fender designed the company's iconic early instruments: the Fender Telecaster, the first mass-produced solid-body electric guitar; the Fender Stratocaster, among the most iconic electric guitars; and the Fender Precision Bass, which set the standard for electric basses.",
   wikipedia: "https://en.wikipedia.org/wiki/Leo_Fender",
 },
 {
@@ -1888,7 +1888,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c6177e77-151d-422d-bc87-57ae21d2780e",
   spotify: "2RyY5yFlJh6jIPfMDhHgyD",
   inductedBy: "Aaron Neville",
-  summary: "Henry Roeland Byrd (December 19, 1918 – January 30, 1980), better known as Professor Longhair or \"Fess\" for short, was an American singer and pianist who performed New Orleans blues. He was active in two distinct periods, first in the heyday of early rhythm and blues and later in the resurgence of interest in traditional jazz after the founding of the New Orleans Jazz and Heritage Festival in 1970."
+  summary: "Henry Roeland Byrd (December 19, 1918 – January 30, 1980), better known as Professor Longhair or \"Fess\" for short, was an American singer and pianist who performed New Orleans blues. He was active in two distinct periods, first in the heyday of early rhythm and blues and later in the resurgence of interest in traditional jazz after the founding of the New Orleans Jazz and Heritage Festival in 1970.",
   wikipedia: "https://en.wikipedia.org/wiki/Professor_Longhair",
 },
 {
@@ -1910,7 +1910,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f1d7f1fd-8883-47e9-ad2b-e9ec9ff61aac",
   spotify: "2BVYdY4PyfCF9z4NrkhEB2",
   inductedBy: "Billy Joel",
-  summary: "Sam & Dave were an American soul and R&B duo who performed together from 1961 until 1981. The tenor (higher) voice was Sam Moore (1935–2025) and the baritone/tenor (lower) voice was Dave Prater (1937–1988)."
+  summary: "Sam & Dave were an American soul and R&B duo who performed together from 1961 until 1981. The tenor (higher) voice was Sam Moore (1935–2025) and the baritone/tenor (lower) voice was Dave Prater (1937–1988).",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_%26_Dave",
 },
 {
@@ -1932,7 +1932,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4a76400d-283f-492e-9754-18ef41755f81",
   spotify: "53QzNeFpzAaXYnrDBbDrIp",
   inductedBy: "Little Richard",
-  summary: "The Isley Brothers ( EYEZ-lee) are an American soul group originally from Cincinnati, Ohio, that began in 1954 as a vocal trio consisting of the brothers O'Kelly Isley Jr., Rudolph Isley and Ronald Isley."
+  summary: "The Isley Brothers ( EYEZ-lee) are an American soul group originally from Cincinnati, Ohio, that began in 1954 as a vocal trio consisting of the brothers O'Kelly Isley Jr., Rudolph Isley and Ronald Isley.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Isley_Brothers",
 },
 {
@@ -1954,7 +1954,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "33b3c323-77c2-417c-a5b4-af7e6a111cc9",
   spotify: null,
   inductedBy: "Neil Young",
-  summary: null
+  summary: null,
   wikipedia: "https://en.wikipedia.org/wiki/The_Jimi_Hendrix_Experience",
 },
 {
@@ -1976,7 +1976,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "191de76f-a224-445d-b041-54df16d65bf7",
   spotify: "2lxX1ivRYp26soIavdG9bX",
   inductedBy: "The Edge",
-  summary: "The Yardbirds are an English blues rock band formed in London in 1963. The band started the careers of three of rock's most famous guitarists: Eric Clapton (1963–1965), Jeff Beck (1965–1966) and Jimmy Page (1966–1968), all of whom ranked in the top five of Rolling Stone magazine's 2011 list of 100 greatest guitarists."
+  summary: "The Yardbirds are an English blues rock band formed in London in 1963. The band started the careers of three of rock's most famous guitarists: Eric Clapton (1963–1965), Jeff Beck (1965–1966) and Jimmy Page (1966–1968), all of whom ranked in the top five of Rolling Stone magazine's 2011 list of 100 greatest guitarists.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Yardbirds",
 },
 {
@@ -1998,7 +1998,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "04cd0cfd-bfd1-4c36-bc38-95c35e2c045f",
   spotify: "74oJ4qxwOZvX6oSsu1DGnw",
   inductedBy: "ZZ Top",
-  summary: "Cream were a British rock supergroup formed in London in 1966. The group consisted of bassist Jack Bruce, guitarist Eric Clapton, and drummer Ginger Baker. Bruce was the primary songwriter and vocalist, although Clapton and Baker contributed to songs. Formed by members of previously successful bands, they are widely considered to be the first so-called supergroup in rock history. Cream were highly regarded for the instrumental proficiency of each of their members."
+  summary: "Cream were a British rock supergroup formed in London in 1966. The group consisted of bassist Jack Bruce, guitarist Eric Clapton, and drummer Ginger Baker. Bruce was the primary songwriter and vocalist, although Clapton and Baker contributed to songs. Formed by members of previously successful bands, they are widely considered to be the first so-called supergroup in rock history. Cream were highly regarded for the instrumental proficiency of each of their members.",
   wikipedia: "https://en.wikipedia.org/wiki/Cream_%28band%29",
 },
 {
@@ -2020,7 +2020,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "109958eb-a335-4c5e-907e-597ff4c6af46",
   spotify: "3IYUhFvPQItj6xySrBmZkd",
   inductedBy: "Bruce Springsteen",
-  summary: "Creedence Clearwater Revival, commonly abbreviated as CCR or simply Creedence, was an American rock band formed in El Cerrito, California, in 1959. The band consisted of lead vocalist, lead guitarist, and primary songwriter John Fogerty; his brother, rhythm guitarist Tom Fogerty; bassist Stu Cook; and drummer Doug Clifford. These members had played together since 1959, first as the Blue Velvets and later as the Golliwogs, before settling on Creedence Clearwater Revival in 1967."
+  summary: "Creedence Clearwater Revival, commonly abbreviated as CCR or simply Creedence, was an American rock band formed in El Cerrito, California, in 1959. The band consisted of lead vocalist, lead guitarist, and primary songwriter John Fogerty; his brother, rhythm guitarist Tom Fogerty; bassist Stu Cook; and drummer Doug Clifford. These members had played together since 1959, first as the Blue Velvets and later as the Golliwogs, before settling on Creedence Clearwater Revival in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Creedence_Clearwater_Revival",
 },
 {
@@ -2042,7 +2042,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bccefbfc-b151-4aa0-88f3-71c76c024e94",
   spotify: "55Y2mJYvwSzj6BjByTMFRU",
   inductedBy: "Dion DiMucci",
-  summary: "Richard Wagstaff Clark (November 30, 1929 – April 18, 2012) was an American television and radio personality and television producer who hosted American Bandstand from 1956 to 1989. He also hosted five incarnations of the Pyramid game show from 1973 to 1988 and Dick Clark's New Year's Rockin' Eve, which broadcast New Year's Eve celebrations in New York City's Times Square."
+  summary: "Richard Wagstaff Clark (November 30, 1929 – April 18, 2012) was an American television and radio personality and television producer who hosted American Bandstand from 1956 to 1989. He also hosted five incarnations of the Pyramid game show from 1973 to 1988 and Dick Clark's New Year's Rockin' Eve, which broadcast New Year's Eve celebrations in New York City's Times Square.",
   wikipedia: "https://en.wikipedia.org/wiki/Dick_Clark",
 },
 {
@@ -2064,7 +2064,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d385947d-c00d-4311-9cf1-a032a1d4040b",
   spotify: "32LHRiof0sa4taYew9i3Fa",
   inductedBy: "Natalie Cole",
-  summary: "Dinah Washington (; born Ruth Lee Jones; August 29, 1924 – December 14, 1963) was an American singer and pianist, one of the most popular Black female recording artists of the 1950s. Primarily a jazz vocalist, she performed and recorded in a wide variety of styles including blues, R&B, and traditional pop music, and gave herself the title of \"Queen of the Blues\". She was also known as \"Queen of the Jukeboxes\"."
+  summary: "Dinah Washington (; born Ruth Lee Jones; August 29, 1924 – December 14, 1963) was an American singer and pianist, one of the most popular Black female recording artists of the 1950s. Primarily a jazz vocalist, she performed and recorded in a wide variety of styles including blues, R&B, and traditional pop music, and gave herself the title of \"Queen of the Blues\". She was also known as \"Queen of the Jukeboxes\".",
   wikipedia: "https://en.wikipedia.org/wiki/Dinah_Washington",
 },
 {
@@ -2086,7 +2086,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e22d2f66-881e-41ca-9356-544697ee5f90",
   spotify: "0iOVhN3tnSvgDbcg25JoJb",
   inductedBy: "k.d. lang",
-  summary: "Jamesetta Hawkins (January 25, 1938 – January 20, 2012), known professionally as Etta James, was an American singer and songwriter. Starting her career in 1954, James frequently performed in Nashville's R&B clubs, collectively known in the 1940s, 1950s and 1960s as the Chitlin' Circuit."
+  summary: "Jamesetta Hawkins (January 25, 1938 – January 20, 2012), known professionally as Etta James, was an American singer and songwriter. Starting her career in 1954, James frequently performed in Nashville's R&B clubs, collectively known in the 1940s, 1950s and 1960s as the Chitlin' Circuit.",
   wikipedia: "https://en.wikipedia.org/wiki/Etta_James",
 },
 {
@@ -2108,7 +2108,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6d3a1cdc-f5d6-4b51-a24e-df69a1bd5a63",
   spotify: "63BdaDckv7KmATeVPhl92s",
   inductedBy: "Billy Crystal",
-  summary: "Milton Gabler (May 20, 1911 – July 20, 2001) was an American record producer, responsible for many innovations in the recording industry of the 20th century. These included being the first person to deal in record reissues, the first to sell records by mail order, and the first to credit all the musicians on the recordings."
+  summary: "Milton Gabler (May 20, 1911 – July 20, 2001) was an American record producer, responsible for many innovations in the recording industry of the 20th century. These included being the first person to deal in record reissues, the first to sell records by mail order, and the first to credit all the musicians on the recordings.",
   wikipedia: "https://en.wikipedia.org/wiki/Milt_Gabler",
 },
 {
@@ -2130,7 +2130,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "948137e5-783e-4386-bd7c-a56c2666d1e2",
   spotify: "4EYVgfZJ8wKXWmIvCx3gOY",
   inductedBy: "Bonnie Raitt",
-  summary: "Ruth Alston Brown (née Weston; January 12, 1928 – November 17, 2006) was an American singer-songwriter and actress, sometimes referred to as the \"Queen of R&B\". She was noted for bringing a pop music style to R&B music in a series of hit songs for Atlantic Records in the 1950s, such as \"So Long\", \"Teardrops from My Eyes\" and \"(Mama) He Treats Your Daughter Mean\"."
+  summary: "Ruth Alston Brown (née Weston; January 12, 1928 – November 17, 2006) was an American singer-songwriter and actress, sometimes referred to as the \"Queen of R&B\". She was noted for bringing a pop music style to R&B music in a series of hit songs for Atlantic Records in the 1950s, such as \"So Long\", \"Teardrops from My Eyes\" and \"(Mama) He Treats Your Daughter Mean\".",
   wikipedia: "https://en.wikipedia.org/wiki/Ruth_Brown",
 },
 {
@@ -2152,7 +2152,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b7ec4c54-1f93-4bf2-957f-7b9921ab84ea",
   spotify: "5m8H6zSadhu1j9Yi04VLqD",
   inductedBy: "George Clinton",
-  summary: "Sly and the Family Stone was an American band formed in San Francisco, California, in 1966 and active until 1983. Their work, which blended elements of funk, soul, psychedelic rock, gospel, and R&B, became a pivotal influence on subsequent American popular music."
+  summary: "Sly and the Family Stone was an American band formed in San Francisco, California, in 1966 and active until 1983. Their work, which blended elements of funk, soul, psychedelic rock, gospel, and R&B, became a pivotal influence on subsequent American popular music.",
   wikipedia: "https://en.wikipedia.org/wiki/Sly_and_the_Family_Stone",
 },
 {
@@ -2174,7 +2174,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9efff43b-3b29-4082-824e-bc82f646f93d",
   spotify: "22WZ7M8sxp5THdruNY3gXt",
   inductedBy: "Eddie Vedder",
-  summary: "The Doors were an American rock band formed in Los Angeles in 1965, comprising vocalist Jim Morrison, keyboardist Ray Manzarek, guitarist Robby Krieger, and drummer John Densmore. They were among the most influential and controversial rock acts of the 1960s, primarily due to Morrison's lyrics and voice, along with his erratic stage persona and legal issues. The group is widely regarded as representative of the era's counterculture."
+  summary: "The Doors were an American rock band formed in Los Angeles in 1965, comprising vocalist Jim Morrison, keyboardist Ray Manzarek, guitarist Robby Krieger, and drummer John Densmore. They were among the most influential and controversial rock acts of the 1960s, primarily due to Morrison's lyrics and voice, along with his erratic stage persona and legal issues. The group is widely regarded as representative of the era's counterculture.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Doors",
 },
 {
@@ -2196,7 +2196,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b3b5ceef-0d3e-4191-a621-5e97d6ed3d97",
   spotify: "6EU3ei9Aim1yaX6hTJrjXE",
   inductedBy: "Boyz II Men",
-  summary: "The Teenagers were an American doo-wop music group, most noted for being one of rock music's earliest successes, presented to international audiences by DJ Alan Freed. The group, which made its most popular recordings with young 13-year-old Frankie Lymon as lead singer, is also noted for being rock's first all-teenaged act. They were inducted into the Rock and Roll Hall of Fame in 1993."
+  summary: "The Teenagers were an American doo-wop music group, most noted for being one of rock music's earliest successes, presented to international audiences by DJ Alan Freed. The group, which made its most popular recordings with young 13-year-old Frankie Lymon as lead singer, is also noted for being rock's first all-teenaged act. They were inducted into the Rock and Roll Hall of Fame in 1993.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Teenagers",
 },
 {
@@ -2218,7 +2218,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a41ac10f-0a56-4672-9161-b83f9b223559",
   spotify: "44NX2ffIYHr6D4n7RaZF7A",
   inductedBy: "Robbie Robertson",
-  summary: "Sir George Ivan \"Van\" Morrison (born 31 August 1945) is a Northern Irish musician, singer, and songwriter whose recording career started in the 1960s. Morrison's albums have performed well in the UK and Ireland, with more than 40 reaching the UK Top 40, as well as internationally, including in the United States, Germany, and the Netherlands."
+  summary: "Sir George Ivan \"Van\" Morrison (born 31 August 1945) is a Northern Irish musician, singer, and songwriter whose recording career started in the 1960s. Morrison's albums have performed well in the UK and Ireland, with more than 40 reaching the UK Top 40, as well as internationally, including in the United States, Germany, and the Netherlands.",
   wikipedia: "https://en.wikipedia.org/wiki/Van_Morrison",
 },
 {
@@ -2240,7 +2240,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ed2ac1e9-d51d-4eff-a2c2-85e81abd6360",
   spotify: "2QsynagSdAqZj3U9HgDzjD",
   inductedBy: "Bono",
-  summary: "Robert Nesta Marley  (6 February 1945 – 11 May 1981) was a Jamaican singer, songwriter, and guitarist. Considered one of the pioneers of reggae, he fused elements of reggae, ska, and rocksteady, and was renowned for his distinctive vocal and songwriting style. Marley increased the visibility of Jamaican music worldwide and became a global figure in popular culture. He became known as a Rastafarian icon, and he infused his music with a sense of spirituality."
+  summary: "Robert Nesta Marley  (6 February 1945 – 11 May 1981) was a Jamaican singer, songwriter, and guitarist. Considered one of the pioneers of reggae, he fused elements of reggae, ska, and rocksteady, and was renowned for his distinctive vocal and songwriting style. Marley increased the visibility of Jamaican music worldwide and became a global figure in popular culture. He became known as a Rastafarian icon, and he infused his music with a sense of spirituality.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Marley",
 },
 {
@@ -2262,7 +2262,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "efc0ee36-ad69-45af-8602-991b254b7529",
   spotify: "1I5Cu7bqjkRg85idwYsD91",
   inductedBy: "Mick Jones",
-  summary: "Duane Eddy (April 26, 1938 – April 30, 2024) was an American guitarist. In the late 1950s and early 1960s, he had a string of hit records produced by Lee Hazlewood which were noted for their characteristically \"twangy\" guitar sound, including \"Rebel-'Rouser\", \"Peter Gunn\", and \"Because They're Young\".  He had sold 12 million records by 1963."
+  summary: "Duane Eddy (April 26, 1938 – April 30, 2024) was an American guitarist. In the late 1950s and early 1960s, he had a string of hit records produced by Lee Hazlewood which were noted for their characteristically \"twangy\" guitar sound, including \"Rebel-'Rouser\", \"Peter Gunn\", and \"Because They're Young\".  He had sold 12 million records by 1963.",
   wikipedia: "https://en.wikipedia.org/wiki/Duane_Eddy",
 },
 {
@@ -2284,7 +2284,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b83bc61f-8451-4a5d-8b8e-7e9ed295e822",
   spotify: "3PhoLpVuITZKcymswpck5b",
   inductedBy: "Axl Rose",
-  summary: "Sir Elton Hercules John (born Reginald Kenneth Dwight; 25 March 1947) is a British singer, songwriter and pianist. An influential figure in popular culture, he is known for his showmanship, as well as his songwriting partnership with lyricist Bernie Taupin. With over 300 million records sold worldwide, he is one of the best-selling music artists of all time."
+  summary: "Sir Elton Hercules John (born Reginald Kenneth Dwight; 25 March 1947) is a British singer, songwriter and pianist. An influential figure in popular culture, he is known for his showmanship, as well as his songwriting partnership with lyricist Bernie Taupin. With over 300 million records sold worldwide, he is one of the best-selling music artists of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Elton_John",
 },
 {
@@ -2306,7 +2306,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6faa7ca7-0d99-4a5e-bfa6-1fd5037520c6",
   spotify: "4TMHGUX5WI7OOm53PqSDAT",
   inductedBy: "Bruce Hornsby",
-  summary: "The Grateful Dead was an American rock band formed in Palo Alto, California, in 1965. Known for their eclectic style that fused elements of rock, blues, jazz, folk, country, bluegrass, rock and roll, gospel, reggae, and world music with psychedelia, the band is famous for improvisation during their live performances, and for their devoted fan base, known as \"Deadheads\"."
+  summary: "The Grateful Dead was an American rock band formed in Palo Alto, California, in 1965. Known for their eclectic style that fused elements of rock, blues, jazz, folk, country, bluegrass, rock and roll, gospel, reggae, and world music with psychedelia, the band is famous for improvisation during their live performances, and for their devoted fan base, known as \"Deadheads\".",
   wikipedia: "https://en.wikipedia.org/wiki/Grateful_Dead",
 },
 {
@@ -2328,7 +2328,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4d5447d7-c61c-4120-ba1b-d7f471d385b9",
   spotify: "4x1nvY2FN8jxqAFA0DA02H",
   inductedBy: "Paul McCartney",
-  summary: "John Winston Ono Lennon (born John Winston Lennon; 9 October 1940 – 8 December 1980) was an English musician, songwriter and activist. He gained global fame as the founder, co-lead vocalist and rhythm guitarist of the Beatles. Lennon's songwriting partnership with Paul McCartney remains the most successful in history."
+  summary: "John Winston Ono Lennon (born John Winston Lennon; 9 October 1940 – 8 December 1980) was an English musician, songwriter and activist. He gained global fame as the founder, co-lead vocalist and rhythm guitarist of the Beatles. Lennon's songwriting partnership with Paul McCartney remains the most successful in history.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Lennon",
 },
 {
@@ -2350,7 +2350,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8ca2e10a-7a93-4065-aa77-8f277bfb1c84",
   spotify: "5PGt6fQNjLKhYYeGLWKWcM",
   inductedBy: "Etta James",
-  summary: "Johnny Otis (December 28, 1921 – January 17, 2012), born Ioannis Alexandres Veliotes, was an American singer, musician, composer, bandleader, record producer, talent scout, and preacher. He was a seminal influence on American R&B and rock and roll. He discovered numerous artists early in their careers who went on to become highly successful in their own right, including Little Esther Phillips, Etta James, Alan O'Day, Big Mama Thornton, Johnny Ace, Jackie Wilson, Little Willie John, Hank Ballard,…"
+  summary: "Johnny Otis (December 28, 1921 – January 17, 2012), born Ioannis Alexandres Veliotes, was an American singer, musician, composer, bandleader, record producer, talent scout, and preacher. He was a seminal influence on American R&B and rock and roll. He discovered numerous artists early in their careers who went on to become highly successful in their own right, including Little Esther Phillips, Etta James, Alan O'Day, Big Mama Thornton, Johnny Ace, Jackie Wilson, Little Willie John, Hank Ballard,…",
   wikipedia: "https://en.wikipedia.org/wiki/Johnny_Otis",
 },
 {
@@ -2372,7 +2372,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ea3d1341-bb3c-4784-bbf6-f71ebfd17e46",
   spotify: "4f89vSCi2dhBZH40L1Suv1",
   inductedBy: null,
-  summary: "Philip Chapman Lesh (March 15, 1940 – October 25, 2024) was an American musician and a founding member of the Grateful Dead, with whom he developed a unique style of  improvised six-string bass guitar. He was their bassist throughout their 30-year career."
+  summary: "Philip Chapman Lesh (March 15, 1940 – October 25, 2024) was an American musician and a founding member of the Grateful Dead, with whom he developed a unique style of  improvised six-string bass guitar. He was their bassist throughout their 30-year career.",
   wikipedia: "https://en.wikipedia.org/wiki/Phil_Lesh",
 },
 {
@@ -2394,7 +2394,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a35237a0-4f47-40a6-b6f3-1e786db23402",
   spotify: "2y8Jo9CKhJvtfeKOsYzRdT",
   inductedBy: "Jeff Beck",
-  summary: "Sir Roderick David Stewart (born 10 January 1945) is a British singer and songwriter. Known for his distinctive raspy singing voice, Stewart is among the best-selling music artists of all time, having sold more than 120 million records worldwide. His music career began in 1962 when he took up busking with a harmonica. He was a member of various bands before joining the the Jeff Beck Group in 1967."
+  summary: "Sir Roderick David Stewart (born 10 January 1945) is a British singer and songwriter. Known for his distinctive raspy singing voice, Stewart is among the best-selling music artists of all time, having sold more than 120 million records worldwide. His music career began in 1962 when he took up busking with a harmonica. He was a member of various bands before joining the the Jeff Beck Group in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Rod_Stewart",
 },
 {
@@ -2416,7 +2416,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "763ca800-924d-4193-93d2-0d8f0498ca1d",
   spotify: "3ICflSq6ZgYAIrm2CTkfVP",
   inductedBy: "Dave Pirner",
-  summary: "The Animals, known intermittently as Eric Burdon and the Animals and also as Animals and Friends (featuring original drummer John Steel), are an English rock band formed in Newcastle upon Tyne in 1962."
+  summary: "The Animals, known intermittently as Eric Burdon and the Animals and also as Animals and Friends (featuring original drummer John Steel), are an English rock band formed in Newcastle upon Tyne in 1962.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Animals",
 },
 {
@@ -2438,7 +2438,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8c90ad8c-9150-4c51-a1eb-342232e99d06",
   spotify: "4vpDg7Y7fU982Ds30zawDA",
   inductedBy: "Eric Clapton",
-  summary: "The Band (sometimes stylized as the Band or the band) were a Canadian-American rock band formed in Toronto, Ontario. It consisted of Rick Danko (bass, guitar, vocals, fiddle), Garth Hudson (organ, keyboards, accordion, saxophone), Richard Manuel (piano, drums, vocals), and Robbie Robertson (guitar, piano, percussion), all Canadian, and Levon Helm (drums, vocals, mandolin, guitar, bass), an American."
+  summary: "The Band (sometimes stylized as the Band or the band) were a Canadian-American rock band formed in Toronto, Ontario. It consisted of Rick Danko (bass, guitar, vocals, fiddle), Garth Hudson (organ, keyboards, accordion, saxophone), Richard Manuel (piano, drums, vocals), and Robbie Robertson (guitar, piano, percussion), all Canadian, and Levon Helm (drums, vocals, mandolin, guitar, bass), an American.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Band",
 },
 {
@@ -2460,7 +2460,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ff4c8d42-4871-4778-885b-d41b01245133",
   spotify: "5v8WPpMk60cqZbuZLdXjKY",
   inductedBy: "Chuck Berry",
-  summary: "William James Dixon (July 1, 1915 – January 29, 1992) was an American blues musician, vocalist, songwriter, arranger and record producer. He was proficient in playing both the upright bass and the guitar, and sang with a distinctive voice, but he is perhaps best known as one of the most prolific songwriters of his time. Next to Muddy Waters, Dixon is recognized as the most influential person in shaping the post–World War II sound of the Chicago blues."
+  summary: "William James Dixon (July 1, 1915 – January 29, 1992) was an American blues musician, vocalist, songwriter, arranger and record producer. He was proficient in playing both the upright bass and the guitar, and sang with a distinctive voice, but he is perhaps best known as one of the most prolific songwriters of his time. Next to Muddy Waters, Dixon is recognized as the most influential person in shaping the post–World War II sound of the Chicago blues.",
   wikipedia: "https://en.wikipedia.org/wiki/Willie_Dixon",
 },
 {
@@ -2482,7 +2482,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fb7272ba-f130-4f0a-934d-6eeea4c18c9a",
   spotify: "3dkbV4qihUeMsqN4vBGg93",
   inductedBy: "Natalie Cole",
-  summary: "Albert Leornes Greene (born April 13, 1946), known professionally as Al Green, is an American singer, songwriter, pastor and record producer. He is best known for recording a series of soul hit singles in the early 1970s, including \"Tired of Being Alone\" (1971), \"I'm Still in Love with You\" (1972), \"Love and Happiness\" (1973), \"Take Me to the River\" (1974), and his signature song, \"Let's Stay Together\" (1972). Green became an ordained pastor and recorded gospel music during the 1980s."
+  summary: "Albert Leornes Greene (born April 13, 1946), known professionally as Al Green, is an American singer, songwriter, pastor and record producer. He is best known for recording a series of soul hit singles in the early 1970s, including \"Tired of Being Alone\" (1971), \"I'm Still in Love with You\" (1972), \"Love and Happiness\" (1973), \"Take Me to the River\" (1974), and his signature song, \"Let's Stay Together\" (1972). Green became an ordained pastor and recorded gospel music during the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Al_Green",
 },
 {
@@ -2504,7 +2504,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e20747e7-55a4-452e-8766-7b985585082d",
   spotify: "6ra4GIOgCZQZMOaUECftGN",
   inductedBy: "Lou Reed",
-  summary: "Frank Vincent Zappa (December 21, 1940 – December 4, 1993) was an American composer, songwriter, guitarist, conductor, actor, satirist, filmmaker, and activist. In a career spanning more than 30 years, Zappa composed rock, pop, jazz, jazz fusion, orchestral and musique concrète works; he additionally produced nearly all the 60-plus albums he released with his band the Mothers of Invention and as a solo artist."
+  summary: "Frank Vincent Zappa (December 21, 1940 – December 4, 1993) was an American composer, songwriter, guitarist, conductor, actor, satirist, filmmaker, and activist. In a career spanning more than 30 years, Zappa composed rock, pop, jazz, jazz fusion, orchestral and musique concrète works; he additionally produced nearly all the 60-plus albums he released with his band the Mothers of Invention and as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Frank_Zappa",
 },
 {
@@ -2526,7 +2526,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "678d88b2-87b0-403b-b63d-5da7465aecc3",
   spotify: "36QJpDe2go2KgaRleHCDTp",
   inductedBy: "Steven Tyler and Joe Perry",
-  summary: "Led Zeppelin were  an English rock band formed in London in 1968. The band comprised vocalist Robert Plant, guitarist Jimmy Page, bass-guitarist and keyboardist John Paul Jones and drummer John Bonham. Their combination of a heavy electric-guitar sound with elements of blues and folk music popularised album-oriented rock and stadium rock and established them as the progenitor of hard rock and heavy metal."
+  summary: "Led Zeppelin were  an English rock band formed in London in 1968. The band comprised vocalist Robert Plant, guitarist Jimmy Page, bass-guitarist and keyboardist John Paul Jones and drummer John Bonham. Their combination of a heavy electric-guitar sound with elements of blues and folk music popularised album-oriented rock and stadium rock and established them as the progenitor of hard rock and heavy metal.",
   wikipedia: "https://en.wikipedia.org/wiki/Led_Zeppelin",
 },
 {
@@ -2548,7 +2548,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9d1bc10a-24fe-4b41-8338-ea92d8101a09",
   spotify: "1Pe5hlKMCTULjosqZ6KanP",
   inductedBy: "Fred Schneider and Kate Pierson",
-  summary: "Martha and the Vandellas (known from 1967 to 1973 as Martha Reeves & the Vandellas) were an American girl group formed in Detroit, Michigan, in 1957. The group achieved fame in the 1960s as a major act for Motown Records. Formed by friends Annette Beard, Rosalind Ashford and Gloria Williams, Martha Reeves eventually joined the group, and she became its lead vocalist after Williams's departure in 1962. The group signed with Gordy Records, a subsidiary of Motown."
+  summary: "Martha and the Vandellas (known from 1967 to 1973 as Martha Reeves & the Vandellas) were an American girl group formed in Detroit, Michigan, in 1957. The group achieved fame in the 1960s as a major act for Motown Records. Formed by friends Annette Beard, Rosalind Ashford and Gloria Williams, Martha Reeves eventually joined the group, and she became its lead vocalist after Williams's departure in 1962. The group signed with Gordy Records, a subsidiary of Motown.",
   wikipedia: "https://en.wikipedia.org/wiki/Martha_and_the_Vandellas",
 },
 {
@@ -2570,7 +2570,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "75167b8b-44e4-407b-9d35-effe87b223cf",
   spotify: "6v8FB84lnmJs434UJf2Mrm",
   inductedBy: "Eddie Vedder",
-  summary: "Neil Percival Young (born November 12, 1945) is a Canadian and American singer-songwriter. Son of journalist and author Scott Young, Young embarked on a music career in Winnipeg in the 1960s. He then moved to Los Angeles, forming the folk rock group Buffalo Springfield."
+  summary: "Neil Percival Young (born November 12, 1945) is a Canadian and American singer-songwriter. Son of journalist and author Scott Young, Young embarked on a music career in Winnipeg in the 1960s. He then moved to Los Angeles, forming the folk rock group Buffalo Springfield.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Young",
 },
 {
@@ -2592,7 +2592,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "09e0d083-d560-437e-a673-32d7bb0b3a17",
   spotify: null,
   inductedBy: "Ahmet Ertegun",
-  summary: "Paul Ackerman (February 18, 1908 – December 31, 1977) was an influential music journalist. He is best known for his work at Billboard as music editor. Ackerman was inducted into the Rock and Roll Hall of Fame."
+  summary: "Paul Ackerman (February 18, 1908 – December 31, 1977) was an influential music journalist. He is best known for his work at Billboard as music editor. Ackerman was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_Ackerman",
 },
 {
@@ -2614,7 +2614,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "72359492-22be-4ed9-aaa0-efa434fb2b01",
   spotify: "4wQ3PyMz3WwJGI5uEqHUVR",
   inductedBy: "Willie Nelson",
-  summary: "The Allman Brothers Band were an American rock band formed in Jacksonville, Florida, in 1969. Brothers Duane (slide guitar, lead guitar) and Gregg Allman (vocals, keyboards) founded it with Dickey Betts (lead guitar, vocals), Berry Oakley (bass), Butch Trucks (drums), and Jai Johanny \"Jaimoe\" Johanson (drums). Subsequently based in Macon, Georgia, they incorporated elements of blues, jazz and country music and their live shows featured jam band-style improvisation and instrumentals."
+  summary: "The Allman Brothers Band were an American rock band formed in Jacksonville, Florida, in 1969. Brothers Duane (slide guitar, lead guitar) and Gregg Allman (vocals, keyboards) founded it with Dickey Betts (lead guitar, vocals), Berry Oakley (bass), Butch Trucks (drums), and Jai Johanny \"Jaimoe\" Johanson (drums). Subsequently based in Macon, Georgia, they incorporated elements of blues, jazz and country music and their live shows featured jam band-style improvisation and instrumentals.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Allman_Brothers_Band",
 },
 {
@@ -2636,7 +2636,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "08b6fb14-1e9a-4ea8-bbd4-3b3f969f64f3",
   spotify: "4Am5deuAhDuKUJgXmoCQzj",
   inductedBy: "Deborah Chessler and Seymour Stein",
-  summary: "The Orioles were an American R&B group in the late 1940s and early 1950s. One of the first vocal groups in R&B, they were early pioneers of the doo-wop sound."
+  summary: "The Orioles were an American R&B group in the late 1940s and early 1950s. One of the first vocal groups in R&B, they were early pioneers of the doo-wop sound.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Orioles",
 },
 {
@@ -2658,7 +2658,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5441c29d-3602-4898-b1a1-b77fa23b8e50",
   spotify: "0oSGxfWSnnOXhD2fKuz2Gy",
   inductedBy: "Madonna and David Byrne",
-  summary: "David Robert Jones (8 January 1947 – 10 January 2016), known as David Bowie, was an English singer, songwriter and actor. Regarded as among the most influential musicians of the 20th century, he was known for his constant reinvention and visual presentation, and is often referred to as the \"chameleon of rock\". His music, stagecraft and fashion have had a significant impact on popular culture."
+  summary: "David Robert Jones (8 January 1947 – 10 January 2016), known as David Bowie, was an English singer, songwriter and actor. Regarded as among the most influential musicians of the 20th century, he was known for his constant reinvention and visual presentation, and is often referred to as the \"chameleon of rock\". His music, stagecraft and fashion have had a significant impact on popular culture.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Bowie",
 },
 {
@@ -2680,7 +2680,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ca825016-f7fd-4ccf-a523-6ee36ea88828",
   spotify: "0TF2NxkJZPQoX1H53rEFM1",
   inductedBy: "Mariah Carey",
-  summary: "Gladys Knight & the Pips were an American R&B, soul, and funk family music group from Atlanta, Georgia, that remained active on the music charts and performing circuit for more than three decades starting from the early 1950s."
+  summary: "Gladys Knight & the Pips were an American R&B, soul, and funk family music group from Atlanta, Georgia, that remained active on the music charts and performing circuit for more than three decades starting from the early 1950s.",
   wikipedia: "https://en.wikipedia.org/wiki/Gladys_Knight_%26_the_Pips",
 },
 {
@@ -2702,7 +2702,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "39c2a93d-9afa-4a22-9bba-c087ab056e1c",
   spotify: "2qFr8w5sWUITRlzZ9kZotF",
   inductedBy: "Mickey Hart and Phil Lesh",
-  summary: "Jefferson Airplane was an American rock band formed in San Francisco in 1965. One of the pioneering bands of psychedelic rock, the group defined the San Francisco Sound and was the first from the Bay Area to achieve international commercial success. They appeared at the Monterey Pop Festival (1967), the first Isle of Wight Festival (1968) as headliners, Woodstock (1969), and Altamont Free Concert (1969)."
+  summary: "Jefferson Airplane was an American rock band formed in San Francisco in 1965. One of the pioneering bands of psychedelic rock, the group defined the San Francisco Sound and was the first from the Bay Area to achieve international commercial success. They appeared at the Monterey Pop Festival (1967), the first Isle of Wight Festival (1968) as headliners, Woodstock (1969), and Altamont Free Concert (1969).",
   wikipedia: "https://en.wikipedia.org/wiki/Jefferson_Airplane",
 },
 {
@@ -2724,7 +2724,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "72c090b6-a68e-4cb9-b330-85278681a714",
   spotify: "5MWBg16f5UYiaSlyVhzlIW",
   inductedBy: "Jeff Beck",
-  summary: "John Davies Cale (born 9 March 1942) is a Welsh singer, musician, composer, record producer and arranger. He is a founding member of the influential American rock band the Velvet Underground, with whom he recorded two studio albums. Over his six-decade career, Cale has worked in various styles of rock and avant-garde music."
+  summary: "John Davies Cale (born 9 March 1942) is a Welsh singer, musician, composer, record producer and arranger. He is a founding member of the influential American rock band the Velvet Underground, with whom he recorded two studio albums. Over his six-decade career, Cale has worked in various styles of rock and avant-garde music.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Cale",
 },
 {
@@ -2746,7 +2746,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d59ce86d-2cc3-49be-be12-3eb4dde6e1ed",
   spotify: "3mOiEPe870jJrahcf2TPYZ",
   inductedBy: "Stevie Wonder",
-  summary: "William Edward \"Little Willie\" John (November 15, 1937 – May 26, 1968) was an American R&B singer who performed in the 1950s and early 1960s. He is best known for his successes on the record charts, with songs such as \"All Around the World\" (1955), \"Need Your Love So Bad\" (1956), \"Talk to Me, Talk to Me\" (1958), \"Leave My Kitten Alone\" (1960), \"Sleep\" (1960), and his number-one R&B hit \"Fever\" (1956)."
+  summary: "William Edward \"Little Willie\" John (November 15, 1937 – May 26, 1968) was an American R&B singer who performed in the 1950s and early 1960s. He is best known for his successes on the record charts, with songs such as \"All Around the World\" (1955), \"Need Your Love So Bad\" (1956), \"Talk to Me, Talk to Me\" (1958), \"Leave My Kitten Alone\" (1960), \"Sleep\" (1960), and his number-one R&B hit \"Fever\" (1956).",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Willie_John",
 },
 {
@@ -2768,7 +2768,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "af18a9bc-e4ab-4068-9489-b64e8186fcf1",
   spotify: "1P9syEkl41IFowWIJN7ZBY",
   inductedBy: "Arlo Guthrie and Harry Belafonte",
-  summary: "Peter Seeger (May 3, 1919 – January 27, 2014) was an American singer, songwriter, musician, and left-wing social activist. He was a fixture on nationwide radio in the 1940s and had a string of hit records in the early 1950s as a member of The Weavers, especially their recording of Lead Belly's \"Goodnight, Irene\", which topped the charts for 13 weeks in 1950. Members of the Weavers were blacklisted during the McCarthy Era."
+  summary: "Peter Seeger (May 3, 1919 – January 27, 2014) was an American singer, songwriter, musician, and left-wing social activist. He was a fixture on nationwide radio in the 1940s and had a string of hit records in the early 1950s as a member of The Weavers, especially their recording of Lead Belly's \"Goodnight, Irene\", which topped the charts for 13 weeks in 1950. Members of the Weavers were blacklisted during the McCarthy Era.",
   wikipedia: "https://en.wikipedia.org/wiki/Pete_Seeger",
 },
 {
@@ -2790,7 +2790,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "83d91898-7763-47d7-b03b-b92132375c47",
   spotify: "0k17h0D3J5VfsdmQ1iZtE9",
   inductedBy: "Billy Corgan",
-  summary: "Pink Floyd are an English rock band formed in London in 1965 by Syd Barrett (guitar, vocals), Nick Mason (drums), Roger Waters (bass guitar, vocals) and Richard Wright (keyboards, vocals), with David Gilmour (guitar, vocals) joining at the end of 1967."
+  summary: "Pink Floyd are an English rock band formed in London in 1965 by Syd Barrett (guitar, vocals), Nick Mason (drums), Roger Waters (bass guitar, vocals) and Richard Wright (keyboards, vocals), with David Gilmour (guitar, vocals) joining at the end of 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Pink_Floyd",
 },
 {
@@ -2812,7 +2812,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a8540ea0-1a74-4c22-8b70-1348a77a74a0",
   spotify: "0x83OBqixqdCHnStP5VMcn",
   inductedBy: "Merry Clayton, Marianne Faithfull,and Darlene Love",
-  summary: "The Shirelles were an American girl group formed in Passaic, New Jersey, in 1957. They consisted of schoolmates Shirley Owens (later Shirley Alston Reeves), Doris Coley (later Doris Kenner-Jackson), Addie \"Micki\" Harris (later Addie Harris McFadden), and Beverly Lee."
+  summary: "The Shirelles were an American girl group formed in Passaic, New Jersey, in 1957. They consisted of schoolmates Shirley Owens (later Shirley Alston Reeves), Doris Coley (later Doris Kenner-Jackson), Addie \"Micki\" Harris (later Addie Harris McFadden), and Beverly Lee.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Shirelles",
 },
 {
@@ -2834,7 +2834,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "94b0fb9d-a066-4823-b2ec-af1d324bcfcf",
   spotify: "1nJvji2KIlWSseXRSlNYsC",
   inductedBy: "Patti Smith",
-  summary: "The Velvet Underground was an American rock band formed in New York City in 1964. They became known for their integration of rock and roll and the avant-garde, which earned them little commercial success during their initial nine-year run but made them one of the most influential bands of their era, particularly in underground, experimental, and alternative music scenes."
+  summary: "The Velvet Underground was an American rock band formed in New York City in 1964. They became known for their integration of rock and roll and the avant-garde, which earned them little commercial success during their initial nine-year run but made them one of the most influential bands of their era, particularly in underground, experimental, and alternative music scenes.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Velvet_Underground",
 },
 {
@@ -2856,7 +2856,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "915863dc-83a3-45b1-8d96-4e2883a26b62",
   spotify: null,
   inductedBy: "Bob Krasnow",
-  summary: "Tom \"Big Daddy\" Donahue (May 21, 1928 – April 28, 1975), was an American rock and roll radio disc jockey, record producer and concert promoter."
+  summary: "Tom \"Big Daddy\" Donahue (May 21, 1928 – April 28, 1975), was an American rock and roll radio disc jockey, record producer and concert promoter.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Donahue_%28DJ%29",
 },
 {
@@ -2878,7 +2878,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bf0f7e29-dfe1-416c-b5c6-f9ebc19ea810",
   spotify: "1LZEQNv7sE11VDY3SdxQeN",
   inductedBy: "Brian Wilson",
-  summary: "The Bee Gees ( BEE jeez)"
+  summary: "The Bee Gees ( BEE jeez)",
   wikipedia: "https://en.wikipedia.org/wiki/Bee_Gees",
 },
 {
@@ -2900,7 +2900,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2a2be593-6984-4640-8cf1-717ec7a6e18b",
   spotify: "5CWbfANRpZbnxdstzcNg5H",
   inductedBy: "Ricky Skaggs and Emmylou Harris",
-  summary: "William Smith Monroe ( mən-ROH; September 13, 1911 – September 9, 1996) was an American mandolinist, singer, and songwriter who created the bluegrass music genre. For this reason, he is often called the \"Father of Bluegrass\"."
+  summary: "William Smith Monroe ( mən-ROH; September 13, 1911 – September 9, 1996) was an American mandolinist, singer, and songwriter who created the bluegrass music genre. For this reason, he is often called the \"Father of Bluegrass\".",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Monroe",
 },
 {
@@ -2922,7 +2922,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "22dc19af-d085-4c9b-adfb-22ec256251f1",
   spotify: "3eskO5m0H4yiF64vRySBjr",
   inductedBy: "Tom Petty",
-  summary: "Buffalo Springfield was a Canadian-American rock band formed in Los Angeles in 1966 by Canadians Neil Young, Bruce Palmer and Dewey Martin and Americans Stephen Stills and Richie Furay. The group, widely known for the song \"For What It's Worth\", released three albums and several singles from 1966 to 1968. Their music combined elements of folk music and country music with influences from the British Invasion and psychedelic rock."
+  summary: "Buffalo Springfield was a Canadian-American rock band formed in Los Angeles in 1966 by Canadians Neil Young, Bruce Palmer and Dewey Martin and Americans Stephen Stills and Richie Furay. The group, widely known for the song \"For What It's Worth\", released three albums and several singles from 1966 to 1968. Their music combined elements of folk music and country music with influences from the British Invasion and psychedelic rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Buffalo_Springfield",
 },
 {
@@ -2944,7 +2944,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cfafad90-b736-4c74-8ded-f3f4d7b2c792",
   spotify: "2pdvghEHZJtgSXZ7cvNLou",
   inductedBy: "James Taylor",
-  summary: null
+  summary: null,
   wikipedia: "https://en.wikipedia.org/wiki/Crosby%2C_Stills_%26_Nash",
 },
 {
@@ -2966,7 +2966,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a6de8ef9-b1a1-4756-97aa-481bbb8a4069",
   spotify: "5hW4L92KnC6dX9t7tYM4Ve",
   inductedBy: "Shawn Colvin",
-  summary: "Roberta Joan \"Joni\" Mitchell (née Anderson; born 7 November 1943) is a Canadian singer-songwriter, multi-instrumentalist, and painter. As one of the most influential singer-songwriters to emerge from the 1960s folk music circuit, Mitchell became known for her personal lyrics and unconventional compositions, which grew to incorporate elements of pop, jazz, rock, and other genres. Among her accolades are eleven Grammy Awards, and induction into the Rock and Roll Hall of Fame in 1997."
+  summary: "Roberta Joan \"Joni\" Mitchell (née Anderson; born 7 November 1943) is a Canadian singer-songwriter, multi-instrumentalist, and painter. As one of the most influential singer-songwriters to emerge from the 1960s folk music circuit, Mitchell became known for her personal lyrics and unconventional compositions, which grew to incorporate elements of pop, jazz, rock, and other genres. Among her accolades are eleven Grammy Awards, and induction into the Rock and Roll Hall of Fame in 1997.",
   wikipedia: "https://en.wikipedia.org/wiki/Joni_Mitchell",
 },
 {
@@ -2988,7 +2988,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1bebb19e-9305-4da8-a3fd-5dd40a6e517e",
   spotify: "6QBUIuGCAJSAtefEY1EEdB",
   inductedBy: "Mavis Staples",
-  summary: "Mahalia Jackson ( mə-HAY-lee-ə; born Mahala Jackson; October 26, 1911 – January 27, 1972) was an American gospel singer, widely considered one of the most influential vocalists of the 20th century. With a career spanning 40 years, Jackson was integral to the development and spread of gospel blues in black churches throughout the U.S."
+  summary: "Mahalia Jackson ( mə-HAY-lee-ə; born Mahala Jackson; October 26, 1911 – January 27, 1972) was an American gospel singer, widely considered one of the most influential vocalists of the 20th century. With a career spanning 40 years, Jackson was integral to the development and spread of gospel blues in black churches throughout the U.S.",
   wikipedia: "https://en.wikipedia.org/wiki/Mahalia_Jackson",
 },
 {
@@ -3010,7 +3010,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7a0ae10d-c51f-434a-9d5a-551d2ae93a9d",
   spotify: null,
   inductedBy: "Prince",
-  summary: "Parliament-Funkadelic (abbreviated as P-Funk) is an American music collective of rotating musicians headed by George Clinton, primarily consisting of the funk bands Parliament and Funkadelic, both active since the 1960s. With an eclectic style drawing on psychedelia, outlandish fashion, and surreal humor, they have released albums such as Maggot Brain (1971), Mothership Connection (1975), and One Nation Under a Groove (1978) to critical praise, and scored charting hits with singles such as \"Tear…"
+  summary: "Parliament-Funkadelic (abbreviated as P-Funk) is an American music collective of rotating musicians headed by George Clinton, primarily consisting of the funk bands Parliament and Funkadelic, both active since the 1960s. With an eclectic style drawing on psychedelia, outlandish fashion, and surreal humor, they have released albums such as Maggot Brain (1971), Mothership Connection (1975), and One Nation Under a Groove (1978) to critical praise, and scored charting hits with singles such as \"Tear…",
   wikipedia: "https://en.wikipedia.org/wiki/Parliament-Funkadelic",
 },
 {
@@ -3032,7 +3032,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1fb0d86c-fa6f-4378-b055-313f4f00668c",
   spotify: "0xL4oBzTdXepj33KKrRL8O",
   inductedBy: "Seymour Stein",
-  summary: "Sydney Nathan (April 27, 1904 – March 5, 1968) was an American music business executive who founded King Records, a leading independent record label, in 1943."
+  summary: "Sydney Nathan (April 27, 1904 – March 5, 1968) was an American music business executive who founded King Records, a leading independent record label, in 1943.",
   wikipedia: "https://en.wikipedia.org/wiki/Syd_Nathan",
 },
 {
@@ -3054,7 +3054,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e5257dc5-1edd-4fca-b7e6-1158e00522c8",
   spotify: "2yrbLiuBmc9j81lTX3XUuI",
   inductedBy: "Diana Ross",
-  summary: "The Jackson 5, later known as The Jacksons, is an American pop band composed of members of the Jackson family. The group was formed in Gary, Indiana, in 1964, and originally consisted of brothers Jackie, Tito, Jermaine, Marlon, and Michael. They were managed by their father Joe Jackson. The group were among the first African American performers to attain a following across multiple genres."
+  summary: "The Jackson 5, later known as The Jacksons, is an American pop band composed of members of the Jackson family. The group was formed in Gary, Indiana, in 1964, and originally consisted of brothers Jackie, Tito, Jermaine, Marlon, and Michael. They were managed by their father Joe Jackson. The group were among the first African American performers to attain a following across multiple genres.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Jackson_5",
 },
 {
@@ -3076,7 +3076,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "219ce30a-0f3a-468c-9a13-55ee358ac0f0",
   spotify: "5X3TuTi9OIsJXMGxPwTKM2",
   inductedBy: "Steven Van Zandt",
-  summary: "The Rascals (originally known as the Young Rascals) are an American rock band (and blue-eyed soul), formed in Garfield, New Jersey, southeast of Paterson in 1965. The original lineup featured lead vocalist and keyboardist Felix Cavaliere, vocalist and percussionist Eddie Brigati, drummer Dino Danelli, and guitarist and vocalist Gene Cornish. Cavaliere and Brigati wrote the majority of the Rascals' original material."
+  summary: "The Rascals (originally known as the Young Rascals) are an American rock band (and blue-eyed soul), formed in Garfield, New Jersey, southeast of Paterson in 1965. The original lineup featured lead vocalist and keyboardist Felix Cavaliere, vocalist and percussionist Eddie Brigati, drummer Dino Danelli, and guitarist and vocalist Gene Cornish. Cavaliere and Brigati wrote the majority of the Rascals' original material.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Rascals",
 },
 {
@@ -3098,7 +3098,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ec21cced-2d22-4883-9ee3-f642e6e52f58",
   spotify: "63aP18bg2ABSOqSNQcAMNy",
   inductedBy: "Robbie Robertson",
-  summary: "Allen Richard Toussaint (; January 14, 1938 – November 10, 2015) was an American musician, songwriter, arranger, and record producer. He was an influential figure in New Orleans rhythm and blues from the 1950s to the end of the century, described as \"one of popular music's great backroom figures.\" Many musicians recorded Toussaint's compositions. He was a producer for hundreds of recordings: the best known are \"Right Place, Wrong Time\", by longtime friend Dr."
+  summary: "Allen Richard Toussaint (; January 14, 1938 – November 10, 2015) was an American musician, songwriter, arranger, and record producer. He was an influential figure in New Orleans rhythm and blues from the 1950s to the end of the century, described as \"one of popular music's great backroom figures.\" Many musicians recorded Toussaint's compositions. He was a producer for hundreds of recordings: the best known are \"Right Place, Wrong Time\", by longtime friend Dr.",
   wikipedia: "https://en.wikipedia.org/wiki/Allen_Toussaint",
 },
 {
@@ -3120,7 +3120,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f46bd570-5768-462e-b84c-c7c993bbf47e",
   spotify: "0ECwFtbIWEVNwjlrfc6xoL",
   inductedBy: "Jimmy Buffett",
-  summary: "The Eagles are an American rock band formed in Los Angeles in 1971. With five number-one singles, six number-one albums, six Grammy Awards and five American Music Awards, the Eagles were one of the most successful musical acts of the 1970s in North America. In addition, they are one of the world's best-selling music artists, having sold more than 200 million records worldwide, including 100 million sold in the US alone."
+  summary: "The Eagles are an American rock band formed in Los Angeles in 1971. With five number-one singles, six number-one albums, six Grammy Awards and five American Music Awards, the Eagles were one of the most successful musical acts of the 1970s in North America. In addition, they are one of the world's best-selling music artists, having sold more than 200 million records worldwide, including 100 million sold in the US alone.",
   wikipedia: "https://en.wikipedia.org/wiki/Eagles_%28band%29",
 },
 {
@@ -3142,7 +3142,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bd13909f-1c29-4c27-a874-d4aaf27c5b1a",
   spotify: "08GQAI4eElDnROBrJRGE0X",
   inductedBy: "Sheryl Crow",
-  summary: "Fleetwood Mac were a British and American  rock band formed in London in 1967 by singer and guitarist Peter Green. He named the band by combining the surnames of drummer Mick Fleetwood, the only constant member of the band throughout its history, and bassist John McVie, who joined the band soon after it was formed. Fleetwood Mac have sold more than 120 million records worldwide, making them one of the world's best-selling musical acts."
+  summary: "Fleetwood Mac were a British and American  rock band formed in London in 1967 by singer and guitarist Peter Green. He named the band by combining the surnames of drummer Mick Fleetwood, the only constant member of the band throughout its history, and bassist John McVie, who joined the band soon after it was formed. Fleetwood Mac have sold more than 120 million records worldwide, making them one of the world's best-selling musical acts.",
   wikipedia: "https://en.wikipedia.org/wiki/Fleetwood_Mac",
 },
 {
@@ -3164,7 +3164,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f491f5ad-0946-40a6-bab9-da319c3f3995",
   spotify: "5VAHm7V5mnsxvQrWw3KHmx",
   inductedBy: "John Fogerty",
-  summary: "Vincent Eugene Craddock (February 11, 1935 – October 12, 1971), known as Gene Vincent, was an American rock and roll musician who pioneered the style of rockabilly. His 1956 top ten hit with his backing band the Blue Caps, \"Be-Bop-a-Lula\", is considered a significant early example of rockabilly. His chart career was brief, especially in his home country of the US, where he notched three top 40 hits in 1956 and 1957, and never charted in the top 100 again."
+  summary: "Vincent Eugene Craddock (February 11, 1935 – October 12, 1971), known as Gene Vincent, was an American rock and roll musician who pioneered the style of rockabilly. His 1956 top ten hit with his backing band the Blue Caps, \"Be-Bop-a-Lula\", is considered a significant early example of rockabilly. His chart career was brief, especially in his home country of the US, where he notched three top 40 hits in 1956 and 1957, and never charted in the top 100 again.",
   wikipedia: "https://en.wikipedia.org/wiki/Gene_Vincent",
 },
 {
@@ -3186,7 +3186,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3d094919-071f-4070-95dc-e1f350e4a5f3",
   spotify: "4XepUkisa56DUeA3gbjDQD",
   inductedBy: "Ahmet Ertegun",
-  summary: "Ferdinand Joseph LaMothe (né Lemott, later Morton; c. September 20, 1890 – July 10, 1941), known professionally as Jelly Roll Morton, was an American blues and jazz pianist, bandleader, and composer of Louisiana Creole descent. Morton was jazz's first arranger, proving that a genre rooted in improvisation could retain its essential characteristics when notated. His composition \"Jelly Roll Blues\", published in 1915, was one of the first published jazz compositions."
+  summary: "Ferdinand Joseph LaMothe (né Lemott, later Morton; c. September 20, 1890 – July 10, 1941), known professionally as Jelly Roll Morton, was an American blues and jazz pianist, bandleader, and composer of Louisiana Creole descent. Morton was jazz's first arranger, proving that a genre rooted in improvisation could retain its essential characteristics when notated. His composition \"Jelly Roll Blues\", published in 1915, was one of the first published jazz compositions.",
   wikipedia: "https://en.wikipedia.org/wiki/Jelly_Roll_Morton",
 },
 {
@@ -3208,7 +3208,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ddcfbdcf-cf8d-4776-8a69-10f39376b5a2",
   spotify: "3Ovf2lytXSXWFM2cwsJACC",
   inductedBy: "Pete Seeger",
-  summary: "Huddie William Ledbetter (January 15, 1888 – December 6, 1949), better known by the stage name Lead Belly, was an American folk and blues singer notable for his strong vocals, virtuosity on the twelve-string guitar, and the folk standards he introduced, including his renditions of \"In the Pines\" (also known as \"Where Did You Sleep Last Night?\" and “Black Girl”), \"Pick a Bale of Cotton\", \"Goodnight, Irene\", \"Black Betty\", \"Midnight Special\", \"Cotton Fields\", and \"Boll Weevil\"."
+  summary: "Huddie William Ledbetter (January 15, 1888 – December 6, 1949), better known by the stage name Lead Belly, was an American folk and blues singer notable for his strong vocals, virtuosity on the twelve-string guitar, and the folk standards he introduced, including his renditions of \"In the Pines\" (also known as \"Where Did You Sleep Last Night?\" and “Black Girl”), \"Pick a Bale of Cotton\", \"Goodnight, Irene\", \"Black Betty\", \"Midnight Special\", \"Cotton Fields\", and \"Boll Weevil\".",
   wikipedia: "https://en.wikipedia.org/wiki/Lead_Belly",
 },
 {
@@ -3230,7 +3230,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d047ee24-6fac-401a-8769-34edbda52113",
   spotify: "3iOE5ItEv5xr9fmKi7GNh2",
   inductedBy: "Tony Rich",
-  summary: "Lloyd Price (March 9, 1933 – May 3, 2021) was an American R&B and rock and roll singer known as \"Mr. Personality\" after his 1959 million-selling hit, \"Personality\".  His first recording, \"Lawdy Miss Clawdy\", was a hit for Specialty Records in 1952. He continued to release records, but none were as popular until several years later, when he refined the New Orleans beat and achieved a series of national hits. He was inducted into the Rock and Roll Hall of Fame in 1998."
+  summary: "Lloyd Price (March 9, 1933 – May 3, 2021) was an American R&B and rock and roll singer known as \"Mr. Personality\" after his 1959 million-selling hit, \"Personality\".  His first recording, \"Lawdy Miss Clawdy\", was a hit for Specialty Records in 1952. He continued to release records, but none were as popular until several years later, when he refined the New Orleans beat and achieved a series of national hits. He was inducted into the Rock and Roll Hall of Fame in 1998.",
   wikipedia: "https://en.wikipedia.org/wiki/Lloyd_Price",
 },
 {
@@ -3252,7 +3252,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9a3bf45c-347d-4630-894d-7cf3e8e0b632",
   spotify: "6GI52t8N5F02MxU0g5U69P",
   inductedBy: "John Popper",
-  summary: "Santana is an American rock band formed in San Francisco, California in 1966 by Mexican-American guitarist Carlos Santana. The band has had various recording and performing line-ups in its history, with Santana being the only consistent member. After signing with Columbia Records, the band's appearance at the Woodstock Festival in 1969 increased their profile and they went on to record the critically acclaimed and commercially successful albums Santana (1969), Abraxas (1970) and Santana III (197…"
+  summary: "Santana is an American rock band formed in San Francisco, California in 1966 by Mexican-American guitarist Carlos Santana. The band has had various recording and performing line-ups in its history, with Santana being the only consistent member. After signing with Columbia Records, the band's appearance at the Woodstock Festival in 1969 increased their profile and they went on to record the critically acclaimed and commercially successful albums Santana (1969), Abraxas (1970) and Santana III (197…",
   wikipedia: "https://en.wikipedia.org/wiki/Santana_%28band%29",
 },
 {
@@ -3274,7 +3274,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ff294730-0315-440d-a543-54005779c15b",
   spotify: "1bs7HoMkSyQwcobCpE9KpN",
   inductedBy: "Shania Twain",
-  summary: "The Mamas & the Papas were an American-Canadian folk rock vocal group that recorded and performed from 1965 to 1968, with a brief reunion in 1971. The group was a defining force in the music scene of the counterculture of the 1960s. Formed in New York City, the group consisted of Americans John Phillips, Cass Elliot, and Michelle Phillips, and Canadian Denny Doherty."
+  summary: "The Mamas & the Papas were an American-Canadian folk rock vocal group that recorded and performed from 1965 to 1968, with a brief reunion in 1971. The group was a defining force in the music scene of the counterculture of the 1960s. Formed in New York City, the group consisted of Americans John Phillips, Cass Elliot, and Michelle Phillips, and Canadian Denny Doherty.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Mamas_%26_the_Papas",
 },
 {
@@ -3296,7 +3296,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "64b94289-9474-4d43-8c93-918ccc1920d1",
   spotify: "7aVZwspYUKTtKD0dDS6fBl",
   inductedBy: "Ray Charles",
-  summary: "William Martin Joel (; born May 9, 1949) is an American singer, songwriter, and pianist. Nicknamed the \"Piano Man\", after his 1973 signature song of the same name, Joel has had a successful career as a solo artist since the 1970s. From 1971 to 1993, he released 12 entirely self-written studio albums spanning the genres of pop and rock, and in 2001 released a one-off studio album of classical compositions."
+  summary: "William Martin Joel (; born May 9, 1949) is an American singer, songwriter, and pianist. Nicknamed the \"Piano Man\", after his 1973 signature song of the same name, Joel has had a successful career as a solo artist since the 1970s. From 1971 to 1993, he released 12 entirely self-written studio albums spanning the genres of pop and rock, and in 2001 released a one-off studio album of classical compositions.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Joel",
 },
 {
@@ -3318,7 +3318,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2dae7fe4-40a4-4089-b9da-c3f1a6b4490c",
   spotify: "0VyOgubdcDnrJ0AWL2TRDN",
   inductedBy: "Chris Isaak",
-  summary: "James Robert Wills (March 6, 1905 – May 13, 1975) was an American musician, songwriter, and bandleader. Considered by music authorities as the founder of Western swing, he was known widely as the King of Western Swing (although Spade Cooley self-promoted the moniker \"King of Western Swing\" from 1942 to 1969). He was also noted for punctuating his music with his trademark \"ah-haa\" calls."
+  summary: "James Robert Wills (March 6, 1905 – May 13, 1975) was an American musician, songwriter, and bandleader. Considered by music authorities as the founder of Western swing, he was known widely as the King of Western Swing (although Spade Cooley self-promoted the moniker \"King of Western Swing\" from 1942 to 1969). He was also noted for punctuating his music with his trademark \"ah-haa\" calls.",
   wikipedia: null,
 },
 {
@@ -3340,7 +3340,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "70248960-cb53-4ea4-943a-edb18f7d336f",
   spotify: "3eqjTLE0HfPfh78zjh6TqT",
   inductedBy: "Bono",
-  summary: "Bruce Frederick Joseph Springsteen (born September 23, 1949) is an American singer, songwriter, and musician. Nicknamed \"the Boss\", Springsteen has released 21 studio albums spanning six decades; most of his albums feature the E Street Band, his backing band since 1972."
+  summary: "Bruce Frederick Joseph Springsteen (born September 23, 1949) is an American singer, songwriter, and musician. Nicknamed \"the Boss\", Springsteen has released 21 studio albums spanning six decades; most of his albums feature the E Street Band, his backing band since 1972.",
   wikipedia: "https://en.wikipedia.org/wiki/Bruce_Springsteen",
 },
 {
@@ -3362,7 +3362,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "dbc9229a-6fb7-43b1-9763-df1e87112a93",
   spotify: "3trsSEaKM3UM2R9RBJwdtJ",
   inductedBy: "Bonnie Raitt",
-  summary: "Tony Russell \"Charles\" Brown (September 13, 1922 – January 21, 1999) was an American singer and pianist whose soft-toned, slow-paced nightclub style influenced West Coast blues in the 1940s and 1950s. Between 1949 and 1952, Brown had seven Top 10 hits in the U.S. Billboard R&B chart. His best-selling recordings included \"Driftin' Blues\" and \"Merry Christmas Baby\"."
+  summary: "Tony Russell \"Charles\" Brown (September 13, 1922 – January 21, 1999) was an American singer and pianist whose soft-toned, slow-paced nightclub style influenced West Coast blues in the 1940s and 1950s. Between 1949 and 1952, Brown had seven Top 10 hits in the U.S. Billboard R&B chart. His best-selling recordings included \"Driftin' Blues\" and \"Merry Christmas Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Charles_Brown_%28musician%29",
 },
 {
@@ -3384,7 +3384,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4dca4bb2-23ba-4103-97e6-5810311db33a",
   spotify: "2AV6XDIs32ofIJhkkDevjm",
   inductedBy: "Sean Combs",
-  summary: "Curtis Lee Mayfield (June 3, 1942 – December 26, 1999) was an American singer-songwriter, guitarist, and record producer. Dubbed the Gentle Genius, he is considered one of the most influential musicians of soul and socially conscious African-American music. Mayfield first achieved success and recognition with the vocal group the Impressions during the civil rights movement of the late 1950s and the 1960s, and later worked as a solo artist."
+  summary: "Curtis Lee Mayfield (June 3, 1942 – December 26, 1999) was an American singer-songwriter, guitarist, and record producer. Dubbed the Gentle Genius, he is considered one of the most influential musicians of soul and socially conscious African-American music. Mayfield first achieved success and recognition with the vocal group the Impressions during the civil rights movement of the late 1950s and the 1960s, and later worked as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Curtis_Mayfield",
 },
 {
@@ -3406,7 +3406,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2e885bfb-1f59-49cf-8d51-e743445e1b48",
   spotify: "3c8WoNjBfyLJhFObE6RHgs",
   inductedBy: "Art Alexakis",
-  summary: "Charles Weedon Westover (December 30, 1934 – February 8, 1990), known professionally as Del Shannon, was an American musician, singer, and songwriter, best known for his 1961 number-one Billboard hit \"Runaway\", which was covered later by various major artists, including Elvis Presley and the Traveling Wilburys. In 1999, he was posthumously inducted into the Rock and Roll Hall of Fame. In addition to his music career, he had minor acting roles."
+  summary: "Charles Weedon Westover (December 30, 1934 – February 8, 1990), known professionally as Del Shannon, was an American musician, singer, and songwriter, best known for his 1961 number-one Billboard hit \"Runaway\", which was covered later by various major artists, including Elvis Presley and the Traveling Wilburys. In 1999, he was posthumously inducted into the Rock and Roll Hall of Fame. In addition to his music career, he had minor acting roles.",
   wikipedia: "https://en.wikipedia.org/wiki/Del_Shannon",
 },
 {
@@ -3428,7 +3428,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b896aa8c-2761-40ce-b485-0e1fffd26167",
   spotify: "5zaXYwewAXedKNCff45U5l",
   inductedBy: "Elton John",
-  summary: "Mary Isobel Catherine Bernadette O'Brien (16 April 1939 – 2 March 1999), better known by her stage name Dusty Springfield, was an English singer. With her distinctive mezzo-soprano voice, she was a popular singer of blue-eyed soul, pop, and dramatic ballads, with French chanson, country, and jazz also in her repertoire. During her 1960s peak, she ranked among the most successful British performers on both sides of the Atlantic."
+  summary: "Mary Isobel Catherine Bernadette O'Brien (16 April 1939 – 2 March 1999), better known by her stage name Dusty Springfield, was an English singer. With her distinctive mezzo-soprano voice, she was a popular singer of blue-eyed soul, pop, and dramatic ballads, with French chanson, country, and jazz also in her repertoire. During her 1960s peak, she ranked among the most successful British performers on both sides of the Atlantic.",
   wikipedia: "https://en.wikipedia.org/wiki/Dusty_Springfield",
 },
 {
@@ -3450,7 +3450,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "26fa8b67-6c7f-406c-ad64-a1d070092df2",
   spotify: "4Fgf6RvuWpiwDXSE7Vammx",
   inductedBy: "Jimmy Iovine",
-  summary: "Sir George Henry Martin (3 January 1926 – 8 March 2016) was an English record producer, arranger, composer, conductor, and musician. He was commonly referred to as the \"fifth Beatle\" due to his extensive involvement in each of the Beatles' original albums. Martin's formal musical expertise and interest in novel recording practices facilitated the group's rudimentary musical education and desire for new musical sounds to record."
+  summary: "Sir George Henry Martin (3 January 1926 – 8 March 2016) was an English record producer, arranger, composer, conductor, and musician. He was commonly referred to as the \"fifth Beatle\" due to his extensive involvement in each of the Beatles' original albums. Martin's formal musical expertise and interest in novel recording practices facilitated the group's rudimentary musical education and desire for new musical sounds to record.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Martin",
 },
 {
@@ -3472,7 +3472,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ba550d0e-adac-4864-b88b-407cab5e76af",
   spotify: "4STHEaNw4mPZ2tzheohgXB",
   inductedBy: "Neil Young",
-  summary: "Sir James Paul McCartney (born 18 June 1942) is an English musician and songwriter. He gained global fame with the Beatles, for whom he was the bassist and keyboardist, and shared primary songwriting and lead vocal duties with John Lennon. McCartney is known for his melodic approach to bass-playing, versatile tenor vocal range and musical eclecticism, exploring genres ranging from pre-rock and roll pop to classical, ballads and electronica."
+  summary: "Sir James Paul McCartney (born 18 June 1942) is an English musician and songwriter. He gained global fame with the Beatles, for whom he was the bassist and keyboardist, and shared primary songwriting and lead vocal duties with John Lennon. McCartney is known for his melodic approach to bass-playing, versatile tenor vocal range and musical eclecticism, exploring genres ranging from pre-rock and roll pop to classical, ballads and electronica.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_McCartney",
 },
 {
@@ -3494,7 +3494,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cbdfbd90-3997-4477-a1c3-edfd32816d5f",
   spotify: null,
   inductedBy: "Stevie Wonder",
-  summary: "Sheldon Gershon \"Shelly\" Yakus (born November 1945) is an American audio engineer and mixer. Formerly chief engineer and vice president of A&M Records, he was nominated for induction into the Rock and Roll Hall of Fame in 1999. Yakus is referenced at the end of one of Tom Petty's songs \"What're You Doin' In My Life?\"  As of 2014, Yakus was chief engineer of AfterMaster Audio Labs and Recording Studios, a recording firm he co-founded with Larry Ryckman, who is its CEO."
+  summary: "Sheldon Gershon \"Shelly\" Yakus (born November 1945) is an American audio engineer and mixer. Formerly chief engineer and vice president of A&M Records, he was nominated for induction into the Rock and Roll Hall of Fame in 1999. Yakus is referenced at the end of one of Tom Petty's songs \"What're You Doin' In My Life?\"  As of 2014, Yakus was chief engineer of AfterMaster Audio Labs and Recording Studios, a recording firm he co-founded with Larry Ryckman, who is its CEO.",
   wikipedia: "https://en.wikipedia.org/wiki/Shelly_Yakus",
 },
 {
@@ -3516,7 +3516,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3d49e36a-cc9e-411e-93c6-d1646ba5bd3a",
   spotify: "7xGGqA85UIWX1GoTVM4itC",
   inductedBy: "Lauryn Hill",
-  summary: "The Staple Singers was an American gospel, soul, and R&B singing group. Roebuck \"Pops\" Staples (December 28, 1914 – December 19, 2000), the patriarch of the family, formed the group with his children Cleotha (April 11, 1934 – February 21, 2013), Pervis (November 18, 1935 – May 6, 2021), and Mavis (b. July 10, 1939). Yvonne (October 23, 1937 – April 10, 2018) replaced her brother when he was drafted into the U.S. Army, and again in 1970."
+  summary: "The Staple Singers was an American gospel, soul, and R&B singing group. Roebuck \"Pops\" Staples (December 28, 1914 – December 19, 2000), the patriarch of the family, formed the group with his children Cleotha (April 11, 1934 – February 21, 2013), Pervis (November 18, 1935 – May 6, 2021), and Mavis (b. July 10, 1939). Yvonne (October 23, 1937 – April 10, 2018) replaced her brother when he was drafted into the U.S. Army, and again in 1970.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Staple_Singers",
 },
 {
@@ -3538,7 +3538,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d59c4cda-11d9-48db-8bfe-b557ee602aed",
   spotify: "1YzCsTRb22dQkh9lghPIrp",
   inductedBy: "Diana Ross",
-  summary: "Billie Holiday (born Eleanora Fagan; April 7, 1915 – July 17, 1959) was an American jazz and swing music singer. Nicknamed \"Lady Day\" by her friend and music partner, Lester Young, Holiday made significant contributions to jazz music and pop singing. Her vocal style, strongly influenced by jazz instrumentalists, inspired a new way of manipulating phrasing and tempo. Holiday was known for her vocal delivery and improvisational skills."
+  summary: "Billie Holiday (born Eleanora Fagan; April 7, 1915 – July 17, 1959) was an American jazz and swing music singer. Nicknamed \"Lady Day\" by her friend and music partner, Lester Young, Holiday made significant contributions to jazz music and pop singing. Her vocal style, strongly influenced by jazz instrumentalists, inspired a new way of manipulating phrasing and tempo. Holiday was known for her vocal delivery and improvisational skills.",
   wikipedia: "https://en.wikipedia.org/wiki/Billie_Holiday",
 },
 {
@@ -3560,7 +3560,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0f0da09c-3940-4cb5-879f-4cea28907810",
   spotify: "4KDyYWR7IpxZ7xrdYbKrqY",
   inductedBy: "Melissa Etheridge",
-  summary: "Bonnie Lynn Raitt (; born November 8, 1949) is an American singer-songwriter. In 1971, Raitt released her self-titled debut album. Following this, she released a series of critically acclaimed roots-influenced albums that incorporated elements of rock, blues, country, and folk. She was also a frequent session player and collaborator with other artists, including Warren Zevon, Little Feat, Jackson Browne, the Pointer Sisters, John Prine, and Leon Russell."
+  summary: "Bonnie Lynn Raitt (; born November 8, 1949) is an American singer-songwriter. In 1971, Raitt released her self-titled debut album. Following this, she released a series of critically acclaimed roots-influenced albums that incorporated elements of rock, blues, country, and folk. She was also a frequent session player and collaborator with other artists, including Warren Zevon, Little Feat, Jackson Browne, the Pointer Sisters, John Prine, and Leon Russell.",
   wikipedia: "https://en.wikipedia.org/wiki/Bonnie_Raitt",
 },
 {
@@ -3582,7 +3582,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8f45e863-c2c8-4f10-b9bf-4d36774bb0b5",
   spotify: "5alKeK7PQGqEJ2oBz5n7sU",
   inductedBy: "Patti Smith",
-  summary: "Clive Jay Davis (born April 4, 1932) is an American record producer, A&R executive, record executive, and lawyer. He has won five Grammy Awards and was inducted into the Rock and Roll Hall of Fame, as a non-performer, in 2000."
+  summary: "Clive Jay Davis (born April 4, 1932) is an American record producer, A&R executive, record executive, and lawyer. He has won five Grammy Awards and was inducted into the Rock and Roll Hall of Fame, as a non-performer, in 2000.",
   wikipedia: "https://en.wikipedia.org/wiki/Clive_Davis",
 },
 {
@@ -3604,7 +3604,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a4c717c6-fda3-4707-aa82-34345c85ae94",
   spotify: "2zD75OCViPJTrIFeHCIRgM",
   inductedBy: "Jerry Leiber and Mike Stoller",
-  summary: "Earl Cyril Palmer (October 25, 1924 – September 19, 2008) was an American drummer. Considered one of the inventors of rock and roll, he is a member of the Rock and Roll Hall of Fame."
+  summary: "Earl Cyril Palmer (October 25, 1924 – September 19, 2008) was an American drummer. Considered one of the inventors of rock and roll, he is a member of the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Earl_Palmer",
 },
 {
@@ -3626,7 +3626,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "535afeda-2538-435d-9dd1-5e10be586774",
   spotify: "4QQgXkCYTt3BlENzhyNETg",
   inductedBy: "Lil Kim",
-  summary: "Earth, Wind & Fire (abbreviated as EW&F or EWF) is an American band formed in Chicago, Illinois, in 1969. Their music spans multiple genres, including jazz, R&B, soul, funk, disco, pop, Latin and Afro-pop. They are among the best-selling bands ever, with sales of over 90 million records worldwide."
+  summary: "Earth, Wind & Fire (abbreviated as EW&F or EWF) is an American band formed in Chicago, Illinois, in 1969. Their music spans multiple genres, including jazz, R&B, soul, funk, disco, pop, Latin and Afro-pop. They are among the best-selling bands ever, with sales of over 90 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Earth%2C_Wind_%26_Fire",
 },
 {
@@ -3648,7 +3648,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "618b6900-0618-4f1e-b835-bccb17f84294",
   spotify: "6PAt558ZEZl0DmdXlnjMgD",
   inductedBy: "Robbie Robertson",
-  summary: "Eric Patrick Clapton (born 30 March 1945) is an English rock and blues guitarist, singer, and songwriter. He is regarded as one of the most successful and influential guitarists in rock music. Clapton ranked second in Rolling Stone's list of the \"100 Greatest Guitarists of All Time\" and fourth in Gibson's \"Top 50 Guitarists of All Time\". He was named number five in Time magazine's list of \"The 10 Best Electric Guitar Players\" in 2009."
+  summary: "Eric Patrick Clapton (born 30 March 1945) is an English rock and blues guitarist, singer, and songwriter. He is regarded as one of the most successful and influential guitarists in rock music. Clapton ranked second in Rolling Stone's list of the \"100 Greatest Guitarists of All Time\" and fourth in Gibson's \"Top 50 Guitarists of All Time\". He was named number five in Time magazine's list of \"The 10 Best Electric Guitar Players\" in 2009.",
   wikipedia: "https://en.wikipedia.org/wiki/Eric_Clapton",
 },
 {
@@ -3670,7 +3670,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b1d81a5e-6f6f-4d13-83ff-15a2559d6f8d",
   spotify: "5W6Vbf1DmTUOpvsXq4lQFJ",
   inductedBy: "Jerry Leiber and Mike Stoller",
-  summary: "Hal Blaine (born Harold Simon Belsky; February 5, 1929 – March 11, 2019) was an American drummer and session musician, thought to be among the most recorded studio drummers in the music industry, claiming over 35,000 sessions and 6,000 singles. His drumming is featured on 150 US top 10 hits, 40 of which went to number one."
+  summary: "Hal Blaine (born Harold Simon Belsky; February 5, 1929 – March 11, 2019) was an American drummer and session musician, thought to be among the most recorded studio drummers in the music industry, claiming over 35,000 sessions and 6,000 singles. His drumming is featured on 150 US top 10 hits, 40 of which went to number one.",
   wikipedia: "https://en.wikipedia.org/wiki/Hal_Blaine",
 },
 {
@@ -3692,7 +3692,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2514f57f-bee5-4dc1-a2c7-589aea08cef1",
   spotify: "4vwURaJqbdeHhDDEtEvW26",
   inductedBy: "Jerry Leiber and Mike Stoller",
-  summary: "James Lee Jamerson (January 29, 1936 – August 2, 1983) was an American bassist. He was the uncredited bassist on most of the Motown Records hits in the 1960s and early 1970s (Motown did not list session musician credits on their releases until 1971), and is now regarded as one of the greatest and most influential bass players in modern music history. He was inducted into the Rock and Roll Hall of Fame in 2000."
+  summary: "James Lee Jamerson (January 29, 1936 – August 2, 1983) was an American bassist. He was the uncredited bassist on most of the Motown Records hits in the 1960s and early 1970s (Motown did not list session musician credits on their releases until 1971), and is now regarded as one of the greatest and most influential bass players in modern music history. He was inducted into the Rock and Roll Hall of Fame in 2000.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Jamerson",
 },
 {
@@ -3714,7 +3714,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "107d0c22-d051-4d98-8206-4e14de02132a",
   spotify: "0vn7UBvSQECKJm2817Yf1P",
   inductedBy: "Paul McCartney",
-  summary: "James Vernon Taylor (born March 12, 1948) is an American singer-songwriter and guitarist."
+  summary: "James Vernon Taylor (born March 12, 1948) is an American singer-songwriter and guitarist.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Taylor",
 },
 {
@@ -3736,7 +3736,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "151231cb-fca6-42e0-976a-66b07193d657",
   spotify: "0WxOgeRxUt0MwPrI7A5atQ",
   inductedBy: "Jerry Leiber and Mike Stoller",
-  summary: "Curtis Ousley (born Curtis Montgomery, February 7, 1934 – August 13, 1971), known professionally as King Curtis, was an American saxophonist who played rhythm and blues, jazz, and rock and roll. A bandleader, band member, and session musician, he was also a musical director and record producer. A master of the instrument, he played tenor, alto, and soprano saxophone."
+  summary: "Curtis Ousley (born Curtis Montgomery, February 7, 1934 – August 13, 1971), known professionally as King Curtis, was an American saxophonist who played rhythm and blues, jazz, and rock and roll. A bandleader, band member, and session musician, he was also a musical director and record producer. A master of the instrument, he played tenor, alto, and soprano saxophone.",
   wikipedia: "https://en.wikipedia.org/wiki/King_Curtis",
 },
 {
@@ -3758,7 +3758,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fbe054ec-a143-4101-9e9e-64abc5ff5ac9",
   spotify: "7v4imS0moSyGdXyLgVTIV7",
   inductedBy: "Ray Charles",
-  summary: "Nathaniel Adams Coles (March 17, 1919 – February 15, 1965), known professionally as Nat King Cole, was an American singer, jazz pianist, and actor. Cole's career as a jazz and pop vocalist started in the late 1930s and spanned almost three decades where he found success and recorded over 100 songs that became hits on the pop charts."
+  summary: "Nathaniel Adams Coles (March 17, 1919 – February 15, 1965), known professionally as Nat King Cole, was an American singer, jazz pianist, and actor. Cole's career as a jazz and pop vocalist started in the late 1930s and spanned almost three decades where he found success and recorded over 100 songs that became hits on the pop charts.",
   wikipedia: "https://en.wikipedia.org/wiki/Nat_King_Cole",
 },
 {
@@ -3780,7 +3780,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "874219f5-21d4-4fca-be69-02421e638c16",
   spotify: "5f8Rx5oo9KEkjssSsBsvfh",
   inductedBy: "Jerry Leiber and Mike Stoller",
-  summary: "Winfield Scott Moore III (December 27, 1931 – June 28, 2016) was an American guitarist who formed the Blue Moon Boys in 1954, Elvis Presley's backing band. He was studio and touring guitarist for Presley between 1954 and 1968."
+  summary: "Winfield Scott Moore III (December 27, 1931 – June 28, 2016) was an American guitarist who formed the Blue Moon Boys in 1954, Elvis Presley's backing band. He was studio and touring guitarist for Presley between 1954 and 1968.",
   wikipedia: "https://en.wikipedia.org/wiki/Scotty_Moore",
 },
 {
@@ -3802,7 +3802,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "abc08d4f-4e3c-4b5a-b1e8-d324cd6a2f92",
   spotify: "7CCn4PFRRRZF127jtCBAUe",
   inductedBy: "John Mellencamp",
-  summary: "The Lovin' Spoonful is a Canadian-American folk-rock band formed in Greenwich Village, New York City, in 1964. The band were among the most popular groups in the United States for a short period in the mid-1960s and their music and image influenced many of the contemporary rock acts of their era."
+  summary: "The Lovin' Spoonful is a Canadian-American folk-rock band formed in Greenwich Village, New York City, in 1964. The band were among the most popular groups in the United States for a short period in the mid-1960s and their music and image influenced many of the contemporary rock acts of their era.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Lovin%27_Spoonful",
 },
 {
@@ -3824,7 +3824,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "957fe961-876e-452d-9991-7be85d227e22",
   spotify: "1sZwQg2rvSlGhkG218SouM",
   inductedBy: "Paul Simon",
-  summary: "The Moonglows were an American R&B group in the 1950s. Their song \"Sincerely\" went to number 1 on the Billboard R&B chart and number 20 on the Billboard Juke Box chart."
+  summary: "The Moonglows were an American R&B group in the 1950s. Their song \"Sincerely\" went to number 1 on the Billboard R&B chart and number 20 on the Billboard Juke Box chart.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Moonglows",
 },
 {
@@ -3846,7 +3846,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3d2b98e5-556f-4451-a3ff-c50ea18d57cb",
   spotify: "7Ey4PD4MYsKc5I2dolUwbH",
   inductedBy: "Kid Rock",
-  summary: "Aerosmith is an American rock band formed in Boston in 1970. The group consists of lead vocalist Steven Tyler, bassist Tom Hamilton, drummer Joey Kramer, and guitarists Joe Perry and Brad Whitford. Their style, which is rooted in blues-based hard rock, has also incorporated elements of pop rock, heavy metal, glam metal, and rhythm and blues, and has inspired many subsequent rock artists."
+  summary: "Aerosmith is an American rock band formed in Boston in 1970. The group consists of lead vocalist Steven Tyler, bassist Tom Hamilton, drummer Joey Kramer, and guitarists Joe Perry and Brad Whitford. Their style, which is rooted in blues-based hard rock, has also incorporated elements of pop rock, heavy metal, glam metal, and rhythm and blues, and has inspired many subsequent rock artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Aerosmith",
 },
 {
@@ -3868,7 +3868,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "df763897-680f-4ae7-9a20-dc7d07f60ce7",
   spotify: "5RoOQPXxustWHJ6MoOfVMl",
   inductedBy: "Bono",
-  summary: "Christopher Percy Gordon Blackwell OJ (born 22 June 1937) is a Jamaican-British former record producer and the founder of Island Records, which has been called \"one of Britain's great independent labels\". According to the Rock and Roll Hall of Fame, to which Blackwell was inducted in 2001, he is \"the single person most responsible for turning the world on to reggae music.\" Variety describes him as \"indisputably one of the greatest record executives in history.\""
+  summary: "Christopher Percy Gordon Blackwell OJ (born 22 June 1937) is a Jamaican-British former record producer and the founder of Island Records, which has been called \"one of Britain's great independent labels\". According to the Rock and Roll Hall of Fame, to which Blackwell was inducted in 2001, he is \"the single person most responsible for turning the world on to reggae music.\" Variety describes him as \"indisputably one of the greatest record executives in history.\"",
   wikipedia: "https://en.wikipedia.org/wiki/Chris_Blackwell",
 },
 {
@@ -3890,7 +3890,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "85234d2c-599e-46a3-b3f0-a349a5a7266e",
   spotify: "2RAajwxQybgx0iIibcGHLo",
   inductedBy: "Keith Richards",
-  summary: "James Edward Burton (born August 21, 1939, in Dubberly, Louisiana, United States) is an American guitarist. A member of the Rock and Roll Hall of Fame since 2001 (his induction speech was given by longtime fan Keith Richards), Burton has also been recognized by the Rockabilly Hall of Fame and the Musicians Hall of Fame and Museum. He was elected into the Country Music Hall of Fame in 2024."
+  summary: "James Edward Burton (born August 21, 1939, in Dubberly, Louisiana, United States) is an American guitarist. A member of the Rock and Roll Hall of Fame since 2001 (his induction speech was given by longtime fan Keith Richards), Burton has also been recognized by the Rockabilly Hall of Fame and the Musicians Hall of Fame and Museum. He was elected into the Country Music Hall of Fame in 2024.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Burton",
 },
 {
@@ -3912,7 +3912,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cc3a163c-b3dd-4913-bccc-92ad47309088",
   spotify: "3y87PGuBh97sRWZKz3JmiY",
   inductedBy: "Keith Richards",
-  summary: "Johnnie Clyde Johnson (July 8, 1924 – April 13, 2005) was an American pianist who played jazz, blues, and rock and roll. His work with Chuck Berry led to his induction into the Rock and Roll Hall of Fame. He was posthumously awarded the Congressional Gold Medal for breaking racial barriers in the military as a Montford Point Marine, where he endured racism and inspired social change while integrating the previously all-white Marine Corps during World War II."
+  summary: "Johnnie Clyde Johnson (July 8, 1924 – April 13, 2005) was an American pianist who played jazz, blues, and rock and roll. His work with Chuck Berry led to his induction into the Rock and Roll Hall of Fame. He was posthumously awarded the Congressional Gold Medal for breaking racial barriers in the military as a Montford Point Marine, where he endured racism and inspired social change while integrating the previously all-white Marine Corps during World War II.",
   wikipedia: "https://en.wikipedia.org/wiki/Johnnie_Johnson_%28musician%29",
 },
 {
@@ -3934,7 +3934,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
   spotify: "3fMbdgg4jU18AjLCKBhRSm",
   inductedBy: "NSYNC",
-  summary: "Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most culturally significant figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide."
+  summary: "Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most culturally significant figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Michael_Jackson",
 },
 {
@@ -3956,7 +3956,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "05517043-ff78-4988-9c22-88c68588ebb9",
   spotify: "2CvCyf1gEVhI0mX6aFXmVI",
   inductedBy: "Marc Anthony",
-  summary: "Paul Frederic Simon (born October 13, 1941) is an American singer-songwriter and guitarist, known for his solo work and his collaborations with Art Garfunkel. He and Garfunkel, whom he met in elementary school in 1953, came to prominence in the 1960s as Simon & Garfunkel. Their blend of  folk and rock, including hits such as \"The Sound of Silence\" (1965), \"Mrs. Robinson\" (1968), \"America\" (1968), and \"The Boxer\" (1969), served as a soundtrack to the 1960s counterculture."
+  summary: "Paul Frederic Simon (born October 13, 1941) is an American singer-songwriter and guitarist, known for his solo work and his collaborations with Art Garfunkel. He and Garfunkel, whom he met in elementary school in 1953, came to prominence in the 1960s as Simon & Garfunkel. Their blend of  folk and rock, including hits such as \"The Sound of Silence\" (1965), \"Mrs. Robinson\" (1968), \"America\" (1968), and \"The Boxer\" (1969), served as a soundtrack to the 1960s counterculture.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_Simon",
 },
 {
@@ -3978,7 +3978,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
   spotify: "1dfeR4HaWDbWqFHLkxsg1d",
   inductedBy: "Dave Grohl and Taylor Hawkins",
-  summary: "Queen  are  a British rock band formed in London in 1970 by Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), and Roger Taylor (drums, vocals), later joined by John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock."
+  summary: "Queen  are  a British rock band formed in London in 1970 by Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), and Roger Taylor (drums, vocals), later joined by John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Queen_%28band%29",
 },
 {
@@ -4000,7 +4000,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5222714d-21ee-4061-87f7-c749f1586790",
   spotify: "5Y9xEAGW4GwGJgbiI6W85P",
   inductedBy: "Ricky Martin",
-  summary: "Richard Steven Valenzuela (May 13, 1941 – February 3, 1959), better known by his stage name Ritchie Valens, was an American guitarist, singer, and songwriter. A rock and roll pioneer and a forefather of the Chicano rock movement, Valens died in a plane crash just eight months after his breakthrough."
+  summary: "Richard Steven Valenzuela (May 13, 1941 – February 3, 1959), better known by his stage name Ritchie Valens, was an American guitarist, singer, and songwriter. A rock and roll pioneer and a forefather of the Chicano rock movement, Valens died in a plane crash just eight months after his breakthrough.",
   wikipedia: "https://en.wikipedia.org/wiki/Ritchie_Valens",
 },
 {
@@ -4022,7 +4022,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d5c79890-36c5-4f1b-bed3-4468eee093f3",
   spotify: "4nts0oxMT67lVUoi5Kjxrb",
   inductedBy: "Mary J. Blige",
-  summary: "Solomon Vincent McDonald Burke (born James Solomon McDonald, March 21, 1940 – October 10, 2010) was an American singer who shaped the sound of rhythm and blues as one of the founding fathers of soul music in the 1960s. He has been called \"a key transitional figure bridging R&B and soul\", and was known for his \"prodigious output\"."
+  summary: "Solomon Vincent McDonald Burke (born James Solomon McDonald, March 21, 1940 – October 10, 2010) was an American singer who shaped the sound of rhythm and blues as one of the founding fathers of soul music in the 1960s. He has been called \"a key transitional figure bridging R&B and soul\", and was known for his \"prodigious output\".",
   wikipedia: "https://en.wikipedia.org/wiki/Solomon_Burke",
 },
 {
@@ -4044,7 +4044,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e01c3376-15fa-40d7-b747-5f219bdefdd7",
   spotify: "6P7H3ai06vU1sGvdpBwDmE",
   inductedBy: "Moby",
-  summary: "Steely Dan was an American rock band formed in Annandale-on-Hudson, New York, in 1971 by Walter Becker (guitars, bass, backing vocals) and Donald Fagen (keyboards, lead vocals). Originally having a traditional band lineup, Becker and Fagen chose to stop performing live by the end of 1974 and continued Steely Dan as a studio-only duo, using a revolving cast of session musicians. Rolling Stone magazine named them \"the perfect musical antiheroes for the seventies\"."
+  summary: "Steely Dan was an American rock band formed in Annandale-on-Hudson, New York, in 1971 by Walter Becker (guitars, bass, backing vocals) and Donald Fagen (keyboards, lead vocals). Originally having a traditional band lineup, Becker and Fagen chose to stop performing live by the end of 1974 and continued Steely Dan as a studio-only duo, using a revolving cast of session musicians. Rolling Stone magazine named them \"the perfect musical antiheroes for the seventies\".",
   wikipedia: "https://en.wikipedia.org/wiki/Steely_Dan",
 },
 {
@@ -4066,7 +4066,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "467c7eeb-3741-48b4-9bfb-7d6d0b2b0f83",
   spotify: "6iygtKnPG7TRvDaTYcLOd6",
   inductedBy: "Frankie Valli",
-  summary: "The Flamingos are an American doo-wop group formed in Chicago in 1953. The band became popular in mid-to-late 1950s and are best known for their 1959 cover version of \"I Only Have Eyes for You\". They have since been hailed as being one of the finest and most influential vocal groups in pop and doo wop music history. In 2001, the band was inducted into the Rock and Roll Hall of Fame."
+  summary: "The Flamingos are an American doo-wop group formed in Chicago in 1953. The band became popular in mid-to-late 1950s and are best known for their 1959 cover version of \"I Only Have Eyes for You\". They have since been hailed as being one of the finest and most influential vocal groups in pop and doo wop music history. In 2001, the band was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Flamingos",
 },
 {
@@ -4088,7 +4088,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6ca4886a-8f77-4133-b404-46fb3908e24a",
   spotify: "4cPHsZM98sKzmV26wlwD2W",
   inductedBy: "Jewel",
-  summary: "Brenda Mae Tarpley (born December 11, 1944), known professionally as Brenda Lee, is an American singer. Primarily performing rockabilly, pop, country, and Christmas music, she achieved her first Billboard hit at age 12 in 1957, and was given the nickname \"Little Miss Dynamite\". Some of Lee's most successful songs include \"Sweet Nothin's\", \"I'm Sorry\", \"I Want to Be Wanted\", \"Speak to Me Pretty\", \"All Alone Am I\", and \"Losing You\"."
+  summary: "Brenda Mae Tarpley (born December 11, 1944), known professionally as Brenda Lee, is an American singer. Primarily performing rockabilly, pop, country, and Christmas music, she achieved her first Billboard hit at age 12 in 1957, and was given the nickname \"Little Miss Dynamite\". Some of Lee's most successful songs include \"Sweet Nothin's\", \"I'm Sorry\", \"I Want to Be Wanted\", \"Speak to Me Pretty\", \"All Alone Am I\", and \"Losing You\".",
   wikipedia: "https://en.wikipedia.org/wiki/Brenda_Lee",
 },
 {
@@ -4110,7 +4110,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5810667a-9db6-4fd0-abac-667cdac5d415",
   spotify: "4dZrt8Ong5t7YYpvbfp0RU",
   inductedBy: "Marty Stuart and Brian Setzer",
-  summary: "Chester Burton Atkins (June 20, 1924 – June 30, 2001), nicknamed \"Mister Guitar\"  and \"the Country Gentleman\", was a fingerpicking guitar player, arranger and producer who, along with Owen Bradley and Bob Ferguson, created the Nashville sound, the country music style which expanded its appeal to adult pop music fans. He was primarily a guitarist, but he also played the mandolin, fiddle, banjo, and ukulele, and occasionally sang."
+  summary: "Chester Burton Atkins (June 20, 1924 – June 30, 2001), nicknamed \"Mister Guitar\"  and \"the Country Gentleman\", was a fingerpicking guitar player, arranger and producer who, along with Owen Bradley and Bob Ferguson, created the Nashville sound, the country music style which expanded its appeal to adult pop music fans. He was primarily a guitarist, but he also played the mandolin, fiddle, banjo, and ukulele, and occasionally sang.",
   wikipedia: "https://en.wikipedia.org/wiki/Chet_Atkins",
 },
 {
@@ -4132,7 +4132,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "828b1208-2ce4-40c1-b659-11d7f540748c",
   spotify: "3ap1NzHNV9QA1x1V6z3gSe",
   inductedBy: "Darlene Love",
-  summary: "Gene Francis Alan Pitney (February 17, 1940 – April 5, 2006) was an American pop and country singer, songwriter, and musician. Pitney charted 16 top-40 hits in the United States, four in the top ten. In the United Kingdom, he had 22 top-40 hit singles, including 11 in the top ten."
+  summary: "Gene Francis Alan Pitney (February 17, 1940 – April 5, 2006) was an American pop and country singer, songwriter, and musician. Pitney charted 16 top-40 hits in the United States, four in the top ten. In the United Kingdom, he had 22 top-40 hit singles, including 11 in the top ten.",
   wikipedia: "https://en.wikipedia.org/wiki/Gene_Pitney",
 },
 {
@@ -4154,7 +4154,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a2361c7d-ddb6-41c1-a9a0-be09fbbb8d21",
   spotify: "3IKV7o6WPphDB7cCWXaG3E",
   inductedBy: "Alicia Keys",
-  summary: "Isaac Lee Hayes Jr. (August 20, 1942 – August 10, 2008) was an American singer, songwriter, composer, and actor. He was one of the creative forces behind the Southern soul music label Stax Records in the 1960s, serving as an in-house songwriter with his partner David Porter,"
+  summary: "Isaac Lee Hayes Jr. (August 20, 1942 – August 10, 2008) was an American singer, songwriter, composer, and actor. He was one of the creative forces behind the Southern soul music label Stax Records in the 1960s, serving as an in-house songwriter with his partner David Porter,",
   wikipedia: "https://en.wikipedia.org/wiki/Isaac_Hayes",
 },
 {
@@ -4176,7 +4176,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0215efb7-93ed-411e-9221-b3bc1e2c31d8",
   spotify: "1Gy2CxCb9Bvp6Wp0xQmSbq",
   inductedBy: "Sam Moore and Steve Cropper",
-  summary: "James Frank Stewart (July 29, 1930 – December 5, 2022) was an American record producer and executive who in 1957 co-founded Stax Records with his sister Estelle Axton. Stax was one of the leading recording companies during soul and R&B music's heyday. The label also scored many hits on the Billboard Hot 100 pop music chart, and internationally, during this time."
+  summary: "James Frank Stewart (July 29, 1930 – December 5, 2022) was an American record producer and executive who in 1957 co-founded Stax Records with his sister Estelle Axton. Stax was one of the leading recording companies during soul and R&B music's heyday. The label also scored many hits on the Billboard Hot 100 pop music chart, and internationally, during this time.",
   wikipedia: "https://en.wikipedia.org/wiki/Jim_Stewart_%28music_producer%29",
 },
 {
@@ -4198,7 +4198,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d6ed7887-a401-47a8-893c-34b967444d26",
   spotify: "1co4F2pPNH8JjTutZkmgSm",
   inductedBy: "Eddie Vedder",
-  summary: "The Ramones were an American punk rock band formed in the New York City neighborhood Forest Hills, Queens in 1974. Known for helping establish the punk movement in the United States and elsewhere, the Ramones are often recognized as one of the first bands of the genre. Although they never achieved significant commercial success during their existence, the band is highly influential in punk culture."
+  summary: "The Ramones were an American punk rock band formed in the New York City neighborhood Forest Hills, Queens in 1974. Known for helping establish the punk movement in the United States and elsewhere, the Ramones are often recognized as one of the first bands of the genre. Although they never achieved significant commercial success during their existence, the band is highly influential in punk culture.",
   wikipedia: "https://en.wikipedia.org/wiki/Ramones",
 },
 {
@@ -4220,7 +4220,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a94a7155-c79d-4409-9fcf-220cb0e4dc3a",
   spotify: "2x9SpqnPi8rlE9pjHBwmSC",
   inductedBy: "Anthony Kiedis",
-  summary: "Talking Heads (sometimes stylized as T∀LKINGHE∀DS) were an American rock band formed in New York City in 1975. It consisted of lead vocalist and guitarist David Byrne, drummer Chris Frantz, bassist Tina Weymouth, and guitarist and keyboardist Jerry Harrison. Described as one of the most acclaimed groups of the 1980s, Talking Heads helped to pioneer new wave music by combining elements of punk, art rock, funk, and world music with \"an anxious yet clean-cut image\"."
+  summary: "Talking Heads (sometimes stylized as T∀LKINGHE∀DS) were an American rock band formed in New York City in 1975. It consisted of lead vocalist and guitarist David Byrne, drummer Chris Frantz, bassist Tina Weymouth, and guitarist and keyboardist Jerry Harrison. Described as one of the most acclaimed groups of the 1980s, Talking Heads helped to pioneer new wave music by combining elements of punk, art rock, funk, and world music with \"an anxious yet clean-cut image\".",
   wikipedia: "https://en.wikipedia.org/wiki/Talking_Heads",
 },
 {
@@ -4242,7 +4242,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f93dbc64-6f08-4033-bcc7-8a0bb4689849",
   spotify: "4tX2TplrkIP4v05BNC903e",
   inductedBy: "Jakob Dylan",
-  summary: "Tom Petty and the Heartbreakers were an American rock band formed in Gainesville, Florida,  in 1976. The band originally comprised lead singer and rhythm guitarist Tom Petty, lead guitarist Mike Campbell, keyboardist Benmont Tench, drummer Stan Lynch and bassist Ron Blair. In 1982, Blair, weary of the touring lifestyle, departed the band. His replacement, Howie Epstein, remained with the band for the next two decades."
+  summary: "Tom Petty and the Heartbreakers were an American rock band formed in Gainesville, Florida,  in 1976. The band originally comprised lead singer and rhythm guitarist Tom Petty, lead guitarist Mike Campbell, keyboardist Benmont Tench, drummer Stan Lynch and bassist Ron Blair. In 1982, Blair, weary of the touring lifestyle, departed the band. His replacement, Howie Epstein, remained with the band for the next two decades.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Petty_and_the_Heartbreakers",
 },
 {
@@ -4264,7 +4264,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "66c662b6-6e2f-4930-8610-912e24c63ed1",
   spotify: "711MCceyCBcFnzjGY4Q7Un",
   inductedBy: "Steven Tyler",
-  summary: "AC/DC are an Australian rock band formed in Sydney in 1973. Their music has been variously described as hard rock, blues rock and heavy metal, although the band calls it simply \"rock and roll\". They are cited as a formative influence on the new wave of British heavy metal bands. The band was inducted into the Rock and Roll Hall of Fame in 2003 and have sold over 200 million records worldwide, making them one of the best-selling artists of all time."
+  summary: "AC/DC are an Australian rock band formed in Sydney in 1973. Their music has been variously described as hard rock, blues rock and heavy metal, although the band calls it simply \"rock and roll\". They are cited as a formative influence on the new wave of British heavy metal bands. The band was inducted into the Rock and Roll Hall of Fame in 2003 and have sold over 200 million records worldwide, making them one of the best-selling artists of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/AC/DC",
 },
 {
@@ -4286,7 +4286,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "473d40f4-6c89-477a-a4b8-869282412cfd",
   spotify: "4oDuHKwElWAr3tkozdytwg",
   inductedBy: "Paul Shaffer",
-  summary: "William \"Benny\" Benjamin (July 25, 1925 – April 20, 1969), nicknamed Papa Zita, was an American musician, most notable as the primary drummer for the Motown Records studio band The Funk Brothers. He was inducted into the Rock and Roll Hall of Fame in 2003 and was named the eleventh best drummer of all time by Rolling Stone magazine in 2016."
+  summary: "William \"Benny\" Benjamin (July 25, 1925 – April 20, 1969), nicknamed Papa Zita, was an American musician, most notable as the primary drummer for the Motown Records studio band The Funk Brothers. He was inducted into the Rock and Roll Hall of Fame in 2003 and was named the eleventh best drummer of all time by Rolling Stone magazine in 2016.",
   wikipedia: "https://en.wikipedia.org/wiki/Benny_Benjamin",
 },
 {
@@ -4308,7 +4308,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8a338e06-d182-46f2-bd16-30a09bc840ba",
   spotify: "4T3L1vJjIXT4sMnKjTelsE",
   inductedBy: "Elton John",
-  summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\"."
+  summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elvis_Costello",
 },
 {
@@ -4330,7 +4330,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0ffb6573-a98e-412e-aa01-0a580e9d8b06",
   spotify: "4qmHkMxr6pTWh5Zo74odpH",
   inductedBy: "Elton John",
-  summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\"."
+  summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\".",
   wikipedia: null,
 },
 {
@@ -4352,7 +4352,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a7921b29-671a-4378-8a61-539cf73d7588",
   spotify: "6DQ6mdEhxCgHPqfX1niZZK",
   inductedBy: "Paul Shaffer",
-  summary: "Floyd Cramer (October 27, 1933 – December 31, 1997) was an American pianist who became famous for his use of melodic \"whole-step\" attacks. He was inducted into both the Country Music Hall of Fame and the Rock and Roll Hall of Fame. His signature playing style was a cornerstone of the pop-oriented \"Nashville sound\" of the 1950s and 1960s."
+  summary: "Floyd Cramer (October 27, 1933 – December 31, 1997) was an American pianist who became famous for his use of melodic \"whole-step\" attacks. He was inducted into both the Country Music Hall of Fame and the Rock and Roll Hall of Fame. His signature playing style was a cornerstone of the pop-oriented \"Nashville sound\" of the 1950s and 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Floyd_Cramer",
 },
 {
@@ -4374,7 +4374,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "572a89a1-c5e8-485c-bb30-7a07ddab743a",
   spotify: "1ElEnk1Iq07Yx5Bx1UPanr",
   inductedBy: "Lorne Michaels, Paul Simon, and Neil Young",
-  summary: "Mo Ostin (born Morris Meyer Ostrofsky; March 27, 1927 – July 31, 2022) was an American record executive.  The chairman and CEO of Warner Bros. Records from 1972 to 1994 and co-founder of DreamWorks Records, he was inducted into the Rock and Roll Hall of Fame in 2003."
+  summary: "Mo Ostin (born Morris Meyer Ostrofsky; March 27, 1927 – July 31, 2022) was an American record executive.  The chairman and CEO of Warner Bros. Records from 1972 to 1994 and co-founder of DreamWorks Records, he was inducted into the Rock and Roll Hall of Fame in 2003.",
   wikipedia: "https://en.wikipedia.org/wiki/Mo_Ostin",
 },
 {
@@ -4396,7 +4396,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "53f24c2d-76d5-4b2c-ba82-f1830e9caf62",
   spotify: "4qLfWsDWo4b2eaHaKn5KGR",
   inductedBy: "Paul Shaffer",
-  summary: "Steven Douglas Kreisman (September 24, 1938 – April 19, 1993) was an American saxophonist and flautist. He was a member of the famed Los Angeles session musicians known as the Wrecking Crew. As a Los Angeles session musician, he worked with Phil Spector, Bob Dylan, Brian Wilson, The Beach Boys and Ry Cooder."
+  summary: "Steven Douglas Kreisman (September 24, 1938 – April 19, 1993) was an American saxophonist and flautist. He was a member of the famed Los Angeles session musicians known as the Wrecking Crew. As a Los Angeles session musician, he worked with Phil Spector, Bob Dylan, Brian Wilson, The Beach Boys and Ry Cooder.",
   wikipedia: "https://en.wikipedia.org/wiki/Steve_Douglas_%28musician%29",
 },
 {
@@ -4418,7 +4418,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8f92558c-2baa-4758-8c38-615519e9deda",
   spotify: "3RGLhK1IP9jnYFH4BRFJBS",
   inductedBy: "The Edge and Tom Morello",
-  summary: "The Clash were an English rock band formed in London in 1976. Billed as \"The Only Band That Matters\", they are considered one of the most influential acts in the original wave of British punk rock, with their music fusing elements of reggae, dub, funk, ska and rockabilly. The band also contributed to the post-punk and new wave movements that followed."
+  summary: "The Clash were an English rock band formed in London in 1976. Billed as \"The Only Band That Matters\", they are considered one of the most influential acts in the original wave of British punk rock, with their music fusing elements of reggae, dub, funk, ska and rockabilly. The band also contributed to the post-punk and new wave movements that followed.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Clash",
 },
 {
@@ -4440,7 +4440,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9e0e2b01-41db-4008-bd8b-988977d6019a",
   spotify: "5NGO30tJxFlKixkPSgXcFE",
   inductedBy: "Gwen Stefani",
-  summary: "The Police were an English rock band formed in London in 1977. Their core line-up comprised Sting (lead vocals, bass, primary songwriter), Andy Summers (guitar) and Stewart Copeland (drums, percussion). The Police became globally popular from the late 1970s to the mid-1980s. Emerging in the British new wave scene, they played a style of rock influenced by punk, reggae, and jazz."
+  summary: "The Police were an English rock band formed in London in 1977. Their core line-up comprised Sting (lead vocals, bass, primary songwriter), Andy Summers (guitar) and Stewart Copeland (drums, percussion). The Police became globally popular from the late 1970s to the mid-1980s. Emerging in the British new wave scene, they played a style of rock influenced by punk, reggae, and jazz.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Police",
 },
 {
@@ -4462,7 +4462,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1ac3366a-a0e9-4a55-8f6e-796fce32a3b2",
   spotify: "4b0WsB47XCa9F83BmwQ7WX",
   inductedBy: "Billy Joel",
-  summary: "The Righteous Brothers are an American musical duo originally formed by Bill Medley and Bobby Hatfield but now comprising Medley and Bucky Heard. Medley formed the group with Hatfield in 1963. They had first performed together in 1962 in the Los Angeles area as part of a five-member group called the Paramours, and adopted the name the Righteous Brothers when they became a duo."
+  summary: "The Righteous Brothers are an American musical duo originally formed by Bill Medley and Bobby Hatfield but now comprising Medley and Bucky Heard. Medley formed the group with Hatfield in 1963. They had first performed together in 1962 in the Los Angeles area as part of a five-member group called the Paramours, and adopted the name the Righteous Brothers when they became a duo.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Righteous_Brothers",
 },
 {
@@ -4484,7 +4484,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4382b934-64c3-47ac-98db-65f26d845c48",
   spotify: "485uL27bPomh29R4JmQehQ",
   inductedBy: "Kid Rock",
-  summary: "Robert Clark Seger ( SEE-gər; born May 6, 1945) is an American retired singer, songwriter, and musician. As a locally successful Detroit-area artist, he performed and recorded with the groups Bob Seger and the Last Heard and the Bob Seger System throughout the 1960s, breaking through with his first album, Ramblin' Gamblin' Man (which contained his first national hit of the same name) in 1969."
+  summary: "Robert Clark Seger ( SEE-gər; born May 6, 1945) is an American retired singer, songwriter, and musician. As a locally successful Detroit-area artist, he performed and recorded with the groups Bob Seger and the Last Heard and the Bob Seger System throughout the 1960s, breaking through with his first album, Ramblin' Gamblin' Man (which contained his first national hit of the same name) in 1969.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Seger",
 },
 {
@@ -4506,7 +4506,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "42a8f507-8412-4611-854f-926571049fa0",
   spotify: "7FIoB5PHdrMZVC3q2HE5MS",
   inductedBy: "Tom Petty and Jeff Lynne",
-  summary: "George Harrison (25 February 1943 – 29 November 2001) was an English musician who achieved international fame as the lead guitarist of the Beatles. Known as \"the quiet Beatle\", Harrison played a significant role in shaping the band's musical direction and established a successful solo career, particularly through his interest in non-Western musical influences."
+  summary: "George Harrison (25 February 1943 – 29 November 2001) was an English musician who achieved international fame as the lead guitarist of the Beatles. Known as \"the quiet Beatle\", Harrison played a significant role in shaping the band's musical direction and established a successful solo career, particularly through his interest in non-Western musical influences.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Harrison",
 },
 {
@@ -4528,7 +4528,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "88527d26-7496-47c5-8358-ebdb1868a90f",
   spotify: "5lkiCO9UQ8B23dZ1o0UV4m",
   inductedBy: "Bruce Springsteen",
-  summary: "Clyde Jackson Browne (born October 9, 1948) is an American rock musician, singer, songwriter, and political activist who has sold over 30 million albums in the United States."
+  summary: "Clyde Jackson Browne (born October 9, 1948) is an American rock musician, singer, songwriter, and political activist who has sold over 30 million albums in the United States.",
   wikipedia: "https://en.wikipedia.org/wiki/Jackson_Browne",
 },
 {
@@ -4550,7 +4550,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a7ff504b-bbca-49f9-950b-ad02f2a2b092",
   spotify: null,
   inductedBy: "Mick Jagger",
-  summary: "Jann Simon Wenner ( YAHN WEN-er; born January 7, 1946) is an American businessman who co-founded the popular culture magazine Rolling Stone with Ralph J. Gleason and is the former owner of Men's Journal magazine. He participated in the Free Speech Movement while attending the University of California, Berkeley. Wenner co-founded Rolling Stone in 1967."
+  summary: "Jann Simon Wenner ( YAHN WEN-er; born January 7, 1946) is an American businessman who co-founded the popular culture magazine Rolling Stone with Ralph J. Gleason and is the former owner of Men's Journal magazine. He participated in the Free Speech Movement while attending the University of California, Berkeley. Wenner co-founded Rolling Stone in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Jann_Wenner",
 },
 {
@@ -4572,7 +4572,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d651d80e-6137-4440-81da-fff5a27a79c4",
   spotify: "5a2EaR3hamoenG9rDuVn8j",
   inductedBy: "Outkast and Alicia Keys",
-  summary: "Prince Rogers Nelson (June 7, 1958 – April 21, 2016), known mononymously as Prince, was an American singer, songwriter, musician, dancer, actor, and filmmaker. Often being credited as one of the greatest musicians of his generation, he pioneered the Minneapolis sound and was influential in the evolution of various other genres."
+  summary: "Prince Rogers Nelson (June 7, 1958 – April 21, 2016), known mononymously as Prince, was an American singer, songwriter, musician, dancer, actor, and filmmaker. Often being credited as one of the greatest musicians of his generation, he pioneered the Minneapolis sound and was influential in the evolution of various other genres.",
   wikipedia: "https://en.wikipedia.org/wiki/Prince_%28musician%29",
 },
 {
@@ -4594,7 +4594,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f6794ca6-cbd2-4e3d-a860-85a5ce8c6dbe",
   spotify: "0wbrRIw2po5DV4LeaHw55S",
   inductedBy: "Robert Townsend",
-  summary: "The Dells were an American R&B vocal group. Formed in high school in 1953 by founding members Marvin Junior, Verne Allison, Johnny Funches, Chuck Barksdale, and Michael and Lucius McGill, under the name the El-Rays. They released their first recording in 1954 and two years later had their first R&B hit with \"Oh What a Night\". After disbanding due to a near-fatal car crash in 1958, the band re-formed in 1960 with Funches being replaced by Johnny Carter."
+  summary: "The Dells were an American R&B vocal group. Formed in high school in 1953 by founding members Marvin Junior, Verne Allison, Johnny Funches, Chuck Barksdale, and Michael and Lucius McGill, under the name the El-Rays. They released their first recording in 1954 and two years later had their first R&B hit with \"Oh What a Night\". After disbanding due to a near-fatal car crash in 1958, the band re-formed in 1960 with Funches being replaced by Johnny Carter.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Dells",
 },
 {
@@ -4616,7 +4616,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9fadfba9-ecae-4383-a4d8-47b043cea19a",
   spotify: "1CD77o9fbdyQFrHnUPUEsF",
   inductedBy: "Dave Matthews",
-  summary: "Traffic were an English rock band formed in Birmingham in April 1967 by Steve Winwood (formerly of the Spencer Davis Group), Jim Capaldi, Chris Wood and Dave Mason. They began as a psychedelic rock group and diversified their sound through the use of instruments such as keyboards (the Mellotron and harpsichord), sitar, and various reed instruments, and by incorporating jazz and improvisational techniques in their music."
+  summary: "Traffic were an English rock band formed in Birmingham in April 1967 by Steve Winwood (formerly of the Spencer Davis Group), Jim Capaldi, Chris Wood and Dave Mason. They began as a psychedelic rock group and diversified their sound through the use of instruments such as keyboards (the Mellotron and harpsichord), sitar, and various reed instruments, and by incorporating jazz and improvisational techniques in their music.",
   wikipedia: "https://en.wikipedia.org/wiki/Traffic_%28band%29",
 },
 {
@@ -4638,7 +4638,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a81259a0-a2f5-464b-866e-71220f2739f1",
   spotify: "2AM4ilv6UzW0uMRuqKtDgN",
   inductedBy: "Keith Richards",
-  summary: "ZZ Top is an American rock band formed in Houston, Texas, in 1969. The band maintained a constant lineup for over five decades—consisting of vocalist-guitarist Billy Gibbons, drummer Frank Beard, and bassist-vocalist Dusty Hill until Hill's departure, and eventual death, in 2021. ZZ Top developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section."
+  summary: "ZZ Top is an American rock band formed in Houston, Texas, in 1969. The band maintained a constant lineup for over five decades—consisting of vocalist-guitarist Billy Gibbons, drummer Frank Beard, and bassist-vocalist Dusty Hill until Hill's departure, and eventual death, in 2021. ZZ Top developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section.",
   wikipedia: "https://en.wikipedia.org/wiki/ZZ_Top",
 },
 {
@@ -4660,7 +4660,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7f347782-eb14-40c3-98e2-17b6e1bfe56c",
   spotify: "0m2Wc2gfNUWaAuBK7URPIJ",
   inductedBy: "Lauryn Hill",
-  summary: "Paul David Hewson (born 10 May 1960), known by the nickname Bono ( BON-oh), is an Irish singer-songwriter and activist. He is a founding member, the lead vocalist, and primary lyricist of the rock band U2. Bono is known for his impassioned vocal style as well as his grandiose songwriting and performance style. His lyrics frequently include social and political themes, and religious imagery inspired by his Christian faith."
+  summary: "Paul David Hewson (born 10 May 1960), known by the nickname Bono ( BON-oh), is an Irish singer-songwriter and activist. He is a founding member, the lead vocalist, and primary lyricist of the rock band U2. Bono is known for his impassioned vocal style as well as his grandiose songwriting and performance style. His lyrics frequently include social and political themes, and religious imagery inspired by his Christian faith.",
   wikipedia: "https://en.wikipedia.org/wiki/Bono",
 },
 {
@@ -4682,7 +4682,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4336a134-d091-4e54-9967-c7c433db6d4e",
   spotify: "2gCsNOpiBaMNh20jQ5prf0",
   inductedBy: "Eric Clapton and B.B. King",
-  summary: "George \"Buddy\" Guy (born July 30, 1936) is an American blues guitarist and singer-songwriter. He is an exponent of Chicago blues who has influenced generations of guitarists including Eric Clapton, Jimi Hendrix, Jimmy Page, Keith Richards, Stevie Ray Vaughan, Jeff Beck, Gary Clark Jr., and John Mayer. In the 1960s, Guy played with Muddy Waters as a session guitarist at Chess Records and began a musical partnership with blues harp virtuoso Junior Wells."
+  summary: "George \"Buddy\" Guy (born July 30, 1936) is an American blues guitarist and singer-songwriter. He is an exponent of Chicago blues who has influenced generations of guitarists including Eric Clapton, Jimi Hendrix, Jimmy Page, Keith Richards, Stevie Ray Vaughan, Jeff Beck, Gary Clark Jr., and John Mayer. In the 1960s, Guy played with Muddy Waters as a session guitarist at Chess Records and began a musical partnership with blues harp virtuoso Junior Wells.",
   wikipedia: "https://en.wikipedia.org/wiki/Buddy_Guy",
 },
 {
@@ -4704,7 +4704,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "605ba6b1-6a93-4503-bac9-c5890483f222",
   spotify: null,
   inductedBy: "Steven Van Zandt",
-  summary: "Frank Barsalona (March 31, 1938 – November 22, 2012) was an American talent agent and founder of the first major rock and roll booking agency in the United States."
+  summary: "Frank Barsalona (March 31, 1938 – November 22, 2012) was an American talent agent and founder of the first major rock and roll booking agency in the United States.",
   wikipedia: "https://en.wikipedia.org/wiki/Frank_Barsalona",
 },
 {
@@ -4726,7 +4726,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c2f37fdf-5e8f-4d9c-9a03-219a8239cf5f",
   spotify: "3rRmDmzPcAFwcUDvG5gBqO",
   inductedBy: "Rod Stewart",
-  summary: "Percy Tyrone Sledge (November 25, 1940 – April 14, 2015) was an American R&B, soul and gospel singer. He is best known for the song \"When a Man Loves a Woman\", a No. 1 hit on both the Billboard Hot 100 and R&B singles charts in 1966. It was awarded a million-selling, gold-certified disc from the RIAA."
+  summary: "Percy Tyrone Sledge (November 25, 1940 – April 14, 2015) was an American R&B, soul and gospel singer. He is best known for the song \"When a Man Loves a Woman\", a No. 1 hit on both the Billboard Hot 100 and R&B singles charts in 1966. It was awarded a million-selling, gold-certified disc from the RIAA.",
   wikipedia: "https://en.wikipedia.org/wiki/Percy_Sledge",
 },
 {
@@ -4748,7 +4748,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3a95e565-673e-430b-abb4-e17229320fdf",
   spotify: null,
   inductedBy: "Ice-T",
-  summary: "Seymour Steinbigle (April 18, 1942 – April 2, 2023), known professionally as Seymour Stein, was an American entrepreneur and music executive. He co-founded Sire Records and was vice president of Warner Bros. Records. With Sire, Stein signed bands that became central to the new wave era of the 1970s and 1980s, including The Ramones, Talking Heads, and The Pretenders; he signed Madonna as well. He was inducted into the Rock and Roll Hall of Fame in 2005."
+  summary: "Seymour Steinbigle (April 18, 1942 – April 2, 2023), known professionally as Seymour Stein, was an American entrepreneur and music executive. He co-founded Sire Records and was vice president of Warner Bros. Records. With Sire, Stein signed bands that became central to the new wave era of the 1970s and 1980s, including The Ramones, Talking Heads, and The Pretenders; he signed Madonna as well. He was inducted into the Rock and Roll Hall of Fame in 2005.",
   wikipedia: "https://en.wikipedia.org/wiki/Seymour_Stein",
 },
 {
@@ -4770,7 +4770,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8153c6ef-026c-481f-b081-974f2c948d9f",
   spotify: "38h03gA85YYPeDPd9ER9rT",
   inductedBy: "Justin Timberlake",
-  summary: "The O'Jays are an American R&B group from Canton, Ohio, formed in summer 1958 and originally consisting of Eddie Levert, Walter Lee Williams, William Powell, Bobby Massey, and Bill Isles. The O'Jays made their first chart appearance with the minor hit \"Lonely Drifter\" in 1963, but reached their greatest level of success once the producers Gamble & Huff signed them to their Philadelphia International label in 1971."
+  summary: "The O'Jays are an American R&B group from Canton, Ohio, formed in summer 1958 and originally consisting of Eddie Levert, Walter Lee Williams, William Powell, Bobby Massey, and Bill Isles. The O'Jays made their first chart appearance with the minor hit \"Lonely Drifter\" in 1963, but reached their greatest level of success once the producers Gamble & Huff signed them to their Philadelphia International label in 1971.",
   wikipedia: "https://en.wikipedia.org/wiki/The_O%27Jays",
 },
 {
@@ -4792,7 +4792,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e9c832b0-384b-4ee6-aec0-111372784aac",
   spotify: "0GByy3DcfbQwDvXGCWmzv9",
   inductedBy: "Neil Young",
-  summary: "The Pretenders are a British rock band formed in March 1978. The original band consisted of founder and main songwriter Chrissie Hynde (lead vocals, rhythm guitar), James Honeyman-Scott (lead guitar, backing vocals, keyboards), Pete Farndon (bass guitar, backing vocals), and Martin Chambers (drums, backing vocals, percussion)."
+  summary: "The Pretenders are a British rock band formed in March 1978. The original band consisted of founder and main songwriter Chrissie Hynde (lead vocals, rhythm guitar), James Honeyman-Scott (lead guitar, backing vocals, keyboards), Pete Farndon (bass guitar, backing vocals), and Martin Chambers (drums, backing vocals, percussion).",
   wikipedia: "https://en.wikipedia.org/wiki/The_Pretenders",
 },
 {
@@ -4814,7 +4814,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432",
   spotify: "51Blml2LZPmy7TTiAg47vQ",
   inductedBy: "Bruce Springsteen",
-  summary: "U2 are an Irish rock band formed in Dublin in 1976. The group comprises Bono (lead vocals), the Edge (lead guitar, keyboards, and vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds."
+  summary: "U2 are an Irish rock band formed in Dublin in 1976. The group comprises Bono (lead vocals), the Edge (lead guitar, keyboards, and vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds.",
   wikipedia: "https://en.wikipedia.org/wiki/U2",
 },
 {
@@ -4836,7 +4836,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5182c1d9-c7d2-4dad-afa0-ccfeada921a8",
   spotify: "5M52tdBnJaKSvOpJGz8mfZ",
   inductedBy: "James Hetfield and Lars Ulrich",
-  summary: "Black Sabbath were an English heavy metal band formed in Birmingham in 1968 by guitarist Tony Iommi, drummer Bill Ward, bassist Geezer Butler and vocalist Ozzy Osbourne. After adopting the Black Sabbath name in 1969 (the band were previously named Polka Tulk Blues Band and then Earth), they distinguished themselves through occult themes with horror-inspired lyrics and down-tuned guitars."
+  summary: "Black Sabbath were an English heavy metal band formed in Birmingham in 1968 by guitarist Tony Iommi, drummer Bill Ward, bassist Geezer Butler and vocalist Ozzy Osbourne. After adopting the Black Sabbath name in 1969 (the band were previously named Polka Tulk Blues Band and then Earth), they distinguished themselves through occult themes with horror-inspired lyrics and down-tuned guitars.",
   wikipedia: "https://en.wikipedia.org/wiki/Black_Sabbath",
 },
 {
@@ -4858,7 +4858,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4d2956d1-a3f7-44bb-9a41-67563e1a0c94",
   spotify: "4tpUmLEVLCGFr93o8hFFIB",
   inductedBy: "Shirley Manson",
-  summary: "Blondie is an American new wave band formed in New York City in 1974 by singer Debbie Harry and guitarist Chris Stein. The band were considered pioneers in the American new wave genre and scene of the mid-1970s."
+  summary: "Blondie is an American new wave band formed in New York City in 1974 by singer Debbie Harry and guitarist Chris Stein. The band were considered pioneers in the American new wave genre and scene of the mid-1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Blondie_%28band%29",
 },
 {
@@ -4880,7 +4880,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "db76f244-049f-440e-be53-cc5f3c0cdfb6",
   spotify: "1PqdKx88nAgPolRy079lMl",
   inductedBy: "Sting",
-  summary: "Herb Alpert (born March 31, 1935) is an American musician who led the band Herb Alpert & the Tijuana Brass (sometimes called Herb Alpert and the TJB or Herb Alpert’s Tijuana Brass) in the 1960s. During the same decade, he co-founded A&M Records with Jerry Moss."
+  summary: "Herb Alpert (born March 31, 1935) is an American musician who led the band Herb Alpert & the Tijuana Brass (sometimes called Herb Alpert and the TJB or Herb Alpert’s Tijuana Brass) in the 1960s. During the same decade, he co-founded A&M Records with Jerry Moss.",
   wikipedia: "https://en.wikipedia.org/wiki/Herb_Alpert",
 },
 {
@@ -4902,7 +4902,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5fff9dea-34e6-483c-b29e-c4a1e9725dcd",
   spotify: "0I8hYW6zrBig8xzfceNXNm",
   inductedBy: "Sting",
-  summary: "Jerome Sheldon Moss (May 8, 1935 – August 16, 2023) was an American recording executive, best known for being the co-founder of A&M Records, along with trumpet player and bandleader Herb Alpert."
+  summary: "Jerome Sheldon Moss (May 8, 1935 – August 16, 2023) was an American recording executive, best known for being the co-founder of A&M Records, along with trumpet player and bandleader Herb Alpert.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Moss",
 },
 {
@@ -4924,7 +4924,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c544ed4d-2390-4442-a83e-1ea2883b09c8",
   spotify: "4MVyzYMgTwdP7Z49wAZHx0",
   inductedBy: "Kid Rock",
-  summary: "Lynyrd Skynyrd ( LEH-nerd SKIN-nerd) is an American rock band formed in Jacksonville, Florida, in 1964. The group originally formed as My Backyard and comprised Ronnie Van Zant (vocals), Gary Rossington (guitar), Allen Collins (guitar), Larry Junstrom (bass), and Bob Burns (drums). The band spent four years touring small venues under various names and with several lineup changes before deciding on \"Lynyrd Skynyrd\" in 1968."
+  summary: "Lynyrd Skynyrd ( LEH-nerd SKIN-nerd) is an American rock band formed in Jacksonville, Florida, in 1964. The group originally formed as My Backyard and comprised Ronnie Van Zant (vocals), Gary Rossington (guitar), Allen Collins (guitar), Larry Junstrom (bass), and Bob Burns (drums). The band spent four years touring small venues under various names and with several lineup changes before deciding on \"Lynyrd Skynyrd\" in 1968.",
   wikipedia: "https://en.wikipedia.org/wiki/Lynyrd_Skynyrd",
 },
 {
@@ -4946,7 +4946,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "561d854a-6a28-4aa7-8c99-323e6ce46c2a",
   spotify: "0kbYTNQb4Pb1rPbbaF0pT4",
   inductedBy: "Herbie Hancock",
-  summary: "Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American trumpeter, bandleader and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th-century music. In a career spanning nearly five decades, Davis was at the forefront of several major stylistic developments in jazz, including bebop, cool jazz, hard bop, third stream, modal jazz, avant-garde jazz, and jazz fusion. His legacy extends into rock, funk, classical, and hip-hop."
+  summary: "Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American trumpeter, bandleader and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th-century music. In a career spanning nearly five decades, Davis was at the forefront of several major stylistic developments in jazz, including bebop, cool jazz, hard bop, third stream, modal jazz, avant-garde jazz, and jazz fusion. His legacy extends into rock, funk, classical, and hip-hop.",
   wikipedia: "https://en.wikipedia.org/wiki/Miles_Davis",
 },
 {
@@ -4968,7 +4968,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e5db18cb-4b1f-496d-a308-548b611090d3",
   spotify: "1u7kkVrr14iBvrpYnZILJR",
   inductedBy: "Jann Wenner",
-  summary: "The Sex Pistols are an English punk rock band formed in London in 1975. Although their initial career lasted just two and a half years, they became culturally influential in popular music. The band initiated the punk movement in the United Kingdom, with their clothes and hairstyles becoming a significant influence on the punk subculture and fashion."
+  summary: "The Sex Pistols are an English punk rock band formed in London in 1975. Although their initial career lasted just two and a half years, they became culturally influential in popular music. The band initiated the punk movement in the United Kingdom, with their clothes and hairstyles becoming a significant influence on the punk subculture and fashion.",
   wikipedia: "https://en.wikipedia.org/wiki/Sex_Pistols",
 },
 {
@@ -4990,7 +4990,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1390d663-2f56-4b41-9f75-f45ba489250b",
   spotify: "5hQCwevTf03u1rECrRMeop",
   inductedBy: "Jay-Z",
-  summary: "Grandmaster Flash and the Furious Five were an American hip-hop group formed in the South Bronx of New York City in 1978. The group's members were Grandmaster Flash, Kidd Creole (not to be confused with Kid Creole), Keef Cowboy, Melle Mel, Scorpio, and Rahiem. The group's use of turntablism, breakbeat DJing, and conscious lyricism were significant in the early development of hip hop music."
+  summary: "Grandmaster Flash and the Furious Five were an American hip-hop group formed in the South Bronx of New York City in 1978. The group's members were Grandmaster Flash, Kidd Creole (not to be confused with Kid Creole), Keef Cowboy, Melle Mel, Scorpio, and Rahiem. The group's use of turntablism, breakbeat DJing, and conscious lyricism were significant in the early development of hip hop music.",
   wikipedia: "https://en.wikipedia.org/wiki/Grandmaster_Flash_and_the_Furious_Five",
 },
 {
@@ -5012,7 +5012,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d135874d-9cae-4fef-97e3-36acbd9f5a26",
   spotify: "0vYkHhJ48Bs3jWcvZXvOrP",
   inductedBy: "Zack de la Rocha",
-  summary: "Patricia Lee Smith (born December 30, 1946) is an American singer, songwriter, poet, and author. Her 1975 debut album Horses made her an influential member of the New York City–based punk rock movement. Smith has fused rock and poetry in her work. In 1978, her most widely known song, \"Because the Night,\" co-written with Bruce Springsteen, reached number 13 on the Billboard Hot 100 chart and number five on the UK Singles Chart."
+  summary: "Patricia Lee Smith (born December 30, 1946) is an American singer, songwriter, poet, and author. Her 1975 debut album Horses made her an influential member of the New York City–based punk rock movement. Smith has fused rock and poetry in her work. In 1978, her most widely known song, \"Because the Night,\" co-written with Bruce Springsteen, reached number 13 on the Billboard Hot 100 chart and number five on the UK Singles Chart.",
   wikipedia: "https://en.wikipedia.org/wiki/Patti_Smith",
 },
 {
@@ -5034,7 +5034,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ea4dfa26-f633-4da6-a52a-f49ea4897b58",
   spotify: "4KWTAlx2RvbpseOGMEmROg",
   inductedBy: "Eddie Vedder",
-  summary: "R.E.M. was an American rock band formed in Athens, Georgia, in 1980 by drummer Bill Berry, guitarist Peter Buck, bassist Mike Mills, and lead vocalist Michael Stipe, who were students at the University of Georgia. R.E.M. was noted for Buck's arpeggiated \"jangle\" guitar playing; Stipe's distinctive vocal style, unique stage presence, and cryptic lyrics; Mills's countermelodic bass lines and backing vocals; and Berry's tight, economical drumming."
+  summary: "R.E.M. was an American rock band formed in Athens, Georgia, in 1980 by drummer Bill Berry, guitarist Peter Buck, bassist Mike Mills, and lead vocalist Michael Stipe, who were students at the University of Georgia. R.E.M. was noted for Buck's arpeggiated \"jangle\" guitar playing; Stipe's distinctive vocal style, unique stage presence, and cryptic lyrics; Mills's countermelodic bass lines and backing vocals; and Berry's tight, economical drumming.",
   wikipedia: "https://en.wikipedia.org/wiki/R.E.M.",
 },
 {
@@ -5056,7 +5056,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "393e5448-896f-43e9-b80b-4ee58e1e71a4",
   spotify: "7CyeXFnOrfC1N6z4naIpgo",
   inductedBy: "Keith Richards",
-  summary: "The Ronettes ( ron-NETS) were an American girl group from Washington Heights, Manhattan, New York City. The group consisted of the lead singer Veronica Bennett (later known as Ronnie Spector), her older sister Estelle Bennett, and their cousin Nedra Talley. They had sung together since they were teenagers, then known as \"The Darling Sisters\". Signed first by Colpix Records in 1961, they moved to Phil Spector's Philles Records in March 1963 and changed their name to \"The Ronettes\"."
+  summary: "The Ronettes ( ron-NETS) were an American girl group from Washington Heights, Manhattan, New York City. The group consisted of the lead singer Veronica Bennett (later known as Ronnie Spector), her older sister Estelle Bennett, and their cousin Nedra Talley. They had sung together since they were teenagers, then known as \"The Darling Sisters\". Signed first by Colpix Records in 1961, they moved to Phil Spector's Philles Records in March 1963 and changed their name to \"The Ronettes\".",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ronettes",
 },
 {
@@ -5078,7 +5078,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b665b768-0d83-4363-950c-31ed39317c15",
   spotify: "2cnMpRsOVqtPMfq7YiFE6K",
   inductedBy: "Velvet Revolver",
-  summary: "Van Halen ( van HAY-len) was an American rock band formed in Pasadena, California, in 1972. Credited with restoring hard rock to the forefront of the music scene, Van Halen was known for their energetic live performances and the virtuosity of their guitarist, Eddie Van Halen."
+  summary: "Van Halen ( van HAY-len) was an American rock band formed in Pasadena, California, in 1972. Credited with restoring hard rock to the forefront of the music scene, Van Halen was known for their energetic live performances and the virtuosity of their guitarist, Eddie Van Halen.",
   wikipedia: "https://en.wikipedia.org/wiki/Van_Halen",
 },
 {
@@ -5100,7 +5100,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5bd1efc6-995d-4e73-b8f9-1b4c341db185",
   spotify: "6Qlnvq7TkRSm7Pw4SfDLD7",
   inductedBy: "Jerry Butler",
-  summary: "Kenneth Gamble (born August 11, 1943, Philadelphia, Pennsylvania) and Leon A. Huff (born April 8, 1942, Camden, New Jersey) are an American songwriting and production duo credited for developing the Philadelphia soul music genre (also known as Philly sound) of the 1970s."
+  summary: "Kenneth Gamble (born August 11, 1943, Philadelphia, Pennsylvania) and Leon A. Huff (born April 8, 1942, Camden, New Jersey) are an American songwriting and production duo credited for developing the Philadelphia soul music genre (also known as Philly sound) of the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Gamble_and_Huff",
 },
 {
@@ -5122,7 +5122,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0aad6b52-fd93-4ea4-9c5d-1f66e1bc9f0a",
   spotify: "3lPQ2Fk5JOwGWAF3ORFCqH",
   inductedBy: "Billy Joel",
-  summary: "John J. Mellencamp (born October 7, 1951), previously known as Johnny Cougar, The Coug, John Cougar, and John Cougar Mellencamp, is an American singer-songwriter. He is known for his brand of heartland rock, which emphasizes traditional instrumentation. He was inducted into the Rock and Roll Hall of Fame in 2008, followed by an induction into the Songwriters Hall of Fame in 2018."
+  summary: "John J. Mellencamp (born October 7, 1951), previously known as Johnny Cougar, The Coug, John Cougar, and John Cougar Mellencamp, is an American singer-songwriter. He is known for his brand of heartland rock, which emphasizes traditional instrumentation. He was inducted into the Rock and Roll Hall of Fame in 2008, followed by an induction into the Songwriters Hall of Fame in 2018.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Mellencamp",
 },
 {
@@ -5144,7 +5144,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "65314b12-0e08-43fa-ba33-baaa7b874c15",
   spotify: "5l8VQNuIg0turYE1VtM9zV",
   inductedBy: "Lou Reed",
-  summary: "Leonard Norman Cohen (September 21, 1934 – November 7, 2016) was a Canadian songwriter, singer, poet, and novelist. Themes commonly explored throughout his work include faith and mortality, isolation and depression, betrayal and redemption, social and political conflict, sexual and romantic love, desire, regret, and loss. He was inducted into the Canadian Music Hall of Fame, the Canadian Songwriters Hall of Fame, and the Rock and Roll Hall of Fame."
+  summary: "Leonard Norman Cohen (September 21, 1934 – November 7, 2016) was a Canadian songwriter, singer, poet, and novelist. Themes commonly explored throughout his work include faith and mortality, isolation and depression, betrayal and redemption, social and political conflict, sexual and romantic love, desire, regret, and loss. He was inducted into the Canadian Music Hall of Fame, the Canadian Songwriters Hall of Fame, and the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Leonard_Cohen",
 },
 {
@@ -5166,7 +5166,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5545a012-0977-46ff-9d69-39bf5952616f",
   spotify: "22JuR9OeENcP54XN5TlNWS",
   inductedBy: "Ben Harper",
-  summary: "Marion Walter Jacobs (May 1, 1930 – February 15, 1968), known as Little Walter, was an American blues musician, singer, and songwriter. His revolutionary approach to the harmonica had a strong impact on the succeeding generations, earning him comparisons to such seminal artists as Django Reinhardt, Charlie Parker and Jimi Hendrix. His virtuosity and musical innovations fundamentally altered many listeners' expectations of what was possible on blues harmonica."
+  summary: "Marion Walter Jacobs (May 1, 1930 – February 15, 1968), known as Little Walter, was an American blues musician, singer, and songwriter. His revolutionary approach to the harmonica had a strong impact on the succeeding generations, earning him comparisons to such seminal artists as Django Reinhardt, Charlie Parker and Jimi Hendrix. His virtuosity and musical innovations fundamentally altered many listeners' expectations of what was possible on blues harmonica.",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Walter",
 },
 {
@@ -5188,7 +5188,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "79239441-bfd5-4981-a70c-55c3f15c1287",
   spotify: "6tbjWDEIzxoDsBA1FuhfPW",
   inductedBy: "Justin Timberlake",
-  summary: "Madonna Louise Ciccone ( chih-KOH-nee; born August 16, 1958) is an American singer, songwriter, record producer, and actress. Dubbed the \"Queen of Pop\", she is known for her continual reinvention and versatility in music production, songwriting, and visual presentation. Madonna broke gender barriers in popular music through works that explored social, political, sexual, and religious themes and generated both controversy and critical acclaim."
+  summary: "Madonna Louise Ciccone ( chih-KOH-nee; born August 16, 1958) is an American singer, songwriter, record producer, and actress. Dubbed the \"Queen of Pop\", she is known for her continual reinvention and versatility in music production, songwriting, and visual presentation. Madonna broke gender barriers in popular music through works that explored social, political, sexual, and religious themes and generated both controversy and critical acclaim.",
   wikipedia: "https://en.wikipedia.org/wiki/Madonna",
 },
 {
@@ -5210,7 +5210,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6da6a053-618f-4f17-aea1-c8075bd8cc2d",
   spotify: "2HBbky0Z08ZcCKVsXWbNE4",
   inductedBy: "Tom Hanks",
-  summary: "The Dave Clark Five, also known as the DC5, were an English rock and roll band formed in 1958 in Tottenham, London. Drummer Dave Clark was the group's leader, producer and co-songwriter. In January 1964, they had their first UK top-ten single, \"Glad All Over\", which knocked the Beatles' \"I Want to Hold Your Hand\" off the top of the UK Singles Chart. It peaked at No. 6 in the United States in April 1964. Although this was their only UK No."
+  summary: "The Dave Clark Five, also known as the DC5, were an English rock and roll band formed in 1958 in Tottenham, London. Drummer Dave Clark was the group's leader, producer and co-songwriter. In January 1964, they had their first UK top-ten single, \"Glad All Over\", which knocked the Beatles' \"I Want to Hold Your Hand\" off the top of the UK Singles Chart. It peaked at No. 6 in the United States in April 1964. Although this was their only UK No.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Dave_Clark_Five",
 },
 {
@@ -5232,7 +5232,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b2cc8903-0077-4bef-8454-ac5cef53d126",
   spotify: "2GaayiIs1kcyNqRXQuzp35",
   inductedBy: "John Fogerty",
-  summary: "The Ventures are an American instrumental rock band formed in Tacoma, Washington, in 1958, by Don Wilson and Bob Bogle. The band, which was a quartet for most of its existence, helped to popularize the electric guitar across the world during the 1960s. While their popularity in the United States waned in the 1970s, the group remains especially revered in Japan, where they have toured regularly."
+  summary: "The Ventures are an American instrumental rock band formed in Tacoma, Washington, in 1958, by Don Wilson and Bob Bogle. The band, which was a quartet for most of its existence, helped to popularize the electric guitar across the world during the 1960s. While their popularity in the United States waned in the 1970s, the group remains especially revered in Japan, where they have toured regularly.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ventures",
 },
 {
@@ -5254,7 +5254,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "83247072-1bc7-44d4-a11a-4fc649ddab13",
   spotify: null,
   inductedBy: "Garry Tallent",
-  summary: "William Patton Black Jr. (September 17, 1926 – October 21, 1965) was an American musician and bandleader who is noted as one of the pioneers of rock and roll. He played in Elvis Presley's early trio, the Blue Moon Boys. Black later formed Bill Black's Combo."
+  summary: "William Patton Black Jr. (September 17, 1926 – October 21, 1965) was an American musician and bandleader who is noted as one of the pioneers of rock and roll. He played in Elvis Presley's early trio, the Blue Moon Boys. Black later formed Bill Black's Combo.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Black",
 },
 {
@@ -5276,7 +5276,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "48e78462-2f0b-4a1a-9fa4-0585e2991e80",
   spotify: "0vqkz1b2qBkoYrGMj2CUWq",
   inductedBy: "Ron Wood",
-  summary: "Robert Dwayne Womack ( WOH-mak; March 4, 1944 – June 27, 2014) was an American singer-songwriter and guitarist. Starting in the early 1950s as the lead singer of his family musical group the Valentinos and as Sam Cooke's backing guitarist, Womack's career spanned more than 60 years and multiple styles, including R&B, blues, doo-wop, gospel, funk, and soul."
+  summary: "Robert Dwayne Womack ( WOH-mak; March 4, 1944 – June 27, 2014) was an American singer-songwriter and guitarist. Starting in the early 1950s as the lead singer of his family musical group the Valentinos and as Sam Cooke's backing guitarist, Womack's career spanned more than 60 years and multiple styles, including R&B, blues, doo-wop, gospel, funk, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Womack",
 },
 {
@@ -5298,7 +5298,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "cb914df3-0925-4078-bc0e-c23c864898af",
   spotify: null,
   inductedBy: "Max Weinberg",
-  summary: "Dominic Joseph Fontana (March 15, 1931 – June 13, 2018) was an American musician best known as the drummer for Elvis Presley for 14 years. In 1955, he was hired to play drums for Presley, which marked the beginning of a 15-year relationship. He played on over 460 RCA recordings with Elvis."
+  summary: "Dominic Joseph Fontana (March 15, 1931 – June 13, 2018) was an American musician best known as the drummer for Elvis Presley for 14 years. In 1955, he was hired to play drums for Presley, which marked the beginning of a 15-year relationship. He played on over 460 RCA recordings with Elvis.",
   wikipedia: "https://en.wikipedia.org/wiki/D._J._Fontana",
 },
 {
@@ -5320,7 +5320,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "14a4bc78-1c2d-4ca7-8d1b-9b58076a2a17",
   spotify: "0AD4odMWVQ2wUSlgxOB5Rl",
   inductedBy: "Jimmy Page",
-  summary: "Geoffrey Arnold Beck (24 June 1944 – 10 January 2023) was an English guitarist. He rose to prominence as a member of the rock band the Yardbirds, and afterwards founded and fronted the Jeff Beck Group and Beck, Bogert & Appice. In 1975, he switched to an instrumental style with focus on an innovative sound, and his releases spanned genres and styles ranging from blues rock, hard rock, jazz fusion and a blend of guitar-rock and electronica."
+  summary: "Geoffrey Arnold Beck (24 June 1944 – 10 January 2023) was an English guitarist. He rose to prominence as a member of the rock band the Yardbirds, and afterwards founded and fronted the Jeff Beck Group and Beck, Bogert & Appice. In 1975, he switched to an instrumental style with focus on an innovative sound, and his releases spanned genres and styles ranging from blues rock, hard rock, jazz fusion and a blend of guitar-rock and electronica.",
   wikipedia: "https://en.wikipedia.org/wiki/Jeff_Beck",
 },
 {
@@ -5342,7 +5342,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bcb77c0a-0faa-4f10-bfd5-fd8583f4bfba",
   spotify: "3PF1KBeHYb14yKgsiE693V",
   inductedBy: "Smokey Robinson",
-  summary: "Little Anthony and the Imperials is an American rhythm and blues, doo-wop, and soul vocal group from New York City founded by Clarence Collins in the 1950s and named in part for its lead singer, Jerome Anthony \"Little Anthony\" Gourdine, who was noted for his high-pitched voice. In addition to Collins and Gourdine, the original Imperials included Ernest Wright, Glouster \"Nate\" Rogers, and Tracy Lord, the last two of whom were subsequently replaced by Sammy Strain."
+  summary: "Little Anthony and the Imperials is an American rhythm and blues, doo-wop, and soul vocal group from New York City founded by Clarence Collins in the 1950s and named in part for its lead singer, Jerome Anthony \"Little Anthony\" Gourdine, who was noted for his high-pitched voice. In addition to Collins and Gourdine, the original Imperials included Ernest Wright, Glouster \"Nate\" Rogers, and Tracy Lord, the last two of whom were subsequently replaced by Sammy Strain.",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Anthony_and_the_Imperials",
 },
 {
@@ -5364,7 +5364,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
   spotify: "2ye2Wgw4gimLv2eAKyk1NB",
   inductedBy: "Flea",
-  summary: "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax, and Slayer."
+  summary: "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax, and Slayer.",
   wikipedia: "https://en.wikipedia.org/wiki/Metallica",
 },
 {
@@ -5386,7 +5386,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5ecc3f72-20a6-47a0-8dc5-fb0b3dadeea0",
   spotify: "3CQIn7N5CuRDP8wEI7FiDA",
   inductedBy: "Eminem",
-  summary: "Run-DMC (also formatted Run-D.M.C., RUN DMC, or some combination thereof) was an American hip-hop group formed in Hollis, Queens, New York City in 1983 by Joseph Simmons, Darryl McDaniels, and Jason Mizell. Run-DMC is regarded as one of the most influential acts in the history of hip-hop culture and especially one of the most famous hip-hop acts of the 1980s."
+  summary: "Run-DMC (also formatted Run-D.M.C., RUN DMC, or some combination thereof) was an American hip-hop group formed in Hollis, Queens, New York City in 1983 by Joseph Simmons, Darryl McDaniels, and Jason Mizell. Run-DMC is regarded as one of the most influential acts in the history of hip-hop culture and especially one of the most famous hip-hop acts of the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Run-DMC",
 },
 {
@@ -5408,7 +5408,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ba170eca-541b-4ee5-b332-54ff954b75ea",
   spotify: "6GwM53df9UWtthcHHBiPpS",
   inductedBy: "Paul Shaffer",
-  summary: "Dewey \"Spooner\" Lindon Oldham Jr. (born June 14, 1943) is an American songwriter and session musician. An organist, he recorded in Muscle Shoals, Alabama, at FAME Studios as part of the Muscle Shoals Rhythm Section on such hit R&B songs as Percy Sledge's \"When a Man Loves a Woman\", Wilson Pickett's \"Mustang Sally\", and Aretha Franklin's \"I Never Loved a Man (The Way I Love You)\"."
+  summary: "Dewey \"Spooner\" Lindon Oldham Jr. (born June 14, 1943) is an American songwriter and session musician. An organist, he recorded in Muscle Shoals, Alabama, at FAME Studios as part of the Muscle Shoals Rhythm Section on such hit R&B songs as Percy Sledge's \"When a Man Loves a Woman\", Wilson Pickett's \"Mustang Sally\", and Aretha Franklin's \"I Never Loved a Man (The Way I Love You)\".",
   wikipedia: "https://en.wikipedia.org/wiki/Spooner_Oldham",
 },
 {
@@ -5430,7 +5430,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "550fbe01-42e9-4006-bcd0-6a1854dceb8f",
   spotify: "5ZKMPRDHc7qElVJFh3uRqB",
   inductedBy: "Rosanne Cash",
-  summary: "Wanda LaVonne Jackson (born October 20, 1937) is an American retired singer and songwriter. Since the 1950s, she has recorded and released music in the genres of rock, country and gospel. She was among the first women to have a career in rock and roll, recording a series of 1950s singles that helped give her the nickname \"The Queen of Rockabilly\". She is also counted among the first female stars in the genre of country music."
+  summary: "Wanda LaVonne Jackson (born October 20, 1937) is an American retired singer and songwriter. Since the 1950s, she has recorded and released music in the genres of rock, country and gospel. She was among the first women to have a career in rock and roll, recording a series of 1950s singles that helped give her the nickname \"The Queen of Rockabilly\". She is also counted among the first female stars in the genre of country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Wanda_Jackson",
 },
 {
@@ -5452,7 +5452,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d87e52c5-bb8d-4da8-b941-9f4928627dc8",
   spotify: "0LcJLqbBmaGUft1e9Mm8HV",
   inductedBy: "Barry and Robin Gibb",
-  summary: "ABBA (  AB-ə [ˈâbːa]) (often stylised as ABBA) were a Swedish pop music group formed in Stockholm in 1972 by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad. They are among the most renowned and commercially successful musical groups in history."
+  summary: "ABBA (  AB-ə [ˈâbːa]) (often stylised as ABBA) were a Swedish pop music group formed in Stockholm in 1972 by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad. They are among the most renowned and commercially successful musical groups in history.",
   wikipedia: "https://en.wikipedia.org/wiki/ABBA",
 },
 {
@@ -5474,7 +5474,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4c857e19-d9bb-460e-b3ec-2d1ea24c3247",
   spotify: "7ndXQ4XNWOzIPq3ElQhrEP",
   inductedBy: "Carole King",
-  summary: "Eleanor Louise Greenwich (October 23, 1940 – August 26, 2009) was an American pop music singer, songwriter, and record producer. She wrote or co-wrote \"Da Doo Ron Ron\", \"Be My Baby\", \"Maybe I Know\", \"Then He Kissed Me\", \"Do Wah Diddy Diddy\", \"Christmas (Baby Please Come Home)\", \"Hanky Panky\", \"Chapel of Love\", \"Leader of the Pack\", and \"River Deep – Mountain High\", among others."
+  summary: "Eleanor Louise Greenwich (October 23, 1940 – August 26, 2009) was an American pop music singer, songwriter, and record producer. She wrote or co-wrote \"Da Doo Ron Ron\", \"Be My Baby\", \"Maybe I Know\", \"Then He Kissed Me\", \"Do Wah Diddy Diddy\", \"Christmas (Baby Please Come Home)\", \"Hanky Panky\", \"Chapel of Love\", \"Leader of the Pack\", and \"River Deep – Mountain High\", among others.",
   wikipedia: "https://en.wikipedia.org/wiki/Ellie_Greenwich",
 },
 {
@@ -5496,7 +5496,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e",
   spotify: "3CkvROUTQ6nRi9yQOcsB50",
   inductedBy: "Trey Anastasio",
-  summary: "Genesis were an English rock band formed at Charterhouse School, in Godalming, Surrey, in 1967. The band's longest-lasting and most commercially successful line-up consisted of keyboardist Tony Banks, bassist/guitarist Mike Rutherford and drummer/singer Phil Collins. In the 1970s, during which the band also included singer Peter Gabriel and guitarist Steve Hackett, Genesis were among the pioneers of progressive rock."
+  summary: "Genesis were an English rock band formed at Charterhouse School, in Godalming, Surrey, in 1967. The band's longest-lasting and most commercially successful line-up consisted of keyboardist Tony Banks, bassist/guitarist Mike Rutherford and drummer/singer Phil Collins. In the 1970s, during which the band also included singer Peter Gabriel and guitarist Steve Hackett, Genesis were among the pioneers of progressive rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Genesis_%28band%29",
 },
 {
@@ -5518,7 +5518,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0e21491a-18a5-40d9-a68c-a651a0fda689",
   spotify: "4h4nyO6EOTwCGe7LwwHR4I",
   inductedBy: "Carole King",
-  summary: "Jeff Barry (born Joel Adelberg; April 3, 1938) is an American pop music songwriter, singer, and record producer. Among the most successful songs that he has co-written in his career are \"Tell Laura I Love Her\" (written with Ben Raleigh and a number 1 hit in the UK Singles Chart when it was recorded by Ricky Valance and number 7 in the US as sung by Ray Peterson), \"Do Wah Diddy Diddy\", \"Da Doo Ron Ron\", \"Then He Kissed Me\", \"Be My Baby\", \"Chapel of Love\", and \"River Deep - Mountain High\" (all wri…"
+  summary: "Jeff Barry (born Joel Adelberg; April 3, 1938) is an American pop music songwriter, singer, and record producer. Among the most successful songs that he has co-written in his career are \"Tell Laura I Love Her\" (written with Ben Raleigh and a number 1 hit in the UK Singles Chart when it was recorded by Ricky Valance and number 7 in the US as sung by Ray Peterson), \"Do Wah Diddy Diddy\", \"Da Doo Ron Ron\", \"Then He Kissed Me\", \"Be My Baby\", \"Chapel of Love\", and \"River Deep - Mountain High\" (all wri…",
   wikipedia: "https://en.wikipedia.org/wiki/Jeff_Barry",
 },
 {
@@ -5540,7 +5540,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b011ce7d-ff1c-43cd-82ae-d978ee4d5d49",
   spotify: "0bO3bOZwJNmh750eBf0aA0",
   inductedBy: "Carole King",
-  summary: "Jesse Albert Stone (November 16, 1901 – April 1, 1999) was an American rhythm and blues musician and songwriter whose influence spanned a wide range of genres. He also used the pseudonyms Charles Calhoun and Chuck Calhoun.  His best-known composition as Calhoun was \"Shake, Rattle and Roll\"."
+  summary: "Jesse Albert Stone (November 16, 1901 – April 1, 1999) was an American rhythm and blues musician and songwriter whose influence spanned a wide range of genres. He also used the pseudonyms Charles Calhoun and Chuck Calhoun.  His best-known composition as Calhoun was \"Shake, Rattle and Roll\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jesse_Stone_%28musician%29",
 },
 {
@@ -5562,7 +5562,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2caa54a7-b08c-41da-b892-3a41abe778be",
   spotify: "3rJ3m1tM6vUgiWLjfV8sRf",
   inductedBy: "Wyclef Jean",
-  summary: "James Chambers (30 July 1944 – 24 November 2025), known professionally as Jimmy Cliff, was a Jamaican ska, rocksteady, reggae and soul musician. He was considered to be one of Jamaica's most celebrated musicians and was credited with helping to popularise reggae music internationally. At the time of his death, he was the 4th reggae musician to hold the Order of Merit, the highest honour granted by the Jamaican government for achievements in the arts and sciences."
+  summary: "James Chambers (30 July 1944 – 24 November 2025), known professionally as Jimmy Cliff, was a Jamaican ska, rocksteady, reggae and soul musician. He was considered to be one of Jamaica's most celebrated musicians and was credited with helping to popularise reggae music internationally. At the time of his death, he was the 4th reggae musician to hold the Order of Merit, the highest honour granted by the Jamaican government for achievements in the arts and sciences.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Cliff",
 },
 {
@@ -5584,7 +5584,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f164295a-8f2c-4ca7-b351-d33039a0bf94",
   spotify: null,
   inductedBy: "Eric Clapton and B.B. King",
-  summary: "Cynthia Weil (October 18, 1940 – June 1, 2023) was an American lyricist who wrote many songs together with her husband Barry Mann. Weil and Mann were inducted into the Songwriters Hall of Fame in 1987, and in 2011, they jointly received the Johnny Mercer Award, the highest honor bestowed by that Hall of Fame.  She and her husband were inducted into the Rock and Roll Hall of Fame in 2010."
+  summary: "Cynthia Weil (October 18, 1940 – June 1, 2023) was an American lyricist who wrote many songs together with her husband Barry Mann. Weil and Mann were inducted into the Songwriters Hall of Fame in 1987, and in 2011, they jointly received the Johnny Mercer Award, the highest honor bestowed by that Hall of Fame.  She and her husband were inducted into the Rock and Roll Hall of Fame in 2010.",
   wikipedia: null,
 },
 {
@@ -5606,7 +5606,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1226cb0d-03d3-4021-801a-a74408575abf",
   spotify: "73dkDD6toRueICopRBxKab",
   inductedBy: "Carole King",
-  summary: "Mortimer Shuman (November 12, 1938 – November 2, 1991) was an American singer, pianist and songwriter, best known as co-writer of many 1960s rock and roll hits, including \"Viva Las Vegas\". He also wrote and sang many songs in French, such as \"Le Lac Majeur\", \"Papa-Tango-Charly\", \"Sha Mi Sha\", \"Un Été de Porcelaine\", and \"Brooklyn by the Sea\" which became hits in France and several other European countries. Shuman wrote over 500 songs, including those for Ben E."
+  summary: "Mortimer Shuman (November 12, 1938 – November 2, 1991) was an American singer, pianist and songwriter, best known as co-writer of many 1960s rock and roll hits, including \"Viva Las Vegas\". He also wrote and sang many songs in French, such as \"Le Lac Majeur\", \"Papa-Tango-Charly\", \"Sha Mi Sha\", \"Un Été de Porcelaine\", and \"Brooklyn by the Sea\" which became hits in France and several other European countries. Shuman wrote over 500 songs, including those for Ben E.",
   wikipedia: "https://en.wikipedia.org/wiki/Mort_Shuman",
 },
 {
@@ -5628,7 +5628,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3fc10e0b-b2f9-4b8e-89a7-886045770e94",
   spotify: "5Ikti72e24GFKzTNdtpnoX",
   inductedBy: "Carole King",
-  summary: "Otis Blackwell (February 16, 1931 – May 6, 2002) was an American songwriter whose work influenced rock and roll. His compositions include \"Fever\" (recorded by Little Willie John), \"Great Balls of Fire\" and \"Breathless\" (recorded by Jerry Lee Lewis), \"Don't Be Cruel\", \"All Shook Up\", and \"Return to Sender\" (with Winfield Scott; recorded by Elvis Presley), and \"Handy Man\" (recorded by Jimmy Jones)."
+  summary: "Otis Blackwell (February 16, 1931 – May 6, 2002) was an American songwriter whose work influenced rock and roll. His compositions include \"Fever\" (recorded by Little Willie John), \"Great Balls of Fire\" and \"Breathless\" (recorded by Jerry Lee Lewis), \"Don't Be Cruel\", \"All Shook Up\", and \"Return to Sender\" (with Winfield Scott; recorded by Elvis Presley), and \"Handy Man\" (recorded by Jimmy Jones).",
   wikipedia: "https://en.wikipedia.org/wiki/Otis_Blackwell",
 },
 {
@@ -5650,7 +5650,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d4305549-6b4e-4a57-b24d-8af0743fe191",
   spotify: "6waa8mKu91GjzD4NlONlNJ",
   inductedBy: "Steven Van Zandt",
-  summary: "The Hollies are an English rock and pop band formed in Manchester in 1962 by singer Allan Clarke and rhythm guitarist/singer Graham Nash. One of most successful British bands of the 1960s and 1970s, their first stable line-up consisted of Clarke, Nash, lead guitarist Tony Hicks, bassist Eric Haydock, and drummer Don Rathbone. Rathbone was replaced by Bobby Elliott in late 1963, while Haydock was replaced by Bernie Calvert in mid-1966."
+  summary: "The Hollies are an English rock and pop band formed in Manchester in 1962 by singer Allan Clarke and rhythm guitarist/singer Graham Nash. One of most successful British bands of the 1960s and 1970s, their first stable line-up consisted of Clarke, Nash, lead guitarist Tony Hicks, bassist Eric Haydock, and drummer Don Rathbone. Rathbone was replaced by Bobby Elliott in late 1963, while Haydock was replaced by Bernie Calvert in mid-1966.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Hollies",
 },
 {
@@ -5672,7 +5672,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "794c6bf2-3241-416f-9b8f-24e2d84a1c4b",
   spotify: "4BFMTELQyWJU1SwqcXMBm3",
   inductedBy: "Billie Joe Armstrong",
-  summary: "The Stooges (also known as Iggy and the Stooges)  were an American rock band formed in Ann Arbor, Michigan, in 1967 by singer Iggy Pop, guitarist Ron Asheton, drummer Scott Asheton, and bassist Dave Alexander. Initially playing a raw, primitive style of rock and roll, the band sold few records in their original incarnation and gained a reputation for their confrontational performances, which sometimes involved acts of self-mutilation by Iggy Pop."
+  summary: "The Stooges (also known as Iggy and the Stooges)  were an American rock band formed in Ann Arbor, Michigan, in 1967 by singer Iggy Pop, guitarist Ron Asheton, drummer Scott Asheton, and bassist Dave Alexander. Initially playing a raw, primitive style of rock and roll, the band sold few records in their original incarnation and gained a reputation for their confrontational performances, which sometimes involved acts of self-mutilation by Iggy Pop.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Stooges",
 },
 {
@@ -5694,7 +5694,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ee58c59f-8e7f-4430-b8ca-236c4d3745ae",
   spotify: "3EhbVgyfGd7HkpsagwL9GS",
   inductedBy: "Rob Zombie",
-  summary: "Alice Cooper (born Vincent Damon Furnier; February 4, 1948) is an American singer and songwriter. With a career spanning over six decades, he is known for his raspy singing voice and theatrical stage shows that feature numerous props and illusions. Cooper is considered by music journalists and peers to be \"The Godfather of Shock Rock\". He has drawn from horror films, vaudeville, and garage rock to pioneer a macabre and theatrical brand of rock designed to shock audiences."
+  summary: "Alice Cooper (born Vincent Damon Furnier; February 4, 1948) is an American singer and songwriter. With a career spanning over six decades, he is known for his raspy singing voice and theatrical stage shows that feature numerous props and illusions. Cooper is considered by music journalists and peers to be \"The Godfather of Shock Rock\". He has drawn from horror films, vaudeville, and garage rock to pioneer a macabre and theatrical brand of rock designed to shock audiences.",
   wikipedia: "https://en.wikipedia.org/wiki/Alice_Cooper",
 },
 {
@@ -5716,7 +5716,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4d7928cd-7ed2-4282-8c29-c0c9f966f1bd",
   spotify: "3EhbVgyfGd7HkpsagwL9GS",
   inductedBy: "Rob Zombie",
-  summary: "Alice Cooper, also known as the Alice Cooper Group or the Alice Cooper Band is an American rock band formed in Phoenix, Arizona, in 1968. During their original run, the band consisted of lead singer Vincent Furnier (who adopted the stage name Alice Cooper), lead guitarist Glen Buxton, rhythm guitarist and keyboardist Michael Bruce, bassist Dennis Dunaway, and drummer Neal Smith. The band was notorious for their elaborate, theatrical shock rock stage shows."
+  summary: "Alice Cooper, also known as the Alice Cooper Group or the Alice Cooper Band is an American rock band formed in Phoenix, Arizona, in 1968. During their original run, the band consisted of lead singer Vincent Furnier (who adopted the stage name Alice Cooper), lead guitarist Glen Buxton, rhythm guitarist and keyboardist Michael Bruce, bassist Dennis Dunaway, and drummer Neal Smith. The band was notorious for their elaborate, theatrical shock rock stage shows.",
   wikipedia: "https://en.wikipedia.org/wiki/Alice_Cooper_%28band%29",
 },
 {
@@ -5738,7 +5738,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7bfc439f-6983-4172-a4d4-f464a4bdc666",
   spotify: null,
   inductedBy: "Lloyd Price",
-  summary: "Arthur Newton Rupe  (born Arthur Goldberg; September 5, 1917 – April 15, 2022) was an American music executive and record producer. He founded Specialty Records, known for its rhythm and blues, blues, gospel and early rock and roll music recordings, in Los Angeles in 1946."
+  summary: "Arthur Newton Rupe  (born Arthur Goldberg; September 5, 1917 – April 15, 2022) was an American music executive and record producer. He founded Specialty Records, known for its rhythm and blues, blues, gospel and early rock and roll music recordings, in Los Angeles in 1946.",
   wikipedia: "https://en.wikipedia.org/wiki/Art_Rupe",
 },
 {
@@ -5760,7 +5760,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "af953ba2-283b-41ef-93bc-b4cfc5feeebc",
   spotify: "391oLRVmoTkumiN79HkTWu",
   inductedBy: "Bette Midler",
-  summary: "Darlene Wright (born July 26, 1941[a]), known professionally as Darlene Love, is an American R&B and soul singer and actress. She was the lead singer of the girl group the Blossoms and also a solo recording artist."
+  summary: "Darlene Wright (born July 26, 1941[a]), known professionally as Darlene Love, is an American R&B and soul singer and actress. She was the lead singer of the girl group the Blossoms and also a solo recording artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Darlene_Love",
 },
 {
@@ -5782,7 +5782,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fe0e1895-aa84-47d9-8e5b-7930fc20709b",
   spotify: "320TrJub4arztwXRm7kqVO",
   inductedBy: "John Legend",
-  summary: "Malcolm John Rebennack Jr. (November 20, 1941 – June 6, 2019), better known by his stage name Dr. John, was an American singer, songwriter and pianist. His music combined New Orleans blues, jazz, R&B, soul and funk."
+  summary: "Malcolm John Rebennack Jr. (November 20, 1941 – June 6, 2019), better known by his stage name Dr. John, was an American singer, songwriter and pianist. His music combined New Orleans blues, jazz, R&B, soul and funk.",
   wikipedia: "https://en.wikipedia.org/wiki/Dr._John",
 },
 {
@@ -5804,7 +5804,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a78daa04-95da-47df-9f6b-ab5c18e216a8",
   spotify: "1G0uDG21tYiRCmJHNCiK64",
   inductedBy: "John Densmore",
-  summary: "Jac Holzman (born September 15, 1931) is an American record executive. He is the founder of the record labels Elektra Records and Nonesuch Records. Holzman helped commercially launch the CD and home video formats, as well as the pilot program which became MTV. He was inducted into the Rock and Roll Hall of Fame in 2011."
+  summary: "Jac Holzman (born September 15, 1931) is an American record executive. He is the founder of the record labels Elektra Records and Nonesuch Records. Holzman helped commercially launch the CD and home video formats, as well as the pilot program which became MTV. He was inducted into the Rock and Roll Hall of Fame in 2011.",
   wikipedia: "https://en.wikipedia.org/wiki/Jac_Holzman",
 },
 {
@@ -5826,7 +5826,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d4cc0ed5-0f76-4188-9e14-2a23ca12188a",
   spotify: "6r1Xmz7YUD4z0VRUoGm8XN",
   inductedBy: "Elton John",
-  summary: "Leon Russell (born Claude Russell Bridges; April 2, 1942 – November 13, 2016) was an American musician and songwriter who was involved with numerous bestselling records during his 60-year career that spanned multiple genres, including rock and roll, country, gospel, bluegrass, rhythm and blues, southern rock, blues rock, folk, surf and the Tulsa sound. His recordings earned six gold records and he received two Grammy Awards from seven nominations."
+  summary: "Leon Russell (born Claude Russell Bridges; April 2, 1942 – November 13, 2016) was an American musician and songwriter who was involved with numerous bestselling records during his 60-year career that spanned multiple genres, including rock and roll, country, gospel, bluegrass, rhythm and blues, southern rock, blues rock, folk, surf and the Tulsa sound. His recordings earned six gold records and he received two Grammy Awards from seven nominations.",
   wikipedia: "https://en.wikipedia.org/wiki/Leon_Russell",
 },
 {
@@ -5848,7 +5848,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a42d3fd5-55de-4206-86c3-4fbb5404018f",
   spotify: "7mEIug7XUlQHikrFxjTWes",
   inductedBy: "Paul Simon",
-  summary: "Neil Leslie Diamond (born January 24, 1941) is an American singer-songwriter. He has sold more than 56.5 million records in the US alone, making him one of the best-selling musicians in history."
+  summary: "Neil Leslie Diamond (born January 24, 1941) is an American singer-songwriter. He has sold more than 56.5 million records in the US alone, making him one of the best-selling musicians in history.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Diamond",
 },
 {
@@ -5870,7 +5870,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c3aeb863-7b26-4388-94e8-5a240f2be21b",
   spotify: "7x83XhcMbOTl1UdYsPTuZM",
   inductedBy: "Neil Young",
-  summary: "Thomas Alan Waits (born December 7, 1949) is an American singer, songwriter, composer and actor. His lyrics often focus on society's underbelly and are delivered in his trademark deep, gravelly voice. He began in the folk scene during the 1970s, but his music since the 1980s has reflected the influence of such diverse genres as rock, jazz, Delta blues, opera, vaudeville, cabaret, funk and experimental techniques verging on industrial music."
+  summary: "Thomas Alan Waits (born December 7, 1949) is an American singer, songwriter, composer and actor. His lyrics often focus on society's underbelly and are delivered in his trademark deep, gravelly voice. He began in the folk scene during the 1970s, but his music since the 1980s has reflected the influence of such diverse genres as rock, jazz, Delta blues, opera, vaudeville, cabaret, funk and experimental techniques verging on industrial music.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Waits",
 },
 {
@@ -5892,7 +5892,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9beb62b2-88db-4cea-801e-162cd344ee53",
   spotify: "03r4iKL2g2442PT9n2UKsx",
   inductedBy: "Chuck D and LL Cool J",
-  summary: "The Beastie Boys were an American hip-hop group formed in New York City in 1981. They were composed of Adam \"Ad-Rock\" Horovitz (vocals, guitar), Adam \"MCA\" Yauch (vocals, bass), and Michael \"Mike D\" Diamond (vocals, drums)."
+  summary: "The Beastie Boys were an American hip-hop group formed in New York City in 1981. They were composed of Adam \"Ad-Rock\" Horovitz (vocals, guitar), Adam \"MCA\" Yauch (vocals, bass), and Michael \"Mike D\" Diamond (vocals, drums).",
   wikipedia: "https://en.wikipedia.org/wiki/Beastie_Boys",
 },
 {
@@ -5914,7 +5914,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4458d70d-c215-4f06-beea-ebd448dad6ac",
   spotify: "3MFp4cYuYtTZe3d3xkLLbr",
   inductedBy: "Smokey Robinson",
-  summary: "Bill Haley & His Comets were an American rock and roll band formed in 1947 and continuing until Haley's death in 1981. The band was also known as Bill Haley and the Comets and Bill Haley's Comets. From late 1954 to late 1956, the group recorded nine top-20 singles, one of which was number one and three that were top ten. The single \"Rock Around the Clock\" was the best-selling rock single in the history of the genre and maintained that position for several years."
+  summary: "Bill Haley & His Comets were an American rock and roll band formed in 1947 and continuing until Haley's death in 1981. The band was also known as Bill Haley and the Comets and Bill Haley's Comets. From late 1954 to late 1956, the group recorded nine top-20 singles, one of which was number one and three that were top ten. The single \"Rock Around the Clock\" was the best-selling rock single in the history of the genre and maintained that position for several years.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Haley_%26_His_Comets",
 },
 {
@@ -5936,7 +5936,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "457d986d-e9d6-4631-a093-81874cf6e202",
   spotify: null,
   inductedBy: "Robbie Robertson",
-  summary: "Cosimo Vincent Matassa (April 13, 1926 – September 11, 2014) was an American recording engineer and studio owner, responsible for many R&B and early rock and roll recordings."
+  summary: "Cosimo Vincent Matassa (April 13, 1926 – September 11, 2014) was an American recording engineer and studio owner, responsible for many R&B and early rock and roll recordings.",
   wikipedia: "https://en.wikipedia.org/wiki/Cosimo_Matassa",
 },
 {
@@ -5958,7 +5958,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d7142475-3bd4-4aeb-8a04-f93925367e05",
   spotify: null,
   inductedBy: "Carole King",
-  summary: "Donald Kirshner (April 17, 1934 – January 17, 2011) was an American music publisher, music consultant, rock music producer, talent manager, and songwriter. Dubbed \"the Man with the Golden Ear\" by Time, he was best known for managing songwriting talent as well as successful pop groups including the Monkees, Kansas, and the Archies."
+  summary: "Donald Kirshner (April 17, 1934 – January 17, 2011) was an American music publisher, music consultant, rock music producer, talent manager, and songwriter. Dubbed \"the Man with the Golden Ear\" by Time, he was best known for managing songwriting talent as well as successful pop groups including the Monkees, Kansas, and the Archies.",
   wikipedia: "https://en.wikipedia.org/wiki/Don_Kirshner",
 },
 {
@@ -5980,7 +5980,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "72d7d717-0837-4f2a-9641-d0f9fdd3acf7",
   spotify: "6vLlQYujOujIrm7zAKzEdG",
   inductedBy: "John Mellencamp",
-  summary: "Donovan Phillips Leitch (born 10 May 1946) is a Scottish musician, songwriter and record producer. He emerged from the British folk scene in early 1965 and subsequently scored numerous international hit singles and albums during the late 1960s. His work became emblematic of the flower power era with its blend of folk, pop, psychedelia and jazz stylings."
+  summary: "Donovan Phillips Leitch (born 10 May 1946) is a Scottish musician, songwriter and record producer. He emerged from the British folk scene in early 1965 and subsequently scored numerous international hit singles and albums during the late 1960s. His work became emblematic of the flower power era with its blend of folk, pop, psychedelia and jazz stylings.",
   wikipedia: "https://en.wikipedia.org/wiki/Donovan",
 },
 {
@@ -6002,7 +6002,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d6ae4b23-965f-485a-b2c2-66c43ffaef20",
   spotify: "5dCuFngSPyOOnTAvrC7v2s",
   inductedBy: "Billy Gibbons and Dusty Hill",
-  summary: "Freddie King (born Fred King  September 3, 1934 – December 28, 1976), also billed as Freddy King, was an American blues guitarist, singer and songwriter. Along with the unrelated Albert King and B. B. King, he is considered one of the \"Three Kings of the Blues Guitar\". Known for his soulful and powerful voice and distinctive guitar playing, King had a major influence on electric blues music and on many later blues guitarists."
+  summary: "Freddie King (born Fred King  September 3, 1934 – December 28, 1976), also billed as Freddy King, was an American blues guitarist, singer and songwriter. Along with the unrelated Albert King and B. B. King, he is considered one of the \"Three Kings of the Blues Guitar\". Known for his soulful and powerful voice and distinctive guitar playing, King had a major influence on electric blues music and on many later blues guitarists.",
   wikipedia: "https://en.wikipedia.org/wiki/Freddie_King",
 },
 {
@@ -6024,7 +6024,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9bea300f-ad94-4c0b-b0e2-f41776b53af0",
   spotify: "2KLFXkMKYQNYvYyuRc5JmP",
   inductedBy: "Robbie Robertson",
-  summary: "Glyn Thomas Johns (born 15 February 1942) is an English recording engineer and record producer.  He has worked with many of the most famous rock recording acts from both the UK and abroad, such as the Rolling Stones, the Beatles, the Who, Led Zeppelin, the Kinks, Eagles, Bob Dylan, the Band, Eric Clapton, the Clash, Steve Miller Band, Small Faces, the Ozark Mountain Daredevils and Joan Armatrading."
+  summary: "Glyn Thomas Johns (born 15 February 1942) is an English recording engineer and record producer.  He has worked with many of the most famous rock recording acts from both the UK and abroad, such as the Rolling Stones, the Beatles, the Who, Led Zeppelin, the Kinks, Eagles, Bob Dylan, the Band, Eric Clapton, the Clash, Steve Miller Band, Small Faces, the Ozark Mountain Daredevils and Joan Armatrading.",
   wikipedia: "https://en.wikipedia.org/wiki/Glyn_Johns",
 },
 {
@@ -6046,7 +6046,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "eeb1195b-f213-4ce1-b28c-8565211f8e43",
   spotify: "3qm84nBOXUEQ2vnTfUTTFC",
   inductedBy: "Green Day",
-  summary: "Guns N' Roses is an American hard rock band formed in Los Angeles, California, in 1985 from L.A. Guns and Hollywood Rose. After signing with Geffen Records in 1986, the band's \"classic\" lineup featured vocalist Axl Rose, lead guitarist Slash, rhythm guitarist Izzy Stradlin, bassist Duff McKagan, and drummer Steven Adler."
+  summary: "Guns N' Roses is an American hard rock band formed in Los Angeles, California, in 1985 from L.A. Guns and Hollywood Rose. After signing with Geffen Records in 1986, the band's \"classic\" lineup featured vocalist Axl Rose, lead guitarist Slash, rhythm guitarist Izzy Stradlin, bassist Duff McKagan, and drummer Steven Adler.",
   wikipedia: "https://en.wikipedia.org/wiki/Guns_N%27_Roses",
 },
 {
@@ -6068,7 +6068,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bb0a1e95-9444-4a05-a1bb-22b8d7ed7844",
   spotify: "6QDWC6QeGhvCWCv3nUJwoV",
   inductedBy: "Bette Midler",
-  summary: "Laura Nyro ( NEER-oh; born Laura Nigro; October 18, 1947 – April 8, 1997) was an American songwriter and singer. She achieved critical acclaim with her own recordings, particularly the albums Eli and the Thirteenth Confession (1968) and New York Tendaberry (1969), and had commercial success with artists such as Barbra Streisand and the 5th Dimension recording her songs. Wider recognition for her artistry was posthumous, while contemporaries such as Elton John idolized her."
+  summary: "Laura Nyro ( NEER-oh; born Laura Nigro; October 18, 1947 – April 8, 1997) was an American songwriter and singer. She achieved critical acclaim with her own recordings, particularly the albums Eli and the Thirteenth Confession (1968) and New York Tendaberry (1969), and had commercial success with artists such as Barbra Streisand and the 5th Dimension recording her songs. Wider recognition for her artistry was posthumous, while contemporaries such as Elton John idolized her.",
   wikipedia: "https://en.wikipedia.org/wiki/Laura_Nyro",
 },
 {
@@ -6090,7 +6090,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
   spotify: "0L8ExT028jH3ddEcZwqJJ5",
   inductedBy: "Chris Rock",
-  summary: "The Red Hot Chili Peppers are an American rock band formed in Los Angeles in 1982, consisting of Flea (bass), Anthony Kiedis (vocals), Chad Smith (drums), and John Frusciante (guitar). Their music incorporates elements of alternative rock, funk, punk rock, hard rock, hip hop, and psychedelic rock, and has influenced genres including funk metal, rap metal, rap rock, and nu metal. With over 120 million records sold worldwide, the Red Hot Chili Peppers are one of the top-selling bands of all time."
+  summary: "The Red Hot Chili Peppers are an American rock band formed in Los Angeles in 1982, consisting of Flea (bass), Anthony Kiedis (vocals), Chad Smith (drums), and John Frusciante (guitar). Their music incorporates elements of alternative rock, funk, punk rock, hard rock, hip hop, and psychedelic rock, and has influenced genres including funk metal, rap metal, rap rock, and nu metal. With over 120 million records sold worldwide, the Red Hot Chili Peppers are one of the top-selling bands of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers",
 },
 {
@@ -6112,7 +6112,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7771a68c-ef6a-400f-978d-64050d45a54c",
   spotify: "1YqGsKpdixxSVgpfaL2AEQ",
   inductedBy: "Steven Van Zandt",
-  summary: "The Small Faces were an English rock and pop band from London, founded in 1965. The group originally consisted of singer/guitarist Steve Marriott, bassist Ronnie Lane, drummer Kenney Jones and keyboardist Jimmy Winston, with Ian McLagan replacing Winston in 1966. The band were initially one of the most acclaimed and influential mod groups of the mid-1960s, with hit singles such as \"Whatcha Gonna Do About It\" (1965), \"Sha-La-La-La-Lee\" and \"All or Nothing\" (both 1966)."
+  summary: "The Small Faces were an English rock and pop band from London, founded in 1965. The group originally consisted of singer/guitarist Steve Marriott, bassist Ronnie Lane, drummer Kenney Jones and keyboardist Jimmy Winston, with Ian McLagan replacing Winston in 1966. The band were initially one of the most acclaimed and influential mod groups of the mid-1960s, with hit singles such as \"Whatcha Gonna Do About It\" (1965), \"Sha-La-La-La-Lee\" and \"All or Nothing\" (both 1966).",
   wikipedia: "https://en.wikipedia.org/wiki/Small_Faces",
 },
 {
@@ -6134,7 +6134,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2d8d9a9f-bd73-430b-be6c-f038c11e8b9a",
   spotify: "5EmQT0A3VxQU0EiX0qhrCo",
   inductedBy: "Smokey Robinson",
-  summary: "The Blue Caps were a pioneering American rock and roll band of the 1950s, the backing band for early rockabilly icon Gene Vincent. They were inducted into the Rock and Roll Hall of Fame in 2012, as part of a class of overlooked backing bands selected by a special committee."
+  summary: "The Blue Caps were a pioneering American rock and roll band of the 1950s, the backing band for early rockabilly icon Gene Vincent. They were inducted into the Rock and Roll Hall of Fame in 2012, as part of a class of overlooked backing bands selected by a special committee.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Blue_Caps",
 },
 {
@@ -6156,7 +6156,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "de9a19b3-531b-4df3-ae90-4763fe282946",
   spotify: "4r7JUeiYy24L7BuzCq9EjR",
   inductedBy: "Smokey Robinson",
-  summary: "The Crickets were an American rock and roll band from Lubbock, Texas, formed by singer-songwriter Buddy Holly in January 1957. Their first hit record, \"That'll Be the Day\", released in May 1957, peaked at number three on the Billboard Top 100 chart on September 16, 1957. The sleeve of their first album, The \"Chirping\" Crickets, shows the band line-up at the time: Holly on lead vocals and lead guitar, Niki Sullivan on rhythm guitar, Jerry Allison on drums, and Joe B. Mauldin on bass."
+  summary: "The Crickets were an American rock and roll band from Lubbock, Texas, formed by singer-songwriter Buddy Holly in January 1957. Their first hit record, \"That'll Be the Day\", released in May 1957, peaked at number three on the Billboard Top 100 chart on September 16, 1957. The sleeve of their first album, The \"Chirping\" Crickets, shows the band line-up at the time: Holly on lead vocals and lead guitar, Niki Sullivan on rhythm guitar, Jerry Allison on drums, and Joe B. Mauldin on bass.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Crickets",
 },
 {
@@ -6178,7 +6178,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: null,
   spotify: null,
   inductedBy: "Smokey Robinson",
-  summary: "The Famous Flames were an American rhythm and blues, soul vocal group founded in Toccoa, Georgia, in 1953 by Bobby Byrd. James Brown first began his career as a member of the Famous Flames, emerging as the lead singer by the time of their first appearance in a professional recording, \"Please, Please, Please\", in 1956."
+  summary: "The Famous Flames were an American rhythm and blues, soul vocal group founded in Toccoa, Georgia, in 1953 by Bobby Byrd. James Brown first began his career as a member of the Famous Flames, emerging as the lead singer by the time of their first appearance in a professional recording, \"Please, Please, Please\", in 1956.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Famous_Flames",
 },
 {
@@ -6200,7 +6200,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c6df3c8d-fdab-4944-b358-265942b5a917",
   spotify: "5IMmgN6diakOaeFp8ydvDu",
   inductedBy: "Smokey Robinson",
-  summary: "The Midnighters were an American vocal group from Detroit, Michigan. They were an influential group in the 1950s and early 1960s, with many R&B hit records. They were also notable for launching the career of lead singer Hank Ballard and the worldwide dance craze the twist. Between 1953 and 1962, the Midnighters had several hits on the U.S. pop and R&B charts."
+  summary: "The Midnighters were an American vocal group from Detroit, Michigan. They were an influential group in the 1950s and early 1960s, with many R&B hit records. They were also notable for launching the career of lead singer Hank Ballard and the worldwide dance craze the twist. Between 1953 and 1962, the Midnighters had several hits on the U.S. pop and R&B charts.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Midnighters",
 },
 {
@@ -6222,7 +6222,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6a4c2d34-7f7f-4f87-b17f-b5540aa840db",
   spotify: "6TKOZZDd5uV5KnyC5G4MUt",
   inductedBy: "Smokey Robinson",
-  summary: "The Miracles (later known as Smokey Robinson and the Miracles from 1965 to 1972) were an American vocal group formed in Detroit, Michigan in 1955. They were the first successful recording act for Motown Records and are considered one of the most important and most influential groups in the history of pop, soul, rhythm and blues, and rock and roll music."
+  summary: "The Miracles (later known as Smokey Robinson and the Miracles from 1965 to 1972) were an American vocal group formed in Detroit, Michigan in 1955. They were the first successful recording act for Motown Records and are considered one of the most important and most influential groups in the history of pop, soul, rhythm and blues, and rock and roll music.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Miracles",
 },
 {
@@ -6244,7 +6244,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "44823452-ad02-4854-8929-7753f71e1c09",
   spotify: null,
   inductedBy: "Robbie Robertson",
-  summary: "Thomas John Dowd (October 20, 1925 – October 27, 2002) was an American recording engineer and producer for Atlantic Records. He was credited with innovating the multitrack recording method. Dowd worked on a veritable \"who's who\" of recordings that encompassed blues, jazz, pop, rock, and soul records."
+  summary: "Thomas John Dowd (October 20, 1925 – October 27, 2002) was an American recording engineer and producer for Atlantic Records. He was credited with innovating the multitrack recording method. Dowd worked on a veritable \"who's who\" of recordings that encompassed blues, jazz, pop, rock, and soul records.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Dowd",
 },
 {
@@ -6266,7 +6266,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "10f89195-3af1-46f5-aa36-504aa3309f5a",
   spotify: "5aygfDCEaX5KTZOxSCpT9o",
   inductedBy: "John Mayer",
-  summary: "Albert King (né Nelson; April 25, 1923 – December 21, 1992) was an American guitarist and singer, who is often regarded as one of the greatest and most influential blues guitarists ever. He is perhaps best known for his popular and influential album Born Under a Bad Sign (1967) and its title track.  B. B. King, Freddie King, and he, all unrelated, were known as the \"Three Kings of the Blues\"."
+  summary: "Albert King (né Nelson; April 25, 1923 – December 21, 1992) was an American guitarist and singer, who is often regarded as one of the greatest and most influential blues guitarists ever. He is perhaps best known for his popular and influential album Born Under a Bad Sign (1967) and its title track.  B. B. King, Freddie King, and he, all unrelated, were known as the \"Three Kings of the Blues\".",
   wikipedia: "https://en.wikipedia.org/wiki/Albert_King",
 },
 {
@@ -6288,7 +6288,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b60527cc-54f3-4bbe-a01b-dcf34c95ae14",
   spotify: "2eogQKWWoohI3BSnoG7E2U",
   inductedBy: "Kelly Rowland",
-  summary: "Donna Adrian Gaines (December 31, 1948 – May 17, 2012), known professionally as Donna Summer, was an American singer and songwriter. She gained prominence during the disco era of the 1970s and became known as the \"Queen of Disco\", while her music gained a global following."
+  summary: "Donna Adrian Gaines (December 31, 1948 – May 17, 2012), known professionally as Donna Summer, was an American singer and songwriter. She gained prominence during the disco era of the 1970s and became known as the \"Queen of Disco\", while her music gained a global following.",
   wikipedia: "https://en.wikipedia.org/wiki/Donna_Summer",
 },
 {
@@ -6310,7 +6310,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9",
   spotify: "34jw2BbxjoYalTp8cJFCPv",
   inductedBy: "Chris Cornell",
-  summary: "Heart is an American rock band formed in Seattle in 1967. The band evolved from previous projects led by the founding members Roger Fisher (guitar) and Steve Fossen (bass guitar), including The Army (1967–1969), Hocus Pocus (1969–1970), and White Heart (1970–1973)."
+  summary: "Heart is an American rock band formed in Seattle in 1967. The band evolved from previous projects led by the founding members Roger Fisher (guitar) and Steve Fossen (bass guitar), including The Army (1967–1969), Hocus Pocus (1969–1970), and White Heart (1970–1973).",
   wikipedia: "https://en.wikipedia.org/wiki/Heart_%28band%29",
 },
 {
@@ -6332,7 +6332,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "882ff7e4-d328-4169-9dbb-3aa800b9bfa5",
   spotify: "1OLRwPvUHhSAOo0fKa5s17",
   inductedBy: "Cheech & Chong",
-  summary: "Lester Louis Adler (born December 13, 1933) is an American record and film producer and the co-owner of the Roxy Theatre in West Hollywood, California. He has produced and developed a number of high-profile musical artists including the Grass Roots, Jan and Dean, the Mamas & the Papas, and Carole King. King's album Tapestry, produced by Adler, won the 1972 Grammy Award for Album of the Year and has been called one of the greatest pop albums of all time."
+  summary: "Lester Louis Adler (born December 13, 1933) is an American record and film producer and the co-owner of the Roxy Theatre in West Hollywood, California. He has produced and developed a number of high-profile musical artists including the Grass Roots, Jan and Dean, the Mamas & the Papas, and Carole King. King's album Tapestry, produced by Adler, won the 1972 Grammy Award for Album of the Year and has been called one of the greatest pop albums of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Lou_Adler",
 },
 {
@@ -6354,7 +6354,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bf2e15d0-4b77-469e-bfb4-f8414415baca",
   spotify: "6Mo9PoU6svvhgEum7wh2Nd",
   inductedBy: "Harry Belafonte and Spike Lee",
-  summary: "Public Enemy is an American hip-hop group formed in Roosevelt, New York, in 1985 by Chuck D and Flavor Flav. The group rose to prominence for their political messages including subjects such as American racism and the American media. Their debut album, Yo! Bum Rush the Show, was released in 1987 to critical acclaim, and their second album, It Takes a Nation of Millions to Hold Us Back (1988), was the first hip-hop album to top The Village Voice's Pazz & Jop critics' poll."
+  summary: "Public Enemy is an American hip-hop group formed in Roosevelt, New York, in 1985 by Chuck D and Flavor Flav. The group rose to prominence for their political messages including subjects such as American racism and the American media. Their debut album, Yo! Bum Rush the Show, was released in 1987 to critical acclaim, and their second album, It Takes a Nation of Millions to Hold Us Back (1988), was the first hip-hop album to top The Village Voice's Pazz & Jop critics' poll.",
   wikipedia: "https://en.wikipedia.org/wiki/Public_Enemy",
 },
 {
@@ -6376,7 +6376,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5803c81e-739a-4057-9a5c-cf84e55db630",
   spotify: "3rxIQc9kWT6Ueg4BhnOwRK",
   inductedBy: "Oprah Winfrey",
-  summary: "Quincy Delight Jones Jr. (March 14, 1933 – November 3, 2024) was an American record producer, composer, arranger, record executive, conductor, trumpeter, film and television producer, and bandleader. During his seven-decade career, he received dozens of accolades, including 28 Grammy Awards, a Primetime Emmy Award, and a Tony Award as well as nominations for seven Academy Awards and four Golden Globe Awards."
+  summary: "Quincy Delight Jones Jr. (March 14, 1933 – November 3, 2024) was an American record producer, composer, arranger, record executive, conductor, trumpeter, film and television producer, and bandleader. During his seven-decade career, he received dozens of accolades, including 28 Grammy Awards, a Primetime Emmy Award, and a Tony Award as well as nominations for seven Academy Awards and four Golden Globe Awards.",
   wikipedia: "https://en.wikipedia.org/wiki/Quincy_Jones",
 },
 {
@@ -6398,7 +6398,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "da7bb7d8-557d-4635-9ca1-e6e985525bd5",
   spotify: "3HQyFCFFfJO3KKBlUfZsyW",
   inductedBy: "Don Henley",
-  summary: "Randall Stuart Newman (born November 28, 1943) is an American singer-songwriter, pianist, composer, and arranger. Born in Los Angeles to an extended family of Hollywood film composers, he is known for his  Americana-inspired songs, non-rhotic Southern-accented singing, and lyrics that are often mordant or satirical and delivered by an unreliable narrator. Since the 1990s, he has worked mainly in film scoring, most popularly for Disney and Pixar."
+  summary: "Randall Stuart Newman (born November 28, 1943) is an American singer-songwriter, pianist, composer, and arranger. Born in Los Angeles to an extended family of Hollywood film composers, he is known for his  Americana-inspired songs, non-rhotic Southern-accented singing, and lyrics that are often mordant or satirical and delivered by an unreliable narrator. Since the 1990s, he has worked mainly in film scoring, most popularly for Disney and Pixar.",
   wikipedia: "https://en.wikipedia.org/wiki/Randy_Newman",
 },
 {
@@ -6420,7 +6420,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
   spotify: "2Hkut4rAAyrQxRdof7FVJq",
   inductedBy: "Dave Grohl and Taylor Hawkins",
-  summary: "Rush is a Canadian rock band, formed in Toronto in 1968. The band's original line-up included guitarist Alex Lifeson, drummer John Rutsey, and bassist and vocalist Jeff Jones, whom Geddy Lee replaced shortly after its formation. Rush went through a few line-up changes over the next six years, before arriving at its classic power trio line-up with the addition of Neil Peart in July 1974, replacing Rutsey four months after the release of their self-titled debut album."
+  summary: "Rush is a Canadian rock band, formed in Toronto in 1968. The band's original line-up included guitarist Alex Lifeson, drummer John Rutsey, and bassist and vocalist Jeff Jones, whom Geddy Lee replaced shortly after its formation. Rush went through a few line-up changes over the next six years, before arriving at its classic power trio line-up with the addition of Neil Peart in July 1974, replacing Rutsey four months after the release of their self-titled debut album.",
   wikipedia: "https://en.wikipedia.org/wiki/Rush_%28band%29",
 },
 {
@@ -6442,7 +6442,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "757c472d-e86f-44d3-899d-36732f406b1f",
   spotify: "7osQlIEugmCDo8AXAyzlqq",
   inductedBy: "Peter Asher",
-  summary: "Andrew Loog Oldham (born 29 January 1944) is an English record producer, talent manager, impresario and author. He was manager and producer of the Rolling Stones from 1963 to 1967, and was noted for his flamboyant style."
+  summary: "Andrew Loog Oldham (born 29 January 1944) is an English record producer, talent manager, impresario and author. He was manager and producer of the Rolling Stones from 1963 to 1967, and was noted for his flamboyant style.",
   wikipedia: "https://en.wikipedia.org/wiki/Andrew_Loog_Oldham",
 },
 {
@@ -6464,7 +6464,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0ba4cc10-2563-446a-8fb7-9c9521f16ede",
   spotify: "2A3KGd7NkgkLzqudWj7jbc",
   inductedBy: "Peter Asher",
-  summary: "Brian Samuel Epstein ( EP-styne; 19 September 1934 – 27 August 1967) was an English music entrepreneur who managed the Beatles from 1961 until his death in 1967."
+  summary: "Brian Samuel Epstein ( EP-styne; 19 September 1934 – 27 August 1967) was an English music entrepreneur who managed the Beatles from 1961 until his death in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Brian_Epstein",
 },
 {
@@ -6486,7 +6486,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e2345fdf-2be7-47c5-a6dd-be64353ad134",
   spotify: "1ygnFQb0wvgWFS4P020EaY",
   inductedBy: "Art Garfunkel",
-  summary: "Yusuf Islam (born Steven Demetre Georgiou; 21 July 1948), commonly known by his stage names Cat Stevens or Yusuf/Cat Stevens, is a British singer-songwriter and musician. He has sold more than 100 million records and has more than two billion streams. His musical style consists of folk, rock, pop, and, later in his career, Islamic music. Following two decades in which he performed only music which met strict religious standards, he returned to making secular music in 2006."
+  summary: "Yusuf Islam (born Steven Demetre Georgiou; 21 July 1948), commonly known by his stage names Cat Stevens or Yusuf/Cat Stevens, is a British singer-songwriter and musician. He has sold more than 100 million records and has more than two billion streams. His musical style consists of folk, rock, pop, and, later in his career, Islamic music. Following two decades in which he performed only music which met strict religious standards, he returned to making secular music in 2006.",
   wikipedia: "https://en.wikipedia.org/wiki/Cat_Stevens",
 },
 {
@@ -6508,7 +6508,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d6652e7b-33fe-49ef-8336-4c863b4f996f",
   spotify: "6Gt8nwunKGTUYQq5UqiDR2",
   inductedBy: "Bruce Springsteen",
-  summary: "The E Street Band is an American rock band that has been the primary backing band for rock musician Bruce Springsteen since 1972. For the bulk of Springsteen's recording and performing career, the band consisted of guitarists Steven Van Zandt, Nils Lofgren, and Patti Scialfa, keyboardists Danny Federici and Roy Bittan, bassist Garry Tallent, drummer Max Weinberg and saxophonist Clarence Clemons. In 2014, the E Street Band was inducted into the Rock and Roll Hall of Fame."
+  summary: "The E Street Band is an American rock band that has been the primary backing band for rock musician Bruce Springsteen since 1972. For the bulk of Springsteen's recording and performing career, the band consisted of guitarists Steven Van Zandt, Nils Lofgren, and Patti Scialfa, keyboardists Danny Federici and Roy Bittan, bassist Garry Tallent, drummer Max Weinberg and saxophonist Clarence Clemons. In 2014, the E Street Band was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/E_Street_Band",
 },
 {
@@ -6530,7 +6530,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "debabff3-2559-46e5-862d-ef2a906d7010",
   spotify: "77tT1kLj6mCWtFNqiOmP9H",
   inductedBy: "Questlove",
-  summary: "Daryl Hall & John Oates, commonly known as Hall & Oates, were an American R&B duo formed in Philadelphia, Pennsylvania, in 1970. Daryl Hall was generally the lead vocalist, while John Oates primarily supplied electric guitar and backing vocals and occasional lead vocals. The two wrote most of the songs they performed, either separately or in collaboration. They achieved their greatest fame from the mid-1970s to the late 1980s with a fusion of rock music, soul music, and rhythm and blues."
+  summary: "Daryl Hall & John Oates, commonly known as Hall & Oates, were an American R&B duo formed in Philadelphia, Pennsylvania, in 1970. Daryl Hall was generally the lead vocalist, while John Oates primarily supplied electric guitar and backing vocals and occasional lead vocals. The two wrote most of the songs they performed, either separately or in collaboration. They achieved their greatest fame from the mid-1970s to the late 1980s with a fusion of rock music, soul music, and rhythm and blues.",
   wikipedia: "https://en.wikipedia.org/wiki/Hall_%26_Oates",
 },
 {
@@ -6552,7 +6552,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e1f1e33e-2e4c-4d43-b91b-7064068d3283",
   spotify: "07XSN3sPlIlB2L2XNcTwJw",
   inductedBy: "Tom Morello",
-  summary: "Kiss (commonly styled in all caps as KISS) was an American rock band formed in New York City in 1973 by Paul Stanley (vocals, rhythm guitar), Gene Simmons (vocals, bass guitar), Ace Frehley (lead guitar, vocals) and Peter Criss (drums, vocals). Known for their face paint and stage outfits, the group rose to prominence in the mid-1970s with shock rock–style live performances that featured fire-breathing, blood-spitting, smoking guitars, shooting rockets, levitating drum kits and pyrotechnics."
+  summary: "Kiss (commonly styled in all caps as KISS) was an American rock band formed in New York City in 1973 by Paul Stanley (vocals, rhythm guitar), Gene Simmons (vocals, bass guitar), Ace Frehley (lead guitar, vocals) and Peter Criss (drums, vocals). Known for their face paint and stage outfits, the group rose to prominence in the mid-1970s with shock rock–style live performances that featured fire-breathing, blood-spitting, smoking guitars, shooting rockets, levitating drum kits and pyrotechnics.",
   wikipedia: "https://en.wikipedia.org/wiki/Kiss_%28band%29",
 },
 {
@@ -6574,7 +6574,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "498f2581-be21-4eef-8756-fbb89d79b1c0",
   spotify: "1sXbwvCQLGZnaH0Jp2HTVc",
   inductedBy: "Glenn Frey",
-  summary: "Linda Maria Ronstadt (born July 15, 1946) is an American retired singer and musician who performed and recorded in diverse genres including rock, folk, pop, country, and soul."
+  summary: "Linda Maria Ronstadt (born July 15, 1946) is an American retired singer and musician who performed and recorded in diverse genres including rock, folk, pop, country, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/Linda_Ronstadt",
 },
 {
@@ -6596,7 +6596,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
   spotify: "6olE6TJLqED3rqDCT0FyPh",
   inductedBy: "Michael Stipe",
-  summary: "Nirvana was an American rock band formed in Aberdeen, Washington, in 1987. Founded by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic, the band went through a succession of drummers, most notably Chad Channing, before recruiting Dave Grohl in 1990. Nirvana's success popularized alternative rock, and they were often referenced as the flagship band of Generation X. Their music maintains a popular following and continues to influence rock culture."
+  summary: "Nirvana was an American rock band formed in Aberdeen, Washington, in 1987. Founded by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic, the band went through a succession of drummers, most notably Chad Channing, before recruiting Dave Grohl in 1990. Nirvana's success popularized alternative rock, and they were often referenced as the flagship band of Generation X. Their music maintains a popular following and continues to influence rock culture.",
   wikipedia: "https://en.wikipedia.org/wiki/Nirvana_%28band%29",
 },
 {
@@ -6618,7 +6618,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8e66ea2b-b57b-47d9-8df0-df4630aeb8e5",
   spotify: "7C4sUpWGlTy7IANjruj02I",
   inductedBy: "Chris Martin",
-  summary: "Peter Brian Gabriel (born 13 February 1950) is an English singer, songwriter, musician, and human rights activist. He came to prominence as the original frontman of the rock band Genesis. He left the band in 1975 and launched his solo career with a hit debut single entitled \"Solsbury Hill\"."
+  summary: "Peter Brian Gabriel (born 13 February 1950) is an English singer, songwriter, musician, and human rights activist. He came to prominence as the original frontman of the rock band Genesis. He left the band in 1975 and launched his solo career with a hit debut single entitled \"Solsbury Hill\".",
   wikipedia: "https://en.wikipedia.org/wiki/Peter_Gabriel",
 },
 {
@@ -6640,7 +6640,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fd1a2d9d-9bb6-44de-83a3-41560658aba9",
   spotify: "1ThoqLcyIYvZn7iWbj8fsj",
   inductedBy: "Stevie Wonder",
-  summary: "William Harrison Withers Jr. (July 4, 1938 – March 30, 2020) was an American soul and R&B singer and songwriter. Born in Slab Fork, West Virginia, and raised in Beckley, West Virginia, he is known for having several hits over a career spanning 18 years, including \"Ain't No Sunshine\" (1971), \"Grandma's Hands\" (1971), \"Use Me\" (1972), \"Lean on Me\" (1972), \"Lovely Day\" (1977) and \"Just the Two of Us\" (1980) (recorded in collaboration with Grover Washington Jr.)."
+  summary: "William Harrison Withers Jr. (July 4, 1938 – March 30, 2020) was an American soul and R&B singer and songwriter. Born in Slab Fork, West Virginia, and raised in Beckley, West Virginia, he is known for having several hits over a career spanning 18 years, including \"Ain't No Sunshine\" (1971), \"Grandma's Hands\" (1971), \"Use Me\" (1972), \"Lean on Me\" (1972), \"Lovely Day\" (1977) and \"Just the Two of Us\" (1980) (recorded in collaboration with Grover Washington Jr.).",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Withers",
 },
 {
@@ -6662,7 +6662,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "084308bd-1654-436f-ba03-df6697104e19",
   spotify: "7oPftvlwr6VrsViSDV7fJY",
   inductedBy: "Fall Out Boy",
-  summary: "Green Day is an American rock band formed in Rodeo, California, in 1987 by lead singer and guitarist Billie Joe Armstrong and bassist and backing vocalist Mike Dirnt, with drummer Tré Cool joining in 1990. In 1994, their major-label debut Dookie, released through Reprise Records, became a breakout success and eventually shipped over 20 million copies in the US. Green Day has been credited with reigniting mainstream interest in punk rock."
+  summary: "Green Day is an American rock band formed in Rodeo, California, in 1987 by lead singer and guitarist Billie Joe Armstrong and bassist and backing vocalist Mike Dirnt, with drummer Tré Cool joining in 1990. In 1994, their major-label debut Dookie, released through Reprise Records, became a breakout success and eventually shipped over 20 million copies in the US. Green Day has been credited with reigniting mainstream interest in punk rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Green_Day",
 },
 {
@@ -6684,7 +6684,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "46e63d3b-d91b-4791-bb73-e9f638a45ea0",
   spotify: "1Fmb52lZ6Jv7FMWXXTPO3K",
   inductedBy: "Miley Cyrus",
-  summary: "Joan Jett and the Blackhearts is an American rock band formed in Los Angeles, California in 1979 as a conjunction of lead musician, singer and songwriter Joan Jett and the backup band. It has undergone many lineup changes since its inception, with founders Jett and producer Kenny Laguna being its only consistent members."
+  summary: "Joan Jett and the Blackhearts is an American rock band formed in Los Angeles, California in 1979 as a conjunction of lead musician, singer and songwriter Joan Jett and the backup band. It has undergone many lineup changes since its inception, with founders Jett and producer Kenny Laguna being its only consistent members.",
   wikipedia: "https://en.wikipedia.org/wiki/Joan_Jett_and_the_Blackhearts",
 },
 {
@@ -6706,7 +6706,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9d1ebcfe-4c15-4d18-95d3-d919898638a1",
   spotify: "42TFhl7WlMRXiNqzSrnzPL",
   inductedBy: "Patti Smith",
-  summary: "Lewis Allan Reed (March 2, 1942 – October 27, 2013) was an American musician, songwriter and poet. He was the guitarist, singer, and principal songwriter for the rock band the Velvet Underground and had a solo career that spanned five decades. Although not commercially successful during its existence, the Velvet Underground came to be regarded as one of the most influential bands in the history of underground and alternative rock music."
+  summary: "Lewis Allan Reed (March 2, 1942 – October 27, 2013) was an American musician, songwriter and poet. He was the guitarist, singer, and principal songwriter for the rock band the Velvet Underground and had a solo career that spanned five decades. Although not commercially successful during its existence, the Velvet Underground came to be regarded as one of the most influential bands in the history of underground and alternative rock music.",
   wikipedia: "https://en.wikipedia.org/wiki/Lou_Reed",
 },
 {
@@ -6728,7 +6728,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "300c4c73-33ac-4255-9d57-4e32627f5e13",
   spotify: "6DbJi8AcN5ANdtvJcwBSw8",
   inductedBy: "Paul McCartney",
-  summary: "Sir Richard Starkey (born 7 July 1940), known as Ringo Starr, is an English musician, singer, songwriter and actor who achieved international fame as the drummer for the Beatles. Starr occasionally sang lead vocals with the group, usually for one song on each album, including \"Yellow Submarine\" and \"With a Little Help from My Friends\". He also wrote and sang the Beatles songs \"Don't Pass Me By\" and \"Octopus's Garden\", and is credited as a co-writer of three others."
+  summary: "Sir Richard Starkey (born 7 July 1940), known as Ringo Starr, is an English musician, singer, songwriter and actor who achieved international fame as the drummer for the Beatles. Starr occasionally sang lead vocals with the group, usually for one song on each album, including \"Yellow Submarine\" and \"With a Little Help from My Friends\". He also wrote and sang the Beatles songs \"Don't Pass Me By\" and \"Octopus's Garden\", and is credited as a co-writer of three others.",
   wikipedia: "https://en.wikipedia.org/wiki/Ringo_Starr",
 },
 {
@@ -6750,7 +6750,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e3c8b0c8-3fa0-464b-b1f5-119cb52d3817",
   spotify: "4qT2EJ5diHFTjv1FBz9NsH",
   inductedBy: "John Mayer",
-  summary: "Stephen Ray Vaughan (October 3, 1954 – August 27, 1990), also known abbreviated as SRV, was an American musician, best known as the guitarist and frontman of the blues rock trio Stevie Ray Vaughan and Double Trouble. Although his mainstream career spanned only seven years, he is considered one of the most influential musicians in the history of blues music, and one of the greatest guitarists of all time. He was the younger brother of guitarist Jimmie Vaughan."
+  summary: "Stephen Ray Vaughan (October 3, 1954 – August 27, 1990), also known abbreviated as SRV, was an American musician, best known as the guitarist and frontman of the blues rock trio Stevie Ray Vaughan and Double Trouble. Although his mainstream career spanned only seven years, he is considered one of the most influential musicians in the history of blues music, and one of the greatest guitarists of all time. He was the younger brother of guitarist Jimmie Vaughan.",
   wikipedia: null,
 },
 {
@@ -6772,7 +6772,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bcf6bbb0-72cb-4963-851c-6e6851dc700d",
   spotify: null,
   inductedBy: "Steve Cropper",
-  summary: "The \"5\" Royales was an American rhythm and blues (R&B) vocal group from Winston-Salem, North Carolina that combined gospel, jump blues and doo-wop, marking an early and influential step in the evolution of rock and roll. Most of their big R&B hits were recorded in 1952 and 1953 and written by the guitarist Lowman \"Pete\" Pauling."
+  summary: "The \"5\" Royales was an American rhythm and blues (R&B) vocal group from Winston-Salem, North Carolina that combined gospel, jump blues and doo-wop, marking an early and influential step in the evolution of rock and roll. Most of their big R&B hits were recorded in 1952 and 1953 and written by the guitarist Lowman \"Pete\" Pauling.",
   wikipedia: "https://en.wikipedia.org/wiki/The_%225%22_Royales",
 },
 {
@@ -6794,7 +6794,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "20dcf3aa-c313-4f24-acd4-461327a76a73",
   spotify: "6kz7WuPaUa4QVreP27I33i",
   inductedBy: "Peter Wolf",
-  summary: "The Paul Butterfield Blues Band was an American blues and blues-rock band from Chicago. Formed in the summer of 1963, the group originally featured eponymous vocalist and harmonicist Paul Butterfield, guitarist Elvin Bishop, bassist Jerome Arnold, and drummer Sam Lay. The band added guitarist Mike Bloomfield and keyboardist Mark Naftalin before recording their self-titled debut album, which was released in October 1965."
+  summary: "The Paul Butterfield Blues Band was an American blues and blues-rock band from Chicago. Formed in the summer of 1963, the group originally featured eponymous vocalist and harmonicist Paul Butterfield, guitarist Elvin Bishop, bassist Jerome Arnold, and drummer Sam Lay. The band added guitarist Mike Bloomfield and keyboardist Mark Naftalin before recording their self-titled debut album, which was released in October 1965.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Paul_Butterfield_Blues_Band",
 },
 {
@@ -6816,7 +6816,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2891369d-d843-45d1-ac1d-52982095ae8c",
   spotify: "7EC9OkE49GNMoSoba3mOG8",
   inductedBy: "Steven Van Zandt",
-  summary: "Bertrand Russell Berns (November 8, 1929 – December 30, 1967), also known as Bert Russell and (occasionally) Russell Byrd, was an American songwriter and record producer of the 1960s. His songwriting credits include \"Twist and Shout\", \"Piece of My Heart\", \"Here Comes the Night\", \"Hang on Sloopy\", \"Cry to Me\", \"Tell Him\" and \"Everybody Needs Somebody to Love\", and his productions include \"Baby, Please Don't Go\", \"Brown Eyed Girl\" and \"Under the Boardwalk\"."
+  summary: "Bertrand Russell Berns (November 8, 1929 – December 30, 1967), also known as Bert Russell and (occasionally) Russell Byrd, was an American songwriter and record producer of the 1960s. His songwriting credits include \"Twist and Shout\", \"Piece of My Heart\", \"Here Comes the Night\", \"Hang on Sloopy\", \"Cry to Me\", \"Tell Him\" and \"Everybody Needs Somebody to Love\", and his productions include \"Baby, Please Don't Go\", \"Brown Eyed Girl\" and \"Under the Boardwalk\".",
   wikipedia: "https://en.wikipedia.org/wiki/Bert_Berns",
 },
 {
@@ -6838,7 +6838,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9f870653-72b0-4c6d-8c59-439a95963e09",
   spotify: "1LB8qB5BPb3MHQrfkvifXU",
   inductedBy: "Kid Rock",
-  summary: "Cheap Trick are an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged elements of 1960s guitar pop, 1970s hard rock, and the emerging punk rock sound, and helped set the template for subsequent power pop artists."
+  summary: "Cheap Trick are an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged elements of 1960s guitar pop, 1970s hard rock, and the emerging punk rock sound, and helped set the template for subsequent power pop artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Cheap_Trick",
 },
 {
@@ -6860,7 +6860,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3f5be744-e867-42fb-8913-5fd69e4099b5",
   spotify: "3iDD7bnsjL9J4fO298r0L0",
   inductedBy: "Rob Thomas",
-  summary: "Chicago is an American rock band formed in Chicago, Illinois, in 1967. Self-described as a \"rock and roll band with horns\", their songs often also combine elements of classical music, jazz, R&B, and pop music."
+  summary: "Chicago is an American rock band formed in Chicago, Illinois, in 1967. Self-described as a \"rock and roll band with horns\", their songs often also combine elements of classical music, jazz, R&B, and pop music.",
   wikipedia: "https://en.wikipedia.org/wiki/Chicago_%28band%29",
 },
 {
@@ -6882,7 +6882,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "79491354-3d83-40e3-9d8e-7592d58d790a",
   spotify: "568ZhdwyaiCyOGJRtNYhWf",
   inductedBy: "Lars Ulrich",
-  summary: "Deep Purple are a British rock band formed in London in 1968. They are considered to be among the pioneers of heavy metal and modern hard rock, although their musical style has varied throughout their career. Originally formed as a psychedelic rock and progressive rock band, they shifted to a heavier sound with their 1970 album Deep Purple in Rock."
+  summary: "Deep Purple are a British rock band formed in London in 1968. They are considered to be among the pioneers of heavy metal and modern hard rock, although their musical style has varied throughout their career. Originally formed as a psychedelic rock and progressive rock band, they shifted to a heavier sound with their 1970 album Deep Purple in Rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Deep_Purple",
 },
 {
@@ -6904,7 +6904,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3a54bffa-2314-44a2-927b-60144119c780",
   spotify: "4EnEZVjo3w1cwcQYePccay",
   inductedBy: "Kendrick Lamar",
-  summary: "N.W.A (an abbreviation for Niggaz Wit Attitudes) was an American hip-hop group formed in Compton, California, in 1987. Among the earliest and most significant figures of the gangsta rap subgenre, the group is widely considered one of the greatest and most influential acts in hip-hop."
+  summary: "N.W.A (an abbreviation for Niggaz Wit Attitudes) was an American hip-hop group formed in Compton, California, in 1987. Among the earliest and most significant figures of the gangsta rap subgenre, the group is widely considered one of the greatest and most influential acts in hip-hop.",
   wikipedia: "https://en.wikipedia.org/wiki/N.W.A",
 },
 {
@@ -6926,7 +6926,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a54d9cd2-1359-4ea3-98a1-fe068fc66814",
   spotify: "7bMi7pddqeilAI6V9LWZaW",
   inductedBy: "The Black Keys",
-  summary: "Steven Haworth Miller (born October 5, 1943) is an American musician. He is the founder and only remaining original member of the Steve Miller Band, which he founded in 1966, and is the principal songwriter, lead singer, harmonicist, keyboardist, and one of the guitarists. He began his career in blues and blues rock and evolved to a more pop-oriented arena rock sound during the mid-1970s through the early 1980s, releasing popular singles and albums."
+  summary: "Steven Haworth Miller (born October 5, 1943) is an American musician. He is the founder and only remaining original member of the Steve Miller Band, which he founded in 1966, and is the principal songwriter, lead singer, harmonicist, keyboardist, and one of the guitarists. He began his career in blues and blues rock and evolved to a more pop-oriented arena rock sound during the mid-1970s through the early 1980s, releasing popular singles and albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Steve_Miller_%28musician%29",
 },
 {
@@ -6948,7 +6948,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0c502791-4ee9-4c5f-9696-0602b721ff3b",
   spotify: "7jefIIksOi1EazgRTfW2Pk",
   inductedBy: "Dhani Harrison",
-  summary: "Electric Light Orchestra (ELO) are an English rock band formed in Birmingham in 1970 by multi-instrumentalists Jeff Lynne and Roy Wood and drummer Bev Bevan. Their music is characterised by a fusion of pop and classical arrangements with futuristic iconography. After Wood's departure in 1972, Lynne became the band's sole leader, co-arranging and producing every album while writing nearly all of their original material."
+  summary: "Electric Light Orchestra (ELO) are an English rock band formed in Birmingham in 1970 by multi-instrumentalists Jeff Lynne and Roy Wood and drummer Bev Bevan. Their music is characterised by a fusion of pop and classical arrangements with futuristic iconography. After Wood's departure in 1972, Lynne became the band's sole leader, co-arranging and producing every album while writing nearly all of their original material.",
   wikipedia: "https://en.wikipedia.org/wiki/Electric_Light_Orchestra",
 },
 {
@@ -6970,7 +6970,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "92d37892-6186-4459-9cc1-f0dde57652d0",
   spotify: "1EevBGfUh3RSQSGpluxgBm",
   inductedBy: "Jackson Browne",
-  summary: "Joan Chandos Baez (, Spanish: [ˈbaes]; born January 9, 1941) is an American singer, songwriter, musician, and activist. Her contemporary folk music often includes songs of protest and social justice. Baez has performed publicly for over 60 years, releasing more than 30 albums."
+  summary: "Joan Chandos Baez (, Spanish: [ˈbaes]; born January 9, 1941) is an American singer, songwriter, musician, and activist. Her contemporary folk music often includes songs of protest and social justice. Baez has performed publicly for over 60 years, releasing more than 30 albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Joan_Baez",
 },
 {
@@ -6992,7 +6992,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "abd506e1-6f2b-4d6f-b937-92c267f6f88b",
   spotify: "0rvjqX7ttXeg3mTy8Xscbt",
   inductedBy: "Pat Monahan",
-  summary: "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals."
+  summary: "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
   wikipedia: "https://en.wikipedia.org/wiki/Journey_%28band%29",
 },
 {
@@ -7014,7 +7014,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "58325670-9323-464a-8b20-3e8d7b26df60",
   spotify: "4YLlWUd8PnnyGVKxqoebs7",
   inductedBy: null,
-  summary: "Neal Joseph Schon (; born February 27, 1954) is an American musician and songwriter, best known as the co-founder and lead guitarist for the rock band Journey. He is the last original member to remain throughout the group's history. He was a member of the rock band Santana before forming Journey. He was also a member of the group Bad English during Journey's hiatus from 1987 to 1995, as well as an original member of Hardline."
+  summary: "Neal Joseph Schon (; born February 27, 1954) is an American musician and songwriter, best known as the co-founder and lead guitarist for the rock band Journey. He is the last original member to remain throughout the group's history. He was a member of the rock band Santana before forming Journey. He was also a member of the group Bad English during Journey's hiatus from 1987 to 1995, as well as an original member of Hardline.",
   wikipedia: "https://en.wikipedia.org/wiki/Neal_Schon",
 },
 {
@@ -7036,7 +7036,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c6d571dd-c0ae-4ac8-9500-780b1b9b25e5",
   spotify: "3yDIp0kaq9EFKe07X1X2rz",
   inductedBy: "Pharrell Williams",
-  summary: "Nile Gregory Rodgers Jr. (born September 19, 1952) is an American guitarist. The co-founder of Chic, he has written, produced, and performed on records that have sold more than 750 million albums and 100 million singles worldwide."
+  summary: "Nile Gregory Rodgers Jr. (born September 19, 1952) is an American guitarist. The co-founder of Chic, he has written, produced, and performed on records that have sold more than 750 million albums and 100 million singles worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Nile_Rodgers",
 },
 {
@@ -7058,7 +7058,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "83b9cbe7-9857-49e2-ab8e-b57b01038103",
   spotify: "1w5Kfo2jwwIPruYS2UWh56",
   inductedBy: "David Letterman",
-  summary: "Pearl Jam is an American rock band formed in Seattle, Washington, in 1990. One of the key bands in the grunge movement of the early 1990s, Pearl Jam has outsold and outlasted many of its contemporaries and is considered one of the most influential bands from that decade, dubbed \"the most popular American rock and roll band of the '90s\"."
+  summary: "Pearl Jam is an American rock band formed in Seattle, Washington, in 1990. One of the key bands in the grunge movement of the early 1990s, Pearl Jam has outsold and outlasted many of its contemporaries and is considered one of the most influential bands from that decade, dubbed \"the most popular American rock and roll band of the '90s\".",
   wikipedia: "https://en.wikipedia.org/wiki/Pearl_Jam",
 },
 {
@@ -7080,7 +7080,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "382f1005-e9ab-4684-afd4-0bdae4ee37f2",
   spotify: "1ZwdS5xdxEREPySFridCfh",
   inductedBy: "Snoop Dogg",
-  summary: "Tupac Amaru Shakur (  TOO-pahk shə-KOOR; born Lesane Parish Crooks; June 16, 1971 – September 13, 1996), also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He was one of the most influential musical artists of the 20th century, and a prominent political activist for Black America. He is among the best-selling music artists, having sold more than 75 million records worldwide."
+  summary: "Tupac Amaru Shakur (  TOO-pahk shə-KOOR; born Lesane Parish Crooks; June 16, 1971 – September 13, 1996), also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He was one of the most influential musical artists of the 20th century, and a prominent political activist for Black America. He is among the best-selling music artists, having sold more than 75 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Tupac_Shakur",
 },
 {
@@ -7102,7 +7102,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c1d4f2ba-cf39-460c-9528-6b827d3417a1",
   spotify: "7AC976RDJzL2asmZuz7qil",
   inductedBy: "Geddy Lee and Alex Lifeson",
-  summary: "Yes are an English progressive rock band formed in London in 1968. Comprising 20 full-time musicians over their career, their most notable members include lead singer Jon Anderson, bassist Chris Squire, guitarists Steve Howe and Trevor Rabin, drummers Bill Bruford and Alan White, and keyboardists Tony Kaye and Rick Wakeman. The band have explored several musical styles and are often regarded as progressive rock pioneers."
+  summary: "Yes are an English progressive rock band formed in London in 1968. Comprising 20 full-time musicians over their career, their most notable members include lead singer Jon Anderson, bassist Chris Squire, guitarists Steve Howe and Trevor Rabin, drummers Bill Bruford and Alan White, and keyboardists Tony Kaye and Rick Wakeman. The band have explored several musical styles and are often regarded as progressive rock pioneers.",
   wikipedia: "https://en.wikipedia.org/wiki/Yes_%28band%29",
 },
 {
@@ -7124,7 +7124,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5dcdb5eb-cb72-4e6e-9e63-b7bace604965",
   spotify: "58lV9VcRSjABbAbfWS6skp",
   inductedBy: "Howard Stern",
-  summary: "Bon Jovi is an American rock band formed in Sayreville, New Jersey in 1983. The band consists of singer Jon Bon Jovi, keyboardist David Bryan, drummer Tico Torres, guitarists John Shanks and Phil X, percussionist Everett Bradley, and bassist Hugh McDonald. Original bassist Alec John Such left the band in 1994, and longtime guitarist and co-songwriter Richie Sambora left in 2013."
+  summary: "Bon Jovi is an American rock band formed in Sayreville, New Jersey in 1983. The band consists of singer Jon Bon Jovi, keyboardist David Bryan, drummer Tico Torres, guitarists John Shanks and Phil X, percussionist Everett Bradley, and bassist Hugh McDonald. Original bassist Alec John Such left the band in 1994, and longtime guitarist and co-songwriter Richie Sambora left in 2013.",
   wikipedia: "https://en.wikipedia.org/wiki/Bon_Jovi",
 },
 {
@@ -7146,7 +7146,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "614e3804-7d34-41ba-857f-811bad7c2b7a",
   spotify: "0WwSkZ7LtFUFjGjMZBMt6T",
   inductedBy: "John Illsley",
-  summary: "Dire Straits were a British rock band formed in London in 1977 by Mark Knopfler (lead vocals, lead guitar), David Knopfler (rhythm guitar, backing vocals), John Illsley (bass guitar, backing vocals), and Pick Withers (drums, percussion). The band was active from 1977 to 1988 and again from 1990 to 1995."
+  summary: "Dire Straits were a British rock band formed in London in 1977 by Mark Knopfler (lead vocals, lead guitar), David Knopfler (rhythm guitar, backing vocals), John Illsley (bass guitar, backing vocals), and Pick Withers (drums, percussion). The band was active from 1977 to 1988 and again from 1990 to 1995.",
   wikipedia: "https://en.wikipedia.org/wiki/Dire_Straits",
 },
 {
@@ -7168,7 +7168,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2944824d-4c26-476f-a981-be849081942f",
   spotify: "7G1GBhoKtEPnP86X2PvEYO",
   inductedBy: "Mary J. Blige",
-  summary: "Nina Simone ( NEE-nə sim-OHN; born Eunice Kathleen Waymon; February 21, 1933 – April 21, 2003) was an American pianist, singer, songwriter, and civil rights activist. Simone's bearing and stage presence earned her the title the High Priestess of Soul. Her music spanned styles including classical, folk, gospel, blues, jazz, R&B, and pop."
+  summary: "Nina Simone ( NEE-nə sim-OHN; born Eunice Kathleen Waymon; February 21, 1933 – April 21, 2003) was an American pianist, singer, songwriter, and civil rights activist. Simone's bearing and stage presence earned her the title the High Priestess of Soul. Her music spanned styles including classical, folk, gospel, blues, jazz, R&B, and pop.",
   wikipedia: "https://en.wikipedia.org/wiki/Nina_Simone",
 },
 {
@@ -7190,7 +7190,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f5625c87-5a62-4b3b-a375-fe08a71acddc",
   spotify: "2dXf5lu5iilcaTQJZodce7",
   inductedBy: "Brittany Howard",
-  summary: "Sister Rosetta Tharpe (born Rosetta Nubin, March 20, 1915 – October 9, 1973) was an American singer, songwriter, and guitarist. She gained popularity in the 1930s and 1940s with her gospel recordings, characterized by a unique mixture of spiritual lyrics and electric guitar."
+  summary: "Sister Rosetta Tharpe (born Rosetta Nubin, March 20, 1915 – October 9, 1973) was an American singer, songwriter, and guitarist. She gained popularity in the 1930s and 1940s with her gospel recordings, characterized by a unique mixture of spiritual lyrics and electric guitar.",
   wikipedia: "https://en.wikipedia.org/wiki/Sister_Rosetta_Tharpe",
 },
 {
@@ -7212,7 +7212,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "092b603f-eb4c-4958-b10e-02420de5885b",
   spotify: "6DCIj8jNaNpBz8e5oKFPtp",
   inductedBy: "Brandon Flowers",
-  summary: "The Cars were an American rock band formed in Boston in 1976. Emerging from the new wave scene in the late 1970s, they consisted of Ric Ocasek (rhythm guitar), Benjamin Orr (bass guitar), Elliot Easton (lead guitar), Greg Hawkes (keyboards), and David Robinson (drums). Ocasek and Orr shared lead vocals. Ric Ocasek was the band's leader and took sole song writing credits for practically every song, leading to friction in the band later."
+  summary: "The Cars were an American rock band formed in Boston in 1976. Emerging from the new wave scene in the late 1970s, they consisted of Ric Ocasek (rhythm guitar), Benjamin Orr (bass guitar), Elliot Easton (lead guitar), Greg Hawkes (keyboards), and David Robinson (drums). Ocasek and Orr shared lead vocals. Ric Ocasek was the band's leader and took sole song writing credits for practically every song, leading to friction in the band later.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Cars",
 },
 {
@@ -7234,7 +7234,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "774666d2-2064-4d6c-856c-f8cda0aaf9f0",
   spotify: "5BcZ22XONcRoLhTbZRuME1",
   inductedBy: "Ann Wilson",
-  summary: "The Moody Blues were an English rock band formed in Birmingham in May 1964. The band initially consisted of Graeme Edge (drums), Denny Laine (guitar/vocals), Mike Pinder (keyboards/vocals), Ray Thomas (multi-instrumentalist/vocals) and Clint Warwick (bass/vocals). Originally part of the British beat and R&B scene of the early-to-mid-1960s, the band came to prominence with the UK No. 1 and US Top 10 single \"Go Now\" in late 1964/early 1965."
+  summary: "The Moody Blues were an English rock band formed in Birmingham in May 1964. The band initially consisted of Graeme Edge (drums), Denny Laine (guitar/vocals), Mike Pinder (keyboards/vocals), Ray Thomas (multi-instrumentalist/vocals) and Clint Warwick (bass/vocals). Originally part of the British beat and R&B scene of the early-to-mid-1960s, the band came to prominence with the UK No. 1 and US Top 10 single \"Go Now\" in late 1964/early 1965.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Moody_Blues",
 },
 {
@@ -7256,7 +7256,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "7249b899-8db8-43e7-9e6e-22f1e736024e",
   spotify: "6H1RjVyNruCmrBEWRbD0VZ",
   inductedBy: "Brian May",
-  summary: "Def Leppard are an English rock band formed in Sheffield in 1976. Since 1992, the band has consisted of Rick Savage (bass, backing vocals), Joe Elliott (lead vocals), Rick Allen (drums), Phil Collen (guitar, backing vocals), and Vivian Campbell (guitar, backing vocals). They established themselves as part of the new wave of British heavy metal of the early 1980s."
+  summary: "Def Leppard are an English rock band formed in Sheffield in 1976. Since 1992, the band has consisted of Rick Savage (bass, backing vocals), Joe Elliott (lead vocals), Rick Allen (drums), Phil Collen (guitar, backing vocals), and Vivian Campbell (guitar, backing vocals). They established themselves as part of the new wave of British heavy metal of the early 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Def_Leppard",
 },
 {
@@ -7278,7 +7278,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6be2828f-6c0d-4059-99d4-fa18acf1a296",
   spotify: "4qwGe91Bz9K2T8jXTZ815W",
   inductedBy: "Janelle Monáe",
-  summary: "Janet Damita Jo Jackson (born May 16, 1966) is an American singer, songwriter, actress, and dancer. An influential figure in popular culture, she is known for her innovative works that incorporate socially conscious and sexually provocative themes, as well as her elaborate stage shows. Her sound and choreography became a catalyst in the growth of MTV, breaking American gender and racial barriers and enabling her rise to prominence."
+  summary: "Janet Damita Jo Jackson (born May 16, 1966) is an American singer, songwriter, actress, and dancer. An influential figure in popular culture, she is known for her innovative works that incorporate socially conscious and sexually provocative themes, as well as her elaborate stage shows. Her sound and choreography became a catalyst in the growth of MTV, breaking American gender and racial barriers and enabling her rise to prominence.",
   wikipedia: "https://en.wikipedia.org/wiki/Janet_Jackson",
 },
 {
@@ -7300,7 +7300,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a74b1b7f-71a5-4011-9441-d0b5e4122711",
   spotify: "4Z8W4fKeB5YxbusRsdQVPb",
   inductedBy: "David Byrne",
-  summary: "Radiohead are an English rock band formed in Abingdon, Oxfordshire, in 1985. The band members are Thom Yorke (vocals, guitar, keyboards); the brothers Jonny Greenwood (guitar, keyboards, other instruments) and Colin Greenwood (bass); Ed O'Brien (guitar, backing vocals); and Philip Selway (drums). They have worked with the producer Nigel Godrich and the cover artist Stanley Donwood since 1994. Radiohead's experimental approach is credited with advancing the sound of alternative rock."
+  summary: "Radiohead are an English rock band formed in Abingdon, Oxfordshire, in 1985. The band members are Thom Yorke (vocals, guitar, keyboards); the brothers Jonny Greenwood (guitar, keyboards, other instruments) and Colin Greenwood (bass); Ed O'Brien (guitar, backing vocals); and Philip Selway (drums). They have worked with the producer Nigel Godrich and the cover artist Stanley Donwood since 1994. Radiohead's experimental approach is credited with advancing the sound of alternative rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Radiohead",
 },
 {
@@ -7322,7 +7322,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "331ce348-1b08-40b9-8ed7-0763b92bd003",
   spotify: "3fhOTtm0LBJ3Ojn4hIljLo",
   inductedBy: "Simon Le Bon and John Taylor",
-  summary: "Roxy Music were an English rock band formed in 1970 by Bryan Ferry (lead vocals/keyboards/principal songwriter) and Graham Simpson (bass). By the time the band recorded their first album in early 1972, Ferry and Simpson were joined by Andy Mackay (saxophone/oboe), Phil Manzanera (guitar), Paul Thompson (drums) and Brian Eno (synthesizer)."
+  summary: "Roxy Music were an English rock band formed in 1970 by Bryan Ferry (lead vocals/keyboards/principal songwriter) and Graham Simpson (bass). By the time the band recorded their first album in early 1972, Ferry and Simpson were joined by Andy Mackay (saxophone/oboe), Phil Manzanera (guitar), Paul Thompson (drums) and Brian Eno (synthesizer).",
   wikipedia: "https://en.wikipedia.org/wiki/Roxy_Music",
 },
 {
@@ -7344,7 +7344,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b7f2cca2-72c6-41fb-ae33-53370fc62fe7",
   spotify: "7crPfGd2k81ekOoSqQKWWz",
   inductedBy: "Harry Styles",
-  summary: "Stephanie Lynn Nicks (born May 26, 1948) is an American singer-songwriter, known for her work with the band Fleetwood Mac and as a solo artist."
+  summary: "Stephanie Lynn Nicks (born May 26, 1948) is an American singer-songwriter, known for her work with the band Fleetwood Mac and as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Stevie_Nicks",
 },
 {
@@ -7366,7 +7366,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "69ee3720-a7cb-4402-b48d-a02c366f2bcf",
   spotify: "7bu3H8JO7d0UbMoVzbo70s",
   inductedBy: "Trent Reznor",
-  summary: "The Cure are an English rock band formed in Crawley in 1976 by Robert Smith (vocals, guitar) and Lol Tolhurst (drums). As of 2026, the band's line-up comprises Smith, Simon Gallup (bass), Roger O'Donnell (keyboards), Jason Cooper (drums) and Reeves Gabrels (guitar). Smith has remained the only constant member throughout numerous line-up changes since the band's formation."
+  summary: "The Cure are an English rock band formed in Crawley in 1976 by Robert Smith (vocals, guitar) and Lol Tolhurst (drums). As of 2026, the band's line-up comprises Smith, Simon Gallup (bass), Roger O'Donnell (keyboards), Jason Cooper (drums) and Reeves Gabrels (guitar). Smith has remained the only constant member throughout numerous line-up changes since the band's formation.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Cure",
 },
 {
@@ -7388,7 +7388,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "230ca093-1d00-4c57-9235-147942f66930",
   spotify: "2jgPkn6LuUazBoBk6vvjh5",
   inductedBy: "Susanna Hoffs",
-  summary: "The Zombies are an English rock band formed in St Albans in 1962. Led by keyboardist/vocalist Rod Argent and lead vocalist Colin Blunstone, the group had their first British and American hit in 1964 with \"She's Not There\". In the US, two further singles—\"Tell Her No\" in 1965 and \"Time of the Season\" in 1968—were also successful."
+  summary: "The Zombies are an English rock band formed in St Albans in 1962. Led by keyboardist/vocalist Rod Argent and lead vocalist Colin Blunstone, the group had their first British and American hit in 1964 with \"She's Not There\". In the US, two further singles—\"Tell Her No\" in 1965 and \"Time of the Season\" in 1968—were also successful.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Zombies",
 },
 {
@@ -7410,7 +7410,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8538e728-ca0b-4321-b7e5-cff6565dd4c0",
   spotify: "762310PdDnwsDxAQxzQkfX",
   inductedBy: "Charlize Theron",
-  summary: "Depeche Mode () are an English electronic band formed in Basildon, Essex in 1980. Originally formed with the line-up of Dave Gahan, Martin Gore, Andy Fletcher and Vince Clarke, the band has consisted of Gahan and Gore since Fletcher's death in 2022."
+  summary: "Depeche Mode () are an English electronic band formed in Basildon, Essex in 1980. Originally formed with the line-up of Dave Gahan, Martin Gore, Andy Fletcher and Vince Clarke, the band has consisted of Gahan and Gore since Fletcher's death in 2022.",
   wikipedia: "https://en.wikipedia.org/wiki/Depeche_Mode",
 },
 {
@@ -7432,7 +7432,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6ad77794-ff3c-49d7-a393-f19d1b360165",
   spotify: null,
   inductedBy: "Don Henley",
-  summary: "Irving Azoff (; born December 12, 1947) is an American record executive and talent manager. He is the chairman of Full Stop Management, a company that represents recording artists. During the course of his career, he has also been a talent agent, personal manager, concert promoter, film producer, and music publisher."
+  summary: "Irving Azoff (; born December 12, 1947) is an American record executive and talent manager. He is the chairman of Full Stop Management, a company that represents recording artists. During the course of his career, he has also been a talent agent, personal manager, concert promoter, film producer, and music publisher.",
   wikipedia: "https://en.wikipedia.org/wiki/Irving_Azoff",
 },
 {
@@ -7454,7 +7454,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4530bdd0-9707-442e-b37e-578def6a0926",
   spotify: "2X6kyVmUPd4oQNFuSUZvel",
   inductedBy: "Bruce Springsteen",
-  summary: "Jon Landau (born May 14, 1947) is an American music critic, manager, and record producer. He is most known for his work with Bruce Springsteen. He is the head of the nominating committee for the Rock and Roll Hall of Fame, and received that institution's Ahmet Ertegun Award for Lifetime Achievement in 2020."
+  summary: "Jon Landau (born May 14, 1947) is an American music critic, manager, and record producer. He is most known for his work with Bruce Springsteen. He is the head of the nominating committee for the Rock and Roll Hall of Fame, and received that institution's Ahmet Ertegun Award for Lifetime Achievement in 2020.",
   wikipedia: "https://en.wikipedia.org/wiki/Jon_Landau",
 },
 {
@@ -7476,7 +7476,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b7ffd2af-418f-4be2-bdd1-22f8b48613da",
   spotify: "0X380XXQSNBYuleKzav5UO",
   inductedBy: "Iggy Pop",
-  summary: "Nine Inch Nails, commonly abbreviated as NIN (stylized as NIИ), is an American industrial rock band formed by singer, songwriter, multi-instrumentalist, and producer Trent Reznor in 1988 in Cleveland, Ohio. Reznor was the sole permanent member of the band until his frequent collaborator, English musician Atticus Ross, became an official member in 2016. The band's debut album, Pretty Hate Machine (1989), was released via TVT Records."
+  summary: "Nine Inch Nails, commonly abbreviated as NIN (stylized as NIИ), is an American industrial rock band formed by singer, songwriter, multi-instrumentalist, and producer Trent Reznor in 1988 in Cleveland, Ohio. Reznor was the sole permanent member of the band until his frequent collaborator, English musician Atticus Ross, became an official member in 2016. The band's debut album, Pretty Hate Machine (1989), was released via TVT Records.",
   wikipedia: "https://en.wikipedia.org/wiki/Nine_Inch_Nails",
 },
 {
@@ -7498,7 +7498,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c842d29f-a297-48cd-bb71-4f77fd672b16",
   spotify: "3dBVyJ7JuOMt4GE9607Qin",
   inductedBy: "Ringo Starr",
-  summary: "T. Rex, originally Tyrannosaurus Rex, were  an English rock band formed in London in 1967 by singer-songwriter and guitarist Marc Bolan, who was their leader, frontman and only consistent member. Originally an acoustic psychedelic folk band, Bolan began to change the band's style towards electric rock with their fourth album, 1970's A Beard of Stars, and shortened their name to T. Rex by the time their self-titled fifth album was released later that same year."
+  summary: "T. Rex, originally Tyrannosaurus Rex, were  an English rock band formed in London in 1967 by singer-songwriter and guitarist Marc Bolan, who was their leader, frontman and only consistent member. Originally an acoustic psychedelic folk band, Bolan began to change the band's style towards electric rock with their fourth album, 1970's A Beard of Stars, and shortened their name to T. Rex by the time their self-titled fifth album was released later that same year.",
   wikipedia: "https://en.wikipedia.org/wiki/T._Rex_%28band%29",
 },
 {
@@ -7520,7 +7520,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "588dea29-eea3-456b-a815-3ee04f75c8e7",
   spotify: "39T6qqI0jDtSWWioX8eGJz",
   inductedBy: "Luke Bryan",
-  summary: "The Doobie Brothers are an American rock band formed in San Jose, California, in 1970. Known for their flexibility in performing across numerous genres and their vocal harmonies, the band has been active for over five decades, with their greatest success taking place in the 1970s."
+  summary: "The Doobie Brothers are an American rock band formed in San Jose, California, in 1970. Known for their flexibility in performing across numerous genres and their vocal harmonies, the band has been active for over five decades, with their greatest success taking place in the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Doobie_Brothers",
 },
 {
@@ -7542,7 +7542,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d5d97b2b-b83b-4976-814a-056d9076c8c3",
   spotify: "5me0Irg2ANcsgc93uaYrpb",
   inductedBy: "Sean Combs",
-  summary: "Christopher George Latore Wallace (May 21, 1972 – March 9, 1997), known professionally as the Notorious B.I.G. or Biggie Smalls, was an American rapper and songwriter. Rooted in the East Coast hip-hop and gangsta rap traditions, he is widely considered one of the greatest rappers of all time. Wallace became known for his distinctive, laidback lyrical delivery, offsetting his lyrics' often grim content."
+  summary: "Christopher George Latore Wallace (May 21, 1972 – March 9, 1997), known professionally as the Notorious B.I.G. or Biggie Smalls, was an American rapper and songwriter. Rooted in the East Coast hip-hop and gangsta rap traditions, he is widely considered one of the greatest rappers of all time. Wallace became known for his distinctive, laidback lyrical delivery, offsetting his lyrics' often grim content.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Notorious_B.I.G.",
 },
 {
@@ -7564,7 +7564,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "0307edfc-437c-4b48-8700-80680e66a228",
   spotify: "6XpaIBNiVzIetEPCWDvAFP",
   inductedBy: "Alicia Keys",
-  summary: "Whitney Elizabeth Houston (August 9, 1963 – February 11, 2012) was an American singer, actress, film producer, and record producer. Commonly referred to as \"the Voice\", she is one of the most awarded performers of all time. Houston is one of the best-selling music artists of all time, with sales of more than 220 million records worldwide. A cultural icon, she broke down gender and racial barriers through her artistic achievements and music videos."
+  summary: "Whitney Elizabeth Houston (August 9, 1963 – February 11, 2012) was an American singer, actress, film producer, and record producer. Commonly referred to as \"the Voice\", she is one of the most awarded performers of all time. Houston is one of the best-selling music artists of all time, with sales of more than 220 million records worldwide. A cultural icon, she broke down gender and racial barriers through her artistic achievements and music videos.",
   wikipedia: "https://en.wikipedia.org/wiki/Whitney_Houston",
 },
 {
@@ -7586,7 +7586,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8a7cf497-dc5c-4523-932d-3fcbc9a69d38",
   spotify: "0IecGJbdBeYSOVtSPRehh5",
   inductedBy: "Ringo Starr",
-  summary: "William Everett Preston (September 2, 1946 – June 6, 2006) was an American keyboardist, singer, and songwriter whose work encompassed R&B, rock, soul, funk, and gospel. Preston was a top session keyboardist in the 1960s, backing Little Richard, Sam Cooke, Ray Charles, the Everly Brothers, Reverend James Cleveland, the Beatles, and the Rolling Stones."
+  summary: "William Everett Preston (September 2, 1946 – June 6, 2006) was an American keyboardist, singer, and songwriter whose work encompassed R&B, rock, soul, funk, and gospel. Preston was a top session keyboardist in the 1960s, backing Little Richard, Sam Cooke, Ray Charles, the Everly Brothers, Reverend James Cleveland, the Beatles, and the Rolling Stones.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Preston",
 },
 {
@@ -7608,7 +7608,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c71b4f57-29da-4bf2-bccb-9dc81cd2d905",
   spotify: "7aExFIr0IHWO5aFjMrGwKw",
   inductedBy: "Gary Clark Jr.",
-  summary: "Charlie Patton (April 1891 (probable) – April 28, 1934), more often spelled Charley Patton, was an American Delta blues musician and songwriter. Considered by many to be the \"Father of the Delta Blues\", he created an enduring body of American music and inspired most Delta blues musicians. The musicologist Robert Palmer considered him one of the most important American musicians of the twentieth century."
+  summary: "Charlie Patton (April 1891 (probable) – April 28, 1934), more often spelled Charley Patton, was an American Delta blues musician and songwriter. Considered by many to be the \"Father of the Delta Blues\", he created an enduring body of American music and inspired most Delta blues musicians. The musicologist Robert Palmer considered him one of the most important American musicians of the twentieth century.",
   wikipedia: "https://en.wikipedia.org/wiki/Charley_Patton",
 },
 {
@@ -7630,7 +7630,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f3b9d7fb-a0ae-4b5a-8042-e52e192cd7b3",
   spotify: null,
   inductedBy: "Lionel Richie",
-  summary: "Clarence Alexander Avant (February 25, 1931 – August 13, 2023) was a prominent American music executive, businessman and film producer. Widely recognized as \"The Black Godfather\", Avant's career was characterized by his advocacy for equitable treatment and compensation for African American artists in the entertainment industry. His efforts were acknowledged with his 2021 induction into the Rock and Roll Hall of Fame."
+  summary: "Clarence Alexander Avant (February 25, 1931 – August 13, 2023) was a prominent American music executive, businessman and film producer. Widely recognized as \"The Black Godfather\", Avant's career was characterized by his advocacy for equitable treatment and compensation for African American artists in the entertainment industry. His efforts were acknowledged with his 2021 induction into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Clarence_Avant",
 },
 {
@@ -7652,7 +7652,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "67f66c07-6e61-4026-ade5-7e782fad3a5d",
   spotify: "7jy3rLJdDQY21OgRLCZ9sD",
   inductedBy: "Paul McCartney",
-  summary: "The Foo Fighters are an American rock band formed in Seattle in 1994. Initially founded as a one-man project by former Nirvana drummer Dave Grohl, the band comprises vocalist/guitarist Grohl, bassist Nate Mendel, guitarists Pat Smear and Chris Shiflett, keyboardist Rami Jaffee and drummer Ilan Rubin. Guitarist Franz Stahl and drummers William Goldsmith, Taylor Hawkins, and Josh Freese are former members."
+  summary: "The Foo Fighters are an American rock band formed in Seattle in 1994. Initially founded as a one-man project by former Nirvana drummer Dave Grohl, the band comprises vocalist/guitarist Grohl, bassist Nate Mendel, guitarists Pat Smear and Chris Shiflett, keyboardist Rami Jaffee and drummer Ilan Rubin. Guitarist Franz Stahl and drummers William Goldsmith, Taylor Hawkins, and Josh Freese are former members.",
   wikipedia: "https://en.wikipedia.org/wiki/Foo_Fighters",
 },
 {
@@ -7674,7 +7674,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b5b89643-c488-4f39-a302-25cab31084a5",
   spotify: "0kEfub5RzlZOB2zGomqVSU",
   inductedBy: "Common",
-  summary: "Gilbert Scott-Heron (April 1, 1949 – May 27, 2011) was an American jazz poet, singer, musician and author, known for his work as a spoken-word performer in the 1970s and 1980s. His collaborative efforts with musician Brian Jackson fused jazz, blues and soul with lyrics relative to social and political issues of the time, delivered in both rapping and melismatic vocal styles. He referred to himself as a \"bluesologist\", his own term for \"a scientist who is concerned with the origin of the blues\"."
+  summary: "Gilbert Scott-Heron (April 1, 1949 – May 27, 2011) was an American jazz poet, singer, musician and author, known for his work as a spoken-word performer in the 1970s and 1980s. His collaborative efforts with musician Brian Jackson fused jazz, blues and soul with lyrics relative to social and political issues of the time, delivered in both rapping and melismatic vocal styles. He referred to himself as a \"bluesologist\", his own term for \"a scientist who is concerned with the origin of the blues\".",
   wikipedia: "https://en.wikipedia.org/wiki/Gil_Scott-Heron",
 },
 {
@@ -7696,7 +7696,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f82bcf78-5b69-4622-a5ef-73800768d9ac",
   spotify: "3nFkdlSjzX9mRTtwJOzDYB",
   inductedBy: "Dave Chappelle",
-  summary: "Shawn Corey Carter (born December 4, 1969), known professionally as Jay-Z, is an American rapper, businessman, and record executive. He was named the greatest rapper of all time by Billboard and Vibe in 2023. Rooted in East Coast hip-hop, Jay-Z is known for his complex lyricism that often uses double entendres, wordplay, and braggadocio. His music is built on a rags to riches narrative."
+  summary: "Shawn Corey Carter (born December 4, 1969), known professionally as Jay-Z, is an American rapper, businessman, and record executive. He was named the greatest rapper of all time by Billboard and Vibe in 2023. Rooted in East Coast hip-hop, Jay-Z is known for his complex lyricism that often uses double entendres, wordplay, and braggadocio. His music is built on a rags to riches narrative.",
   wikipedia: "https://en.wikipedia.org/wiki/Jay-Z",
 },
 {
@@ -7718,7 +7718,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "5700dcd4-c139-4f31-aa3e-6382b9af9032",
   spotify: "0dmPX6ovclgOy8WWJaFEUU",
   inductedBy: "Pharrell Williams",
-  summary: "Kraftwerk (German pronunciation: [ˈkʁaftvɛʁk] , lit. 'power plant') is a German electronic music band formed in Düsseldorf in 1970 by Ralf Hütter and Florian Schneider. Widely considered innovators and pioneers of electronic music, Kraftwerk was among the first successful acts to popularise the genre. The group began as part of West Germany's experimental krautrock scene in the early 1970s before embracing electronic instrumentation, including synthesizers, drum machines, and vocoders."
+  summary: "Kraftwerk (German pronunciation: [ˈkʁaftvɛʁk] , lit. 'power plant') is a German electronic music band formed in Düsseldorf in 1970 by Ralf Hütter and Florian Schneider. Widely considered innovators and pioneers of electronic music, Kraftwerk was among the first successful acts to popularise the genre. The group began as part of West Germany's experimental krautrock scene in the early 1970s before embracing electronic instrumentation, including synthesizers, drum machines, and vocoders.",
   wikipedia: "https://en.wikipedia.org/wiki/Kraftwerk",
 },
 {
@@ -7740,7 +7740,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a4dd0e77-83b8-4e92-89b7-effb0e47fd8c",
   spotify: "1P8IfcNKwrkQP5xJWuhaOC",
   inductedBy: "Dr. Dre",
-  summary: "James Todd Smith (born January 14, 1968), known professionally as LL Cool J (short for Ladies Love Cool James), is an American rapper and actor. He is one of the earliest rappers to realize crossover commercial success, alongside fellow new-school hip-hop acts like Run-DMC."
+  summary: "James Todd Smith (born January 14, 1968), known professionally as LL Cool J (short for Ladies Love Cool James), is an American rapper and actor. He is one of the earliest rappers to realize crossover commercial success, alongside fellow new-school hip-hop acts like Run-DMC.",
   wikipedia: "https://en.wikipedia.org/wiki/LL_Cool_J",
 },
 {
@@ -7762,7 +7762,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "19dccaac-efa8-413f-9042-28006792e0f2",
   spotify: "3pSSOCRaRiEVnNWnPPsO2d",
   inductedBy: "Tom Morello",
-  summary: "Randall William Rhoads (December 6, 1956 – March 19, 1982) was an American guitarist. He was the co-founder and original guitarist of the heavy metal band Quiet Riot, and the guitarist and co-songwriter for Ozzy Osbourne's first two solo albums Blizzard of Ozz (1980) and Diary of a Madman (1981). Rhoads was posthumously inducted into the Rock and Roll Hall of Fame in 2021."
+  summary: "Randall William Rhoads (December 6, 1956 – March 19, 1982) was an American guitarist. He was the co-founder and original guitarist of the heavy metal band Quiet Riot, and the guitarist and co-songwriter for Ozzy Osbourne's first two solo albums Blizzard of Ozz (1980) and Diary of a Madman (1981). Rhoads was posthumously inducted into the Rock and Roll Hall of Fame in 2021.",
   wikipedia: "https://en.wikipedia.org/wiki/Randy_Rhoads",
 },
 {
@@ -7784,7 +7784,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "eec163e4-a013-4af0-9641-c5b2df41fff7",
   spotify: "2mG8HHQ9S9kcbjcrb5N1FE",
   inductedBy: "Drew Barrymore",
-  summary: "The Go-Go's are an American all-female rock band formed in Los Angeles in 1978. Except for short periods when other musicians joined briefly, the band has had a relatively stable lineup consisting of Charlotte Caffey on lead guitar and keyboards, Belinda Carlisle on lead vocals, Gina Schock on drums, Kathy Valentine on bass, and Jane Wiedlin on rhythm guitar."
+  summary: "The Go-Go's are an American all-female rock band formed in Los Angeles in 1978. Except for short periods when other musicians joined briefly, the band has had a relatively stable lineup consisting of Charlotte Caffey on lead guitar and keyboards, Belinda Carlisle on lead vocals, Gina Schock on drums, Kathy Valentine on bass, and Jane Wiedlin on rhythm guitar.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Go-Go%27s",
 },
 {
@@ -7806,7 +7806,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9072df14-b61e-42e2-b4f4-6bbb7fdb5586",
   spotify: "1zuJe6b1roixEKMOtyrEak",
   inductedBy: "Angela Bassett",
-  summary: "Tina Turner (born Anna Mae Bullock; November 26, 1939 – May 24, 2023) was a singer, songwriter, actress and author. Dubbed the \"Queen of Rock 'n' Roll\", she broke both racial and gender barriers in rock music with her vocal prowess and stage presence. She is one of the best-selling music artists of all time, with estimated sales of over 100 million records worldwide."
+  summary: "Tina Turner (born Anna Mae Bullock; November 26, 1939 – May 24, 2023) was a singer, songwriter, actress and author. Dubbed the \"Queen of Rock 'n' Roll\", she broke both racial and gender barriers in rock music with her vocal prowess and stage presence. She is one of the best-selling music artists of all time, with estimated sales of over 100 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Tina_Turner",
 },
 {
@@ -7828,7 +7828,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1a9a8ca0-ea8e-4e9e-96aa-288155bb2c5d",
   spotify: "0Lpr5wXzWLtDWm1SjNbpPb",
   inductedBy: "Patti Smith",
-  summary: "Todd Harry Rundgren (born June 22, 1948) is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art."
+  summary: "Todd Harry Rundgren (born June 22, 1948) is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art.",
   wikipedia: "https://en.wikipedia.org/wiki/Todd_Rundgren",
 },
 {
@@ -7850,7 +7850,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: null,
   spotify: null,
   inductedBy: "John Mellencamp",
-  summary: "Allen J. Grubman is an American entertainment lawyer."
+  summary: "Allen J. Grubman is an American entertainment lawyer.",
   wikipedia: "https://en.wikipedia.org/wiki/Allen_Grubman",
 },
 {
@@ -7872,7 +7872,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "c4df30f5-5487-4806-9189-b69c9f27532c",
   spotify: "4FtSnMlCVxCswABUmdhwpm",
   inductedBy: "Sara Bareilles",
-  summary: "Carly Elisabeth Simon (born June 25, 1943) is an American musician, singer, songwriter, and author. She rose to fame in the 1970s with a string of hit records; her 13 top 40 U.S. hits include \"That's the Way I've Always Heard It Should Be\" (No. 10), \"Anticipation\" (No. 13), \"The Right Thing to Do\" (No. 17), \"Haven't Got Time for the Pain\" (No. 14), \"You Belong to Me\" (No. 6), \"Coming Around Again\" (No. 18), and her four Gold-certified singles \"You're So Vain\" (No. 1), \"Mockingbird\" (No."
+  summary: "Carly Elisabeth Simon (born June 25, 1943) is an American musician, singer, songwriter, and author. She rose to fame in the 1970s with a string of hit records; her 13 top 40 U.S. hits include \"That's the Way I've Always Heard It Should Be\" (No. 10), \"Anticipation\" (No. 13), \"The Right Thing to Do\" (No. 17), \"Haven't Got Time for the Pain\" (No. 14), \"You Belong to Me\" (No. 6), \"Coming Around Again\" (No. 18), and her four Gold-certified singles \"You're So Vain\" (No. 1), \"Mockingbird\" (No.",
   wikipedia: "https://en.wikipedia.org/wiki/Carly_Simon",
 },
 {
@@ -7894,7 +7894,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1d543e07-d0d2-4834-a8db-d65c50c2a856",
   spotify: "32vWCbZh0xZ4o9gkz4PsEU",
   inductedBy: "Pink",
-  summary: "Dolly Rebecca Parton (born January 19, 1946) is an American singer, songwriter, actress, philanthropist, and businesswoman. After achieving success as a songwriter for other artists, Parton's debut album, Hello, I'm Dolly, was released in 1967, commencing a career spanning 60 years and 50 studio albums."
+  summary: "Dolly Rebecca Parton (born January 19, 1946) is an American singer, songwriter, actress, philanthropist, and businesswoman. After achieving success as a songwriter for other artists, Parton's debut album, Hello, I'm Dolly, was released in 1967, commencing a career spanning 60 years and 50 studio albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Dolly_Parton",
 },
 {
@@ -7916,7 +7916,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1a1cd7f3-e5df-4eca-bae2-2757c9e656b5",
   spotify: "0lZoBs4Pzo7R89JM9lxwoT",
   inductedBy: "Robert Downey Jr.",
-  summary: "Duran Duran () are an English pop rock band. Formed in Birmingham in 1978 by keyboardist Nick Rhodes, guitarist (later bassist) John Taylor and singer/bassist Stephen Duffy, the band went through several early changes before the band's line-up settled in May 1980 as Rhodes, Taylor, singer Simon Le Bon, guitarist Andy Taylor and drummer Roger Taylor."
+  summary: "Duran Duran () are an English pop rock band. Formed in Birmingham in 1978 by keyboardist Nick Rhodes, guitarist (later bassist) John Taylor and singer/bassist Stephen Duffy, the band went through several early changes before the band's line-up settled in May 1980 as Rhodes, Taylor, singer Simon Le Bon, guitarist Andy Taylor and drummer Roger Taylor.",
   wikipedia: "https://en.wikipedia.org/wiki/Duran_Duran",
 },
 {
@@ -7938,7 +7938,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "907f53c2-f7d1-406a-8071-30262ba472ca",
   spotify: "1eTZGzLkukATM7FoGltyFs",
   inductedBy: "Pharrell Williams",
-  summary: "Elizabeth \"Libba\" Cotten (née Nevills; January 5, 1893 – June 29, 1987) was an influential American folk and blues musician. She was a self-taught left-handed guitarist who played a guitar strung for a right-handed player, but played it upside down. This position meant that she played the bass lines with her fingers and the melody with her thumb. Her signature alternating bass style has become known as \"Cotten picking\"."
+  summary: "Elizabeth \"Libba\" Cotten (née Nevills; January 5, 1893 – June 29, 1987) was an influential American folk and blues musician. She was a self-taught left-handed guitarist who played a guitar strung for a right-handed player, but played it upside down. This position meant that she played the bass lines with her fingers and the melody with her thumb. Her signature alternating bass style has become known as \"Cotten picking\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elizabeth_Cotten",
 },
 {
@@ -7960,7 +7960,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b95ce3ff-3d05-4e87-9e01-c97b66af13d4",
   spotify: "7dGJo4pcD2V6oG8kP0tJRR",
   inductedBy: "Dr. Dre",
-  summary: "Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem, is an American rapper, songwriter, record producer, and record executive. Widely regarded as one of the greatest and most influential rappers of all time, he is often credited with popularizing hip-hop in Middle America and the acceptance of white rappers."
+  summary: "Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem, is an American rapper, songwriter, record producer, and record executive. Widely regarded as one of the greatest and most influential rappers of all time, he is often credited with popularizing hip-hop in Middle America and the acceptance of white rappers.",
   wikipedia: "https://en.wikipedia.org/wiki/Eminem",
 },
 {
@@ -7982,7 +7982,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b4d32cff-f19e-455f-86c4-f347d824ca61",
   spotify: "0NKDgy9j66h3DLnN8qu1bB",
   inductedBy: "The Edge",
-  summary: "Eurythmics were a British new wave duo formed in 1980, consisting of the Scottish vocalist Annie Lennox and the English musician and producer Dave Stewart. They had both been previously in the Tourists, a band that broke up in 1980. They released their first studio album, In the Garden, in 1981 to little success, but achieved global acclaim with their second album, Sweet Dreams (Are Made of This) (1983)."
+  summary: "Eurythmics were a British new wave duo formed in 1980, consisting of the Scottish vocalist Annie Lennox and the English musician and producer Dave Stewart. They had both been previously in the Tourists, a band that broke up in 1980. They released their first studio album, In the Garden, in 1981 to little success, but achieved global acclaim with their second album, Sweet Dreams (Are Made of This) (1983).",
   wikipedia: "https://en.wikipedia.org/wiki/Eurythmics",
 },
 {
@@ -8004,7 +8004,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "49c48b7f-1ff1-4f02-a1aa-ca1254b46ef2",
   spotify: "6Tw1ktF4xMmzaLLbe98I2z",
   inductedBy: "Dr. Dre",
-  summary: "Harry Belafonte ( BEL-ə-FON-tee; born Harold George Bellanfanti Jr.; March 1, 1927 – April 25, 2023) was an American singer, actor, and civil rights activist who popularized calypso music with international audiences in the 1950s and 1960s. Belafonte's career breakthrough album Calypso (1956) was the first million-selling LP by a single artist."
+  summary: "Harry Belafonte ( BEL-ə-FON-tee; born Harold George Bellanfanti Jr.; March 1, 1927 – April 25, 2023) was an American singer, actor, and civil rights activist who popularized calypso music with international audiences in the 1950s and 1960s. Belafonte's career breakthrough album Calypso (1956) was the first million-selling LP by a single artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Harry_Belafonte",
 },
 {
@@ -8026,7 +8026,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "f970e8eb-42ea-4cfc-bdb3-e007cf9c4dba",
   spotify: "0iz7N1hUMCZ4buAnGsPLDl",
   inductedBy: "Bruce Springsteen",
-  summary: "James Iovine ( EYE-ə-veen; born March 11, 1953) is an American entrepreneur, former record executive, and media proprietor. He co-founded Interscope Records in 1990, and served as chairman and CEO of Interscope Geffen A&M, an umbrella music unit formed by Universal Music Group, from 1999 to 2014."
+  summary: "James Iovine ( EYE-ə-veen; born March 11, 1953) is an American entrepreneur, former record executive, and media proprietor. He co-founded Interscope Records in 1990, and served as chairman and CEO of Interscope Geffen A&M, an umbrella music unit formed by Universal Music Group, from 1999 to 2014.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Iovine",
 },
 {
@@ -8048,7 +8048,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4d632e24-4fef-46b2-b33d-4ece0e3f6a5e",
   spotify: null,
   inductedBy: "Janet Jackson",
-  summary: "James Samuel \"Jimmy Jam\" Harris III (born June 6, 1959) and Terry Steven Lewis (born November 24, 1956) are an American R&B/pop songwriting and record production team. Their productions have received commercial success since the 1980s with various artists, most extensively Janet Jackson. They have written 31 top ten hits in the UK and 41 in the US. In 2022, the duo were inducted into the Rock and Roll Hall of Fame in the Musical Excellence category."
+  summary: "James Samuel \"Jimmy Jam\" Harris III (born June 6, 1959) and Terry Steven Lewis (born November 24, 1956) are an American R&B/pop songwriting and record production team. Their productions have received commercial success since the 1980s with various artists, most extensively Janet Jackson. They have written 31 top ten hits in the UK and 41 in the US. In 2022, the duo were inducted into the Rock and Roll Hall of Fame in the Musical Excellence category.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Jam_and_Terry_Lewis",
 },
 {
@@ -8070,7 +8070,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6b335658-22c8-485d-93de-0bc29a1d0349",
   spotify: "2tRsMl4eGxwoNabM08Dm4I",
   inductedBy: "Alice Cooper",
-  summary: "Judas Priest are an English heavy metal band formed in Birmingham in 1969. They have sold over 50 million albums and are frequently ranked as one of the greatest metal bands of all time. They have been referred to as one of the pioneers of the new wave of British heavy metal (NWOBHM) movement, and cited as a formative influence on various metal subgenres, including speed metal, thrash metal, and power metal, as well as the hard rock and glam metal scene of the 1980s."
+  summary: "Judas Priest are an English heavy metal band formed in Birmingham in 1969. They have sold over 50 million albums and are frequently ranked as one of the greatest metal bands of all time. They have been referred to as one of the pioneers of the new wave of British heavy metal (NWOBHM) movement, and cited as a formative influence on various metal subgenres, including speed metal, thrash metal, and power metal, as well as the hard rock and glam metal scene of the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Judas_Priest",
 },
 {
@@ -8092,7 +8092,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3cb25fb2-5547-4b05-adec-1a5e37830d46",
   spotify: "3gMaNLQm7D9MornNILzdSl",
   inductedBy: "Lenny Kravitz",
-  summary: "Lionel Brockman Richie Jr. (born June 20, 1949) is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure. In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers."
+  summary: "Lionel Brockman Richie Jr. (born June 20, 1949) is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure. In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers.",
   wikipedia: "https://en.wikipedia.org/wiki/Lionel_Richie",
 },
 {
@@ -8114,7 +8114,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "81e7ab36-2d2d-44b0-80f6-c4b25ce2d395",
   spotify: "7l7wyDT5aVk7VMDKFCi6d5",
   inductedBy: "Bruce Springsteen",
-  summary: "Neil Thomas Giraldo (born December 29, 1955) is an American musician, record producer, arranger, and songwriter best known as the musical partner of Pat Benatar since 1979 – and husband since 1982. He has also performed, written and produced for artists including Rick Derringer, John Waite, Rick Springfield, Kenny Loggins, Steve Forbert, The Del-Lords, Scott Kempner, and Beth Hart."
+  summary: "Neil Thomas Giraldo (born December 29, 1955) is an American musician, record producer, arranger, and songwriter best known as the musical partner of Pat Benatar since 1979 – and husband since 1982. He has also performed, written and produced for artists including Rick Derringer, John Waite, Rick Springfield, Kenny Loggins, Steve Forbert, The Del-Lords, Scott Kempner, and Beth Hart.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Giraldo",
 },
 {
@@ -8136,7 +8136,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "6bc658ea-005f-486b-8f94-33a2e40f7a72",
   spotify: "43mhFhQ4JAknA7Ik1bOZuV",
   inductedBy: "Sheryl Crow",
-  summary: "Patricia Mae Giraldo (née Andrzejewski; formerly and still professionally Benatar ; born January 10, 1953) is an American singer and songwriter. In the US, she has two multi-platinum albums, five platinum albums, and 15 US Billboard top 40 singles, while in Canada she had eight straight platinum albums, and has sold over 36 million albums worldwide. She is a four-time Grammy Award winner. She was inducted into the Rock and Roll Hall of Fame in 2022."
+  summary: "Patricia Mae Giraldo (née Andrzejewski; formerly and still professionally Benatar ; born January 10, 1953) is an American singer and songwriter. In the US, she has two multi-platinum albums, five platinum albums, and 15 US Billboard top 40 singles, while in Canada she had eight straight platinum albums, and has sold over 36 million albums worldwide. She is a four-time Grammy Award winner. She was inducted into the Rock and Roll Hall of Fame in 2022.",
   wikipedia: "https://en.wikipedia.org/wiki/Pat_Benatar",
 },
 {
@@ -8158,7 +8158,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8fac43da-1553-4b36-a77c-344726f3a674",
   spotify: "5tSWhJQyABPCBpRmYLWXOA",
   inductedBy: "Sheryl Crow",
-  summary: "Sylvia Robinson (née Vanterpool; May 29, 1935 – September 29, 2011), known mononymously as Sylvia, was an American singer and record producer. Robinson achieved success as a performer on two R&B chart toppers: as half of Mickey & Sylvia with the 1957 single \"Love Is Strange\", and her solo record \"Pillow Talk\" in 1973. She later became known for her work as founder and CEO of the pioneering hip hop label Sugar Hill Records."
+  summary: "Sylvia Robinson (née Vanterpool; May 29, 1935 – September 29, 2011), known mononymously as Sylvia, was an American singer and record producer. Robinson achieved success as a performer on two R&B chart toppers: as half of Mickey & Sylvia with the 1957 single \"Love Is Strange\", and her solo record \"Pillow Talk\" in 1973. She later became known for her work as founder and CEO of the pioneering hip hop label Sugar Hill Records.",
   wikipedia: "https://en.wikipedia.org/wiki/Sylvia_Robinson",
 },
 {
@@ -8180,7 +8180,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d6bee229-1957-4891-8d44-c56ac7ea259e",
   spotify: "49JvZ17o0VaAmXaJv5kZlv",
   inductedBy: null,
-  summary: "Al Kooper (born Alan Peter Kuperschmidt; February 5, 1944) is an American songwriter, record producer, and musician. Throughout much of the 1960s and 1970s he was a prolific studio musician, including playing organ on the Bob Dylan song \"Like a Rolling Stone\", French horn and piano on the Rolling Stones song \"You Can't Always Get What You Want\", and lead guitar on Rita Coolidge's \"The Lady's Not for Sale\"."
+  summary: "Al Kooper (born Alan Peter Kuperschmidt; February 5, 1944) is an American songwriter, record producer, and musician. Throughout much of the 1960s and 1970s he was a prolific studio musician, including playing organ on the Bob Dylan song \"Like a Rolling Stone\", French horn and piano on the Rolling Stones song \"You Can't Always Get What You Want\", and lead guitar on Rita Coolidge's \"The Lady's Not for Sale\".",
   wikipedia: "https://en.wikipedia.org/wiki/Al_Kooper",
 },
 {
@@ -8202,7 +8202,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9a0d0b2d-a727-44a6-a172-53766f186834",
   spotify: "5lzPV4EKWYxEUk38UcFBVH",
   inductedBy: "Elton John",
-  summary: "Bernard John Taupin (taw-PIN; born 22 May 1950) is an English lyricist and visual artist. He is best known for his songwriting partnership with Elton John, recognised as one of the most successful partnerships of its kind in history. Taupin co-wrote the majority of John's songs, dating back to the 1960s."
+  summary: "Bernard John Taupin (taw-PIN; born 22 May 1950) is an English lyricist and visual artist. He is best known for his songwriting partnership with Elton John, recognised as one of the most successful partnerships of its kind in history. Taupin co-wrote the majority of John's songs, dating back to the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Bernie_Taupin",
 },
 {
@@ -8224,7 +8224,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "900e9144-019d-4043-86cb-ec0e127c39d0",
   spotify: "6mQfAAqZGBzIfrmlZCeaYT",
   inductedBy: "Jazmine Sullivan",
-  summary: "Yvette Marie Stevens (born March 23, 1953), better known by her stage name Chaka Khan ( SHAH-kə KAHN), is an American singer and songwriter. Known as the \"Queen of Funk\", her career has spanned more than five decades beginning in the early 1970s as the lead vocalist of the funk band Rufus. With the band she recorded the hits \"Tell Me Something Good\", \"Sweet Thing\", \"Do You Love What You Feel\", and the platinum-certified \"Ain't Nobody\"."
+  summary: "Yvette Marie Stevens (born March 23, 1953), better known by her stage name Chaka Khan ( SHAH-kə KAHN), is an American singer and songwriter. Known as the \"Queen of Funk\", her career has spanned more than five decades beginning in the early 1970s as the lead vocalist of the funk band Rufus. With the band she recorded the hits \"Tell Me Something Good\", \"Sweet Thing\", \"Do You Love What You Feel\", and the platinum-certified \"Ain't Nobody\".",
   wikipedia: "https://en.wikipedia.org/wiki/Chaka_Khan",
 },
 {
@@ -8246,7 +8246,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8ecc4c7e-9482-4557-bf0f-d74783a9e670",
   spotify: "0VcTIm4tmf91b3mWd8lVuQ",
   inductedBy: "LL Cool J",
-  summary: "Clive Campbell (born April 16, 1955), better known by his stage name DJ Kool Herc, is a Jamaican-American DJ who is a pioneer of hip-hop music, where he along with others popularized it in the Bronx, New York City, in 1973. He is often referred to as the founder of hip hop. Nicknamed the Father of Hip-Hop, Campbell began playing hard funk records of the sort typified by James Brown."
+  summary: "Clive Campbell (born April 16, 1955), better known by his stage name DJ Kool Herc, is a Jamaican-American DJ who is a pioneer of hip-hop music, where he along with others popularized it in the Bronx, New York City, in 1973. He is often referred to as the founder of hip hop. Nicknamed the Father of Hip-Hop, Campbell began playing hard funk records of the sort typified by James Brown.",
   wikipedia: "https://en.wikipedia.org/wiki/DJ_Kool_Herc",
 },
 {
@@ -8268,7 +8268,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "25017bf5-0263-4894-b155-921735447469",
   spotify: "7jPMa8CUxNq17WtsYwZbpw",
   inductedBy: "Elton John",
-  summary: "Donald Cortez Cornelius (September 27, 1936 – February 1, 2012) was an American television show host and producer widely known as the creator of the nationally syndicated dance and music show Soul Train, which he hosted from 1970 until 1993. Cornelius sold the show to MadVision Entertainment in 2008. On November 3, 2023, he was posthumously inducted into the Rock and Roll Hall of Fame with the Ahmet Ertegun Award."
+  summary: "Donald Cortez Cornelius (September 27, 1936 – February 1, 2012) was an American television show host and producer widely known as the creator of the nationally syndicated dance and music show Soul Train, which he hosted from 1970 until 1993. Cornelius sold the show to MadVision Entertainment in 2008. On November 3, 2023, he was posthumously inducted into the Rock and Roll Hall of Fame with the Ahmet Ertegun Award.",
   wikipedia: "https://en.wikipedia.org/wiki/Don_Cornelius",
 },
 {
@@ -8290,7 +8290,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ccb8f30e-4d71-40c4-8b1d-846dafe73e2c",
   spotify: "19ra5tSw0tWufvUp8GotLo",
   inductedBy: "Andrew Ridgeley",
-  summary: "George Michael (born Georgios Kyriacos Panayiotou; 25 June 1963 – 25 December 2016) was an English singer-songwriter and record producer. Regarded as a pop culture icon, he is one of the best-selling recording artists of all time. Michael was known as a creative force in songwriting, vocal performance, and visual presentation. He was inducted into the Rock and Roll Hall of Fame in 2023. The Radio Academy named him the most played artist on British radio during the period 1984–2004."
+  summary: "George Michael (born Georgios Kyriacos Panayiotou; 25 June 1963 – 25 December 2016) was an English singer-songwriter and record producer. Regarded as a pop culture icon, he is one of the best-selling recording artists of all time. Michael was known as a creative force in songwriting, vocal performance, and visual presentation. He was inducted into the Rock and Roll Hall of Fame in 2023. The Radio Academy named him the most played artist on British radio during the period 1984–2004.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Michael",
 },
 {
@@ -8312,7 +8312,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4b585938-f271-45e2-b19a-91c634b5e396",
   spotify: "1aSxMhuvixZ8h9dK9jIDwL",
   inductedBy: "Big Boi",
-  summary: "Catherine Bush (born 30 July 1958) is an English singer, songwriter, musician, dancer and record producer. She is noted for her eclectic style, unconventional lyrics and innovative dance performances. Her sound and choreography have influenced a range of artists."
+  summary: "Catherine Bush (born 30 July 1958) is an English singer, songwriter, musician, dancer and record producer. She is noted for her eclectic style, unconventional lyrics and innovative dance performances. Her sound and choreography have influenced a range of artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Kate_Bush",
 },
 {
@@ -8334,7 +8334,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1c1c86a2-7850-47ac-8771-ae6359bae2b7",
   spotify: "2vQavlZtDA660mnZotYIto",
   inductedBy: "Jimmy Page",
-  summary: "Fred Lincoln \"Link\" Wray Jr. (May 2, 1929 – November 5, 2005) was an American guitarist, songwriter, and vocalist who became popular in the late 1950s. His 1958 instrumental single \"Rumble\" reached the top 20 in the United States, and was one of the earliest songs in rock music to use distortion and tremolo."
+  summary: "Fred Lincoln \"Link\" Wray Jr. (May 2, 1929 – November 5, 2005) was an American guitarist, songwriter, and vocalist who became popular in the late 1950s. His 1958 instrumental single \"Rumble\" reached the top 20 in the United States, and was one of the earliest songs in rock music to use distortion and tremolo.",
   wikipedia: "https://en.wikipedia.org/wiki/Link_Wray",
 },
 {
@@ -8356,7 +8356,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "a0b8cb9e-7532-45fe-a74c-30e7c4009a39",
   spotify: "2wIVse2owClT7go1WT98tk",
   inductedBy: "Queen Latifah",
-  summary: "Melissa Arnette \"Missy\" Elliott (born July 1, 1971), also known as Misdemeanor, is an American rapper, singer, songwriter, and record producer. She began her musical career as a member of the R&B girl group Sista during the 1990s, who were part of the larger musical collective Swing Mob, led by DeVante Swing of Jodeci. Sista signed with Elektra Records to release their debut album, 4 All the Sistas Around da World (1994), which was critically praised but commercially unsuccessful."
+  summary: "Melissa Arnette \"Missy\" Elliott (born July 1, 1971), also known as Misdemeanor, is an American rapper, singer, songwriter, and record producer. She began her musical career as a member of the R&B girl group Sista during the 1990s, who were part of the larger musical collective Swing Mob, led by DeVante Swing of Jodeci. Sista signed with Elektra Records to release their debut album, 4 All the Sistas Around da World (1994), which was critically praised but commercially unsuccessful.",
   wikipedia: "https://en.wikipedia.org/wiki/Missy_Elliott",
 },
 {
@@ -8378,7 +8378,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "3798b104-01cb-484c-a3b0-56adc6399b80",
   spotify: "2d0hyoQ5ynDBnkvAbJKORj",
   inductedBy: "Ice-T",
-  summary: "Rage Against the Machine (often abbreviated as RATM or shortened to Rage) was an American rock band formed in Los Angeles, California, in 1991. It consisted of vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello, and drummer Brad Wilk. They melded heavy metal, rap, punk rock, and funk with anti-authoritarian, anti-capitalist, and revolutionary lyrics. As of 2010, they had sold over 16 million records worldwide."
+  summary: "Rage Against the Machine (often abbreviated as RATM or shortened to Rage) was an American rock band formed in Los Angeles, California, in 1991. It consisted of vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello, and drummer Brad Wilk. They melded heavy metal, rap, punk rock, and funk with anti-authoritarian, anti-capitalist, and revolutionary lyrics. As of 2010, they had sold over 16 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Rage_Against_the_Machine",
 },
 {
@@ -8400,7 +8400,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "80ccfede-c258-4575-a7ad-c982e9932e0f",
   spotify: "4TKTii6gnOnUXQHyuo9JaD",
   inductedBy: "Laura Dern",
-  summary: "Sheryl Suzanne Crow (born February 11, 1962) is an American singer-songwriter, producer, actress, and guitarist. She is noted for her idealistic and optimistic lyrics, and incorporation of various genres into her rock-oriented sound, including blues, country, folk, and pop."
+  summary: "Sheryl Suzanne Crow (born February 11, 1962) is an American singer-songwriter, producer, actress, and guitarist. She is noted for her idealistic and optimistic lyrics, and incorporation of various genres into her rock-oriented sound, including blues, country, folk, and pop.",
   wikipedia: "https://en.wikipedia.org/wiki/Sheryl_Crow",
 },
 {
@@ -8422,7 +8422,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fd2b6371-5b61-4068-8baa-9c333c97dfd7",
   spotify: "5fbhwqYYh4YwUoEs582mq5",
   inductedBy: "None",
-  summary: "The Spinners are an American rhythm and blues vocal group that formed in Detroit, Michigan, in 1954. They enjoyed a string of hit singles and albums during the 1960s and 1970s, particularly with producer Thom Bell.  The group continues to tour, without any original members, after Henry Fambrough retired in 2023."
+  summary: "The Spinners are an American rhythm and blues vocal group that formed in Detroit, Michigan, in 1954. They enjoyed a string of hit singles and albums during the 1960s and 1970s, particularly with producer Thom Bell.  The group continues to tour, without any original members, after Henry Fambrough retired in 2023.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Spinners_%28American_group%29",
 },
 {
@@ -8444,7 +8444,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "668fd73c-bf54-4310-a139-305517f05311",
   spotify: "5W5bDNCqJ1jbCgTxDD0Cb3",
   inductedBy: "Dave Matthews",
-  summary: "Willie Hugh Nelson (born April 29, 1933) is an American singer, guitarist, songwriter, actor, and activist. He was one of the main figures of the outlaw country subgenre that developed in the late 1960s as a reaction to the conservative restrictions of the Nashville sound. The critical success of his album Shotgun Willie (1973), combined with the critical and commercial success of Red Headed Stranger (1975) and Stardust (1978), made Nelson one of the most recognized artists in country music."
+  summary: "Willie Hugh Nelson (born April 29, 1933) is an American singer, guitarist, songwriter, actor, and activist. He was one of the main figures of the outlaw country subgenre that developed in the late 1960s as a reaction to the conservative restrictions of the Nashville sound. The critical success of his album Shotgun Willie (1973), combined with the critical and commercial success of Red Headed Stranger (1975) and Stardust (1978), made Nelson one of the most recognized artists in country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Willie_Nelson",
 },
 {
@@ -8466,7 +8466,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "9689aa5a-4471-4fb4-9721-07cecda0fa9f",
   spotify: "09hVIj6vWgoCDtT03h8ZCa",
   inductedBy: "Dave Chappelle",
-  summary: "A Tribe Called Quest was an American hip-hop group formed in Queens, New York City, in 1985, originally composed of rapper and main producer Q-Tip, rapper Phife Dawg, DJ and co-producer Ali Shaheed Muhammad, and rapper Jarobi White. A Tribe Called Quest came to prominence as members of the Native Tongues collective, which they co-founded in 1988."
+  summary: "A Tribe Called Quest was an American hip-hop group formed in Queens, New York City, in 1985, originally composed of rapper and main producer Q-Tip, rapper Phife Dawg, DJ and co-producer Ali Shaheed Muhammad, and rapper Jarobi White. A Tribe Called Quest came to prominence as members of the Native Tongues collective, which they co-founded in 1988.",
   wikipedia: "https://en.wikipedia.org/wiki/A_Tribe_Called_Quest",
 },
 {
@@ -8488,7 +8488,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "bfcc6d75-a6a5-4bc6-8282-47aec8531818",
   spotify: "72OaDtakiy6yFqkt4TsiFt",
   inductedBy: "Zendaya",
-  summary: "Cher (  SHAIR; legally mononymous; born Cheryl Sarkisian, May 20, 1946) is an American singer and actress. Dubbed the \"Goddess of Pop\", she is known for her androgynous, contralto voice, bold fashion, elaborate stagecraft and multifaceted career. Her screen roles often reflect her public image as a strong-willed, outspoken woman. An influential figure in popular culture, Cher has sustained a career spanning more than six decades through continual reinvention."
+  summary: "Cher (  SHAIR; legally mononymous; born Cheryl Sarkisian, May 20, 1946) is an American singer and actress. Dubbed the \"Goddess of Pop\", she is known for her androgynous, contralto voice, bold fashion, elaborate stagecraft and multifaceted career. Her screen roles often reflect her public image as a strong-willed, outspoken woman. An influential figure in popular culture, Cher has sustained a career spanning more than six decades through continual reinvention.",
   wikipedia: "https://en.wikipedia.org/wiki/Cher",
 },
 {
@@ -8510,7 +8510,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "07e748f1-075e-428d-85dc-ce3be434e906",
   spotify: "2TI7qyDE0QfyOlnbtfDo7L",
   inductedBy: "Julia Roberts",
-  summary: "Dave Matthews Band (also known as DMB) is an American rock band formed in Charlottesville, Virginia, in 1991. The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore. As of 2024, Matthews, Lessard, and Beauford are the only remaining founding members."
+  summary: "Dave Matthews Band (also known as DMB) is an American rock band formed in Charlottesville, Virginia, in 1991. The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore. As of 2024, Matthews, Lessard, and Beauford are the only remaining founding members.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Matthews_Band",
 },
 {
@@ -8532,7 +8532,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "160629ab-ec18-4931-8c95-02cb92d06186",
   spotify: "6IRouO5mvvfcyxtPDKMYFN",
   inductedBy: "Sammy Hagar",
-  summary: "Foreigner is a British–American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald (formerly of King Crimson) and bassist Ed Gagliardi. Gagliardi was replaced by Rick Wills in 1979. Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US."
+  summary: "Foreigner is a British–American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald (formerly of King Crimson) and bassist Ed Gagliardi. Gagliardi was replaced by Rick Wills in 1979. Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US.",
   wikipedia: "https://en.wikipedia.org/wiki/Foreigner_%28band%29",
 },
 {
@@ -8554,7 +8554,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2469950a-f0ca-425a-bfbc-baf55ea3afde",
   spotify: "3VNITwohbvU5Wuy5PC6dsI",
   inductedBy: "Chuck D",
-  summary: "Kool & the Gang is an American R&B, soul and funk band formed in Jersey City, New Jersey, in 1964. Its founding members include brothers Robert \"Kool\" Bell and Ronald Bell (also known as \"Khalis Bayyan\"), Dennis \"Dee Tee\" Thomas, Robert \"Spike\" Mickens, Charles Smith, George \"Funky\" Brown, Woodrow \"Woody\" Sparrow and Ricky Westfield."
+  summary: "Kool & the Gang is an American R&B, soul and funk band formed in Jersey City, New Jersey, in 1964. Its founding members include brothers Robert \"Kool\" Bell and Ronald Bell (also known as \"Khalis Bayyan\"), Dennis \"Dee Tee\" Thomas, Robert \"Spike\" Mickens, Charles Smith, George \"Funky\" Brown, Woodrow \"Woody\" Sparrow and Ricky Westfield.",
   wikipedia: "https://en.wikipedia.org/wiki/Kool_%26_the_Gang",
 },
 {
@@ -8576,7 +8576,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "db76c5ca-d555-4f09-b1db-baa1b713d875",
   spotify: "1XkoF8ryArs86LZvFOkbyr",
   inductedBy: "Dr. Dre and Method Man",
-  summary: "Mary Jane Blige ( BLYZHE; born January 11, 1971) is an American singer, songwriter, actress, and entrepreneur. Often referred to by the honorifics \"Queen of Hip-Hop Soul\" and \"Queen of R&B\", her accolades include nine Grammy Awards, a Primetime Emmy Award, four American Music Awards, twelve NAACP Image Awards, and twelve Billboard Music Awards, including the Billboard Icon Award."
+  summary: "Mary Jane Blige ( BLYZHE; born January 11, 1971) is an American singer, songwriter, actress, and entrepreneur. Often referred to by the honorifics \"Queen of Hip-Hop Soul\" and \"Queen of R&B\", her accolades include nine Grammy Awards, a Primetime Emmy Award, four American Music Awards, twelve NAACP Image Awards, and twelve Billboard Music Awards, including the Billboard Icon Award.",
   wikipedia: "https://en.wikipedia.org/wiki/Mary_J._Blige",
 },
 {
@@ -8598,7 +8598,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8aa5b65a-5b3c-4029-92bf-47a544356934",
   spotify: "6ZLTlhejhndI4Rh53vYhrY",
   inductedBy: "Jack Black",
-  summary: "John Michael \"Ozzy\" Osbourne (3 December 1948 – 22 July 2025) was an English singer, songwriter, and media personality. Dubbed the \"Prince of Darkness\", he is widely credited as a pioneer of heavy metal music. He co-founded the band Black Sabbath in 1968, and rose to prominence in the 1970s as their lead vocalist."
+  summary: "John Michael \"Ozzy\" Osbourne (3 December 1948 – 22 July 2025) was an English singer, songwriter, and media personality. Dubbed the \"Prince of Darkness\", he is widely credited as a pioneer of heavy metal music. He co-founded the band Black Sabbath in 1968, and rose to prominence in the 1970s as their lead vocalist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ozzy_Osbourne",
 },
 {
@@ -8620,7 +8620,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e065cba1-0159-479e-8dd8-ec9c986ccee7",
   spotify: "3QYerRCVuSsiHOvViOn6ey",
   inductedBy: "Andrew Ridgeley",
-  summary: "J. C. Davis (born April 29, 1938), known as Billy Davis, is an American rock and blues guitarist, singer and songwriter, best known for his work with Hank Ballard & the Midnighters. He is a Rock & Roll Hall of Fame inductee."
+  summary: "J. C. Davis (born April 29, 1938), known as Billy Davis, is an American rock and blues guitarist, singer and songwriter, best known for his work with Hank Ballard & the Midnighters. He is a Rock & Roll Hall of Fame inductee.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Davis_%28guitarist%29",
 },
 {
@@ -8642,7 +8642,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "1f223eed-aa38-49da-9e76-62ab3adc2e04",
   spotify: "0EodhzA6yW1bIdD5B4tcmJ",
   inductedBy: "Paul Anka",
-  summary: "Walden Robert Cassotto (May 14, 1936 – December 20, 1973), known by the stage name Bobby Darin, was an American singer, songwriter, and actor who performed pop, swing, folk, rock and roll and country music."
+  summary: "Walden Robert Cassotto (May 14, 1936 – December 20, 1973), known by the stage name Bobby Darin, was an American singer, songwriter, and actor who performed pop, swing, folk, rock and roll and country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Darin",
 },
 {
@@ -8664,7 +8664,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ff95eb47-41c4-4f7f-a104-cdc30f02e872",
   spotify: "7MSUfLeTdDEoZiJPDSBXgi",
   inductedBy: null,
-  summary: "Brian Eno ( EE-noh; born Brian Peter George Eno, 15 May 1948) is an English musician, songwriter, record producer, visual artist, sound designer, author and political activist. He is best known for his pioneering contributions to ambient music and electronica, and for producing, recording, and writing works in rock and pop music. A self-described \"non-musician\", Eno has helped introduce unconventional concepts and approaches to contemporary music."
+  summary: "Brian Eno ( EE-noh; born Brian Peter George Eno, 15 May 1948) is an English musician, songwriter, record producer, visual artist, sound designer, author and political activist. He is best known for his pioneering contributions to ambient music and electronica, and for producing, recording, and writing works in rock and pop music. A self-described \"non-musician\", Eno has helped introduce unconventional concepts and approaches to contemporary music.",
   wikipedia: "https://en.wikipedia.org/wiki/Brian_Eno",
 },
 {
@@ -8686,7 +8686,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "4d5f891d-9bce-45ae-ad86-912dd27252fa",
   spotify: "7mRVAzlt1fAAR9Cut6Rq8c",
   inductedBy: null,
-  summary: "David Eric Grohl (; born January 14, 1969) is an American musician. He founded the rock band Foo Fighters, of which he is the lead singer, guitarist, principal songwriter, and only consistent member. From 1990 to 1994, he was the drummer of the grunge band Nirvana."
+  summary: "David Eric Grohl (; born January 14, 1969) is an American musician. He founded the rock band Foo Fighters, of which he is the lead singer, guitarist, principal songwriter, and only consistent member. From 1990 to 1994, he was the drummer of the grunge band Nirvana.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Grohl",
 },
 {
@@ -8708,7 +8708,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "8b26558a-1073-45cf-b9a2-233703654ffb",
   spotify: "2t5vvfFf3UdW0pJa7bz7i1",
   inductedBy: null,
-  summary: "David Coverdale (born 22 September 1951) is a retired English singer and songwriter best known as the founder and lead singer of the hard rock band Whitesnake."
+  summary: "David Coverdale (born 22 September 1951) is a retired English singer and songwriter best known as the founder and lead singer of the hard rock band Whitesnake.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Coverdale",
 },
 {
@@ -8730,7 +8730,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e90f9815-221d-4e10-8675-e75c07988113",
   spotify: "59zdhVoWxSoHMc74n098Re",
   inductedBy: null,
-  summary: "David Van Cortlandt Crosby (August 14, 1941 – January 18, 2023) was an American singer, songwriter, and guitarist. He first found fame as a member of the Byrds, with whom he helped pioneer the genres of folk rock and psychedelia in the mid-1960s, and later as part of the supergroup Crosby, Stills & Nash, which helped popularize the California sound of the 1970s."
+  summary: "David Van Cortlandt Crosby (August 14, 1941 – January 18, 2023) was an American singer, songwriter, and guitarist. He first found fame as a member of the Byrds, with whom he helped pioneer the genres of folk rock and psychedelia in the mid-1960s, and later as part of the supergroup Crosby, Stills & Nash, which helped popularize the California sound of the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Crosby",
 },
 {
@@ -8752,7 +8752,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "e2168294-0c79-4c3d-8823-d0faab5572e4",
   spotify: "2s6kXkIHq0sbwBjBF47iQH",
   inductedBy: null,
-  summary: "Darren Arthur \"Dizzy\" Reed (born June 18, 1963) is an American musician. He is best known as the keyboardist for the hard rock band Guns N' Roses, with whom he has played, toured, and recorded since 1990."
+  summary: "Darren Arthur \"Dizzy\" Reed (born June 18, 1963) is an American musician. He is best known as the keyboardist for the hard rock band Guns N' Roses, with whom he has played, toured, and recorded since 1990.",
   wikipedia: "https://en.wikipedia.org/wiki/Dizzy_Reed",
 },
 {
@@ -8774,7 +8774,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "b0966c8d-6dba-49bd-b4ec-d09e283d0a50",
   spotify: null,
   inductedBy: null,
-  summary: "Glenn Lamonte Goins (January 2, 1954 – July 29, 1978), also known as Glen Goins, was a singer and guitarist for Parliament-Funkadelic in the mid-1970s. Goins is a member of the Rock and Roll Hall of Fame, posthumously inducted in 1997 with fifteen other members of Parliament-Funkadelic. His first (known) recordings were as part of the group The Bags.  They released a single in 1972: \"It's Heavy\" b/w \"Don't Mess With My Baby\"."
+  summary: "Glenn Lamonte Goins (January 2, 1954 – July 29, 1978), also known as Glen Goins, was a singer and guitarist for Parliament-Funkadelic in the mid-1970s. Goins is a member of the Rock and Roll Hall of Fame, posthumously inducted in 1997 with fifteen other members of Parliament-Funkadelic. His first (known) recordings were as part of the group The Bags.  They released a single in 1972: \"It's Heavy\" b/w \"Don't Mess With My Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Glenn_Goins",
 },
 {
@@ -8796,7 +8796,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "78692212-af57-402a-a291-3938ca356500",
   spotify: "50FDiYHYqGJkaCuK4JhAYw",
   inductedBy: null,
-  summary: "Glenn Hughes (born 21 August 1951) is an English musician, best known as the bassist and singer in the hard rock band Trapeze and in the Mk. III and IV line-ups of Deep Purple, as well as briefly fronting Black Sabbath in the mid-1980s. Hughes is renowned for his funk inspired bass playing and his soulful and wide-ranging countertenor vocal range."
+  summary: "Glenn Hughes (born 21 August 1951) is an English musician, best known as the bassist and singer in the hard rock band Trapeze and in the Mk. III and IV line-ups of Deep Purple, as well as briefly fronting Black Sabbath in the mid-1980s. Hughes is renowned for his funk inspired bass playing and his soulful and wide-ranging countertenor vocal range.",
   wikipedia: "https://en.wikipedia.org/wiki/Glenn_Hughes_%28musician%29",
 },
 {
@@ -8818,7 +8818,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: null,
   spotify: null,
   inductedBy: null,
-  summary: "\"In-A-Gadda-Da-Vida\" (derived from \"In the Garden of Eden\") is a song recorded by Iron Butterfly, written by band member Doug Ingle and released on their 1968 album of the same name."
+  summary: "\"In-A-Gadda-Da-Vida\" (derived from \"In the Garden of Eden\") is a song recorded by Iron Butterfly, written by band member Doug Ingle and released on their 1968 album of the same name.",
   wikipedia: "https://en.wikipedia.org/wiki/In-A-Gadda-Da-Vida",
 },
 {
@@ -8840,7 +8840,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "d037c556-a66a-4bcd-b259-7be648fe02eb",
   spotify: "19pcocKmzYlDQhdCGkeU9T",
   inductedBy: null,
-  summary: "Jerome Eugene \"Bigfoot\" Brailey (born August 20, 1950) is an American drummer, best known for his work with P-Funk, which included the bands Parliament, Funkadelic, and numerous related projects. Brailey is a member of the Rock and Roll Hall of Fame, inducted in 1997 with fifteen other members of Parliament-Funkadelic."
+  summary: "Jerome Eugene \"Bigfoot\" Brailey (born August 20, 1950) is an American drummer, best known for his work with P-Funk, which included the bands Parliament, Funkadelic, and numerous related projects. Brailey is a member of the Rock and Roll Hall of Fame, inducted in 1997 with fifteen other members of Parliament-Funkadelic.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerome_Brailey",
 },
 {
@@ -8862,7 +8862,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: null,
   spotify: null,
   inductedBy: null,
-  summary: "\"Lawdy Miss Clawdy\" is a song by New Orleans singer-songwriter Lloyd Price that \"grandly introduced The New Orleans Sound\".  It was first recorded by Price in 1952 with Fats Domino and Dave Bartholomew during his first session for Art Rupe and Specialty Records. The song became one of the biggest selling R&B records of 1952 and crossed over to other audiences.  \"Lawdy Miss Clawdy\" inspired many songs and has been recorded by a variety of artists."
+  summary: "\"Lawdy Miss Clawdy\" is a song by New Orleans singer-songwriter Lloyd Price that \"grandly introduced The New Orleans Sound\".  It was first recorded by Price in 1952 with Fats Domino and Dave Bartholomew during his first session for Art Rupe and Specialty Records. The song became one of the biggest selling R&B records of 1952 and crossed over to other audiences.  \"Lawdy Miss Clawdy\" inspired many songs and has been recorded by a variety of artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Lawdy_Miss_Clawdy",
 },
 {
@@ -8884,7 +8884,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "2003b32f-7751-4cef-adb0-7dcc946565a0",
   spotify: "5DWj9QLyCN9dyQydd1P9QG",
   inductedBy: null,
-  summary: "George Peter John Criscuola (born December 20, 1945), better known by his stage name Peter Criss, is an American musician, best known as a co-founder, original drummer, and a vocalist of the hard rock band Kiss. Criss established the Catman character for his Kiss persona. In 2014 he was inducted into the Rock and Roll Hall of Fame as a member of Kiss."
+  summary: "George Peter John Criscuola (born December 20, 1945), better known by his stage name Peter Criss, is an American musician, best known as a co-founder, original drummer, and a vocalist of the hard rock band Kiss. Criss established the Catman character for his Kiss persona. In 2014 he was inducted into the Rock and Roll Hall of Fame as a member of Kiss.",
   wikipedia: "https://en.wikipedia.org/wiki/Peter_Criss",
 },
 {
@@ -8906,7 +8906,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "fe93a178-183a-42c9-b3c7-53102b8c724d",
   spotify: "6CA6qrIOVvXVty66LdEem8",
   inductedBy: null,
-  summary: "Raymond Daniel Manzarek Jr. ( man-ZAYR-ik; né Manczarek; February 12, 1939 – May 20, 2013) was an American keyboardist, vocalist, and music producer. He is best known as a member of the rock band the Doors, co-founding the group in 1965 with fellow UCLA Film School graduate Jim Morrison. Manzarek is credited for his innovative playing and abilities on organ-style keyboard instruments."
+  summary: "Raymond Daniel Manzarek Jr. ( man-ZAYR-ik; né Manczarek; February 12, 1939 – May 20, 2013) was an American keyboardist, vocalist, and music producer. He is best known as a member of the rock band the Doors, co-founding the group in 1965 with fellow UCLA Film School graduate Jim Morrison. Manzarek is credited for his innovative playing and abilities on organ-style keyboard instruments.",
   wikipedia: "https://en.wikipedia.org/wiki/Ray_Manzarek",
 },
 {
@@ -8928,7 +8928,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ed031718-b94c-403d-8a89-438e355db488",
   spotify: null,
   inductedBy: null,
-  summary: "Roderic Evans (born 19 January 1947) is a retired British singer known as the original vocalist of the rock bands Deep Purple and Captain Beyond."
+  summary: "Roderic Evans (born 19 January 1947) is a retired British singer known as the original vocalist of the rock bands Deep Purple and Captain Beyond.",
   wikipedia: "https://en.wikipedia.org/wiki/Rod_Evans",
 },
 {
@@ -8950,7 +8950,7 @@ window.ROCKHALL_DATA = [
   musicbrainz: "ca7e6e03-4973-45ef-8833-98774a2d4138",
   spotify: "6AaWik9LKRViQFnIK2PSI9",
   inductedBy: null,
-  summary: "Stone Carpenter Gossard (born July 20, 1966) is an American musician and songwriter who serves as the rhythm guitarist for the rock band Pearl Jam. Along with Jeff Ament, Mike McCready, and Eddie Vedder, he is one of the founding members of the band."
+  summary: "Stone Carpenter Gossard (born July 20, 1966) is an American musician and songwriter who serves as the rhythm guitarist for the rock band Pearl Jam. Along with Jeff Ament, Mike McCready, and Eddie Vedder, he is one of the founding members of the band.",
   wikipedia: "https://en.wikipedia.org/wiki/Stone_Gossard",
 }
 ];
