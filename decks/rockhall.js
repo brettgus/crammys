@@ -166,12 +166,22 @@ export async function init({ signal }) {
     return "";
   }
 
+  const SUMMARY_MAX = 320;
+  function truncSummary(s) {
+    if (!s || s.length <= SUMMARY_MAX) return escapeHtml(s || "");
+    const cut = s.slice(0, SUMMARY_MAX);
+    const lastSpace = cut.lastIndexOf(" ");
+    const safe = lastSpace > SUMMARY_MAX - 50 ? cut.slice(0, lastSpace) : cut;
+    return escapeHtml(safe) + `<span style="color:var(--ink-faint)">…</span>`;
+  }
+
   function detailGrid(c, showInductionYear) {
     const rows = [];
     // Induction(s)
     for (const i of (c.inductions || [])) {
       const yr = showInductionYear ? `${i.year || "?"} · ` : "";
-      rows.push(`<div class="row"><span class="label">Inducted</span><span class="val">${yr}${categoryBadge(i.category)}</span></div>`);
+      const byLine = c.inductedBy ? ` <span style="color:var(--ink-faint)">by ${escapeHtml(c.inductedBy)}</span>` : "";
+      rows.push(`<div class="row"><span class="label">Inducted</span><span class="val">${yr}${categoryBadge(i.category)}${byLine}</span></div>`);
     }
     // Life / Active
     const life = lifespan(c);
@@ -182,6 +192,8 @@ export async function init({ signal }) {
     if (c.genres && c.genres.length) rows.push(`<div class="row"><span class="label">Genres</span><span class="val">${c.genres.map(g => escapeHtml(g)).join(" · ")}</span></div>`);
     // Members
     if (c.members && c.members.length) rows.push(`<div class="row"><span class="label">Members</span><span class="val">${c.members.map(m => escapeHtml(m)).join(" · ")}</span></div>`);
+    // Summary / blurb
+    if (c.summary) rows.push(`<div class="row"><span class="label">About</span><span class="val">${truncSummary(c.summary)}</span></div>`);
     return rows.length ? `<div class="detail-grid">${rows.join("")}</div>` : "";
   }
 
