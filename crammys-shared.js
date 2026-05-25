@@ -6,6 +6,7 @@
   const DECKS = [
     { id: "bestpicture", name: "Best Picture",      emoji: "🎬", url: "index.html" },
     { id: "chains",      name: "Restaurant Chains", emoji: "🍔", url: "chains.html" },
+    { id: "rockhall",    name: "Rock & Roll Hall of Fame", emoji: "🎸", url: "index.html#rockhall" },
   ];
   window.CRAMMYS_DECKS = DECKS;
 
