@@ -118,10 +118,11 @@
   </main>
 
 <script type="module">
+  const _dv = "20260525c";
   const DECKS = [
-    { id: "bestpicture", path: "./decks/bestpicture.js" },
-    { id: "chains", path: "./decks/chains.js" },
-    { id: "rockhall", path: "./decks/rockhall.js" },
+    { id: "bestpicture", path: `./decks/bestpicture.js?v=${_dv}` },
+    { id: "chains", path: `./decks/chains.js?v=${_dv}` },
+    { id: "rockhall", path: `./decks/rockhall.js?v=${_dv}` },
   ];
   const DEFAULT_DECK = "bestpicture";
 

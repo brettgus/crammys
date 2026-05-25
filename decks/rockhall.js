@@ -78,7 +78,7 @@ export const modals = `
   </div>`;
 
 export async function init({ signal }) {
-  await loadScript("rockhall-data.js");
+  await loadScript("rockhall-data.js?v=2");
 
   const DATA = window.ROCKHALL_DATA || [];
   if (!DATA.length) {
