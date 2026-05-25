@@ -30,6 +30,8 @@ export class DeckEngine {
     scoreRetired = 3,
     scoreWeights = [4, 2, 1, 0],
     flipMidpoint = 280,
+    reshuffleOnWrap = false,
+    onShuffle,
     cardEl,
     navRowEl,
     scoreStarsFrontEl,
@@ -39,6 +41,8 @@ export class DeckEngine {
     this.allIds = allIds;
     this.byId = byId;
     this.cardId = cardId;
+    this.reshuffleOnWrap = reshuffleOnWrap;
+    this._onShuffle = onShuffle || (() => {});
     this.activeFilter = activeFilter;
     this.inScopeFilter = inScopeFilter;
     this.isStudyMode = isStudyMode;
@@ -118,6 +122,14 @@ export class DeckEngine {
     return { learned, total };
   }
 
+  updatePool(allIds, byId) {
+    this.allIds = allIds;
+    this.byId = byId;
+    this.state.order = this.weightedShuffle(allIds);
+    this.state.idx = 0;
+    this._onShuffle();
+  }
+
   isStudy() {
     return this.isStudyMode(this.state);
   }
@@ -155,6 +167,16 @@ export class DeckEngine {
 
   // ─── Navigation ────────────────────────────────────────────────────
 
+  _advance(o, fromIdx) {
+    const nextIdx = (fromIdx + 1) % o.length;
+    if (this.reshuffleOnWrap && o.length > 1 && fromIdx === o.length - 1 && nextIdx === 0) {
+      this.state.order = this.weightedShuffle(this.allIds);
+      this._onShuffle();
+      return 0;
+    }
+    return nextIdx;
+  }
+
   next() {
     const ord = this.activeOrder();
     if (!ord.length) return;
@@ -162,7 +184,7 @@ export class DeckEngine {
     this.unflipAndThen(() => {
       const o = this.activeOrder();
       if (!o.length) return;
-      this.state.idx = (this.state.idx + 1) % o.length;
+      this.state.idx = this._advance(o, this.state.idx % o.length);
       this.persist();
       this._render();
     });
@@ -186,6 +208,7 @@ export class DeckEngine {
     this.unflipAndThen(() => {
       this.state.order = this.weightedShuffle(this.allIds);
       this.state.idx = 0;
+      this._onShuffle();
       this.persist();
       this._render();
     });
@@ -198,6 +221,7 @@ export class DeckEngine {
       this.state.order = shuffleArray(this.allIds);
       this.state.idx = 0;
       this.state.scores = {};
+      this._onShuffle();
       this.persist();
       this._render();
     });
@@ -215,7 +239,7 @@ export class DeckEngine {
       if (!o.length) { this._render(); return; }
       const currentIdx = this.state.idx % o.length;
       if (o[currentIdx] === id) {
-        this.state.idx = (currentIdx + 1) % o.length;
+        this.state.idx = this._advance(o, currentIdx);
       } else {
         this.state.idx = currentIdx;
       }
