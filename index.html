@@ -921,7 +921,7 @@
       // Show the full slate of the year — winner highlighted, no director/cast.
       back.tag.textContent = "Best Picture";
       backHTML = `
-        <div class="prompt">${showYear(c.year)} · Best Picture</div>
+        <div class="prompt">${isFilmYear() ? `Released in ${showYear(c.year)}` : `${showYear(c.year)} ceremony`} · Best Picture slate</div>
         <div class="slate">
           <div class="slate-row winner">
             <span class="slate-marker">★</span>
@@ -956,8 +956,11 @@
           <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${movieLinks(c.movie, c.trailer)} ${statusBadge}</div>
         `;
       } else {
+        const yearLabel = isFilmYear()
+          ? `Released in ${showYear(c.year)} · Best Picture`
+          : `${showYear(c.year)} ceremony · Best Picture`;
         answerBlock = `
-          <div class="prompt">${showYear(c.year)} · Best Picture ${statusBadge}</div>
+          <div class="prompt">${yearLabel} ${statusBadge}</div>
           <div class="answer"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}</div>
         `;
       }
