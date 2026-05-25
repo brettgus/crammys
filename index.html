@@ -189,8 +189,8 @@
         <label class="toggle-row" id="yearBasisRow">
           <input type="checkbox" id="yearBasisChk">
           <span>
-            <strong>Show film-release year</strong>
-            <em>Instead of the ceremony year — e.g. <i>Forrest Gump</i> shows 1994, not 1995</em>
+            <strong>Show ceremony year instead of release year</strong>
+            <em>Default is the film's release year — e.g. <i>Forrest Gump</i> shows 1994.  Tick this to show the year of the ceremony where it won (1995).</em>
           </span>
         </label>
         <h4 class="panel-section">Year range</h4>
@@ -551,7 +551,7 @@
   const SCORE_RETIRED = 3;        // cards at this score graduate out of the active pool
   const SCORE_WEIGHTS = [4, 2, 1, 0];  // weight given to each score level when shuffling
   const state = (() => {
-    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false, lastDir: "y2m", yearBasis: "ceremony" };
+    const def = { direction: "y2m", order: null, idx: 0, scores: {}, range: DEFAULT_RANGE, includeNominees: false, lastDir: "y2m", yearBasis: "film" };
     try {
       const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       let s = Object.assign(def, saved || {});
@@ -581,7 +581,7 @@
   state.range.to   = Math.max(_minYear, Math.min(_maxYear, state.range.to));
   if (state.range.from > state.range.to) state.range.from = state.range.to;
   if (typeof state.includeNominees !== "boolean") state.includeNominees = false;
-  if (state.yearBasis !== "film") state.yearBasis = "ceremony";
+  if (state.yearBasis !== "ceremony") state.yearBasis = "film";
   if (!state.scores || typeof state.scores !== "object") state.scores = {};
   const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
   const scoreOf = (id) => state.scores[id] || 0;
@@ -1264,7 +1264,7 @@
     rangeFromSel.value = state.range.from;
     rangeToSel.value = state.range.to;
     includeNomineesChk.checked = !!state.includeNominees;
-    yearBasisChk.checked = state.yearBasis === "film";
+    yearBasisChk.checked = state.yearBasis === "ceremony";
     const yearsInRange = DECK.filter(e => inRange(e.year)).length;
     const cardsInRange = POOL.filter(c => inRange(c.year)).length;
     rangeCountEl.innerHTML = `<em>${yearsInRange}</em> ${yearsInRange === 1 ? "year" : "years"} · <em>${cardsInRange}</em> cards in deck`;
