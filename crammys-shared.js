@@ -4,9 +4,9 @@
  */
 (function () {
   const DECKS = [
-    { id: "bestpicture", name: "Best Picture",      emoji: "🎬", url: "index.html" },
-    { id: "chains",      name: "Restaurant Chains", emoji: "🍔", url: "chains.html" },
-    { id: "rockhall",    name: "Rock & Roll Hall of Fame", emoji: "🎸", url: "index.html#rockhall" },
+    { id: "bestpicture", name: "Best Picture",             emoji: "🎬", url: "#bestpicture" },
+    { id: "chains",      name: "Restaurant Chains",        emoji: "🍔", url: "#chains" },
+    { id: "rockhall",    name: "Rock & Roll Hall of Fame", emoji: "🎸", url: "#rockhall" },
   ];
   window.CRAMMYS_DECKS = DECKS;
 
