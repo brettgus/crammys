@@ -239,23 +239,27 @@ export async function init({ signal }) {
       front.text.innerHTML = `<span>${escapeHtml(c.name)}</span>`;
     }
 
-    // Back
-    const wikiUrl = `https://www.wikidata.org/wiki/${c.wikidata}`;
+    // Back — external links
     const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-    const wikiLink = `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikidata" ${stop}>${extIcon}</a>`;
+    const spotifyIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-1 .2-2.7-1.6-6-2-10-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.3-1 8.1-.6 11.1 1.2.3.2.4.7.2 1zm1.5-3.3c-.3.4-.8.5-1.2.3-3-1.9-7.7-2.4-11.3-1.3-.4.1-.9-.1-1-.5-.1-.4.1-.9.5-1 4.1-1.3 9.2-.7 12.7 1.5.3.2.5.7.3 1zm.1-3.4c-3.7-2.2-9.7-2.4-13.2-1.3-.5.2-1.1-.1-1.2-.6-.2-.5.1-1.1.6-1.2 4-1.2 10.7-1 14.9 1.5.5.3.6.9.4 1.3-.3.4-.9.6-1.5.3z"/></svg>';
+    const wikiUrl = c.wikipedia || `https://en.wikipedia.org/wiki/${encodeURIComponent(c.name)}`;
+    const wikiLink = `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon}</a>`;
+    const spotifyLink = c.spotify
+      ? `<a class="ext" href="https://open.spotify.com/artist/${c.spotify}" target="_blank" rel="noopener" title="Spotify" ${stop}>${spotifyIcon}</a>`
+      : "";
 
     let answerBlock;
     const showInductionYear = state.mode !== "n2y";
     if (state.mode === "n2y") {
       back.tag.textContent = "Induction";
       answerBlock = `
-        <div class="prompt">${escapeHtml(c.name)} ${wikiLink}</div>
+        <div class="prompt">${escapeHtml(c.name)} ${wikiLink}${spotifyLink}</div>
         <div class="answer"><span>${c.year || "?"}</span></div>`;
     } else {
       back.tag.textContent = c.type === "group" ? "Group" : "Artist";
       answerBlock = `
         <div class="prompt">Rock &amp; Roll Hall of Fame</div>
-        <div class="answer"><span>${escapeHtml(c.name)}</span> ${wikiLink}</div>`;
+        <div class="answer"><span>${escapeHtml(c.name)}</span> ${wikiLink}${spotifyLink}</div>`;
     }
 
     const descLine = c.description
