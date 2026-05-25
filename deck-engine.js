@@ -1,5 +1,16 @@
 // deck-engine.js — shared card-engine for all Crammys decks (ES module)
 
+export function loadScript(src, { onerror } = {}) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = onerror ? () => { onerror(); resolve(); } : reject;
+    document.head.appendChild(s);
+  });
+}
+
 export function shuffleArray(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -253,30 +264,30 @@ export class DeckEngine {
 
   // ─── Touch swipe ───────────────────────────────────────────────────
 
-  bindSwipe(el) {
+  bindSwipe(el, { signal } = {}) {
     let tx = 0, ty = 0, dxMax = 0, dyMax = 0;
     el.addEventListener("touchstart", (e) => {
       const t = e.changedTouches[0];
       tx = t.clientX; ty = t.clientY;
       dxMax = 0; dyMax = 0;
-    }, { passive: true });
+    }, { passive: true, signal });
     el.addEventListener("touchmove", (e) => {
       const t = e.changedTouches[0];
       dxMax = Math.max(dxMax, Math.abs(t.clientX - tx));
       dyMax = Math.max(dyMax, Math.abs(t.clientY - ty));
-    }, { passive: true });
+    }, { passive: true, signal });
     el.addEventListener("touchend", (e) => {
       const t = e.changedTouches[0];
       const dx = t.clientX - tx;
       if (Math.abs(dx) > 50 && dxMax > dyMax * 1.5) {
         if (dx < 0) this.next(); else this.prev();
       }
-    });
+    }, { signal });
   }
 
   // ─── Tooltip system ────────────────────────────────────────────────
 
-  bindTooltips({ tipEl, selector, tipHTML }) {
+  bindTooltips({ tipEl, selector, tipHTML, signal }) {
     let tipAnchor = null, hideTimer = null, showTimer = null;
     const SHOW_DELAY = 280;
 
@@ -330,7 +341,7 @@ export class DeckEngine {
         const el = e.target.closest(selector);
         if (el) { scheduleShow(el); return; }
         if (e.target.closest("#tooltip")) clearTimeout(hideTimer);
-      });
+      }, { signal });
       document.addEventListener("mouseout", (e) => {
         const from = e.target.closest(selector) || e.target.closest("#tooltip");
         if (!from) return;
@@ -338,11 +349,11 @@ export class DeckEngine {
         if (to && to.nodeType === 1 && (to.closest(selector) || to.closest("#tooltip"))) return;
         clearTimeout(showTimer);
         hideTip(false);
-      });
+      }, { signal });
       document.addEventListener("click", (e) => {
         if (e.target.closest(selector) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
         hideTip(true);
-      });
+      }, { signal });
     } else {
       document.addEventListener("click", (e) => {
         if (e.target.closest(".ext")) return;
@@ -354,18 +365,18 @@ export class DeckEngine {
           return;
         }
         if (!e.target.closest("#tooltip")) hideTip(true);
-      });
+      }, { signal });
     }
 
-    window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true });
-    window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
+    window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true, signal });
+    window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); }, { signal });
 
     return hideTip;
   }
 
   // ─── Keyboard (base bindings) ──────────────────────────────────────
 
-  bindKeyboard({ extraKeys } = {}) {
+  bindKeyboard({ extraKeys, signal } = {}) {
     window.addEventListener("keydown", (e) => {
       if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -378,23 +389,23 @@ export class DeckEngine {
         case "r": case "R": this.reset(); break;
         case "t": case "T": (window.CRAMMYS_toggleTheme || (() => {}))(); break;
       }
-    });
+    }, { signal });
   }
 
   // ─── Standard UI wiring ────────────────────────────────────────────
 
-  bindStandardUI({ nextBtn, prevBtn, gotBtn, missedBtn, shuffleBtn, cardClickIgnore }) {
+  bindStandardUI({ nextBtn, prevBtn, gotBtn, missedBtn, shuffleBtn, cardClickIgnore, signal }) {
     this.cardEl.addEventListener("click", (e) => {
       if (e.target.closest(cardClickIgnore || "a")) return;
       this.flip();
-    });
-    this.cardEl.addEventListener("keydown", (e) => { if (e.key === "Enter") this.flip(); });
-    if (nextBtn) nextBtn.onclick = () => this.next();
-    if (prevBtn) prevBtn.onclick = () => this.prev();
-    if (gotBtn) gotBtn.onclick = (e) => { e.stopPropagation(); this.gotIt(); };
-    if (missedBtn) missedBtn.onclick = (e) => { e.stopPropagation(); this.missed(); };
-    if (shuffleBtn) shuffleBtn.addEventListener("click", () => this.shuffle());
-    this.bindSwipe(this.cardEl);
+    }, { signal });
+    this.cardEl.addEventListener("keydown", (e) => { if (e.key === "Enter") this.flip(); }, { signal });
+    if (nextBtn) nextBtn.addEventListener("click", () => this.next(), { signal });
+    if (prevBtn) prevBtn.addEventListener("click", () => this.prev(), { signal });
+    if (gotBtn) gotBtn.addEventListener("click", (e) => { e.stopPropagation(); this.gotIt(); }, { signal });
+    if (missedBtn) missedBtn.addEventListener("click", (e) => { e.stopPropagation(); this.missed(); }, { signal });
+    if (shuffleBtn) shuffleBtn.addEventListener("click", () => this.shuffle(), { signal });
+    this.bindSwipe(this.cardEl, { signal });
     if (this.isStudy()) this.cardEl.classList.add("flipped");
     this.syncNav();
   }
