@@ -59,6 +59,13 @@ export const modals = `
       </button>
       <h3 class="panel-title">Deck</h3>
       <p class="panel-sub">Filter by induction category and type.</p>
+      <h4 class="panel-section">Induction year range</h4>
+      <div class="range-presets" id="yearPresets"></div>
+      <div class="range-inputs">
+        <label>From <select id="yearFrom"></select></label>
+        <span class="range-dash">–</span>
+        <label>To <select id="yearTo"></select></label>
+      </div>
       <h4 class="panel-section">Category</h4>
       <div class="option-grid" id="catGrid"></div>
       <h4 class="panel-section">Type</h4>
@@ -96,27 +103,35 @@ export async function init({ signal }) {
 
   const engine = new DeckEngine({
     storeKey: "crammys-rockhall-v1",
-    defaultState: { mode: "n2y", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), types: ALL_TYPES.slice(), lastMode: "n2y" },
+    defaultState: { mode: "n2y", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), types: ALL_TYPES.slice(), yearFrom: 1990, yearTo: maxYear, lastMode: "n2y" },
     migrateState(s) {
       if (!s.scores || typeof s.scores !== "object") s.scores = {};
       if (!Array.isArray(s.cats) || !s.cats.length) s.cats = ALL_CATS.slice();
       if (!Array.isArray(s.types) || !s.types.length) s.types = ALL_TYPES.slice();
+      if (typeof s.yearFrom !== "number") s.yearFrom = 1990;
+      if (typeof s.yearTo !== "number") s.yearTo = maxYear;
+      s.yearFrom = Math.max(minYear, Math.min(maxYear, s.yearFrom));
+      s.yearTo = Math.max(minYear, Math.min(maxYear, s.yearTo));
+      if (s.yearFrom > s.yearTo) s.yearFrom = s.yearTo;
       if (!s.lastMode || s.lastMode === "study") s.lastMode = "n2y";
       return s;
     },
     allIds, byId: BY_ID, cardId,
     activeFilter(id, state) {
       const c = BY_ID.get(id); if (!c) return false;
+      if (!c.year) return false;
+      if (c.year < state.yearFrom || c.year > state.yearTo) return false;
       if (!state.types.includes(c.type)) return false;
       const cardCats = (c.inductions || []).map(i => i.category);
       if (!cardCats.some(cat => state.cats.includes(cat))) return false;
-      if (!c.year) return false;
       if (engine.scoreOf(id) >= SCORE_RETIRED) return false;
       if (state.mode === "p2n" && !c.image) return false;
       return true;
     },
     inScopeFilter(id, state) {
       const c = BY_ID.get(id); if (!c) return false;
+      if (!c.year) return false;
+      if (c.year < state.yearFrom || c.year > state.yearTo) return false;
       if (!state.types.includes(c.type)) return false;
       const cardCats = (c.inductions || []).map(i => i.category);
       return cardCats.some(cat => state.cats.includes(cat));
@@ -202,7 +217,7 @@ export async function init({ signal }) {
     const { learned, total } = engine.learnedAndTotal();
     const c = engine.currentCard();
 
-    scopeText.textContent = `${TOTAL} inductees`;
+    scopeText.textContent = `${state.yearFrom}–${state.yearTo}`;
     const offCats = ALL_CATS.length - state.cats.length;
     const offTypes = ALL_TYPES.length - state.types.length;
     const extras = [];
@@ -304,24 +319,66 @@ export async function init({ signal }) {
   const catGridEl = document.getElementById("catGrid");
   const typeGridEl = document.getElementById("typeGrid");
   const deckCountEl = document.getElementById("deckCount");
+  const yearFromSel = document.getElementById("yearFrom");
+  const yearToSel = document.getElementById("yearTo");
+  const yearPresetsEl = document.getElementById("yearPresets");
+
+  const allYears = Array.from(new Set(DATA.filter(d => d.year).map(d => d.year))).sort((a, b) => b - a);
+  for (const sel of [yearFromSel, yearToSel]) {
+    sel.innerHTML = allYears.map(y => `<option value="${y}">${y}</option>`).join("");
+  }
+  const YEAR_PRESETS = [
+    { label: "1990+", from: 1990, to: maxYear },
+    { label: "2000+", from: 2000, to: maxYear },
+    { label: "2010+", from: 2010, to: maxYear },
+    { label: `All (${minYear}–${maxYear})`, from: minYear, to: maxYear },
+  ];
+  yearPresetsEl.innerHTML = YEAR_PRESETS.map(p =>
+    `<button data-from="${p.from}" data-to="${p.to}">${p.label}</button>`
+  ).join("");
+
+  function countInScope() {
+    return DATA.filter(c => {
+      if (!c.year || c.year < state.yearFrom || c.year > state.yearTo) return false;
+      if (!state.types.includes(c.type)) return false;
+      const cardCats = (c.inductions || []).map(i => i.category);
+      return cardCats.some(cat => state.cats.includes(cat));
+    }).length;
+  }
 
   function syncDeckModal() {
+    yearFromSel.value = state.yearFrom;
+    yearToSel.value = state.yearTo;
+    yearPresetsEl.querySelectorAll("button").forEach(b => {
+      b.classList.toggle("on", +b.dataset.from === state.yearFrom && +b.dataset.to === state.yearTo);
+    });
     catGridEl.innerHTML = ALL_CATS.map(cat =>
       `<label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${escapeHtml(cat)}</span></label>`
     ).join("");
     typeGridEl.innerHTML = ALL_TYPES.map(t =>
       `<label><input type="checkbox" value="${t}" ${state.types.includes(t) ? "checked" : ""}><span>${t === "person" ? "Solo artists" : "Groups / bands"}</span></label>`
     ).join("");
-    const inScope = DATA.filter(c => {
-      if (!state.types.includes(c.type)) return false;
-      const cardCats = (c.inductions || []).map(i => i.category);
-      return cardCats.some(cat => state.cats.includes(cat));
-    });
-    deckCountEl.innerHTML = `<em>${inScope.length}</em> inductees in deck`;
+    deckCountEl.innerHTML = `<em>${countInScope()}</em> inductees in deck`;
+  }
+
+  function applyYearRange(from, to) {
+    if (from > to) [from, to] = [to, from];
+    state.yearFrom = from;
+    state.yearTo = to;
+    state.idx = 0;
+    engine.persist();
+    syncDeckModal();
+    engine.unflipAndThen(render);
   }
 
   const { close: closeDeck } = DeckEngine.bindModal(deckModal, document.getElementById("deckClose"));
   document.getElementById("deckChip").addEventListener("click", () => { syncDeckModal(); DeckEngine.openModal(deckModal); }, { signal });
+  yearFromSel.addEventListener("change", () => applyYearRange(+yearFromSel.value, +yearToSel.value), { signal });
+  yearToSel.addEventListener("change", () => applyYearRange(+yearFromSel.value, +yearToSel.value), { signal });
+  yearPresetsEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    applyYearRange(+b.dataset.from, +b.dataset.to);
+  }, { signal });
   catGridEl.addEventListener("change", (e) => {
     const inp = e.target.closest("input"); if (!inp) return;
     const cat = inp.value;
