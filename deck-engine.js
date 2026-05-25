@@ -1,10 +1,12 @@
 // deck-engine.js — shared card-engine for all Crammys decks (ES module)
 
+const _v = document.querySelector('link[rel="stylesheet"]')?.href?.match(/\?v=([^&]*)/)?.[1] || '';
 export function loadScript(src, { onerror } = {}) {
   return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const busted = _v ? `${src}${src.includes('?') ? '&' : '?'}v=${_v}` : src;
+    if (document.querySelector(`script[src="${busted}"],script[src="${src}"]`)) { resolve(); return; }
     const s = document.createElement("script");
-    s.src = src;
+    s.src = busted;
     s.onload = resolve;
     s.onerror = onerror ? () => { onerror(); resolve(); } : reject;
     document.head.appendChild(s);
