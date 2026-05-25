@@ -166,23 +166,23 @@ export async function init({ signal }) {
     return "";
   }
 
-  function inductionLines(c) {
-    return (c.inductions || []).map(i =>
-      `<div class="credits"><span class="label">Inducted ${i.year || "?"}</span> ${categoryBadge(i.category)}</div>`
-    ).join("");
-  }
-
-  function genreChips(c) {
-    if (!c.genres || !c.genres.length) return "";
-    return `<div class="credits">${c.genres.map(g =>
-      escapeHtml(g)
-    ).join('<span class="sep">·</span>')}</div>`;
-  }
-
-  function membersBlock(c) {
-    if (!c.members || !c.members.length) return "";
-    const list = c.members.map(m => escapeHtml(m)).join('<span class="sep">·</span>');
-    return `<div class="credits"><span class="label">Members</span> ${list}</div>`;
+  function detailGrid(c, showInductionYear) {
+    const rows = [];
+    // Induction(s)
+    for (const i of (c.inductions || [])) {
+      const yr = showInductionYear ? `${i.year || "?"} · ` : "";
+      rows.push(`<div class="row"><span class="label">Inducted</span><span class="val">${yr}${categoryBadge(i.category)}</span></div>`);
+    }
+    // Life / Active
+    const life = lifespan(c);
+    if (life) rows.push(`<div class="row"><span class="label">${c.type === "group" ? "Active" : "Life"}</span><span class="val">${escapeHtml(life)}</span></div>`);
+    // Country
+    if (c.country) rows.push(`<div class="row"><span class="label">Origin</span><span class="val">${escapeHtml(c.country)}</span></div>`);
+    // Genres
+    if (c.genres && c.genres.length) rows.push(`<div class="row"><span class="label">Genres</span><span class="val">${c.genres.map(g => escapeHtml(g)).join(" · ")}</span></div>`);
+    // Members
+    if (c.members && c.members.length) rows.push(`<div class="row"><span class="label">Members</span><span class="val">${c.members.map(m => escapeHtml(m)).join(" · ")}</span></div>`);
+    return rows.length ? `<div class="detail-grid">${rows.join("")}</div>` : "";
   }
 
   function render() {
@@ -233,12 +233,12 @@ export async function init({ signal }) {
     const wikiLink = `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikidata" ${stop}>${extIcon}</a>`;
 
     let answerBlock;
+    const showInductionYear = state.mode !== "n2y";
     if (state.mode === "n2y") {
       back.tag.textContent = "Induction";
-      const yearStr = c.year || "?";
       answerBlock = `
         <div class="prompt">${escapeHtml(c.name)} ${wikiLink}</div>
-        <div class="answer"><span>${yearStr}</span></div>`;
+        <div class="answer"><span>${c.year || "?"}</span></div>`;
     } else {
       back.tag.textContent = c.type === "group" ? "Group" : "Artist";
       answerBlock = `
@@ -246,14 +246,12 @@ export async function init({ signal }) {
         <div class="answer"><span>${escapeHtml(c.name)}</span> ${wikiLink}</div>`;
     }
 
-    const photo = (state.mode !== "p2n" && c.image)
-      ? `<div class="study-anchor"><div class="study-photo"><img src="${imageUrl(c, 300)}" alt="" loading="lazy"></div><div class="study-blurb">${escapeHtml(c.description || "")}</div></div>`
-      : (c.description ? `<div class="credits subtle">${escapeHtml(c.description)}</div>` : "");
+    const descLine = c.description
+      ? `<div class="credits subtle">${escapeHtml(c.description)}</div>` : "";
+    const inlinePhoto = (state.mode !== "p2n" && c.image)
+      ? `<div class="inline-portrait"><img src="${imageUrl(c, 200)}" alt="" loading="lazy"></div>` : "";
 
-    const life = lifespan(c);
-    const lifeBlock = life ? `<div class="credits"><span class="label">${c.type === "group" ? "Active" : "Life"}</span> ${escapeHtml(life)}${c.country ? ` · ${escapeHtml(c.country)}` : ""}</div>` : "";
-
-    back.body.innerHTML = answerBlock + photo + inductionLines(c) + lifeBlock + genreChips(c) + membersBlock(c);
+    back.body.innerHTML = answerBlock + inlinePhoto + descLine + detailGrid(c, showInductionYear);
 
     const backHint = document.getElementById("backFooterHint");
     if (engine.isStudy()) backHint.innerHTML = `<span class="hint-desktop">Study mode · <kbd>←</kbd> <kbd>→</kbd> navigate · pick a quiz mode to start rating</span><span class="hint-touch">Study mode · swipe to navigate</span>`;
