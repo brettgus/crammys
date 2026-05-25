@@ -633,7 +633,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "507a43b4-a58c-4f49-8d2a-5750208c52ae",
   spotify: null,
-  inductedBy: null,
+  inductedBy: "Norm N. Nite and Scott Muni",
   summary: "Leiber and Stoller were an American songwriting and record-production duo, consisting of lyricist Jerome Leiber (; April 25, 1933 – August 22, 2011) and composer Michael Stoller (born March 13, 1933). As well as many R&B and pop hits, they wrote numerous standards for Broadway."
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Leiber_and_Mike_Stoller",
 },
@@ -2723,7 +2723,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "72c090b6-a68e-4cb9-b330-85278681a714",
   spotify: "5MWBg16f5UYiaSlyVhzlIW",
-  inductedBy: null,
+  inductedBy: "Jeff Beck",
   summary: "John Davies Cale (born 9 March 1942) is a Welsh singer, musician, composer, record producer and arranger. He is a founding member of the influential American rock band the Velvet Underground, with whom he recorded two studio albums. Over his six-decade career, Cale has worked in various styles of rock and avant-garde music."
   wikipedia: "https://en.wikipedia.org/wiki/John_Cale",
 },
@@ -3493,7 +3493,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "cbdfbd90-3997-4477-a1c3-edfd32816d5f",
   spotify: null,
-  inductedBy: null,
+  inductedBy: "Stevie Wonder",
   summary: "Sheldon Gershon \"Shelly\" Yakus (born November 1945) is an American audio engineer and mixer. Formerly chief engineer and vice president of A&M Records, he was nominated for induction into the Rock and Roll Hall of Fame in 1999. Yakus is referenced at the end of one of Tom Petty's songs \"What're You Doin' In My Life?\"  As of 2014, Yakus was chief engineer of AfterMaster Audio Labs and Recording Studios, a recording firm he co-founded with Larry Ryckman, who is its CEO."
   wikipedia: "https://en.wikipedia.org/wiki/Shelly_Yakus",
 },
@@ -4659,7 +4659,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "7f347782-eb14-40c3-98e2-17b6e1bfe56c",
   spotify: "0m2Wc2gfNUWaAuBK7URPIJ",
-  inductedBy: null,
+  inductedBy: "Lauryn Hill",
   summary: "Paul David Hewson (born 10 May 1960), known by the nickname Bono ( BON-oh), is an Irish singer-songwriter and activist. He is a founding member, the lead vocalist, and primary lyricist of the rock band U2. Bono is known for his impassioned vocal style as well as his grandiose songwriting and performance style. His lyrics frequently include social and political themes, and religious imagery inspired by his Christian faith."
   wikipedia: "https://en.wikipedia.org/wiki/Bono",
 },
@@ -5583,7 +5583,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "f164295a-8f2c-4ca7-b351-d33039a0bf94",
   spotify: null,
-  inductedBy: null,
+  inductedBy: "Eric Clapton and B.B. King",
   summary: "Cynthia Weil (October 18, 1940 – June 1, 2023) was an American lyricist who wrote many songs together with her husband Barry Mann. Weil and Mann were inducted into the Songwriters Hall of Fame in 1987, and in 2011, they jointly received the Johnny Mercer Award, the highest honor bestowed by that Hall of Fame.  She and her husband were inducted into the Rock and Roll Hall of Fame in 2010."
   wikipedia: null,
 },
@@ -7937,7 +7937,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "907f53c2-f7d1-406a-8071-30262ba472ca",
   spotify: "1eTZGzLkukATM7FoGltyFs",
-  inductedBy: null,
+  inductedBy: "Pharrell Williams",
   summary: "Elizabeth \"Libba\" Cotten (née Nevills; January 5, 1893 – June 29, 1987) was an influential American folk and blues musician. She was a self-taught left-handed guitarist who played a guitar strung for a right-handed player, but played it upside down. This position meant that she played the bass lines with her fingers and the melody with her thumb. Her signature alternating bass style has become known as \"Cotten picking\"."
   wikipedia: "https://en.wikipedia.org/wiki/Elizabeth_Cotten",
 },
@@ -8003,7 +8003,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "49c48b7f-1ff1-4f02-a1aa-ca1254b46ef2",
   spotify: "6Tw1ktF4xMmzaLLbe98I2z",
-  inductedBy: null,
+  inductedBy: "Dr. Dre",
   summary: "Harry Belafonte ( BEL-ə-FON-tee; born Harold George Bellanfanti Jr.; March 1, 1927 – April 25, 2023) was an American singer, actor, and civil rights activist who popularized calypso music with international audiences in the 1950s and 1960s. Belafonte's career breakthrough album Calypso (1956) was the first million-selling LP by a single artist."
   wikipedia: "https://en.wikipedia.org/wiki/Harry_Belafonte",
 },
@@ -8113,7 +8113,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "81e7ab36-2d2d-44b0-80f6-c4b25ce2d395",
   spotify: "7l7wyDT5aVk7VMDKFCi6d5",
-  inductedBy: null,
+  inductedBy: "Bruce Springsteen",
   summary: "Neil Thomas Giraldo (born December 29, 1955) is an American musician, record producer, arranger, and songwriter best known as the musical partner of Pat Benatar since 1979 – and husband since 1982. He has also performed, written and produced for artists including Rick Derringer, John Waite, Rick Springfield, Kenny Loggins, Steve Forbert, The Del-Lords, Scott Kempner, and Beth Hart."
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Giraldo",
 },
@@ -8157,7 +8157,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "8fac43da-1553-4b36-a77c-344726f3a674",
   spotify: "5tSWhJQyABPCBpRmYLWXOA",
-  inductedBy: null,
+  inductedBy: "Sheryl Crow",
   summary: "Sylvia Robinson (née Vanterpool; May 29, 1935 – September 29, 2011), known mononymously as Sylvia, was an American singer and record producer. Robinson achieved success as a performer on two R&B chart toppers: as half of Mickey & Sylvia with the 1957 single \"Love Is Strange\", and her solo record \"Pillow Talk\" in 1973. She later became known for her work as founder and CEO of the pioneering hip hop label Sugar Hill Records."
   wikipedia: "https://en.wikipedia.org/wiki/Sylvia_Robinson",
 },
@@ -8267,7 +8267,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "25017bf5-0263-4894-b155-921735447469",
   spotify: "7jPMa8CUxNq17WtsYwZbpw",
-  inductedBy: null,
+  inductedBy: "Elton John",
   summary: "Donald Cortez Cornelius (September 27, 1936 – February 1, 2012) was an American television show host and producer widely known as the creator of the nationally syndicated dance and music show Soul Train, which he hosted from 1970 until 1993. Cornelius sold the show to MadVision Entertainment in 2008. On November 3, 2023, he was posthumously inducted into the Rock and Roll Hall of Fame with the Ahmet Ertegun Award."
   wikipedia: "https://en.wikipedia.org/wiki/Don_Cornelius",
 },
@@ -8619,7 +8619,7 @@ window.ROCKHALL_DATA = [
   members: [],
   musicbrainz: "e065cba1-0159-479e-8dd8-ec9c986ccee7",
   spotify: "3QYerRCVuSsiHOvViOn6ey",
-  inductedBy: null,
+  inductedBy: "Andrew Ridgeley",
   summary: "J. C. Davis (born April 29, 1938), known as Billy Davis, is an American rock and blues guitarist, singer and songwriter, best known for his work with Hank Ballard & the Midnighters. He is a Rock & Roll Hall of Fame inductee."
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Davis_%28guitarist%29",
 },
