@@ -236,9 +236,9 @@
 
 <script src="chains.js"></script>
 <script src="founders.js" onerror="window.FOUNDERS={}"></script>
-<script>
-  // ─── Data + state ──────────────────────────────────────────────────
-  const STORE_KEY = "crammys-chains-v2";
+<script type="module">
+  import { DeckEngine, shuffleArray, escapeHtml } from './deck-engine.js';
+
   const CHAINS = window.CHAINS_DECK || [];
   if (!CHAINS.length) {
     document.querySelector(".card-stage").innerHTML =
@@ -248,24 +248,22 @@
 
   const cardId = (c) => c.name;
   const ALL_CATS = Array.from(new Set(CHAINS.map(c => c.category))).sort();
-  const MAX_RANK = Math.max(...CHAINS.map(c => c.rank || 0));
   const TOTAL = CHAINS.length;
+  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
+  const allIds = CHAINS.map(cardId);
 
   const SCORE_RETIRED = 3;
-  const SCORE_WEIGHTS = [4, 2, 1, 0];   // weighting per score level when shuffling
 
-  const state = (() => {
-    const def = { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0, lastMode: "l2n" };
-    try {
-      const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-      let s = Object.assign(def, saved || {});
-      // v1 → v2: migrate `mastered` (array) → `scores` (map of name → score 0..3)
+  // ─── Engine ────────────────────────────────────────────────────────
+  const engine = new DeckEngine({
+    storeKey: "crammys-chains-v2",
+    defaultState: { mode: "l2n", idx: 0, order: null, scores: {}, cats: ALL_CATS.slice(), topN: 0, lastMode: "l2n" },
+    migrateState(s) {
       if (!s.scores || typeof s.scores !== "object") s.scores = {};
       if (Array.isArray(s.mastered)) {
         for (const n of s.mastered) if (typeof n === "string") s.scores[n] = SCORE_RETIRED;
         delete s.mastered;
       }
-      // v2.x: learn-mode toggle became the "study" mode in the segmented control
       if (s.learn === true) {
         s.lastMode = s.mode && s.mode !== "study" ? s.mode : "l2n";
         s.mode = "study";
@@ -273,41 +271,42 @@
       delete s.learn;
       if (!s.lastMode || s.lastMode === "study") s.lastMode = "l2n";
       delete s.drill; delete s.theme;
+      if (!Array.isArray(s.cats) || !s.cats.length) s.cats = ALL_CATS.slice();
+      if (typeof s.topN !== "number") s.topN = 0;
       return s;
-    } catch { return def; }
-  })();
-  if (!Array.isArray(state.cats) || !state.cats.length) state.cats = ALL_CATS.slice();
-  if (typeof state.topN !== "number") state.topN = 0;
-  const persist = () => localStorage.setItem(STORE_KEY, JSON.stringify(state));
-  const scoreOf = (id) => state.scores[id] || 0;
-  const setScore = (id, s) => { state.scores[id] = Math.max(0, Math.min(SCORE_RETIRED, s)); persist(); };
+    },
+    allIds,
+    byId: BY_ID,
+    cardId,
+    activeFilter(id, state) {
+      const c = BY_ID.get(id); if (!c) return false;
+      if (!state.cats.includes(c.category)) return false;
+      if (state.topN && (!c.rank || c.rank > state.topN)) return false;
+      if (engine.scoreOf(id) >= SCORE_RETIRED) return false;
+      if (state.mode === "n2y" && !c.founded) return false;
+      if (state.mode === "n2f" && (!c.founders || !c.founders.length)) return false;
+      if (state.mode === "n2h" && !c.hq) return false;
+      if (state.mode === "l2n" && !c.logo) return false;
+      return true;
+    },
+    inScopeFilter(id, state) {
+      const c = BY_ID.get(id); if (!c) return false;
+      if (!state.cats.includes(c.category)) return false;
+      if (state.topN && (!c.rank || c.rank > state.topN)) return false;
+      return true;
+    },
+    isStudyMode: (state) => state.mode === "study",
+    render: () => render(),
+    onBeforeNavigate: () => hideTip(true),
+    cardEl: document.getElementById("card"),
+    navRowEl: document.getElementById("navRow"),
+    scoreStarsFrontEl: document.getElementById("scoreStarsFront"),
+    scoreStarsBackEl: document.getElementById("scoreStarsBack"),
+  });
 
-  const BY_ID = new Map(CHAINS.map(c => [cardId(c), c]));
-  function shuffleArray(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-  function weightedShuffle(ids) {
-    return ids
-      .map(id => {
-        const w = SCORE_WEIGHTS[Math.min(scoreOf(id), SCORE_WEIGHTS.length - 1)] || 0.1;
-        return [id, Math.random() / w];
-      })
-      .sort((a, b) => a[1] - b[1])
-      .map(x => x[0]);
-  }
-  const allIds = CHAINS.map(cardId);
-  const idSet = new Set(allIds);
-  const isValidOrder = Array.isArray(state.order) && state.order.length === allIds.length
-    && state.order.every(id => typeof id === "string" && idSet.has(id));
-  if (!isValidOrder) { state.order = weightedShuffle(allIds); state.idx = 0; }
+  const state = engine.state;
 
   // ─── DOM refs ──────────────────────────────────────────────────────
-  const card = document.getElementById("card");
   const frontFace = document.getElementById("frontFace");
   const front = {
     prompt: document.getElementById("frontPrompt"),
@@ -320,28 +319,18 @@
   const scopeText = document.getElementById("scopeText");
   const scopeExtras = document.getElementById("scopeExtras");
   const progress = document.getElementById("progress");
-  const navRow = document.getElementById("navRow");
   const logoStage = document.getElementById("logoStage");
   const logoEl = document.getElementById("logoEl");
-  const scoreStarsFront = document.getElementById("scoreStarsFront");
-  const scoreStarsBack = document.getElementById("scoreStarsBack");
 
   // ─── Helpers ───────────────────────────────────────────────────────
   const extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
-  const escapeHtml = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
   const stop = `onclick="event.stopPropagation()"`;
 
   const CATEGORY_LABELS = {
-    "burgers":     "Burgers",
-    "chicken":     "Chicken",
-    "pizza":       "Pizza",
-    "sandwich":    "Sandwiches",
-    "mexican":     "Mexican",
-    "coffee":      "Coffee",
-    "bakery-cafe": "Bakery-café",
-    "asian":       "Asian",
-    "fast-casual": "Fast casual",
-    "dessert":     "Dessert",
+    "burgers": "Burgers", "chicken": "Chicken", "pizza": "Pizza",
+    "sandwich": "Sandwiches", "mexican": "Mexican", "coffee": "Coffee",
+    "bakery-cafe": "Bakery-café", "asian": "Asian", "fast-casual": "Fast casual",
+    "dessert": "Dessert",
   };
   const catLabel = (slug) => CATEGORY_LABELS[slug] || slug;
 
@@ -370,9 +359,6 @@
     return spans.slice(0, -1).join(", ") + ", and " + spans[spans.length - 1];
   }
 
-  // Slice long Wikipedia intros to a card-friendly preview, append a
-  // `…` affordance that opens a tooltip with the full text + a ↗ to the
-  // full Wikipedia article. The clean breakpoint avoids cutting mid-word.
   const SUMMARY_PREVIEW_CHARS = 320;
   function previewSummary(s) {
     if (!s) return "";
@@ -387,58 +373,22 @@
     const truncated = full.length > SUMMARY_PREVIEW_CHARS;
     const preview = previewSummary(full);
     if (!truncated) return preview;
-    // Tooltip target carries the full text via data attribute (HTML-escaped
-    // for the attribute, the tooltip's renderer un-escapes when displaying).
     return preview + ` <button class="more-toggle" data-summary="${escapeHtml(full)}" data-wiki-slug="${escapeHtml(c.wiki_slug || '')}" type="button" aria-label="Read full intro">…</button>`;
   }
 
-  // Active filters
-  const inCat = (c) => state.cats.includes(c.category);
-  const inTopN = (c) => !state.topN || (c.rank && c.rank <= state.topN);
-  function activeOrder() {
-    return state.order.filter(id => {
-      const c = BY_ID.get(id); if (!c) return false;
-      if (!inCat(c)) return false;
-      if (!inTopN(c)) return false;
-      if (scoreOf(id) >= SCORE_RETIRED) return false;
-      // Per-mode availability — only show cards that have the field
-      if (state.mode === "n2y" && !c.founded) return false;
-      if (state.mode === "n2f" && (!c.founders || !c.founders.length)) return false;
-      if (state.mode === "n2h" && !c.hq) return false;
-      if (state.mode === "l2n" && !c.logo) return false;
-      return true;
-    });
-  }
-  function inScope(c) { return inCat(c) && inTopN(c); }
-  function learnedAndTotal() {
-    let learned = 0, total = 0;
-    for (const id of state.order) {
-      const c = BY_ID.get(id); if (!c || !inScope(c)) continue;
-      total++;
-      if (scoreOf(id) >= SCORE_RETIRED) learned++;
-    }
-    return { learned, total };
-  }
-  function currentCard() {
-    const ord = activeOrder();
-    if (!ord.length) return null;
-    state.idx = ((state.idx % ord.length) + ord.length) % ord.length;
-    return BY_ID.get(ord[state.idx]);
-  }
-
-  // Always prefer the curated local logo file. Commit-sized (~40KB each).
-  // `c.logo_url` is left in the manifest for provenance only; it's often the
-  // original Wikipedia pageimage which can be a storefront photo, not the
-  // brand mark we downloaded into c.logo.
   const logoUrl = (c) => c.logo || c.logo_url || "";
+  function inScope(c) {
+    if (!state.cats.includes(c.category)) return false;
+    if (state.topN && (!c.rank || c.rank > state.topN)) return false;
+    return true;
+  }
 
   // ─── Render ────────────────────────────────────────────────────────
   function render() {
-    const ord = activeOrder();
-    const { learned, total } = learnedAndTotal();
-    const c = currentCard();
+    const ord = engine.activeOrder();
+    const { learned, total } = engine.learnedAndTotal();
+    const c = engine.currentCard();
 
-    // Always refresh the deck-info chip
     scopeText.textContent = state.topN ? `Top ${state.topN}` : `All ${TOTAL}`;
     const offCats = ALL_CATS.length - state.cats.length;
     scopeExtras.textContent = offCats > 0 ? `· ${state.cats.length}/${ALL_CATS.length} cat` : "";
@@ -453,15 +403,13 @@
       front.text.innerHTML = `<span style="font-size:.5em;color:var(--ink-soft);font-family:inherit">Every chain in this scope is learned. Open the deck chip and click <em>Start over</em>, or expand the filter.</span>`;
       front.suffix.textContent = "";
       back.body.innerHTML = "";
-      renderScoreStars(null);
+      engine.renderScoreStars(null);
       return;
     }
 
-    const id = cardId(c);
     counter.textContent = `${state.idx + 1} / ${ord.length}`;
     progress.style.width = `${((state.idx + 1) / ord.length) * 100}%`;
 
-    // ─── Front face ────────────────────────────────
     const isLogo = state.mode === "l2n";
     frontFace.classList.toggle("image-mode", isLogo);
     logoStage.hidden = !isLogo;
@@ -470,7 +418,7 @@
       logoEl.src = logoUrl(c);
       logoEl.alt = "";
     } else {
-      front.tag.textContent = isStudy() ? "Study" : "Chain";
+      front.tag.textContent = engine.isStudy() ? "Study" : "Chain";
       front.suffix.textContent = "";
       if (state.mode === "n2y") {
         front.prompt.textContent = "When was";
@@ -484,14 +432,12 @@
         front.text.textContent = c.name;
         front.suffix.textContent = "headquartered?";
       } else {
-        // study (or any unknown mode): chain name only
         front.prompt.textContent = "";
         front.text.textContent = c.name;
       }
     }
 
-    // ─── Back face ─────────────────────────────────
-    // Position-within-category trivia for the detail row
+    // Back face
     const sameCat = CHAINS.filter(x => x.category === c.category)
       .sort((a, b) => (a.rank || 999) - (b.rank || 999));
     const catPos = sameCat.findIndex(x => x.name === c.name) + 1;
@@ -547,9 +493,8 @@
       </div>`;
     back.body.innerHTML = answer + details;
 
-    // Footer hint adapts to study mode (no flip-back, no rating)
     const backHint = document.getElementById("backFooterHint");
-    if (isStudy()) {
+    if (engine.isStudy()) {
       backHint.innerHTML =
         `<span class="hint-desktop">Study mode · <kbd>←</kbd> <kbd>→</kbd> navigate · pick a quiz mode to start rating</span>` +
         `<span class="hint-touch">Study mode · swipe to navigate</span>`;
@@ -559,149 +504,55 @@
         `<span class="hint-touch">Tap to flip back</span>`;
     }
 
-    renderScoreStars(c);
+    engine.renderScoreStars(c);
   }
 
-  function renderScoreStars(c) {
-    const score = c ? scoreOf(cardId(c)) : 0;
-    const html = score > 0 ? "★".repeat(Math.min(score, SCORE_RETIRED - 1)) : "";
-    if (scoreStarsFront) scoreStarsFront.innerHTML = html;
-    if (scoreStarsBack)  scoreStarsBack.innerHTML  = html;
-  }
-
-  const isStudy = () => state.mode === "study";
-  function syncNav() {
-    // Hide the rate-buttons row in study mode — no quizzing happening.
-    navRow.classList.toggle("show-back",
-      card.classList.contains("flipped") && !isStudy());
-  }
-
-  // ─── Actions ───────────────────────────────────────────────────────
-  function flip() {
-    if (isStudy()) return;  // card stays flipped to the answer side
-    card.classList.toggle("flipped");
-    syncNav();
-    hideTip && hideTip(true);
-  }
-  const FLIP_MIDPOINT = 280;
-  function unflipAndThen(fn) {
-    // Study mode keeps the card flipped — no animation, just swap content.
-    if (isStudy()) { fn(); return; }
-    if (card.classList.contains("flipped")) {
-      card.classList.remove("flipped");
-      syncNav();
-      setTimeout(fn, FLIP_MIDPOINT);
-    } else fn();
-  }
-  function next() {
-    const ord = activeOrder(); if (!ord.length) return;
-    hideTip && hideTip(true);
-    unflipAndThen(() => {
-      const o = activeOrder(); if (!o.length) return;
-      state.idx = (state.idx + 1) % o.length; persist(); render();
-    });
-  }
-  function prev() {
-    const ord = activeOrder(); if (!ord.length) return;
-    hideTip && hideTip(true);
-    unflipAndThen(() => {
-      const o = activeOrder(); if (!o.length) return;
-      state.idx = (state.idx - 1 + o.length) % o.length; persist(); render();
-    });
-  }
-  function shuffle() {
-    hideTip && hideTip(true);
-    unflipAndThen(() => {
-      state.order = weightedShuffle(allIds);
-      state.idx = 0;
-      persist(); render();
-    });
-  }
-  function reset() {
-    if (!confirm("Start over and forget which chains you've gotten right? This clears every card's score.")) return;
-    hideTip && hideTip(true);
-    unflipAndThen(() => {
-      state.order = shuffleArray(allIds);
-      state.idx = 0;
-      state.scores = {};
-      persist(); render();
-    });
-  }
-  function rate(delta) {
-    const c = currentCard(); if (!c) return;
-    const id = cardId(c);
-    if (delta > 0) setScore(id, scoreOf(id) + 1);
-    else setScore(id, 0);
-    hideTip && hideTip(true);
-    unflipAndThen(() => {
-      const o = activeOrder();
-      if (!o.length) { render(); return; }
-      const currentIdx = state.idx % o.length;
-      if (o[currentIdx] === id) {
-        state.idx = (currentIdx + 1) % o.length;
-      } else {
-        state.idx = currentIdx;
-      }
-      persist(); render();
-    });
-  }
-  const gotIt = () => rate(+1);
-  const missed = () => rate(-1);
+  // ─── Mode switching ────────────────────────────────────────────────
   function setMode(m) {
     if (m === state.mode) return;
     const wasStudy = state.mode === "study";
     const goingStudy = m === "study";
-    if (!goingStudy) state.lastMode = m;     // remember last quiz mode
+    if (!goingStudy) state.lastMode = m;
     state.mode = m;
     state.idx = 0;
     document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === m));
-    persist();
+    engine.persist();
     if (goingStudy) {
-      card.classList.add("flipped");
-      syncNav();
+      engine.cardEl.classList.add("flipped");
+      engine.syncNav();
       render();
     } else if (wasStudy) {
-      card.classList.remove("flipped");
-      syncNav();
+      engine.cardEl.classList.remove("flipped");
+      engine.syncNav();
       render();
     } else {
-      unflipAndThen(render);
+      engine.unflipAndThen(render);
     }
   }
 
   // ─── Wire UI ───────────────────────────────────────────────────────
-  card.addEventListener("click", (e) => {
-    if (e.target.closest("a, .founder, button")) return;
-    flip();
+  engine.bindStandardUI({
+    nextBtn: document.getElementById("nextBtn"),
+    prevBtn: document.getElementById("prevBtn"),
+    gotBtn: document.getElementById("gotBtn"),
+    missedBtn: document.getElementById("missedBtn"),
+    shuffleBtn: document.getElementById("shuffleIconBtn"),
+    cardClickIgnore: "a, .founder, button",
   });
-  card.addEventListener("keydown", (e) => { if (e.key === "Enter") flip(); });
-  document.getElementById("nextBtn").onclick = next;
-  document.getElementById("prevBtn").onclick = prev;
-  document.getElementById("gotBtn").onclick = (e) => { e.stopPropagation(); gotIt(); };
-  document.getElementById("missedBtn").onclick = (e) => { e.stopPropagation(); missed(); };
   document.querySelectorAll(".seg button").forEach(b => b.onclick = () => setMode(b.dataset.mode));
   document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === state.mode));
-  document.getElementById("shuffleIconBtn").addEventListener("click", shuffle);
-  // Apply persisted study mode on initial load (card lands flipped to the answer)
-  if (isStudy()) card.classList.add("flipped");
-  // themeBtn handled by crammys-shared.js
-  syncNav();
 
   // ─── About modal ──────────────────────────────────────────────────
   const aboutModal = document.getElementById("aboutModal");
   document.getElementById("chainsCount").textContent = String(TOTAL);
-  function openAbout()  { aboutModal.hidden = false; document.body.style.overflow = "hidden"; }
-  function closeAbout() { if (aboutModal.hidden) return; aboutModal.hidden = true; document.body.style.overflow = ""; }
-  document.getElementById("aboutBtn").addEventListener("click", openAbout);
-  document.getElementById("aboutClose").addEventListener("click", closeAbout);
-  aboutModal.addEventListener("click", (e) => { if (e.target === aboutModal) closeAbout(); });
+  const { open: openAbout, close: closeAbout } = DeckEngine.bindModal(
+    aboutModal, document.getElementById("aboutClose"), document.getElementById("aboutBtn"));
 
-  // ─── Deck modal (top-N + categories + start-over) ────────────────
+  // ─��─ Deck modal ───────────────────────────────────────────────────
   const deckModal = document.getElementById("deckModal");
-  const deckChip  = document.getElementById("deckChip");
   const topPresetsEl = document.getElementById("topPresets");
-  const catGridEl    = document.getElementById("catGrid");
-  const deckCountEl  = document.getElementById("deckCount");
+  const catGridEl = document.getElementById("catGrid");
+  const deckCountEl = document.getElementById("deckCount");
   const TOP_PRESETS = [
     { label: "Top 10", n: 10 },
     { label: "Top 25", n: 25 },
@@ -709,104 +560,70 @@
     { label: `All ${TOTAL}`, n: 0 },
   ];
   function syncDeckModal() {
-    // Top-N row
     topPresetsEl.innerHTML = TOP_PRESETS.map(p =>
       `<button data-n="${p.n}" class="${p.n === state.topN ? 'on' : ''}">${p.label}</button>`
     ).join("");
-    // Category checkboxes
     catGridEl.innerHTML = ALL_CATS.map(cat =>
       `<label><input type="checkbox" value="${cat}" ${state.cats.includes(cat) ? "checked" : ""}><span>${catLabel(cat)}</span></label>`
     ).join("");
-    // Card count in current scope
     const n = CHAINS.filter(inScope).length;
     deckCountEl.innerHTML = `<em>${n}</em> ${n === 1 ? "chain" : "chains"} in deck`;
   }
-  function openDeck()  { syncDeckModal(); deckModal.hidden = false; document.body.style.overflow = "hidden"; }
-  function closeDeck() { if (deckModal.hidden) return; deckModal.hidden = true; document.body.style.overflow = ""; }
-  deckChip.addEventListener("click", openDeck);
-  document.getElementById("deckClose").addEventListener("click", closeDeck);
-  deckModal.addEventListener("click", (e) => { if (e.target === deckModal) closeDeck(); });
+  const { close: closeDeck } = DeckEngine.bindModal(deckModal, document.getElementById("deckClose"));
+  document.getElementById("deckChip").addEventListener("click", () => { syncDeckModal(); DeckEngine.openModal(deckModal); });
+
   topPresetsEl.addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     state.topN = +b.dataset.n;
     state.idx = 0;
-    persist();
+    engine.persist();
     syncDeckModal();
-    unflipAndThen(render);
+    engine.unflipAndThen(render);
   });
   catGridEl.addEventListener("change", (e) => {
     const inp = e.target.closest("input"); if (!inp) return;
     const cat = inp.value;
     if (inp.checked && !state.cats.includes(cat)) state.cats.push(cat);
     else if (!inp.checked) state.cats = state.cats.filter(x => x !== cat);
-    if (!state.cats.length) state.cats = [cat];   // never leave the deck empty
+    if (!state.cats.length) state.cats = [cat];
     state.idx = 0;
-    persist();
+    engine.persist();
     syncDeckModal();
-    unflipAndThen(render);
+    engine.unflipAndThen(render);
   });
   document.getElementById("resetProgressBtn").addEventListener("click", () => {
     closeDeck();
-    reset();
+    engine.reset();
   });
 
   // ─── Keyboard ─────────────────────────────────────────────────────
-  window.addEventListener("keydown", (e) => {
-    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT") return;
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    switch (e.key) {
-      case " ": e.preventDefault(); flip(); break;
-      case "ArrowRight": next(); break;
-      case "ArrowLeft":  prev(); break;
-      case "n": case "N": if (card.classList.contains("flipped") && !isStudy()) missed(); break;
-      case "y": case "Y": if (card.classList.contains("flipped") && !isStudy()) gotIt(); break;
-      case "s": case "S": shuffle(); break;
-      case "r": case "R": reset(); break;
-      case "t": case "T": (window.CRAMMYS_toggleTheme || (()=>{}))(); break;
-      case "l": case "L":
-        setMode(isStudy() ? (state.lastMode || "l2n") : "study");
-        break;
-      case "?":
-        if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
-        e.preventDefault();
-        if (aboutModal.hidden) openAbout(); else closeAbout();
-        break;
-      case "Escape":
-        if (!aboutModal.hidden) closeAbout();
-        else if (!deckModal.hidden) closeDeck();
-        else hideTip(true);
-        break;
+  engine.bindKeyboard({
+    extraKeys(e) {
+      switch (e.key) {
+        case "n": case "N":
+          if (engine.cardEl.classList.contains("flipped") && !engine.isStudy()) engine.missed();
+          return true;
+        case "y": case "Y":
+          if (engine.cardEl.classList.contains("flipped") && !engine.isStudy()) engine.gotIt();
+          return true;
+        case "l": case "L":
+          setMode(engine.isStudy() ? (state.lastMode || "l2n") : "study");
+          return true;
+        case "?":
+          e.preventDefault();
+          if (aboutModal.hidden) openAbout(); else closeAbout();
+          return true;
+        case "Escape":
+          if (!aboutModal.hidden) closeAbout();
+          else if (!deckModal.hidden) closeDeck();
+          else hideTip(true);
+          return true;
+      }
+      return false;
     }
   });
 
-  // ─── Touch swipe ──────────────────────────────────────────────────
-  // Track max horizontal / vertical movement during the touch. A swipe wins
-  // only when horizontal travel dominates — so the user can still scroll
-  // a long back face vertically without accidentally moving to the next card.
-  let tx = 0, ty = 0, dxMax = 0, dyMax = 0;
-  card.addEventListener("touchstart", (e) => {
-    const t = e.changedTouches[0];
-    tx = t.clientX; ty = t.clientY;
-    dxMax = 0; dyMax = 0;
-  }, { passive: true });
-  card.addEventListener("touchmove", (e) => {
-    const t = e.changedTouches[0];
-    dxMax = Math.max(dxMax, Math.abs(t.clientX - tx));
-    dyMax = Math.max(dyMax, Math.abs(t.clientY - ty));
-  }, { passive: true });
-  card.addEventListener("touchend", (e) => {
-    const t = e.changedTouches[0];
-    const dx = t.clientX - tx;
-    if (Math.abs(dx) > 50 && dxMax > dyMax * 1.5) {
-      if (dx < 0) next(); else prev();
-    }
-  });
-
-  // ─── Founder tooltip (uses shared .tooltip skeleton) ──────────────
-  const tip = document.getElementById("tooltip");
-  let tipAnchor = null, hideTimer = null, showTimer = null;
-  const SHOW_DELAY = 280;
-
+  // ─── Tooltip ──────────────────────────────────────────────────────
   function tipHTML(el) {
     if (el.dataset.founder) return tipHTMLFounder(el.dataset.founder);
     if (el.dataset.summary) return tipHTMLSummary(el.dataset.summary, el.dataset.wikiSlug);
@@ -816,7 +633,7 @@
     const f = (window.FOUNDERS || {})[name];
     if (!f) return `<div class="tip-empty">No info for ${escapeHtml(name)}</div>`;
     const photo = f.thumb ? `<div class="tip-photo"><img src="${f.thumb}" alt=""></div>` : "";
-    const link  = f.page
+    const link = f.page
       ? `<a class="ext" href="${f.page}" target="_blank" rel="noopener" title="Wikipedia">${extIcon}</a>`
       : "";
     return `
@@ -838,84 +655,16 @@
         ${wikiLink}
       </div>`;
   }
-  function positionTip(el) {
-    const r = el.getBoundingClientRect();
-    const tw = tip.offsetWidth, th = tip.offsetHeight, m = 10;
-    let x = r.left + r.width / 2 - tw / 2;
-    let y = r.top - th - m;
-    if (y < 8) y = r.bottom + m;
-    if (y + th > window.innerHeight - 8) y = Math.max(8, window.innerHeight - th - 8);
-    x = Math.max(8, Math.min(window.innerWidth - tw - 8, x));
-    tip.style.left = `${x}px`; tip.style.top = `${y}px`;
-  }
-  function showTip(el) {
-    clearTimeout(hideTimer); clearTimeout(showTimer);
-    if (tipAnchor === el && tip.classList.contains("visible")) return;
-    tip.innerHTML = tipHTML(el);
-    // Wider tooltip when showing a long Wikipedia intro
-    tip.classList.toggle("tip-summary", !!el.dataset.summary);
-    tip.classList.add("visible");
-    tip.setAttribute("aria-hidden", "false");
-    tipAnchor = el;
-    positionTip(el);
-  }
-  function scheduleShow(el) {
-    clearTimeout(hideTimer);
-    if (tip.classList.contains("visible")) { if (tipAnchor !== el) showTip(el); return; }
-    clearTimeout(showTimer);
-    showTimer = setTimeout(() => showTip(el), SHOW_DELAY);
-  }
-  function hideTip(immediate) {
-    clearTimeout(hideTimer); clearTimeout(showTimer);
-    if (immediate) {
-      tip.classList.remove("visible");
-      tip.setAttribute("aria-hidden", "true");
-      tipAnchor = null;
-    } else {
-      hideTimer = setTimeout(() => {
-        tip.classList.remove("visible");
-        tip.setAttribute("aria-hidden", "true");
-        tipAnchor = null;
-      }, 280);
-    }
-  }
-  const HOVER_DEVICE = matchMedia("(hover: hover) and (pointer: fine)").matches;
-  const TIP_SEL = ".founder[data-founder], .more-toggle[data-summary]";
-  if (HOVER_DEVICE) {
-    document.addEventListener("mouseover", (e) => {
-      const el = e.target.closest(TIP_SEL);
-      if (el) { scheduleShow(el); return; }
-      if (e.target.closest("#tooltip")) clearTimeout(hideTimer);
-    });
-    document.addEventListener("mouseout", (e) => {
-      const from = e.target.closest(TIP_SEL) || e.target.closest("#tooltip");
-      if (!from) return;
-      const to = e.relatedTarget;
-      if (to && to.nodeType === 1 && (to.closest(TIP_SEL) || to.closest("#tooltip"))) return;
-      clearTimeout(showTimer);
-      hideTip(false);
-    });
-    document.addEventListener("click", (e) => {
-      if (e.target.closest(TIP_SEL) || e.target.closest("#tooltip") || e.target.closest(".ext")) return;
-      hideTip(true);
-    });
-  } else {
-    document.addEventListener("click", (e) => {
-      if (e.target.closest(".ext")) return;
-      const el = e.target.closest(TIP_SEL);
-      if (el) {
-        e.stopPropagation();
-        if (tipAnchor === el && tip.classList.contains("visible")) hideTip(true);
-        else showTip(el);
-        return;
-      }
-      if (!e.target.closest("#tooltip")) hideTip(true);
-    });
-  }
-  window.addEventListener("scroll", () => { if (tipAnchor) positionTip(tipAnchor); }, { passive: true });
-  window.addEventListener("resize", () => { if (tipAnchor) positionTip(tipAnchor); });
 
-  // Deck switcher dropdown is wired by crammys-shared.js (uses window.CURRENT_DECK).
+  const tipEl = document.getElementById("tooltip");
+  const hideTip = engine.bindTooltips({
+    tipEl,
+    selector: ".founder[data-founder], .more-toggle[data-summary]",
+    tipHTML(el) {
+      tipEl.classList.toggle("tip-summary", !!el.dataset.summary);
+      return tipHTML(el);
+    },
+  });
 
   render();
 </script>
