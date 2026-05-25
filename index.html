@@ -899,12 +899,18 @@
     if (isImageMode) {
       setImage(c);
     } else if (state.direction === "y2m" || state.direction === "study") {
-      front.tag.textContent = state.direction === "study" ? "Study" : "Ceremony";
-      front.prompt.textContent = isSlateView ? "Name the Best Picture slate of" : "What won Best Picture in";
+      front.tag.textContent = state.direction === "study"
+        ? "Study"
+        : (isFilmYear() ? "Film year" : "Ceremony");
+      front.prompt.textContent = isSlateView
+        ? "Best Picture slate of"
+        : (isFilmYear() ? "Movie that won Best Picture" : "Won Best Picture in");
       front.text.innerHTML = `<span>${showYear(c.year)}</span>`;
     } else {
       front.tag.textContent = isWinner ? "Best Picture" : "Best Picture · Nominee";
-      front.prompt.textContent = isWinner ? "What year did this win?" : "What year was this nominated?";
+      front.prompt.textContent = isFilmYear()
+        ? "Year of release?"
+        : (isWinner ? "What year did this win?" : "What year was this nominated?");
       front.text.innerHTML = `<span>${escapeHtml(c.movie)}</span>${movieLinks(c.movie, c.trailer)}`;
     }
 
@@ -941,8 +947,11 @@
 
       let answerBlock;
       if (state.direction === "m2y") {
+        const yearPrompt = isFilmYear()
+          ? "Released in"
+          : (isWinner ? "Won Best Picture in" : "Nominated for Best Picture in");
         answerBlock = `
-          <div class="prompt">${isWinner ? "Won Best Picture in" : "Nominated for Best Picture in"}</div>
+          <div class="prompt">${yearPrompt}</div>
           <div class="answer"><span class="year" data-year="${c.year}">${showYear(c.year)}</span></div>
           <div class="prompt" style="margin-top:6px"><span class="film" data-movie="${escapeHtml(c.movie)}">${escapeHtml(c.movie)}</span> ${movieLinks(c.movie, c.trailer)} ${statusBadge}</div>
         `;
@@ -1448,6 +1457,7 @@
   // years instead via the deck modal — most people remember films by
   // release year, not the ceremony that followed.
   function showYear(cy) { return state.yearBasis === "film" ? cy - 1 : cy; }
+  function isFilmYear() { return state.yearBasis === "film"; }
   // Study mode: surface a poster + synopsis at the top of the back face
   // as a memory anchor.  Best-effort — silently skipped when we don't
   // have either asset cached for the card.
