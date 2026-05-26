@@ -160,12 +160,12 @@ export async function init({ signal }) {
     return `<a href="${url}" target="_blank" rel="noopener" class="person-link" ${stop}>${escapeHtml(c.film)}</a>`;
   }
 
-  function detailGrid(c, showYear) {
+  function detailGrid(c, showYear, showFilmRow) {
     const rows = [];
     if (showYear && c.year) {
       rows.push(`<div class="row"><span class="label">Ceremony</span><span class="val">${c.year} <em>(${c.filmYear || c.year - 1} film)</em></span></div>`);
     }
-    if (c.film) {
+    if (showFilmRow && c.film) {
       rows.push(`<div class="row"><span class="label">Film</span><span class="val">${filmLink(c)}</span></div>`);
     }
     if (c.filmDirector) {
@@ -229,7 +229,7 @@ export async function init({ signal }) {
           <div class="answer"><span>${escapeHtml(c.film || "—")}</span></div>
         </div>
       </div>`;
-      back.body.innerHTML = headerBlock + detailGrid(c, true);
+      back.body.innerHTML = headerBlock + detailGrid(c, true, false);
 
     } else if (state.mode === "f2s") {
       // Front: film title + year → Back: song title + details
@@ -244,7 +244,7 @@ export async function init({ signal }) {
           <div class="answer"><span>${escapeHtml(c.song)}</span> ${spotifyLink}</div>
         </div>
       </div>`;
-      back.body.innerHTML = headerBlock + detailGrid(c, true);
+      back.body.innerHTML = headerBlock + detailGrid(c, true, false);
 
     } else {
       // Study mode
@@ -259,7 +259,7 @@ export async function init({ signal }) {
           <div class="answer"><span>${escapeHtml(c.song)}</span> ${wikiLink}${spotifyLink}</div>
         </div>
       </div>`;
-      back.body.innerHTML = headerBlock + detailGrid(c, true);
+      back.body.innerHTML = headerBlock + detailGrid(c, true, true);
     }
 
     const backHint = document.getElementById("backFooterHint");
