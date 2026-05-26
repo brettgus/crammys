@@ -206,7 +206,7 @@ export async function init({ signal }) {
       front.tag.textContent = "Song";
       front.prompt.textContent = "From which film?";
       const performedBy = c.performers && c.performers.length
-        ? `<div class="prompt" style="margin-top:8px;font-size:12px">${fmtList(c.performers)}</div>` : "";
+        ? `<div style="width:100%;font-size:13px;color:var(--ink-soft);margin-top:8px;font-family:inherit;letter-spacing:.04em;text-transform:uppercase;font-weight:400">${fmtList(c.performers)}</div>` : "";
       front.text.innerHTML = `<span>${escapeHtml(c.song)}</span>${performedBy}`;
 
       back.tag.textContent = "Film";
