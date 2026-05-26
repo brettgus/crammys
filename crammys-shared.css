@@ -617,7 +617,8 @@ main {
   font-size: 11px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  min-width: 90px;
+  width: 105px;
+  min-width: 105px;
   padding-top: 3px;
   flex-shrink: 0;
 }
