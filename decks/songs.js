@@ -134,6 +134,16 @@ export async function init({ signal }) {
     if (arr.length === 2) return `${escapeHtml(arr[0])} and ${escapeHtml(arr[1])}`;
     return arr.slice(0, -1).map(escapeHtml).join(", ") + ", and " + escapeHtml(arr[arr.length - 1]);
   }
+  function linkedName(name) {
+    const slug = encodeURIComponent(name.replace(/ /g, "_"));
+    return `<a href="https://en.wikipedia.org/wiki/${slug}" target="_blank" rel="noopener" class="person-link" ${stop}>${escapeHtml(name)}</a>`;
+  }
+  function fmtLinkedList(arr) {
+    if (!arr || !arr.length) return "—";
+    if (arr.length === 1) return linkedName(arr[0]);
+    if (arr.length === 2) return `${linkedName(arr[0])} and ${linkedName(arr[1])}`;
+    return arr.slice(0, -1).map(linkedName).join(", ") + ", and " + linkedName(arr[arr.length - 1]);
+  }
 
   function detailGrid(c, showYear) {
     const rows = [];
@@ -144,10 +154,10 @@ export async function init({ signal }) {
       rows.push(`<div class="row"><span class="label">Film</span><span class="val">${escapeHtml(c.film)}</span></div>`);
     }
     if (c.songwriters && c.songwriters.length) {
-      rows.push(`<div class="row"><span class="label">Written by</span><span class="val">${fmtList(c.songwriters)}</span></div>`);
+      rows.push(`<div class="row"><span class="label">Written by</span><span class="val">${fmtLinkedList(c.songwriters)}</span></div>`);
     }
     if (c.performers && c.performers.length) {
-      rows.push(`<div class="row"><span class="label">Performed by</span><span class="val">${fmtList(c.performers)}</span></div>`);
+      rows.push(`<div class="row"><span class="label">Performed by</span><span class="val">${fmtLinkedList(c.performers)}</span></div>`);
     }
     // External links row
     const links = [];
@@ -192,10 +202,12 @@ export async function init({ signal }) {
       : "";
 
     if (state.mode === "s2f") {
-      // Front: song title → Back: film + details
+      // Front: song title + performer → Back: film + details
       front.tag.textContent = "Song";
       front.prompt.textContent = "From which film?";
-      front.text.innerHTML = `<span>${escapeHtml(c.song)}</span>`;
+      const performedBy = c.performers && c.performers.length
+        ? `<div class="prompt" style="margin-top:8px;font-size:12px">${fmtList(c.performers)}</div>` : "";
+      front.text.innerHTML = `<span>${escapeHtml(c.song)}</span>${performedBy}`;
 
       back.tag.textContent = "Film";
       const headerBlock = `<div class="study-anchor">
