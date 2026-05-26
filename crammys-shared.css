@@ -1264,3 +1264,26 @@ main {
   background: var(--line);
 }
 .inline-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── Tracklist (ordered track listing with side headers) ─────────────── */
+.tracklist-side { margin-bottom: 10px; }
+.tracklist-side strong {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+  margin-bottom: 2px;
+}
+.tracklist {
+  margin: 0;
+  padding-left: 24px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.tracklist li { padding: 1px 0; }
+.tracklist .track-highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
