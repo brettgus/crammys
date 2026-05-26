@@ -263,26 +263,37 @@ export async function init({ signal }) {
       ? `<a class="ext" href="https://open.spotify.com/artist/${c.spotify}" target="_blank" rel="noopener" title="Spotify" ${stop}>${spotifyIcon}</a>`
       : "";
 
-    let answerBlock;
     const showInductionYear = state.mode !== "n2y";
+    const hasPhoto = state.mode !== "p2n" && c.image;
+    const photoHTML = hasPhoto
+      ? `<div class="study-photo"><img src="${imageUrl(c, 300)}" alt="" loading="lazy"></div>` : "";
+    const links = `${wikiLink}${spotifyLink}`;
+    const desc = c.description ? `<div class="credits subtle">${escapeHtml(c.description)}</div>` : "";
+
+    let headerBlock;
     if (state.mode === "n2y") {
       back.tag.textContent = "Induction";
-      answerBlock = `
-        <div class="prompt">${escapeHtml(c.name)} ${wikiLink}${spotifyLink}</div>
-        <div class="answer"><span>${c.year || "?"}</span></div>`;
+      headerBlock = `<div class="study-anchor">
+        ${photoHTML}
+        <div class="study-info">
+          <div class="prompt">${escapeHtml(c.name)} ${links}</div>
+          <div class="answer"><span>${c.year || "?"}</span></div>
+          ${desc}
+        </div>
+      </div>`;
     } else {
       back.tag.textContent = c.type === "group" ? "Group" : "Artist";
-      answerBlock = `
-        <div class="prompt">Rock &amp; Roll Hall of Fame</div>
-        <div class="answer"><span>${escapeHtml(c.name)}</span> ${wikiLink}${spotifyLink}</div>`;
+      headerBlock = `<div class="study-anchor">
+        ${photoHTML}
+        <div class="study-info">
+          <div class="prompt">Rock &amp; Roll Hall of Fame</div>
+          <div class="answer"><span>${escapeHtml(c.name)}</span> ${links}</div>
+          ${desc}
+        </div>
+      </div>`;
     }
 
-    const descLine = c.description
-      ? `<div class="credits subtle">${escapeHtml(c.description)}</div>` : "";
-    const inlinePhoto = (state.mode !== "p2n" && c.image)
-      ? `<div class="inline-portrait"><img src="${imageUrl(c, 200)}" alt="" loading="lazy"></div>` : "";
-
-    back.body.innerHTML = answerBlock + inlinePhoto + descLine + detailGrid(c, showInductionYear);
+    back.body.innerHTML = headerBlock + detailGrid(c, showInductionYear);
 
     const backHint = document.getElementById("backFooterHint");
     if (engine.isStudy()) backHint.innerHTML = `<span class="hint-desktop">Study mode · <kbd>←</kbd> <kbd>→</kbd> navigate · pick a quiz mode to start rating</span><span class="hint-touch">Study mode · swipe to navigate</span>`;
