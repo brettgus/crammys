@@ -145,13 +145,31 @@ export async function init({ signal }) {
     return arr.slice(0, -1).map(linkedName).join(", ") + ", and " + linkedName(arr[arr.length - 1]);
   }
 
+  const SUMMARY_MAX = 320;
+  function truncSummary(s) {
+    if (!s || s.length <= SUMMARY_MAX) return escapeHtml(s || "");
+    const cut = s.slice(0, SUMMARY_MAX);
+    const lastSpace = cut.lastIndexOf(" ");
+    const safe = lastSpace > SUMMARY_MAX - 50 ? cut.slice(0, lastSpace) : cut;
+    return escapeHtml(safe) + `<span style="color:var(--ink-faint)">…</span>`;
+  }
+
+  function filmLink(c) {
+    if (!c.film) return "—";
+    const url = c.filmWikipedia || `https://en.wikipedia.org/wiki/${encodeURIComponent(c.film.replace(/ /g, "_"))}`;
+    return `<a href="${url}" target="_blank" rel="noopener" class="person-link" ${stop}>${escapeHtml(c.film)}</a>`;
+  }
+
   function detailGrid(c, showYear) {
     const rows = [];
     if (showYear && c.year) {
       rows.push(`<div class="row"><span class="label">Ceremony</span><span class="val">${c.year} <em>(${c.filmYear || c.year - 1} film)</em></span></div>`);
     }
     if (c.film) {
-      rows.push(`<div class="row"><span class="label">Film</span><span class="val">${escapeHtml(c.film)}</span></div>`);
+      rows.push(`<div class="row"><span class="label">Film</span><span class="val">${filmLink(c)}</span></div>`);
+    }
+    if (c.filmDirector) {
+      rows.push(`<div class="row"><span class="label">Director</span><span class="val">${fmtLinkedList(c.filmDirector.split(", "))}</span></div>`);
     }
     if (c.songwriters && c.songwriters.length) {
       rows.push(`<div class="row"><span class="label">Written by</span><span class="val">${fmtLinkedList(c.songwriters)}</span></div>`);
@@ -159,16 +177,11 @@ export async function init({ signal }) {
     if (c.performers && c.performers.length) {
       rows.push(`<div class="row"><span class="label">Performed by</span><span class="val">${fmtLinkedList(c.performers)}</span></div>`);
     }
-    // External links row
-    const links = [];
-    if (c.spotify) {
-      links.push(`<a class="ext" href="https://open.spotify.com/track/${c.spotify}" target="_blank" rel="noopener" title="Listen on Spotify" ${stop}>${spotifyIcon} Spotify</a>`);
+    if (c.summary) {
+      rows.push(`<div class="row"><span class="label">About</span><span class="val">${truncSummary(c.summary)}</span></div>`);
     }
-    if (c.wikipedia) {
-      links.push(`<a class="ext" href="${c.wikipedia}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon} Wikipedia</a>`);
-    }
-    if (links.length) {
-      rows.push(`<div class="row"><span class="label">Links</span><span class="val">${links.join(" &nbsp; ")}</span></div>`);
+    if (c.filmSummary) {
+      rows.push(`<div class="row"><span class="label">Plot</span><span class="val">${truncSummary(c.filmSummary)}</span></div>`);
     }
     return rows.length ? `<div class="detail-grid">${rows.join("")}</div>` : "";
   }
