@@ -798,6 +798,8 @@ main {
 }
 .badge.winner { background: var(--accent); color: var(--accent-ink); }
 .badge.nominee { background: var(--line); color: var(--ink-soft); }
+.badge.shortlist { background: #6c63ff; color: #fff; }
+.badge.special  { background: #d4a843; color: #1a1a1a; }
 .credits.subtle { color: var(--ink-faint); font-size: 12.5px; }
 .credits.subtle .label { color: var(--ink-faint); }
 /* Slate view (Year → Title back face with nominees on) */

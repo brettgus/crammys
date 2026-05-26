@@ -6,6 +6,7 @@
   const DECKS = [
     { id: "bestpicture", name: "Best Picture",             emoji: "🎬", url: "#bestpicture" },
     { id: "chains",      name: "Restaurant Chains",        emoji: "🍔", url: "#chains" },
+    { id: "grammys",     name: "Grammy Big Four",          emoji: "🏆", url: "#grammys" },
     { id: "rockhall",    name: "Rock & Roll Hall of Fame", emoji: "🎸", url: "#rockhall" },
     { id: "songs",       name: "Best Original Song",       emoji: "🎵", url: "#songs" },
   ];
