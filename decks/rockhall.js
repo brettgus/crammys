@@ -207,6 +207,13 @@ export async function init({ signal }) {
     if (c.genres && c.genres.length) rows.push(`<div class="row"><span class="label">Genres</span><span class="val">${c.genres.map(g => escapeHtml(g)).join(" · ")}</span></div>`);
     // Members
     if (c.members && c.members.length) rows.push(`<div class="row"><span class="label">Members</span><span class="val">${c.members.map(m => escapeHtml(m)).join(" · ")}</span></div>`);
+    // Albums
+    if (c.albums && c.albums.length) {
+      const display = c.albums.slice(0, 5);
+      const albumStr = display.map(a => `${escapeHtml(a.title)}${a.year ? ` (${a.year})` : ""}`).join(" · ");
+      const suffix = c.albums.length > 5 ? " · …" : "";
+      rows.push(`<div class="row"><span class="label">Albums</span><span class="val">${albumStr}${suffix}</span></div>`);
+    }
     // Summary / blurb
     if (c.summary) rows.push(`<div class="row"><span class="label">About</span><span class="val">${truncSummary(c.summary)}</span></div>`);
     return rows.length ? `<div class="detail-grid">${rows.join("")}</div>` : "";

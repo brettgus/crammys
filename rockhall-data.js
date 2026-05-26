@@ -20,6 +20,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Norm N. Nite and Scott Muni",
   summary: "Albert James \"Alan\" Freed (December 15, 1921 – January 20, 1965) was an American disc jockey. He also produced and promoted large traveling concerts with various acts, helping to spread the importance of rock and roll music throughout North America, including popularizing the term \"rock and roll\".",
   wikipedia: "https://en.wikipedia.org/wiki/Alan_Freed",
+  albums: []
 },
 {
   name: "Buddy Holly",
@@ -42,6 +43,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Fogerty",
   summary: "Charles Hardin Holley (September 7, 1936 – February 3, 1959), known professionally by his stage name Buddy Holly, was an American singer, songwriter, and musician who was a central and pioneering figure of rock and roll. He was born to a musical family in Lubbock, Texas, during the Great Depression, and learned to play guitar and sing alongside his two siblings.",
   wikipedia: "https://en.wikipedia.org/wiki/Buddy_Holly",
+  albums: []
 },
 {
   name: "Chuck Berry",
@@ -64,6 +66,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "Charles Edward Anderson Berry (October 18, 1926 – March 18, 2017) was an American guitarist, singer, and songwriter who was one of the pioneers of rock and roll. Nicknamed the \"Father of Rock and Roll\", he refined and developed rhythm and blues into the major elements that made rock and roll distinctive with songs such as \"Maybellene\" (1955), \"Roll Over Beethoven\" (1956), \"Rock and Roll Music\" (1957), and \"Johnny B. Goode\" (1958).",
   wikipedia: "https://en.wikipedia.org/wiki/Chuck_Berry",
+  albums: [{ title: "After School Session", year: 1957 }, { title: "One Dozen Berrys", year: 1958 }, { title: "Chuck Berry Is on Top", year: 1959 }, { title: "Rockin’ at the Hops", year: 1960 }, { title: "New Juke Box Hits", year: 1961 }, { title: "St. Louis to Liverpool", year: 1964 }, { title: "Two Great Guitars", year: 1964 }, { title: "Chuck Berry in London", year: 1965 }, { title: "Fresh Berry’s", year: 1965 }, { title: "Chuck Berry in Memphis", year: 1967 }]
 },
 {
   name: "Elvis Presley",
@@ -86,6 +89,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Julian and Sean Lennon",
   summary: "Elvis Aaron Presley (January 8, 1935 – August 16, 1977) was an American singer and actor. Referred to as the \"King of Rock and Roll\", he is widely regarded as one of the most culturally significant figures of the 20th century. Presley's energetic and sexually provocative performance style, combined with a mix of influences across color lines during a transformative era in race relations, brought both great success and initial controversy.",
   wikipedia: "https://en.wikipedia.org/wiki/Elvis_Presley",
+  albums: [{ title: "Elvis Presley", year: 1956 }, { title: "Elvis", year: 1956 }, { title: "Elvis’ Christmas Album", year: 1957 }, { title: "Elvis Is Back!", year: 1960 }, { title: "His Hand in Mine", year: 1960 }, { title: "Something for Everybody", year: 1961 }, { title: "Pot Luck", year: 1962 }, { title: "Elvis for Everyone!", year: 1965 }, { title: "How Great Thou Art", year: 1967 }, { title: "From Elvis in Memphis", year: 1969 }]
 },
 {
   name: "Fats Domino",
@@ -108,6 +112,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Joel",
   summary: "Antoine Caliste Domino Jr. (February 26, 1928 – October 24, 2017), known as Fats Domino, was an American singer-songwriter and pianist. One of the pioneers of rock and roll music, Domino sold more than 65 million records. Born in New Orleans to a French Creole family, Domino signed to Imperial Records in 1949. His first single \"The Fat Man\" is cited by some historians as the first rock and roll single and the first to sell more than 1 million copies.",
   wikipedia: "https://en.wikipedia.org/wiki/Fats_Domino",
+  albums: [{ title: "Fats Domino Rock and Rollin’", year: 1956 }, { title: "This Is Fats Domino!", year: 1956 }, { title: "Rock and Rollin’ With Fats Domino", year: 1956 }, { title: "This Is Fats", year: 1957 }, { title: "Here Stands Fats Domino", year: 1957 }, { title: "The Fabulous \"Mr. D\"", year: 1958 }, { title: "Fats Domino Swings", year: 1959 }, { title: "Let’s Play Fats Domino", year: 1959 }, { title: "...A Lot of Dominos!", year: 1960 }, { title: "Fats Domino Sings Million Record Hits", year: 1960 }]
 },
 {
   name: "James Brown",
@@ -130,6 +135,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steve Winwood",
   summary: "James Joseph Brown (May 3, 1933 – December 25, 2006) was an American singer, songwriter, dancer, musician, and record producer. The central progenitor of funk music and a major figure of 20th-century music, he is referred to by various nicknames, among them \"Mr. Dynamite\", \"the Hardest-Working Man in Show Business\", \"Minister of New Super Heavy Funk\", \"Godfather of Soul\", \"King of Soul\", and \"Soul Brother No. 1\".",
   wikipedia: "https://en.wikipedia.org/wiki/James_Brown",
+  albums: [{ title: "James Browns Presents His Band & Five Other Great Artists", year: 1961 }, { title: "Prisoner of Love", year: 1963 }, { title: "Grits & Soul", year: 1964 }, { title: "Showtime", year: 1964 }, { title: "Sings Out of Sight", year: 1965 }, { title: "James Brown Plays James Brown: Yesterday and Today", year: 1965 }, { title: "Handful of Soul", year: 1966 }, { title: "James Brown Plays New Breed", year: 1966 }, { title: "James Brown Plays the Real Thing", year: 1967 }, { title: "James Brown Sings Raw Soul", year: 1967 }]
 },
 {
   name: "Jerry Lee Lewis",
@@ -152,6 +158,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Hank Williams Jr.",
   summary: "Jerry Lee Lewis (September 29, 1935 – October 28, 2022) was an American pianist, singer, and songwriter. Nicknamed \"The Killer\", he was described as \"rock 'n' roll's first great wild man\". A pioneer of rock and roll and rockabilly music, Lewis made his first recordings in 1952 at Cosimo Matassa's J&M Studio in New Orleans, Louisiana, and early recordings in 1956 at Sun Records in Memphis, Tennessee. He later became known for his chart topping country music recordings from the 1960s and 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Lee_Lewis",
+  albums: [{ title: "Jerry Lee Lewis", year: 1958 }, { title: "Jerry Lee’s Greatest!", year: 1961 }, { title: "Golden Hits of Jerry Lee Lewis", year: 1964 }, { title: "The Return of Rock", year: 1965 }, { title: "Country Songs for City Folks", year: 1965 }, { title: "Memphis Beat", year: 1966 }, { title: "Soul My Way", year: 1967 }, { title: "Another Place Another Time", year: 1968 }, { title: "She Still Comes Around (To Love What’s Left of Me)", year: 1969 }, { title: "Together", year: 1969 }]
 },
 {
   name: "Jimmie Rodgers",
@@ -174,6 +181,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Wexler",
   summary: "James Charles Rodgers ((1897-09-08)September 8, 1897 – (1933-05-26)May 26, 1933) was an American singer, songwriter, and musician who rose to popularity in the late 1920s. Known as Jimmie Rodgers and widely regarded as the \"Father of Country Music\", he is best known for his distinctive yodeling. Rodgers was known as \"The Singing Brakeman\" and \"America's Blue Yodeler\". He has been cited as an inspiration by many artists, and he has been inducted into multiple halls of fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmie_Rodgers",
+  albums: []
 },
 {
   name: "Jimmy Yancey",
@@ -196,6 +204,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ahmet Ertegun",
   summary: "James Edward Yancey (February 20, c. 1895 – September 17, 1951) was an American boogie-woogie pianist, composer, and lyricist. One reviewer described him as \"one of the pioneers of this raucous, rapid-fire, eight-to-the-bar piano style\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Yancey",
+  albums: [{ title: "Chicago Piano, Volume 1", year: 1992 }, { title: "The Unissued 1951 Yancey Wire", year: null }]
 },
 {
   name: "John Hammond",
@@ -218,6 +227,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ahmet Ertegun",
   summary: "John Henry Hammond Jr. (December 15, 1910 – July 10, 1987) was an American record producer, civil rights activist, and music critic active from the 1930s to the early 1980s. As a talent scout, Hammond became one of the most influential figures in 20th-century popular music. He is the father of blues musician John P. Hammond.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Henry_Hammond",
+  albums: []
 },
 {
   name: "Little Richard",
@@ -240,6 +250,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Roberta Flack",
   summary: "Richard Wayne Penniman (December 5, 1932 – May 9, 2020), better known by his stage name Little Richard, was an American singer-songwriter and pianist. He was an influential figure in popular music and culture for seven decades. Referred to as the \"Architect of Rock and Roll\", Richard's most celebrated work dates from the mid-1950s, when his charismatic showmanship and dynamic music, characterized by frenetic piano playing, pounding backbeat and powerful raspy vocals, laid the foundation for rock…",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Richard",
+  albums: [{ title: "Here’s Little Richard", year: 1957 }, { title: "Little Richard", year: 1958 }, { title: "Little Richard", year: 1958 }, { title: "The Fabulous Little Richard", year: 1958 }, { title: "Pray Along With Little Richard Vol. 2: I Believe...", year: 1960 }, { title: "Pray Along With Little Richard Vol. 1: I'll Never Walk Alone", year: 1960 }, { title: "It's Real: The King of the Gospel Singers", year: 1961 }, { title: "Little Richard Is Back (and There’s a Whole Lotta Shakin’ Goin’ On!)", year: 1964 }, { title: "Little Richard Sings", year: 1964 }, { title: "Little Richard, the Most Dynamic Entertainer of the Generation: His Greatest Hits", year: 1965 }]
 },
 {
   name: "Ray Charles",
@@ -262,6 +273,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Quincy Jones",
   summary: "Ray Charles Robinson (September 23, 1930 – June 10, 2004) was an American singer, songwriter, and pianist. He is regarded as one of the most iconic and influential musicians of the 20th century and was often referred to by contemporaries as \"The Genius\". Among friends and fellow musicians, Charles preferred being called \"Brother Ray\". He lost his vision as a child, possibly due to glaucoma, and consequently wore dark glasses.",
   wikipedia: "https://en.wikipedia.org/wiki/Ray_Charles",
+  albums: [{ title: "Georgia On My Mind", year: 1930 }, { title: "The Great Ray Charles", year: 1957 }, { title: "Ray Charles (Hallelujah I Love Her So)", year: 1957 }, { title: "Yes Indeed!", year: 1958 }, { title: "Soul Brothers", year: 1958 }, { title: "The Genius of Ray Charles", year: 1959 }, { title: "What’d I Say", year: 1959 }, { title: "The Genius Hits the Road", year: 1960 }, { title: "Fathead", year: 1960 }, { title: "Genius + Soul = Jazz", year: 1961 }]
 },
 {
   name: "Robert Johnson",
@@ -284,6 +296,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robert Palmer",
   summary: "Robert Leroy Johnson (May 8, 1911 – August 16, 1938) was an American blues musician and songwriter. His singing, guitar playing and songwriting on his landmark 1936 and 1937 recordings have influenced later generations of musicians. Although his recording career spanned only seven months, he is recognized as a master of the blues, particularly the Delta blues style, and as one of the most influential musicians of the 20th century.",
   wikipedia: "https://en.wikipedia.org/wiki/Robert_Johnson",
+  albums: []
 },
 {
   name: "Sam Cooke",
@@ -306,6 +319,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Herb Alpert",
   summary: "Samuel Cooke (né Cook; January 22, 1931 – December 11, 1964) was an American soul singer and songwriter. Considered one of the most influential soul artists of all time, Cooke is commonly referred to as the \"King of Soul\" for his distinctive vocals, pioneering contributions to the genre, and significance in popular music.",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_Cooke",
+  albums: [{ title: "Songs by Sam Cooke", year: 1958 }, { title: "Encore", year: 1958 }, { title: "Tribute to the Lady", year: 1959 }, { title: "Hits of the 50’s", year: 1960 }, { title: "Cooke’s Tour", year: 1960 }, { title: "I Thank God", year: 1960 }, { title: "Swing Low", year: 1961 }, { title: "My Kind of Blues", year: 1961 }, { title: "Sam’s Songs", year: 1961 }, { title: "Twistin’ the Night Away", year: 1962 }]
 },
 {
   name: "Sam Phillips",
@@ -328,6 +342,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Lee Lewis",
   summary: "Samuel Cornelius Phillips (January 5, 1923 – July 30, 2003) was an American disc jockey, songwriter and record producer. He was the founder of Sun Records and Sun Studio in Memphis, Tennessee, where he produced recordings by Elvis Presley, Roy Orbison, Jerry Lee Lewis, Carl Perkins, Johnny Cash, and Howlin' Wolf. Phillips played a major role in the development of rock and roll during the 1950s, launching the career of Presley. In 1969, he sold Sun to Shelby Singleton.",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_Phillips",
+  albums: []
 },
 {
   name: "The Beatles",
@@ -350,6 +365,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mick Jagger",
   summary: "The Beatles were an English rock band formed in Liverpool in 1960. The band comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr. They are regarded as the most influential band in popular music and were integral to the development of 1960s counterculture and the recognition of popular music as an art form. Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Beatles",
+  albums: [{ title: "With The Beatles", year: 1963 }, { title: "Please Please Me", year: 1963 }, { title: "Beatles ’65", year: 1964 }, { title: "Twist and Shout", year: 1964 }, { title: "The Beatles’ Second Album", year: 1964 }, { title: "Something New", year: 1964 }, { title: "Introducing… The Beatles", year: 1964 }, { title: "Meet The Beatles!", year: 1964 }, { title: "The Beatles’ Long Tall Sally", year: 1964 }, { title: "Beatles for Sale", year: 1964 }]
 },
 {
   name: "The Everly Brothers",
@@ -372,6 +388,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: "The Everly Brothers were an American musical duo known for steel-string acoustic guitar playing and close-harmony singing. Consisting of Isaac Donald \"Don\" Everly and Phillip \"Phil\" Everly, the duo combined elements of rock and roll, country, and pop, becoming pioneers of country rock.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Everly_Brothers",
+  albums: [{ title: "The Everly Brothers", year: 1958 }, { title: "Songs Our Daddy Taught Us", year: 1958 }, { title: "A Date With The Everly Brothers", year: 1960 }, { title: "It’s Everly Time!", year: 1960 }, { title: "Both Sides of an Evening", year: 1961 }, { title: "Christmas With The Everly Brothers & the Boys Town Choir", year: 1962 }, { title: "Instant Party!", year: 1962 }, { title: "The Everly Brothers Sing Great Country Hits", year: 1963 }, { title: "Gone, Gone, Gone", year: 1964 }, { title: "Rock’n Soul", year: 1965 }]
 },
 {
   name: "Ahmet Ertegün",
@@ -394,6 +411,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jann Wenner and Walter Yetnikoff",
   summary: "Ahmet Ertegun ( AH-met AIR-tə-gən; Turkish: Ahmet Zahrettin Sebuhi Ertegün, pronounced [ahˈmet æɾteˈɟyn]; July 31, 1923 – December 14, 2006) was a Turkish-American businessman, songwriter, record executive and philanthropist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ahmet_Ertegun",
+  albums: []
 },
 {
   name: "Aretha Franklin",
@@ -416,6 +434,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "Aretha Louise Franklin ( ə-REE-thə; March 25, 1942 – August 16, 2018) was an American singer, songwriter and pianist. Regarded as the \"Queen of Soul\", she was twice named by Rolling Stone magazine as the greatest singer of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Aretha_Franklin",
+  albums: [{ title: "Aretha", year: 1961 }, { title: "The Tender, the Moving, the Swinging Aretha Franklin", year: 1962 }, { title: "The Electrifying Aretha Franklin", year: 1962 }, { title: "Laughing on the Outside", year: 1963 }, { title: "Unforgettable: A Tribute to Dinah Washington", year: 1964 }, { title: "Runnin’ Out of Fools", year: 1964 }, { title: "Yeah!!!", year: 1965 }, { title: "Soul Sister", year: 1966 }, { title: "I Never Loved a Man the Way I Love You", year: 1967 }, { title: "Aretha Arrives", year: 1967 }]
 },
 {
   name: "Big Joe Turner",
@@ -438,6 +457,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Doc Pomus",
   summary: "Joseph Vernon \"Big Joe\" Turner Jr. (May 18, 1911 – November 24, 1985) was an American blues shouter from Kansas City, Missouri. Turner's greatest fame was due to his rock and roll recordings in the 1950s, particularly \"Shake, Rattle and Roll\", but his career as a performer endured from the 1920s into the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Big_Joe_Turner",
+  albums: [{ title: "The Boss of the Blues Sings Kansas City Jazz", year: 1956 }, { title: "Rock & Roll", year: 1957 }, { title: "Rockin’ the Blues", year: 1958 }, { title: "Big Joe Is Here", year: 1959 }, { title: "Big Joe Rides Again", year: 1960 }, { title: "Singing the Blues", year: 1967 }, { title: "Things That I Used To Do", year: 1977 }, { title: "Let's Boogie Woogie All Night Long", year: 1978 }, { title: "Everyday I Have the Blues", year: 1978 }, { title: "Flip, Flop & Fly", year: 1989 }]
 },
 {
   name: "Bill Haley",
@@ -460,6 +480,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chuck Berry",
   summary: "William John Clifton Haley (; July 6, 1925 – February 9, 1981) was an American rock and roll musician. He is credited by many with first popularizing this form of music in the early 1950s with his group Bill Haley & His Comets and million-selling hits such as \"Rock Around the Clock\", \"See You Later, Alligator\", \"Shake, Rattle and Roll\", \"Rocket 88\", \"Skinny Minnie\", and \"Razzle Dazzle\". Haley has sold over 60 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Haley",
+  albums: [{ title: "Golden Country Origins", year: 1977 }]
 },
 {
   name: "Bo Diddley",
@@ -482,6 +503,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "ZZ Top",
   summary: "Ellas Otha Bates (December 30, 1928 – June 2, 2008), known professionally as Bo Diddley, was an American guitarist, singer and songwriter who played a key role in the transition from the blues to rock and roll. He influenced many artists, including Buddy Holly, the Beatles, the Rolling Stones, the Animals, George Thorogood, Syd Barrett, Tom Petty, and the Clash.",
   wikipedia: "https://en.wikipedia.org/wiki/Bo_Diddley",
+  albums: [{ title: "Bo Diddley", year: 1958 }, { title: "Go Bo Diddley", year: 1959 }, { title: "Have Guitar Will Travel", year: 1960 }, { title: "Bo Diddley in the Spotlight", year: 1960 }, { title: "Bo Diddley Is a Lover", year: 1961 }, { title: "Bo Diddley Is a Gunslinger", year: 1961 }, { title: "Bo Diddley & Company", year: 1962 }, { title: "Bo Diddley's a Twister", year: 1962 }, { title: "Bo Diddley", year: 1962 }, { title: "Surfin' With Bo Diddley", year: 1963 }]
 },
 {
   name: "Carl Perkins",
@@ -504,6 +526,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sam Phillips",
   summary: "Carl Lee Perkins (April 9, 1932 – January 19, 1998) was an American country, rockabilly, and rock and roll guitarist, singer and songwriter.  A rockabilly great and pioneer of rock and roll, he began his recording career at the Sun Studio in Memphis in 1954. Among his best known songs are \"Blue Suede Shoes\", \"Honey Don't\", \"Matchbox\" and \"Everybody's Trying to Be My Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Carl_Perkins",
+  albums: [{ title: "Dance Album of… Carl Perkins", year: 1957 }, { title: "Whole Lotta Shakin’", year: 1958 }, { title: "Country Boy’s Dream", year: 1967 }, { title: "Carl Perkins on Top", year: 1969 }, { title: "Boppin’ the Blues", year: 1970 }, { title: "My Kind of Country", year: 1973 }, { title: "Cane Creek Glory Church", year: 1977 }, { title: "Ol’ Blue Suede’s Back: Carl Perkins’ Tribute to Rock and Roll", year: 1978 }, { title: "Country Soul", year: 1981 }, { title: "This Ole House", year: 1982 }]
 },
 {
   name: "Clyde McPhatter",
@@ -526,6 +549,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ben E. King",
   summary: "Clyde Lensley McPhatter (November 15, 1932 – June 13, 1972) was an American rhythm and blues, soul, and rock and roll singer. He was one of the most widely imitated R&B singers of the 1950s and early 1960s and was a key figure in the shaping of doo-wop and R&B.",
   wikipedia: "https://en.wikipedia.org/wiki/Clyde_McPhatter",
+  albums: [{ title: "Clyde McPhatter & The Drifters", year: 1956 }, { title: "Clyde McPhatter with Billy Ward and His Dominoes", year: 1957 }, { title: "Love Ballads", year: 1958 }, { title: "Clyde", year: 1959 }, { title: "Lover Please!", year: 1962 }, { title: "Welcome Home", year: 1970 }, { title: "Greatest Hits", year: null }]
 },
 {
   name: "Eddie Cochran",
@@ -548,6 +572,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mick Jones",
   summary: "Edward Ray Cochran ( KOK-rən; October 3, 1938 – April 17, 1960) was an American rock and roll musician. His songs, such as \"Twenty Flight Rock\", \"Summertime Blues\", \"C'mon Everybody\" and \"Somethin' Else\", captured teenage frustration and desire in the mid-1950s and early 1960s. He experimented with multitrack recording, distortion techniques and overdubbing, even on his earliest singles. Cochran played the guitar, piano, bass, and drums.",
   wikipedia: "https://en.wikipedia.org/wiki/Eddie_Cochran",
+  albums: [{ title: "Singin' to My Baby", year: 1957 }, { title: "The Eddie Cochran Memorial Album", year: 1960 }, { title: "Never to Be Forgotten", year: 1962 }, { title: "My Way", year: 1978 }, { title: "The Hollywood Rocker", year: 1987 }, { title: "Guitar Pickin' Rarities", year: 1992 }, { title: "Nervous Breakdown", year: 2009 }]
 },
 {
   name: "Hank Williams",
@@ -570,6 +595,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Seymour Stein",
   summary: "Hiram \"Hank\" Williams (September 17, 1923 – January 1, 1953) was an American singer, songwriter, and musician. An early pioneer of country music, he is regarded as one of the most significant and influential musicians of the 20th century. Williams recorded 55 singles that reached the top 10 of the Billboard Country & Western Best Sellers chart, 5 of which were released posthumously, and 12 of which reached No.1.",
   wikipedia: "https://en.wikipedia.org/wiki/Hank_Williams",
+  albums: [{ title: "Hank Williams Sings", year: 1949 }, { title: "Moanin’ the Blues", year: 1952 }, { title: "Memorial Album", year: 1953 }, { title: "Beyond the Sunset", year: 1953 }, { title: "Honky Tonkin’", year: 1954 }, { title: "Ramblin’ Man", year: 1955 }, { title: "Sing Me a Blue Song", year: 1957 }, { title: "The Unforgettable Hank Williams", year: 1959 }, { title: "The Lonesome Sound of Hank Williams", year: 1960 }, { title: "Wait for the Light to Shine", year: 1960 }]
 },
 {
   name: "Jackie Wilson",
@@ -592,6 +618,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Peter Wolf",
   summary: "Jack Leroy Wilson Jr. (June 9, 1934 – January 21, 1984) was an American singer who was a prominent figure in the transition of rhythm and blues into soul. Nicknamed \"Mr. Excitement\", he was considered a master showman and one of the most dynamic singers and performers in the 20th century. Among his hits are \"Lonely Teardrops,\" \"Baby Workout,\" \"Reet Petite\", \"I Get the Sweetest Feeling\" and \"(Your Love Keeps Lifting Me) Higher and Higher\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jackie_Wilson",
+  albums: [{ title: "He’s So Fine", year: 1958 }, { title: "Lonely Teardrops", year: 1959 }, { title: "So Much", year: 1959 }, { title: "Jackie Sings the Blues", year: 1960 }, { title: "A Woman, a Lover, a Friend", year: 1960 }, { title: "By Special Request", year: 1961 }, { title: "You Ain’t Heard Nothin’ Yet", year: 1961 }, { title: "Sings the World’s Greatest Melodies", year: 1962 }, { title: "Body and Soul", year: 1962 }, { title: "Baby Workout", year: 1963 }]
 },
 {
   name: "Jerry Wexler",
@@ -614,6 +641,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jann Wenner",
   summary: "Gerald Wexler (January 10, 1917 – August 15, 2008) was a music journalist turned music producer, and was a major influence on American popular music from the 1950s through the 1980s. He coined the term \"rhythm and blues\", and was integral in signing and/or producing many of the biggest acts of the time, including Ray Charles, the Allman Brothers, Chris Connor, Aretha Franklin, Led Zeppelin, Wilson Pickett, Dire Straits, Dusty Springfield and Bob Dylan.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Wexler",
+  albums: []
 },
 {
   name: "Leiber-Stoller",
@@ -636,6 +664,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Norm N. Nite and Scott Muni",
   summary: "Leiber and Stoller were an American songwriting and record-production duo, consisting of lyricist Jerome Leiber (; April 25, 1933 – August 22, 2011) and composer Michael Stoller (born March 13, 1933). As well as many R&B and pop hits, they wrote numerous standards for Broadway.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Leiber_and_Mike_Stoller",
+  albums: []
 },
 {
   name: "Leonard Chess",
@@ -658,6 +687,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ewart Abner",
   summary: "Leonard Samuel Chess (born Lejzor Szmuel Czyż; March 12, 1917 – October 16, 1969) was a Polish-American record company executive and the founder of Chess Records alongside his brother Phil. He was influential in the development of the recording industry, and electric blues, Chicago blues, and rock and roll.",
   wikipedia: "https://en.wikipedia.org/wiki/Leonard_Chess",
+  albums: []
 },
 {
   name: "Louis Jordan",
@@ -680,6 +710,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Seymour Stein",
   summary: "Louis Thomas Jordan (July 8, 1908 – February 4, 1975) was an American jazz, blues and jump blues saxophonist, vocalist, songwriter and bandleader who was popular from the late 1930s to the early 1950s. Known as \"the King of the Jukebox\", he earned his highest profile towards the end of the swing era.",
   wikipedia: "https://en.wikipedia.org/wiki/Louis_Jordan",
+  albums: [{ title: "Man, We're Wailin'", year: 1958 }, { title: "Somebody Up There Digs Me", year: 1962 }, { title: "Hallelujah... Louis Jordan Is Back!", year: 1964 }, { title: "Louis Jordan & Chris Barber", year: 1977 }, { title: "I Believe in Music: The Blues Singer & Players Collection, Volume 20", year: 1980 }, { title: "Rock 'n Roll Call", year: 1985 }, { title: "Is You Or Is You Ain't", year: 1999 }, { title: "Five Guys Named Moe (The V Discs)", year: null }]
 },
 {
   name: "Marvin Gaye",
@@ -702,6 +733,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Nick Ashford and Valerie Simpson",
   summary: "Marvin Pentz Gaye Jr. (né Gay; April 2, 1939 – April 1, 1984) was an American R&B and soul singer, songwriter, musician, and record producer. Commonly referred to as the \"Prince of Motown\" and \"Prince of Soul\", he helped to shape the sound of Motown and soul music in the 1960s and 1970s. A cultural icon, Gaye is often considered one of the greatest singers and songwriters of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Marvin_Gaye",
+  albums: [{ title: "The Soulful Moods of Marvin Gaye", year: 1961 }, { title: "That Stubborn Kinda’ Fellow", year: 1963 }, { title: "Hello Broadway", year: 1964 }, { title: "When I’m Alone I Cry", year: 1964 }, { title: "Together", year: 1964 }, { title: "How Sweet It Is to Be Loved by You", year: 1965 }, { title: "A Tribute to the Great Nat King Cole", year: 1965 }, { title: "Take Two", year: 1966 }, { title: "Moods of Marvin Gaye", year: 1966 }, { title: "United", year: 1967 }]
 },
 {
   name: "Muddy Waters",
@@ -724,6 +756,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Butterfield",
   summary: "McKinley Morganfield (April 4, 1913 – April 30, 1983), better known as Muddy Waters, was an American blues singer-songwriter and musician who was an important figure in the post-World War II blues scene, and is often cited as the \"father of modern Chicago blues\". His style of playing has been described as \"raining down Delta beatitude\".",
   wikipedia: "https://en.wikipedia.org/wiki/Muddy_Waters",
+  albums: [{ title: "Muddy Waters Sings Big Bill Broonzy", year: 1960 }, { title: "Folk Singer", year: 1964 }, { title: "Muddy, Brass and the Blues", year: 1966 }, { title: "Down on Stovall’s Plantation", year: 1966 }, { title: "Super Blues", year: 1967 }, { title: "The Super Super Blues Band", year: 1967 }, { title: "Electric Mud", year: 1968 }, { title: "Fathers and Sons", year: 1969 }, { title: "After the Rain", year: 1969 }, { title: "The London Muddy Waters Sessions", year: 1972 }]
 },
 {
   name: "Ricky Nelson",
@@ -746,6 +779,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Fogerty",
   summary: "Eric Hilliard \"Ricky\" or “Rick” Nelson (May 8, 1940 – December 31, 1985) was an American musician and actor. From age eight, he starred alongside his family in the radio and television series The Adventures of Ozzie and Harriet. In 1957, he began a long and successful career as a popular recording artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ricky_Nelson",
+  albums: [{ title: "Ricky", year: 1957 }, { title: "Ricky Nelson", year: 1958 }, { title: "Songs by Ricky", year: 1959 }, { title: "Ricky Sings Again", year: 1959 }, { title: "More Songs by Ricky", year: 1960 }, { title: "Rick Is 21", year: 1961 }, { title: "Album Seven by Rick", year: 1962 }, { title: "It's Up to You", year: 1963 }, { title: "For Your Sweet Love", year: 1963 }, { title: "Rick Nelson Sings \"For You\"", year: 1963 }]
 },
 {
   name: "Roy Orbison",
@@ -768,6 +802,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Roy Kelton Orbison (April 23, 1936 – December 6, 1988) was an American singer, songwriter and guitarist known for his distinctive and powerful voice, complex song structures, and dark, emotional ballads. Orbison's most successful periods were in the early 1960s and the late 1980s. Many of Orbison's songs conveyed vulnerability at a time when most male performers projected strength. He performed with minimal motion and in black clothes, matching his dyed black hair and dark sunglasses.",
   wikipedia: "https://en.wikipedia.org/wiki/Roy_Orbison",
+  albums: [{ title: "At the Rock House", year: 1961 }, { title: "Lonely and Blue", year: 1961 }, { title: "Crying", year: 1962 }, { title: "In Dreams", year: 1963 }, { title: "There Is Only One Roy Orbison", year: 1965 }, { title: "The Classic Roy Orbison", year: 1966 }, { title: "The Orbison Way", year: 1966 }, { title: "Live in Melbourne 1967 (Live: Melbourne Festival Hall, Australia January 1967)", year: 1967 }, { title: "Cry Softly Lonely One", year: 1967 }, { title: "Sings Don Gibson", year: 1967 }]
 },
 {
   name: "Smokey Robinson",
@@ -790,6 +825,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Daryl Hall and John Oates",
   summary: "William \"Smokey\" Robinson Jr. (born February 19, 1940) is an American R&B and soul singer, songwriter, and record producer. He was the founder and frontman of the pioneering Motown vocal group the Miracles, for which he was also chief songwriter and producer. He led the group from its 1955 origins, when they were called the Five Chimes, until 1972, when he retired from the group to focus on his role as Motown Records vice president.",
   wikipedia: "https://en.wikipedia.org/wiki/Smokey_Robinson",
+  albums: [{ title: "Smokey", year: 1973 }, { title: "Pure Smokey", year: 1974 }, { title: "A Quiet Storm", year: 1975 }, { title: "Smokey's Family Robinson", year: 1976 }, { title: "Deep in My Soul", year: 1977 }, { title: "Big Time - Original Music Score From The Motion Picture", year: 1977 }, { title: "Love Breeze", year: 1978 }, { title: "Where There's Smoke...", year: 1979 }, { title: "Warm Thoughts", year: 1980 }, { title: "Being With You", year: 1981 }]
 },
 {
   name: "T-Bone Walker",
@@ -812,6 +848,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Seymour Stein",
   summary: "Aaron Thibeaux \"T-Bone\" Walker (May 28, 1910 – March 16, 1975) was an American blues musician, composer, songwriter and bandleader, who was a pioneer and innovator of the jump blues, West Coast blues, and electric blues sounds. In 2018  Rolling Stone magazine ranked him number 67 on its list of \"The 100 Greatest Guitarists of All Time\".",
   wikipedia: "https://en.wikipedia.org/wiki/T-Bone_Walker",
+  albums: [{ title: "T‐Bone Blues", year: 1959 }, { title: "Sings the Blues", year: 1960 }, { title: "I Get So Weary", year: 1961 }, { title: "Stormy Monday Blues", year: 1967 }, { title: "Funky Town", year: 1968 }, { title: "Every Day I Have the Blues", year: 1969 }, { title: "Good Feelin’", year: 1969 }, { title: "Stormy Monday Blues", year: 1970 }, { title: "I Want a Little Girl", year: 1973 }, { title: "Very Rare", year: 1973 }]
 },
 {
   name: "The Coasters",
@@ -834,6 +871,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lester Sill",
   summary: "The Coasters are an American rhythm and blues/rock and roll vocal group who had a string of hits in the late 1950s. With hits including \"Searchin'\", \"Young Blood\", \"Charlie Brown\", \"Poison Ivy\", and \"Yakety Yak\", their most memorable songs were written by the songwriting and producing team of Leiber and Stoller. Although the Coasters originated outside of mainstream doo-wop, their records were so frequently imitated that they became an important part of the doo-wop legacy through the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Coasters",
+  albums: [{ title: "The Coasters", year: 1957 }, { title: "One by One", year: 1960 }, { title: "Coast Along With The Coasters", year: 1962 }, { title: "On Broadway", year: 1973 }, { title: "Coasting", year: 1979 }, { title: "Christmas With the Coasters", year: 2015 }, { title: "Down", year: 2021 }, { title: "Resting on the Beach", year: 2021 }, { title: "Essential Classics, Vol. 69: The Coasters", year: 2024 }]
 },
 {
   name: "Berry Gordy",
@@ -856,6 +894,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ahmet Ertegun",
   summary: "Berry Gordy III (born November 28, 1929), also known as Berry Gordy Jr., is an American retired record executive, record producer, songwriter, film producer, and television producer. He is best known as the founder of the Motown record label and its subsidiaries, which was the highest-earning African-American business for decades.",
   wikipedia: "https://en.wikipedia.org/wiki/Berry_Gordy",
+  albums: []
 },
 {
   name: "Bob Dylan",
@@ -878,6 +917,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Bob Dylan (legally Robert Dylan; born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter. Described as one of the greatest songwriters of all time, Dylan has been a major figure in popular culture over his 69-year career. With an estimated 125 million records sold worldwide, he is one of the best-selling musicians.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Dylan",
+  albums: [{ title: "Bob Dylan", year: 1962 }, { title: "The Freewheelin’ Bob Dylan", year: 1963 }, { title: "The Times They Are A‐Changin’", year: 1964 }, { title: "Another Side of Bob Dylan", year: 1964 }, { title: "Bringing It All Back Home", year: 1965 }, { title: "Highway 61 Revisited", year: 1965 }, { title: "Blonde on Blonde", year: 1966 }, { title: "John Wesley Harding", year: 1967 }, { title: "Nashville Skyline", year: 1969 }, { title: "New Morning", year: 1970 }]
 },
 {
   name: "Les Paul",
@@ -900,6 +940,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jeff Beck",
   summary: "Lester William Polsfuss (June 9, 1915 – August 12, 2009), known as Les Paul, was an American jazz, country, and blues guitarist, songwriter, luthier, and inventor. He was one of the pioneers of the solid-body electric guitar, and his prototype, called the Log, served as inspiration for the Gibson Les Paul. Paul taught himself how to play guitar, and while he is mainly known for jazz and popular music, he had an early career in country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Les_Paul",
+  albums: [{ title: "The New Sound!", year: 1950 }, { title: "Now!", year: 1968 }, { title: "Chester & Lester", year: 1976 }, { title: "Guitar Monsters", year: 1978 }, { title: "American Made World Played", year: 2005 }, { title: "Guitar Monsters", year: 2013 }]
 },
 {
   name: "The Beach Boys",
@@ -922,6 +963,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "The Beach Boys are an American rock band formed in Hawthorne, California, in 1961. The group's founding members consisted of brothers Brian, Dennis, and Carl Wilson, their cousin Mike Love, and their friend Al Jardine. One of the most popular and influential acts of the rock era, they are known for their musical ingenuity, vocal harmonies, and lyrics initially reflecting a southern California youth culture of surfing, cars, and romance dubbed the \"California sound\".",
   wikipedia: "https://en.wikipedia.org/wiki/The_Beach_Boys",
+  albums: [{ title: "Surfin’ Safari", year: 1962 }, { title: "Surfer Girl", year: 1963 }, { title: "Little Deuce Coupe", year: 1963 }, { title: "Surfin’ USA", year: 1963 }, { title: "All Summer Long", year: 1964 }, { title: "Shut Down, Volume 2", year: 1964 }, { title: "The Beach Boys’ Christmas Album", year: 1964 }, { title: "The Beach Boys Today!", year: 1965 }, { title: "Summer Days (and Summer Nights!!)", year: 1965 }, { title: "Beach Boys’ Party!", year: 1965 }]
 },
 {
   name: "The Drifters",
@@ -944,6 +986,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Joel",
   summary: "The Drifters are an American pop and R&B/soul vocal group. They were originally formed as a backing group for Clyde McPhatter, formerly the lead tenor of Billy Ward and his Dominoes in 1953. The second group of Drifters, formed in 1959 and led by Ben E. King, were originally an up-and-coming group named the Five Crowns. After 1965, members moved between both groups, and many of these formed other groups of Drifters as well.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Drifters",
+  albums: [{ title: "Clyde McPhatter & The Drifters", year: 1956 }, { title: "Rockin’ & Driftin’", year: 1958 }, { title: "Save the Last Dance for Me", year: 1962 }, { title: "Under the Boardwalk", year: 1964 }, { title: "The Good Life With the Drifters", year: 1965 }, { title: "I’ll Take You Where the Music’s Playing", year: 1965 }, { title: "Now", year: 1973 }, { title: "There Goes My First Love", year: 1975 }, { title: "Love Games", year: 1975 }, { title: "Every Nite's a Saturday Night", year: 1976 }]
 },
 {
   name: "The Supremes",
@@ -966,6 +1009,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Little Richard",
   summary: "The Supremes were an American girl group formed in Detroit, Michigan, in 1959 as the Primettes. The premier act of Motown Records during the 1960s, the Supremes were the most commercially successful of Motown's acts and the most successful American vocal group, with twelve number 1 singles on the Billboard Hot 100. Most of these hits were written and produced by Motown's main songwriting and production team, Holland–Dozier–Holland.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Supremes",
+  albums: [{ title: "Meet the Supremes", year: 1962 }, { title: "Where Did Our Love Go", year: 1964 }, { title: "A Bit of Liverpool", year: 1964 }, { title: "We Remember Sam Cooke", year: 1965 }, { title: "Merry Christmas", year: 1965 }, { title: "Sing Country Western & Pop", year: 1965 }, { title: "More Hits by the Supremes", year: 1965 }, { title: "The Supremes A’ Go‐Go", year: 1966 }, { title: "I Hear a Symphony", year: 1966 }, { title: "Sing Rodgers & Hart", year: 1967 }]
 },
 {
   name: "Woody Guthrie",
@@ -988,6 +1032,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: "Woodrow Wilson Guthrie (; July 14, 1912 – October 3, 1967) was an American singer, songwriter,  and composer widely considered one of the most significant figures in American folk music. His work focused on themes of American socialism and anti-fascism and has inspired many generations politically and musically with songs such as \"This Land Is Your Land\" and \"Tear the Fascists Down\".",
   wikipedia: "https://en.wikipedia.org/wiki/Woody_Guthrie",
+  albums: [{ title: "Dust Bowl Ballads", year: 1940 }, { title: "Songs for Victory: Music for Political Action", year: 1944 }, { title: "Struggle", year: 1945 }, { title: "Songs by Woody Guthrie", year: 1945 }, { title: "Nursery Days", year: 1946 }, { title: "Songs to Grow On (Work Songs)", year: 1947 }, { title: "Midnight Special", year: 1947 }, { title: "Ballads from the Dust Bowl", year: 1948 }, { title: "Bound for Glory (The Songs and Story of Woody Guthrie)", year: 1956 }, { title: "Library of Congress Recordings", year: 1964 }]
 },
 {
   name: "Bessie Smith",
@@ -1010,6 +1055,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Anita Baker",
   summary: "Bessie Smith (April 15, 1892 – September 26, 1937) was an African-American blues singer widely renowned during the Jazz Age. Nicknamed the \"Empress of the Blues\" and formerly Queen of the Blues, she was the most popular female blues singer of the 1930s. Inducted into the Rock and Roll Hall of Fame in 1989, she is often regarded as one of the greatest singers of her era and was a major influence on fellow blues singers, as well as jazz vocalists.",
   wikipedia: "https://en.wikipedia.org/wiki/Bessie_Smith",
+  albums: [{ title: "Young Woman's Blues", year: 2007 }, { title: "Me and My Gin", year: 2018 }]
 },
 {
   name: "Dion DiMucci",
@@ -1032,6 +1078,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lou Reed",
   summary: "Dion Francis DiMucci (born July 18, 1939), better known mononymously as Dion, is an American singer and songwriter. His music incorporates elements of doo-wop, pop, rock, R&B, folk and blues. Initially the lead singer of the vocal group Dion and the Belmonts, Dion embarked on a solo career, and was one of the most prominent rock and roll performers of the pre-British Invasion era.",
   wikipedia: "https://en.wikipedia.org/wiki/Dion_DiMucci",
+  albums: [{ title: "Alone with Dion", year: 1961 }, { title: "Runaround Sue", year: 1961 }, { title: "Lovers Who Wander", year: 1962 }, { title: "Ruby Baby", year: 1963 }, { title: "Lovers Who Wander", year: 1963 }, { title: "Dion Sings to Sandy", year: 1963 }, { title: "Love Came to Me", year: 1963 }, { title: "Donna the Prima Donna", year: 1963 }, { title: "Dion", year: 1968 }, { title: "Wonder Where I’m Bound", year: 1969 }]
 },
 {
   name: "Otis Redding",
@@ -1054,6 +1101,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Little Richard",
   summary: "Otis Ray Redding Jr. (September 9, 1941 – December 10, 1967) was an American singer and songwriter. He is regarded as one of the greatest singers in the history of American popular music and a seminal artist in soul music and rhythm and blues. Nicknamed the \"King of Soul\", Redding's style of singing drew inspiration from the gospel music that preceded the genre. His vocal style influenced many other soul artists of the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Otis_Redding",
+  albums: [{ title: "Pain in My Heart", year: 1964 }, { title: "Otis Blue / Otis Redding Sings Soul", year: 1965 }, { title: "The Great Otis Redding Sings Soul Ballads", year: 1965 }, { title: "Complete & Unbelievable: The Otis Redding Dictionary of Soul", year: 1966 }, { title: "The Soul Album", year: 1966 }, { title: "King & Queen", year: 1967 }, { title: "The Immortal Otis Redding", year: 1968 }, { title: "Love Man", year: 1969 }, { title: "Tell the Truth", year: 1970 }]
 },
 {
   name: "Phil Spector",
@@ -1076,6 +1124,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tina Turner",
   summary: "Harvey Phillip Spector (December 26, 1939 – January 16, 2021) was an American record producer and songwriter primarily known for his Wall of Sound production style in the 1960s, followed by his trials and imprisonment for murder after the 2000s. Considered the first music producer auteur, he is the most successful American producer of the 1960s and widely regarded as one of the most influential figures in pop music history.",
   wikipedia: "https://en.wikipedia.org/wiki/Phil_Spector",
+  albums: []
 },
 {
   name: "Stevie Wonder",
@@ -1098,6 +1147,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Simon",
   summary: "Stevland Hardaway Morris ( STEEV-lənd; né Judkins; born May 13, 1950), known professionally as Stevie Wonder, is an American singer-songwriter, musician, and record producer. He is widely regarded as one of the most influential musicians of the 20th century, and is credited as a pioneer and influence by musicians across a range of genres that include R&B, pop, soul, gospel, funk, and jazz.",
   wikipedia: "https://en.wikipedia.org/wiki/Stevie_Wonder",
+  albums: [{ title: "The Jazz Soul of Little Stevie", year: 1962 }, { title: "With a Song in My Heart", year: 1963 }, { title: "Tribute to Uncle Ray", year: 1963 }, { title: "Stevie at the Beach", year: 1964 }, { title: "Up‐Tight (Everything’s Alright)", year: 1966 }, { title: "Down to Earth", year: 1966 }, { title: "I Was Made to Love Her", year: 1967 }, { title: "Someday at Christmas", year: 1967 }, { title: "For Once in My Life", year: 1968 }, { title: "Eivets Rednow", year: 1968 }]
 },
 {
   name: "The Ink Spots",
@@ -1120,6 +1170,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bobby McFerrin",
   summary: "The Ink Spots were an American vocal pop group who gained international fame in the 1930s and 1940s. Their unique musical style predated the rhythm and blues and rock and roll musical genres, and the subgenre doo-wop. The Ink Spots were widely accepted in both the white and black communities, largely due to the ballad style introduced to the group by lead singer Bill Kenny.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ink_Spots",
+  albums: [{ title: "Vol. 1", year: 1946 }, { title: "The Ink Spots, Volume 2", year: 1949 }, { title: "Do I Worry", year: 1955 }, { title: "The Ink Spots in Hi‐Fi", year: 1957 }, { title: "4 of a Kind", year: 1960 }, { title: "The Ink Spots At Las Vegas", year: 1961 }, { title: "Stanley Morgan's Ink Spots In London", year: 1979 }, { title: "Whispering Grass", year: 1985 }, { title: "If I Didn't Care", year: 1988 }, { title: "Swing High! Swing Low!", year: 1989 }]
 },
 {
   name: "The Rolling Stones",
@@ -1142,6 +1193,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pete Townshend",
   summary: "The Rolling Stones are an English rock band formed in London in 1962. Active for over six decades, they are one of the most popular, influential, and enduring bands of the rock era. In the early 1960s, the band pioneered the gritty, rhythmically driven sound that came to define hard rock.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Rolling_Stones",
+  albums: [{ title: "12 × 5", year: 1964 }, { title: "England’s Newest Hit Makers", year: 1964 }, { title: "The Rolling Stones, Now!", year: 1965 }, { title: "Out of Our Heads", year: 1965 }, { title: "The Rolling Stones No. 2", year: 1965 }, { title: "December’s Children (and Everybody’s)", year: 1965 }, { title: "Aftermath", year: 1966 }, { title: "Their Satanic Majesties Request", year: 1967 }, { title: "Between the Buttons", year: 1967 }, { title: "Beggars Banquet", year: 1968 }]
 },
 {
   name: "The Soul Stirrers",
@@ -1164,6 +1216,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Al Green",
   summary: "The Soul Stirrers were an American gospel music group, whose career spans over 90 years. The group was a pioneer in the development of the quartet style of gospel, and a major influence on soul, R&B, doo-wop, and Southern soul, some of the secular music that owed much to gospel.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Soul_Stirrers",
+  albums: [{ title: "Jesus Be a Fence Around Me", year: 1961 }, { title: "Encore! With The Soul Stirrers", year: 1963 }, { title: "The Gospel Truth", year: 1967 }, { title: "The Golden Gospel", year: 1968 }, { title: "Strength, Power, and Love", year: 1973 }, { title: "Heritage, Vol. I", year: 1974 }, { title: "Heritage, Vol. II", year: 1976 }, { title: "Jesus Gave Me Water", year: 1993 }, { title: "Heaven Is My Home", year: 1993 }, { title: "Peace in the Valley", year: 1994 }]
 },
 {
   name: "The Temptations",
@@ -1186,6 +1239,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Daryl Hall and John Oates",
   summary: "The Temptations are an American vocal group formed in Detroit, Michigan, in 1961 as The Elgins, known for their string of successful singles and albums with Motown from the 1960s to  the mid-1970s. The group's work with producer Norman Whitfield, beginning with the Top 10 hit single \"Cloud Nine\" in October 1968, pioneered psychedelic soul, and was significant in the evolution of R&B and soul music. The group members were known for their choreography, distinct harmonies, and dress style.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Temptations",
+  albums: [{ title: "Meet the Temptations", year: 1964 }, { title: "The Temptations Sing Smokey", year: 1965 }, { title: "Temptin’ Temptations", year: 1965 }, { title: "Gettin’ Ready", year: 1966 }, { title: "With a Lot o’ Soul", year: 1967 }, { title: "In a Mellow Mood", year: 1967 }, { title: "Diana Ross & The Supremes Join The Temptations", year: 1968 }, { title: "Wish It Would Rain", year: 1968 }, { title: "Together", year: 1969 }, { title: "Puzzle People", year: 1969 }]
 },
 {
   name: "Carole King",
@@ -1208,6 +1262,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ben E. King",
   summary: "Carole King Klein (born Carol Joan Klein; February 9, 1942) is an American singer-songwriter and musician renowned for her extensive contributions to popular music. She wrote or co-wrote 118 songs that charted on the Billboard Hot 100 during the latter half of the 20th century and 61 songs that reached the UK charts, establishing her as the most successful female songwriter on the UK singles charts from 1962 to 2005.",
   wikipedia: "https://en.wikipedia.org/wiki/Carole_King",
+  albums: [{ title: "Writer", year: 1970 }, { title: "Music", year: 1971 }, { title: "Tapestry", year: 1971 }, { title: "Rhymes & Reasons", year: 1972 }, { title: "Fantasy", year: 1973 }, { title: "Wrap Around Joy", year: 1974 }, { title: "Thoroughbred", year: 1975 }, { title: "Simple Things", year: 1977 }, { title: "Welcome Home", year: 1978 }, { title: "Touch the Sky", year: 1979 }]
 },
 {
   name: "Charlie Christian",
@@ -1230,6 +1285,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Vernon Reid",
   summary: "Charles Henry Christian (July 29, 1916 – March 2, 1942) was an American swing and jazz guitarist. He was among the first electric guitarists and was a key figure in the development of bebop and cool jazz. He gained national exposure as a member of the Benny Goodman Sextet and Orchestra from August 1939 to June 1941. His single-string technique, combined with early adoption of the electric guitar, helped bring the guitar out of the rhythm section and into the forefront as a solo instrument.",
   wikipedia: "https://en.wikipedia.org/wiki/Charlie_Christian",
+  albums: [{ title: "Memorable Sessions in Jazz", year: 1953 }, { title: "The Daddy of 'Em All", year: 2009 }]
 },
 {
   name: "Four Tops",
@@ -1252,6 +1308,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Stevie Wonder",
   summary: "The Four Tops are an American vocal group formed in Detroit, Michigan, in 1953 as the Four Aims. They were one of the most commercially successful American pop music groups of the 1960s and helped propel Motown Records to international fame. The group's repertoire has incorporated elements of soul, R&B, disco, adult contemporary, doo-wop, jazz, and show tunes.",
   wikipedia: "https://en.wikipedia.org/wiki/Four_Tops",
+  albums: [{ title: "Four Tops", year: 1964 }, { title: "Second Album", year: 1965 }, { title: "On Top", year: 1966 }, { title: "Four Tops on Broadway", year: 1967 }, { title: "Reach Out", year: 1967 }, { title: "Yesterday’s Dreams", year: 1968 }, { title: "Soul Spin", year: 1969 }, { title: "Four Tops Now!", year: 1969 }, { title: "Still Waters Run Deep", year: 1970 }, { title: "The Magnificent 7", year: 1970 }]
 },
 {
   name: "Gerry Goffin",
@@ -1274,6 +1331,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ben E. King",
   summary: "Gerald Goffin (February 11, 1939 – June 19, 2014) was an American lyricist. Collaborating initially with his first wife, Carole King, he co-wrote many international pop hits of the early and mid-1960s, including the US No. 1 hits \"Will You Love Me Tomorrow\", \"Take Good Care of My Baby\", \"The Loco-Motion\", and \"Go Away Little Girl\".  It was later said of Goffin that his gift was \"to find words that expressed what many young people were feeling but were unable to articulate.\"",
   wikipedia: "https://en.wikipedia.org/wiki/Gerry_Goffin",
+  albums: [{ title: "It Ain't Exactly Entertainment", year: 1973 }, { title: "Back Room Blood", year: 1996 }]
 },
 {
   name: "Hank Ballard",
@@ -1296,6 +1354,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Boz Scaggs",
   summary: "Hank Ballard (born John Henry Kendricks; November 18, 1927 – March 2, 2003) was an American singer and songwriter, the lead vocalist of the Midnighters and one of the first rock and roll artists to emerge in the early 1950s. John Henry played an integral part in the development of the genre, releasing the hit singles \"Work with Me, Annie\" and answer songs \"Annie Had a Baby\" and \"Annie's Aunt Fannie\" with his Midnighters.",
   wikipedia: "https://en.wikipedia.org/wiki/Hank_Ballard",
+  albums: [{ title: "You Can’t Keep a Good Man Down", year: 1968 }, { title: "Hanging With Hank", year: 1976 }, { title: "Let ’em Roll", year: 1990 }]
 },
 {
   name: "Holland–Dozier–Holland",
@@ -1318,6 +1377,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Diana Ross",
   summary: "Holland–Dozier–Holland, often abbreviated as H-D-H, was a songwriting and production team consisting of Lamont Dozier and brothers Brian and Eddie Holland.  The trio wrote, arranged and produced many songs that helped define the Motown sound in the 1960s. During their tenure at Motown Records from 1962 to 1967, Dozier and Brian Holland were the composers and producers for each song, and Eddie Holland wrote the lyrics and arranged the vocals.",
   wikipedia: "https://en.wikipedia.org/wiki/Holland%E2%80%93Dozier%E2%80%93Holland",
+  albums: []
 },
 {
   name: "Louis Armstrong",
@@ -1340,6 +1400,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rickie Lee Jones",
   summary: "Louis Daniel Armstrong (August 4, 1901 – July 6, 1971), nicknamed \"Satchmo\", \"Satch\", and \"Pops\", was an American jazz and blues trumpeter and vocalist. Among the most influential figures in jazz, his career spanned five decades and several eras in the history of the genre. Armstrong received numerous accolades including the Grammy Award for Best Male Vocal Performance for Hello, Dolly! in 1965, as well as a posthumous win for the Grammy Lifetime Achievement Award in 1972.",
   wikipedia: "https://en.wikipedia.org/wiki/Louis_Armstrong",
+  albums: [{ title: "Louis and Earl", year: 1941 }, { title: "Paris 1934", year: 1947 }, { title: "Louis Armstrong Plays W.C. Handy", year: 1954 }, { title: "Satch Plays Fats: A Tribute to the Immortal Fats Waller", year: 1955 }, { title: "Ella and Louis", year: 1956 }, { title: "Louis Armstrong Meets Oscar Peterson", year: 1957 }, { title: "Ella and Louis Again", year: 1957 }, { title: "Porgy & Bess", year: 1957 }, { title: "Ella and Louis Again, Volume Two", year: 1957 }, { title: "Louis and the Angels", year: 1957 }]
 },
 {
   name: "Ma Rainey",
@@ -1362,6 +1423,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bonnie Raitt",
   summary: "Gertrude \"Ma\" Rainey (née Pridgett; April 26, 1886 – December 22, 1939) was an American blues singer and influential early-blues recording artist. Dubbed the \"Mother of the Blues\", she bridged earlier vaudeville and the authentic expression of southern blues, influencing a generation of blues singers. Rainey was known for her powerful vocal abilities, energetic disposition, majestic phrasing, and a \"moaning\" style of singing.",
   wikipedia: "https://en.wikipedia.org/wiki/Ma_Rainey",
+  albums: []
 },
 {
   name: "Simon & Garfunkel",
@@ -1384,6 +1446,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "James Taylor",
   summary: "Simon & Garfunkel were an American musical duo comprising the singer-songwriter Paul Simon and the singer Art Garfunkel. They were one of the best-selling musical acts of the 1960s. Their recordings include three U.S. number-one singles—\"The Sound of Silence\" and the two Record of the Year Grammy winners \"Mrs. Robinson\" and \"Bridge over Troubled Water\"—as well as \"Homeward Bound\", \"I Am a Rock\", \"Scarborough Fair/Canticle\", \"A Hazy Shade of Winter\", \"America\", \"The Boxer\" and \"Cecilia\".",
   wikipedia: "https://en.wikipedia.org/wiki/Simon_%26_Garfunkel",
+  albums: [{ title: "Wednesday Morning, 3 A.M.", year: 1964 }, { title: "Parsley, Sage, Rosemary and Thyme", year: 1966 }, { title: "Sounds of Silence", year: 1966 }, { title: "Bookends", year: 1968 }, { title: "Bridge Over Troubled Water", year: 1970 }, { title: "Feelin’ Groovy", year: 1994 }]
 },
 {
   name: "The Four Seasons",
@@ -1406,6 +1469,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bob Crewe",
   summary: "The Four Seasons are an American rock band formed in 1960 in Newark, New Jersey. Since 1970, they have also been known at times as Frankie Valli and the Four Seasons. They are one of the best-selling musical groups of all time, having sold an estimated 100 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Four_Seasons_%28band%29",
+  albums: [{ title: "Sherry & 11 Others", year: 1962 }, { title: "The 4 Seasons Greetings", year: 1962 }, { title: "The 4 Seasons Sing Ain’t That a Shame and 11 Others", year: 1963 }, { title: "Big Girls Don’t Cry and Twelve Others…", year: 1963 }, { title: "Born to Wander: Tender and Soulful Ballads (Folk-Flavored)", year: 1964 }, { title: "Dawn (Go Away) and 11 Other Great Songs", year: 1964 }, { title: "Rag Doll", year: 1964 }, { title: "The 4 Seasons Entertain You", year: 1965 }, { title: "The 4 Seasons Sing Big Hits by Burt Bacharach... Hal David... Bob Dylan", year: 1965 }, { title: "Working My Way Back to You and More Great New Hits", year: 1965 }]
 },
 {
   name: "The Kinks",
@@ -1428,6 +1492,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Graham Nash",
   summary: "The Kinks were an English rock band formed in London in 1962. The band's original line-up comprised brothers Ray Davies (lead vocals, rhythm guitar) and Dave Davies (lead guitar, vocals), Pete Quaife (bass), and Mick Avory (drums, percussion). Emerging during the height of British rhythm and blues and Merseybeat, their breakthrough third single, the Ray Davies-penned \"You Really Got Me\" (1964), became an international hit, topping the charts in the United Kingdom and reaching the Top 10 in the U…",
   wikipedia: "https://en.wikipedia.org/wiki/The_Kinks",
+  albums: [{ title: "Kinks", year: 1964 }, { title: "Kinkdom", year: 1965 }, { title: "The Kink Kontroversy", year: 1965 }, { title: "Kinks‐Size", year: 1965 }, { title: "Kinda Kinks", year: 1965 }, { title: "Face to Face", year: 1966 }, { title: "Something Else by The Kinks", year: 1967 }, { title: "The Kinks Are the Village Green Preservation Society", year: 1968 }, { title: "Arthur (or The Decline and Fall of the British Empire)", year: 1969 }, { title: "Lola Versus Powerman and the Moneygoround, Part One", year: 1970 }]
 },
 {
   name: "The Platters",
@@ -1450,6 +1515,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Phil Spector",
   summary: "The Platters are an American rhythm and blues vocal group formed in 1952. They are one of the most successful vocal bands of the early rock and roll era. Their distinctive sound bridges the pre-rock Tin Pan Alley tradition and the new burgeoning genre.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Platters",
+  albums: [{ title: "The Platters", year: 1956 }, { title: "Volume Two", year: 1956 }, { title: "The Flying Platters", year: 1957 }, { title: "Remember When?", year: 1959 }, { title: "The Flying Platters Around The World", year: 1959 }, { title: "The Platters", year: 1959 }, { title: "Encores!", year: 1960 }, { title: "Reflections", year: 1960 }, { title: "Life Is Just a Bowl of Cherries", year: 1961 }, { title: "Encore of Broadway Golden Hits", year: 1961 }]
 },
 {
   name: "The Who",
@@ -1472,6 +1538,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "U2",
   summary: "The Who are an English rock band formed in London in 1964. Their classic lineup (1964–1978) consisted of lead vocalist Roger Daltrey, guitarist Pete Townshend, bassist John Entwistle, and drummer Keith Moon. Considered one of the most influential rock bands of the 20th century, their contributions to rock music include the development of the Marshall stack, large public address systems, the use of synthesisers, Entwistle's and Moon's influential playing styles, Townshend's feedback and power cho…",
   wikipedia: "https://en.wikipedia.org/wiki/The_Who",
+  albums: [{ title: "My Generation", year: 1965 }, { title: "A Quick One", year: 1966 }, { title: "The Who Sell Out", year: 1967 }, { title: "Tommy", year: 1969 }, { title: "Who’s Next", year: 1971 }, { title: "Quadrophenia", year: 1973 }, { title: "The Who by Numbers", year: 1975 }, { title: "Who Are You", year: 1978 }, { title: "Face Dances", year: 1981 }, { title: "It’s Hard", year: 1982 }]
 },
 {
   name: "Dave Bartholomew",
@@ -1494,6 +1561,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "The Neville Brothers",
   summary: "David Louis Bartholomew (December 24, 1918 – June 23, 2019) was an American musician, bandleader, composer, arranger, and record producer. He was prominent in the music of New Orleans throughout the second half of the 20th century. Originally a trumpeter, he was active in many musical genres, including rhythm and blues (R&B), big band, swing music, rock and roll, New Orleans jazz, and Dixieland.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Bartholomew",
+  albums: [{ title: "Jump Children", year: 1983 }, { title: "The Monkey", year: 1985 }, { title: "The Classic New Orleans R&B Band Sound", year: 1989 }, { title: "New Orleans Big Beat", year: 1998 }]
 },
 {
   name: "Howlin' Wolf",
@@ -1516,6 +1584,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robert Cray",
   summary: "Chester Arthur Burnett (June 10, 1910 – January 10, 1976), better known by his stage name Howlin' Wolf, was an American blues singer, guitarist and harmonica player. He was at the forefront of transforming acoustic Delta blues into electric Chicago blues, and over a four-decade career, recorded blues, rhythm and blues, rock and roll, and psychedelic rock. He is regarded as one of the most influential blues musicians ever.",
   wikipedia: "https://en.wikipedia.org/wiki/Howlin%27_Wolf",
+  albums: [{ title: "Moanin’ in the Moonlight", year: 1959 }, { title: "Howlin’ Wolf", year: 1962 }, { title: "Big City Blues", year: 1962 }, { title: "The Super Super Blues Band", year: 1967 }, { title: "The Howlin’ Wolf Album", year: 1969 }, { title: "Message to the Young", year: 1971 }, { title: "The London Howlin’ Wolf Sessions", year: 1971 }, { title: "The Back Door Wolf", year: 1973 }, { title: "London Revisited", year: 1974 }, { title: "Change My Way", year: 1975 }]
 },
 {
   name: "Ike & Tina Turner",
@@ -1538,6 +1607,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Phil Spector",
   summary: "Ike & Tina Turner was an American musical duo composed of husband-and-wife Ike Turner and Tina Turner. From 1960 to 1976, they performed live as the Ike & Tina Turner Revue, supported by the Kings of Rhythm and backing vocalists, the Ikettes. They were regarded as \"one of the most potent live acts on the R&B circuit\" and \"leading exponents\" of soul music.",
   wikipedia: "https://en.wikipedia.org/wiki/Ike_%26_Tina_Turner",
+  albums: [{ title: "Ike & Tina Turner’s Kings of Rhythm Dance", year: 1961 }, { title: "The Soul of Ike & Tina Turner", year: 1961 }, { title: "Dynamite!", year: 1963 }, { title: "It’s Gonna Work Out Fine", year: 1963 }, { title: "Don’t Play Me Cheap", year: 1963 }, { title: "River Deep – Mountain High", year: 1966 }, { title: "Get It - Get It", year: 1966 }, { title: "Outta Season", year: 1968 }, { title: "So Fine", year: 1968 }, { title: "The Hunter", year: 1969 }]
 },
 {
   name: "Jimmy Reed",
@@ -1560,6 +1630,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "ZZ Top",
   summary: "Mathis James Reed (September 6, 1925 – August 29, 1976) was an American blues musician and songwriter. His particular style of electric blues was popular with a wide variety of audiences. Reed's songs such as  \"Honest I Do\" (1957), \"Baby What You Want Me to Do\" (1960), \"Big Boss Man\" (1961), and \"Bright Lights, Big City\" (1961) appeared on both Billboard magazine's R&B and Hot 100 singles charts.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Reed",
+  albums: [{ title: "I'm Jimmy Reed", year: 1958 }, { title: "Rockin' With Reed", year: 1959 }, { title: "Found Love", year: 1960 }, { title: "Now Appearing", year: 1960 }, { title: "Jimmy Reed at Carnegie Hall", year: 1961 }, { title: "Just Jimmy Reed", year: 1962 }, { title: "T'Ain't No Big Thing But He Is Jimmy Reed", year: 1963 }, { title: "Jimmy Reed Sings the Best of the Blues", year: 1963 }, { title: "Jimmy Reed Plays 12 String Guitar Blues", year: 1963 }, { title: "At Soul City", year: 1964 }]
 },
 {
   name: "John Lee Hooker",
@@ -1582,6 +1653,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bonnie Raitt",
   summary: "John Lee Hooker (August 22, 1912 or 1917 – June 21, 2001) was an American blues singer, songwriter, and guitarist. The son of a sharecropper, he rose to prominence performing an electric guitar-style adaptation of Delta blues that he developed in Detroit. Hooker often incorporated other elements, including talking blues and early North Mississippi hill country blues. He developed his own driving-rhythm boogie style, distinct from the 1930s–1940s piano-derived boogie-woogie.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Lee_Hooker",
+  albums: [{ title: "Highway of Blues", year: 1959 }, { title: "The Country Blues of John Lee Hooker", year: 1959 }, { title: "I’m John Lee Hooker", year: 1959 }, { title: "House of the Blues", year: 1959 }, { title: "That’s My Story (Sings the Blues)", year: 1960 }, { title: "Travelin’", year: 1960 }, { title: "John Lee Hooker Sings Blues", year: 1960 }, { title: "Down Home Blues", year: 1960 }, { title: "Plays and Sings the Blues", year: 1961 }, { title: "The Folk Lore of John Lee Hooker", year: 1961 }]
 },
 {
   name: "LaVern Baker",
@@ -1604,6 +1676,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chaka Khan",
   summary: "Delores LaVern Baker (born Delores Evans; November 11, 1929 – March 10, 1997) was an American rhythm and blues singer who had several hit records on the pop charts in the 1950s and early 1960s. Her most successful records were \"Tweedle Dee\" (1955), \"Jim Dandy\" (1956), and \"I Cried a Tear\" (1958).",
   wikipedia: "https://en.wikipedia.org/wiki/LaVern_Baker",
+  albums: [{ title: "La Vern", year: 1956 }, { title: "Lavern Baker", year: 1957 }, { title: "LaVern Baker Sings Bessie Smith", year: 1958 }, { title: "Blues Ballads", year: 1959 }, { title: "Precious Memories: La Vern Baker Sings Gospel", year: 1960 }, { title: "Saved", year: 1961 }, { title: "Richard Rodgers’ No Strings. An After‐Theatre Version", year: 1962 }, { title: "See See Rider", year: 1963 }, { title: "Let Me Belong to You", year: 1970 }, { title: "Woke Up This Mornin'", year: 1992 }]
 },
 {
   name: "Nasuhi Ertegün",
@@ -1626,6 +1699,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Nesuhi Ertegun (Turkish spelling: Nesuhi Ertegün; November 26, 1917 – July 15, 1989) was a Turkish-American record producer and executive of Atlantic Records and WEA International.",
   wikipedia: "https://en.wikipedia.org/wiki/Nesuhi_Ertegun",
+  albums: []
 },
 {
   name: "Ralph Bass",
@@ -1648,6 +1722,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Hank Ballard",
   summary: "Ralph Basso Jr. (May 1, 1911 – March 5, 1997), known as Ralph Bass, was an American rhythm-and-blues record producer and talent scout for several independent labels. He was a pioneer in bringing African American music into the American mainstream. During his career he worked in key roles for Black & White Records, Savoy Records, King Records, Federal Records, and Chess Records, recording many leading performers, including Etta James, Sam Cooke, James Brown, Earl Bostic, and groups such as the Pl…",
   wikipedia: "https://en.wikipedia.org/wiki/Ralph_Bass",
+  albums: []
 },
 {
   name: "The Byrds",
@@ -1670,6 +1745,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Don Henley",
   summary: "The Byrds ( BURDZ) were an American rock band formed in Los Angeles, California, in 1964. The band underwent multiple lineup changes; frontman Roger McGuinn (known as Jim McGuinn until mid-1967) was the sole consistent member. For a short time in the mid-1960s, the Byrds were among the most popular groups in the world, with critics considering them to be among the most influential rock acts of their era.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Byrds",
+  albums: [{ title: "Mr. Tambourine Man", year: 1965 }, { title: "Turn! Turn! Turn!", year: 1965 }, { title: "Fifth Dimension", year: 1966 }, { title: "Younger Than Yesterday", year: 1967 }, { title: "Sweetheart of the Rodeo", year: 1968 }, { title: "The Notorious Byrd Brothers", year: 1968 }, { title: "Ballad of Easy Rider", year: 1969 }, { title: "Dr. Byrds & Mr. Hyde", year: 1969 }, { title: "(Untitled)", year: 1970 }, { title: "Byrdmaniax", year: 1971 }]
 },
 {
   name: "The Impressions",
@@ -1692,6 +1768,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tracy Chapman",
   summary: "The Impressions were an American music group originally formed in 1958. Their repertoire includes gospel,  R&B, doo-wop, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Impressions",
+  albums: [{ title: "The Impressions", year: 1963 }, { title: "The Never Ending Impressions", year: 1964 }, { title: "Keep On Pushing", year: 1964 }, { title: "People Get Ready", year: 1965 }, { title: "One By One", year: 1965 }, { title: "Ridin' High", year: 1966 }, { title: "The Fabulous Impressions", year: 1967 }, { title: "This Is My Country", year: 1968 }, { title: "We're a Winner", year: 1968 }, { title: "The Young Mod's Forgotten Story", year: 1969 }]
 },
 {
   name: "Wilson Pickett",
@@ -1714,6 +1791,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bobby Brown",
   summary: "Wilson Pickett (March 18, 1941 – January 19, 2006) was an American singer and songwriter.",
   wikipedia: "https://en.wikipedia.org/wiki/Wilson_Pickett",
+  albums: [{ title: "It’s Too Late", year: 1963 }, { title: "In the Midnight Hour", year: 1965 }, { title: "The Exciting Wilson Pickett", year: 1966 }, { title: "The Sound of Wilson Pickett", year: 1967 }, { title: "The Wicked Pickett", year: 1967 }, { title: "I’m in Love", year: 1968 }, { title: "The Midnight Mover", year: 1968 }, { title: "Hey Jude", year: 1969 }, { title: "In Philadelphia", year: 1970 }, { title: "Right On", year: 1970 }]
 },
 {
   name: "Bill Graham",
@@ -1736,6 +1814,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carlos Santana",
   summary: "Bill Graham (born Wulf Wolodia Grajonca; January 8, 1931 – October 25, 1991) was a German-born American impresario and rock concert promoter.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Graham_%28promoter%29",
+  albums: []
 },
 {
   name: "Bobby Bland",
@@ -1758,6 +1837,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "B.B. King",
   summary: "Robert Calvin Bland (born Robert Calvin Brooks; January 27, 1930 – June 23, 2013), known professionally as Bobby \"Blue\" Bland, was an American blues singer. Bland developed a sound that mixed gospel with the blues and R&B. He was described as \"among the great storytellers of blues and soul music...",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Bland",
+  albums: [{ title: "Blues Consolidated", year: 1958 }, { title: "Two Steps From the Blues", year: 1961 }, { title: "Here’s the Man!!!", year: 1962 }, { title: "Call on Me / That’s the Way Love Is", year: 1963 }, { title: "Ain't Nothing You Can Do", year: 1964 }, { title: "Touch of the Blues", year: 1968 }, { title: "Spotlighting the Man", year: 1969 }, { title: "His California Album", year: 1973 }, { title: "Dreamer", year: 1974 }, { title: "Get On Down With Bobby Bland", year: 1975 }]
 },
 {
   name: "Booker T. & the M.G.'s",
@@ -1780,6 +1860,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jim Stewart",
   summary: "Booker T. & the M.G.'s were an American instrumental, R&B, and jazz band formed in Memphis, Tennessee, in 1962. The band helped shape the sound of Southern soul and Memphis soul. The original members of the group were Booker T. Jones (organ, piano), Steve Cropper (guitar), Lewie Steinberg (bass), and Al Jackson Jr. (drums).",
   wikipedia: "https://en.wikipedia.org/wiki/Booker_T._%26_the_M.G.%27s",
+  albums: [{ title: "Green Onions", year: 1962 }, { title: "Soul Dressing", year: 1965 }, { title: "And Now!", year: 1966 }, { title: "In the Christmas Spirit", year: 1966 }, { title: "Hip Hug‐Her", year: 1967 }, { title: "Soul Limbo", year: 1968 }, { title: "Doin’ Our Thing", year: 1968 }, { title: "The Booker T. Set", year: 1969 }, { title: "McLemore Avenue", year: 1970 }, { title: "Melting Pot", year: 1971 }]
 },
 {
   name: "Doc Pomus",
@@ -1802,6 +1883,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Phil Spector",
   summary: "Jerome Solon Felder (June 27, 1925 – March 14, 1991), known professionally as Doc Pomus, was an American blues singer and songwriter. He is best known as the co-writer of many rock and roll hits. Pomus was inducted into the Rock and Roll Hall of Fame as a non-performer in 1992, the Songwriters Hall of Fame (1992), and the Blues Hall of Fame (2012).",
   wikipedia: "https://en.wikipedia.org/wiki/Doc_Pomus",
+  albums: []
 },
 {
   name: "Elmore James",
@@ -1824,6 +1906,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Elmore James (né Brooks; January 27, 1918 – May 24, 1963) was an American blues guitarist, singer, songwriter, and bandleader. Noted for his use of loud amplification and his stirring voice, James was inducted into the Rock and Roll Hall of Fame in 1992. His slide guitar technique earned him the nickname \"King of the Slide Guitar\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elmore_James",
+  albums: [{ title: "The Sky Is Crying", year: 1965 }, { title: "I Need You", year: 1966 }, { title: "Street Talkin'", year: 1975 }]
 },
 {
   name: "Johnny Cash",
@@ -1846,6 +1929,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lyle Lovett",
   summary: "John R. Cash (born J. R. Cash; February 26, 1932 – September 12, 2003) was an American singer-songwriter. Most of his music contains themes of sorrow, moral tribulation, and redemption, especially songs from the later stages of his career. He was known for his deep, calm, bass-baritone voice, the distinctive sound of his backing band, the Tennessee Three, that was characterized by its train-like chugging guitar rhythms, a rebelliousness coupled with an increasingly somber and humble demeanor, an…",
   wikipedia: "https://en.wikipedia.org/wiki/Johnny_Cash",
+  albums: [{ title: "Johnny Cash With His Hot and Blue Guitar", year: 1957 }, { title: "The Fabulous Johnny Cash", year: 1958 }, { title: "Hymns by Johnny Cash", year: 1959 }, { title: "Songs of Our Soil", year: 1959 }, { title: "Ride This Train", year: 1960 }, { title: "Now, There Was a Song!", year: 1960 }, { title: "The Lure of the Grand Canyon", year: 1961 }, { title: "The Sound of Johnny Cash", year: 1962 }, { title: "Hymns From the Heart", year: 1962 }, { title: "Blood, Sweat and Tears", year: 1963 }]
 },
 {
   name: "Leo Fender",
@@ -1868,6 +1952,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "Clarence Leonidas Fender (August 10, 1909 – March 21, 1991) was an American inventor and founder of the Fender Musical Instruments Corporation. Fender designed the company's iconic early instruments: the Fender Telecaster, the first mass-produced solid-body electric guitar; the Fender Stratocaster, among the most iconic electric guitars; and the Fender Precision Bass, which set the standard for electric basses.",
   wikipedia: "https://en.wikipedia.org/wiki/Leo_Fender",
+  albums: []
 },
 {
   name: "Professor Longhair",
@@ -1890,6 +1975,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Aaron Neville",
   summary: "Henry Roeland Byrd (December 19, 1918 – January 30, 1980), better known as Professor Longhair or \"Fess\" for short, was an American singer and pianist who performed New Orleans blues. He was active in two distinct periods, first in the heyday of early rhythm and blues and later in the resurgence of interest in traditional jazz after the founding of the New Orleans Jazz and Heritage Festival in 1970.",
   wikipedia: "https://en.wikipedia.org/wiki/Professor_Longhair",
+  albums: [{ title: "Rock ’n’ Roll Gumbo", year: 1974 }, { title: "Crawfish Fiesta", year: 1980 }, { title: "Mardi Gras in Baton Rouge", year: 1991 }, { title: "Fess' Gumbo", year: 1996 }, { title: "Fess at Home", year: 2021 }]
 },
 {
   name: "Sam & Dave",
@@ -1912,6 +1998,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Joel",
   summary: "Sam & Dave were an American soul and R&B duo who performed together from 1961 until 1981. The tenor (higher) voice was Sam Moore (1935–2025) and the baritone/tenor (lower) voice was Dave Prater (1937–1988).",
   wikipedia: "https://en.wikipedia.org/wiki/Sam_%26_Dave",
+  albums: [{ title: "Double Dynamite", year: 1966 }, { title: "Hold On, I’m Comin’", year: 1966 }, { title: "Soul Men", year: 1967 }, { title: "I Thank You", year: 1968 }, { title: "Back at 'Cha!", year: 1975 }, { title: "Sam & Dave (La grande storia del rock)", year: 1982 }, { title: "R & B", year: 1993 }, { title: "Sweet Soul Music", year: 1995 }, { title: "Soul Men + I Thank You", year: 2012 }, { title: "The Complete Albums", year: 2019 }]
 },
 {
   name: "The Isley Brothers",
@@ -1934,6 +2021,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Little Richard",
   summary: "The Isley Brothers ( EYEZ-lee) are an American soul group originally from Cincinnati, Ohio, that began in 1954 as a vocal trio consisting of the brothers O'Kelly Isley Jr., Rudolph Isley and Ronald Isley.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Isley_Brothers",
+  albums: [{ title: "Shout!", year: 1959 }, { title: "Twist & Shout", year: 1962 }, { title: "Twisting and Shouting", year: 1963 }, { title: "This Old Heart of Mine", year: 1966 }, { title: "Soul on the Rocks", year: 1967 }, { title: "The Brothers: Isley", year: 1969 }, { title: "It’s Our Thing", year: 1969 }, { title: "Get Into Something", year: 1969 }, { title: "Givin’ It Back", year: 1971 }, { title: "Brother, Brother, Brother", year: 1972 }]
 },
 {
   name: "The Jimi Hendrix Experience",
@@ -1956,6 +2044,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: null,
   wikipedia: "https://en.wikipedia.org/wiki/The_Jimi_Hendrix_Experience",
+  albums: [{ title: "Axis: Bold as Love", year: 1967 }, { title: "Are You Experienced", year: 1967 }, { title: "Electric Ladyland", year: 1968 }, { title: "Los Angeles Forum · April 26, 1969", year: 2025 }]
 },
 {
   name: "The Yardbirds",
@@ -1978,6 +2067,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "The Edge",
   summary: "The Yardbirds are an English blues rock band formed in London in 1963. The band started the careers of three of rock's most famous guitarists: Eric Clapton (1963–1965), Jeff Beck (1965–1966) and Jimmy Page (1966–1968), all of whom ranked in the top five of Rolling Stone magazine's 2011 list of 100 greatest guitarists.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Yardbirds",
+  albums: [{ title: "Having a Rave Up", year: 1965 }, { title: "For Your Love", year: 1965 }, { title: "Yardbirds", year: 1966 }, { title: "Little Games", year: 1967 }, { title: "Birdland", year: 2003 }]
 },
 {
   name: "Cream",
@@ -2000,6 +2090,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "ZZ Top",
   summary: "Cream were a British rock supergroup formed in London in 1966. The group consisted of bassist Jack Bruce, guitarist Eric Clapton, and drummer Ginger Baker. Bruce was the primary songwriter and vocalist, although Clapton and Baker contributed to songs. Formed by members of previously successful bands, they are widely considered to be the first so-called supergroup in rock history. Cream were highly regarded for the instrumental proficiency of each of their members.",
   wikipedia: "https://en.wikipedia.org/wiki/Cream_%28band%29",
+  albums: [{ title: "Fresh Cream", year: 1966 }, { title: "Disraeli Gears", year: 1967 }, { title: "Wheels of Fire", year: 1968 }, { title: "Wheels of Fire: In the Studio", year: 1968 }, { title: "Goodbye", year: 1969 }, { title: "Blues Condition", year: 1999 }, { title: "Fresh as Cream", year: null }]
 },
 {
   name: "Creedence Clearwater Revival",
@@ -2022,6 +2113,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Creedence Clearwater Revival, commonly abbreviated as CCR or simply Creedence, was an American rock band formed in El Cerrito, California, in 1959. The band consisted of lead vocalist, lead guitarist, and primary songwriter John Fogerty; his brother, rhythm guitarist Tom Fogerty; bassist Stu Cook; and drummer Doug Clifford. These members had played together since 1959, first as the Blue Velvets and later as the Golliwogs, before settling on Creedence Clearwater Revival in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Creedence_Clearwater_Revival",
+  albums: [{ title: "Creedence Clearwater Revival", year: 1968 }, { title: "Willy and the Poor Boys", year: 1969 }, { title: "Green River", year: 1969 }, { title: "Bayou Country", year: 1969 }, { title: "Cosmo’s Factory", year: 1970 }, { title: "Pendulum", year: 1970 }, { title: "Mardi Gras", year: 1972 }]
 },
 {
   name: "Dick Clark",
@@ -2044,6 +2136,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dion DiMucci",
   summary: "Richard Wagstaff Clark (November 30, 1929 – April 18, 2012) was an American television and radio personality and television producer who hosted American Bandstand from 1956 to 1989. He also hosted five incarnations of the Pyramid game show from 1973 to 1988 and Dick Clark's New Year's Rockin' Eve, which broadcast New Year's Eve celebrations in New York City's Times Square.",
   wikipedia: "https://en.wikipedia.org/wiki/Dick_Clark",
+  albums: []
 },
 {
   name: "Dinah Washington",
@@ -2066,6 +2159,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Natalie Cole",
   summary: "Dinah Washington (; born Ruth Lee Jones; August 29, 1924 – December 14, 1963) was an American singer and pianist, one of the most popular Black female recording artists of the 1950s. Primarily a jazz vocalist, she performed and recorded in a wide variety of styles including blues, R&B, and traditional pop music, and gave herself the title of \"Queen of the Blues\". She was also known as \"Queen of the Jukeboxes\".",
   wikipedia: "https://en.wikipedia.org/wiki/Dinah_Washington",
+  albums: [{ title: "Dinah Washington", year: 1950 }, { title: "Dynamic Dinah! The Great Voice of Dinah Washington", year: 1951 }, { title: "Blazing Ballads", year: 1952 }, { title: "After Hours With Miss “D”", year: 1954 }, { title: "Jam Session", year: 1954 }, { title: "For Those in Love", year: 1955 }, { title: "Dinah Washington Sings the Blues", year: 1955 }, { title: "In the Land of Hi-Fi", year: 1956 }, { title: "Dinah Washington Sings Fats Waller", year: 1957 }, { title: "The Swingin’ Miss “D”", year: 1957 }]
 },
 {
   name: "Etta James",
@@ -2088,6 +2182,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "k.d. lang",
   summary: "Jamesetta Hawkins (January 25, 1938 – January 20, 2012), known professionally as Etta James, was an American singer and songwriter. Starting her career in 1954, James frequently performed in Nashville's R&B clubs, collectively known in the 1940s, 1950s and 1960s as the Chitlin' Circuit.",
   wikipedia: "https://en.wikipedia.org/wiki/Etta_James",
+  albums: [{ title: "At Last!", year: 1960 }, { title: "The Second Time Around", year: 1961 }, { title: "Miss Etta James", year: 1961 }, { title: "Etta James", year: 1962 }, { title: "Etta James Sings for Lovers", year: 1962 }, { title: "Queen of Soul", year: 1965 }, { title: "Call My Name", year: 1966 }, { title: "Tell Mama", year: 1968 }, { title: "Etta James Sings Funk", year: 1970 }, { title: "Losers Weepers", year: 1970 }]
 },
 {
   name: "Milt Gabler",
@@ -2110,6 +2205,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Crystal",
   summary: "Milton Gabler (May 20, 1911 – July 20, 2001) was an American record producer, responsible for many innovations in the recording industry of the 20th century. These included being the first person to deal in record reissues, the first to sell records by mail order, and the first to credit all the musicians on the recordings.",
   wikipedia: "https://en.wikipedia.org/wiki/Milt_Gabler",
+  albums: []
 },
 {
   name: "Ruth Brown",
@@ -2132,6 +2228,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bonnie Raitt",
   summary: "Ruth Alston Brown (née Weston; January 12, 1928 – November 17, 2006) was an American singer-songwriter and actress, sometimes referred to as the \"Queen of R&B\". She was noted for bringing a pop music style to R&B music in a series of hit songs for Atlantic Records in the 1950s, such as \"So Long\", \"Teardrops from My Eyes\" and \"(Mama) He Treats Your Daughter Mean\".",
   wikipedia: "https://en.wikipedia.org/wiki/Ruth_Brown",
+  albums: [{ title: "Ruth Brown", year: 1957 }, { title: "Late Date With Ruth Brown", year: 1959 }, { title: "Miss Rhythm", year: 1959 }, { title: "Gospel Time", year: 1962 }, { title: "'65", year: 1965 }, { title: "The Big Band Sound of Thad Jones · Mel Lewis", year: 1968 }, { title: "Black Is Brown and Brown Is Beautiful", year: 1969 }, { title: "Brown Sugar", year: 1985 }, { title: "Blues on Broadway", year: 1989 }, { title: "Brown, Black & Beautiful", year: 1990 }]
 },
 {
   name: "Sly and the Family Stone",
@@ -2154,6 +2251,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "George Clinton",
   summary: "Sly and the Family Stone was an American band formed in San Francisco, California, in 1966 and active until 1983. Their work, which blended elements of funk, soul, psychedelic rock, gospel, and R&B, became a pivotal influence on subsequent American popular music.",
   wikipedia: "https://en.wikipedia.org/wiki/Sly_and_the_Family_Stone",
+  albums: [{ title: "A Whole New Thing", year: 1967 }, { title: "Dance to the Music", year: 1968 }, { title: "Life", year: 1968 }, { title: "Stand!", year: 1969 }, { title: "There’s a Riot Goin’ On", year: 1971 }, { title: "Fresh", year: 1973 }, { title: "Small Talk", year: 1974 }, { title: "Heard Ya Missed Me, Well I’m Back", year: 1976 }, { title: "Back on the Right Track", year: 1979 }, { title: "Ain’t but the One Way", year: 1982 }]
 },
 {
   name: "The Doors",
@@ -2176,6 +2274,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eddie Vedder",
   summary: "The Doors were an American rock band formed in Los Angeles in 1965, comprising vocalist Jim Morrison, keyboardist Ray Manzarek, guitarist Robby Krieger, and drummer John Densmore. They were among the most influential and controversial rock acts of the 1960s, primarily due to Morrison's lyrics and voice, along with his erratic stage persona and legal issues. The group is widely regarded as representative of the era's counterculture.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Doors",
+  albums: [{ title: "The Doors", year: 1967 }, { title: "Strange Days", year: 1967 }, { title: "Waiting for the Sun", year: 1968 }, { title: "The Soft Parade", year: 1969 }, { title: "Morrison Hotel", year: 1970 }, { title: "Other Voices", year: 1971 }, { title: "L.A. Woman", year: 1971 }, { title: "Full Circle", year: 1972 }, { title: "An American Prayer", year: 1978 }]
 },
 {
   name: "The Teenagers",
@@ -2198,6 +2297,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Boyz II Men",
   summary: "The Teenagers were an American doo-wop music group, most noted for being one of rock music's earliest successes, presented to international audiences by DJ Alan Freed. The group, which made its most popular recordings with young 13-year-old Frankie Lymon as lead singer, is also noted for being rock's first all-teenaged act. They were inducted into the Rock and Roll Hall of Fame in 1993.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Teenagers",
+  albums: [{ title: "The Teenagers Featuring Frankie Lymon", year: 1956 }]
 },
 {
   name: "Van Morrison",
@@ -2220,6 +2320,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Sir George Ivan \"Van\" Morrison (born 31 August 1945) is a Northern Irish musician, singer, and songwriter whose recording career started in the 1960s. Morrison's albums have performed well in the UK and Ireland, with more than 40 reaching the UK Top 40, as well as internationally, including in the United States, Germany, and the Netherlands.",
   wikipedia: "https://en.wikipedia.org/wiki/Van_Morrison",
+  albums: [{ title: "Blowin’ Your Mind!", year: 1967 }, { title: "Astral Weeks", year: 1968 }, { title: "Moondance", year: 1970 }, { title: "His Band and the Street Choir", year: 1970 }, { title: "Tupelo Honey", year: 1971 }, { title: "Saint Dominic’s Preview", year: 1972 }, { title: "Hard Nose the Highway", year: 1973 }, { title: "Veedon Fleece", year: 1974 }, { title: "A Period of Transition", year: 1977 }, { title: "Wavelength", year: 1978 }]
 },
 {
   name: "Bob Marley",
@@ -2242,6 +2343,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bono",
   summary: "Robert Nesta Marley  (6 February 1945 – 11 May 1981) was a Jamaican singer, songwriter, and guitarist. Considered one of the pioneers of reggae, he fused elements of reggae, ska, and rocksteady, and was renowned for his distinctive vocal and songwriting style. Marley increased the visibility of Jamaican music worldwide and became a global figure in popular culture. He became known as a Rastafarian icon, and he infused his music with a sense of spirituality.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Marley",
+  albums: [{ title: "More Of Bob Marley At His Best", year: 1990 }, { title: "Kinky Reggae", year: 1991 }, { title: "Lively Up Yourself", year: 1991 }, { title: "Unreleased Acoustic Tapes", year: 2009 }, { title: "Bob Marley & The Chineke! Orchestra", year: 2022 }, { title: "Reggae", year: null }, { title: "Archive Series", year: null }, { title: "Soul Shakedown", year: null }]
 },
 {
   name: "Duane Eddy",
@@ -2264,6 +2366,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mick Jones",
   summary: "Duane Eddy (April 26, 1938 – April 30, 2024) was an American guitarist. In the late 1950s and early 1960s, he had a string of hit records produced by Lee Hazlewood which were noted for their characteristically \"twangy\" guitar sound, including \"Rebel-'Rouser\", \"Peter Gunn\", and \"Because They're Young\".  He had sold 12 million records by 1963.",
   wikipedia: "https://en.wikipedia.org/wiki/Duane_Eddy",
+  albums: [{ title: "Have ‘Twangy’ Guitar Will Travel", year: 1958 }, { title: "Songs of Our Heritage", year: 1960 }, { title: "Girls! Girls! Girls!", year: 1961 }, { title: "Twangy Guitar Silky Strings", year: 1962 }, { title: "Twistin' 'N' Twangin'", year: 1962 }, { title: "Dance With The Guitar Man", year: 1962 }, { title: "Chitarra Uragano", year: 1963 }, { title: "\"Twang\" a Country Song", year: 1963 }, { title: "\"Twangin'\" Up a Storm!", year: 1963 }, { title: "Lonely Guitar", year: 1964 }]
 },
 {
   name: "Elton John",
@@ -2286,6 +2389,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Axl Rose",
   summary: "Sir Elton Hercules John (born Reginald Kenneth Dwight; 25 March 1947) is a British singer, songwriter and pianist. An influential figure in popular culture, he is known for his showmanship, as well as his songwriting partnership with lyricist Bernie Taupin. With over 300 million records sold worldwide, he is one of the best-selling music artists of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Elton_John",
+  albums: [{ title: "Empty Sky", year: 1969 }, { title: "Tumbleweed Connection", year: 1970 }, { title: "Elton John", year: 1970 }, { title: "Madman Across the Water", year: 1971 }, { title: "Honky Château", year: 1972 }, { title: "Don’t Shoot Me I’m Only the Piano Player", year: 1973 }, { title: "Goodbye Yellow Brick Road", year: 1973 }, { title: "Caribou", year: 1974 }, { title: "Captain Fantastic and the Brown Dirt Cowboy", year: 1975 }, { title: "Rock of the Westies", year: 1975 }]
 },
 {
   name: "Grateful Dead",
@@ -2308,6 +2412,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Hornsby",
   summary: "The Grateful Dead was an American rock band formed in Palo Alto, California, in 1965. Known for their eclectic style that fused elements of rock, blues, jazz, folk, country, bluegrass, rock and roll, gospel, reggae, and world music with psychedelia, the band is famous for improvisation during their live performances, and for their devoted fan base, known as \"Deadheads\".",
   wikipedia: "https://en.wikipedia.org/wiki/Grateful_Dead",
+  albums: [{ title: "The Grateful Dead", year: 1967 }, { title: "Anthem of the Sun", year: 1968 }, { title: "Aoxomoxoa", year: 1969 }, { title: "Workingman’s Dead", year: 1970 }, { title: "American Beauty", year: 1970 }, { title: "Wake of the Flood", year: 1973 }, { title: "From the Mars Hotel", year: 1974 }, { title: "Blues for Allah", year: 1975 }, { title: "Terrapin Station", year: 1977 }, { title: "Shakedown Street", year: 1978 }]
 },
 {
   name: "John Lennon",
@@ -2330,6 +2435,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul McCartney",
   summary: "John Winston Ono Lennon (born John Winston Lennon; 9 October 1940 – 8 December 1980) was an English musician, songwriter and activist. He gained global fame as the founder, co-lead vocalist and rhythm guitarist of the Beatles. Lennon's songwriting partnership with Paul McCartney remains the most successful in history.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Lennon",
+  albums: [{ title: "Unfinished Music No. 1: Two Virgins", year: 1968 }, { title: "Wedding Album", year: 1969 }, { title: "Unfinished Music No. 2: Life With the Lions", year: 1969 }, { title: "John Lennon/Plastic Ono Band", year: 1970 }, { title: "Imagine", year: 1971 }, { title: "Some Time in New York City", year: 1972 }, { title: "Mind Games", year: 1973 }, { title: "Walls and Bridges", year: 1974 }, { title: "Rock ’n’ Roll", year: 1975 }, { title: "A Guitar's All Right John But You'll Never Earn Your Living By It", year: 1975 }]
 },
 {
   name: "Johnny Otis",
@@ -2352,6 +2458,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Etta James",
   summary: "Johnny Otis (December 28, 1921 – January 17, 2012), born Ioannis Alexandres Veliotes, was an American singer, musician, composer, bandleader, record producer, talent scout, and preacher. He was a seminal influence on American R&B and rock and roll. He discovered numerous artists early in their careers who went on to become highly successful in their own right, including Little Esther Phillips, Etta James, Alan O'Day, Big Mama Thornton, Johnny Ace, Jackie Wilson, Little Willie John, Hank Ballard,…",
   wikipedia: "https://en.wikipedia.org/wiki/Johnny_Otis",
+  albums: [{ title: "Stone Down Blues", year: 1970 }, { title: "Nothin' but the Blues", year: 1995 }]
 },
 {
   name: "Phil Lesh",
@@ -2374,6 +2481,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Philip Chapman Lesh (March 15, 1940 – October 25, 2024) was an American musician and a founding member of the Grateful Dead, with whom he developed a unique style of  improvised six-string bass guitar. He was their bassist throughout their 30-year career.",
   wikipedia: "https://en.wikipedia.org/wiki/Phil_Lesh",
+  albums: []
 },
 {
   name: "Rod Stewart",
@@ -2396,6 +2504,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jeff Beck",
   summary: "Sir Roderick David Stewart (born 10 January 1945) is a British singer and songwriter. Known for his distinctive raspy singing voice, Stewart is among the best-selling music artists of all time, having sold more than 120 million records worldwide. His music career began in 1962 when he took up busking with a harmonica. He was a member of various bands before joining the the Jeff Beck Group in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Rod_Stewart",
+  albums: [{ title: "An Old Raincoat Won’t Ever Let You Down", year: 1969 }, { title: "Gasoline Alley", year: 1970 }, { title: "Every Picture Tells a Story", year: 1971 }, { title: "Never a Dull Moment", year: 1972 }, { title: "Smiler", year: 1974 }, { title: "Atlantic Crossing", year: 1975 }, { title: "A Night on the Town", year: 1976 }, { title: "Foot Loose & Fancy Free", year: 1977 }, { title: "Blondes Have More Fun", year: 1978 }, { title: "Foolish Behaviour", year: 1980 }]
 },
 {
   name: "The Animals",
@@ -2418,6 +2527,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Pirner",
   summary: "The Animals, known intermittently as Eric Burdon and the Animals and also as Animals and Friends (featuring original drummer John Steel), are an English rock band formed in Newcastle upon Tyne in 1962.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Animals",
+  albums: [{ title: "Interesting Life", year: 2000 }]
 },
 {
   name: "The Band",
@@ -2440,6 +2550,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eric Clapton",
   summary: "The Band (sometimes stylized as the Band or the band) were a Canadian-American rock band formed in Toronto, Ontario. It consisted of Rick Danko (bass, guitar, vocals, fiddle), Garth Hudson (organ, keyboards, accordion, saxophone), Richard Manuel (piano, drums, vocals), and Robbie Robertson (guitar, piano, percussion), all Canadian, and Levon Helm (drums, vocals, mandolin, guitar, bass), an American.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Band",
+  albums: [{ title: "Music From Big Pink", year: 1968 }, { title: "The Band", year: 1969 }, { title: "Stage Fright", year: 1970 }, { title: "Cahoots", year: 1971 }, { title: "Moondog Matinee", year: 1973 }, { title: "The Basement Tapes", year: 1975 }, { title: "Northern Lights – Southern Cross", year: 1975 }, { title: "Islands", year: 1977 }, { title: "Ophelia", year: 1992 }, { title: "Jericho", year: 1993 }]
 },
 {
   name: "Willie Dixon",
@@ -2462,6 +2573,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chuck Berry",
   summary: "William James Dixon (July 1, 1915 – January 29, 1992) was an American blues musician, vocalist, songwriter, arranger and record producer. He was proficient in playing both the upright bass and the guitar, and sang with a distinctive voice, but he is perhaps best known as one of the most prolific songwriters of his time. Next to Muddy Waters, Dixon is recognized as the most influential person in shaping the post–World War II sound of the Chicago blues.",
   wikipedia: "https://en.wikipedia.org/wiki/Willie_Dixon",
+  albums: [{ title: "Willie’s Blues", year: 1960 }, { title: "The Blues Every Which Way", year: 1960 }, { title: "Songs of Memphis Slim & Willie Dixon", year: 1960 }, { title: "I Am the Blues", year: 1970 }, { title: "Peace?", year: 1971 }, { title: "I Think I Got the Blues", year: 1973 }, { title: "Catalyst", year: 1973 }, { title: "What Happened to My Blues", year: 1976 }, { title: "Blues Anytime!", year: 1980 }, { title: "Mighty Earthquake and Hurricane", year: 1984 }]
 },
 {
   name: "Al Green",
@@ -2484,6 +2596,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Natalie Cole",
   summary: "Albert Leornes Greene (born April 13, 1946), known professionally as Al Green, is an American singer, songwriter, pastor and record producer. He is best known for recording a series of soul hit singles in the early 1970s, including \"Tired of Being Alone\" (1971), \"I'm Still in Love with You\" (1972), \"Love and Happiness\" (1973), \"Take Me to the River\" (1974), and his signature song, \"Let's Stay Together\" (1972). Green became an ordained pastor and recorded gospel music during the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Al_Green",
+  albums: [{ title: "Back Up Train", year: 1967 }, { title: "Green Is Blues", year: 1969 }, { title: "Gets Next to You", year: 1971 }, { title: "I’m Still in Love With You", year: 1972 }, { title: "Let’s Stay Together", year: 1972 }, { title: "Livin’ for You", year: 1973 }, { title: "Call Me", year: 1973 }, { title: "Call Me", year: 1973 }, { title: "Explores Your Mind", year: 1974 }, { title: "Al Green Is Love", year: 1975 }]
 },
 {
   name: "Frank Zappa",
@@ -2506,6 +2619,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lou Reed",
   summary: "Frank Vincent Zappa (December 21, 1940 – December 4, 1993) was an American composer, songwriter, guitarist, conductor, actor, satirist, filmmaker, and activist. In a career spanning more than 30 years, Zappa composed rock, pop, jazz, jazz fusion, orchestral and musique concrète works; he additionally produced nearly all the 60-plus albums he released with his band the Mothers of Invention and as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Frank_Zappa",
+  albums: [{ title: "Lumpy Gravy", year: 1967 }, { title: "Lumpy Gravy", year: 1968 }, { title: "Hot Rats", year: 1969 }, { title: "Chunga’s Revenge", year: 1970 }, { title: "Waka/Jawaka", year: 1972 }, { title: "Apostrophe (’)", year: 1974 }, { title: "One Size Fits All", year: 1975 }, { title: "Zoot Allures", year: 1976 }, { title: "Studio Tan", year: 1978 }, { title: "Joe’s Garage: Act I", year: 1979 }]
 },
 {
   name: "Led Zeppelin",
@@ -2528,6 +2642,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Tyler and Joe Perry",
   summary: "Led Zeppelin were  an English rock band formed in London in 1968. The band comprised vocalist Robert Plant, guitarist Jimmy Page, bass-guitarist and keyboardist John Paul Jones and drummer John Bonham. Their combination of a heavy electric-guitar sound with elements of blues and folk music popularised album-oriented rock and stadium rock and established them as the progenitor of hard rock and heavy metal.",
   wikipedia: "https://en.wikipedia.org/wiki/Led_Zeppelin",
+  albums: [{ title: "Led Zeppelin", year: 1969 }, { title: "Led Zeppelin II", year: 1969 }, { title: "Led Zeppelin III", year: 1970 }, { title: "[Led Zeppelin IV]", year: 1971 }, { title: "Houses of the Holy", year: 1973 }, { title: "Physical Graffiti", year: 1975 }, { title: "Presence", year: 1976 }, { title: "In Through the Out Door", year: 1979 }, { title: "Coda", year: 1982 }, { title: "The Lost Sessions, Vol. 4", year: 2004 }]
 },
 {
   name: "Martha and the Vandellas",
@@ -2550,6 +2665,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Fred Schneider and Kate Pierson",
   summary: "Martha and the Vandellas (known from 1967 to 1973 as Martha Reeves & the Vandellas) were an American girl group formed in Detroit, Michigan, in 1957. The group achieved fame in the 1960s as a major act for Motown Records. Formed by friends Annette Beard, Rosalind Ashford and Gloria Williams, Martha Reeves eventually joined the group, and she became its lead vocalist after Williams's departure in 1962. The group signed with Gordy Records, a subsidiary of Motown.",
   wikipedia: "https://en.wikipedia.org/wiki/Martha_and_the_Vandellas",
+  albums: [{ title: "Come and Get These Memories", year: 1963 }, { title: "Heat Wave", year: 1963 }, { title: "Dance Party", year: 1965 }, { title: "Watchout!", year: 1966 }, { title: "Ridin' High", year: 1968 }, { title: "Sugar n' Spice", year: 1969 }, { title: "Natural Resources", year: 1970 }, { title: "Black Magic", year: 1972 }]
 },
 {
   name: "Neil Young",
@@ -2572,6 +2688,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eddie Vedder",
   summary: "Neil Percival Young (born November 12, 1945) is a Canadian and American singer-songwriter. Son of journalist and author Scott Young, Young embarked on a music career in Winnipeg in the 1960s. He then moved to Los Angeles, forming the folk rock group Buffalo Springfield.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Young",
+  albums: [{ title: "Neil Young", year: 1968 }, { title: "Everybody Knows This Is Nowhere", year: 1969 }, { title: "After the Gold Rush", year: 1970 }, { title: "Harvest", year: 1972 }, { title: "On the Beach", year: 1974 }, { title: "Zuma", year: 1975 }, { title: "Tonight’s the Night", year: 1975 }, { title: "American Stars ’n Bars", year: 1977 }, { title: "Chrome Dreams", year: 1977 }, { title: "Comes a Time", year: 1978 }]
 },
 {
   name: "Paul Ackerman",
@@ -2594,6 +2711,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ahmet Ertegun",
   summary: "Paul Ackerman (February 18, 1908 – December 31, 1977) was an influential music journalist. He is best known for his work at Billboard as music editor. Ackerman was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_Ackerman",
+  albums: []
 },
 {
   name: "The Allman Brothers Band",
@@ -2616,6 +2734,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Willie Nelson",
   summary: "The Allman Brothers Band were an American rock band formed in Jacksonville, Florida, in 1969. Brothers Duane (slide guitar, lead guitar) and Gregg Allman (vocals, keyboards) founded it with Dickey Betts (lead guitar, vocals), Berry Oakley (bass), Butch Trucks (drums), and Jai Johanny \"Jaimoe\" Johanson (drums). Subsequently based in Macon, Georgia, they incorporated elements of blues, jazz and country music and their live shows featured jam band-style improvisation and instrumentals.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Allman_Brothers_Band",
+  albums: [{ title: "The Allman Brothers Band", year: 1969 }, { title: "Idlewild South", year: 1970 }, { title: "Eat a Peach", year: 1972 }, { title: "Brothers and Sisters", year: 1973 }, { title: "Win, Lose or Draw", year: 1975 }, { title: "Enlightened Rogues", year: 1979 }, { title: "Reach for the Sky", year: 1980 }, { title: "Brothers of the Road", year: 1981 }, { title: "Seven Turns", year: 1990 }, { title: "Shades of Two Worlds", year: 1991 }]
 },
 {
   name: "The Orioles",
@@ -2638,6 +2757,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Deborah Chessler and Seymour Stein",
   summary: "The Orioles were an American R&B group in the late 1940s and early 1950s. One of the first vocal groups in R&B, they were early pioneers of the doo-wop sound.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Orioles",
+  albums: []
 },
 {
   name: "David Bowie",
@@ -2660,6 +2780,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Madonna and David Byrne",
   summary: "David Robert Jones (8 January 1947 – 10 January 2016), known as David Bowie, was an English singer, songwriter and actor. Regarded as among the most influential musicians of the 20th century, he was known for his constant reinvention and visual presentation, and is often referred to as the \"chameleon of rock\". His music, stagecraft and fashion have had a significant impact on popular culture.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Bowie",
+  albums: [{ title: "David Bowie", year: 1967 }, { title: "David Bowie", year: 1969 }, { title: "The Man Who Sold the World", year: 1970 }, { title: "Hunky Dory", year: 1971 }, { title: "The Rise and Fall of Ziggy Stardust and the Spiders From Mars", year: 1972 }, { title: "Aladdin Sane", year: 1973 }, { title: "Pin Ups", year: 1973 }, { title: "Diamond Dogs", year: 1974 }, { title: "Young Americans", year: 1975 }, { title: "Station to Station", year: 1976 }]
 },
 {
   name: "Gladys Knight & the Pips",
@@ -2682,6 +2803,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mariah Carey",
   summary: "Gladys Knight & the Pips were an American R&B, soul, and funk family music group from Atlanta, Georgia, that remained active on the music charts and performing circuit for more than three decades starting from the early 1950s.",
   wikipedia: "https://en.wikipedia.org/wiki/Gladys_Knight_%26_the_Pips",
+  albums: [{ title: "Letter Full of Tears", year: 1962 }, { title: "Gladys Knight and the Pips", year: 1965 }, { title: "Everybody Needs Love", year: 1967 }, { title: "Urgent", year: 1967 }, { title: "Silk n’ Soul", year: 1968 }, { title: "Feelin’ Bluesy", year: 1968 }, { title: "Nitty Gritty", year: 1969 }, { title: "Standing Ovation", year: 1971 }, { title: "If I Were Your Woman", year: 1971 }, { title: "Imagination", year: 1973 }]
 },
 {
   name: "Jefferson Airplane",
@@ -2704,6 +2826,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mickey Hart and Phil Lesh",
   summary: "Jefferson Airplane was an American rock band formed in San Francisco in 1965. One of the pioneering bands of psychedelic rock, the group defined the San Francisco Sound and was the first from the Bay Area to achieve international commercial success. They appeared at the Monterey Pop Festival (1967), the first Isle of Wight Festival (1968) as headliners, Woodstock (1969), and Altamont Free Concert (1969).",
   wikipedia: "https://en.wikipedia.org/wiki/Jefferson_Airplane",
+  albums: [{ title: "Jefferson Airplane Takes Off", year: 1966 }, { title: "After Bathing at Baxter’s", year: 1967 }, { title: "Surrealistic Pillow", year: 1967 }, { title: "Crown of Creation", year: 1968 }, { title: "Volunteers", year: 1969 }, { title: "Bark", year: 1971 }, { title: "Long John Silver", year: 1972 }, { title: "Jefferson Airplane", year: 1989 }, { title: "The Music Of Jefferson Airplane", year: 2010 }]
 },
 {
   name: "John Cale",
@@ -2726,6 +2849,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jeff Beck",
   summary: "John Davies Cale (born 9 March 1942) is a Welsh singer, musician, composer, record producer and arranger. He is a founding member of the influential American rock band the Velvet Underground, with whom he recorded two studio albums. Over his six-decade career, Cale has worked in various styles of rock and avant-garde music.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Cale",
+  albums: [{ title: "Vintage Violence", year: 1970 }, { title: "Church of Anthrax", year: 1971 }, { title: "The Academy in Peril", year: 1972 }, { title: "Paris 1919", year: 1973 }, { title: "Fear", year: 1974 }, { title: "Helen of Troy", year: 1975 }, { title: "Slow Dazzle", year: 1975 }, { title: "Honi Soit", year: 1981 }, { title: "Music for a New Society", year: 1982 }, { title: "Caribbean Sunset", year: 1984 }]
 },
 {
   name: "Little Willie John",
@@ -2748,6 +2872,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Stevie Wonder",
   summary: "William Edward \"Little Willie\" John (November 15, 1937 – May 26, 1968) was an American R&B singer who performed in the 1950s and early 1960s. He is best known for his successes on the record charts, with songs such as \"All Around the World\" (1955), \"Need Your Love So Bad\" (1956), \"Talk to Me, Talk to Me\" (1958), \"Leave My Kitten Alone\" (1960), \"Sleep\" (1960), and his number-one R&B hit \"Fever\" (1956).",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Willie_John",
+  albums: [{ title: "Fever", year: 1956 }, { title: "Talk to Me", year: 1958 }, { title: "Mister Little Willie John", year: 1958 }, { title: "In Action!", year: 1960 }, { title: "Sure Things", year: 1961 }, { title: "The Sweet, the Hot, the Teenage Beat", year: 1961 }]
 },
 {
   name: "Pete Seeger",
@@ -2770,6 +2895,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Arlo Guthrie and Harry Belafonte",
   summary: "Peter Seeger (May 3, 1919 – January 27, 2014) was an American singer, songwriter, musician, and left-wing social activist. He was a fixture on nationwide radio in the 1940s and had a string of hit records in the early 1950s as a member of The Weavers, especially their recording of Lead Belly's \"Goodnight, Irene\", which topped the charts for 13 weeks in 1950. Members of the Weavers were blacklisted during the McCarthy Era.",
   wikipedia: "https://en.wikipedia.org/wiki/Pete_Seeger",
+  albums: [{ title: "The Original Talking Union & Other Union Songs", year: 1941 }, { title: "Darling Corey", year: 1950 }, { title: "American Folk Songs for Children", year: 1954 }, { title: "How To Play The 5-String Banjo", year: 1954 }, { title: "Frontier Ballads Volume I: Immigrants, The Trek", year: 1954 }, { title: "Frontier Ballads", year: 1954 }, { title: "The Folksinger's Guitar Guide", year: 1955 }, { title: "Goofing-Off Suite", year: 1955 }, { title: "American Industrial Ballads", year: 1956 }, { title: "Love Songs for Friends & Foes", year: 1956 }]
 },
 {
   name: "Pink Floyd",
@@ -2792,6 +2918,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Corgan",
   summary: "Pink Floyd are an English rock band formed in London in 1965 by Syd Barrett (guitar, vocals), Nick Mason (drums), Roger Waters (bass guitar, vocals) and Richard Wright (keyboards, vocals), with David Gilmour (guitar, vocals) joining at the end of 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Pink_Floyd",
+  albums: [{ title: "The Piper at the Gates of Dawn", year: 1967 }, { title: "A Saucerful of Secrets", year: 1968 }, { title: "Ummagumma", year: 1969 }, { title: "Atom Heart Mother", year: 1970 }, { title: "Meddle", year: 1971 }, { title: "The Dark Side of the Moon", year: 1973 }, { title: "Wish You Were Here", year: 1975 }, { title: "Animals", year: 1977 }, { title: "The Wall", year: 1979 }, { title: "The Final Cut", year: 1983 }]
 },
 {
   name: "The Shirelles",
@@ -2814,6 +2941,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Merry Clayton, Marianne Faithfull,and Darlene Love",
   summary: "The Shirelles were an American girl group formed in Passaic, New Jersey, in 1957. They consisted of schoolmates Shirley Owens (later Shirley Alston Reeves), Doris Coley (later Doris Kenner-Jackson), Addie \"Micki\" Harris (later Addie Harris McFadden), and Beverly Lee.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Shirelles",
+  albums: [{ title: "Tonight’s the Night", year: 1961 }, { title: "The Shirelles Sing to Trumpets and Strings", year: 1961 }, { title: "Baby It’s You", year: 1962 }, { title: "Give a Twist Party", year: 1962 }, { title: "Foolish Little Girl", year: 1963 }, { title: "Sing Their Songs in the Great Movie “It’s a Mad, Mad, Mad, Mad World”", year: 1963 }, { title: "The Shirelles Sing the Golden Oldies", year: 1964 }, { title: "The Shirelles Swing The Most", year: 1965 }, { title: "Hear & Now", year: 1965 }, { title: "Happy and in Love", year: 1971 }]
 },
 {
   name: "The Velvet Underground",
@@ -2836,6 +2964,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Patti Smith",
   summary: "The Velvet Underground was an American rock band formed in New York City in 1964. They became known for their integration of rock and roll and the avant-garde, which earned them little commercial success during their initial nine-year run but made them one of the most influential bands of their era, particularly in underground, experimental, and alternative music scenes.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Velvet_Underground",
+  albums: [{ title: "The Velvet Underground & Nico", year: 1967 }, { title: "White Light/White Heat", year: 1968 }, { title: "The Velvet Underground", year: 1969 }, { title: "Loaded", year: 1970 }, { title: "Squeeze", year: 1972 }, { title: "Evil Mothers (Rare Velvets)", year: 1974 }, { title: "Even More Vengeance", year: 1993 }, { title: "The Great Banana", year: 1994 }, { title: "All Tomorrow’s Parties (Remembering The Velvet Underground)", year: 1996 }, { title: "La Cave 1968 (Problems in Urban Living)", year: 1996 }]
 },
 {
   name: "Tom Donahue",
@@ -2858,6 +2987,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bob Krasnow",
   summary: "Tom \"Big Daddy\" Donahue (May 21, 1928 – April 28, 1975), was an American rock and roll radio disc jockey, record producer and concert promoter.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Donahue_%28DJ%29",
+  albums: []
 },
 {
   name: "Bee Gees",
@@ -2880,6 +3010,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Brian Wilson",
   summary: "The Bee Gees ( BEE jeez)",
   wikipedia: "https://en.wikipedia.org/wiki/Bee_Gees",
+  albums: [{ title: "The Bee Gees Sing and Play 14 Barry Gibb Songs", year: 1965 }, { title: "Spicks and Specks", year: 1966 }, { title: "Bee Gees’ 1st", year: 1967 }, { title: "Idea", year: 1968 }, { title: "Horizontal", year: 1968 }, { title: "Odessa", year: 1969 }, { title: "Cucumber Castle", year: 1970 }, { title: "2 Years On", year: 1970 }, { title: "Trafalgar", year: 1971 }, { title: "To Whom It May Concern", year: 1972 }]
 },
 {
   name: "Bill Monroe",
@@ -2902,6 +3033,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ricky Skaggs and Emmylou Harris",
   summary: "William Smith Monroe ( mən-ROH; September 13, 1911 – September 9, 1996) was an American mandolinist, singer, and songwriter who created the bluegrass music genre. For this reason, he is often called the \"Father of Bluegrass\".",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Monroe",
+  albums: [{ title: "Bill & Doc Sing Country Songs", year: 1963 }, { title: "Blue Grass Time", year: 1967 }, { title: "Bill Monroe's Uncle Pen", year: 1972 }, { title: "Father & Son", year: 1973 }, { title: "Road of Life", year: 1974 }, { title: "The Weary Traveler", year: 1976 }, { title: "Bluegrass Memories", year: 1977 }, { title: "Together Again", year: 1978 }, { title: "Master of Bluegrass", year: 1981 }, { title: "Bill Monroe & Friends", year: 1984 }]
 },
 {
   name: "Buffalo Springfield",
@@ -2924,6 +3056,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tom Petty",
   summary: "Buffalo Springfield was a Canadian-American rock band formed in Los Angeles in 1966 by Canadians Neil Young, Bruce Palmer and Dewey Martin and Americans Stephen Stills and Richie Furay. The group, widely known for the song \"For What It's Worth\", released three albums and several singles from 1966 to 1968. Their music combined elements of folk music and country music with influences from the British Invasion and psychedelic rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Buffalo_Springfield",
+  albums: [{ title: "Buffalo Springfield", year: 1966 }, { title: "Buffalo Springfield Again", year: 1967 }, { title: "Last Time Around", year: 1968 }, { title: "Sell Out", year: 2002 }]
 },
 {
   name: "Crosby, Stills & Nash",
@@ -2946,6 +3079,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "James Taylor",
   summary: null,
   wikipedia: "https://en.wikipedia.org/wiki/Crosby%2C_Stills_%26_Nash",
+  albums: [{ title: "Crosby, Stills & Nash", year: 1969 }, { title: "CSN", year: 1977 }, { title: "Daylight Again", year: 1982 }, { title: "Live at United Nations General Assembly Hall, New York, Nov 18, 1989 (Remastered) [Live FM Radio Broadcast Concert In Superb Fidel", year: 1989 }, { title: "Live It Up", year: 1990 }, { title: "After the Storm", year: 1994 }]
 },
 {
   name: "Joni Mitchell",
@@ -2968,6 +3102,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Shawn Colvin",
   summary: "Roberta Joan \"Joni\" Mitchell (née Anderson; born 7 November 1943) is a Canadian singer-songwriter, multi-instrumentalist, and painter. As one of the most influential singer-songwriters to emerge from the 1960s folk music circuit, Mitchell became known for her personal lyrics and unconventional compositions, which grew to incorporate elements of pop, jazz, rock, and other genres. Among her accolades are eleven Grammy Awards, and induction into the Rock and Roll Hall of Fame in 1997.",
   wikipedia: "https://en.wikipedia.org/wiki/Joni_Mitchell",
+  albums: [{ title: "Song to a Seagull", year: 1968 }, { title: "Clouds", year: 1969 }, { title: "Ladies of the Canyon", year: 1970 }, { title: "Blue", year: 1971 }, { title: "For the Roses", year: 1972 }, { title: "Court and Spark", year: 1974 }, { title: "The Hissing of Summer Lawns", year: 1975 }, { title: "Hejira", year: 1976 }, { title: "Don Juan’s Reckless Daughter", year: 1977 }, { title: "Mingus", year: 1979 }]
 },
 {
   name: "Mahalia Jackson",
@@ -2990,6 +3125,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mavis Staples",
   summary: "Mahalia Jackson ( mə-HAY-lee-ə; born Mahala Jackson; October 26, 1911 – January 27, 1972) was an American gospel singer, widely considered one of the most influential vocalists of the 20th century. With a career spanning 40 years, Jackson was integral to the development and spread of gospel blues in black churches throughout the U.S.",
   wikipedia: "https://en.wikipedia.org/wiki/Mahalia_Jackson",
+  albums: [{ title: "The World’s Greatest Gospel Singer", year: 1955 }, { title: "Bless This House", year: 1956 }, { title: "I Believe", year: 1956 }, { title: "Black, Brown and Beige", year: 1958 }, { title: "Great Gettin’ Up Morning", year: 1959 }, { title: "Come On Children, Let's Sing", year: 1960 }, { title: "I Believe", year: 1960 }, { title: "Everytime I Feel the Spirit", year: 1961 }, { title: "Great Songs of Love and Faith", year: 1962 }, { title: "Silent Night", year: 1962 }]
 },
 {
   name: "Parliament-Funkadelic",
@@ -3012,6 +3148,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Prince",
   summary: "Parliament-Funkadelic (abbreviated as P-Funk) is an American music collective of rotating musicians headed by George Clinton, primarily consisting of the funk bands Parliament and Funkadelic, both active since the 1960s. With an eclectic style drawing on psychedelia, outlandish fashion, and surreal humor, they have released albums such as Maggot Brain (1971), Mothership Connection (1975), and One Nation Under a Groove (1978) to critical praise, and scored charting hits with singles such as \"Tear…",
   wikipedia: "https://en.wikipedia.org/wiki/Parliament-Funkadelic",
+  albums: [{ title: "Urban Dancefloor Guerillas", year: 1983 }, { title: "Hydraulic Funk", year: 1995 }, { title: "Mother Call: Live Boston ’76", year: 2022 }]
 },
 {
   name: "Syd Nathan",
@@ -3034,6 +3171,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Seymour Stein",
   summary: "Sydney Nathan (April 27, 1904 – March 5, 1968) was an American music business executive who founded King Records, a leading independent record label, in 1943.",
   wikipedia: "https://en.wikipedia.org/wiki/Syd_Nathan",
+  albums: []
 },
 {
   name: "The Jackson 5",
@@ -3056,6 +3194,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Diana Ross",
   summary: "The Jackson 5, later known as The Jacksons, is an American pop band composed of members of the Jackson family. The group was formed in Gary, Indiana, in 1964, and originally consisted of brothers Jackie, Tito, Jermaine, Marlon, and Michael. They were managed by their father Joe Jackson. The group were among the first African American performers to attain a following across multiple genres.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Jackson_5",
+  albums: [{ title: "Diana Ross Presents the Jackson 5", year: 1969 }, { title: "Christmas Album", year: 1970 }, { title: "Third Album", year: 1970 }, { title: "ABC", year: 1970 }, { title: "Maybe Tomorrow", year: 1971 }, { title: "Lookin’ Through the Windows", year: 1972 }, { title: "Skywriter", year: 1973 }, { title: "Get It Together", year: 1973 }, { title: "Dancing Machine", year: 1974 }, { title: "Moving Violation", year: 1975 }]
 },
 {
   name: "The Rascals",
@@ -3078,6 +3217,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Van Zandt",
   summary: "The Rascals (originally known as the Young Rascals) are an American rock band (and blue-eyed soul), formed in Garfield, New Jersey, southeast of Paterson in 1965. The original lineup featured lead vocalist and keyboardist Felix Cavaliere, vocalist and percussionist Eddie Brigati, drummer Dino Danelli, and guitarist and vocalist Gene Cornish. Cavaliere and Brigati wrote the majority of the Rascals' original material.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Rascals",
+  albums: [{ title: "The Young Rascals", year: 1966 }, { title: "Groovin’", year: 1967 }, { title: "Collections", year: 1967 }, { title: "Once Upon a Dream", year: 1968 }, { title: "Freedom Suite", year: 1969 }, { title: "See", year: 1969 }, { title: "Search and Nearness", year: 1971 }, { title: "Peaceful World", year: 1971 }, { title: "Island of Real", year: 1972 }]
 },
 {
   name: "Allen Toussaint",
@@ -3100,6 +3240,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Allen Richard Toussaint (; January 14, 1938 – November 10, 2015) was an American musician, songwriter, arranger, and record producer. He was an influential figure in New Orleans rhythm and blues from the 1950s to the end of the century, described as \"one of popular music's great backroom figures.\" Many musicians recorded Toussaint's compositions. He was a producer for hundreds of recordings: the best known are \"Right Place, Wrong Time\", by longtime friend Dr.",
   wikipedia: "https://en.wikipedia.org/wiki/Allen_Toussaint",
+  albums: [{ title: "The Wild Sound of New Orleans", year: 1958 }, { title: "Toussaint", year: 1970 }, { title: "Life, Love and Faith", year: 1972 }, { title: "Southern Nights", year: 1975 }, { title: "Motion", year: 1978 }, { title: "Mr. Mardi Gras (I Love A Carnival Ball)", year: 1987 }, { title: "Connected", year: 1996 }, { title: "A New Orleans Christmas", year: 1997 }, { title: "I Believe to My Soul", year: 2005 }, { title: "The River in Reverse", year: 2006 }]
 },
 {
   name: "Eagles",
@@ -3122,6 +3263,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jimmy Buffett",
   summary: "The Eagles are an American rock band formed in Los Angeles in 1971. With five number-one singles, six number-one albums, six Grammy Awards and five American Music Awards, the Eagles were one of the most successful musical acts of the 1970s in North America. In addition, they are one of the world's best-selling music artists, having sold more than 200 million records worldwide, including 100 million sold in the US alone.",
   wikipedia: "https://en.wikipedia.org/wiki/Eagles_%28band%29",
+  albums: [{ title: "Eagles", year: 1972 }, { title: "Desperado", year: 1973 }, { title: "On the Border", year: 1974 }, { title: "One of These Nights", year: 1975 }, { title: "Hotel California", year: 1976 }, { title: "The Long Run", year: 1979 }, { title: "Long Road Out of Eden", year: 2007 }, { title: "The Kings of Hollywood: California Broadcast 1980", year: 2017 }]
 },
 {
   name: "Fleetwood Mac",
@@ -3144,6 +3286,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sheryl Crow",
   summary: "Fleetwood Mac were a British and American  rock band formed in London in 1967 by singer and guitarist Peter Green. He named the band by combining the surnames of drummer Mick Fleetwood, the only constant member of the band throughout its history, and bassist John McVie, who joined the band soon after it was formed. Fleetwood Mac have sold more than 120 million records worldwide, making them one of the world's best-selling musical acts.",
   wikipedia: "https://en.wikipedia.org/wiki/Fleetwood_Mac",
+  albums: [{ title: "Mr. Wonderful", year: 1968 }, { title: "Peter Green’s Fleetwood Mac", year: 1968 }, { title: "The Biggest Thing Since Colossus", year: 1969 }, { title: "Then Play On", year: 1969 }, { title: "Kiln House", year: 1970 }, { title: "Future Games", year: 1971 }, { title: "Bare Trees", year: 1972 }, { title: "Penguin", year: 1973 }, { title: "Mystery to Me", year: 1973 }, { title: "Heroes Are Hard to Find", year: 1974 }]
 },
 {
   name: "Gene Vincent",
@@ -3166,6 +3309,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Fogerty",
   summary: "Vincent Eugene Craddock (February 11, 1935 – October 12, 1971), known as Gene Vincent, was an American rock and roll musician who pioneered the style of rockabilly. His 1956 top ten hit with his backing band the Blue Caps, \"Be-Bop-a-Lula\", is considered a significant early example of rockabilly. His chart career was brief, especially in his home country of the US, where he notched three top 40 hits in 1956 and 1957, and never charted in the top 100 again.",
   wikipedia: "https://en.wikipedia.org/wiki/Gene_Vincent",
+  albums: [{ title: "Sounds Like Gene Vincent", year: 1959 }, { title: "Crazy Times", year: 1960 }, { title: "Shakin’ Up a Storm", year: 1964 }, { title: "Born to Be a Rolling Stone", year: 1967 }, { title: "I'm Back and I'm Proud", year: 1969 }, { title: "Gene Vincent", year: 1970 }, { title: "The Day the World Turned Blue", year: 1970 }, { title: "Memorial Album", year: 1972 }, { title: "Les plus grands noms du Rock", year: 1977 }, { title: "Rhythm In Blue", year: 1979 }]
 },
 {
   name: "Jelly Roll Morton",
@@ -3188,6 +3332,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ahmet Ertegun",
   summary: "Ferdinand Joseph LaMothe (né Lemott, later Morton; c. September 20, 1890 – July 10, 1941), known professionally as Jelly Roll Morton, was an American blues and jazz pianist, bandleader, and composer of Louisiana Creole descent. Morton was jazz's first arranger, proving that a genre rooted in improvisation could retain its essential characteristics when notated. His composition \"Jelly Roll Blues\", published in 1915, was one of the first published jazz compositions.",
   wikipedia: "https://en.wikipedia.org/wiki/Jelly_Roll_Morton",
+  albums: [{ title: "Mr. Jelly Lord", year: 1967 }, { title: "Transcriptions For Orchestra", year: 1974 }, { title: "The Pianist and Composer - Volume 1", year: 1991 }, { title: "New York, Washington and the Rediscovery - Volume 3", year: 1991 }, { title: "Jelly Roll Morton Plays Jelly Roll Morton and Other Favorites", year: 1999 }, { title: "The Best of Jelly Roll Morton: Original Hits", year: 2003 }, { title: "The Complete Library of Congress Recordings", year: 2005 }, { title: "The Library of Congress Recordings by Alan Lomax", year: 2006 }, { title: "The Best of Jelly Roll Morton", year: 2006 }, { title: "Volume 1 (1923-1929)", year: 2010 }]
 },
 {
   name: "Lead Belly",
@@ -3210,6 +3355,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pete Seeger",
   summary: "Huddie William Ledbetter (January 15, 1888 – December 6, 1949), better known by the stage name Lead Belly, was an American folk and blues singer notable for his strong vocals, virtuosity on the twelve-string guitar, and the folk standards he introduced, including his renditions of \"In the Pines\" (also known as \"Where Did You Sleep Last Night?\" and “Black Girl”), \"Pick a Bale of Cotton\", \"Goodnight, Irene\", \"Black Betty\", \"Midnight Special\", \"Cotton Fields\", and \"Boll Weevil\".",
   wikipedia: "https://en.wikipedia.org/wiki/Lead_Belly",
+  albums: [{ title: "Negro Sinful Songs", year: 1939 }, { title: "The Midnight Special", year: 1940 }, { title: "Songs by Lead Belly", year: 1943 }, { title: "Negroe Folksongs Sung by Lead Belly", year: 1946 }, { title: "Midnight Special", year: 1947 }, { title: "Easy Rider: Leadbelly Legacy Volume Four", year: 1953 }, { title: "Take This Hammer", year: 1965 }, { title: "Leadbelly", year: 1973 }, { title: "Midnight Special", year: 2000 }, { title: "Goodnight Irene", year: 2008 }]
 },
 {
   name: "Lloyd Price",
@@ -3232,6 +3378,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tony Rich",
   summary: "Lloyd Price (March 9, 1933 – May 3, 2021) was an American R&B and rock and roll singer known as \"Mr. Personality\" after his 1959 million-selling hit, \"Personality\".  His first recording, \"Lawdy Miss Clawdy\", was a hit for Specialty Records in 1952. He continued to release records, but none were as popular until several years later, when he refined the New Orleans beat and achieved a series of national hits. He was inducted into the Rock and Roll Hall of Fame in 1998.",
   wikipedia: "https://en.wikipedia.org/wiki/Lloyd_Price",
+  albums: [{ title: "The Exciting Lloyd Price", year: 1959 }, { title: "Mr. “Personality”", year: 1959 }, { title: "The Fantastic Lloyd Price", year: 1960 }, { title: "“Mr. Personality” Sings the Blues", year: 1960 }, { title: "Cookin’", year: 1961 }, { title: "This Is My Band", year: 1963 }, { title: "Misty", year: 1963 }, { title: "Lloyd Swings for Sammy", year: 1965 }, { title: "Now!", year: 1969 }, { title: "To the Roots and Back", year: 1972 }]
 },
 {
   name: "Santana",
@@ -3254,6 +3401,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Popper",
   summary: "Santana is an American rock band formed in San Francisco, California in 1966 by Mexican-American guitarist Carlos Santana. The band has had various recording and performing line-ups in its history, with Santana being the only consistent member. After signing with Columbia Records, the band's appearance at the Woodstock Festival in 1969 increased their profile and they went on to record the critically acclaimed and commercially successful albums Santana (1969), Abraxas (1970) and Santana III (197…",
   wikipedia: "https://en.wikipedia.org/wiki/Santana_%28band%29",
+  albums: [{ title: "Santana", year: 1969 }, { title: "Abraxas", year: 1970 }, { title: "Santana", year: 1971 }, { title: "Caravanserai", year: 1972 }, { title: "Welcome", year: 1973 }, { title: "Borboletta", year: 1974 }, { title: "Amigos", year: 1976 }, { title: "Festivál", year: 1976 }, { title: "Inner Secrets", year: 1978 }, { title: "Marathon", year: 1979 }]
 },
 {
   name: "The Mamas & the Papas",
@@ -3276,6 +3424,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Shania Twain",
   summary: "The Mamas & the Papas were an American-Canadian folk rock vocal group that recorded and performed from 1965 to 1968, with a brief reunion in 1971. The group was a defining force in the music scene of the counterculture of the 1960s. Formed in New York City, the group consisted of Americans John Phillips, Cass Elliot, and Michelle Phillips, and Canadian Denny Doherty.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Mamas_%26_the_Papas",
+  albums: [{ title: "If You Can Believe Your Eyes and Ears", year: 1966 }, { title: "The Mamas & the Papas", year: 1966 }, { title: "Deliver", year: 1967 }, { title: "The Papas & the Mamas", year: 1968 }, { title: "People Like Us", year: 1971 }, { title: "Greatest Hits: The Mamas & The Papas", year: null }]
 },
 {
   name: "Billy Joel",
@@ -3298,6 +3447,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ray Charles",
   summary: "William Martin Joel (; born May 9, 1949) is an American singer, songwriter, and pianist. Nicknamed the \"Piano Man\", after his 1973 signature song of the same name, Joel has had a successful career as a solo artist since the 1970s. From 1971 to 1993, he released 12 entirely self-written studio albums spanning the genres of pop and rock, and in 2001 released a one-off studio album of classical compositions.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Joel",
+  albums: [{ title: "Cold Spring Harbor", year: 1971 }, { title: "Piano Man", year: 1973 }, { title: "Streetlife Serenade", year: 1974 }, { title: "Turnstiles", year: 1976 }, { title: "The Stranger", year: 1977 }, { title: "52nd Street", year: 1978 }, { title: "Glass Houses", year: 1980 }, { title: "The Nylon Curtain", year: 1982 }, { title: "An Innocent Man", year: 1983 }, { title: "The Bridge", year: 1986 }]
 },
 {
   name: "Bob Wills & His Texas Playboys",
@@ -3320,6 +3470,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chris Isaak",
   summary: "James Robert Wills (March 6, 1905 – May 13, 1975) was an American musician, songwriter, and bandleader. Considered by music authorities as the founder of Western swing, he was known widely as the King of Western Swing (although Spade Cooley self-promoted the moniker \"King of Western Swing\" from 1942 to 1969). He was also noted for punctuating his music with his trademark \"ah-haa\" calls.",
   wikipedia: null,
+  albums: [{ title: "Bob Wills Round Up", year: 1947 }, { title: "Original Sound Track: The Last Picture Show", year: 1971 }, { title: "For the Last Time", year: 1974 }]
 },
 {
   name: "Bruce Springsteen",
@@ -3342,6 +3493,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bono",
   summary: "Bruce Frederick Joseph Springsteen (born September 23, 1949) is an American singer, songwriter, and musician. Nicknamed \"the Boss\", Springsteen has released 21 studio albums spanning six decades; most of his albums feature the E Street Band, his backing band since 1972.",
   wikipedia: "https://en.wikipedia.org/wiki/Bruce_Springsteen",
+  albums: [{ title: "The Wild, the Innocent & The E Street Shuffle", year: 1973 }, { title: "Greetings From Asbury Park, N.J.", year: 1973 }, { title: "Born to Run", year: 1975 }, { title: "Darkness on the Edge of Town", year: 1978 }, { title: "The River", year: 1980 }, { title: "Nebraska", year: 1982 }, { title: "Born in the U.S.A.", year: 1984 }, { title: "Tunnel of Love", year: 1987 }, { title: "Human Touch", year: 1992 }, { title: "Lucky Town", year: 1992 }]
 },
 {
   name: "Charles Brown",
@@ -3364,6 +3516,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bonnie Raitt",
   summary: "Tony Russell \"Charles\" Brown (September 13, 1922 – January 21, 1999) was an American singer and pianist whose soft-toned, slow-paced nightclub style influenced West Coast blues in the 1940s and 1950s. Between 1949 and 1952, Brown had seven Top 10 hits in the U.S. Billboard R&B chart. His best-selling recordings included \"Driftin' Blues\" and \"Merry Christmas Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Charles_Brown_%28musician%29",
+  albums: [{ title: "Sings Christmas Songs", year: 1961 }, { title: "Legend!", year: 1970 }, { title: "One More for the Road", year: 1986 }, { title: "Please Come Home for Christmas", year: 1988 }, { title: "Driftin' Blues", year: 1989 }, { title: "Up and Jumpin’", year: 1989 }, { title: "All My Life", year: 1990 }, { title: "Someone to Love", year: 1992 }, { title: "Charles Brown's Cool Christmas Blues", year: 1994 }, { title: "Just a Lucky So and So", year: 1994 }]
 },
 {
   name: "Curtis Mayfield",
@@ -3386,6 +3539,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sean Combs",
   summary: "Curtis Lee Mayfield (June 3, 1942 – December 26, 1999) was an American singer-songwriter, guitarist, and record producer. Dubbed the Gentle Genius, he is considered one of the most influential musicians of soul and socially conscious African-American music. Mayfield first achieved success and recognition with the vocal group the Impressions during the civil rights movement of the late 1950s and the 1960s, and later worked as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Curtis_Mayfield",
+  albums: [{ title: "Curtis", year: 1970 }, { title: "Roots", year: 1971 }, { title: "Back to the World", year: 1973 }, { title: "Got to Find a Way", year: 1974 }, { title: "Sweet Exorcist", year: 1974 }, { title: "There’s No Place Like America Today", year: 1975 }, { title: "Give, Get, Take and Have", year: 1976 }, { title: "Never Say You Can’t Survive", year: 1977 }, { title: "Do It All Night", year: 1978 }, { title: "Heartbeat", year: 1979 }]
 },
 {
   name: "Del Shannon",
@@ -3408,6 +3562,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Art Alexakis",
   summary: "Charles Weedon Westover (December 30, 1934 – February 8, 1990), known professionally as Del Shannon, was an American musician, singer, and songwriter, best known for his 1961 number-one Billboard hit \"Runaway\", which was covered later by various major artists, including Elvis Presley and the Traveling Wilburys. In 1999, he was posthumously inducted into the Rock and Roll Hall of Fame. In addition to his music career, he had minor acting roles.",
   wikipedia: "https://en.wikipedia.org/wiki/Del_Shannon",
+  albums: [{ title: "Runaway With Del Shannon", year: 1961 }, { title: "Hats Off to Del Shannon", year: 1962 }, { title: "Little Town Flirt", year: 1963 }, { title: "Handy Man", year: 1964 }, { title: "Del Shannon Sings Hank Williams: Your Cheatin’ Heart", year: 1964 }, { title: "One Thousand Six-Hundred Sixty-One Seconds of Del Shannon", year: 1965 }, { title: "Total Commitment", year: 1966 }, { title: "This Is My Bag", year: 1966 }, { title: "The Further Adventures of Charles Westover", year: 1968 }, { title: "…and the Music Plays On", year: 1978 }]
 },
 {
   name: "Dusty Springfield",
@@ -3430,6 +3585,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Mary Isobel Catherine Bernadette O'Brien (16 April 1939 – 2 March 1999), better known by her stage name Dusty Springfield, was an English singer. With her distinctive mezzo-soprano voice, she was a popular singer of blue-eyed soul, pop, and dramatic ballads, with French chanson, country, and jazz also in her repertoire. During her 1960s peak, she ranked among the most successful British performers on both sides of the Atlantic.",
   wikipedia: "https://en.wikipedia.org/wiki/Dusty_Springfield",
+  albums: [{ title: "Dusty", year: 1964 }, { title: "A Girl Called Dusty", year: 1964 }, { title: "Stay Awhile / I Only Want to Be With You", year: 1964 }, { title: "Ooooooweeee!!!", year: 1965 }, { title: "Ev’rything’s Coming Up Dusty", year: 1965 }, { title: "You Don’t Have to Say You Love Me", year: 1966 }, { title: "Where Am I Going?", year: 1967 }, { title: "The Look of Love", year: 1967 }, { title: "Dusty… Definitely", year: 1968 }, { title: "Dusty in Memphis", year: 1969 }]
 },
 {
   name: "George Martin",
@@ -3452,6 +3608,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jimmy Iovine",
   summary: "Sir George Henry Martin (3 January 1926 – 8 March 2016) was an English record producer, arranger, composer, conductor, and musician. He was commonly referred to as the \"fifth Beatle\" due to his extensive involvement in each of the Beatles' original albums. Martin's formal musical expertise and interest in novel recording practices facilitated the group's rudimentary musical education and desire for new musical sounds to record.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Martin",
+  albums: [{ title: "George Martin Instrumentally Salutes The Beatle Girls", year: 1966 }]
 },
 {
   name: "Paul McCartney",
@@ -3474,6 +3631,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: "Sir James Paul McCartney (born 18 June 1942) is an English musician and songwriter. He gained global fame with the Beatles, for whom he was the bassist and keyboardist, and shared primary songwriting and lead vocal duties with John Lennon. McCartney is known for his melodic approach to bass-playing, versatile tenor vocal range and musical eclecticism, exploring genres ranging from pre-rock and roll pop to classical, ballads and electronica.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_McCartney",
+  albums: [{ title: "McCartney", year: 1970 }, { title: "RAM", year: 1971 }, { title: "McCartney II", year: 1980 }, { title: "Tug of War", year: 1982 }, { title: "Pipes of Peace", year: 1983 }, { title: "Press to Play", year: 1986 }, { title: "Снова в СССР", year: 1988 }, { title: "Flowers in the Dirt", year: 1989 }, { title: "Played to press", year: 1990 }, { title: "London Town Roughs & Demos", year: 1991 }]
 },
 {
   name: "Shelly Yakus",
@@ -3496,6 +3654,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Stevie Wonder",
   summary: "Sheldon Gershon \"Shelly\" Yakus (born November 1945) is an American audio engineer and mixer. Formerly chief engineer and vice president of A&M Records, he was nominated for induction into the Rock and Roll Hall of Fame in 1999. Yakus is referenced at the end of one of Tom Petty's songs \"What're You Doin' In My Life?\"  As of 2014, Yakus was chief engineer of AfterMaster Audio Labs and Recording Studios, a recording firm he co-founded with Larry Ryckman, who is its CEO.",
   wikipedia: "https://en.wikipedia.org/wiki/Shelly_Yakus",
+  albums: []
 },
 {
   name: "The Staple Singers",
@@ -3518,6 +3677,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lauryn Hill",
   summary: "The Staple Singers was an American gospel, soul, and R&B singing group. Roebuck \"Pops\" Staples (December 28, 1914 – December 19, 2000), the patriarch of the family, formed the group with his children Cleotha (April 11, 1934 – February 21, 2013), Pervis (November 18, 1935 – May 6, 2021), and Mavis (b. July 10, 1939). Yvonne (October 23, 1937 – April 10, 2018) replaced her brother when he was drafted into the U.S. Army, and again in 1970.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Staple_Singers",
+  albums: [{ title: "Uncloudy Day", year: 1959 }, { title: "Swing Low", year: 1961 }, { title: "Hammer and Nails", year: 1962 }, { title: "The 25th Day of December", year: 1962 }, { title: "This Land", year: 1963 }, { title: "This Little Light", year: 1965 }, { title: "Amen!", year: 1965 }, { title: "Why", year: 1966 }, { title: "For What It’s Worth", year: 1967 }, { title: "Pray On", year: 1967 }]
 },
 {
   name: "Billie Holiday",
@@ -3540,6 +3700,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Diana Ross",
   summary: "Billie Holiday (born Eleanora Fagan; April 7, 1915 – July 17, 1959) was an American jazz and swing music singer. Nicknamed \"Lady Day\" by her friend and music partner, Lester Young, Holiday made significant contributions to jazz music and pop singing. Her vocal style, strongly influenced by jazz instrumentalists, inspired a new way of manipulating phrasing and tempo. Holiday was known for her vocal delivery and improvisational skills.",
   wikipedia: "https://en.wikipedia.org/wiki/Billie_Holiday",
+  albums: [{ title: "Billie Holiday", year: 1947 }, { title: "Lover Man", year: 1951 }, { title: "Billie Holiday Sings", year: 1952 }, { title: "Solitude", year: 1952 }, { title: "An Evening With Billie Holiday", year: 1953 }, { title: "Billie and Stan", year: 1954 }, { title: "Billie Holiday", year: 1954 }, { title: "Music for Torching", year: 1955 }, { title: "Velvet Mood", year: 1956 }, { title: "Jazz Recital", year: 1956 }]
 },
 {
   name: "Bonnie Raitt",
@@ -3562,6 +3723,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Melissa Etheridge",
   summary: "Bonnie Lynn Raitt (; born November 8, 1949) is an American singer-songwriter. In 1971, Raitt released her self-titled debut album. Following this, she released a series of critically acclaimed roots-influenced albums that incorporated elements of rock, blues, country, and folk. She was also a frequent session player and collaborator with other artists, including Warren Zevon, Little Feat, Jackson Browne, the Pointer Sisters, John Prine, and Leon Russell.",
   wikipedia: "https://en.wikipedia.org/wiki/Bonnie_Raitt",
+  albums: [{ title: "Bonnie Raitt", year: 1971 }, { title: "Give It Up", year: 1972 }, { title: "Takin My Time", year: 1973 }, { title: "Streetlights", year: 1974 }, { title: "Home Plate", year: 1975 }, { title: "Sweet Forgiveness", year: 1977 }, { title: "The Glow", year: 1979 }, { title: "Green Light", year: 1982 }, { title: "Nine Lives", year: 1986 }, { title: "Nick of Time", year: 1989 }]
 },
 {
   name: "Clive Davis",
@@ -3584,6 +3746,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Patti Smith",
   summary: "Clive Jay Davis (born April 4, 1932) is an American record producer, A&R executive, record executive, and lawyer. He has won five Grammy Awards and was inducted into the Rock and Roll Hall of Fame, as a non-performer, in 2000.",
   wikipedia: "https://en.wikipedia.org/wiki/Clive_Davis",
+  albums: []
 },
 {
   name: "Earl Palmer",
@@ -3606,6 +3769,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Leiber and Mike Stoller",
   summary: "Earl Cyril Palmer (October 25, 1924 – September 19, 2008) was an American drummer. Considered one of the inventors of rock and roll, he is a member of the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Earl_Palmer",
+  albums: [{ title: "Drumsville!", year: 1961 }, { title: "The Steel Guitar Tribute to Lynyrd Skynyrd", year: 2002 }]
 },
 {
   name: "Earth, Wind & Fire",
@@ -3628,6 +3792,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lil Kim",
   summary: "Earth, Wind & Fire (abbreviated as EW&F or EWF) is an American band formed in Chicago, Illinois, in 1969. Their music spans multiple genres, including jazz, R&B, soul, funk, disco, pop, Latin and Afro-pop. They are among the best-selling bands ever, with sales of over 90 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Earth%2C_Wind_%26_Fire",
+  albums: [{ title: "Earth, Wind & Fire", year: 1971 }, { title: "The Need of Love", year: 1971 }, { title: "Last Days and Time", year: 1972 }, { title: "Head to the Sky", year: 1973 }, { title: "Open Our Eyes", year: 1974 }, { title: "Spirit", year: 1976 }, { title: "All ’n All", year: 1977 }, { title: "I Am", year: 1979 }, { title: "Faces", year: 1980 }, { title: "Raise!", year: 1981 }]
 },
 {
   name: "Eric Clapton",
@@ -3650,6 +3815,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Eric Patrick Clapton (born 30 March 1945) is an English rock and blues guitarist, singer, and songwriter. He is regarded as one of the most successful and influential guitarists in rock music. Clapton ranked second in Rolling Stone's list of the \"100 Greatest Guitarists of All Time\" and fourth in Gibson's \"Top 50 Guitarists of All Time\". He was named number five in Time magazine's list of \"The 10 Best Electric Guitar Players\" in 2009.",
   wikipedia: "https://en.wikipedia.org/wiki/Eric_Clapton",
+  albums: [{ title: "Eric Clapton", year: 1970 }, { title: "The London Howlin’ Wolf Sessions", year: 1971 }, { title: "461 Ocean Boulevard", year: 1974 }, { title: "There’s One in Every Crowd", year: 1975 }, { title: "No Reason to Cry", year: 1976 }, { title: "Slowhand", year: 1977 }, { title: "Backless", year: 1978 }, { title: "Another Ticket", year: 1981 }, { title: "Money and Cigarettes", year: 1983 }, { title: "Behind the Sun", year: 1985 }]
 },
 {
   name: "Hal Blaine",
@@ -3672,6 +3838,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Leiber and Mike Stoller",
   summary: "Hal Blaine (born Harold Simon Belsky; February 5, 1929 – March 11, 2019) was an American drummer and session musician, thought to be among the most recorded studio drummers in the music industry, claiming over 35,000 sessions and 6,000 singles. His drumming is featured on 150 US top 10 hits, 40 of which went to number one.",
   wikipedia: "https://en.wikipedia.org/wiki/Hal_Blaine",
+  albums: [{ title: "Psychedelic Percussion", year: 1967 }, { title: "Drums Drums A Go Go", year: 2019 }]
 },
 {
   name: "James Jamerson",
@@ -3694,6 +3861,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Leiber and Mike Stoller",
   summary: "James Lee Jamerson (January 29, 1936 – August 2, 1983) was an American bassist. He was the uncredited bassist on most of the Motown Records hits in the 1960s and early 1970s (Motown did not list session musician credits on their releases until 1971), and is now regarded as one of the greatest and most influential bass players in modern music history. He was inducted into the Rock and Roll Hall of Fame in 2000.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Jamerson",
+  albums: []
 },
 {
   name: "James Taylor",
@@ -3716,6 +3884,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul McCartney",
   summary: "James Vernon Taylor (born March 12, 1948) is an American singer-songwriter and guitarist.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Taylor",
+  albums: [{ title: "James Taylor", year: 1968 }, { title: "Sweet Baby James", year: 1970 }, { title: "1967", year: 1970 }, { title: "Mud Slide Slim and the Blue Horizon", year: 1971 }, { title: "One Man Dog", year: 1972 }, { title: "Walking Man", year: 1974 }, { title: "Gorilla", year: 1975 }, { title: "In the Pocket", year: 1976 }, { title: "JT", year: 1977 }, { title: "Flag", year: 1979 }]
 },
 {
   name: "King Curtis",
@@ -3738,6 +3907,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Leiber and Mike Stoller",
   summary: "Curtis Ousley (born Curtis Montgomery, February 7, 1934 – August 13, 1971), known professionally as King Curtis, was an American saxophonist who played rhythm and blues, jazz, and rock and roll. A bandleader, band member, and session musician, he was also a musical director and record producer. A master of the instrument, he played tenor, alto, and soprano saxophone.",
   wikipedia: "https://en.wikipedia.org/wiki/King_Curtis",
+  albums: [{ title: "Have Tenor Sax, Will Blow", year: 1959 }, { title: "Soul Meeting", year: 1960 }, { title: "The New Scene of King Curtis", year: 1960 }, { title: "Old Gold", year: 1961 }, { title: "Trouble in Mind", year: 1961 }, { title: "Arthur Murray's Music for Dancing: The Twist!", year: 1961 }, { title: "Country Soul", year: 1962 }, { title: "Doing the Dixie Twist", year: 1962 }, { title: "It’s Party Time With King Curtis", year: 1962 }, { title: "Give a Twist Party", year: 1962 }]
 },
 {
   name: "Nat King Cole",
@@ -3760,6 +3930,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ray Charles",
   summary: "Nathaniel Adams Coles (March 17, 1919 – February 15, 1965), known professionally as Nat King Cole, was an American singer, jazz pianist, and actor. Cole's career as a jazz and pop vocalist started in the late 1930s and spanned almost three decades where he found success and recorded over 100 songs that became hits on the pop charts.",
   wikipedia: "https://en.wikipedia.org/wiki/Nat_King_Cole",
+  albums: [{ title: "King Cole at the Piano", year: 1949 }, { title: "Unforgettable", year: 1952 }, { title: "Sings for Two in Love", year: 1953 }, { title: "Just One of Those Things", year: 1957 }, { title: "Love Is the Thing", year: 1957 }, { title: "This Is Nat “King” Cole", year: 1957 }, { title: "The Very Thought of You", year: 1958 }, { title: "Cole español", year: 1958 }, { title: "St. Louis Blues", year: 1958 }, { title: "Welcome to the Club", year: 1959 }]
 },
 {
   name: "Scotty Moore",
@@ -3782,6 +3953,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Leiber and Mike Stoller",
   summary: "Winfield Scott Moore III (December 27, 1931 – June 28, 2016) was an American guitarist who formed the Blue Moon Boys in 1954, Elvis Presley's backing band. He was studio and touring guitarist for Presley between 1954 and 1968.",
   wikipedia: "https://en.wikipedia.org/wiki/Scotty_Moore",
+  albums: [{ title: "The Guitar That Changed The World", year: 1964 }, { title: "706 ReUnion: A Sentimental Journey", year: 1992 }, { title: "All the King's Men", year: 1997 }, { title: "Live at Sun", year: 2005 }, { title: "Western Union", year: null }]
 },
 {
   name: "The Lovin' Spoonful",
@@ -3804,6 +3976,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Mellencamp",
   summary: "The Lovin' Spoonful is a Canadian-American folk-rock band formed in Greenwich Village, New York City, in 1964. The band were among the most popular groups in the United States for a short period in the mid-1960s and their music and image influenced many of the contemporary rock acts of their era.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Lovin%27_Spoonful",
+  albums: [{ title: "Do You Believe in Magic", year: 1965 }, { title: "Daydream", year: 1966 }, { title: "Hums of The Lovin’ Spoonful", year: 1966 }, { title: "Everything Playing", year: 1967 }, { title: "Revelation: Revolution '69", year: 1969 }, { title: "A Real Spoonful of The Lovin Spoonful", year: 2017 }]
 },
 {
   name: "The Moonglows",
@@ -3826,6 +3999,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Simon",
   summary: "The Moonglows were an American R&B group in the 1950s. Their song \"Sincerely\" went to number 1 on the Billboard R&B chart and number 20 on the Billboard Juke Box chart.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Moonglows",
+  albums: [{ title: "Look! It's the Moonglows", year: 1959 }]
 },
 {
   name: "Aerosmith",
@@ -3848,6 +4022,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kid Rock",
   summary: "Aerosmith is an American rock band formed in Boston in 1970. The group consists of lead vocalist Steven Tyler, bassist Tom Hamilton, drummer Joey Kramer, and guitarists Joe Perry and Brad Whitford. Their style, which is rooted in blues-based hard rock, has also incorporated elements of pop rock, heavy metal, glam metal, and rhythm and blues, and has inspired many subsequent rock artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Aerosmith",
+  albums: [{ title: "Aerosmith", year: 1973 }, { title: "Get Your Wings", year: 1974 }, { title: "Toys in the Attic", year: 1975 }, { title: "Rocks", year: 1976 }, { title: "Draw the Line", year: 1977 }, { title: "Night in the Ruts", year: 1979 }, { title: "Rock in a Hard Place", year: 1982 }, { title: "Done With Mirrors", year: 1985 }, { title: "Permanent Vacation", year: 1987 }, { title: "Pump", year: 1989 }]
 },
 {
   name: "Chris Blackwell",
@@ -3870,6 +4045,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bono",
   summary: "Christopher Percy Gordon Blackwell OJ (born 22 June 1937) is a Jamaican-British former record producer and the founder of Island Records, which has been called \"one of Britain's great independent labels\". According to the Rock and Roll Hall of Fame, to which Blackwell was inducted in 2001, he is \"the single person most responsible for turning the world on to reggae music.\" Variety describes him as \"indisputably one of the greatest record executives in history.\"",
   wikipedia: "https://en.wikipedia.org/wiki/Chris_Blackwell",
+  albums: []
 },
 {
   name: "James Burton",
@@ -3892,6 +4068,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "James Edward Burton (born August 21, 1939, in Dubberly, Louisiana, United States) is an American guitarist. A member of the Rock and Roll Hall of Fame since 2001 (his induction speech was given by longtime fan Keith Richards), Burton has also been recognized by the Rockabilly Hall of Fame and the Musicians Hall of Fame and Museum. He was elected into the Country Music Hall of Fame in 2024.",
   wikipedia: "https://en.wikipedia.org/wiki/James_Burton",
+  albums: [{ title: "Corn Pickin' and Slick Slidin'", year: 1993 }]
 },
 {
   name: "Johnnie Johnson",
@@ -3914,6 +4091,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "Johnnie Clyde Johnson (July 8, 1924 – April 13, 2005) was an American pianist who played jazz, blues, and rock and roll. His work with Chuck Berry led to his induction into the Rock and Roll Hall of Fame. He was posthumously awarded the Congressional Gold Medal for breaking racial barriers in the military as a Montford Point Marine, where he endured racism and inspired social change while integrating the previously all-white Marine Corps during World War II.",
   wikipedia: "https://en.wikipedia.org/wiki/Johnnie_Johnson_%28musician%29",
+  albums: [{ title: "Johnnie B. Bad", year: 1991 }, { title: "Rockin' Eighty-Eights", year: 1991 }, { title: "That'll Work", year: 1993 }, { title: "Blue Hand Johnnie", year: 1993 }, { title: "Meet Me in Bluesland", year: 2015 }, { title: "Johnnie Be Eighty! And Still Bad", year: null }]
 },
 {
   name: "Michael Jackson",
@@ -3936,6 +4114,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "NSYNC",
   summary: "Michael Joseph Jackson (August 29, 1958 – June 25, 2009) was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most culturally significant figures of the 20th century. His musical achievements broke American racial barriers and made him a dominant figure worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Michael_Jackson",
+  albums: [{ title: "Ben", year: 1972 }, { title: "Got to Be There", year: 1972 }, { title: "Music & Me", year: 1973 }, { title: "Forever, Michael", year: 1975 }, { title: "Off the Wall", year: 1979 }, { title: "Thriller", year: 1982 }, { title: "Bad", year: 1987 }, { title: "Dangerous", year: 1991 }, { title: "HIStory: Past, Present and Future, Book I", year: 1995 }, { title: "HIStory LIFEstyle Promo CD", year: 1995 }]
 },
 {
   name: "Paul Simon",
@@ -3958,6 +4137,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Marc Anthony",
   summary: "Paul Frederic Simon (born October 13, 1941) is an American singer-songwriter and guitarist, known for his solo work and his collaborations with Art Garfunkel. He and Garfunkel, whom he met in elementary school in 1953, came to prominence in the 1960s as Simon & Garfunkel. Their blend of  folk and rock, including hits such as \"The Sound of Silence\" (1965), \"Mrs. Robinson\" (1968), \"America\" (1968), and \"The Boxer\" (1969), served as a soundtrack to the 1960s counterculture.",
   wikipedia: "https://en.wikipedia.org/wiki/Paul_Simon",
+  albums: [{ title: "The Paul Simon Songbook", year: 1965 }, { title: "Paul Simon", year: 1972 }, { title: "There Goes Rhymin’ Simon", year: 1973 }, { title: "Still Crazy After All These Years", year: 1975 }, { title: "One‐Trick Pony", year: 1980 }, { title: "Hearts and Bones", year: 1983 }, { title: "Graceland", year: 1986 }, { title: "The Rhythm of the Saints", year: 1990 }, { title: "Songs From The Capeman", year: 1997 }, { title: "You’re the One", year: 2000 }]
 },
 {
   name: "Queen",
@@ -3980,6 +4160,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Grohl and Taylor Hawkins",
   summary: "Queen  are  a British rock band formed in London in 1970 by Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), and Roger Taylor (drums, vocals), later joined by John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Queen_%28band%29",
+  albums: [{ title: "Queen", year: 1973 }, { title: "Sheer Heart Attack", year: 1974 }, { title: "Queen II", year: 1974 }, { title: "A Night at the Opera", year: 1975 }, { title: "A Day at the Races", year: 1976 }, { title: "News of the World", year: 1977 }, { title: "Jazz", year: 1978 }, { title: "The Game", year: 1980 }, { title: "Hot Space", year: 1982 }, { title: "The Works", year: 1984 }]
 },
 {
   name: "Ritchie Valens",
@@ -4002,6 +4183,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ricky Martin",
   summary: "Richard Steven Valenzuela (May 13, 1941 – February 3, 1959), better known by his stage name Ritchie Valens, was an American guitarist, singer, and songwriter. A rock and roll pioneer and a forefather of the Chicano rock movement, Valens died in a plane crash just eight months after his breakthrough.",
   wikipedia: "https://en.wikipedia.org/wiki/Ritchie_Valens",
+  albums: [{ title: "Ritchie Valens", year: 1959 }, { title: "Ritchie", year: 1959 }, { title: "La Bamba", year: 2010 }, { title: "Ritchie Valens", year: 2013 }]
 },
 {
   name: "Solomon Burke",
@@ -4024,6 +4206,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mary J. Blige",
   summary: "Solomon Vincent McDonald Burke (born James Solomon McDonald, March 21, 1940 – October 10, 2010) was an American singer who shaped the sound of rhythm and blues as one of the founding fathers of soul music in the 1960s. He has been called \"a key transitional figure bridging R&B and soul\", and was known for his \"prodigious output\".",
   wikipedia: "https://en.wikipedia.org/wiki/Solomon_Burke",
+  albums: [{ title: "Solomon Burke", year: 1960 }, { title: "If You Need Me", year: 1963 }, { title: "Rock ’n Soul", year: 1964 }, { title: "I Wish I Knew", year: 1968 }, { title: "King Solomon", year: 1968 }, { title: "Electronic Magnetism", year: 1972 }, { title: "We’re Almost Home", year: 1972 }, { title: "I Have a Dream", year: 1974 }, { title: "Music To Make Love By", year: 1975 }, { title: "Back to My Roots", year: 1976 }]
 },
 {
   name: "Steely Dan",
@@ -4046,6 +4229,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Moby",
   summary: "Steely Dan was an American rock band formed in Annandale-on-Hudson, New York, in 1971 by Walter Becker (guitars, bass, backing vocals) and Donald Fagen (keyboards, lead vocals). Originally having a traditional band lineup, Becker and Fagen chose to stop performing live by the end of 1974 and continued Steely Dan as a studio-only duo, using a revolving cast of session musicians. Rolling Stone magazine named them \"the perfect musical antiheroes for the seventies\".",
   wikipedia: "https://en.wikipedia.org/wiki/Steely_Dan",
+  albums: [{ title: "Can’t Buy a Thrill", year: 1972 }, { title: "Countdown to Ecstasy", year: 1973 }, { title: "Pretzel Logic", year: 1974 }, { title: "Katy Lied", year: 1975 }, { title: "The Royal Scam", year: 1976 }, { title: "Aja", year: 1977 }, { title: "Gaucho", year: 1980 }, { title: "Two Against Nature", year: 2000 }, { title: "Everything Must Go", year: 2003 }, { title: "In Concert", year: 2008 }]
 },
 {
   name: "The Flamingos",
@@ -4068,6 +4252,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Frankie Valli",
   summary: "The Flamingos are an American doo-wop group formed in Chicago in 1953. The band became popular in mid-to-late 1950s and are best known for their 1959 cover version of \"I Only Have Eyes for You\". They have since been hailed as being one of the finest and most influential vocal groups in pop and doo wop music history. In 2001, the band was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Flamingos",
+  albums: [{ title: "Flamingo Serenade", year: 1959 }, { title: "Flamingos", year: 1959 }, { title: "Requestfully Yours", year: 1960 }]
 },
 {
   name: "Brenda Lee",
@@ -4090,6 +4275,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jewel",
   summary: "Brenda Mae Tarpley (born December 11, 1944), known professionally as Brenda Lee, is an American singer. Primarily performing rockabilly, pop, country, and Christmas music, she achieved her first Billboard hit at age 12 in 1957, and was given the nickname \"Little Miss Dynamite\". Some of Lee's most successful songs include \"Sweet Nothin's\", \"I'm Sorry\", \"I Want to Be Wanted\", \"Speak to Me Pretty\", \"All Alone Am I\", and \"Losing You\".",
   wikipedia: "https://en.wikipedia.org/wiki/Brenda_Lee",
+  albums: [{ title: "Grandma What Great Songs You Sang!", year: 1959 }, { title: "This Is... Brenda", year: 1960 }, { title: "Brenda Lee", year: 1960 }, { title: "All the Way", year: 1961 }, { title: "Emotions", year: 1961 }, { title: "Sincerely", year: 1962 }, { title: "Brenda, That’s All", year: 1962 }, { title: "All Alone Am I", year: 1963 }, { title: "... \"Let Me Sing\"", year: 1963 }, { title: "By Request", year: 1964 }]
 },
 {
   name: "Chet Atkins",
@@ -4112,6 +4298,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Marty Stuart and Brian Setzer",
   summary: "Chester Burton Atkins (June 20, 1924 – June 30, 2001), nicknamed \"Mister Guitar\"  and \"the Country Gentleman\", was a fingerpicking guitar player, arranger and producer who, along with Owen Bradley and Bob Ferguson, created the Nashville sound, the country music style which expanded its appeal to adult pop music fans. He was primarily a guitarist, but he also played the mandolin, fiddle, banjo, and ukulele, and occasionally sang.",
   wikipedia: "https://en.wikipedia.org/wiki/Chet_Atkins",
+  albums: [{ title: "Stringin’ Along with Chet", year: 1953 }, { title: "Chet Atkins’ Gallopin’ Guitar", year: 1953 }, { title: "A Session With Chet Atkins", year: 1954 }, { title: "Chet Atkins in 3 Dimensions", year: 1956 }, { title: "Finger-Style Guitar", year: 1957 }, { title: "Hi-Fi in Focus", year: 1957 }, { title: "Chet Atkins at Home", year: 1958 }, { title: "Chet Atkins in Hollywood", year: 1959 }, { title: "Hum and Strum With Chet Atkins", year: 1959 }, { title: "Teensville", year: 1960 }]
 },
 {
   name: "Gene Pitney",
@@ -4134,6 +4321,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Darlene Love",
   summary: "Gene Francis Alan Pitney (February 17, 1940 – April 5, 2006) was an American pop and country singer, songwriter, and musician. Pitney charted 16 top-40 hits in the United States, four in the top ten. In the United Kingdom, he had 22 top-40 hit singles, including 11 in the top ten.",
   wikipedia: "https://en.wikipedia.org/wiki/Gene_Pitney",
+  albums: [{ title: "Only Love Can Break a Heart", year: 1962 }, { title: "The Many Sides of Gene Pitney", year: 1962 }, { title: "Blue Gene", year: 1963 }, { title: "Sings Just for You", year: 1963 }, { title: "Meets the Fair Young Ladies of Folkland", year: 1964 }, { title: "It Hurts to Be in Love and Eleven More Hit Songs", year: 1964 }, { title: "Famous Country Duets", year: 1965 }, { title: "George Jones & Gene Pitney", year: 1965 }, { title: "Looking Through the Eyes of Love", year: 1965 }, { title: "I Must Be Seeing Things", year: 1965 }]
 },
 {
   name: "Isaac Hayes",
@@ -4156,6 +4344,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Alicia Keys",
   summary: "Isaac Lee Hayes Jr. (August 20, 1942 – August 10, 2008) was an American singer, songwriter, composer, and actor. He was one of the creative forces behind the Southern soul music label Stax Records in the 1960s, serving as an in-house songwriter with his partner David Porter,",
   wikipedia: "https://en.wikipedia.org/wiki/Isaac_Hayes",
+  albums: [{ title: "Presenting Isaac Hayes", year: 1968 }, { title: "Hot Buttered Soul", year: 1969 }, { title: "The Isaac Hayes Movement", year: 1970 }, { title: "…To Be Continued", year: 1970 }, { title: "Black Moses", year: 1971 }, { title: "Joy", year: 1973 }, { title: "Use Me", year: 1975 }, { title: "Chocolate Chip", year: 1975 }, { title: "Disco Connection", year: 1975 }, { title: "Juicy Fruit (Disco Freak)", year: 1976 }]
 },
 {
   name: "Jim Stewart",
@@ -4178,6 +4367,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sam Moore and Steve Cropper",
   summary: "James Frank Stewart (July 29, 1930 – December 5, 2022) was an American record producer and executive who in 1957 co-founded Stax Records with his sister Estelle Axton. Stax was one of the leading recording companies during soul and R&B music's heyday. The label also scored many hits on the Billboard Hot 100 pop music chart, and internationally, during this time.",
   wikipedia: "https://en.wikipedia.org/wiki/Jim_Stewart_%28music_producer%29",
+  albums: []
 },
 {
   name: "Ramones",
@@ -4200,6 +4390,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eddie Vedder",
   summary: "The Ramones were an American punk rock band formed in the New York City neighborhood Forest Hills, Queens in 1974. Known for helping establish the punk movement in the United States and elsewhere, the Ramones are often recognized as one of the first bands of the genre. Although they never achieved significant commercial success during their existence, the band is highly influential in punk culture.",
   wikipedia: "https://en.wikipedia.org/wiki/Ramones",
+  albums: [{ title: "Ramones", year: 1976 }, { title: "Leave Home", year: 1977 }, { title: "Rocket to Russia", year: 1977 }, { title: "Road to Ruin", year: 1978 }, { title: "End of the Century", year: 1980 }, { title: "Pleasant Dreams", year: 1981 }, { title: "Subterranean Jungle", year: 1983 }, { title: "Too Tough to Die", year: 1984 }, { title: "Animal Boy", year: 1986 }, { title: "Halfway to Sanity", year: 1987 }]
 },
 {
   name: "Talking Heads",
@@ -4222,6 +4413,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Anthony Kiedis",
   summary: "Talking Heads (sometimes stylized as T∀LKINGHE∀DS) were an American rock band formed in New York City in 1975. It consisted of lead vocalist and guitarist David Byrne, drummer Chris Frantz, bassist Tina Weymouth, and guitarist and keyboardist Jerry Harrison. Described as one of the most acclaimed groups of the 1980s, Talking Heads helped to pioneer new wave music by combining elements of punk, art rock, funk, and world music with \"an anxious yet clean-cut image\".",
   wikipedia: "https://en.wikipedia.org/wiki/Talking_Heads",
+  albums: [{ title: "Talking Heads: 77", year: 1977 }, { title: "More Songs About Buildings and Food", year: 1978 }, { title: "Fear of Music", year: 1979 }, { title: "Remain in Light", year: 1980 }, { title: "Speaking in Tongues", year: 1983 }, { title: "Little Creatures", year: 1985 }, { title: "True Stories", year: 1986 }, { title: "Naked", year: 1988 }, { title: "Greek Theatre", year: 1991 }, { title: "The Archives: Classic Broadcast Recordings", year: 2017 }]
 },
 {
   name: "Tom Petty and the Heartbreakers",
@@ -4244,6 +4436,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jakob Dylan",
   summary: "Tom Petty and the Heartbreakers were an American rock band formed in Gainesville, Florida,  in 1976. The band originally comprised lead singer and rhythm guitarist Tom Petty, lead guitarist Mike Campbell, keyboardist Benmont Tench, drummer Stan Lynch and bassist Ron Blair. In 1982, Blair, weary of the touring lifestyle, departed the band. His replacement, Howie Epstein, remained with the band for the next two decades.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Petty_and_the_Heartbreakers",
+  albums: [{ title: "Tom Petty and the Heartbreakers", year: 1976 }, { title: "You’re Gonna Get It!", year: 1978 }, { title: "Damn the Torpedoes", year: 1979 }, { title: "Hard Promises", year: 1981 }, { title: "Long After Dark", year: 1982 }, { title: "Southern Accents", year: 1985 }, { title: "Let Me Up (I’ve Had Enough)", year: 1987 }, { title: "Into the Great Wide Open", year: 1991 }, { title: "The Homecoming Concert", year: 1994 }, { title: "Echo", year: 1999 }]
 },
 {
   name: "AC/DC",
@@ -4266,6 +4459,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Tyler",
   summary: "AC/DC are an Australian rock band formed in Sydney in 1973. Their music has been variously described as hard rock, blues rock and heavy metal, although the band calls it simply \"rock and roll\". They are cited as a formative influence on the new wave of British heavy metal bands. The band was inducted into the Rock and Roll Hall of Fame in 2003 and have sold over 200 million records worldwide, making them one of the best-selling artists of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/AC/DC",
+  albums: [{ title: "High Voltage", year: 1975 }, { title: "T.N.T.", year: 1975 }, { title: "Dirty Deeds Done Dirt Cheap", year: 1976 }, { title: "Let There Be Rock", year: 1977 }, { title: "Powerage", year: 1978 }, { title: "Highway to Hell", year: 1979 }, { title: "Back in Black", year: 1980 }, { title: "For Those About to Rock (We Salute You)", year: 1981 }, { title: "Flick of the Switch", year: 1983 }, { title: "Fly on the Wall", year: 1985 }]
 },
 {
   name: "Benny Benjamin",
@@ -4288,6 +4482,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Shaffer",
   summary: "William \"Benny\" Benjamin (July 25, 1925 – April 20, 1969), nicknamed Papa Zita, was an American musician, most notable as the primary drummer for the Motown Records studio band The Funk Brothers. He was inducted into the Rock and Roll Hall of Fame in 2003 and was named the eleventh best drummer of all time by Rolling Stone magazine in 2016.",
   wikipedia: "https://en.wikipedia.org/wiki/Benny_Benjamin",
+  albums: []
 },
 {
   name: "Elvis Costello",
@@ -4310,6 +4505,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elvis_Costello",
+  albums: [{ title: "My Aim Is True", year: 1977 }, { title: "This Year’s Model", year: 1978 }, { title: "A Conversation With Elvis Costello (In Which He Talks About the Tracks From His New album 'Imperial Bedroom')", year: 1982 }, { title: "King of America", year: 1986 }, { title: "Spike", year: 1989 }, { title: "Mighty Like a Rose", year: 1991 }, { title: "In the District of Columbia", year: 1991 }, { title: "The Great Lost Album", year: 1993 }, { title: "The Juliet Letters", year: 1993 }, { title: "Brutal Youth", year: 1994 }]
 },
 {
   name: "Elvis Costello & the Attractions",
@@ -4332,6 +4528,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Declan Patrick MacManus (born 25 August 1954), known professionally as Elvis Costello, is an English singer, songwriter, record producer, author and television host. According to Rolling Stone, Costello \"reinvigorated the literate, lyrical traditions of Bob Dylan and Van Morrison with the raw energy and sass that were principal ethics of punk\", noting the \"construction of his songs, which set densely layered wordplay in an ever-expanding repertoire of styles\".",
   wikipedia: null,
+  albums: [{ title: "Armed Forces", year: 1979 }, { title: "Get Happy!!", year: 1980 }, { title: "Trust", year: 1981 }, { title: "Almost Blue", year: 1981 }, { title: "Imperial Bedroom", year: 1982 }, { title: "Punch the Clock", year: 1983 }, { title: "Goodbye Cruel World", year: 1984 }, { title: "Blood & Chocolate", year: 1986 }, { title: "All This Useless Beauty", year: 1996 }, { title: "The Ultimate Gangster", year: 2004 }]
 },
 {
   name: "Floyd Cramer",
@@ -4354,6 +4551,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Shaffer",
   summary: "Floyd Cramer (October 27, 1933 – December 31, 1997) was an American pianist who became famous for his use of melodic \"whole-step\" attacks. He was inducted into both the Country Music Hall of Fame and the Rock and Roll Hall of Fame. His signature playing style was a cornerstone of the pop-oriented \"Nashville sound\" of the 1950s and 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Floyd_Cramer",
+  albums: [{ title: "That Honky Tonk Piano", year: 1957 }, { title: "Last Date", year: 1960 }, { title: "Hello Blues", year: 1960 }, { title: "America’s Biggest‐Selling Pianist", year: 1961 }, { title: "On The Rebound", year: 1961 }, { title: "Jim Reeves, Floyd Cramer, Chet Atkins in Suid-Afrika", year: 1962 }, { title: "South African Tour Hits", year: 1964 }, { title: "Cramer at the Console", year: 1964 }, { title: "The Magic Touch of Floyd Cramer", year: 1965 }, { title: "Floyd Cramer Plays MacArthur Park", year: 1968 }]
 },
 {
   name: "Mo Ostin",
@@ -4376,6 +4574,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lorne Michaels, Paul Simon, and Neil Young",
   summary: "Mo Ostin (born Morris Meyer Ostrofsky; March 27, 1927 – July 31, 2022) was an American record executive.  The chairman and CEO of Warner Bros. Records from 1972 to 1994 and co-founder of DreamWorks Records, he was inducted into the Rock and Roll Hall of Fame in 2003.",
   wikipedia: "https://en.wikipedia.org/wiki/Mo_Ostin",
+  albums: []
 },
 {
   name: "Steve Douglas",
@@ -4398,6 +4597,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Shaffer",
   summary: "Steven Douglas Kreisman (September 24, 1938 – April 19, 1993) was an American saxophonist and flautist. He was a member of the famed Los Angeles session musicians known as the Wrecking Crew. As a Los Angeles session musician, he worked with Phil Spector, Bob Dylan, Brian Wilson, The Beach Boys and Ry Cooder.",
   wikipedia: "https://en.wikipedia.org/wiki/Steve_Douglas_%28musician%29",
+  albums: [{ title: "The Music of Cheops", year: 1988 }]
 },
 {
   name: "The Clash",
@@ -4420,6 +4620,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "The Edge and Tom Morello",
   summary: "The Clash were an English rock band formed in London in 1976. Billed as \"The Only Band That Matters\", they are considered one of the most influential acts in the original wave of British punk rock, with their music fusing elements of reggae, dub, funk, ska and rockabilly. The band also contributed to the post-punk and new wave movements that followed.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Clash",
+  albums: [{ title: "The Clash", year: 1977 }, { title: "Give ’Em Enough Rope", year: 1978 }, { title: "London Calling", year: 1979 }, { title: "Sandinista Now!", year: 1980 }, { title: "Sandinista!", year: 1980 }, { title: "Combat Rock", year: 1982 }, { title: "Cut the Crap", year: 1985 }, { title: "Rat Patrol From Fort Bragg", year: 2003 }]
 },
 {
   name: "The Police",
@@ -4442,6 +4643,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Gwen Stefani",
   summary: "The Police were an English rock band formed in London in 1977. Their core line-up comprised Sting (lead vocals, bass, primary songwriter), Andy Summers (guitar) and Stewart Copeland (drums, percussion). The Police became globally popular from the late 1970s to the mid-1980s. Emerging in the British new wave scene, they played a style of rock influenced by punk, reggae, and jazz.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Police",
+  albums: [{ title: "Outlandos d’Amour", year: 1978 }, { title: "Reggatta de Blanc", year: 1979 }, { title: "Zenyattà Mondatta", year: 1980 }, { title: "Ghost in the Machine", year: 1981 }, { title: "Synchronicity", year: 1983 }]
 },
 {
   name: "The Righteous Brothers",
@@ -4464,6 +4666,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Joel",
   summary: "The Righteous Brothers are an American musical duo originally formed by Bill Medley and Bobby Hatfield but now comprising Medley and Bucky Heard. Medley formed the group with Hatfield in 1963. They had first performed together in 1962 in the Los Angeles area as part of a five-member group called the Paramours, and adopted the name the Righteous Brothers when they became a duo.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Righteous_Brothers",
+  albums: [{ title: "Right Now!", year: 1963 }, { title: "Some Blue Eyed Soul", year: 1964 }, { title: "You've Lost That Lovin' Feelin'", year: 1965 }, { title: "Just Once in My Life", year: 1965 }, { title: "This is New!", year: 1965 }, { title: "Go Ahead and Cry", year: 1966 }, { title: "Soul & Inspiration", year: 1966 }, { title: "Back to Back", year: 1966 }, { title: "Sayin' Somethin'", year: 1967 }, { title: "Souled Out", year: 1967 }]
 },
 {
   name: "Bob Seger",
@@ -4486,6 +4689,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kid Rock",
   summary: "Robert Clark Seger ( SEE-gər; born May 6, 1945) is an American retired singer, songwriter, and musician. As a locally successful Detroit-area artist, he performed and recorded with the groups Bob Seger and the Last Heard and the Bob Seger System throughout the 1960s, breaking through with his first album, Ramblin' Gamblin' Man (which contained his first national hit of the same name) in 1969.",
   wikipedia: "https://en.wikipedia.org/wiki/Bob_Seger",
+  albums: [{ title: "Brand New Morning", year: 1971 }, { title: "Smokin’ O.P.’s", year: 1972 }, { title: "Back in ’72", year: 1973 }, { title: "Seven", year: 1974 }, { title: "Beautiful Loser", year: 1975 }, { title: "Face the Promise", year: 2006 }, { title: "Ride Out", year: 2014 }, { title: "I Knew You When", year: 2017 }, { title: "1973-07-12: Cleveland, OH, USA", year: null }]
 },
 {
   name: "George Harrison",
@@ -4508,6 +4712,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tom Petty and Jeff Lynne",
   summary: "George Harrison (25 February 1943 – 29 November 2001) was an English musician who achieved international fame as the lead guitarist of the Beatles. Known as \"the quiet Beatle\", Harrison played a significant role in shaping the band's musical direction and established a successful solo career, particularly through his interest in non-Western musical influences.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Harrison",
+  albums: [{ title: "Electronic Sound", year: 1969 }, { title: "All Things Must Pass", year: 1970 }, { title: "Living in the Material World", year: 1973 }, { title: "Dark Horse", year: 1974 }, { title: "Extra Texture (Read All About It)", year: 1975 }, { title: "Thirty Three & 1/ॐ", year: 1976 }, { title: "George Harrison", year: 1979 }, { title: "Somewhere in England", year: 1981 }, { title: "Gone Troppo", year: 1982 }, { title: "Cloud Nine", year: 1987 }]
 },
 {
   name: "Jackson Browne",
@@ -4530,6 +4735,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Clyde Jackson Browne (born October 9, 1948) is an American rock musician, singer, songwriter, and political activist who has sold over 30 million albums in the United States.",
   wikipedia: "https://en.wikipedia.org/wiki/Jackson_Browne",
+  albums: [{ title: "Jackson Browne / Saturate Before Using", year: 1972 }, { title: "For Everyman", year: 1973 }, { title: "Late for the Sky", year: 1974 }, { title: "The Pretender", year: 1976 }, { title: "Hold Out", year: 1980 }, { title: "Lawyers in Love", year: 1983 }, { title: "Lives in the Balance", year: 1986 }, { title: "World in Motion", year: 1989 }, { title: "I’m Alive", year: 1993 }, { title: "Looking East", year: 1996 }]
 },
 {
   name: "Jann Wenner",
@@ -4552,6 +4758,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mick Jagger",
   summary: "Jann Simon Wenner ( YAHN WEN-er; born January 7, 1946) is an American businessman who co-founded the popular culture magazine Rolling Stone with Ralph J. Gleason and is the former owner of Men's Journal magazine. He participated in the Free Speech Movement while attending the University of California, Berkeley. Wenner co-founded Rolling Stone in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Jann_Wenner",
+  albums: []
 },
 {
   name: "Prince",
@@ -4574,6 +4781,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Outkast and Alicia Keys",
   summary: "Prince Rogers Nelson (June 7, 1958 – April 21, 2016), known mononymously as Prince, was an American singer, songwriter, musician, dancer, actor, and filmmaker. Often being credited as one of the greatest musicians of his generation, he pioneered the Minneapolis sound and was influential in the evolution of various other genres.",
   wikipedia: "https://en.wikipedia.org/wiki/Prince_%28musician%29",
+  albums: [{ title: "For You", year: 1978 }, { title: "Prince", year: 1979 }, { title: "Dirty Mind", year: 1980 }, { title: "Controversy", year: 1981 }, { title: "1999", year: 1982 }, { title: "Around the World in a Day", year: 1985 }, { title: "Sign “☮︎” the Times", year: 1987 }, { title: "Lovesexy", year: 1988 }, { title: "[The Black Album]", year: 1989 }, { title: "Diamonds and Pearls", year: 1991 }]
 },
 {
   name: "The Dells",
@@ -4596,6 +4804,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robert Townsend",
   summary: "The Dells were an American R&B vocal group. Formed in high school in 1953 by founding members Marvin Junior, Verne Allison, Johnny Funches, Chuck Barksdale, and Michael and Lucius McGill, under the name the El-Rays. They released their first recording in 1954 and two years later had their first R&B hit with \"Oh What a Night\". After disbanding due to a near-fatal car crash in 1958, the band re-formed in 1960 with Funches being replaced by Johnny Carter.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Dells",
+  albums: [{ title: "Oh, What a Nite", year: 1959 }, { title: "It's Not Unusual", year: 1965 }, { title: "There Is", year: 1968 }, { title: "Always Together: The Dells Musical Menu", year: 1968 }, { title: "Love Is Blue", year: 1969 }, { title: "Like It Is, Like It Was", year: 1969 }, { title: "Freedom Means", year: 1971 }, { title: "The Dells Sing Dionne Warwicke's Greatest Hits", year: 1972 }, { title: "Sweet as Funk Can Be", year: 1972 }, { title: "The Mighty Mighty Dells", year: 1973 }]
 },
 {
   name: "Traffic",
@@ -4618,6 +4827,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Matthews",
   summary: "Traffic were an English rock band formed in Birmingham in April 1967 by Steve Winwood (formerly of the Spencer Davis Group), Jim Capaldi, Chris Wood and Dave Mason. They began as a psychedelic rock group and diversified their sound through the use of instruments such as keyboards (the Mellotron and harpsichord), sitar, and various reed instruments, and by incorporating jazz and improvisational techniques in their music.",
   wikipedia: "https://en.wikipedia.org/wiki/Traffic_%28band%29",
+  albums: [{ title: "Mr. Fantasy", year: 1967 }, { title: "Traffic", year: 1968 }, { title: "Last Exit", year: 1969 }, { title: "John Barleycorn Must Die", year: 1970 }, { title: "The Low Spark of High Heeled Boys", year: 1971 }, { title: "Shoot Out at the Fantasy Factory", year: 1973 }, { title: "When the Eagle Flies", year: 1974 }, { title: "Far From Home", year: 1994 }, { title: "The Perfumed Garden", year: 1994 }, { title: "Traffic Control", year: null }]
 },
 {
   name: "ZZ Top",
@@ -4640,6 +4850,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "ZZ Top is an American rock band formed in Houston, Texas, in 1969. The band maintained a constant lineup for over five decades—consisting of vocalist-guitarist Billy Gibbons, drummer Frank Beard, and bassist-vocalist Dusty Hill until Hill's departure, and eventual death, in 2021. ZZ Top developed a signature sound based on Gibbons' blues style and Hill and Beard's rhythm section.",
   wikipedia: "https://en.wikipedia.org/wiki/ZZ_Top",
+  albums: [{ title: "ZZ Top’s First Album", year: 1970 }, { title: "Rio Grande Mud", year: 1972 }, { title: "Tres hombres", year: 1973 }, { title: "Fandango!", year: 1975 }, { title: "Tejas", year: 1976 }, { title: "ZZ Top’s Worldwide Texas Tour", year: 1976 }, { title: "Degüello", year: 1979 }, { title: "El loco", year: 1981 }, { title: "Eliminator", year: 1983 }, { title: "Afterburner", year: 1985 }]
 },
 {
   name: "Bono",
@@ -4662,6 +4873,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lauryn Hill",
   summary: "Paul David Hewson (born 10 May 1960), known by the nickname Bono ( BON-oh), is an Irish singer-songwriter and activist. He is a founding member, the lead vocalist, and primary lyricist of the rock band U2. Bono is known for his impassioned vocal style as well as his grandiose songwriting and performance style. His lyrics frequently include social and political themes, and religious imagery inspired by his Christian faith.",
   wikipedia: "https://en.wikipedia.org/wiki/Bono",
+  albums: []
 },
 {
   name: "Buddy Guy",
@@ -4684,6 +4896,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eric Clapton and B.B. King",
   summary: "George \"Buddy\" Guy (born July 30, 1936) is an American blues guitarist and singer-songwriter. He is an exponent of Chicago blues who has influenced generations of guitarists including Eric Clapton, Jimi Hendrix, Jimmy Page, Keith Richards, Stevie Ray Vaughan, Jeff Beck, Gary Clark Jr., and John Mayer. In the 1960s, Guy played with Muddy Waters as a session guitarist at Chess Records and began a musical partnership with blues harp virtuoso Junior Wells.",
   wikipedia: "https://en.wikipedia.org/wiki/Buddy_Guy",
+  albums: [{ title: "Hoodoo Man Blues", year: 1965 }, { title: "A Man & the Blues", year: 1968 }, { title: "Southside Blues Jam", year: 1969 }, { title: "Left My Blues in San Francisco", year: 1969 }, { title: "Play the Blues", year: 1972 }, { title: "Southside Reunion", year: 1972 }, { title: "Hold That Plane!", year: 1972 }, { title: "The Blues Giant", year: 1979 }, { title: "Pleading the Blues", year: 1979 }, { title: "Breaking Out", year: 1980 }]
 },
 {
   name: "Frank Barsalona",
@@ -4706,6 +4919,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Van Zandt",
   summary: "Frank Barsalona (March 31, 1938 – November 22, 2012) was an American talent agent and founder of the first major rock and roll booking agency in the United States.",
   wikipedia: "https://en.wikipedia.org/wiki/Frank_Barsalona",
+  albums: []
 },
 {
   name: "Percy Sledge",
@@ -4728,6 +4942,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rod Stewart",
   summary: "Percy Tyrone Sledge (November 25, 1940 – April 14, 2015) was an American R&B, soul and gospel singer. He is best known for the song \"When a Man Loves a Woman\", a No. 1 hit on both the Billboard Hot 100 and R&B singles charts in 1966. It was awarded a million-selling, gold-certified disc from the RIAA.",
   wikipedia: "https://en.wikipedia.org/wiki/Percy_Sledge",
+  albums: [{ title: "Warm & Tender Soul", year: 1966 }, { title: "When a Man Loves a Woman", year: 1966 }, { title: "The Percy Sledge Way", year: 1967 }, { title: "Take Time to Know Her", year: 1968 }, { title: "My Special Wish For You", year: 1969 }, { title: "My Special Prayer", year: 1969 }, { title: "Soul Africa", year: 1971 }, { title: "I’ll Be Your Everything", year: 1974 }, { title: "When a Man Loves a Woman", year: 1988 }, { title: "The Great Percy Sledge", year: 1993 }]
 },
 {
   name: "Seymour Stein",
@@ -4750,6 +4965,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ice-T",
   summary: "Seymour Steinbigle (April 18, 1942 – April 2, 2023), known professionally as Seymour Stein, was an American entrepreneur and music executive. He co-founded Sire Records and was vice president of Warner Bros. Records. With Sire, Stein signed bands that became central to the new wave era of the 1970s and 1980s, including The Ramones, Talking Heads, and The Pretenders; he signed Madonna as well. He was inducted into the Rock and Roll Hall of Fame in 2005.",
   wikipedia: "https://en.wikipedia.org/wiki/Seymour_Stein",
+  albums: []
 },
 {
   name: "The O'Jays",
@@ -4772,6 +4988,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Justin Timberlake",
   summary: "The O'Jays are an American R&B group from Canton, Ohio, formed in summer 1958 and originally consisting of Eddie Levert, Walter Lee Williams, William Powell, Bobby Massey, and Bill Isles. The O'Jays made their first chart appearance with the minor hit \"Lonely Drifter\" in 1963, but reached their greatest level of success once the producers Gamble & Huff signed them to their Philadelphia International label in 1971.",
   wikipedia: "https://en.wikipedia.org/wiki/The_O%27Jays",
+  albums: [{ title: "Comin’ Through", year: 1965 }, { title: "Soul Sounds", year: 1967 }, { title: "Back On Top", year: 1968 }, { title: "The O’Jays in Philadelphia", year: 1969 }, { title: "Super Bad", year: 1971 }, { title: "Back Stabbers", year: 1972 }, { title: "Ship Ahoy", year: 1973 }, { title: "Family Reunion", year: 1975 }, { title: "Survival", year: 1975 }, { title: "Message in the Music", year: 1976 }]
 },
 {
   name: "The Pretenders",
@@ -4794,6 +5011,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: "The Pretenders are a British rock band formed in March 1978. The original band consisted of founder and main songwriter Chrissie Hynde (lead vocals, rhythm guitar), James Honeyman-Scott (lead guitar, backing vocals, keyboards), Pete Farndon (bass guitar, backing vocals), and Martin Chambers (drums, backing vocals, percussion).",
   wikipedia: "https://en.wikipedia.org/wiki/The_Pretenders",
+  albums: [{ title: "Pretenders", year: 1979 }, { title: "Pretenders II", year: 1981 }, { title: "Learning to Crawl", year: 1984 }, { title: "Get Close", year: 1986 }, { title: "Packed!", year: 1990 }, { title: "Last of the Independents", year: 1994 }, { title: "¡Viva el amor!", year: 1999 }, { title: "Loose Screw", year: 2002 }, { title: "Break Up the Concrete", year: 2008 }, { title: "Alone", year: 2016 }]
 },
 {
   name: "U2",
@@ -4816,6 +5034,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "U2 are an Irish rock band formed in Dublin in 1976. The group comprises Bono (lead vocals), the Edge (lead guitar, keyboards, and vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). Initially rooted in post-punk, U2's musical style has evolved throughout their career, yet has maintained an anthemic quality built on Bono's expressive vocals and the Edge's chiming, effects-based guitar sounds.",
   wikipedia: "https://en.wikipedia.org/wiki/U2",
+  albums: [{ title: "Boy", year: 1980 }, { title: "October", year: 1981 }, { title: "War", year: 1983 }, { title: "The Unforgettable Fire", year: 1984 }, { title: "The Joshua Tree", year: 1987 }, { title: "Tear Down the Walls", year: 1987 }, { title: "Pride", year: 1990 }, { title: "Achtung Baby", year: 1991 }, { title: "Rubber Ball And Liquor", year: 1992 }, { title: "Live, Vol. 3", year: 1993 }]
 },
 {
   name: "Black Sabbath",
@@ -4838,6 +5057,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "James Hetfield and Lars Ulrich",
   summary: "Black Sabbath were an English heavy metal band formed in Birmingham in 1968 by guitarist Tony Iommi, drummer Bill Ward, bassist Geezer Butler and vocalist Ozzy Osbourne. After adopting the Black Sabbath name in 1969 (the band were previously named Polka Tulk Blues Band and then Earth), they distinguished themselves through occult themes with horror-inspired lyrics and down-tuned guitars.",
   wikipedia: "https://en.wikipedia.org/wiki/Black_Sabbath",
+  albums: [{ title: "Black Sabbath", year: 1970 }, { title: "Paranoid", year: 1970 }, { title: "Master of Reality", year: 1971 }, { title: "Vol 4", year: 1972 }, { title: "Sabbath Bloody Sabbath", year: 1973 }, { title: "Sabotage", year: 1975 }, { title: "Technical Ecstasy", year: 1976 }, { title: "Never Say Die!", year: 1978 }, { title: "Heaven and Hell", year: 1980 }, { title: "Mob Rules", year: 1981 }]
 },
 {
   name: "Blondie",
@@ -4860,6 +5080,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Shirley Manson",
   summary: "Blondie is an American new wave band formed in New York City in 1974 by singer Debbie Harry and guitarist Chris Stein. The band were considered pioneers in the American new wave genre and scene of the mid-1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Blondie_%28band%29",
+  albums: [{ title: "Blondie", year: 1976 }, { title: "Plastic Letters", year: 1977 }, { title: "Parallel Lines", year: 1978 }, { title: "Eat to the Beat", year: 1979 }, { title: "Autoamerican", year: 1980 }, { title: "The Hunter", year: 1982 }, { title: "No Exit", year: 1999 }, { title: "The Curse of Blondie", year: 2003 }, { title: "Panic of Girls", year: 2011 }, { title: "Ghosts of Download", year: 2014 }]
 },
 {
   name: "Herb Alpert",
@@ -4882,6 +5103,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sting",
   summary: "Herb Alpert (born March 31, 1935) is an American musician who led the band Herb Alpert & the Tijuana Brass (sometimes called Herb Alpert and the TJB or Herb Alpert’s Tijuana Brass) in the 1960s. During the same decade, he co-founded A&M Records with Jerry Moss.",
   wikipedia: "https://en.wikipedia.org/wiki/Herb_Alpert",
+  albums: [{ title: "Just You and Me", year: 1976 }, { title: "Herb Alpert / Hugh Masekela", year: 1978 }, { title: "Rise", year: 1979 }, { title: "Beyond", year: 1980 }, { title: "Magic Man", year: 1981 }, { title: "Fandango", year: 1982 }, { title: "Blow Your Own Horn", year: 1983 }, { title: "Wild Romance", year: 1985 }, { title: "Keep Your Eye on Me", year: 1987 }, { title: "Under a Spanish Moon", year: 1988 }]
 },
 {
   name: "Jerry Moss",
@@ -4904,6 +5126,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sting",
   summary: "Jerome Sheldon Moss (May 8, 1935 – August 16, 2023) was an American recording executive, best known for being the co-founder of A&M Records, along with trumpet player and bandleader Herb Alpert.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerry_Moss",
+  albums: []
 },
 {
   name: "Lynyrd Skynyrd",
@@ -4926,6 +5149,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kid Rock",
   summary: "Lynyrd Skynyrd ( LEH-nerd SKIN-nerd) is an American rock band formed in Jacksonville, Florida, in 1964. The group originally formed as My Backyard and comprised Ronnie Van Zant (vocals), Gary Rossington (guitar), Allen Collins (guitar), Larry Junstrom (bass), and Bob Burns (drums). The band spent four years touring small venues under various names and with several lineup changes before deciding on \"Lynyrd Skynyrd\" in 1968.",
   wikipedia: "https://en.wikipedia.org/wiki/Lynyrd_Skynyrd",
+  albums: [{ title: "(pronounced ’lĕh-’nérd ’skin-’nérd)", year: 1973 }, { title: "Second Helping", year: 1974 }, { title: "Nuthin’ Fancy", year: 1975 }, { title: "Gimme Back My Bullets", year: 1976 }, { title: "Street Survivors", year: 1977 }, { title: "1991", year: 1991 }, { title: "The Last Rebel", year: 1993 }, { title: "Endangered Species", year: 1994 }, { title: "Twenty", year: 1997 }, { title: "Edge of Forever", year: 1999 }]
 },
 {
   name: "Miles Davis",
@@ -4948,6 +5172,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Herbie Hancock",
   summary: "Miles Dewey Davis III (May 26, 1926 – September 28, 1991) was an American trumpeter, bandleader and composer. He is among the most influential and acclaimed figures in the history of jazz and 20th-century music. In a career spanning nearly five decades, Davis was at the forefront of several major stylistic developments in jazz, including bebop, cool jazz, hard bop, third stream, modal jazz, avant-garde jazz, and jazz fusion. His legacy extends into rock, funk, classical, and hip-hop.",
   wikipedia: "https://en.wikipedia.org/wiki/Miles_Davis",
+  albums: [{ title: "Modern Jazz Trumpets", year: 1951 }, { title: "The New Sounds", year: 1951 }, { title: "The New Sounds", year: 1951 }, { title: "Young Man With a Horn", year: 1952 }, { title: "The Compositions of Al Cohn", year: 1953 }, { title: "Miles Davis, Vol. 2", year: 1953 }, { title: "Blue Period", year: 1953 }, { title: "Miles Davis With Sonny Rollins", year: 1954 }, { title: "Vol. 3", year: 1954 }, { title: "Blue Moods", year: 1955 }]
 },
 {
   name: "Sex Pistols",
@@ -4970,6 +5195,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jann Wenner",
   summary: "The Sex Pistols are an English punk rock band formed in London in 1975. Although their initial career lasted just two and a half years, they became culturally influential in popular music. The band initiated the punk movement in the United Kingdom, with their clothes and hairstyles becoming a significant influence on the punk subculture and fashion.",
   wikipedia: "https://en.wikipedia.org/wiki/Sex_Pistols",
+  albums: [{ title: "Never Mind the Bollocks Here’s the Sex Pistols", year: 1977 }, { title: "The Mini Album", year: 1988 }, { title: "Anarchy in the UK", year: 2001 }, { title: "More Product", year: 2017 }, { title: "76–77", year: 2021 }]
 },
 {
   name: "Grandmaster Flash and the Furious Five",
@@ -4992,6 +5218,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jay-Z",
   summary: "Grandmaster Flash and the Furious Five were an American hip-hop group formed in the South Bronx of New York City in 1978. The group's members were Grandmaster Flash, Kidd Creole (not to be confused with Kid Creole), Keef Cowboy, Melle Mel, Scorpio, and Rahiem. The group's use of turntablism, breakbeat DJing, and conscious lyricism were significant in the early development of hip hop music.",
   wikipedia: "https://en.wikipedia.org/wiki/Grandmaster_Flash_and_the_Furious_Five",
+  albums: [{ title: "The Message", year: 1982 }, { title: "On the Strength", year: 1988 }]
 },
 {
   name: "Patti Smith",
@@ -5014,6 +5241,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Zack de la Rocha",
   summary: "Patricia Lee Smith (born December 30, 1946) is an American singer, songwriter, poet, and author. Her 1975 debut album Horses made her an influential member of the New York City–based punk rock movement. Smith has fused rock and poetry in her work. In 1978, her most widely known song, \"Because the Night,\" co-written with Bruce Springsteen, reached number 13 on the Billboard Hot 100 chart and number five on the UK Singles Chart.",
   wikipedia: "https://en.wikipedia.org/wiki/Patti_Smith",
+  albums: [{ title: "Horses", year: 1975 }, { title: "Superbunny", year: 1976 }, { title: "Dream of Life", year: 1988 }, { title: "Gone Again", year: 1996 }, { title: "Tell It Like It Is", year: 1997 }, { title: "Peace and Noise", year: 1997 }, { title: "Ask The Angels", year: 1998 }, { title: "Gung Ho", year: 2000 }, { title: "Trampin’", year: 2003 }, { title: "February 10, 1971", year: 2006 }]
 },
 {
   name: "R.E.M.",
@@ -5036,6 +5264,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eddie Vedder",
   summary: "R.E.M. was an American rock band formed in Athens, Georgia, in 1980 by drummer Bill Berry, guitarist Peter Buck, bassist Mike Mills, and lead vocalist Michael Stipe, who were students at the University of Georgia. R.E.M. was noted for Buck's arpeggiated \"jangle\" guitar playing; Stipe's distinctive vocal style, unique stage presence, and cryptic lyrics; Mills's countermelodic bass lines and backing vocals; and Berry's tight, economical drumming.",
   wikipedia: "https://en.wikipedia.org/wiki/R.E.M.",
+  albums: [{ title: "Murmur", year: 1983 }, { title: "Reckoning", year: 1984 }, { title: "Fables of the Reconstruction", year: 1985 }, { title: "Lifes Rich Pageant", year: 1986 }, { title: "Document", year: 1987 }, { title: "Green", year: 1988 }, { title: "Out of Time", year: 1991 }, { title: "Automatic for the People", year: 1992 }, { title: "Monster", year: 1994 }, { title: "New Adventures in Hi‐Fi", year: 1996 }]
 },
 {
   name: "The Ronettes",
@@ -5058,6 +5287,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Keith Richards",
   summary: "The Ronettes ( ron-NETS) were an American girl group from Washington Heights, Manhattan, New York City. The group consisted of the lead singer Veronica Bennett (later known as Ronnie Spector), her older sister Estelle Bennett, and their cousin Nedra Talley. They had sung together since they were teenagers, then known as \"The Darling Sisters\". Signed first by Colpix Records in 1961, they moved to Phil Spector's Philles Records in March 1963 and changed their name to \"The Ronettes\".",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ronettes",
+  albums: [{ title: "Presenting the Fabulous Ronettes Featuring Veronica", year: 1964 }]
 },
 {
   name: "Van Halen",
@@ -5080,6 +5310,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Velvet Revolver",
   summary: "Van Halen ( van HAY-len) was an American rock band formed in Pasadena, California, in 1972. Credited with restoring hard rock to the forefront of the music scene, Van Halen was known for their energetic live performances and the virtuosity of their guitarist, Eddie Van Halen.",
   wikipedia: "https://en.wikipedia.org/wiki/Van_Halen",
+  albums: [{ title: "Van Halen", year: 1978 }, { title: "Van Halen II", year: 1979 }, { title: "Women and Children First", year: 1980 }, { title: "Fair Warning", year: 1981 }, { title: "Diver Down", year: 1982 }, { title: "1984", year: 1984 }, { title: "5150", year: 1986 }, { title: "OU812", year: 1988 }, { title: "For Unlawful Carnal Knowledge", year: 1991 }, { title: "Balance", year: 1995 }]
 },
 {
   name: "Gamble and Huff",
@@ -5102,6 +5333,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jerry Butler",
   summary: "Kenneth Gamble (born August 11, 1943, Philadelphia, Pennsylvania) and Leon A. Huff (born April 8, 1942, Camden, New Jersey) are an American songwriting and production duo credited for developing the Philadelphia soul music genre (also known as Philly sound) of the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/Gamble_and_Huff",
+  albums: []
 },
 {
   name: "John Mellencamp",
@@ -5124,6 +5356,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Joel",
   summary: "John J. Mellencamp (born October 7, 1951), previously known as Johnny Cougar, The Coug, John Cougar, and John Cougar Mellencamp, is an American singer-songwriter. He is known for his brand of heartland rock, which emphasizes traditional instrumentation. He was inducted into the Rock and Roll Hall of Fame in 2008, followed by an induction into the Songwriters Hall of Fame in 2018.",
   wikipedia: "https://en.wikipedia.org/wiki/John_Mellencamp",
+  albums: [{ title: "Chestnut Street Incident", year: 1976 }, { title: "A Biography", year: 1978 }, { title: "John Cougar", year: 1979 }, { title: "Nothin’ Matters and What If It Did", year: 1980 }, { title: "American Fool", year: 1982 }, { title: "Uh‐Huh", year: 1983 }, { title: "The Kid Inside", year: 1983 }, { title: "Scarecrow", year: 1985 }, { title: "The Lonesome Jubilee", year: 1987 }, { title: "Big Daddy", year: 1989 }]
 },
 {
   name: "Leonard Cohen",
@@ -5146,6 +5379,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lou Reed",
   summary: "Leonard Norman Cohen (September 21, 1934 – November 7, 2016) was a Canadian songwriter, singer, poet, and novelist. Themes commonly explored throughout his work include faith and mortality, isolation and depression, betrayal and redemption, social and political conflict, sexual and romantic love, desire, regret, and loss. He was inducted into the Canadian Music Hall of Fame, the Canadian Songwriters Hall of Fame, and the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Leonard_Cohen",
+  albums: [{ title: "Songs of Leonard Cohen", year: 1967 }, { title: "Songs From a Room", year: 1969 }, { title: "Songs of Love and Hate", year: 1971 }, { title: "New Skin for the Old Ceremony", year: 1974 }, { title: "Death of a Ladies’ Man", year: 1977 }, { title: "Recent Songs", year: 1979 }, { title: "Various Positions", year: 1984 }, { title: "I’m Your Man", year: 1988 }, { title: "The Future", year: 1992 }, { title: "Ten New Songs", year: 2001 }]
 },
 {
   name: "Little Walter",
@@ -5168,6 +5402,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ben Harper",
   summary: "Marion Walter Jacobs (May 1, 1930 – February 15, 1968), known as Little Walter, was an American blues musician, singer, and songwriter. His revolutionary approach to the harmonica had a strong impact on the succeeding generations, earning him comparisons to such seminal artists as Django Reinhardt, Charlie Parker and Jimi Hendrix. His virtuosity and musical innovations fundamentally altered many listeners' expectations of what was possible on blues harmonica.",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Walter",
+  albums: [{ title: "Super Blues", year: 1967 }, { title: "Boss Blues Harmonica", year: 1972 }, { title: "Southern Feeling", year: 1978 }, { title: "My Babe", year: 1991 }, { title: "Blues With a Feeling", year: 1991 }, { title: "Juke", year: 2007 }, { title: "Windy City Blues", year: null }]
 },
 {
   name: "Madonna",
@@ -5190,6 +5425,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Justin Timberlake",
   summary: "Madonna Louise Ciccone ( chih-KOH-nee; born August 16, 1958) is an American singer, songwriter, record producer, and actress. Dubbed the \"Queen of Pop\", she is known for her continual reinvention and versatility in music production, songwriting, and visual presentation. Madonna broke gender barriers in popular music through works that explored social, political, sexual, and religious themes and generated both controversy and critical acclaim.",
   wikipedia: "https://en.wikipedia.org/wiki/Madonna",
+  albums: [{ title: "Madonna", year: 1983 }, { title: "Like a Virgin", year: 1984 }, { title: "True Blue", year: 1986 }, { title: "Like a Prayer", year: 1989 }, { title: "Erotica", year: 1992 }, { title: "Boy Toy", year: 1993 }, { title: "Bedtime Stories", year: 1994 }, { title: "Ray of Light", year: 1998 }, { title: "X-Ray Mixes", year: 1999 }, { title: "Music", year: 2000 }]
 },
 {
   name: "The Dave Clark Five",
@@ -5212,6 +5448,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tom Hanks",
   summary: "The Dave Clark Five, also known as the DC5, were an English rock and roll band formed in 1958 in Tottenham, London. Drummer Dave Clark was the group's leader, producer and co-songwriter. In January 1964, they had their first UK top-ten single, \"Glad All Over\", which knocked the Beatles' \"I Want to Hold Your Hand\" off the top of the UK Singles Chart. It peaked at No. 6 in the United States in April 1964. Although this was their only UK No.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Dave_Clark_Five",
+  albums: [{ title: "A Session With the Dave Clark Five", year: 1963 }, { title: "The Dave Clark Five Return!", year: 1964 }, { title: "Glad All Over", year: 1964 }, { title: "American Tour", year: 1964 }, { title: "Catch Us If You Can", year: 1965 }, { title: "I Like It Like That", year: 1965 }, { title: "Coast to Coast", year: 1965 }, { title: "Weekend in London", year: 1965 }, { title: "Satisfied With You", year: 1966 }, { title: "Try Too Hard", year: 1966 }]
 },
 {
   name: "The Ventures",
@@ -5234,6 +5471,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Fogerty",
   summary: "The Ventures are an American instrumental rock band formed in Tacoma, Washington, in 1958, by Don Wilson and Bob Bogle. The band, which was a quartet for most of its existence, helped to popularize the electric guitar across the world during the 1960s. While their popularity in the United States waned in the 1970s, the group remains especially revered in Japan, where they have toured regularly.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Ventures",
+  albums: [{ title: "Walk, Don’t Run", year: 1960 }, { title: "Another Smash!!!", year: 1961 }, { title: "The Ventures", year: 1961 }, { title: "The Colorful Ventures", year: 1961 }, { title: "Twist With the Ventures", year: 1962 }, { title: "Mashed Potatoes and Gravy", year: 1962 }, { title: "Going to the Ventures' Dance Party!", year: 1962 }, { title: "Twist Party, Volume 2", year: 1962 }, { title: "Bobby Vee Meets The Ventures", year: 1963 }, { title: "The Ventures Play “Telstar”, “The Lonely Bull” and Others", year: 1963 }]
 },
 {
   name: "Bill Black",
@@ -5256,6 +5494,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Garry Tallent",
   summary: "William Patton Black Jr. (September 17, 1926 – October 21, 1965) was an American musician and bandleader who is noted as one of the pioneers of rock and roll. He played in Elvis Presley's early trio, the Blue Moon Boys. Black later formed Bill Black's Combo.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Black",
+  albums: []
 },
 {
   name: "Bobby Womack",
@@ -5278,6 +5517,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ron Wood",
   summary: "Robert Dwayne Womack ( WOH-mak; March 4, 1944 – June 27, 2014) was an American singer-songwriter and guitarist. Starting in the early 1950s as the lead singer of his family musical group the Valentinos and as Sam Cooke's backing guitarist, Womack's career spanned more than 60 years and multiple styles, including R&B, blues, doo-wop, gospel, funk, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Womack",
+  albums: [{ title: "Fly Me to the Moon", year: 1968 }, { title: "My Prescription", year: 1970 }, { title: "Communication", year: 1971 }, { title: "Understanding", year: 1972 }, { title: "Facts of Life", year: 1973 }, { title: "Lookin’ for a Love Again", year: 1974 }, { title: "I Don’t Know What the World Is Coming To", year: 1975 }, { title: "Safety Zone", year: 1975 }, { title: "BW Goes C&W", year: 1976 }, { title: "Home Is Where Heart Is", year: 1976 }]
 },
 {
   name: "D. J. Fontana",
@@ -5300,6 +5540,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Max Weinberg",
   summary: "Dominic Joseph Fontana (March 15, 1931 – June 13, 2018) was an American musician best known as the drummer for Elvis Presley for 14 years. In 1955, he was hired to play drums for Presley, which marked the beginning of a 15-year relationship. He played on over 460 RCA recordings with Elvis.",
   wikipedia: "https://en.wikipedia.org/wiki/D._J._Fontana",
+  albums: [{ title: "All the King's Men", year: 1997 }]
 },
 {
   name: "Jeff Beck",
@@ -5322,6 +5563,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jimmy Page",
   summary: "Geoffrey Arnold Beck (24 June 1944 – 10 January 2023) was an English guitarist. He rose to prominence as a member of the rock band the Yardbirds, and afterwards founded and fronted the Jeff Beck Group and Beck, Bogert & Appice. In 1975, he switched to an instrumental style with focus on an innovative sound, and his releases spanned genres and styles ranging from blues rock, hard rock, jazz fusion and a blend of guitar-rock and electronica.",
   wikipedia: "https://en.wikipedia.org/wiki/Jeff_Beck",
+  albums: [{ title: "Blow by Blow", year: 1975 }, { title: "Wired", year: 1976 }, { title: "Reggae ’n’ Roll", year: 1978 }, { title: "There and Back", year: 1980 }, { title: "Flash", year: 1985 }, { title: "Jeff Beck’s Guitar Shop", year: 1989 }, { title: "Crazy Legs", year: 1993 }, { title: "Who Else!", year: 1999 }, { title: "You Had It Coming", year: 2000 }, { title: "Jeff", year: 2003 }]
 },
 {
   name: "Little Anthony and the Imperials",
@@ -5344,6 +5586,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "Little Anthony and the Imperials is an American rhythm and blues, doo-wop, and soul vocal group from New York City founded by Clarence Collins in the 1950s and named in part for its lead singer, Jerome Anthony \"Little Anthony\" Gourdine, who was noted for his high-pitched voice. In addition to Collins and Gourdine, the original Imperials included Ernest Wright, Glouster \"Nate\" Rogers, and Tracy Lord, the last two of whom were subsequently replaced by Sammy Strain.",
   wikipedia: "https://en.wikipedia.org/wiki/Little_Anthony_and_the_Imperials",
+  albums: [{ title: "We Are the Imperials", year: 1959 }, { title: "Shades of the 40's", year: 1960 }, { title: "I'm on the Outside (Looking in)", year: 1964 }, { title: "Goin' Out of My Head", year: 1965 }, { title: "Reflections", year: 1967 }, { title: "Movie Grabbers", year: 1967 }, { title: "On A New Street", year: 1973 }]
 },
 {
   name: "Metallica",
@@ -5366,6 +5609,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Flea",
   summary: "Metallica is an American heavy metal band. It was formed in Los Angeles in 1981 by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal, alongside Megadeth, Anthrax, and Slayer.",
   wikipedia: "https://en.wikipedia.org/wiki/Metallica",
+  albums: [{ title: "Kill ’Em All", year: 1983 }, { title: "Ride the Lightning", year: 1984 }, { title: "Master of Puppets", year: 1986 }, { title: "…And Justice for All", year: 1988 }, { title: "Metallica", year: 1991 }, { title: "Load", year: 1996 }, { title: "Reload", year: 1997 }, { title: "St. Anger", year: 2003 }, { title: "Death Magnetic", year: 2008 }, { title: "Lulu", year: 2011 }]
 },
 {
   name: "Run-DMC",
@@ -5388,6 +5632,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eminem",
   summary: "Run-DMC (also formatted Run-D.M.C., RUN DMC, or some combination thereof) was an American hip-hop group formed in Hollis, Queens, New York City in 1983 by Joseph Simmons, Darryl McDaniels, and Jason Mizell. Run-DMC is regarded as one of the most influential acts in the history of hip-hop culture and especially one of the most famous hip-hop acts of the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Run-DMC",
+  albums: [{ title: "Run‐D.M.C.", year: 1984 }, { title: "King of Rock", year: 1985 }, { title: "Raising Hell", year: 1986 }, { title: "Tougher Than Leather", year: 1988 }, { title: "Back From Hell", year: 1990 }, { title: "Down With the King", year: 1993 }, { title: "Crown Royal", year: 2001 }]
 },
 {
   name: "Spooner Oldham",
@@ -5410,6 +5655,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Shaffer",
   summary: "Dewey \"Spooner\" Lindon Oldham Jr. (born June 14, 1943) is an American songwriter and session musician. An organist, he recorded in Muscle Shoals, Alabama, at FAME Studios as part of the Muscle Shoals Rhythm Section on such hit R&B songs as Percy Sledge's \"When a Man Loves a Woman\", Wilson Pickett's \"Mustang Sally\", and Aretha Franklin's \"I Never Loved a Man (The Way I Love You)\".",
   wikipedia: "https://en.wikipedia.org/wiki/Spooner_Oldham",
+  albums: [{ title: "Pot Luck", year: 1972 }, { title: "Spare Change", year: 1982 }, { title: "For the Living of These Days", year: 2006 }, { title: "The Southern Christmas Songbook & Hymnal", year: 2016 }]
 },
 {
   name: "Wanda Jackson",
@@ -5432,6 +5678,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rosanne Cash",
   summary: "Wanda LaVonne Jackson (born October 20, 1937) is an American retired singer and songwriter. Since the 1950s, she has recorded and released music in the genres of rock, country and gospel. She was among the first women to have a career in rock and roll, recording a series of 1950s singles that helped give her the nickname \"The Queen of Rockabilly\". She is also counted among the first female stars in the genre of country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Wanda_Jackson",
+  albums: [{ title: "Wanda Jackson", year: 1958 }, { title: "There’s a Party Goin’ On", year: 1961 }, { title: "There’s A Party Goin’ On", year: 1961 }, { title: "Right or Wrong", year: 1961 }, { title: "Lovin’ Country Style", year: 1962 }, { title: "Wonderful Wanda", year: 1962 }, { title: "Love Me Forever", year: 1963 }, { title: "Two Sides of Wanda", year: 1964 }, { title: "Blues in My Heart", year: 1965 }, { title: "Wanda Jackson Salutes the Country Music Hall of Fame", year: 1966 }]
 },
 {
   name: "ABBA",
@@ -5454,6 +5701,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Barry and Robin Gibb",
   summary: "ABBA (  AB-ə [ˈâbːa]) (often stylised as ABBA) were a Swedish pop music group formed in Stockholm in 1972 by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad. They are among the most renowned and commercially successful musical groups in history.",
   wikipedia: "https://en.wikipedia.org/wiki/ABBA",
+  albums: [{ title: "Ring Ring", year: 1973 }, { title: "Waterloo", year: 1974 }, { title: "ABBA", year: 1975 }, { title: "Arrival", year: 1976 }, { title: "The Album", year: 1977 }, { title: "Voulez‐vous", year: 1979 }, { title: "Super Trouper", year: 1980 }, { title: "The Visitors", year: 1981 }, { title: "Voyage", year: 2021 }]
 },
 {
   name: "Ellie Greenwich",
@@ -5476,6 +5724,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Eleanor Louise Greenwich (October 23, 1940 – August 26, 2009) was an American pop music singer, songwriter, and record producer. She wrote or co-wrote \"Da Doo Ron Ron\", \"Be My Baby\", \"Maybe I Know\", \"Then He Kissed Me\", \"Do Wah Diddy Diddy\", \"Christmas (Baby Please Come Home)\", \"Hanky Panky\", \"Chapel of Love\", \"Leader of the Pack\", and \"River Deep – Mountain High\", among others.",
   wikipedia: "https://en.wikipedia.org/wiki/Ellie_Greenwich",
+  albums: [{ title: "Composes, Produces and Sings", year: 1968 }, { title: "Let It Be Written, Let It Be Sung", year: 1973 }, { title: "Ellie Greenwich", year: 1999 }]
 },
 {
   name: "Genesis",
@@ -5498,6 +5747,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Trey Anastasio",
   summary: "Genesis were an English rock band formed at Charterhouse School, in Godalming, Surrey, in 1967. The band's longest-lasting and most commercially successful line-up consisted of keyboardist Tony Banks, bassist/guitarist Mike Rutherford and drummer/singer Phil Collins. In the 1970s, during which the band also included singer Peter Gabriel and guitarist Steve Hackett, Genesis were among the pioneers of progressive rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Genesis_%28band%29",
+  albums: [{ title: "From Genesis to Revelation", year: 1969 }, { title: "Trespass", year: 1970 }, { title: "Nursery Cryme", year: 1971 }, { title: "Foxtrot", year: 1972 }, { title: "Selling England by the Pound", year: 1973 }, { title: "The Lamb Lies Down on Broadway", year: 1974 }, { title: "Wind & Wuthering", year: 1976 }, { title: "A Trick of the Tail", year: 1976 }, { title: "…And Then There Were Three…", year: 1978 }, { title: "Duke", year: 1980 }]
 },
 {
   name: "Jeff Barry",
@@ -5520,6 +5770,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Jeff Barry (born Joel Adelberg; April 3, 1938) is an American pop music songwriter, singer, and record producer. Among the most successful songs that he has co-written in his career are \"Tell Laura I Love Her\" (written with Ben Raleigh and a number 1 hit in the UK Singles Chart when it was recorded by Ricky Valance and number 7 in the US as sung by Ray Peterson), \"Do Wah Diddy Diddy\", \"Da Doo Ron Ron\", \"Then He Kissed Me\", \"Be My Baby\", \"Chapel of Love\", and \"River Deep - Mountain High\" (all wri…",
   wikipedia: "https://en.wikipedia.org/wiki/Jeff_Barry",
+  albums: []
 },
 {
   name: "Jesse Stone",
@@ -5542,6 +5793,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Jesse Albert Stone (November 16, 1901 – April 1, 1999) was an American rhythm and blues musician and songwriter whose influence spanned a wide range of genres. He also used the pseudonyms Charles Calhoun and Chuck Calhoun.  His best-known composition as Calhoun was \"Shake, Rattle and Roll\".",
   wikipedia: "https://en.wikipedia.org/wiki/Jesse_Stone_%28musician%29",
+  albums: []
 },
 {
   name: "Jimmy Cliff",
@@ -5564,6 +5816,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Wyclef Jean",
   summary: "James Chambers (30 July 1944 – 24 November 2025), known professionally as Jimmy Cliff, was a Jamaican ska, rocksteady, reggae and soul musician. He was considered to be one of Jamaica's most celebrated musicians and was credited with helping to popularise reggae music internationally. At the time of his death, he was the 4th reggae musician to hold the Order of Merit, the highest honour granted by the Jamaican government for achievements in the arts and sciences.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Cliff",
+  albums: [{ title: "Hard Road to Travel", year: 1967 }, { title: "Jimmy Cliff / Wonderful World, Beautiful People", year: 1969 }, { title: "Wild World", year: 1971 }, { title: "Goodbye Yesterday", year: 1971 }, { title: "Another Cycle", year: 1971 }, { title: "Struggling Man", year: 1973 }, { title: "Unlimited", year: 1973 }, { title: "Music Maker", year: 1974 }, { title: "Brave Warrior", year: 1975 }, { title: "Follow My Mind", year: 1976 }]
 },
 {
   name: "Mann & Weil",
@@ -5586,6 +5839,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Eric Clapton and B.B. King",
   summary: "Cynthia Weil (October 18, 1940 – June 1, 2023) was an American lyricist who wrote many songs together with her husband Barry Mann. Weil and Mann were inducted into the Songwriters Hall of Fame in 1987, and in 2011, they jointly received the Johnny Mercer Award, the highest honor bestowed by that Hall of Fame.  She and her husband were inducted into the Rock and Roll Hall of Fame in 2010.",
   wikipedia: null,
+  albums: []
 },
 {
   name: "Mort Shuman",
@@ -5608,6 +5862,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Mortimer Shuman (November 12, 1938 – November 2, 1991) was an American singer, pianist and songwriter, best known as co-writer of many 1960s rock and roll hits, including \"Viva Las Vegas\". He also wrote and sang many songs in French, such as \"Le Lac Majeur\", \"Papa-Tango-Charly\", \"Sha Mi Sha\", \"Un Été de Porcelaine\", and \"Brooklyn by the Sea\" which became hits in France and several other European countries. Shuman wrote over 500 songs, including those for Ben E.",
   wikipedia: "https://en.wikipedia.org/wiki/Mort_Shuman",
+  albums: [{ title: "My Death", year: 1969 }, { title: "Amerika", year: 1972 }, { title: "Voilà comment...", year: 1973 }, { title: "Des chansons sentimentales", year: 1974 }, { title: "Imagine...", year: 1976 }, { title: "My Name is Mortimer", year: 1977 }, { title: "Le Nègre blanc", year: 1979 }, { title: "Slave", year: 1980 }, { title: "Lumières d'amour", year: 1982 }, { title: "Pharaon", year: 1984 }]
 },
 {
   name: "Otis Blackwell",
@@ -5630,6 +5885,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Otis Blackwell (February 16, 1931 – May 6, 2002) was an American songwriter whose work influenced rock and roll. His compositions include \"Fever\" (recorded by Little Willie John), \"Great Balls of Fire\" and \"Breathless\" (recorded by Jerry Lee Lewis), \"Don't Be Cruel\", \"All Shook Up\", and \"Return to Sender\" (with Winfield Scott; recorded by Elvis Presley), and \"Handy Man\" (recorded by Jimmy Jones).",
   wikipedia: "https://en.wikipedia.org/wiki/Otis_Blackwell",
+  albums: []
 },
 {
   name: "The Hollies",
@@ -5652,6 +5908,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Van Zandt",
   summary: "The Hollies are an English rock and pop band formed in Manchester in 1962 by singer Allan Clarke and rhythm guitarist/singer Graham Nash. One of most successful British bands of the 1960s and 1970s, their first stable line-up consisted of Clarke, Nash, lead guitarist Tony Hicks, bassist Eric Haydock, and drummer Don Rathbone. Rathbone was replaced by Bobby Elliott in late 1963, while Haydock was replaced by Bernie Calvert in mid-1966.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Hollies",
+  albums: [{ title: "In the Hollies Style", year: 1964 }, { title: "Stay With the Hollies", year: 1964 }, { title: "Hollies", year: 1965 }, { title: "Would You Believe?", year: 1966 }, { title: "For Certain Because…", year: 1966 }, { title: "Bus Stop", year: 1966 }, { title: "Butterfly", year: 1967 }, { title: "Dear Eloise / King Midas in Reverse", year: 1967 }, { title: "Evolution", year: 1967 }, { title: "Hollies Sing Dylan", year: 1969 }]
 },
 {
   name: "The Stooges",
@@ -5674,6 +5931,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billie Joe Armstrong",
   summary: "The Stooges (also known as Iggy and the Stooges)  were an American rock band formed in Ann Arbor, Michigan, in 1967 by singer Iggy Pop, guitarist Ron Asheton, drummer Scott Asheton, and bassist Dave Alexander. Initially playing a raw, primitive style of rock and roll, the band sold few records in their original incarnation and gained a reputation for their confrontational performances, which sometimes involved acts of self-mutilation by Iggy Pop.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Stooges",
+  albums: [{ title: "The Stooges", year: 1969 }, { title: "Fun House", year: 1970 }, { title: "Kill City", year: 1994 }, { title: "Reunion At Coachella 2003-04-27", year: 2003 }, { title: "The Weirdness", year: 2007 }, { title: "Etiqueta Negra de Lugo", year: 2013 }]
 },
 {
   name: "Alice Cooper",
@@ -5696,6 +5954,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rob Zombie",
   summary: "Alice Cooper (born Vincent Damon Furnier; February 4, 1948) is an American singer and songwriter. With a career spanning over six decades, he is known for his raspy singing voice and theatrical stage shows that feature numerous props and illusions. Cooper is considered by music journalists and peers to be \"The Godfather of Shock Rock\". He has drawn from horror films, vaudeville, and garage rock to pioneer a macabre and theatrical brand of rock designed to shock audiences.",
   wikipedia: "https://en.wikipedia.org/wiki/Alice_Cooper",
+  albums: [{ title: "Welcome to My Nightmare", year: 1975 }, { title: "Alice Cooper Goes to Hell", year: 1976 }, { title: "Lace and Whiskey", year: 1977 }, { title: "From the Inside", year: 1978 }, { title: "Flush the Fashion", year: 1980 }, { title: "Special Forces", year: 1981 }, { title: "Zipper Catches Skin", year: 1982 }, { title: "DaDa", year: 1983 }, { title: "Constrictor", year: 1986 }, { title: "Raise Your Fist and Yell", year: 1987 }]
 },
 {
   name: "Alice Cooper",
@@ -5718,6 +5977,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rob Zombie",
   summary: "Alice Cooper, also known as the Alice Cooper Group or the Alice Cooper Band is an American rock band formed in Phoenix, Arizona, in 1968. During their original run, the band consisted of lead singer Vincent Furnier (who adopted the stage name Alice Cooper), lead guitarist Glen Buxton, rhythm guitarist and keyboardist Michael Bruce, bassist Dennis Dunaway, and drummer Neal Smith. The band was notorious for their elaborate, theatrical shock rock stage shows.",
   wikipedia: "https://en.wikipedia.org/wiki/Alice_Cooper_%28band%29",
+  albums: [{ title: "Pretties for You", year: 1969 }, { title: "Easy Action", year: 1970 }, { title: "Killer", year: 1971 }, { title: "Love It to Death", year: 1971 }, { title: "School’s Out", year: 1972 }, { title: "Billion Dollar Babies", year: 1973 }, { title: "Muscle of Love", year: 1973 }, { title: "Don’t Blow Your Mind: The Mascot Sessions", year: 2024 }, { title: "The Revenge of Alice Cooper", year: 2025 }]
 },
 {
   name: "Art Rupe",
@@ -5740,6 +6000,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lloyd Price",
   summary: "Arthur Newton Rupe  (born Arthur Goldberg; September 5, 1917 – April 15, 2022) was an American music executive and record producer. He founded Specialty Records, known for its rhythm and blues, blues, gospel and early rock and roll music recordings, in Los Angeles in 1946.",
   wikipedia: "https://en.wikipedia.org/wiki/Art_Rupe",
+  albums: []
 },
 {
   name: "Darlene Love",
@@ -5762,6 +6023,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bette Midler",
   summary: "Darlene Wright (born July 26, 1941[a]), known professionally as Darlene Love, is an American R&B and soul singer and actress. She was the lead singer of the girl group the Blossoms and also a solo recording artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Darlene_Love",
+  albums: [{ title: "It's Christmas, of Course", year: 2007 }, { title: "Paint Another Picture", year: 2012 }, { title: "Introducing Darlene Love", year: 2015 }]
 },
 {
   name: "Dr. John",
@@ -5784,6 +6046,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Legend",
   summary: "Malcolm John Rebennack Jr. (November 20, 1941 – June 6, 2019), better known by his stage name Dr. John, was an American singer, songwriter and pianist. His music combined New Orleans blues, jazz, R&B, soul and funk.",
   wikipedia: "https://en.wikipedia.org/wiki/Dr._John",
+  albums: [{ title: "Gris-Gris", year: 1968 }, { title: "Babylon", year: 1969 }, { title: "Remedies", year: 1970 }, { title: "The Sun, Moon & Herbs", year: 1971 }, { title: "Dr. John’s Gumbo", year: 1972 }, { title: "In the Right Place", year: 1973 }, { title: "Zu Zu Man", year: 1973 }, { title: "Anytime, Anyplace", year: 1974 }, { title: "Desitively Bonnaroo", year: 1974 }, { title: "One Night Late", year: 1977 }]
 },
 {
   name: "Jac Holzman",
@@ -5806,6 +6069,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Densmore",
   summary: "Jac Holzman (born September 15, 1931) is an American record executive. He is the founder of the record labels Elektra Records and Nonesuch Records. Holzman helped commercially launch the CD and home video formats, as well as the pilot program which became MTV. He was inducted into the Rock and Roll Hall of Fame in 2011.",
   wikipedia: "https://en.wikipedia.org/wiki/Jac_Holzman",
+  albums: []
 },
 {
   name: "Leon Russell",
@@ -5828,6 +6092,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Leon Russell (born Claude Russell Bridges; April 2, 1942 – November 13, 2016) was an American musician and songwriter who was involved with numerous bestselling records during his 60-year career that spanned multiple genres, including rock and roll, country, gospel, bluegrass, rhythm and blues, southern rock, blues rock, folk, surf and the Tulsa sound. His recordings earned six gold records and he received two Grammy Awards from seven nominations.",
   wikipedia: "https://en.wikipedia.org/wiki/Leon_Russell",
+  albums: [{ title: "David Hemmings Happens", year: 1967 }, { title: "Leon Russell", year: 1970 }, { title: "Leon Russell and the Shelter People", year: 1971 }, { title: "Asylum Choir II", year: 1971 }, { title: "Carney", year: 1972 }, { title: "Looking Back", year: 1973 }, { title: "Hank Wilson’s Back!", year: 1973 }, { title: "Stop All That Jazz", year: 1974 }, { title: "Will o’ the Wisp", year: 1975 }, { title: "Wedding Album", year: 1976 }]
 },
 {
   name: "Neil Diamond",
@@ -5850,6 +6115,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Simon",
   summary: "Neil Leslie Diamond (born January 24, 1941) is an American singer-songwriter. He has sold more than 56.5 million records in the US alone, making him one of the best-selling musicians in history.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Diamond",
+  albums: [{ title: "The Feel of Neil Diamond", year: 1966 }, { title: "Just for You", year: 1967 }, { title: "Velvet Gloves and Spit", year: 1968 }, { title: "Touching You, Touching Me", year: 1969 }, { title: "Brother Love’s Travelling Salvation Show", year: 1969 }, { title: "Tap Root Manuscript", year: 1970 }, { title: "Stones", year: 1971 }, { title: "Moods", year: 1972 }, { title: "Serenade", year: 1974 }, { title: "Beautiful Noise", year: 1976 }]
 },
 {
   name: "Tom Waits",
@@ -5872,6 +6138,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Neil Young",
   summary: "Thomas Alan Waits (born December 7, 1949) is an American singer, songwriter, composer and actor. His lyrics often focus on society's underbelly and are delivered in his trademark deep, gravelly voice. He began in the folk scene during the 1970s, but his music since the 1980s has reflected the influence of such diverse genres as rock, jazz, Delta blues, opera, vaudeville, cabaret, funk and experimental techniques verging on industrial music.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Waits",
+  albums: [{ title: "Closing Time", year: 1973 }, { title: "The Heart of Saturday Night", year: 1974 }, { title: "Small Change", year: 1976 }, { title: "Foreign Affairs", year: 1977 }, { title: "Blue Valentine", year: 1978 }, { title: "Heartattack and Vine", year: 1980 }, { title: "Swordfishtrombones", year: 1983 }, { title: "Rain Dogs", year: 1985 }, { title: "Franks Wild Years", year: 1987 }, { title: "TV Dinner", year: 1992 }]
 },
 {
   name: "Beastie Boys",
@@ -5894,6 +6161,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chuck D and LL Cool J",
   summary: "The Beastie Boys were an American hip-hop group formed in New York City in 1981. They were composed of Adam \"Ad-Rock\" Horovitz (vocals, guitar), Adam \"MCA\" Yauch (vocals, bass), and Michael \"Mike D\" Diamond (vocals, drums).",
   wikipedia: "https://en.wikipedia.org/wiki/Beastie_Boys",
+  albums: [{ title: "Licensed to Ill", year: 1986 }, { title: "Paul’s Boutique", year: 1989 }, { title: "Check Your Head", year: 1992 }, { title: "Ill Communication", year: 1994 }, { title: "Hello Nasty", year: 1998 }, { title: "Hello Nasty: Instrumentals", year: 2003 }, { title: "To the 5 Boroughs", year: 2004 }, { title: "The Mix‐Up", year: 2007 }, { title: "Hot Sauce Committee, Part Two", year: 2011 }]
 },
 {
   name: "Bill Haley & His Comets",
@@ -5916,6 +6184,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "Bill Haley & His Comets were an American rock and roll band formed in 1947 and continuing until Haley's death in 1981. The band was also known as Bill Haley and the Comets and Bill Haley's Comets. From late 1954 to late 1956, the group recorded nine top-20 singles, one of which was number one and three that were top ten. The single \"Rock Around the Clock\" was the best-selling rock single in the history of the genre and maintained that position for several years.",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Haley_%26_His_Comets",
+  albums: [{ title: "Rock ’n Roll Stage Show", year: 1956 }, { title: "Rock Around the Clock", year: 1956 }, { title: "Rockin’ the “Oldies”!", year: 1957 }, { title: "Rockin’ Around the World", year: 1958 }, { title: "Bill Haley’s Chicks", year: 1959 }, { title: "Strictly Instrumental", year: 1959 }, { title: "Haley’s Juke Box", year: 1960 }, { title: "Bill Haley and His Comets", year: 1960 }, { title: "Bill Haley and His Comets", year: 1963 }, { title: "Whisky A Go Go", year: 1966 }]
 },
 {
   name: "Cosimo Matassa",
@@ -5938,6 +6207,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Cosimo Vincent Matassa (April 13, 1926 – September 11, 2014) was an American recording engineer and studio owner, responsible for many R&B and early rock and roll recordings.",
   wikipedia: "https://en.wikipedia.org/wiki/Cosimo_Matassa",
+  albums: []
 },
 {
   name: "Don Kirshner",
@@ -5960,6 +6230,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Carole King",
   summary: "Donald Kirshner (April 17, 1934 – January 17, 2011) was an American music publisher, music consultant, rock music producer, talent manager, and songwriter. Dubbed \"the Man with the Golden Ear\" by Time, he was best known for managing songwriting talent as well as successful pop groups including the Monkees, Kansas, and the Archies.",
   wikipedia: "https://en.wikipedia.org/wiki/Don_Kirshner",
+  albums: []
 },
 {
   name: "Donovan",
@@ -5982,6 +6253,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Mellencamp",
   summary: "Donovan Phillips Leitch (born 10 May 1946) is a Scottish musician, songwriter and record producer. He emerged from the British folk scene in early 1965 and subsequently scored numerous international hit singles and albums during the late 1960s. His work became emblematic of the flower power era with its blend of folk, pop, psychedelia and jazz stylings.",
   wikipedia: "https://en.wikipedia.org/wiki/Donovan",
+  albums: [{ title: "What’s Bin Did and What’s Bin Hid", year: 1965 }, { title: "Fairytale", year: 1965 }, { title: "Sunshine Superman", year: 1966 }, { title: "For Little Ones", year: 1967 }, { title: "Mellow Yellow", year: 1967 }, { title: "Wear Your Love Like Heaven", year: 1967 }, { title: "A Gift From a Flower to a Garden", year: 1967 }, { title: "The Hurdy Gurdy Man", year: 1968 }, { title: "Barabajagal", year: 1969 }, { title: "Open Road", year: 1970 }]
 },
 {
   name: "Freddie King",
@@ -6004,6 +6276,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Billy Gibbons and Dusty Hill",
   summary: "Freddie King (born Fred King  September 3, 1934 – December 28, 1976), also billed as Freddy King, was an American blues guitarist, singer and songwriter. Along with the unrelated Albert King and B. B. King, he is considered one of the \"Three Kings of the Blues Guitar\". Known for his soulful and powerful voice and distinctive guitar playing, King had a major influence on electric blues music and on many later blues guitarists.",
   wikipedia: "https://en.wikipedia.org/wiki/Freddie_King",
+  albums: [{ title: "Freddy King Sings", year: 1961 }, { title: "Let's Hide Away and Dance Away with Freddie King", year: 1961 }, { title: "Boy‐Girl‐Boy", year: 1962 }, { title: "Freddy King Goes Surfin'", year: 1963 }, { title: "Bossa Nova and Blues", year: 1963 }, { title: "Freddy King Gives You a Bonanza of Instrumentals", year: 1965 }, { title: "Freddie King Is a Blues Master", year: 1969 }, { title: "My Feeling for the Blues", year: 1970 }, { title: "Getting Ready…", year: 1971 }, { title: "Texas Cannonball", year: 1972 }]
 },
 {
   name: "Glyn Johns",
@@ -6026,6 +6299,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Glyn Thomas Johns (born 15 February 1942) is an English recording engineer and record producer.  He has worked with many of the most famous rock recording acts from both the UK and abroad, such as the Rolling Stones, the Beatles, the Who, Led Zeppelin, the Kinks, Eagles, Bob Dylan, the Band, Eric Clapton, the Clash, Steve Miller Band, Small Faces, the Ozark Mountain Daredevils and Joan Armatrading.",
   wikipedia: "https://en.wikipedia.org/wiki/Glyn_Johns",
+  albums: []
 },
 {
   name: "Guns N' Roses",
@@ -6048,6 +6322,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Green Day",
   summary: "Guns N' Roses is an American hard rock band formed in Los Angeles, California, in 1985 from L.A. Guns and Hollywood Rose. After signing with Geffen Records in 1986, the band's \"classic\" lineup featured vocalist Axl Rose, lead guitarist Slash, rhythm guitarist Izzy Stradlin, bassist Duff McKagan, and drummer Steven Adler.",
   wikipedia: "https://en.wikipedia.org/wiki/Guns_N%27_Roses",
+  albums: [{ title: "Appetite for Destruction", year: 1987 }, { title: "G N’ R Lies", year: 1988 }, { title: "Use Your Illusion II", year: 1991 }, { title: "Use Your Illusion I", year: 1991 }, { title: "“The Spaghetti Incident?”", year: 1993 }, { title: "Paradise City", year: 1993 }, { title: "Chinese Democracy", year: 2008 }, { title: "Marquee 1987", year: null }]
 },
 {
   name: "Laura Nyro",
@@ -6070,6 +6345,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bette Midler",
   summary: "Laura Nyro ( NEER-oh; born Laura Nigro; October 18, 1947 – April 8, 1997) was an American songwriter and singer. She achieved critical acclaim with her own recordings, particularly the albums Eli and the Thirteenth Confession (1968) and New York Tendaberry (1969), and had commercial success with artists such as Barbra Streisand and the 5th Dimension recording her songs. Wider recognition for her artistry was posthumous, while contemporaries such as Elton John idolized her.",
   wikipedia: "https://en.wikipedia.org/wiki/Laura_Nyro",
+  albums: [{ title: "More Than a New Discovery", year: 1966 }, { title: "Eli and the Thirteenth Confession", year: 1968 }, { title: "New York Tendaberry", year: 1969 }, { title: "Christmas and the Beads of Sweat", year: 1970 }, { title: "Gonna Take a Miracle", year: 1971 }, { title: "Smile", year: 1976 }, { title: "Nested", year: 1978 }, { title: "Mother’s Spiritual", year: 1984 }, { title: "Lockport 1990", year: 1988 }, { title: "Walk the Dog & Light the Light", year: 1993 }]
 },
 {
   name: "Red Hot Chili Peppers",
@@ -6092,6 +6368,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chris Rock",
   summary: "The Red Hot Chili Peppers are an American rock band formed in Los Angeles in 1982, consisting of Flea (bass), Anthony Kiedis (vocals), Chad Smith (drums), and John Frusciante (guitar). Their music incorporates elements of alternative rock, funk, punk rock, hard rock, hip hop, and psychedelic rock, and has influenced genres including funk metal, rap metal, rap rock, and nu metal. With over 120 million records sold worldwide, the Red Hot Chili Peppers are one of the top-selling bands of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers",
+  albums: [{ title: "The Red Hot Chili Peppers", year: 1984 }, { title: "Freaky Styley", year: 1985 }, { title: "The Uplift Mofo Party Plan", year: 1987 }, { title: "Mother’s Milk", year: 1989 }, { title: "Blood Sugar Sex Magik", year: 1991 }, { title: "Freakin' Out", year: 1992 }, { title: "Porno Zombie", year: 1994 }, { title: "One Hot Minute", year: 1995 }, { title: "Californication", year: 1999 }, { title: "By the Way", year: 2002 }]
 },
 {
   name: "Small Faces",
@@ -6114,6 +6391,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Van Zandt",
   summary: "The Small Faces were an English rock and pop band from London, founded in 1965. The group originally consisted of singer/guitarist Steve Marriott, bassist Ronnie Lane, drummer Kenney Jones and keyboardist Jimmy Winston, with Ian McLagan replacing Winston in 1966. The band were initially one of the most acclaimed and influential mod groups of the mid-1960s, with hit singles such as \"Whatcha Gonna Do About It\" (1965), \"Sha-La-La-La-Lee\" and \"All or Nothing\" (both 1966).",
   wikipedia: "https://en.wikipedia.org/wiki/Small_Faces",
+  albums: [{ title: "Small Faces", year: 1966 }, { title: "There Are but Four Small Faces", year: 1967 }, { title: "Small Faces", year: 1967 }, { title: "From the Beginning", year: 1967 }, { title: "Ogdens’ Nut Gone Flake", year: 1968 }, { title: "1862", year: 1969 }, { title: "Playmates", year: 1977 }, { title: "78 in the Shade", year: 1978 }, { title: "Transmissions 1965-1968", year: 2019 }, { title: "BBC Sessions 1965-1968", year: 2025 }]
 },
 {
   name: "The Blue Caps",
@@ -6136,6 +6414,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "The Blue Caps were a pioneering American rock and roll band of the 1950s, the backing band for early rockabilly icon Gene Vincent. They were inducted into the Rock and Roll Hall of Fame in 2012, as part of a class of overlooked backing bands selected by a special committee.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Blue_Caps",
+  albums: [{ title: "Unleashed", year: 1982 }]
 },
 {
   name: "The Crickets",
@@ -6158,6 +6437,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "The Crickets were an American rock and roll band from Lubbock, Texas, formed by singer-songwriter Buddy Holly in January 1957. Their first hit record, \"That'll Be the Day\", released in May 1957, peaked at number three on the Billboard Top 100 chart on September 16, 1957. The sleeve of their first album, The \"Chirping\" Crickets, shows the band line-up at the time: Holly on lead vocals and lead guitar, Niki Sullivan on rhythm guitar, Jerry Allison on drums, and Joe B. Mauldin on bass.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Crickets",
+  albums: [{ title: "The “Chirping” Crickets", year: 1957 }, { title: "In Style With The Crickets", year: 1960 }, { title: "Bobby Vee Meets the Crickets", year: 1962 }, { title: "Something Old, Something New, Something Blue, Somethin’ Else!", year: 1963 }, { title: "Rockin’ 50’s Rock n’ Roll", year: 1971 }, { title: "Remnants", year: 1973 }, { title: "Bubblegum, Bop, Ballad and Boogies", year: 1973 }, { title: "Rare Items", year: 1974 }, { title: "A Long Way From Lubbock", year: 1974 }, { title: "T‐Shirt", year: 1988 }]
 },
 {
   name: "The Famous Flames",
@@ -6180,6 +6460,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "The Famous Flames were an American rhythm and blues, soul vocal group founded in Toccoa, Georgia, in 1953 by Bobby Byrd. James Brown first began his career as a member of the Famous Flames, emerging as the lead singer by the time of their first appearance in a professional recording, \"Please, Please, Please\", in 1956.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Famous_Flames",
+  albums: []
 },
 {
   name: "The Midnighters",
@@ -6202,6 +6483,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "The Midnighters were an American vocal group from Detroit, Michigan. They were an influential group in the 1950s and early 1960s, with many R&B hit records. They were also notable for launching the career of lead singer Hank Ballard and the worldwide dance craze the twist. Between 1953 and 1962, the Midnighters had several hits on the U.S. pop and R&B charts.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Midnighters",
+  albums: [{ title: "Volume 2", year: 1958 }, { title: "Singin’ and Swingin’", year: 1959 }, { title: "Dance Along", year: 1960 }, { title: "The One And Only", year: 1960 }, { title: "Mr. Rhythm And Blues", year: 1960 }, { title: "Spotlight On Hank Ballard", year: 1961 }, { title: "Jumpin", year: 1962 }, { title: "The 1963 Sound of", year: 1963 }, { title: "Naked in the Rain", year: 1992 }, { title: "The Twistin' Fools", year: 2013 }]
 },
 {
   name: "The Miracles",
@@ -6224,6 +6506,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Smokey Robinson",
   summary: "The Miracles (later known as Smokey Robinson and the Miracles from 1965 to 1972) were an American vocal group formed in Detroit, Michigan in 1955. They were the first successful recording act for Motown Records and are considered one of the most important and most influential groups in the history of pop, soul, rhythm and blues, and rock and roll music.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Miracles",
+  albums: [{ title: "Hi… We’re the Miracles", year: 1961 }, { title: "Cookin’ With the Miracles", year: 1961 }, { title: "I’ll Try Something New", year: 1962 }, { title: "The Miracles Doin’ Mickey’s Monkey", year: 1963 }, { title: "The Fabulous Miracles", year: 1963 }, { title: "Christmas With The Miracles", year: 1963 }, { title: "Going to a Go‐Go", year: 1965 }, { title: "I Like It Like That", year: 1965 }, { title: "Away We a Go-Go", year: 1966 }, { title: "Make It Happen", year: 1967 }]
 },
 {
   name: "Tom Dowd",
@@ -6246,6 +6529,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robbie Robertson",
   summary: "Thomas John Dowd (October 20, 1925 – October 27, 2002) was an American recording engineer and producer for Atlantic Records. He was credited with innovating the multitrack recording method. Dowd worked on a veritable \"who's who\" of recordings that encompassed blues, jazz, pop, rock, and soul records.",
   wikipedia: "https://en.wikipedia.org/wiki/Tom_Dowd",
+  albums: []
 },
 {
   name: "Albert King",
@@ -6268,6 +6552,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Mayer",
   summary: "Albert King (né Nelson; April 25, 1923 – December 21, 1992) was an American guitarist and singer, who is often regarded as one of the greatest and most influential blues guitarists ever. He is perhaps best known for his popular and influential album Born Under a Bad Sign (1967) and its title track.  B. B. King, Freddie King, and he, all unrelated, were known as the \"Three Kings of the Blues\".",
   wikipedia: "https://en.wikipedia.org/wiki/Albert_King",
+  albums: [{ title: "The Big Blues", year: 1962 }, { title: "Born Under a Bad Sign", year: 1967 }, { title: "Blues for Elvis: King Does the King’s Things", year: 1969 }, { title: "Jammed Together", year: 1969 }, { title: "Years Gone By", year: 1969 }, { title: "Lovejoy", year: 1971 }, { title: "I’ll Play the Blues for You", year: 1972 }, { title: "I Wanna Get Funky", year: 1973 }, { title: "Albert", year: 1976 }, { title: "Truckload of Lovin'", year: 1976 }]
 },
 {
   name: "Donna Summer",
@@ -6290,6 +6575,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kelly Rowland",
   summary: "Donna Adrian Gaines (December 31, 1948 – May 17, 2012), known professionally as Donna Summer, was an American singer and songwriter. She gained prominence during the disco era of the 1970s and became known as the \"Queen of Disco\", while her music gained a global following.",
   wikipedia: "https://en.wikipedia.org/wiki/Donna_Summer",
+  albums: [{ title: "Lady of the Night", year: 1974 }, { title: "Love to Love You Baby", year: 1975 }, { title: "A Love Trilogy", year: 1976 }, { title: "Four Seasons of Love", year: 1976 }, { title: "I Remember Yesterday", year: 1977 }, { title: "Once Upon a Time…", year: 1977 }, { title: "Bad Girls", year: 1979 }, { title: "The Wanderer", year: 1980 }, { title: "Donna Summer", year: 1982 }, { title: "She Works Hard for the Money", year: 1983 }]
 },
 {
   name: "Heart",
@@ -6312,6 +6598,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chris Cornell",
   summary: "Heart is an American rock band formed in Seattle in 1967. The band evolved from previous projects led by the founding members Roger Fisher (guitar) and Steve Fossen (bass guitar), including The Army (1967–1969), Hocus Pocus (1969–1970), and White Heart (1970–1973).",
   wikipedia: "https://en.wikipedia.org/wiki/Heart_%28band%29",
+  albums: [{ title: "Dreamboat Annie", year: 1975 }, { title: "Little Queen", year: 1977 }, { title: "Magazine", year: 1977 }, { title: "Dog & Butterfly", year: 1978 }, { title: "Bébé le Strange", year: 1980 }, { title: "Private Audition", year: 1982 }, { title: "Passionworks", year: 1983 }, { title: "Heart", year: 1985 }, { title: "Bad Animals", year: 1987 }, { title: "Brigade", year: 1990 }]
 },
 {
   name: "Lou Adler",
@@ -6334,6 +6621,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Cheech & Chong",
   summary: "Lester Louis Adler (born December 13, 1933) is an American record and film producer and the co-owner of the Roxy Theatre in West Hollywood, California. He has produced and developed a number of high-profile musical artists including the Grass Roots, Jan and Dean, the Mamas & the Papas, and Carole King. King's album Tapestry, produced by Adler, won the 1972 Grammy Award for Album of the Year and has been called one of the greatest pop albums of all time.",
   wikipedia: "https://en.wikipedia.org/wiki/Lou_Adler",
+  albums: []
 },
 {
   name: "Public Enemy",
@@ -6356,6 +6644,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Harry Belafonte and Spike Lee",
   summary: "Public Enemy is an American hip-hop group formed in Roosevelt, New York, in 1985 by Chuck D and Flavor Flav. The group rose to prominence for their political messages including subjects such as American racism and the American media. Their debut album, Yo! Bum Rush the Show, was released in 1987 to critical acclaim, and their second album, It Takes a Nation of Millions to Hold Us Back (1988), was the first hip-hop album to top The Village Voice's Pazz & Jop critics' poll.",
   wikipedia: "https://en.wikipedia.org/wiki/Public_Enemy",
+  albums: [{ title: "Yo! Bum Rush the Show", year: 1987 }, { title: "It Takes a Nation of Millions to Hold Us Back", year: 1988 }, { title: "Fear of a Black Planet", year: 1990 }, { title: "Apocalypse 91… The Enemy Strikes Black", year: 1991 }, { title: "Muse Sick‐N‐Hour Mess Age", year: 1994 }, { title: "There’s a Poison Goin On…", year: 1999 }, { title: "Revolverlution", year: 2002 }, { title: "Power Assault Live!... In the Belly of the BEAST", year: 2003 }, { title: "Rebirth of a Nation", year: 2005 }, { title: "New Whirl Odor", year: 2005 }]
 },
 {
   name: "Quincy Jones",
@@ -6378,6 +6667,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Oprah Winfrey",
   summary: "Quincy Delight Jones Jr. (March 14, 1933 – November 3, 2024) was an American record producer, composer, arranger, record executive, conductor, trumpeter, film and television producer, and bandleader. During his seven-decade career, he received dozens of accolades, including 28 Grammy Awards, a Primetime Emmy Award, and a Tony Award as well as nominations for seven Academy Awards and four Golden Globe Awards.",
   wikipedia: "https://en.wikipedia.org/wiki/Quincy_Jones",
+  albums: [{ title: "Swedish American All Stars", year: 1953 }, { title: "This Is How I Feel About Jazz", year: 1956 }, { title: "Jazz Abroad", year: 1957 }, { title: "Go West, Man!", year: 1957 }, { title: "The Great Wide World of Quincy Jones", year: 1959 }, { title: "Et voilà !", year: 1959 }, { title: "The Birth of a Band", year: 1959 }, { title: "I Dig Dancers", year: 1960 }, { title: "If You Go", year: 1961 }, { title: "Big Band Bossa Nova", year: 1962 }]
 },
 {
   name: "Randy Newman",
@@ -6400,6 +6690,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Don Henley",
   summary: "Randall Stuart Newman (born November 28, 1943) is an American singer-songwriter, pianist, composer, and arranger. Born in Los Angeles to an extended family of Hollywood film composers, he is known for his  Americana-inspired songs, non-rhotic Southern-accented singing, and lyrics that are often mordant or satirical and delivered by an unreliable narrator. Since the 1990s, he has worked mainly in film scoring, most popularly for Disney and Pixar.",
   wikipedia: "https://en.wikipedia.org/wiki/Randy_Newman",
+  albums: [{ title: "Randy Newman Creates Something New Under the Sun", year: 1968 }, { title: "12 Songs", year: 1970 }, { title: "Sail Away", year: 1972 }, { title: "Good Old Boys", year: 1974 }, { title: "Little Criminals", year: 1977 }, { title: "Born Again", year: 1979 }, { title: "Trouble in Paradise", year: 1983 }, { title: "Land of Dreams", year: 1988 }, { title: "Randy Newman’s Faust", year: 1995 }, { title: "Bad Love", year: 1999 }]
 },
 {
   name: "Rush",
@@ -6422,6 +6713,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Grohl and Taylor Hawkins",
   summary: "Rush is a Canadian rock band, formed in Toronto in 1968. The band's original line-up included guitarist Alex Lifeson, drummer John Rutsey, and bassist and vocalist Jeff Jones, whom Geddy Lee replaced shortly after its formation. Rush went through a few line-up changes over the next six years, before arriving at its classic power trio line-up with the addition of Neil Peart in July 1974, replacing Rutsey four months after the release of their self-titled debut album.",
   wikipedia: "https://en.wikipedia.org/wiki/Rush_%28band%29",
+  albums: [{ title: "Rush", year: 1974 }, { title: "Fly by Night", year: 1975 }, { title: "Caress of Steel", year: 1975 }, { title: "2112", year: 1976 }, { title: "A Farewell to Kings", year: 1977 }, { title: "Hemispheres", year: 1978 }, { title: "Permanent Waves", year: 1980 }, { title: "Moving Pictures", year: 1981 }, { title: "Signals", year: 1982 }, { title: "Grace Under Pressure", year: 1984 }]
 },
 {
   name: "Andrew Loog Oldham",
@@ -6444,6 +6736,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Peter Asher",
   summary: "Andrew Loog Oldham (born 29 January 1944) is an English record producer, talent manager, impresario and author. He was manager and producer of the Rolling Stones from 1963 to 1967, and was noted for his flamboyant style.",
   wikipedia: "https://en.wikipedia.org/wiki/Andrew_Loog_Oldham",
+  albums: []
 },
 {
   name: "Brian Epstein",
@@ -6466,6 +6759,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Peter Asher",
   summary: "Brian Samuel Epstein ( EP-styne; 19 September 1934 – 27 August 1967) was an English music entrepreneur who managed the Beatles from 1961 until his death in 1967.",
   wikipedia: "https://en.wikipedia.org/wiki/Brian_Epstein",
+  albums: []
 },
 {
   name: "Cat Stevens",
@@ -6488,6 +6782,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Art Garfunkel",
   summary: "Yusuf Islam (born Steven Demetre Georgiou; 21 July 1948), commonly known by his stage names Cat Stevens or Yusuf/Cat Stevens, is a British singer-songwriter and musician. He has sold more than 100 million records and has more than two billion streams. His musical style consists of folk, rock, pop, and, later in his career, Islamic music. Following two decades in which he performed only music which met strict religious standards, he returned to making secular music in 2006.",
   wikipedia: "https://en.wikipedia.org/wiki/Cat_Stevens",
+  albums: [{ title: "New Masters", year: 1967 }, { title: "Matthew & Son", year: 1967 }, { title: "Mona Bone Jakon", year: 1970 }, { title: "Tea for the Tillerman", year: 1970 }, { title: "Teaser and the Firecat", year: 1971 }, { title: "Catch Bull at Four", year: 1972 }, { title: "Foreigner", year: 1973 }, { title: "The Hoaxer’s Midnight Daydream", year: 1974 }, { title: "Buddha and the Chocolate Box", year: 1974 }, { title: "Numbers: A Pythagorean Theory Tale", year: 1975 }]
 },
 {
   name: "E Street Band",
@@ -6510,6 +6805,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "The E Street Band is an American rock band that has been the primary backing band for rock musician Bruce Springsteen since 1972. For the bulk of Springsteen's recording and performing career, the band consisted of guitarists Steven Van Zandt, Nils Lofgren, and Patti Scialfa, keyboardists Danny Federici and Roy Bittan, bassist Garry Tallent, drummer Max Weinberg and saxophonist Clarence Clemons. In 2014, the E Street Band was inducted into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/E_Street_Band",
+  albums: []
 },
 {
   name: "Hall & Oates",
@@ -6532,6 +6828,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Questlove",
   summary: "Daryl Hall & John Oates, commonly known as Hall & Oates, were an American R&B duo formed in Philadelphia, Pennsylvania, in 1970. Daryl Hall was generally the lead vocalist, while John Oates primarily supplied electric guitar and backing vocals and occasional lead vocals. The two wrote most of the songs they performed, either separately or in collaboration. They achieved their greatest fame from the mid-1970s to the late 1980s with a fusion of rock music, soul music, and rhythm and blues.",
   wikipedia: "https://en.wikipedia.org/wiki/Hall_%26_Oates",
+  albums: [{ title: "Whole Oats", year: 1972 }, { title: "Abandoned Luncheonette", year: 1973 }, { title: "War Babies", year: 1974 }, { title: "Daryl Hall & John Oates", year: 1975 }, { title: "Bigger Than Both of Us", year: 1976 }, { title: "Beauty on a Back Street", year: 1977 }, { title: "Along the Red Ledge", year: 1978 }, { title: "X‐Static", year: 1979 }, { title: "Voices", year: 1980 }, { title: "Private Eyes", year: 1981 }]
 },
 {
   name: "Kiss",
@@ -6554,6 +6851,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tom Morello",
   summary: "Kiss (commonly styled in all caps as KISS) was an American rock band formed in New York City in 1973 by Paul Stanley (vocals, rhythm guitar), Gene Simmons (vocals, bass guitar), Ace Frehley (lead guitar, vocals) and Peter Criss (drums, vocals). Known for their face paint and stage outfits, the group rose to prominence in the mid-1970s with shock rock–style live performances that featured fire-breathing, blood-spitting, smoking guitars, shooting rockets, levitating drum kits and pyrotechnics.",
   wikipedia: "https://en.wikipedia.org/wiki/Kiss_%28band%29",
+  albums: [{ title: "Hotter Than Hell", year: 1974 }, { title: "KISS", year: 1974 }, { title: "Dressed to Kill", year: 1975 }, { title: "Destroyer", year: 1976 }, { title: "Rock and Roll Over", year: 1976 }, { title: "Love Gun", year: 1977 }, { title: "Dynasty", year: 1979 }, { title: "Unmasked", year: 1980 }, { title: "Music From “The Elder”", year: 1981 }, { title: "Creatures of the Night", year: 1982 }]
 },
 {
   name: "Linda Ronstadt",
@@ -6576,6 +6874,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Glenn Frey",
   summary: "Linda Maria Ronstadt (born July 15, 1946) is an American retired singer and musician who performed and recorded in diverse genres including rock, folk, pop, country, and soul.",
   wikipedia: "https://en.wikipedia.org/wiki/Linda_Ronstadt",
+  albums: [{ title: "Hand Sown… Home Grown", year: 1969 }, { title: "Silk Purse", year: 1970 }, { title: "Linda Ronstadt", year: 1971 }, { title: "Don’t Cry Now", year: 1973 }, { title: "Heart Like a Wheel", year: 1974 }, { title: "Prisoner in Disguise", year: 1975 }, { title: "Hasten Down the Wind", year: 1976 }, { title: "Simple Dreams", year: 1977 }, { title: "Living in the USA", year: 1978 }, { title: "Mad Love", year: 1980 }]
 },
 {
   name: "Nirvana",
@@ -6598,6 +6897,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Michael Stipe",
   summary: "Nirvana was an American rock band formed in Aberdeen, Washington, in 1987. Founded by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic, the band went through a succession of drummers, most notably Chad Channing, before recruiting Dave Grohl in 1990. Nirvana's success popularized alternative rock, and they were often referenced as the flagship band of Generation X. Their music maintains a popular following and continues to influence rock culture.",
   wikipedia: "https://en.wikipedia.org/wiki/Nirvana_%28band%29",
+  albums: [{ title: "Bleach", year: 1989 }, { title: "Nevermind", year: 1991 }, { title: "In Utero", year: 1993 }]
 },
 {
   name: "Peter Gabriel",
@@ -6620,6 +6920,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chris Martin",
   summary: "Peter Brian Gabriel (born 13 February 1950) is an English singer, songwriter, musician, and human rights activist. He came to prominence as the original frontman of the rock band Genesis. He left the band in 1975 and launched his solo career with a hit debut single entitled \"Solsbury Hill\".",
   wikipedia: "https://en.wikipedia.org/wiki/Peter_Gabriel",
+  albums: [{ title: "Peter Gabriel", year: 1977 }, { title: "Peter Gabriel", year: 1978 }, { title: "Peter Gabriel", year: 1980 }, { title: "Peter Gabriel", year: 1982 }, { title: "So", year: 1986 }, { title: "Us", year: 1992 }, { title: "Up", year: 2002 }, { title: "Scratch My Back", year: 2010 }, { title: "New Blood", year: 2011 }, { title: "i/o", year: 2023 }]
 },
 {
   name: "Bill Withers",
@@ -6642,6 +6943,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Stevie Wonder",
   summary: "William Harrison Withers Jr. (July 4, 1938 – March 30, 2020) was an American soul and R&B singer and songwriter. Born in Slab Fork, West Virginia, and raised in Beckley, West Virginia, he is known for having several hits over a career spanning 18 years, including \"Ain't No Sunshine\" (1971), \"Grandma's Hands\" (1971), \"Use Me\" (1972), \"Lean on Me\" (1972), \"Lovely Day\" (1977) and \"Just the Two of Us\" (1980) (recorded in collaboration with Grover Washington Jr.).",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Withers",
+  albums: [{ title: "Just As I Am", year: 1971 }, { title: "Still Bill", year: 1972 }, { title: "+’Justments", year: 1974 }, { title: "Making Music", year: 1975 }, { title: "Naked & Warm", year: 1976 }, { title: "Menagerie", year: 1977 }, { title: "’Bout Love", year: 1979 }, { title: "Watching You Watching Me", year: 1985 }]
 },
 {
   name: "Green Day",
@@ -6664,6 +6966,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Fall Out Boy",
   summary: "Green Day is an American rock band formed in Rodeo, California, in 1987 by lead singer and guitarist Billie Joe Armstrong and bassist and backing vocalist Mike Dirnt, with drummer Tré Cool joining in 1990. In 1994, their major-label debut Dookie, released through Reprise Records, became a breakout success and eventually shipped over 20 million copies in the US. Green Day has been credited with reigniting mainstream interest in punk rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Green_Day",
+  albums: [{ title: "39/Smooth", year: 1990 }, { title: "Kerplunk!", year: 1991 }, { title: "Dookie", year: 1994 }, { title: "Insomniac", year: 1995 }, { title: "nimrod.", year: 1997 }, { title: "Warning:", year: 2000 }, { title: "American Idiot", year: 2004 }, { title: "21st Century Breakdown", year: 2009 }, { title: "Cigarettes and Valentines", year: 2011 }, { title: "¡Dos!", year: 2012 }]
 },
 {
   name: "Joan Jett & the Blackhearts",
@@ -6686,6 +6989,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Miley Cyrus",
   summary: "Joan Jett and the Blackhearts is an American rock band formed in Los Angeles, California in 1979 as a conjunction of lead musician, singer and songwriter Joan Jett and the backup band. It has undergone many lineup changes since its inception, with founders Jett and producer Kenny Laguna being its only consistent members.",
   wikipedia: "https://en.wikipedia.org/wiki/Joan_Jett_and_the_Blackhearts",
+  albums: [{ title: "I Love Rock ’n’ Roll", year: 1981 }, { title: "Album", year: 1983 }, { title: "Glorious Results of a Misspent Youth", year: 1984 }, { title: "Good Music", year: 1986 }, { title: "Up Your Alley", year: 1988 }, { title: "Notorious", year: 1991 }, { title: "Pure and Simple", year: 1994 }, { title: "Naked", year: 2004 }, { title: "Sinner", year: 2006 }, { title: "Unvarnished", year: 2013 }]
 },
 {
   name: "Lou Reed",
@@ -6708,6 +7012,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Patti Smith",
   summary: "Lewis Allan Reed (March 2, 1942 – October 27, 2013) was an American musician, songwriter and poet. He was the guitarist, singer, and principal songwriter for the rock band the Velvet Underground and had a solo career that spanned five decades. Although not commercially successful during its existence, the Velvet Underground came to be regarded as one of the most influential bands in the history of underground and alternative rock music.",
   wikipedia: "https://en.wikipedia.org/wiki/Lou_Reed",
+  albums: [{ title: "Transformer", year: 1972 }, { title: "Lou Reed", year: 1972 }, { title: "Berlin", year: 1973 }, { title: "Sally Can’t Dance", year: 1974 }, { title: "Metal Machine Music", year: 1975 }, { title: "Coney Island Baby", year: 1975 }, { title: "Rock and Roll Heart", year: 1976 }, { title: "Street Hassle", year: 1978 }, { title: "The Bells", year: 1979 }, { title: "Growing Up in Public", year: 1980 }]
 },
 {
   name: "Ringo Starr",
@@ -6730,6 +7035,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul McCartney",
   summary: "Sir Richard Starkey (born 7 July 1940), known as Ringo Starr, is an English musician, singer, songwriter and actor who achieved international fame as the drummer for the Beatles. Starr occasionally sang lead vocals with the group, usually for one song on each album, including \"Yellow Submarine\" and \"With a Little Help from My Friends\". He also wrote and sang the Beatles songs \"Don't Pass Me By\" and \"Octopus's Garden\", and is credited as a co-writer of three others.",
   wikipedia: "https://en.wikipedia.org/wiki/Ringo_Starr",
+  albums: [{ title: "Sentimental Journey", year: 1970 }, { title: "Beaucoups of Blues", year: 1970 }, { title: "Ringo", year: 1973 }, { title: "Goodnight Vienna", year: 1974 }, { title: "Ringo’s Rotogravure", year: 1976 }, { title: "Ringo the 4th", year: 1977 }, { title: "Bad Boy", year: 1978 }, { title: "Stop and Smell the Roses", year: 1981 }, { title: "Old Wave", year: 1983 }, { title: "Time Takes Time", year: 1992 }]
 },
 {
   name: "Stevie Ray Vaughan & Double Trouble",
@@ -6752,6 +7058,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Mayer",
   summary: "Stephen Ray Vaughan (October 3, 1954 – August 27, 1990), also known abbreviated as SRV, was an American musician, best known as the guitarist and frontman of the blues rock trio Stevie Ray Vaughan and Double Trouble. Although his mainstream career spanned only seven years, he is considered one of the most influential musicians in the history of blues music, and one of the greatest guitarists of all time. He was the younger brother of guitarist Jimmie Vaughan.",
   wikipedia: null,
+  albums: [{ title: "Texas Flood", year: 1983 }, { title: "Couldn’t Stand the Weather", year: 1984 }, { title: "Soul to Soul", year: 1985 }, { title: "In Step", year: 1989 }, { title: "Alpine Valley - The Last Shows", year: 1990 }, { title: "The Sky is Crying", year: 1991 }, { title: "Real Deal Sampler", year: 1999 }]
 },
 {
   name: "The \"5\" Royales",
@@ -6774,6 +7081,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steve Cropper",
   summary: "The \"5\" Royales was an American rhythm and blues (R&B) vocal group from Winston-Salem, North Carolina that combined gospel, jump blues and doo-wop, marking an early and influential step in the evolution of rock and roll. Most of their big R&B hits were recorded in 1952 and 1953 and written by the guitarist Lowman \"Pete\" Pauling.",
   wikipedia: "https://en.wikipedia.org/wiki/The_%225%22_Royales",
+  albums: [{ title: "Dedicated to You", year: 1957 }, { title: "The Rockin’ 5 Royales", year: 1959 }, { title: "Sing for You", year: 1959 }, { title: "The Real Thing", year: 1994 }, { title: "The Five Royales", year: 2001 }, { title: "Down Home With The Five Royales", year: null }]
 },
 {
   name: "The Paul Butterfield Blues Band",
@@ -6796,6 +7104,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Peter Wolf",
   summary: "The Paul Butterfield Blues Band was an American blues and blues-rock band from Chicago. Formed in the summer of 1963, the group originally featured eponymous vocalist and harmonicist Paul Butterfield, guitarist Elvin Bishop, bassist Jerome Arnold, and drummer Sam Lay. The band added guitarist Mike Bloomfield and keyboardist Mark Naftalin before recording their self-titled debut album, which was released in October 1965.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Paul_Butterfield_Blues_Band",
+  albums: [{ title: "The Paul Butterfield Blues Band", year: 1965 }, { title: "East-West", year: 1966 }, { title: "The Resurrection of Pigboy Crabshaw", year: 1967 }, { title: "In My Own Dream", year: 1968 }, { title: "Keep On Moving", year: 1969 }, { title: "Sometimes I Just Feel Like Smilin'", year: 1971 }, { title: "The Original Lost Elektra Sessions", year: 1995 }, { title: "Live Vol. 2", year: 2013 }, { title: "A & R Studios", year: null }]
 },
 {
   name: "Bert Berns",
@@ -6818,6 +7127,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Steven Van Zandt",
   summary: "Bertrand Russell Berns (November 8, 1929 – December 30, 1967), also known as Bert Russell and (occasionally) Russell Byrd, was an American songwriter and record producer of the 1960s. His songwriting credits include \"Twist and Shout\", \"Piece of My Heart\", \"Here Comes the Night\", \"Hang on Sloopy\", \"Cry to Me\", \"Tell Him\" and \"Everybody Needs Somebody to Love\", and his productions include \"Baby, Please Don't Go\", \"Brown Eyed Girl\" and \"Under the Boardwalk\".",
   wikipedia: "https://en.wikipedia.org/wiki/Bert_Berns",
+  albums: []
 },
 {
   name: "Cheap Trick",
@@ -6840,6 +7150,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kid Rock",
   summary: "Cheap Trick are an American rock band formed in Rockford, Illinois, in 1973. The band's work bridged elements of 1960s guitar pop, 1970s hard rock, and the emerging punk rock sound, and helped set the template for subsequent power pop artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Cheap_Trick",
+  albums: [{ title: "Cheap Trick", year: 1977 }, { title: "In Color", year: 1977 }, { title: "From Tokyo to You", year: 1978 }, { title: "Heaven Tonight", year: 1978 }, { title: "Dream Police", year: 1979 }, { title: "All Shook Up", year: 1980 }, { title: "One on One", year: 1982 }, { title: "Next Position Please", year: 1983 }, { title: "Standing on the Edge", year: 1985 }, { title: "The Doctor", year: 1986 }]
 },
 {
   name: "Chicago",
@@ -6862,6 +7173,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Rob Thomas",
   summary: "Chicago is an American rock band formed in Chicago, Illinois, in 1967. Self-described as a \"rock and roll band with horns\", their songs often also combine elements of classical music, jazz, R&B, and pop music.",
   wikipedia: "https://en.wikipedia.org/wiki/Chicago_%28band%29",
+  albums: [{ title: "Chicago", year: 1970 }, { title: "Chicago III", year: 1971 }, { title: "Chicago V", year: 1972 }, { title: "Chicago VI", year: 1973 }, { title: "Chicago VII", year: 1974 }, { title: "Chicago VIII", year: 1975 }, { title: "Chicago X", year: 1976 }, { title: "Chicago XI", year: 1977 }, { title: "Hot Streets", year: 1978 }, { title: "Chicago 13", year: 1979 }]
 },
 {
   name: "Deep Purple",
@@ -6884,6 +7196,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lars Ulrich",
   summary: "Deep Purple are a British rock band formed in London in 1968. They are considered to be among the pioneers of heavy metal and modern hard rock, although their musical style has varied throughout their career. Originally formed as a psychedelic rock and progressive rock band, they shifted to a heavier sound with their 1970 album Deep Purple in Rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Deep_Purple",
+  albums: [{ title: "The Book of Taliesyn", year: 1968 }, { title: "Shades of Deep Purple", year: 1968 }, { title: "Deep Purple", year: 1969 }, { title: "Deep Purple in Rock", year: 1970 }, { title: "Fireball", year: 1971 }, { title: "Machine Head", year: 1972 }, { title: "Who Do We Think We Are", year: 1973 }, { title: "Stormbringer", year: 1974 }, { title: "Burn", year: 1974 }, { title: "Come Taste the Band", year: 1975 }]
 },
 {
   name: "N.W.A.",
@@ -6906,6 +7219,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Kendrick Lamar",
   summary: "N.W.A (an abbreviation for Niggaz Wit Attitudes) was an American hip-hop group formed in Compton, California, in 1987. Among the earliest and most significant figures of the gangsta rap subgenre, the group is widely considered one of the greatest and most influential acts in hip-hop.",
   wikipedia: "https://en.wikipedia.org/wiki/N.W.A",
+  albums: [{ title: "Straight Outta Compton", year: 1988 }, { title: "Niggaz4Life", year: 1991 }]
 },
 {
   name: "Steve Miller",
@@ -6928,6 +7242,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "The Black Keys",
   summary: "Steven Haworth Miller (born October 5, 1943) is an American musician. He is the founder and only remaining original member of the Steve Miller Band, which he founded in 1966, and is the principal songwriter, lead singer, harmonicist, keyboardist, and one of the guitarists. He began his career in blues and blues rock and evolved to a more pop-oriented arena rock sound during the mid-1970s through the early 1980s, releasing popular singles and albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Steve_Miller_%28musician%29",
+  albums: [{ title: "Born 2B Blue", year: 1988 }]
 },
 {
   name: "Electric Light Orchestra",
@@ -6950,6 +7265,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dhani Harrison",
   summary: "Electric Light Orchestra (ELO) are an English rock band formed in Birmingham in 1970 by multi-instrumentalists Jeff Lynne and Roy Wood and drummer Bev Bevan. Their music is characterised by a fusion of pop and classical arrangements with futuristic iconography. After Wood's departure in 1972, Lynne became the band's sole leader, co-arranging and producing every album while writing nearly all of their original material.",
   wikipedia: "https://en.wikipedia.org/wiki/Electric_Light_Orchestra",
+  albums: [{ title: "The Electric Light Orchestra", year: 1971 }, { title: "On the Third Day", year: 1973 }, { title: "Electric Light Orchestra II", year: 1973 }, { title: "Eldorado: A Symphony by the Electric Light Orchestra", year: 1974 }, { title: "Face the Music", year: 1975 }, { title: "A New World Record", year: 1976 }, { title: "Out of the Blue", year: 1977 }, { title: "Discovery", year: 1979 }, { title: "Time", year: 1981 }, { title: "Secret Messages", year: 1983 }]
 },
 {
   name: "Joan Baez",
@@ -6972,6 +7288,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jackson Browne",
   summary: "Joan Chandos Baez (, Spanish: [ˈbaes]; born January 9, 1941) is an American singer, songwriter, musician, and activist. Her contemporary folk music often includes songs of protest and social justice. Baez has performed publicly for over 60 years, releasing more than 30 albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Joan_Baez",
+  albums: [{ title: "Folksingers ’Round Harvard Square", year: 1959 }, { title: "Joan Baez", year: 1960 }, { title: "Joan Baez, Vol. 2", year: 1961 }, { title: "Joan Baez/5", year: 1964 }, { title: "Joan Baez in San Francisco", year: 1964 }, { title: "Farewell, Angelina", year: 1965 }, { title: "Noël", year: 1966 }, { title: "Joan", year: 1967 }, { title: "Baptism: A Journey Through Our Time", year: 1968 }, { title: "Any Day Now", year: 1968 }]
 },
 {
   name: "Journey",
@@ -6994,6 +7311,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pat Monahan",
   summary: "Journey is an American rock band formed in San Francisco in 1973 by former members of Santana, the Steve Miller Band, and Frumious Bandersnatch. The band as of 2026 consists of Neal Schon on guitars and vocals; Jonathan Cain on keyboards, guitars and vocals; Deen Castronovo on drums and vocals; Arnel Pineda on lead vocals; Jason Derlatka on keyboards and vocals; and Todd Jensen on bass and vocals.",
   wikipedia: "https://en.wikipedia.org/wiki/Journey_%28band%29",
+  albums: [{ title: "Journey", year: 1975 }, { title: "Look Into the Future", year: 1976 }, { title: "Next", year: 1977 }, { title: "Infinity", year: 1978 }, { title: "Evolution", year: 1979 }, { title: "Departure", year: 1980 }, { title: "Escape", year: 1981 }, { title: "Frontiers", year: 1983 }, { title: "Raised on Radio", year: 1986 }, { title: "Trial by Fire", year: 1996 }]
 },
 {
   name: "Neal Schon",
@@ -7016,6 +7334,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Neal Joseph Schon (; born February 27, 1954) is an American musician and songwriter, best known as the co-founder and lead guitarist for the rock band Journey. He is the last original member to remain throughout the group's history. He was a member of the rock band Santana before forming Journey. He was also a member of the group Bad English during Journey's hiatus from 1987 to 1995, as well as an original member of Hardline.",
   wikipedia: "https://en.wikipedia.org/wiki/Neal_Schon",
+  albums: [{ title: "Untold Passion", year: 1981 }, { title: "Here to Stay", year: 1982 }, { title: "Late Nite", year: 1989 }, { title: "Beyond the Thunder", year: 1995 }, { title: "Electric World", year: 1997 }, { title: "Piranha Blues", year: 1999 }, { title: "Voice", year: 2001 }, { title: "I on U", year: 2005 }, { title: "The Calling", year: 2012 }, { title: "So U", year: 2014 }]
 },
 {
   name: "Nile Rodgers",
@@ -7038,6 +7357,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pharrell Williams",
   summary: "Nile Gregory Rodgers Jr. (born September 19, 1952) is an American guitarist. The co-founder of Chic, he has written, produced, and performed on records that have sold more than 750 million albums and 100 million singles worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Nile_Rodgers",
+  albums: [{ title: "Adventures in the Land of the Good Groove", year: 1983 }, { title: "B-Movie Matinee", year: 1985 }, { title: "Chic Freak and More Treats", year: 1996 }, { title: "It’s About Time", year: 2018 }, { title: "Good Morning", year: 2023 }]
 },
 {
   name: "Pearl Jam",
@@ -7060,6 +7380,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "David Letterman",
   summary: "Pearl Jam is an American rock band formed in Seattle, Washington, in 1990. One of the key bands in the grunge movement of the early 1990s, Pearl Jam has outsold and outlasted many of its contemporaries and is considered one of the most influential bands from that decade, dubbed \"the most popular American rock and roll band of the '90s\".",
   wikipedia: "https://en.wikipedia.org/wiki/Pearl_Jam",
+  albums: [{ title: "Ten", year: 1991 }, { title: "Vs.", year: 1993 }, { title: "Vitalogy", year: 1994 }, { title: "No Code", year: 1996 }, { title: "Yield", year: 1998 }, { title: "Binaural", year: 2000 }, { title: "Riot Act", year: 2002 }, { title: "Pearl Jam", year: 2006 }, { title: "Backspacer", year: 2009 }, { title: "Lightning Bolt", year: 2013 }]
 },
 {
   name: "Tupac Shakur",
@@ -7082,6 +7403,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Snoop Dogg",
   summary: "Tupac Amaru Shakur (  TOO-pahk shə-KOOR; born Lesane Parish Crooks; June 16, 1971 – September 13, 1996), also known by his stage names 2Pac and Makaveli, was an American rapper and actor. He was one of the most influential musical artists of the 20th century, and a prominent political activist for Black America. He is among the best-selling music artists, having sold more than 75 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Tupac_Shakur",
+  albums: [{ title: "2Pacalypse Now", year: 1991 }, { title: "Troublesome 21", year: 1992 }, { title: "Strictly 4 My N.I.G.G.A.Z…", year: 1993 }, { title: "Me Against the World", year: 1995 }, { title: "All Eyez on Me", year: 1996 }, { title: "R U Still Down? (Remember Me)", year: 1997 }, { title: "Ready 4 War", year: 1998 }, { title: "Still I Rise", year: 1999 }, { title: "Until the End of Time", year: 2001 }, { title: "Unsolved", year: 2002 }]
 },
 {
   name: "Yes",
@@ -7104,6 +7426,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Geddy Lee and Alex Lifeson",
   summary: "Yes are an English progressive rock band formed in London in 1968. Comprising 20 full-time musicians over their career, their most notable members include lead singer Jon Anderson, bassist Chris Squire, guitarists Steve Howe and Trevor Rabin, drummers Bill Bruford and Alan White, and keyboardists Tony Kaye and Rick Wakeman. The band have explored several musical styles and are often regarded as progressive rock pioneers.",
   wikipedia: "https://en.wikipedia.org/wiki/Yes_%28band%29",
+  albums: [{ title: "Yes", year: 1969 }, { title: "Time and a Word", year: 1970 }, { title: "The Yes Album", year: 1971 }, { title: "Fragile", year: 1971 }, { title: "Close to the Edge", year: 1972 }, { title: "Tales From Topographic Oceans", year: 1973 }, { title: "Relayer", year: 1974 }, { title: "Going for the One", year: 1977 }, { title: "Tormato", year: 1978 }, { title: "Drama", year: 1980 }]
 },
 {
   name: "Bon Jovi",
@@ -7126,6 +7449,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Howard Stern",
   summary: "Bon Jovi is an American rock band formed in Sayreville, New Jersey in 1983. The band consists of singer Jon Bon Jovi, keyboardist David Bryan, drummer Tico Torres, guitarists John Shanks and Phil X, percussionist Everett Bradley, and bassist Hugh McDonald. Original bassist Alec John Such left the band in 1994, and longtime guitarist and co-songwriter Richie Sambora left in 2013.",
   wikipedia: "https://en.wikipedia.org/wiki/Bon_Jovi",
+  albums: [{ title: "Bon Jovi", year: 1984 }, { title: "7800° Fahrenheit", year: 1985 }, { title: "Slippery When Wet", year: 1986 }, { title: "New Jersey", year: 1988 }, { title: "Keep the Faith", year: 1992 }, { title: "These Days", year: 1995 }, { title: "Crush", year: 2000 }, { title: "Bounce", year: 2002 }, { title: "Have a Nice Day", year: 2005 }, { title: "Lost Highway", year: 2007 }]
 },
 {
   name: "Dire Straits",
@@ -7148,6 +7472,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Illsley",
   summary: "Dire Straits were a British rock band formed in London in 1977 by Mark Knopfler (lead vocals, lead guitar), David Knopfler (rhythm guitar, backing vocals), John Illsley (bass guitar, backing vocals), and Pick Withers (drums, percussion). The band was active from 1977 to 1988 and again from 1990 to 1995.",
   wikipedia: "https://en.wikipedia.org/wiki/Dire_Straits",
+  albums: [{ title: "Dire Straits", year: 1978 }, { title: "Communiqué", year: 1979 }, { title: "Making Movies", year: 1980 }, { title: "Love Over Gold", year: 1982 }, { title: "Brothers in Arms", year: 1985 }, { title: "On Every Street", year: 1991 }]
 },
 {
   name: "Nina Simone",
@@ -7170,6 +7495,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Mary J. Blige",
   summary: "Nina Simone ( NEE-nə sim-OHN; born Eunice Kathleen Waymon; February 21, 1933 – April 21, 2003) was an American pianist, singer, songwriter, and civil rights activist. Simone's bearing and stage presence earned her the title the High Priestess of Soul. Her music spanned styles including classical, folk, gospel, blues, jazz, R&B, and pop.",
   wikipedia: "https://en.wikipedia.org/wiki/Nina_Simone",
+  albums: [{ title: "Little Girl Blue", year: 1958 }, { title: "The Amazing Nina Simone", year: 1959 }, { title: "Forbidden Fruit", year: 1961 }, { title: "Nina Simone Sings Ellington", year: 1962 }, { title: "Broadway Blues Ballads", year: 1964 }, { title: "Starring Nina Simone with George Wallington", year: 1964 }, { title: "Pastel Blues", year: 1965 }, { title: "I Put a Spell on You", year: 1965 }, { title: "Let It All Out", year: 1965 }, { title: "Wild Is the Wind", year: 1966 }]
 },
 {
   name: "Sister Rosetta Tharpe",
@@ -7192,6 +7518,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Brittany Howard",
   summary: "Sister Rosetta Tharpe (born Rosetta Nubin, March 20, 1915 – October 9, 1973) was an American singer, songwriter, and guitarist. She gained popularity in the 1930s and 1940s with her gospel recordings, characterized by a unique mixture of spiritual lyrics and electric guitar.",
   wikipedia: "https://en.wikipedia.org/wiki/Sister_Rosetta_Tharpe",
+  albums: [{ title: "The Lonesome Road", year: 1939 }, { title: "Gospel Hymns", year: 1947 }, { title: "Gospel Songs", year: 1947 }, { title: "Blessed Assurance", year: 1951 }, { title: "Gospel Train", year: 1956 }, { title: "The Gospel Truth", year: 1959 }, { title: "Sister Rosetta Tharpe", year: 1960 }, { title: "Gospels In Rhythm", year: 1960 }, { title: "Spirituals In Rhythm", year: 1961 }, { title: "Sister On Tour", year: 1961 }]
 },
 {
   name: "The Cars",
@@ -7214,6 +7541,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Brandon Flowers",
   summary: "The Cars were an American rock band formed in Boston in 1976. Emerging from the new wave scene in the late 1970s, they consisted of Ric Ocasek (rhythm guitar), Benjamin Orr (bass guitar), Elliot Easton (lead guitar), Greg Hawkes (keyboards), and David Robinson (drums). Ocasek and Orr shared lead vocals. Ric Ocasek was the band's leader and took sole song writing credits for practically every song, leading to friction in the band later.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Cars",
+  albums: [{ title: "The Cars", year: 1978 }, { title: "Candy‐O", year: 1979 }, { title: "Panorama", year: 1980 }, { title: "Shake It Up", year: 1981 }, { title: "Heartbeat City", year: 1984 }, { title: "Door to Door", year: 1987 }, { title: "Move Like This", year: 2011 }]
 },
 {
   name: "The Moody Blues",
@@ -7236,6 +7564,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ann Wilson",
   summary: "The Moody Blues were an English rock band formed in Birmingham in May 1964. The band initially consisted of Graeme Edge (drums), Denny Laine (guitar/vocals), Mike Pinder (keyboards/vocals), Ray Thomas (multi-instrumentalist/vocals) and Clint Warwick (bass/vocals). Originally part of the British beat and R&B scene of the early-to-mid-1960s, the band came to prominence with the UK No. 1 and US Top 10 single \"Go Now\" in late 1964/early 1965.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Moody_Blues",
+  albums: [{ title: "The Magnificent Moodies", year: 1965 }, { title: "Days of Future Passed", year: 1967 }, { title: "In Search of the Lost Chord", year: 1968 }, { title: "On the Threshold of a Dream", year: 1969 }, { title: "To Our Children’s Children’s Children", year: 1969 }, { title: "A Question of Balance", year: 1970 }, { title: "Every Good Boy Deserves Favour", year: 1971 }, { title: "Seventh Sojourn", year: 1972 }, { title: "Octave", year: 1978 }, { title: "Long Distance Voyager", year: 1981 }]
 },
 {
   name: "Def Leppard",
@@ -7258,6 +7587,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Brian May",
   summary: "Def Leppard are an English rock band formed in Sheffield in 1976. Since 1992, the band has consisted of Rick Savage (bass, backing vocals), Joe Elliott (lead vocals), Rick Allen (drums), Phil Collen (guitar, backing vocals), and Vivian Campbell (guitar, backing vocals). They established themselves as part of the new wave of British heavy metal of the early 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Def_Leppard",
+  albums: [{ title: "On Through the Night", year: 1980 }, { title: "High ’n’ Dry", year: 1981 }, { title: "Pyromania", year: 1983 }, { title: "Hysteria", year: 1987 }, { title: "Adrenalize", year: 1992 }, { title: "Slang", year: 1996 }, { title: "Euphoria", year: 1999 }, { title: "X", year: 2002 }, { title: "Yeah! Unfinished and Unreleased", year: 2005 }, { title: "Yeah!", year: 2006 }]
 },
 {
   name: "Janet Jackson",
@@ -7280,6 +7610,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Janelle Monáe",
   summary: "Janet Damita Jo Jackson (born May 16, 1966) is an American singer, songwriter, actress, and dancer. An influential figure in popular culture, she is known for her innovative works that incorporate socially conscious and sexually provocative themes, as well as her elaborate stage shows. Her sound and choreography became a catalyst in the growth of MTV, breaking American gender and racial barriers and enabling her rise to prominence.",
   wikipedia: "https://en.wikipedia.org/wiki/Janet_Jackson",
+  albums: [{ title: "Janet Jackson", year: 1982 }, { title: "Dream Street", year: 1984 }, { title: "Control", year: 1986 }, { title: "Rhythm Nation 1814", year: 1989 }, { title: "janet.", year: 1993 }, { title: "The Velvet Rope", year: 1997 }, { title: "All for You", year: 2001 }, { title: "Damita Jo", year: 2004 }, { title: "20 Y.O.", year: 2006 }, { title: "Discipline", year: 2008 }]
 },
 {
   name: "Radiohead",
@@ -7302,6 +7633,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "David Byrne",
   summary: "Radiohead are an English rock band formed in Abingdon, Oxfordshire, in 1985. The band members are Thom Yorke (vocals, guitar, keyboards); the brothers Jonny Greenwood (guitar, keyboards, other instruments) and Colin Greenwood (bass); Ed O'Brien (guitar, backing vocals); and Philip Selway (drums). They have worked with the producer Nigel Godrich and the cover artist Stanley Donwood since 1994. Radiohead's experimental approach is credited with advancing the sound of alternative rock.",
   wikipedia: "https://en.wikipedia.org/wiki/Radiohead",
+  albums: [{ title: "Pablo Honey", year: 1993 }, { title: "The Bends", year: 1994 }, { title: "Radiotick Tracks 2", year: 1997 }, { title: "OK Computer", year: 1997 }, { title: "Kid A", year: 2000 }, { title: "Amnesiac", year: 2001 }, { title: "Hail to the Thief", year: 2003 }, { title: "In Rainbows", year: 2007 }, { title: "The King of Limbs", year: 2011 }, { title: "A Moon Shaped Pool", year: 2016 }]
 },
 {
   name: "Roxy Music",
@@ -7324,6 +7656,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Simon Le Bon and John Taylor",
   summary: "Roxy Music were an English rock band formed in 1970 by Bryan Ferry (lead vocals/keyboards/principal songwriter) and Graham Simpson (bass). By the time the band recorded their first album in early 1972, Ferry and Simpson were joined by Andy Mackay (saxophone/oboe), Phil Manzanera (guitar), Paul Thompson (drums) and Brian Eno (synthesizer).",
   wikipedia: "https://en.wikipedia.org/wiki/Roxy_Music",
+  albums: [{ title: "Roxy Music", year: 1972 }, { title: "For Your Pleasure", year: 1973 }, { title: "Stranded", year: 1973 }, { title: "Country Life", year: 1974 }, { title: "Siren", year: 1975 }, { title: "Manifesto", year: 1979 }, { title: "Flesh + Blood", year: 1980 }, { title: "Avalon", year: 1982 }, { title: "Country Life", year: null }]
 },
 {
   name: "Stevie Nicks",
@@ -7346,6 +7679,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Harry Styles",
   summary: "Stephanie Lynn Nicks (born May 26, 1948) is an American singer-songwriter, known for her work with the band Fleetwood Mac and as a solo artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Stevie_Nicks",
+  albums: [{ title: "Bella Donna", year: 1981 }, { title: "The Wild Heart", year: 1983 }, { title: "Rock a Little", year: 1985 }, { title: "The Other Side of the Mirror", year: 1989 }, { title: "Street Angel", year: 1994 }, { title: "Trouble in Shangri‐La", year: 2001 }, { title: "In Your Dreams", year: 2011 }, { title: "24 Karat Gold: Songs From the Vault", year: 2014 }, { title: "Beauty And The Beast; Live 1986 Radio Broadcast", year: 2014 }, { title: "Edge of Seventeen (Live)", year: 2019 }]
 },
 {
   name: "The Cure",
@@ -7368,6 +7702,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Trent Reznor",
   summary: "The Cure are an English rock band formed in Crawley in 1976 by Robert Smith (vocals, guitar) and Lol Tolhurst (drums). As of 2026, the band's line-up comprises Smith, Simon Gallup (bass), Roger O'Donnell (keyboards), Jason Cooper (drums) and Reeves Gabrels (guitar). Smith has remained the only constant member throughout numerous line-up changes since the band's formation.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Cure",
+  albums: [{ title: "Three Imaginary Boys", year: 1979 }, { title: "Seventeen Seconds", year: 1980 }, { title: "Faith", year: 1981 }, { title: "Pornography", year: 1982 }, { title: "The Top", year: 1984 }, { title: "The Head on the Door", year: 1985 }, { title: "Kiss Me Kiss Me Kiss Me", year: 1987 }, { title: "Disintegration", year: 1989 }, { title: "Wish", year: 1992 }, { title: "Wild Mood Swings", year: 1996 }]
 },
 {
   name: "The Zombies",
@@ -7390,6 +7725,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Susanna Hoffs",
   summary: "The Zombies are an English rock band formed in St Albans in 1962. Led by keyboardist/vocalist Rod Argent and lead vocalist Colin Blunstone, the group had their first British and American hit in 1964 with \"She's Not There\". In the US, two further singles—\"Tell Her No\" in 1965 and \"Time of the Season\" in 1968—were also successful.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Zombies",
+  albums: [{ title: "Begin Here", year: 1965 }, { title: "The Zombies", year: 1965 }, { title: "Odessey and Oracle", year: 1968 }, { title: "New World", year: 1990 }, { title: "As Far as I Can See.....", year: 2004 }, { title: "Breathe Out, Breathe In", year: 2011 }, { title: "Still Got That Hunger", year: 2015 }, { title: "Different Game", year: 2023 }, { title: "Remember You", year: null }]
 },
 {
   name: "Depeche Mode",
@@ -7412,6 +7748,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Charlize Theron",
   summary: "Depeche Mode () are an English electronic band formed in Basildon, Essex in 1980. Originally formed with the line-up of Dave Gahan, Martin Gore, Andy Fletcher and Vince Clarke, the band has consisted of Gahan and Gore since Fletcher's death in 2022.",
   wikipedia: "https://en.wikipedia.org/wiki/Depeche_Mode",
+  albums: [{ title: "Speak & Spell", year: 1981 }, { title: "A Broken Frame", year: 1982 }, { title: "Construction Time Again", year: 1983 }, { title: "Some Great Reward", year: 1984 }, { title: "Black Celebration", year: 1986 }, { title: "Music for the Masses", year: 1987 }, { title: "Violator", year: 1990 }, { title: "Houston Night Volume 2", year: 1993 }, { title: "Songs of Faith and Devotion", year: 1993 }, { title: "Ultra", year: 1997 }]
 },
 {
   name: "Irving Azoff",
@@ -7434,6 +7771,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Don Henley",
   summary: "Irving Azoff (; born December 12, 1947) is an American record executive and talent manager. He is the chairman of Full Stop Management, a company that represents recording artists. During the course of his career, he has also been a talent agent, personal manager, concert promoter, film producer, and music publisher.",
   wikipedia: "https://en.wikipedia.org/wiki/Irving_Azoff",
+  albums: []
 },
 {
   name: "Jon Landau",
@@ -7456,6 +7794,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Jon Landau (born May 14, 1947) is an American music critic, manager, and record producer. He is most known for his work with Bruce Springsteen. He is the head of the nominating committee for the Rock and Roll Hall of Fame, and received that institution's Ahmet Ertegun Award for Lifetime Achievement in 2020.",
   wikipedia: "https://en.wikipedia.org/wiki/Jon_Landau",
+  albums: []
 },
 {
   name: "Nine Inch Nails",
@@ -7478,6 +7817,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Iggy Pop",
   summary: "Nine Inch Nails, commonly abbreviated as NIN (stylized as NIИ), is an American industrial rock band formed by singer, songwriter, multi-instrumentalist, and producer Trent Reznor in 1988 in Cleveland, Ohio. Reznor was the sole permanent member of the band until his frequent collaborator, English musician Atticus Ross, became an official member in 2016. The band's debut album, Pretty Hate Machine (1989), was released via TVT Records.",
   wikipedia: "https://en.wikipedia.org/wiki/Nine_Inch_Nails",
+  albums: [{ title: "Pretty Hate Machine", year: 1989 }, { title: "The Downward Spiral", year: 1994 }, { title: "The Fragile", year: 1999 }, { title: "With Teeth", year: 2005 }, { title: "Year Zero", year: 2007 }, { title: "Ghosts I–IV", year: 2008 }, { title: "The Slip", year: 2008 }, { title: "Hesitation Marks", year: 2013 }, { title: "Bad Witch", year: 2018 }, { title: "Ghosts V: Together", year: 2020 }]
 },
 {
   name: "T. Rex",
@@ -7500,6 +7840,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ringo Starr",
   summary: "T. Rex, originally Tyrannosaurus Rex, were  an English rock band formed in London in 1967 by singer-songwriter and guitarist Marc Bolan, who was their leader, frontman and only consistent member. Originally an acoustic psychedelic folk band, Bolan began to change the band's style towards electric rock with their fourth album, 1970's A Beard of Stars, and shortened their name to T. Rex by the time their self-titled fifth album was released later that same year.",
   wikipedia: "https://en.wikipedia.org/wiki/T._Rex_%28band%29",
+  albums: [{ title: "My People Were Fair and Had Sky in Their Hair… But Now They’re Content to Wear Stars on Their Brows", year: 1968 }, { title: "Prophets, Seers & Sages: The Angels of the Ages", year: 1968 }, { title: "Unicorn", year: 1969 }, { title: "T·Rex", year: 1970 }, { title: "A Beard of Stars", year: 1970 }, { title: "Electric Warrior", year: 1971 }, { title: "The Slider", year: 1972 }, { title: "Tanx", year: 1973 }, { title: "Zinc Alloy and the Hidden Riders of Tomorrow", year: 1974 }, { title: "Light of Love", year: 1974 }]
 },
 {
   name: "The Doobie Brothers",
@@ -7522,6 +7863,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Luke Bryan",
   summary: "The Doobie Brothers are an American rock band formed in San Jose, California, in 1970. Known for their flexibility in performing across numerous genres and their vocal harmonies, the band has been active for over five decades, with their greatest success taking place in the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Doobie_Brothers",
+  albums: [{ title: "The Doobie Brothers", year: 1971 }, { title: "Toulouse Street", year: 1972 }, { title: "The Captain and Me", year: 1973 }, { title: "What Were Once Vices Are Now Habits", year: 1974 }, { title: "Stampede", year: 1975 }, { title: "Takin’ It to the Streets", year: 1976 }, { title: "Livin’ on the Fault Line", year: 1977 }, { title: "Minute by Minute", year: 1978 }, { title: "One Step Closer", year: 1980 }, { title: "Cycles", year: 1989 }]
 },
 {
   name: "The Notorious B.I.G.",
@@ -7544,6 +7886,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sean Combs",
   summary: "Christopher George Latore Wallace (May 21, 1972 – March 9, 1997), known professionally as the Notorious B.I.G. or Biggie Smalls, was an American rapper and songwriter. Rooted in the East Coast hip-hop and gangsta rap traditions, he is widely considered one of the greatest rappers of all time. Wallace became known for his distinctive, laidback lyrical delivery, offsetting his lyrics' often grim content.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Notorious_B.I.G.",
+  albums: [{ title: "Ready to Die", year: 1994 }, { title: "East & West Coast Rival", year: 1996 }, { title: "Life After Death", year: 1997 }, { title: "Dead Wrong / Whoa", year: 1999 }, { title: "Unsolved", year: 2002 }, { title: "Duets: The Final Chapter", year: 2005 }, { title: "Doing It Real Big", year: 2015 }, { title: "The King & I", year: 2017 }]
 },
 {
   name: "Whitney Houston",
@@ -7566,6 +7909,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Alicia Keys",
   summary: "Whitney Elizabeth Houston (August 9, 1963 – February 11, 2012) was an American singer, actress, film producer, and record producer. Commonly referred to as \"the Voice\", she is one of the most awarded performers of all time. Houston is one of the best-selling music artists of all time, with sales of more than 220 million records worldwide. A cultural icon, she broke down gender and racial barriers through her artistic achievements and music videos.",
   wikipedia: "https://en.wikipedia.org/wiki/Whitney_Houston",
+  albums: [{ title: "Whitney Houston", year: 1985 }, { title: "Whitney", year: 1987 }, { title: "I’m Your Baby Tonight", year: 1990 }, { title: "My Love Is Your Love", year: 1998 }, { title: "Just Whitney...", year: 2002 }, { title: "One Wish: The Holiday Album", year: 2003 }, { title: "I Look to You", year: 2009 }]
 },
 {
   name: "Billy Preston",
@@ -7588,6 +7932,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ringo Starr",
   summary: "William Everett Preston (September 2, 1946 – June 6, 2006) was an American keyboardist, singer, and songwriter whose work encompassed R&B, rock, soul, funk, and gospel. Preston was a top session keyboardist in the 1960s, backing Little Richard, Sam Cooke, Ray Charles, the Everly Brothers, Reverend James Cleveland, the Beatles, and the Rolling Stones.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Preston",
+  albums: [{ title: "16 Yr. Old Soul", year: 1962 }, { title: "This Sunday-In Person", year: 1962 }, { title: "The Most Exciting Organ Ever", year: 1964 }, { title: "Early Hits Of 1965", year: 1965 }, { title: "Wildest Organ In Town!", year: 1966 }, { title: "Hymns Speak From the Organ", year: 1966 }, { title: "That’s the Way God Planned It", year: 1969 }, { title: "Encouraging Words", year: 1970 }, { title: "Organ Transplant", year: 1970 }, { title: "I Wrote a Simple Song", year: 1971 }]
 },
 {
   name: "Charley Patton",
@@ -7610,6 +7955,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Gary Clark Jr.",
   summary: "Charlie Patton (April 1891 (probable) – April 28, 1934), more often spelled Charley Patton, was an American Delta blues musician and songwriter. Considered by many to be the \"Father of the Delta Blues\", he created an enduring body of American music and inspired most Delta blues musicians. The musicologist Robert Palmer considered him one of the most important American musicians of the twentieth century.",
   wikipedia: "https://en.wikipedia.org/wiki/Charley_Patton",
+  albums: []
 },
 {
   name: "Clarence Avant",
@@ -7632,6 +7978,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lionel Richie",
   summary: "Clarence Alexander Avant (February 25, 1931 – August 13, 2023) was a prominent American music executive, businessman and film producer. Widely recognized as \"The Black Godfather\", Avant's career was characterized by his advocacy for equitable treatment and compensation for African American artists in the entertainment industry. His efforts were acknowledged with his 2021 induction into the Rock and Roll Hall of Fame.",
   wikipedia: "https://en.wikipedia.org/wiki/Clarence_Avant",
+  albums: []
 },
 {
   name: "Foo Fighters",
@@ -7654,6 +8001,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul McCartney",
   summary: "The Foo Fighters are an American rock band formed in Seattle in 1994. Initially founded as a one-man project by former Nirvana drummer Dave Grohl, the band comprises vocalist/guitarist Grohl, bassist Nate Mendel, guitarists Pat Smear and Chris Shiflett, keyboardist Rami Jaffee and drummer Ilan Rubin. Guitarist Franz Stahl and drummers William Goldsmith, Taylor Hawkins, and Josh Freese are former members.",
   wikipedia: "https://en.wikipedia.org/wiki/Foo_Fighters",
+  albums: [{ title: "Foo Fighters", year: 1995 }, { title: "The Colour and the Shape", year: 1997 }, { title: "There Is Nothing Left to Lose", year: 1999 }, { title: "One by One", year: 2002 }, { title: "In Your Honor", year: 2005 }, { title: "Echoes, Silence, Patience & Grace", year: 2007 }, { title: "Wasting Light", year: 2011 }, { title: "Sonic Highways", year: 2014 }, { title: "Concrete and Gold", year: 2017 }, { title: "Hail Satin", year: 2021 }]
 },
 {
   name: "Gil Scott-Heron",
@@ -7676,6 +8024,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Common",
   summary: "Gilbert Scott-Heron (April 1, 1949 – May 27, 2011) was an American jazz poet, singer, musician and author, known for his work as a spoken-word performer in the 1970s and 1980s. His collaborative efforts with musician Brian Jackson fused jazz, blues and soul with lyrics relative to social and political issues of the time, delivered in both rapping and melismatic vocal styles. He referred to himself as a \"bluesologist\", his own term for \"a scientist who is concerned with the origin of the blues\".",
   wikipedia: "https://en.wikipedia.org/wiki/Gil_Scott-Heron",
+  albums: [{ title: "Pieces of a Man", year: 1971 }, { title: "Free Will", year: 1972 }, { title: "Winter in America", year: 1974 }, { title: "The First Minute of a New Day", year: 1975 }, { title: "From South Africa to South Carolina", year: 1975 }, { title: "It's Your World", year: 1976 }, { title: "Bridges", year: 1977 }, { title: "The Mind of Gil Scott Heron", year: 1978 }, { title: "Secrets", year: 1978 }, { title: "1980", year: 1980 }]
 },
 {
   name: "Jay-Z",
@@ -7698,6 +8047,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Chappelle",
   summary: "Shawn Corey Carter (born December 4, 1969), known professionally as Jay-Z, is an American rapper, businessman, and record executive. He was named the greatest rapper of all time by Billboard and Vibe in 2023. Rooted in East Coast hip-hop, Jay-Z is known for his complex lyricism that often uses double entendres, wordplay, and braggadocio. His music is built on a rags to riches narrative.",
   wikipedia: "https://en.wikipedia.org/wiki/Jay-Z",
+  albums: [{ title: "Reasonable Doubt", year: 1996 }, { title: "In My Lifetime, Vol. 1", year: 1997 }, { title: "Vol. 2… Hard Knock Life", year: 1998 }, { title: "Vol. 3… Life and Times of S. Carter", year: 1999 }, { title: "The Dynasty: Roc La Familia", year: 2000 }, { title: "The Blueprint", year: 2001 }, { title: "The Best of Both Worlds", year: 2002 }, { title: "The Blueprint²: The Gift & The Curse", year: 2002 }, { title: "The Black Album", year: 2003 }, { title: "Soled Out", year: 2004 }]
 },
 {
   name: "Kraftwerk",
@@ -7720,6 +8070,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pharrell Williams",
   summary: "Kraftwerk (German pronunciation: [ˈkʁaftvɛʁk] , lit. 'power plant') is a German electronic music band formed in Düsseldorf in 1970 by Ralf Hütter and Florian Schneider. Widely considered innovators and pioneers of electronic music, Kraftwerk was among the first successful acts to popularise the genre. The group began as part of West Germany's experimental krautrock scene in the early 1970s before embracing electronic instrumentation, including synthesizers, drum machines, and vocoders.",
   wikipedia: "https://en.wikipedia.org/wiki/Kraftwerk",
+  albums: [{ title: "Kraftwerk", year: 1970 }, { title: "Kraftwerk 2", year: 1972 }, { title: "Ralf & Florian", year: 1973 }, { title: "Autobahn", year: 1974 }, { title: "Radio‐Aktivität", year: 1975 }, { title: "Trans Europa Express", year: 1977 }, { title: "Die Mensch·Maschine", year: 1978 }, { title: "Computerwelt", year: 1981 }, { title: "Electric Cafe", year: 1986 }, { title: "Numbers", year: 1992 }]
 },
 {
   name: "LL Cool J",
@@ -7742,6 +8093,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dr. Dre",
   summary: "James Todd Smith (born January 14, 1968), known professionally as LL Cool J (short for Ladies Love Cool James), is an American rapper and actor. He is one of the earliest rappers to realize crossover commercial success, alongside fellow new-school hip-hop acts like Run-DMC.",
   wikipedia: "https://en.wikipedia.org/wiki/LL_Cool_J",
+  albums: [{ title: "Radio", year: 1985 }, { title: "Bigger and Deffer", year: 1987 }, { title: "Walking With a Panther", year: 1989 }, { title: "Mama Said Knock You Out", year: 1990 }, { title: "14 Shots to the Dome", year: 1993 }, { title: "Mr. Smith", year: 1995 }, { title: "Phenomenon", year: 1997 }, { title: "G.O.A.T. Featuring James T. Smith: The Greatest of All Time", year: 2000 }, { title: "10", year: 2002 }, { title: "THE DEFinition", year: 2004 }]
 },
 {
   name: "Randy Rhoads",
@@ -7764,6 +8116,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Tom Morello",
   summary: "Randall William Rhoads (December 6, 1956 – March 19, 1982) was an American guitarist. He was the co-founder and original guitarist of the heavy metal band Quiet Riot, and the guitarist and co-songwriter for Ozzy Osbourne's first two solo albums Blizzard of Ozz (1980) and Diary of a Madman (1981). Rhoads was posthumously inducted into the Rock and Roll Hall of Fame in 2021.",
   wikipedia: "https://en.wikipedia.org/wiki/Randy_Rhoads",
+  albums: [{ title: "The Earliest Sessions", year: null }]
 },
 {
   name: "The Go-Go's",
@@ -7786,6 +8139,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Drew Barrymore",
   summary: "The Go-Go's are an American all-female rock band formed in Los Angeles in 1978. Except for short periods when other musicians joined briefly, the band has had a relatively stable lineup consisting of Charlotte Caffey on lead guitar and keyboards, Belinda Carlisle on lead vocals, Gina Schock on drums, Kathy Valentine on bass, and Jane Wiedlin on rhythm guitar.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Go-Go%27s",
+  albums: [{ title: "Beauty and the Beat", year: 1981 }, { title: "Vacation", year: 1982 }, { title: "Talk Show", year: 1984 }, { title: "God Bless the Go‐Go’s", year: 2001 }]
 },
 {
   name: "Tina Turner",
@@ -7808,6 +8162,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Angela Bassett",
   summary: "Tina Turner (born Anna Mae Bullock; November 26, 1939 – May 24, 2023) was a singer, songwriter, actress and author. Dubbed the \"Queen of Rock 'n' Roll\", she broke both racial and gender barriers in rock music with her vocal prowess and stage presence. She is one of the best-selling music artists of all time, with estimated sales of over 100 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Tina_Turner",
+  albums: [{ title: "Tina Turns The Country On!", year: 1974 }, { title: "Acid Queen", year: 1975 }, { title: "Rough", year: 1978 }, { title: "Love Explosion", year: 1979 }, { title: "The Edge", year: 1980 }, { title: "Private Dancer", year: 1984 }, { title: "Break Every Rule", year: 1986 }, { title: "Foreign Affair", year: 1989 }, { title: "Wildest Dreams", year: 1996 }, { title: "Twenty Four Seven", year: 1999 }]
 },
 {
   name: "Todd Rundgren",
@@ -7830,6 +8185,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Patti Smith",
   summary: "Todd Harry Rundgren (born June 22, 1948) is an American musician, singer, songwriter, and record producer who has performed a diverse range of styles as a solo artist and as a member of the bands Nazz and Utopia. He is known for his sophisticated and often unorthodox music, his occasionally lavish stage shows, and his later experiments with interactive art.",
   wikipedia: "https://en.wikipedia.org/wiki/Todd_Rundgren",
+  albums: [{ title: "Runt", year: 1970 }, { title: "Runt: The Ballad of Todd Rundgren", year: 1971 }, { title: "Something/Anything?", year: 1972 }, { title: "A Wizard, a True Star", year: 1973 }, { title: "Todd", year: 1974 }, { title: "Initiation", year: 1975 }, { title: "Faithful", year: 1976 }, { title: "Hermit of Mink Hollow", year: 1978 }, { title: "Healing", year: 1981 }, { title: "The Ever Popular Tortured Artist Effect", year: 1982 }]
 },
 {
   name: "Allen Grubman",
@@ -7852,6 +8208,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "John Mellencamp",
   summary: "Allen J. Grubman is an American entertainment lawyer.",
   wikipedia: "https://en.wikipedia.org/wiki/Allen_Grubman",
+  albums: []
 },
 {
   name: "Carly Simon",
@@ -7874,6 +8231,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sara Bareilles",
   summary: "Carly Elisabeth Simon (born June 25, 1943) is an American musician, singer, songwriter, and author. She rose to fame in the 1970s with a string of hit records; her 13 top 40 U.S. hits include \"That's the Way I've Always Heard It Should Be\" (No. 10), \"Anticipation\" (No. 13), \"The Right Thing to Do\" (No. 17), \"Haven't Got Time for the Pain\" (No. 14), \"You Belong to Me\" (No. 6), \"Coming Around Again\" (No. 18), and her four Gold-certified singles \"You're So Vain\" (No. 1), \"Mockingbird\" (No.",
   wikipedia: "https://en.wikipedia.org/wiki/Carly_Simon",
+  albums: [{ title: "Carly Simon", year: 1971 }, { title: "Anticipation", year: 1971 }, { title: "No Secrets", year: 1972 }, { title: "Hotcakes", year: 1974 }, { title: "Playing Possum", year: 1975 }, { title: "Another Passenger", year: 1976 }, { title: "Boys in the Trees", year: 1978 }, { title: "Spy", year: 1979 }, { title: "Come Upstairs", year: 1980 }, { title: "Torch", year: 1981 }]
 },
 {
   name: "Dolly Parton",
@@ -7896,6 +8254,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pink",
   summary: "Dolly Rebecca Parton (born January 19, 1946) is an American singer, songwriter, actress, philanthropist, and businesswoman. After achieving success as a songwriter for other artists, Parton's debut album, Hello, I'm Dolly, was released in 1967, commencing a career spanning 60 years and 50 studio albums.",
   wikipedia: "https://en.wikipedia.org/wiki/Dolly_Parton",
+  albums: [{ title: "Hello, I’m Dolly", year: 1967 }, { title: "Just Between You and Me", year: 1968 }, { title: "Just the Two of Us", year: 1968 }, { title: "Just Because I’m a Woman", year: 1968 }, { title: "In the Good Old Days (When Times Were Bad)", year: 1969 }, { title: "My Blue Ridge Mountain Boy", year: 1969 }, { title: "Always, Always", year: 1969 }, { title: "Once More", year: 1970 }, { title: "Porter Wayne and Dolly Rebecca", year: 1970 }, { title: "The Fairest of Them All", year: 1970 }]
 },
 {
   name: "Duran Duran",
@@ -7918,6 +8277,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Robert Downey Jr.",
   summary: "Duran Duran () are an English pop rock band. Formed in Birmingham in 1978 by keyboardist Nick Rhodes, guitarist (later bassist) John Taylor and singer/bassist Stephen Duffy, the band went through several early changes before the band's line-up settled in May 1980 as Rhodes, Taylor, singer Simon Le Bon, guitarist Andy Taylor and drummer Roger Taylor.",
   wikipedia: "https://en.wikipedia.org/wiki/Duran_Duran",
+  albums: [{ title: "Duran Duran", year: 1981 }, { title: "Rio", year: 1982 }, { title: "Seven and the Ragged Tiger", year: 1983 }, { title: "Notorious", year: 1986 }, { title: "Big Thing", year: 1988 }, { title: "Liberty", year: 1990 }, { title: "Hollywood1993", year: 1993 }, { title: "Italian Acoustic", year: 1993 }, { title: "Duran Duran", year: 1993 }, { title: "Thank You", year: 1995 }]
 },
 {
   name: "Elizabeth Cotten",
@@ -7940,6 +8300,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Pharrell Williams",
   summary: "Elizabeth \"Libba\" Cotten (née Nevills; January 5, 1893 – June 29, 1987) was an influential American folk and blues musician. She was a self-taught left-handed guitarist who played a guitar strung for a right-handed player, but played it upside down. This position meant that she played the bass lines with her fingers and the melody with her thumb. Her signature alternating bass style has become known as \"Cotten picking\".",
   wikipedia: "https://en.wikipedia.org/wiki/Elizabeth_Cotten",
+  albums: [{ title: "Folksongs and Instrumentals With Guitar", year: 1958 }, { title: "Vol. 2: Shake Sugaree", year: 1967 }, { title: "Volume 3: When I'm Gone", year: 1979 }]
 },
 {
   name: "Eminem",
@@ -7962,6 +8323,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dr. Dre",
   summary: "Marshall Bruce Mathers III (born October 17, 1972), known professionally as Eminem, is an American rapper, songwriter, record producer, and record executive. Widely regarded as one of the greatest and most influential rappers of all time, he is often credited with popularizing hip-hop in Middle America and the acceptance of white rappers.",
   wikipedia: "https://en.wikipedia.org/wiki/Eminem",
+  albums: [{ title: "Infinite", year: 1996 }, { title: "The Slim Shady LP", year: 1999 }, { title: "Unmastered Sequence", year: 1999 }, { title: "The Marshall Mathers LP", year: 2000 }, { title: "The Marshall Mathers LP Snippet Tape", year: 2000 }, { title: "The Eminem Show", year: 2002 }, { title: "Encore", year: 2004 }, { title: "Eminem & Friends: Game Over Sessions", year: 2005 }, { title: "Unreleased & Uncensored", year: 2005 }, { title: "Curtain Call: Stan's Mixtape (Bonus CD)", year: 2005 }]
 },
 {
   name: "Eurythmics",
@@ -7984,6 +8346,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "The Edge",
   summary: "Eurythmics were a British new wave duo formed in 1980, consisting of the Scottish vocalist Annie Lennox and the English musician and producer Dave Stewart. They had both been previously in the Tourists, a band that broke up in 1980. They released their first studio album, In the Garden, in 1981 to little success, but achieved global acclaim with their second album, Sweet Dreams (Are Made of This) (1983).",
   wikipedia: "https://en.wikipedia.org/wiki/Eurythmics",
+  albums: [{ title: "In the Garden", year: 1981 }, { title: "Sweet Dreams (Are Made of This)", year: 1983 }, { title: "Touch", year: 1983 }, { title: "Be Yourself Tonight", year: 1985 }, { title: "Revenge", year: 1986 }, { title: "Savage", year: 1987 }, { title: "We Too Are One", year: 1989 }, { title: "Sexcrime", year: 1992 }, { title: "Peace", year: 1999 }]
 },
 {
   name: "Harry Belafonte",
@@ -8006,6 +8369,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dr. Dre",
   summary: "Harry Belafonte ( BEL-ə-FON-tee; born Harold George Bellanfanti Jr.; March 1, 1927 – April 25, 2023) was an American singer, actor, and civil rights activist who popularized calypso music with international audiences in the 1950s and 1960s. Belafonte's career breakthrough album Calypso (1956) was the first million-selling LP by a single artist.",
   wikipedia: "https://en.wikipedia.org/wiki/Harry_Belafonte",
+  albums: [{ title: "“Mark Twain” and Other Folk Favorites", year: 1954 }, { title: "Belafonte", year: 1956 }, { title: "Calypso", year: 1956 }, { title: "Belafonte Sings of the Caribbean", year: 1957 }, { title: "An Evening With Belafonte", year: 1957 }, { title: "Belafonte Sings the Blues", year: 1958 }, { title: "Porgy and Bess", year: 1959 }, { title: "Love Is a Gentle Thing", year: 1959 }, { title: "Swing Dat Hammer", year: 1960 }, { title: "My Lord What a Mornin’", year: 1960 }]
 },
 {
   name: "Jimmy Iovine",
@@ -8028,6 +8392,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "James Iovine ( EYE-ə-veen; born March 11, 1953) is an American entrepreneur, former record executive, and media proprietor. He co-founded Interscope Records in 1990, and served as chairman and CEO of Interscope Geffen A&M, an umbrella music unit formed by Universal Music Group, from 1999 to 2014.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Iovine",
+  albums: []
 },
 {
   name: "Jimmy Jam and Terry Lewis",
@@ -8050,6 +8415,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Janet Jackson",
   summary: "James Samuel \"Jimmy Jam\" Harris III (born June 6, 1959) and Terry Steven Lewis (born November 24, 1956) are an American R&B/pop songwriting and record production team. Their productions have received commercial success since the 1980s with various artists, most extensively Janet Jackson. They have written 31 top ten hits in the UK and 41 in the US. In 2022, the duo were inducted into the Rock and Roll Hall of Fame in the Musical Excellence category.",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Jam_and_Terry_Lewis",
+  albums: [{ title: "Jam & Lewis, Volume One", year: 2021 }]
 },
 {
   name: "Judas Priest",
@@ -8072,6 +8438,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Alice Cooper",
   summary: "Judas Priest are an English heavy metal band formed in Birmingham in 1969. They have sold over 50 million albums and are frequently ranked as one of the greatest metal bands of all time. They have been referred to as one of the pioneers of the new wave of British heavy metal (NWOBHM) movement, and cited as a formative influence on various metal subgenres, including speed metal, thrash metal, and power metal, as well as the hard rock and glam metal scene of the 1980s.",
   wikipedia: "https://en.wikipedia.org/wiki/Judas_Priest",
+  albums: [{ title: "Rocka Rolla", year: 1974 }, { title: "Sad Wings of Destiny", year: 1976 }, { title: "Sin After Sin", year: 1977 }, { title: "Killing Machine", year: 1978 }, { title: "Stained Class", year: 1978 }, { title: "British Steel", year: 1980 }, { title: "Point of Entry", year: 1981 }, { title: "Screaming for Vengeance", year: 1982 }, { title: "Defenders of the Faith", year: 1984 }, { title: "Turbo", year: 1986 }]
 },
 {
   name: "Lionel Richie",
@@ -8094,6 +8461,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Lenny Kravitz",
   summary: "Lionel Brockman Richie Jr. (born June 20, 1949) is an American singer, songwriter, musician, record producer, and television personality. He rose to fame in the 1970s as a songwriter and the co-lead singer of the Motown group Commodores; writing and recording the hit singles \"Easy\", \"Sail On\", \"Three Times a Lady\", and \"Still\" with the group before his departure. In 1980, he wrote and produced the US Billboard Hot 100 number one single \"Lady\" for Kenny Rogers.",
   wikipedia: "https://en.wikipedia.org/wiki/Lionel_Richie",
+  albums: [{ title: "Lionel Richie", year: 1982 }, { title: "Can’t Slow Down", year: 1983 }, { title: "Dancing on the Ceiling", year: 1985 }, { title: "Live & Alive", year: 1995 }, { title: "Louder Than Words", year: 1996 }, { title: "Time", year: 1998 }, { title: "Renaissance", year: 2000 }, { title: "Just for You", year: 2003 }, { title: "Coming Home", year: 2006 }, { title: "Just Go", year: 2009 }]
 },
 {
   name: "Neil Giraldo",
@@ -8116,6 +8484,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Bruce Springsteen",
   summary: "Neil Thomas Giraldo (born December 29, 1955) is an American musician, record producer, arranger, and songwriter best known as the musical partner of Pat Benatar since 1979 – and husband since 1982. He has also performed, written and produced for artists including Rick Derringer, John Waite, Rick Springfield, Kenny Loggins, Steve Forbert, The Del-Lords, Scott Kempner, and Beth Hart.",
   wikipedia: "https://en.wikipedia.org/wiki/Neil_Giraldo",
+  albums: []
 },
 {
   name: "Pat Benatar",
@@ -8138,6 +8507,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sheryl Crow",
   summary: "Patricia Mae Giraldo (née Andrzejewski; formerly and still professionally Benatar ; born January 10, 1953) is an American singer and songwriter. In the US, she has two multi-platinum albums, five platinum albums, and 15 US Billboard top 40 singles, while in Canada she had eight straight platinum albums, and has sold over 36 million albums worldwide. She is a four-time Grammy Award winner. She was inducted into the Rock and Roll Hall of Fame in 2022.",
   wikipedia: "https://en.wikipedia.org/wiki/Pat_Benatar",
+  albums: [{ title: "In the Heat of the Night", year: 1979 }, { title: "Crimes of Passion", year: 1980 }, { title: "Precious Time", year: 1981 }, { title: "Get Nervous", year: 1982 }, { title: "Tropico", year: 1984 }, { title: "Seven the Hard Way", year: 1985 }, { title: "Wide Awake in Dreamland", year: 1988 }, { title: "True Love", year: 1991 }, { title: "Gravity’s Rainbow", year: 1993 }, { title: "Innamorata", year: 1997 }]
 },
 {
   name: "Sylvia Robinson",
@@ -8160,6 +8530,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sheryl Crow",
   summary: "Sylvia Robinson (née Vanterpool; May 29, 1935 – September 29, 2011), known mononymously as Sylvia, was an American singer and record producer. Robinson achieved success as a performer on two R&B chart toppers: as half of Mickey & Sylvia with the 1957 single \"Love Is Strange\", and her solo record \"Pillow Talk\" in 1973. She later became known for her work as founder and CEO of the pioneering hip hop label Sugar Hill Records.",
   wikipedia: "https://en.wikipedia.org/wiki/Sylvia_Robinson",
+  albums: [{ title: "Pillow Talk", year: 1973 }, { title: "Sweet Stuff", year: 1975 }, { title: "Sylvia", year: 1976 }, { title: "Lay It On Me", year: 1977 }]
 },
 {
   name: "Al Kooper",
@@ -8182,6 +8553,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Al Kooper (born Alan Peter Kuperschmidt; February 5, 1944) is an American songwriter, record producer, and musician. Throughout much of the 1960s and 1970s he was a prolific studio musician, including playing organ on the Bob Dylan song \"Like a Rolling Stone\", French horn and piano on the Rolling Stones song \"You Can't Always Get What You Want\", and lead guitar on Rita Coolidge's \"The Lady's Not for Sale\".",
   wikipedia: "https://en.wikipedia.org/wiki/Al_Kooper",
+  albums: [{ title: "Super Session", year: 1968 }, { title: "I Stand Alone", year: 1968 }, { title: "You Never Know Who Your Friends Are", year: 1969 }, { title: "Kooper Session: Al Kooper Introduces Shuggie Otis", year: 1969 }, { title: "Easy Does It", year: 1970 }, { title: "New York City (You're a Woman)", year: 1971 }, { title: "A Possible Projection of the Future / Childhoods End", year: 1972 }, { title: "Naked Songs", year: 1972 }, { title: "Act Like Nothing’s Wrong", year: 1976 }, { title: "Championship Wrestling", year: 1982 }]
 },
 {
   name: "Bernie Taupin",
@@ -8204,6 +8576,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Bernard John Taupin (taw-PIN; born 22 May 1950) is an English lyricist and visual artist. He is best known for his songwriting partnership with Elton John, recognised as one of the most successful partnerships of its kind in history. Taupin co-wrote the majority of John's songs, dating back to the 1960s.",
   wikipedia: "https://en.wikipedia.org/wiki/Bernie_Taupin",
+  albums: [{ title: "Bernie Taupin", year: 1971 }, { title: "He Who Rides the Tiger", year: 1980 }, { title: "Tribe", year: 1987 }]
 },
 {
   name: "Chaka Khan",
@@ -8226,6 +8599,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jazmine Sullivan",
   summary: "Yvette Marie Stevens (born March 23, 1953), better known by her stage name Chaka Khan ( SHAH-kə KAHN), is an American singer and songwriter. Known as the \"Queen of Funk\", her career has spanned more than five decades beginning in the early 1970s as the lead vocalist of the funk band Rufus. With the band she recorded the hits \"Tell Me Something Good\", \"Sweet Thing\", \"Do You Love What You Feel\", and the platinum-certified \"Ain't Nobody\".",
   wikipedia: "https://en.wikipedia.org/wiki/Chaka_Khan",
+  albums: [{ title: "Rags to Rufus", year: 1974 }, { title: "Rufusized", year: 1974 }, { title: "Rufus featuring Chaka Khan", year: 1975 }, { title: "Ask Rufus", year: 1977 }, { title: "Chaka", year: 1978 }, { title: "Street Player", year: 1978 }, { title: "Masterjam", year: 1979 }, { title: "Naughty", year: 1980 }, { title: "Camouflage", year: 1981 }, { title: "What Cha’ Gonna Do for Me", year: 1981 }]
 },
 {
   name: "DJ Kool Herc",
@@ -8248,6 +8622,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "LL Cool J",
   summary: "Clive Campbell (born April 16, 1955), better known by his stage name DJ Kool Herc, is a Jamaican-American DJ who is a pioneer of hip-hop music, where he along with others popularized it in the Bronx, New York City, in 1973. He is often referred to as the founder of hip hop. Nicknamed the Father of Hip-Hop, Campbell began playing hard funk records of the sort typified by James Brown.",
   wikipedia: "https://en.wikipedia.org/wiki/DJ_Kool_Herc",
+  albums: []
 },
 {
   name: "Don Cornelius",
@@ -8270,6 +8645,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Elton John",
   summary: "Donald Cortez Cornelius (September 27, 1936 – February 1, 2012) was an American television show host and producer widely known as the creator of the nationally syndicated dance and music show Soul Train, which he hosted from 1970 until 1993. Cornelius sold the show to MadVision Entertainment in 2008. On November 3, 2023, he was posthumously inducted into the Rock and Roll Hall of Fame with the Ahmet Ertegun Award.",
   wikipedia: "https://en.wikipedia.org/wiki/Don_Cornelius",
+  albums: [{ title: "Don Cornelius Presents the Soul Train Gang (Soul Train ’75)", year: 1975 }]
 },
 {
   name: "George Michael",
@@ -8292,6 +8668,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Andrew Ridgeley",
   summary: "George Michael (born Georgios Kyriacos Panayiotou; 25 June 1963 – 25 December 2016) was an English singer-songwriter and record producer. Regarded as a pop culture icon, he is one of the best-selling recording artists of all time. Michael was known as a creative force in songwriting, vocal performance, and visual presentation. He was inducted into the Rock and Roll Hall of Fame in 2023. The Radio Academy named him the most played artist on British radio during the period 1984–2004.",
   wikipedia: "https://en.wikipedia.org/wiki/George_Michael",
+  albums: [{ title: "Faith", year: 1987 }, { title: "Greatest Hits", year: 1990 }, { title: "Listen Without Prejudice, Volume 1", year: 1990 }, { title: "Older", year: 1996 }, { title: "Songs From the Last Century", year: 1999 }, { title: "Patience", year: 2004 }]
 },
 {
   name: "Kate Bush",
@@ -8314,6 +8691,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Big Boi",
   summary: "Catherine Bush (born 30 July 1958) is an English singer, songwriter, musician, dancer and record producer. She is noted for her eclectic style, unconventional lyrics and innovative dance performances. Her sound and choreography have influenced a range of artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Kate_Bush",
+  albums: [{ title: "Lionheart", year: 1978 }, { title: "The Kick Inside", year: 1978 }, { title: "Never for Ever", year: 1980 }, { title: "The Dreaming", year: 1982 }, { title: "Hounds of Love", year: 1985 }, { title: "The Sensual World", year: 1989 }, { title: "The Red Shoes", year: 1993 }, { title: "Aerial", year: 2005 }, { title: "50 Words for Snow", year: 2011 }]
 },
 {
   name: "Link Wray",
@@ -8336,6 +8714,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jimmy Page",
   summary: "Fred Lincoln \"Link\" Wray Jr. (May 2, 1929 – November 5, 2005) was an American guitarist, songwriter, and vocalist who became popular in the late 1950s. His 1958 instrumental single \"Rumble\" reached the top 20 in the United States, and was one of the earliest songs in rock music to use distortion and tremolo.",
   wikipedia: "https://en.wikipedia.org/wiki/Link_Wray",
+  albums: [{ title: "Sings and Plays Guitar", year: 1964 }, { title: "Yesterday - Today", year: 1969 }, { title: "Link Wray", year: 1971 }, { title: "Be What You Want To", year: 1973 }, { title: "Beans and Fatback", year: 1973 }, { title: "The Link Wray Rumble", year: 1974 }, { title: "Stuck in Gear", year: 1975 }, { title: "Robert Gordon With Link Wray", year: 1977 }, { title: "Fresh Fish Special", year: 1978 }, { title: "Bullshot", year: 1979 }]
 },
 {
   name: "Missy Elliott",
@@ -8358,6 +8737,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Queen Latifah",
   summary: "Melissa Arnette \"Missy\" Elliott (born July 1, 1971), also known as Misdemeanor, is an American rapper, singer, songwriter, and record producer. She began her musical career as a member of the R&B girl group Sista during the 1990s, who were part of the larger musical collective Swing Mob, led by DeVante Swing of Jodeci. Sista signed with Elektra Records to release their debut album, 4 All the Sistas Around da World (1994), which was critically praised but commercially unsuccessful.",
   wikipedia: "https://en.wikipedia.org/wiki/Missy_Elliott",
+  albums: [{ title: "Supa Dupa Fly", year: 1997 }, { title: "Da Real World", year: 1999 }, { title: "Miss E …So Addictive", year: 2001 }, { title: "Under Construction", year: 2002 }, { title: "This Is Not a Test!", year: 2003 }, { title: "The Cookbook", year: 2005 }]
 },
 {
   name: "Rage Against the Machine",
@@ -8380,6 +8760,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Ice-T",
   summary: "Rage Against the Machine (often abbreviated as RATM or shortened to Rage) was an American rock band formed in Los Angeles, California, in 1991. It consisted of vocalist Zack de la Rocha, bassist and backing vocalist Tim Commerford, guitarist Tom Morello, and drummer Brad Wilk. They melded heavy metal, rap, punk rock, and funk with anti-authoritarian, anti-capitalist, and revolutionary lyrics. As of 2010, they had sold over 16 million records worldwide.",
   wikipedia: "https://en.wikipedia.org/wiki/Rage_Against_the_Machine",
+  albums: [{ title: "Rage Against the Machine", year: 1992 }, { title: "Evil Empire", year: 1996 }, { title: "Protest And Survive", year: 1996 }, { title: "The Battle of Los Angeles", year: 1999 }, { title: "Renegades", year: 2000 }]
 },
 {
   name: "Sheryl Crow",
@@ -8402,6 +8783,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Laura Dern",
   summary: "Sheryl Suzanne Crow (born February 11, 1962) is an American singer-songwriter, producer, actress, and guitarist. She is noted for her idealistic and optimistic lyrics, and incorporation of various genres into her rock-oriented sound, including blues, country, folk, and pop.",
   wikipedia: "https://en.wikipedia.org/wiki/Sheryl_Crow",
+  albums: [{ title: "The Unreleased Album", year: 1992 }, { title: "Tuesday Night Music Club", year: 1993 }, { title: "Sheryl Crow", year: 1996 }, { title: "The Globe Sessions", year: 1998 }, { title: "C’mon, C’mon", year: 2002 }, { title: "Wildflower", year: 2005 }, { title: "Detours", year: 2008 }, { title: "Home for Christmas", year: 2008 }, { title: "100 Miles From Memphis", year: 2010 }, { title: "Feels Like Home", year: 2013 }]
 },
 {
   name: "The Spinners",
@@ -8424,6 +8806,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "None",
   summary: "The Spinners are an American rhythm and blues vocal group that formed in Detroit, Michigan, in 1954. They enjoyed a string of hit singles and albums during the 1960s and 1970s, particularly with producer Thom Bell.  The group continues to tour, without any original members, after Henry Fambrough retired in 2023.",
   wikipedia: "https://en.wikipedia.org/wiki/The_Spinners_%28American_group%29",
+  albums: [{ title: "The Original Spinners", year: 1967 }, { title: "2nd Time Around", year: 1970 }, { title: "Spinners", year: 1973 }, { title: "Mighty Love", year: 1974 }, { title: "New and Improved", year: 1974 }, { title: "Pick of the Litter", year: 1975 }, { title: "Happiness Is Being With the Spinners", year: 1976 }, { title: "Yesterday, Today & Tomorrow", year: 1977 }, { title: "8", year: 1977 }, { title: "Dancin’ and Lovin’", year: 1978 }]
 },
 {
   name: "Willie Nelson",
@@ -8446,6 +8829,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Matthews",
   summary: "Willie Hugh Nelson (born April 29, 1933) is an American singer, guitarist, songwriter, actor, and activist. He was one of the main figures of the outlaw country subgenre that developed in the late 1960s as a reaction to the conservative restrictions of the Nashville sound. The critical success of his album Shotgun Willie (1973), combined with the critical and commercial success of Red Headed Stranger (1975) and Stardust (1978), made Nelson one of the most recognized artists in country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Willie_Nelson",
+  albums: [{ title: "…and Then I Wrote", year: 1962 }, { title: "Here’s Willie Nelson", year: 1963 }, { title: "Country Willie: His Own Songs", year: 1965 }, { title: "Country Favorites Willie Nelson Style", year: 1966 }, { title: "The Party’s Over and Other Great Willie Nelson Songs", year: 1967 }, { title: "Make Way for Willie Nelson", year: 1967 }, { title: "Good Times", year: 1968 }, { title: "Texas in My Soul", year: 1968 }, { title: "My Own Peculiar Way", year: 1969 }, { title: "Laying My Burdens Down", year: 1970 }]
 },
 {
   name: "A Tribe Called Quest",
@@ -8468,6 +8852,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dave Chappelle",
   summary: "A Tribe Called Quest was an American hip-hop group formed in Queens, New York City, in 1985, originally composed of rapper and main producer Q-Tip, rapper Phife Dawg, DJ and co-producer Ali Shaheed Muhammad, and rapper Jarobi White. A Tribe Called Quest came to prominence as members of the Native Tongues collective, which they co-founded in 1988.",
   wikipedia: "https://en.wikipedia.org/wiki/A_Tribe_Called_Quest",
+  albums: [{ title: "People’s Instinctive Travels and the Paths of Rhythm", year: 1990 }, { title: "The Low End Theory", year: 1991 }, { title: "Midnight Marauders", year: 1993 }, { title: "Beats, Rhymes and Life", year: 1996 }, { title: "The Love Movement", year: 1998 }, { title: "We Got It From Here… Thank You 4 Your Service", year: 2016 }]
 },
 {
   name: "Cher",
@@ -8490,6 +8875,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Zendaya",
   summary: "Cher (  SHAIR; legally mononymous; born Cheryl Sarkisian, May 20, 1946) is an American singer and actress. Dubbed the \"Goddess of Pop\", she is known for her androgynous, contralto voice, bold fashion, elaborate stagecraft and multifaceted career. Her screen roles often reflect her public image as a strong-willed, outspoken woman. An influential figure in popular culture, Cher has sustained a career spanning more than six decades through continual reinvention.",
   wikipedia: "https://en.wikipedia.org/wiki/Cher",
+  albums: [{ title: "All I Really Want to Do", year: 1965 }, { title: "The Sonny Side of Chér", year: 1966 }, { title: "Chér", year: 1966 }, { title: "With Love, Cher", year: 1967 }, { title: "Backstage", year: 1968 }, { title: "3614 Jackson Highway", year: 1969 }, { title: "Gypsys, Tramps & Thieves", year: 1971 }, { title: "Foxy Lady", year: 1972 }, { title: "Bittersweet White Light", year: 1973 }, { title: "Half‐Breed", year: 1973 }]
 },
 {
   name: "Dave Matthews Band",
@@ -8512,6 +8898,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Julia Roberts",
   summary: "Dave Matthews Band (also known as DMB) is an American rock band formed in Charlottesville, Virginia, in 1991. The band's founding members are singer-songwriter and guitarist Dave Matthews, bassist Stefan Lessard, drummer and backing vocalist Carter Beauford, violinist and backing vocalist Boyd Tinsley, and saxophonist LeRoi Moore. As of 2024, Matthews, Lessard, and Beauford are the only remaining founding members.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Matthews_Band",
+  albums: [{ title: "Remember Two Things", year: 1993 }, { title: "Under the Table and Dreaming", year: 1994 }, { title: "Crash", year: 1996 }, { title: "Before These Crowded Streets", year: 1998 }, { title: "Everyday", year: 2001 }, { title: "The Lillywhite Sessions", year: 2001 }, { title: "Busted Stuff", year: 2002 }, { title: "Stand Up", year: 2005 }, { title: "Big Whiskey and the GrooGrux King", year: 2009 }, { title: "Away From the World", year: 2012 }]
 },
 {
   name: "Foreigner",
@@ -8534,6 +8921,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Sammy Hagar",
   summary: "Foreigner is a British–American rock band formed in New York City in 1976. The band's original lineup consisted of vocalist Lou Gramm, guitarist Mick Jones, drummer Dennis Elliott, keyboardist Al Greenwood, multi-instrumentalist Ian McDonald (formerly of King Crimson) and bassist Ed Gagliardi. Gagliardi was replaced by Rick Wills in 1979. Foreigner is one of the best-selling bands of all time, with worldwide sales exceeding 80 million records, including 38 million in the US.",
   wikipedia: "https://en.wikipedia.org/wiki/Foreigner_%28band%29",
+  albums: [{ title: "Foreigner", year: 1977 }, { title: "Double Vision", year: 1978 }, { title: "Head Games", year: 1979 }, { title: "4", year: 1981 }, { title: "Agent Provocateur", year: 1984 }, { title: "Inside Information", year: 1987 }, { title: "Unusual Heat", year: 1991 }, { title: "Mr. Moonlight", year: 1994 }, { title: "Can’t Slow Down", year: 2009 }]
 },
 {
   name: "Kool & The Gang",
@@ -8556,6 +8944,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Chuck D",
   summary: "Kool & the Gang is an American R&B, soul and funk band formed in Jersey City, New Jersey, in 1964. Its founding members include brothers Robert \"Kool\" Bell and Ronald Bell (also known as \"Khalis Bayyan\"), Dennis \"Dee Tee\" Thomas, Robert \"Spike\" Mickens, Charles Smith, George \"Funky\" Brown, Woodrow \"Woody\" Sparrow and Ricky Westfield.",
   wikipedia: "https://en.wikipedia.org/wiki/Kool_%26_the_Gang",
+  albums: [{ title: "Kool and the Gang", year: 1969 }, { title: "Good Times", year: 1972 }, { title: "Music Is the Message", year: 1972 }, { title: "Wild and Peaceful", year: 1973 }, { title: "Light of Worlds", year: 1974 }, { title: "Spirit of the Boogie", year: 1975 }, { title: "Open Sesame", year: 1976 }, { title: "Love & Understanding", year: 1976 }, { title: "The Force", year: 1977 }, { title: "Everybody’s Dancin’", year: 1978 }]
 },
 {
   name: "Mary J. Blige",
@@ -8578,6 +8967,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Dr. Dre and Method Man",
   summary: "Mary Jane Blige ( BLYZHE; born January 11, 1971) is an American singer, songwriter, actress, and entrepreneur. Often referred to by the honorifics \"Queen of Hip-Hop Soul\" and \"Queen of R&B\", her accolades include nine Grammy Awards, a Primetime Emmy Award, four American Music Awards, twelve NAACP Image Awards, and twelve Billboard Music Awards, including the Billboard Icon Award.",
   wikipedia: "https://en.wikipedia.org/wiki/Mary_J._Blige",
+  albums: [{ title: "What’s the 411?", year: 1992 }, { title: "My Life", year: 1994 }, { title: "Share My World", year: 1997 }, { title: "Mary", year: 1999 }, { title: "No More Drama", year: 2001 }, { title: "Love & Life", year: 2003 }, { title: "The Breakthrough", year: 2005 }, { title: "Growing Pains", year: 2007 }, { title: "Stronger With Each Tear", year: 2009 }, { title: "My Life II…The Journey Continues (Act 1)", year: 2011 }]
 },
 {
   name: "Ozzy Osbourne",
@@ -8600,6 +8990,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Jack Black",
   summary: "John Michael \"Ozzy\" Osbourne (3 December 1948 – 22 July 2025) was an English singer, songwriter, and media personality. Dubbed the \"Prince of Darkness\", he is widely credited as a pioneer of heavy metal music. He co-founded the band Black Sabbath in 1968, and rose to prominence in the 1970s as their lead vocalist.",
   wikipedia: "https://en.wikipedia.org/wiki/Ozzy_Osbourne",
+  albums: [{ title: "Blizzard of Ozz", year: 1980 }, { title: "Diary of a Madman", year: 1981 }, { title: "Bark at the Moon", year: 1983 }, { title: "The Ultimate Sin", year: 1986 }, { title: "No Rest for the Wicked", year: 1988 }, { title: "No More Tears", year: 1991 }, { title: "No More Tears Demo Sessions", year: 1992 }, { title: "Ozzmosis", year: 1995 }, { title: "The Very Best of Ozzy", year: 1997 }, { title: "One Up the B‐Sides", year: 1997 }]
 },
 {
   name: "Billy Davis",
@@ -8622,6 +9013,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Andrew Ridgeley",
   summary: "J. C. Davis (born April 29, 1938), known as Billy Davis, is an American rock and blues guitarist, singer and songwriter, best known for his work with Hank Ballard & the Midnighters. He is a Rock & Roll Hall of Fame inductee.",
   wikipedia: "https://en.wikipedia.org/wiki/Billy_Davis_%28guitarist%29",
+  albums: []
 },
 {
   name: "Bobby Darin",
@@ -8644,6 +9036,7 @@ window.ROCKHALL_DATA = [
   inductedBy: "Paul Anka",
   summary: "Walden Robert Cassotto (May 14, 1936 – December 20, 1973), known by the stage name Bobby Darin, was an American singer, songwriter, and actor who performed pop, swing, folk, rock and roll and country music.",
   wikipedia: "https://en.wikipedia.org/wiki/Bobby_Darin",
+  albums: [{ title: "Bobby Darin", year: 1958 }, { title: "That's All", year: 1959 }, { title: "This Is Darin", year: 1959 }, { title: "For Teenagers Only", year: 1960 }, { title: "The 25th Day of December", year: 1960 }, { title: "Twist", year: 1961 }, { title: "Love Swings", year: 1961 }, { title: "Oh! Look at Me Now", year: 1962 }, { title: "Sings Ray Charles", year: 1962 }, { title: "Things & Other Things", year: 1962 }]
 },
 {
   name: "Brian Eno",
@@ -8666,6 +9059,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Brian Eno ( EE-noh; born Brian Peter George Eno, 15 May 1948) is an English musician, songwriter, record producer, visual artist, sound designer, author and political activist. He is best known for his pioneering contributions to ambient music and electronica, and for producing, recording, and writing works in rock and pop music. A self-described \"non-musician\", Eno has helped introduce unconventional concepts and approaches to contemporary music.",
   wikipedia: "https://en.wikipedia.org/wiki/Brian_Eno",
+  albums: [{ title: "Here Come the Warm Jets", year: 1973 }, { title: "Taking Tiger Mountain (by Strategy)", year: 1974 }, { title: "Another Green World", year: 1975 }, { title: "Discreet Music", year: 1975 }, { title: "Cluster & Eno", year: 1977 }, { title: "Before and After Science", year: 1977 }, { title: "Ambient 1: Music for Airports", year: 1978 }, { title: "After the Heat", year: 1978 }, { title: "Music for Films", year: 1978 }, { title: "In a Land of Clear Colours", year: 1979 }]
 },
 {
   name: "Dave Grohl",
@@ -8688,6 +9082,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "David Eric Grohl (; born January 14, 1969) is an American musician. He founded the rock band Foo Fighters, of which he is the lead singer, guitarist, principal songwriter, and only consistent member. From 1990 to 1994, he was the drummer of the grunge band Nirvana.",
   wikipedia: "https://en.wikipedia.org/wiki/Dave_Grohl",
+  albums: [{ title: "The Hanukkah Sessions 2020", year: 2021 }, { title: "The Hanukkah Sessions 2021", year: 2021 }, { title: "The Hanukkah Sessions 2022", year: 2023 }]
 },
 {
   name: "David Coverdale",
@@ -8710,6 +9105,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "David Coverdale (born 22 September 1951) is a retired English singer and songwriter best known as the founder and lead singer of the hard rock band Whitesnake.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Coverdale",
+  albums: [{ title: "Whitesnake", year: 1977 }, { title: "Northwinds", year: 1978 }, { title: "Coverdale · Page", year: 1993 }, { title: "Ballads", year: 1995 }, { title: "Into the Light", year: 2000 }]
 },
 {
   name: "David Crosby",
@@ -8732,6 +9128,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "David Van Cortlandt Crosby (August 14, 1941 – January 18, 2023) was an American singer, songwriter, and guitarist. He first found fame as a member of the Byrds, with whom he helped pioneer the genres of folk rock and psychedelia in the mid-1960s, and later as part of the supergroup Crosby, Stills & Nash, which helped popularize the California sound of the 1970s.",
   wikipedia: "https://en.wikipedia.org/wiki/David_Crosby",
+  albums: [{ title: "If I Could Only Remember My Name", year: 1971 }, { title: "Oh Yes I Can", year: 1989 }, { title: "Thousand Roads", year: 1993 }, { title: "Naked In The Rain", year: 1994 }, { title: "Croz", year: 2014 }, { title: "Lighthouse", year: 2016 }, { title: "Sky Trails", year: 2017 }, { title: "Here If You Listen", year: 2018 }, { title: "For Free", year: 2021 }, { title: "Might As Well Have A Good Time", year: null }]
 },
 {
   name: "Dizzy Reed",
@@ -8754,6 +9151,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Darren Arthur \"Dizzy\" Reed (born June 18, 1963) is an American musician. He is best known as the keyboardist for the hard rock band Guns N' Roses, with whom he has played, toured, and recorded since 1990.",
   wikipedia: "https://en.wikipedia.org/wiki/Dizzy_Reed",
+  albums: [{ title: "Rock 'N Roll Ain't Easy", year: 2018 }]
 },
 {
   name: "Glenn Goins",
@@ -8776,6 +9174,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Glenn Lamonte Goins (January 2, 1954 – July 29, 1978), also known as Glen Goins, was a singer and guitarist for Parliament-Funkadelic in the mid-1970s. Goins is a member of the Rock and Roll Hall of Fame, posthumously inducted in 1997 with fifteen other members of Parliament-Funkadelic. His first (known) recordings were as part of the group The Bags.  They released a single in 1972: \"It's Heavy\" b/w \"Don't Mess With My Baby\".",
   wikipedia: "https://en.wikipedia.org/wiki/Glenn_Goins",
+  albums: []
 },
 {
   name: "Glenn Hughes",
@@ -8798,6 +9197,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Glenn Hughes (born 21 August 1951) is an English musician, best known as the bassist and singer in the hard rock band Trapeze and in the Mk. III and IV line-ups of Deep Purple, as well as briefly fronting Black Sabbath in the mid-1980s. Hughes is renowned for his funk inspired bass playing and his soulful and wide-ranging countertenor vocal range.",
   wikipedia: "https://en.wikipedia.org/wiki/Glenn_Hughes_%28musician%29",
+  albums: [{ title: "Play Me Out", year: 1977 }, { title: "L.A. Blues Authority, Volume II: Glenn Hughes: Blues", year: 1992 }, { title: "Nomis Sessions", year: 1992 }, { title: "From Now On…", year: 1994 }, { title: "White Soul Rockin’ Black", year: 1994 }, { title: "Schüttdorf and Other Short Stories", year: 1995 }, { title: "Feel", year: 1995 }, { title: "Addiction", year: 1996 }, { title: "The Work Tapes", year: 1998 }, { title: "The Way It Is", year: 1999 }]
 },
 {
   name: "In-A-Gadda-Da-Vida",
@@ -8820,6 +9220,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "\"In-A-Gadda-Da-Vida\" (derived from \"In the Garden of Eden\") is a song recorded by Iron Butterfly, written by band member Doug Ingle and released on their 1968 album of the same name.",
   wikipedia: "https://en.wikipedia.org/wiki/In-A-Gadda-Da-Vida",
+  albums: []
 },
 {
   name: "Jerome Brailey",
@@ -8842,6 +9243,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Jerome Eugene \"Bigfoot\" Brailey (born August 20, 1950) is an American drummer, best known for his work with P-Funk, which included the bands Parliament, Funkadelic, and numerous related projects. Brailey is a member of the Rock and Roll Hall of Fame, inducted in 1997 with fifteen other members of Parliament-Funkadelic.",
   wikipedia: "https://en.wikipedia.org/wiki/Jerome_Brailey",
+  albums: []
 },
 {
   name: "Lawdy Miss Clawdy",
@@ -8864,6 +9266,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "\"Lawdy Miss Clawdy\" is a song by New Orleans singer-songwriter Lloyd Price that \"grandly introduced The New Orleans Sound\".  It was first recorded by Price in 1952 with Fats Domino and Dave Bartholomew during his first session for Art Rupe and Specialty Records. The song became one of the biggest selling R&B records of 1952 and crossed over to other audiences.  \"Lawdy Miss Clawdy\" inspired many songs and has been recorded by a variety of artists.",
   wikipedia: "https://en.wikipedia.org/wiki/Lawdy_Miss_Clawdy",
+  albums: []
 },
 {
   name: "Peter Criss",
@@ -8886,6 +9289,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "George Peter John Criscuola (born December 20, 1945), better known by his stage name Peter Criss, is an American musician, best known as a co-founder, original drummer, and a vocalist of the hard rock band Kiss. Criss established the Catman character for his Kiss persona. In 2014 he was inducted into the Rock and Roll Hall of Fame as a member of Kiss.",
   wikipedia: "https://en.wikipedia.org/wiki/Peter_Criss",
+  albums: [{ title: "Peter Criss", year: 1978 }, { title: "Out of Control", year: 1980 }, { title: "Let Me Rock You", year: 1982 }, { title: "One for All", year: 2007 }, { title: "Peter Criss", year: 2025 }]
 },
 {
   name: "Ray Manzarek",
@@ -8908,6 +9312,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Raymond Daniel Manzarek Jr. ( man-ZAYR-ik; né Manczarek; February 12, 1939 – May 20, 2013) was an American keyboardist, vocalist, and music producer. He is best known as a member of the rock band the Doors, co-founding the group in 1965 with fellow UCLA Film School graduate Jim Morrison. Manzarek is credited for his innovative playing and abilities on organ-style keyboard instruments.",
   wikipedia: "https://en.wikipedia.org/wiki/Ray_Manzarek",
+  albums: [{ title: "The Whole Thing Started With Rock & Roll Now It's Out of Control", year: 1974 }, { title: "The Golden Scarab", year: 1974 }, { title: "Beat Existentialist", year: 1993 }, { title: "Love Lion", year: 1993 }, { title: "Carmina Burana", year: 1994 }, { title: "Freshly Dug", year: 2005 }, { title: "Love Her Madly", year: 2006 }, { title: "Atonal Head", year: 2006 }, { title: "Bleeding Paradise", year: 2007 }, { title: "Ballads Before the Rain", year: 2008 }]
 },
 {
   name: "Rod Evans",
@@ -8930,6 +9335,7 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Roderic Evans (born 19 January 1947) is a retired British singer known as the original vocalist of the rock bands Deep Purple and Captain Beyond.",
   wikipedia: "https://en.wikipedia.org/wiki/Rod_Evans",
+  albums: []
 },
 {
   name: "Stone Gossard",
@@ -8952,5 +9358,6 @@ window.ROCKHALL_DATA = [
   inductedBy: null,
   summary: "Stone Carpenter Gossard (born July 20, 1966) is an American musician and songwriter who serves as the rhythm guitarist for the rock band Pearl Jam. Along with Jeff Ament, Mike McCready, and Eddie Vedder, he is one of the founding members of the band.",
   wikipedia: "https://en.wikipedia.org/wiki/Stone_Gossard",
+  albums: [{ title: "Bayleaf", year: 2001 }, { title: "Moonlander", year: 2013 }]
 }
 ];
