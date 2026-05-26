@@ -176,14 +176,14 @@ export async function init({ signal }) {
     if (c.work) {
       const sUrl = spotifyUrl(c);
       const workHtml = sUrl
-        ? `${escapeHtml(c.work)} <a class="ext" href="${sUrl}" target="_blank" rel="noopener" title="Listen on Spotify" ${stop}>${spotifyIcon}</a>`
+        ? `${escapeHtml(c.work)} <button class="ext spotify-play" title="Listen on Spotify" onclick="event.stopPropagation();openSpotifyEmbed('${c.spotify}','${c.spotifyType || 'track'}')">${spotifyIcon}</button>`
         : escapeHtml(c.work);
       rows.push(`<div class="row"><span class="label">${c.categoryShort === "AOTY" ? "Album" : "Song"}</span><span class="val">${workHtml}</span></div>`);
     } else if (c.categoryShort === "BNA") {
       // For BNA, show Spotify link to artist
       const sUrl = spotifyUrl(c);
       if (sUrl) {
-        rows.push(`<div class="row"><span class="label">Listen</span><span class="val"><a class="ext" href="${sUrl}" target="_blank" rel="noopener" title="Listen on Spotify" ${stop}>${spotifyIcon} Spotify</a></span></div>`);
+        rows.push(`<div class="row"><span class="label">Listen</span><span class="val"><button class="ext spotify-play" title="Listen on Spotify" onclick="event.stopPropagation();openSpotifyEmbed('${c.spotify}','${c.spotifyType || 'artist'}')">${spotifyIcon} Spotify</button></span></div>`);
       }
     }
     // Description
@@ -222,7 +222,7 @@ export async function init({ signal }) {
       : "";
     const sUrl = spotifyUrl(c);
     const spotifyLink = sUrl
-      ? `<a class="ext" href="${sUrl}" target="_blank" rel="noopener" title="Spotify" ${stop}>${spotifyIcon}</a>`
+      ? `<button class="ext spotify-play" title="Spotify" onclick="event.stopPropagation();openSpotifyEmbed('${c.spotify}','${c.spotifyType || 'track'}')">${spotifyIcon}</button>`
       : "";
 
     if (state.mode === "a2w") {

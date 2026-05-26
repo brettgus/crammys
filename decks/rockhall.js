@@ -267,7 +267,7 @@ export async function init({ signal }) {
     const wikiUrl = c.wikipedia || `https://en.wikipedia.org/wiki/${encodeURIComponent(c.name)}`;
     const wikiLink = `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon}</a>`;
     const spotifyLink = c.spotify
-      ? `<a class="ext" href="https://open.spotify.com/artist/${c.spotify}" target="_blank" rel="noopener" title="Spotify" ${stop}>${spotifyIcon}</a>`
+      ? `<button class="ext spotify-play" title="Spotify" onclick="event.stopPropagation();openSpotifyEmbed('${c.spotify}','artist')">${spotifyIcon}</button>`
       : "";
 
     const showInductionYear = state.mode !== "n2y";

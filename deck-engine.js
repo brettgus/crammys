@@ -27,6 +27,30 @@ export function escapeHtml(s) {
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
 }
 
+// ─── Spotify embed helpers ───────────────────────────────────────────
+export function openSpotifyEmbed(spotifyId, type = "track") {
+  const modal = document.getElementById("spotifyModal");
+  const frame = document.getElementById("spotifyFrame");
+  if (!modal || !frame) return;
+  const theme = document.documentElement.getAttribute("data-theme") === "dark" ? 0 : 1;
+  frame.src = `https://open.spotify.com/embed/${type}/${spotifyId}?theme=${theme}`;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+export function closeSpotifyEmbed() {
+  const modal = document.getElementById("spotifyModal");
+  const frame = document.getElementById("spotifyFrame");
+  if (!modal) return;
+  modal.hidden = true;
+  if (frame) frame.src = "about:blank";
+  document.body.style.overflow = "";
+}
+
+// Expose on window so inline onclick handlers (inside cards that use stopPropagation)
+// can call it without needing module scope.
+window.openSpotifyEmbed = openSpotifyEmbed;
+
 export class DeckEngine {
   constructor({
     storeKey,
