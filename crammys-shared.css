@@ -1098,25 +1098,63 @@ main {
 }
 
 /* Spotify embed modal */
-.spotify-frame {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
+/* ── Spotify persistent player bar ─────────────────────────────────── */
+.spotify-bar {
+  position: fixed;
+  z-index: 900;
+  background: #181818;
   border-radius: 12px;
   overflow: hidden;
-  background: #000;
-  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
 }
-.spotify-frame iframe {
-  width: 100%;
-  height: 152px;
-  display: block;
-}
-.spotify-frame .modal-close {
+.spotify-bar[hidden] { display: none; }
+.spotify-bar iframe { width: 100%; height: 152px; display: block; border: 0; }
+.spotify-bar-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
   z-index: 1;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.6);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+.spotify-bar-close svg { width: 14px; height: 14px; }
+.spotify-bar:hover .spotify-bar-close { opacity: 1; }
+/* Desktop: side panel to the right of the card area */
+@media (min-width: 1060px) {
+  .spotify-bar {
+    right: calc((100vw - 640px) / 2 - 380px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+  }
+}
+/* Narrower desktop: bottom-right corner */
+@media (min-width: 760px) and (max-width: 1059px) {
+  .spotify-bar {
+    bottom: 20px;
+    right: 20px;
+    width: 340px;
+  }
+}
+/* Mobile: full-width bottom bar */
+@media (max-width: 759px) {
+  .spotify-bar {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
 }
 
 /* Person tooltip */

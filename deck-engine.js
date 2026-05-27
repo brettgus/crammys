@@ -29,22 +29,20 @@ export function escapeHtml(s) {
 
 // ─── Spotify embed helpers ───────────────────────────────────────────
 export function openSpotifyEmbed(spotifyId, type = "track") {
-  const modal = document.getElementById("spotifyModal");
+  const bar = document.getElementById("spotifyBar");
   const frame = document.getElementById("spotifyFrame");
-  if (!modal || !frame) return;
+  if (!bar || !frame) return;
   const theme = document.documentElement.getAttribute("data-theme") === "dark" ? 0 : 1;
-  frame.src = `https://open.spotify.com/embed/${type}/${spotifyId}?theme=${theme}`;
-  modal.hidden = false;
-  document.body.style.overflow = "hidden";
+  frame.src = `https://open.spotify.com/embed/${type}/${spotifyId}?theme=${theme}&utm_source=generator`;
+  bar.hidden = false;
 }
 
 export function closeSpotifyEmbed() {
-  const modal = document.getElementById("spotifyModal");
+  const bar = document.getElementById("spotifyBar");
   const frame = document.getElementById("spotifyFrame");
-  if (!modal) return;
-  modal.hidden = true;
+  if (!bar) return;
+  bar.hidden = true;
   if (frame) frame.src = "about:blank";
-  document.body.style.overflow = "";
 }
 
 // Expose on window so inline onclick handlers (inside cards that use stopPropagation)

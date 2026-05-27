@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0b0b0f" />
 <title>Crammys</title>
-<link rel="stylesheet" href="crammys-shared.css?v=20260526a">
+<link rel="stylesheet" href="crammys-shared.css?v=20260527a">
 <script>
   (function () {
     try {
@@ -116,18 +116,16 @@
     <div id="deckModals"></div>
     <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
 
-    <div class="modal-backdrop" id="spotifyModal" hidden>
-      <div class="spotify-frame" role="dialog" aria-label="Spotify player">
-        <button class="modal-close" id="spotifyClose" aria-label="Close player">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-        </button>
-        <iframe id="spotifyFrame" allow="encrypted-media" allowfullscreen style="border:0"></iframe>
-      </div>
-    </div>
   </main>
+  <div class="spotify-bar" id="spotifyBar" hidden>
+    <iframe id="spotifyFrame" allow="encrypted-media" allowfullscreen style="border:0"></iframe>
+    <button class="spotify-bar-close" id="spotifyClose" aria-label="Close player">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
 
 <script type="module">
-  const _dv = "20260526a";
+  const _dv = "20260527a";
   const DECKS = [
     { id: "bestpicture", path: `./decks/bestpicture.js?v=${_dv}` },
     { id: "chains", path: `./decks/chains.js?v=${_dv}` },
@@ -167,16 +165,10 @@
     await mod.init({ signal });
   }
 
-  // ── Spotify embed modal ──────────────────────────────────────────
-  import { openSpotifyEmbed, closeSpotifyEmbed } from './deck-engine.js';
+  // ── Spotify bottom bar ──────────────────────────────────────────
+  import { closeSpotifyEmbed } from './deck-engine.js';
 
-  const spotifyCloseBtn = document.getElementById("spotifyClose");
-  const spotifyModal = document.getElementById("spotifyModal");
-  if (spotifyCloseBtn) spotifyCloseBtn.addEventListener("click", closeSpotifyEmbed);
-  if (spotifyModal) spotifyModal.addEventListener("click", (e) => { if (e.target === spotifyModal) closeSpotifyEmbed(); });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && spotifyModal && !spotifyModal.hidden) { closeSpotifyEmbed(); e.stopImmediatePropagation(); }
-  });
+  document.getElementById("spotifyClose").addEventListener("click", closeSpotifyEmbed);
 
   // ── Deck activation + routing ──────────────────────────────────────
   window.addEventListener("hashchange", () => activateDeck(getDeckId()));
