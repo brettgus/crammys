@@ -1130,16 +1130,16 @@ main {
 .spotify-bar-close svg { width: 14px; height: 14px; }
 .spotify-bar:hover .spotify-bar-close { opacity: 1; }
 /* Desktop: side panel to the right of the card area */
-@media (min-width: 1060px) {
+@media (min-width: 1040px) {
   .spotify-bar {
-    right: calc((100vw - 640px) / 2 - 380px);
+    left: calc((100vw + 640px) / 2 + 20px);
     top: 50%;
     transform: translateY(-50%);
     width: 340px;
   }
 }
 /* Narrower desktop: bottom-right corner */
-@media (min-width: 760px) and (max-width: 1059px) {
+@media (min-width: 760px) and (max-width: 1039px) {
   .spotify-bar {
     bottom: 20px;
     right: 20px;
