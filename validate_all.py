@@ -18,6 +18,35 @@ import json, os, re, subprocess, sys, textwrap
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# ── Cross-reference sanity (Layer 3) ────────────────────────────────
+
+MUSIC_TERMS = frozenset([
+    "music", "band", "singer", "guitarist", "drummer", "rock", "jazz",
+    "blues", "hip hop", "rapper", "songwriter", "musician", "inducted",
+    "album", "record",
+])
+
+def summary_seems_relevant(summary, context_keywords):
+    """Check if a Wikipedia summary seems relevant to the given context.
+
+    context_keywords: list of strings that should appear somewhere in the
+    summary.  Returns True if at least one keyword is found
+    (case-insensitive).
+    """
+    if not summary or not context_keywords:
+        return False
+    lower = summary.lower()
+    for kw in context_keywords:
+        if kw and kw.lower() in lower:
+            return True
+    return False
+
+
+def summary_seems_musical(summary):
+    """Return True if *summary* contains at least one music-related term."""
+    return summary_seems_relevant(summary, list(MUSIC_TERMS))
+
+
 # ── Helpers ──────────────────────────────────────────────────────────
 
 def _node_parse(filepath):
@@ -221,6 +250,13 @@ def validate_rockhall():
             shape_issues.append(("error", f"{name}: duplicate name+type in year {entry.get('year')}"))
         year_name_pairs.add(key)
 
+        # Summary relevance check (Layer 2)
+        summary = entry.get("summary")
+        if summary and not summary_seems_musical(summary):
+            shape_issues.append(("warn",
+                f'SUSPECT summary for "{name}" '
+                f'— may reference wrong Wikipedia article'))
+
     if not shape_issues:
         rpt.ok("All shape checks pass")
     else:
@@ -303,6 +339,24 @@ def validate_songs():
         if combo in seen_combos:
             shape_issues.append(("error", f"{label}: duplicate song+year combo"))
         seen_combos.add(combo)
+
+        # Summary relevance check (Layer 2)
+        summary = entry.get("summary")
+        if summary:
+            context_kw = [
+                entry.get("film", ""),
+                "Academy Award", "Oscar", "Best Original Song",
+            ]
+            # Add performer names
+            for p in (entry.get("performers") or []):
+                context_kw.append(p)
+            # Add songwriter names
+            for sw_name in (entry.get("songwriters") or []):
+                context_kw.append(sw_name)
+            if not summary_seems_relevant(summary, context_kw):
+                shape_issues.append(("warn",
+                    f'SUSPECT summary for "{entry.get("song","?")}" '
+                    f'— may reference wrong Wikipedia article'))
 
     if not shape_issues:
         rpt.ok("All shape checks pass")
@@ -400,6 +454,13 @@ def validate_grammys():
         if combo in seen_combos:
             shape_issues.append(("error", f"{label}: duplicate artist+category+year combo"))
         seen_combos.add(combo)
+
+        # artistDescription relevance check (Layer 2)
+        desc = entry.get("artistDescription")
+        if desc and not summary_seems_musical(desc):
+            shape_issues.append(("warn",
+                f'SUSPECT artistDescription for "{entry.get("artist","?")}" '
+                f'— may reference wrong Wikipedia article'))
 
     if not shape_issues:
         rpt.ok("All shape checks pass")

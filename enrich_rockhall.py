@@ -9,10 +9,14 @@ Usage: python3 enrich_rockhall.py
 
 Idempotent: skips entries that already have non-null values for these fields.
 """
-import sys, json, urllib.request, urllib.parse, urllib.error, gzip, re, time, unicodedata
+import sys, json, urllib.request, urllib.parse, urllib.error, gzip, re, time, unicodedata, os
 
 UA = "Crammys/1.0 (flashcard app)"
 DATAFILE = "rockhall-data.js"
+
+# Import the shared relevance checker (Layer 3)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from validate_all import summary_seems_musical
 
 
 # ── HTTP helper (same pattern as fetch_rockhall.py) ─────────────────
@@ -571,6 +575,10 @@ def fetch_wikipedia_summary(name, wikidata_id):
         if not paragraphs:
             return None
         summary = paragraphs[0]
+        # Layer 1: validate the extract mentions music-related terms
+        if not summary_seems_musical(summary):
+            print(f"    Skipping summary for {name} — extract doesn't mention music terms", file=sys.stderr)
+            return None
         # Truncate if too long
         if len(summary) > MAX_SUMMARY_LEN:
             # Try to cut at a sentence boundary
@@ -829,6 +837,12 @@ def main():
                 if extract:
                     paragraphs = [p.strip() for p in extract.split("\n") if p.strip()]
                     summary = paragraphs[0] if paragraphs else None
+                    # Layer 1: validate the extract mentions music-related terms
+                    if summary and not summary_seems_musical(summary):
+                        for idx in indices:
+                            name = records[idx].get("name", "?")
+                            print(f"    Skipping summary for {name} — extract doesn't mention music terms", file=sys.stderr)
+                        summary = None
                     if summary and len(summary) > 500:
                         cut = summary[:500]
                         last_period = cut.rfind(". ")

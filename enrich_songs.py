@@ -12,6 +12,10 @@ import sys, os, json, urllib.request, urllib.parse, urllib.error, gzip, re, time
 UA = "Crammys/1.0 (flashcard app)"
 BASE = os.path.dirname(os.path.abspath(__file__))
 
+# Import the shared relevance checker (Layer 3)
+sys.path.insert(0, BASE)
+from validate_all import summary_seems_relevant
+
 # ── Load .env ────────────────────────────────────────────────────────
 def load_env():
     env_path = os.path.join(BASE, ".env")
@@ -195,14 +199,48 @@ def fetch_wiki_summary(title):
         return None
 
 
-def search_wiki_song(song_name, film_name=None):
+def _build_song_context_keywords(entry):
+    """Build a list of context keywords for validating a song summary."""
+    kw = []
+    film = entry.get("film", "")
+    if film:
+        kw.append(film)
+    for p in (entry.get("performers") or []):
+        kw.append(p)
+    for sw_name in (entry.get("songwriters") or []):
+        kw.append(sw_name)
+    kw.extend(["Academy Award", "Oscar", "Best Original Song"])
+    return kw
+
+
+def _summary_seems_relevant_for_song(extract, entry):
+    """Check whether a Wikipedia extract is relevant to this song entry."""
+    if not extract:
+        return False
+    lower = extract.lower()
+    for kw in _build_song_context_keywords(entry):
+        if kw and kw.lower() in lower:
+            return True
+    return False
+
+
+def search_wiki_song(song_name, film_name=None, performers=None, entry=None):
     """Search Wikipedia for a song article. Returns (wiki_url, summary) or (None, None).
     Uses a single batched API call to check all candidate titles at once,
-    then falls back to Wikipedia search API if none match."""
-    # Build candidate titles in priority order
-    candidates = [f"{song_name} (song)"]
+    then falls back to Wikipedia search API if none match.
+
+    Tries performer-disambiguated and film-disambiguated titles FIRST,
+    then the generic "(song)" form, then the bare title as last resort.
+    After finding a match, validates that the extract mentions the film,
+    performer, songwriter, or Oscar-related terms before accepting."""
+    # Build candidate titles in priority order — most specific first
+    candidates = []
+    if performers:
+        for p in performers:
+            candidates.append(f"{song_name} ({p} song)")
     if film_name:
         candidates.append(f"{song_name} ({film_name} song)")
+    candidates.append(f"{song_name} (song)")
     candidates.append(song_name)
 
     # Batch query all candidates in one API call
@@ -253,6 +291,10 @@ def search_wiki_song(song_name, film_name=None):
                 extract = page.get("extract", "")
                 title = page.get("title", "")
                 if extract and is_song_related(extract, song_name):
+                    # Layer 1: validate extract against context keywords
+                    if entry and not _summary_seems_relevant_for_song(extract, entry):
+                        print(f"    Skipping '{title}' — extract doesn't mention film/performer/Oscar", file=sys.stderr)
+                        continue
                     wiki_url = page.get("fullurl") or f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
                     return wiki_url, clean_summary(extract)
     except Exception as e:
@@ -260,10 +302,10 @@ def search_wiki_song(song_name, film_name=None):
 
     # Fallback: use Wikipedia search API to find the song article
     time.sleep(2.0)
-    return _wiki_search_fallback(song_name, film_name)
+    return _wiki_search_fallback(song_name, film_name, entry=entry)
 
 
-def _wiki_search_fallback(song_name, film_name=None):
+def _wiki_search_fallback(song_name, film_name=None, entry=None):
     """Use Wikipedia opensearch to find a song article by keyword search."""
     query = f'"{song_name}" song'
     url = "https://en.wikipedia.org/w/api.php?" + urllib.parse.urlencode({
@@ -297,6 +339,10 @@ def _wiki_search_fallback(song_name, film_name=None):
                     continue
                 extract = page.get("extract", "")
                 if extract and is_song_related(extract, song_name):
+                    # Layer 1: validate extract against context keywords
+                    if entry and not _summary_seems_relevant_for_song(extract, entry):
+                        print(f"    Skipping search hit '{title}' — extract doesn't mention film/performer/Oscar", file=sys.stderr)
+                        continue
                     wiki_url = page.get("fullurl") or f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
                     return wiki_url, clean_summary(extract)
     except Exception as e:
@@ -320,9 +366,10 @@ def get_song_summary(entry):
     pointing to unrelated articles. Always does a fresh search."""
     song = entry["song"]
     film = entry.get("film", "")
+    performers = entry.get("performers") or []
 
     # Search for the song article (single batched API call)
-    wiki_url, summary = search_wiki_song(song, film)
+    wiki_url, summary = search_wiki_song(song, film, performers=performers, entry=entry)
     return wiki_url, summary
 
 
