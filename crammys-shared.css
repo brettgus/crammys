@@ -953,6 +953,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 30%;
   display: block;
   transition: opacity .2s ease;
 }
@@ -974,6 +975,11 @@ main {
   z-index: 2;
   color: #fff;
 }
+/* When the card's outer .corner is hidden in image mode, the overlay's
+   internal .corner is also hidden by the same rule.  With only .bottom
+   left, justify-content: space-between collapses it to the top — so
+   anchor .bottom to the bottom explicitly. */
+.image-overlay .bottom { margin-top: auto; }
 .image-overlay .corner { padding: 22px 24px 0; }
 .image-overlay .corner {
   color: rgba(255,255,255,.7);
