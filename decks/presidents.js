@@ -77,6 +77,13 @@ export const modals = `
       </div>
       <h4 class="panel-section">Party</h4>
       <div class="option-grid" id="partyGrid"></div>
+      <label class="toggle-row" style="margin-top:14px">
+        <input type="checkbox" id="hardModeChk">
+        <span>
+          <strong>Hard mode</strong>
+          <em>Years → President shows a single year instead of the term range</em>
+        </span>
+      </label>
       <div class="panel-foot">
         <span id="deckCount" class="panel-count"></span>
         <button class="link-danger" id="resetProgressBtn" title="Clear every card's score and start fresh">Start over</button>
@@ -122,6 +129,7 @@ export async function init({ signal }) {
       parties: ALL_PARTIES.slice(),
       yearFrom: 1953,
       yearTo: maxYear,
+      hardMode: false,
       lastMode: "y2p",
     },
     migrateState(s) {
@@ -132,11 +140,12 @@ export async function init({ signal }) {
       s.yearFrom = Math.max(minYear, Math.min(maxYear, s.yearFrom));
       s.yearTo = Math.max(minYear, Math.min(maxYear, s.yearTo));
       if (s.yearFrom > s.yearTo) s.yearFrom = s.yearTo;
+      if (typeof s.hardMode !== "boolean") s.hardMode = false;
       if (!s.lastMode || s.lastMode === "study") s.lastMode = "y2p";
       return s;
     },
     allIds, byId: BY_ID, cardId,
-    onShuffle: () => imageChoice.clear(),
+    onShuffle: () => { imageChoice.clear(); hardYearCache.clear(); },
     activeFilter(id, state) {
       const c = BY_ID.get(id); if (!c) return false;
       const startsInRange = c.yearStart <= state.yearTo;
@@ -231,6 +240,18 @@ export async function init({ signal }) {
   function fmtYears(c) {
     if (c.yearEnd) return `${c.yearStart}–${c.yearEnd}`;
     return `${c.yearStart}–present`;
+  }
+  // Per-card random year cache so the same card always shows the same
+  // hard-mode year until reshuffled (avoids the prompt changing mid-flip).
+  const hardYearCache = new Map();
+  function singleYear(c) {
+    const key = cardId(c);
+    if (!hardYearCache.has(key)) {
+      const end = c.yearEnd || new Date().getFullYear();
+      const span = Math.max(0, end - c.yearStart);
+      hardYearCache.set(key, c.yearStart + Math.floor(Math.random() * (span + 1)));
+    }
+    return hardYearCache.get(key);
   }
   function ordinal(n) {
     const s = ["th", "st", "nd", "rd"], v = n % 100;
@@ -357,10 +378,11 @@ export async function init({ signal }) {
       front.prompt.textContent = "Who was the";
       front.text.innerHTML = `<span>${ordinal(c.term)}</span><span style="width:100%;font-size:13px;color:var(--ink-soft);margin-top:8px;font-family:inherit;letter-spacing:.04em;text-transform:uppercase;font-weight:400">President?</span>`;
     } else {
-      // y2p
-      front.tag.textContent = "Term";
-      front.prompt.textContent = "Who was president?";
-      front.text.innerHTML = `<span>${escapeHtml(fmtYears(c))}</span>`;
+      // y2p — single year in hard mode, range otherwise
+      front.tag.textContent = state.hardMode ? "Year" : "Term";
+      front.prompt.textContent = "Who was president in";
+      const shown = state.hardMode ? singleYear(c) : fmtYears(c);
+      front.text.innerHTML = `<span>${escapeHtml(String(shown))}</span>`;
     }
 
     // Back
@@ -503,6 +525,7 @@ export async function init({ signal }) {
     partyGridEl.innerHTML = ALL_PARTIES.map(p =>
       `<label><input type="checkbox" value="${p}" ${state.parties.includes(p) ? "checked" : ""}><span>${escapeHtml(p)}</span></label>`
     ).join("");
+    document.getElementById("hardModeChk").checked = !!state.hardMode;
     deckCountEl.innerHTML = `<em>${countInScope()}</em> presidencies in deck`;
   }
 
@@ -531,6 +554,12 @@ export async function init({ signal }) {
     else if (!inp.checked) state.parties = state.parties.filter(x => x !== p);
     if (!state.parties.length) state.parties = [p];
     state.idx = 0; engine.persist(); syncDeckModal(); engine.unflipAndThen(render);
+  }, { signal });
+  document.getElementById("hardModeChk").addEventListener("change", (e) => {
+    state.hardMode = e.target.checked;
+    hardYearCache.clear();
+    engine.persist();
+    engine.unflipAndThen(render);
   }, { signal });
   document.getElementById("resetProgressBtn").addEventListener("click", () => { closeDeck(); engine.reset(); }, { signal });
 
