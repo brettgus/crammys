@@ -247,9 +247,15 @@ export async function init({ signal }) {
   function singleYear(c) {
     const key = cardId(c);
     if (!hardYearCache.has(key)) {
-      const end = c.yearEnd || new Date().getFullYear();
-      const span = Math.max(0, end - c.yearStart);
-      hardYearCache.set(key, c.yearStart + Math.floor(Math.random() * (span + 1)));
+      // The inauguration year belongs to the incoming president (they
+      // serve ~11 months of it), so the final year of a term belongs to
+      // the successor.  Pick from [yearStart, yearEnd-1].  For incumbents
+      // (yearEnd=null), pick up to current year.  For one-year terms
+      // (W.H. Harrison, Garfield), just use yearStart.
+      const last = c.yearEnd ? c.yearEnd - 1 : new Date().getFullYear();
+      const lo = c.yearStart;
+      const hi = Math.max(lo, last);
+      hardYearCache.set(key, lo + Math.floor(Math.random() * (hi - lo + 1)));
     }
     return hardYearCache.get(key);
   }
