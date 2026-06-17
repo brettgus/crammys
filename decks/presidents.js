@@ -5,6 +5,7 @@ export const meta = { id: "presidents", emoji: "🇺🇸", name: "US Presidents"
 export const segments = `
   <button data-mode="y2p" class="on">Years → President</button>
   <button data-mode="p2y">President → Years</button>
+  <button data-mode="n2p">Number → President</button>
   <button data-mode="i2p">Image → President</button>
   <button data-mode="study">Study</button>`;
 
@@ -350,6 +351,10 @@ export async function init({ signal }) {
       front.tag.textContent = "President";
       front.prompt.textContent = "Served when?";
       front.text.innerHTML = `<span>${escapeHtml(c.name)}</span>`;
+    } else if (state.mode === "n2p") {
+      front.tag.textContent = "Term";
+      front.prompt.textContent = "Who was the";
+      front.text.innerHTML = `<span>${ordinal(c.term)}</span><span style="width:100%;font-size:13px;color:var(--ink-soft);margin-top:8px;font-family:inherit;letter-spacing:.04em;text-transform:uppercase;font-weight:400">President?</span>`;
     } else {
       // y2p
       front.tag.textContent = "Term";
@@ -364,7 +369,7 @@ export async function init({ signal }) {
     const links = `<a class="ext" href="${wikiUrl}" target="_blank" rel="noopener" title="Wikipedia" ${stop}>${extIcon}</a>`;
 
     let headerBlock;
-    if (state.mode === "y2p") {
+    if (state.mode === "y2p" || state.mode === "n2p") {
       back.tag.textContent = "President";
       headerBlock = `<div class="study-anchor">
         ${photoHTML}
