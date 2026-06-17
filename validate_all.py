@@ -552,6 +552,120 @@ def validate_bestpicture():
     return rpt
 
 
+# ── US Presidents ───────────────────────────────────────────────────
+
+PRES_REQUIRED = ["name", "wikidata", "term", "yearStart", "party"]
+PRES_EXPECTED = ["summary", "images", "vps", "homeState", "born", "notable"]
+PRES_VALID_PARTIES = {
+    "Democrat", "Republican", "Whig", "Federalist",
+    "Democratic-Republican", "National Republican", "National Union",
+    "Independent", "No party",
+}
+
+def validate_presidents():
+    fp = os.path.join(ROOT, "presidents-data.js")
+    data = _load_js_array(fp, "PRESIDENTS_DATA")
+    rpt = DeckReport("US Presidents", len(data))
+
+    syn = _node_parse(fp)
+    if syn is True:
+        rpt.ok("JS syntax valid")
+    else:
+        rpt.error(f"JS syntax error: {syn}")
+
+    # REQUIRED
+    req_missing = {}
+    for entry in data:
+        label = f"{entry.get('name','?')} (term {entry.get('term','?')})"
+        for f in PRES_REQUIRED:
+            v = entry.get(f)
+            # party can legitimately be None for Washington — allow that
+            if f == "party" and v is None and entry.get("term") == 1:
+                continue
+            if v is None or v == "":
+                req_missing.setdefault(f, []).append(label)
+    if not req_missing:
+        rpt.ok("All REQUIRED fields present")
+    else:
+        for f, names in req_missing.items():
+            rpt.error(f"{len(names)} entries missing REQUIRED field '{f}' — e.g. {names[0]}")
+
+    # EXPECTED
+    exp_missing = {}
+    for entry in data:
+        for f in PRES_EXPECTED:
+            v = entry.get(f)
+            if v is None or v == "" or (isinstance(v, list) and not v):
+                exp_missing.setdefault(f, []).append(entry.get("name", "?"))
+    if not exp_missing:
+        rpt.ok("All EXPECTED fields present")
+    else:
+        for f, names in exp_missing.items():
+            rpt.warn(f"{len(names)} entries missing EXPECTED field '{f}'")
+
+    # SHAPE
+    shape_issues = []
+    seen_terms = set()
+    for entry in data:
+        label = f"{entry.get('name','?')} (term {entry.get('term','?')})"
+        term = entry.get("term")
+        if term is not None:
+            if not isinstance(term, int) or not (1 <= term <= 60):
+                shape_issues.append(("error", f"{label}: term {term!r} not int in 1-60"))
+            if term in seen_terms:
+                shape_issues.append(("error", f"{label}: duplicate term {term}"))
+            seen_terms.add(term)
+
+        ys = entry.get("yearStart")
+        ye = entry.get("yearEnd")
+        if ys is not None:
+            if not isinstance(ys, int) or not (1789 <= ys <= 2100):
+                shape_issues.append(("error", f"{label}: yearStart {ys!r} not int 1789-2100"))
+        if ye is not None:
+            if not isinstance(ye, int) or not (1789 <= ye <= 2100):
+                shape_issues.append(("error", f"{label}: yearEnd {ye!r} not int 1789-2100"))
+            if ys is not None and ye < ys:
+                shape_issues.append(("error", f"{label}: yearEnd before yearStart"))
+
+        party = entry.get("party")
+        if party and party not in PRES_VALID_PARTIES:
+            shape_issues.append(("error", f"{label}: party {party!r} not in {sorted(PRES_VALID_PARTIES)}"))
+
+        # Images: each entry should have url/w/h
+        imgs = entry.get("images") or []
+        for img in imgs:
+            if not isinstance(img, dict) or not img.get("url"):
+                shape_issues.append(("error", f"{label}: image entry missing url"))
+            elif not str(img["url"]).startswith("http"):
+                shape_issues.append(("warn", f"{label}: image URL doesn't start with http"))
+
+        # VPs: each must have name + years
+        for vp in (entry.get("vps") or []):
+            if not isinstance(vp, dict) or not vp.get("name") or not vp.get("years"):
+                shape_issues.append(("error", f"{label}: vp entry missing name/years"))
+
+        # Summary relevance check (Layer 2): should mention President /
+        # United States / American somewhere
+        summary = entry.get("summary")
+        if summary:
+            ctx = ["President", "United States", "American"]
+            if not summary_seems_relevant(summary, ctx):
+                shape_issues.append(("warn",
+                    f'SUSPECT summary for "{entry.get("name","?")}" '
+                    f'— may reference wrong Wikipedia article'))
+
+    if not shape_issues:
+        rpt.ok("All shape checks pass")
+    else:
+        for lv, msg in shape_issues:
+            if lv == "error":
+                rpt.error(msg)
+            else:
+                rpt.warn(msg)
+
+    return rpt
+
+
 # ── Chains ──────────────────────────────────────────────────────────
 
 def validate_chains():
@@ -579,6 +693,7 @@ def main():
         validate_songs,
         validate_grammys,
         validate_bestpicture,
+        validate_presidents,
         validate_chains,
     ]
 
