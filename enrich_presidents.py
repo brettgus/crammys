@@ -24,15 +24,124 @@ DATAFILE = os.path.join(BASE, "presidents-data.js")
 
 SUMMARY_MAX = 600
 IMAGES_PER_PRESIDENT = 8
+MIN_GOOD_IMAGES = 4    # if a president falls below this, top up
 
-# Filter out Commons files that are clearly not portraits.
+# ── Strict filter: filenames containing any of these substrings (as
+# whole tokens, with underscores acting as word separators) are
+# rejected. We build a combined regex below.
+#
+# Tokens are matched case-insensitively. Each token is wrapped with
+# token-boundary anchors so e.g. "desk" matches "Desk_XCI" but not
+# "Desktop". Token boundaries treat `_`, `-`, `,`, parentheses, etc.
+# as separators (Commons titles use underscores, spaces, and many
+# punctuation chars).
+IMAGE_EXCLUDE_TOKENS = [
+    # Sculpture / death / commemoration
+    "tomb", "tombs", "grave", "graves", "memorial", "memorials",
+    "statue", "statues", "monument", "monuments", "bust", "busts",
+    "sculpture", "sculptures", "cemetery", "burial", "burials",
+    "headstone", "headstones", "gravestone", "gravestones",
+    "funeral", "funerals", "death", "casket", "coffin", "obituary",
+    "obit", "interment",
+    # Text / documents / speech
+    "signature", "signatures", "autograph", "autographs",
+    "document", "documents", "letter", "letters", "speech",
+    "speeches", "address", "addresses", "telegram", "telegrams",
+    "envelope", "envelopes", "proclamation", "manuscript",
+    "manuscripts", "memorandum", "memo", "papers", "diary",
+    "diaries", "check", "checks", "certificate", "subscription",
+    "deed", "deeds", "treaty", "petition", "memo", "transcript",
+    "broadside", "almanac", "newspaper", "headline", "headlines",
+    "pamphlet",
+    # Buildings / interiors / locations
+    "desk", "desks", "chair", "chairs", "office", "offices",
+    "room", "rooms", "building", "buildings", "house", "houses",
+    "library", "libraries", "museum", "museums", "archives",
+    "archive", "birthplace", "residence", "residences", "mansion",
+    "mansions", "estate", "estates", "tower", "hall", "park",
+    "schoolhouse", "courthouse", "interior", "exterior",
+    "homestead", "farmhouse", "cabin", "lobby", "exhibit",
+    "gallery", "marker", "plaque",
+    # Campaign / events
+    "campaign", "campaigns", "rally", "rallies", "supporter",
+    "supporters", "convention", "conventions", "podium", "parade",
+    "ceremony", "ceremonies", "swearing", "oath", "press",
+    # Money / collectibles / consumer goods
+    "stamp", "stamps", "coin", "coins", "currency", "banknote",
+    "banknotes", "medal", "medals", "poster", "posters", "dollar",
+    "handkerchief", "fan", "glass", "ribbon", "ribbons", "badge",
+    "badges", "button", "buttons", "pin", "pins", "souvenir",
+    "memorabilia", "trinket",
+    # Print / illustration
+    "cartoon", "cartoons", "caricature", "caricatures", "mural",
+    "murals", "illustration", "illustrations", "drawing",
+    "drawings", "sketch", "sketches", "engraving", "engravings",
+    "lithograph", "lithographs", "etching", "etchings", "woodcut",
+    "comic", "advertisement", "advertisements", "ad", "ads",
+    # Markers / signs
+    "historical", "marker", "sign", "billboard", "roadside",
+    # Family / others
+    "family", "families", "wife", "wives", "daughter", "daughters",
+    "son", "sons", "children", "child", "relatives", "siblings",
+    "group", "people", "crowd",
+    # Branding
+    "logo", "logos", "seal", "seals", "flag", "flags", "emblem",
+    "emblems", "crest", "crests", "insignia", "shield", "arms",
+    # Maps / charts / scenes / misc
+    "map", "maps", "chart", "charts", "census", "battle", "scene",
+    "scenes", "battlefield", "war", "military",
+    # Recurring junk titles seen in current data
+    "annals", "essex", "register", "commonwealth", "appointment",
+    "salem", "albemarle", "tagliaferro", "balsa", "michaux",
+    "grachtenmuseum", "amsterdam", "keizersgracht",
+    "schoolhouse", "drinking",
+]
+
+# Tokens for which a filename also containing "portrait" or "headshot"
+# is still allowed (real portraits sometimes mention White House, the
+# subject leaning on a chair, etc.). Keep this list small — only
+# things that legitimately co-occur with portrait files.
+IMAGE_EXCLUDE_TOKENS_PORTRAIT_OVERRIDE = {
+    "desk", "desks", "chair", "chairs", "office", "offices", "room",
+    "rooms", "house", "houses", "library", "libraries", "hall",
+    "ribbon", "ribbons", "fan",
+}
+
+# Group 1 is the matched token. The token must be preceded and
+# followed by a "boundary" — start/end of string, any non-letter/digit
+# character. Underscores explicitly count as a separator. Apostrophes
+# in titles are uncommon enough to ignore.
+_BOUNDARY_BEFORE = r'(?:^|[^A-Za-z0-9])'
+_BOUNDARY_AFTER  = r'(?=$|[^A-Za-z0-9])'
 IMAGE_EXCLUDE_RE = re.compile(
-    r'(tomb|memorial|statue|gravestone|signature|grave\b|sculpture|bust|'
-    r'plaque|coin|stamp|mural|monument|cemetery|burial|headstone|'
-    r'\.svg$|\.ogg$|\.ogv$|\.webm$|\.pdf$|\.mid$|\.midi$|\.flac$|\.wav$)',
+    _BOUNDARY_BEFORE + r'(' + "|".join(IMAGE_EXCLUDE_TOKENS) + r')' + _BOUNDARY_AFTER,
     re.IGNORECASE,
 )
-IMAGE_KEEP_EXT = re.compile(r'\.(jpe?g|png|tiff?|gif)$', re.IGNORECASE)
+
+_PORTRAIT_HINT_RE = re.compile(r'(?:^|[^A-Za-z0-9])(portrait|headshot|official_photo)(?=$|[^A-Za-z0-9])', re.IGNORECASE)
+
+# Reject non-image / non-portrait extensions outright.
+IMAGE_BAD_EXT_RE = re.compile(
+    r'\.(svg|ogg|ogv|webm|pdf|mid|midi|flac|wav|tif|tiff|gif)$',
+    re.IGNORECASE,
+)
+IMAGE_KEEP_EXT = re.compile(r'\.(jpe?g|png)$', re.IGNORECASE)
+
+# Aspect ratio bounds. Anything outside ~0.5 ≤ w/h ≤ 2.0 is suspect:
+#   w/h > 2.0  → landscape (room, document, panorama)
+#   h/w > 3.0  → very tall (poster, signature, column)
+ASPECT_MAX_LANDSCAPE = 2.0   # max w/h
+ASPECT_MAX_PORTRAIT  = 3.0   # max h/w
+
+# Tokens that strongly suggest a portrait — used to *prefer* these in
+# fallback search and to count them as "definitely good" for the
+# re-evaluation pass.
+IMAGE_PREFER_RE = re.compile(
+    r'(official_portrait|official_photograph|presidential_portrait|'
+    r'\bportrait\b|headshot|_by_[A-Z][a-z]+_[A-Z][a-z]+|'
+    r'^pres(ident)?[\._]|_pres(ident)?[\._]|_president_of_)',
+    re.IGNORECASE,
+)
 
 
 # ── .env loader ──────────────────────────────────────────────────────
@@ -367,46 +476,197 @@ def fetch_canonical_portrait(wikidata_qid, width=600):
     return info.get(title)
 
 
+def filename_passes_name_filter(filename):
+    """Pass 1 (filename-only): reject obvious non-portraits without
+    needing a network call. Accepts filenames with either spaces or
+    underscores — Commons titles use spaces, URLs use underscores."""
+    # Normalize for token matching: spaces → underscores
+    norm = filename.replace(" ", "_")
+    if not IMAGE_KEEP_EXT.search(norm):
+        return False
+    if IMAGE_BAD_EXT_RE.search(norm):
+        return False
+    # Check exclude list. If every matched exclude token is in the
+    # PORTRAIT_OVERRIDE set AND the filename also contains the word
+    # "portrait" / "headshot", let it through.
+    matches = [m.group(1).lower() for m in IMAGE_EXCLUDE_RE.finditer(norm)]
+    if matches:
+        if _PORTRAIT_HINT_RE.search(norm) and all(
+            tok in IMAGE_EXCLUDE_TOKENS_PORTRAIT_OVERRIDE for tok in matches
+        ):
+            return True
+        return False
+    return True
+
+
 def filter_portrait_files(file_titles):
-    """Keep only JPG/PNG/TIFF/GIF that don't match the exclusion list."""
+    """Filename-pass for a list of `File:...` titles."""
     out = []
     for t in file_titles:
-        if not IMAGE_KEEP_EXT.search(t):
-            continue
-        if IMAGE_EXCLUDE_RE.search(t):
-            continue
-        out.append(t)
+        # Strip 'File:' prefix for filename matching
+        bare = t[5:] if t.lower().startswith("file:") else t
+        if filename_passes_name_filter(bare):
+            out.append(t)
     return out
 
 
-def fetch_images_for(name, wikidata_qid):
-    """Return list of {url, w, h} dicts, P18 first, then top Commons
-    category files."""
+def aspect_ratio_ok(w, h):
+    """Return True if image dimensions look portrait-friendly."""
+    if not w or not h:
+        # Without dimensions we conservatively allow (we lose
+        # nothing by not double-filtering when info is missing).
+        return True
+    try:
+        w, h = int(w), int(h)
+    except (TypeError, ValueError):
+        return True
+    if w <= 0 or h <= 0:
+        return False
+    if w / h > ASPECT_MAX_LANDSCAPE:
+        return False
+    if h / w > ASPECT_MAX_PORTRAIT:
+        return False
+    return True
+
+
+def image_entry_passes(entry):
+    """Re-validate an existing {url, w, h} entry against the new
+    filters. Used by the resumable re-evaluation pass."""
+    url = (entry or {}).get("url") or ""
+    if not url:
+        return False
+    # Extract the filename portion of the Commons URL. Both /thumb/x/yy/<name>/...
+    # and /commons/x/yy/<name> are handled.
+    m = re.search(r'/commons/(?:thumb/)?[0-9a-f]/[0-9a-f]+/([^/]+)', url)
+    if not m:
+        # Unknown URL shape — drop it; we'd rather re-fetch.
+        return False
+    filename = urllib.parse.unquote(m.group(1))
+    # If this is a thumb URL, the captured group is the original
+    # filename; the trailing /NNNpx-... after the next slash is the thumb.
+    # The capture above stops at the next '/', so we're good.
+    if not filename_passes_name_filter(filename):
+        return False
+    if not aspect_ratio_ok(entry.get("w"), entry.get("h")):
+        return False
+    return True
+
+
+def fetch_canonical_wikipedia_infobox(name, width=600):
+    """Fallback: pageimage (infobox lead image) from the president's
+    Wikipedia article."""
+    title = name.replace(" ", "_")
+    url = "https://en.wikipedia.org/w/api.php?" + urllib.parse.urlencode({
+        "action": "query",
+        "titles": title,
+        "prop": "pageimages",
+        "piprop": "original|name",
+        "redirects": "1",
+        "format": "json",
+    })
+    try:
+        d = http_json(url)
+    except Exception:
+        return None
+    pages = d.get("query", {}).get("pages", {})
+    for pid, page in pages.items():
+        if pid == "-1":
+            continue
+        fname = page.get("pageimage")
+        orig  = page.get("original") or {}
+        if orig.get("source"):
+            # Validate filename
+            if fname and not filename_passes_name_filter(fname):
+                return None
+            w_, h_ = orig.get("width"), orig.get("height")
+            if not aspect_ratio_ok(w_, h_):
+                return None
+            return {"url": orig["source"], "w": w_, "h": h_}
+    return None
+
+
+def fetch_images_for(name, wikidata_qid, existing=None):
+    """Build a list of {url, w, h} dicts for `name`.
+
+    If `existing` is given, those entries are re-validated against the
+    new filter and reused first (preserving order). Then top up from
+    Commons until we hit IMAGES_PER_PRESIDENT.
+    """
     images = []
-    # 1) Canonical P18 first
-    canonical = fetch_canonical_portrait(wikidata_qid)
-    canonical_url = None
-    if canonical and canonical.get("url"):
-        images.append({"url": canonical["url"], "w": canonical["w"], "h": canonical["h"]})
-        canonical_url = canonical["url"]
+    seen_urls = set()
+
+    # 0) Reuse existing entries that still pass the filter
+    kept = 0
+    dropped = 0
+    if existing:
+        for entry in existing:
+            if image_entry_passes(entry):
+                if entry["url"] in seen_urls:
+                    continue
+                seen_urls.add(entry["url"])
+                images.append({
+                    "url": entry["url"],
+                    "w":   entry.get("w"),
+                    "h":   entry.get("h"),
+                })
+                kept += 1
+            else:
+                dropped += 1
+
+    # 1) Canonical P18 portrait — always try to put it first if missing.
+    have_canonical = False
+    for img in images:
+        if "wikipedia/commons" in img["url"]:
+            # We assume the first kept one is fine; canonical may or
+            # may not already be present. We always add the P18 image
+            # only if it isn't a dupe.
+            break
+    if len(images) < IMAGES_PER_PRESIDENT:
+        canonical = fetch_canonical_portrait(wikidata_qid)
+        if canonical and canonical.get("url") and canonical["url"] not in seen_urls:
+            # Even for P18 portraits we honor the aspect check (skip if
+            # the file is genuinely off-shape).
+            if aspect_ratio_ok(canonical.get("w"), canonical.get("h")):
+                # Insert at front for prominence.
+                images.insert(0, {
+                    "url": canonical["url"],
+                    "w":   canonical["w"],
+                    "h":   canonical["h"],
+                })
+                seen_urls.add(canonical["url"])
+                have_canonical = True
 
     # 2) Commons category files
-    files = commons_category_files(name)
-    files = filter_portrait_files(files)
+    files = []
+    if len(images) < IMAGES_PER_PRESIDENT:
+        files = filter_portrait_files(commons_category_files(name))
 
-    # If the canonical category was empty or all-non-portraits, fall
-    # back to Commons file search. Modern presidents in particular have
-    # categories that only contain subcategories and audio files.
-    if len(files) < IMAGES_PER_PRESIDENT:
+    # 3) If still short, fall back to Commons search (`"name" portrait`)
+    if len(images) + len(files) < IMAGES_PER_PRESIDENT * 3:
         search_files = filter_portrait_files(commons_search_files(name))
-        # Append search results, dedupe later
         for s in search_files:
             if s not in files:
                 files.append(s)
 
-    # Get thumbnails (up to 40 candidates)
-    info_map = commons_thumbnails(files[:40])
-    seen_urls = {canonical_url} if canonical_url else set()
+    # 4) Wikipedia infobox image fallback
+    if len(images) < IMAGES_PER_PRESIDENT:
+        infobox = fetch_canonical_wikipedia_infobox(name)
+        if infobox and infobox["url"] not in seen_urls:
+            images.append({
+                "url": infobox["url"],
+                "w":   infobox["w"],
+                "h":   infobox["h"],
+            })
+            seen_urls.add(infobox["url"])
+
+    # 5) Re-rank candidate file titles: portrait-y names first.
+    def title_score(t):
+        bare = t[5:] if t.lower().startswith("file:") else t
+        return -1 if IMAGE_PREFER_RE.search(bare) else 0
+    files.sort(key=title_score)
+
+    # 6) Fetch info for ~30 candidates and filter by aspect ratio.
+    info_map = commons_thumbnails(files[:30])
     for title in files:
         if len(images) >= IMAGES_PER_PRESIDENT:
             break
@@ -415,10 +675,12 @@ def fetch_images_for(name, wikidata_qid):
             continue
         if info["url"] in seen_urls:
             continue
+        if not aspect_ratio_ok(info.get("w"), info.get("h")):
+            continue
         seen_urls.add(info["url"])
         images.append({"url": info["url"], "w": info["w"], "h": info["h"]})
 
-    return images
+    return images, kept, dropped
 
 
 # ── Main ────────────────────────────────────────────────────────────
@@ -453,46 +715,82 @@ def main():
 
     print(f"  → {sum_count} summary rows populated\n", file=sys.stderr)
 
-    # ── Step 2: Images ──────────────────────────────────────────────
-    print("  [2/2] Fetching Wikimedia Commons portraits…", file=sys.stderr)
-    needed_img = {}
+    # ── Step 2: Images (re-evaluate + top up) ──────────────────────
+    print("  [2/2] Re-evaluating + refetching Wikimedia Commons portraits…", file=sys.stderr)
+
+    # Count images before re-evaluation
+    img_count_before = sum(len(r.get("images") or []) for r in records)
+
+    # Group by name (handles Cleveland's two terms, Trump's two terms)
+    by_name = {}
     for rec in records:
-        if rec.get("images"):
-            continue
-        needed_img.setdefault(rec["name"], []).append(rec)
-    print(f"    {len(needed_img)} unique presidents need images", file=sys.stderr)
+        by_name.setdefault(rec["name"], []).append(rec)
 
-    img_count = 0
-    for i, (name, recs) in enumerate(needed_img.items(), 1):
+    skipped_already_clean = 0
+    total = len(by_name)
+    short_after = []      # presidents still under MIN_GOOD_IMAGES at end
+
+    for i, (name, recs) in enumerate(by_name.items(), 1):
         qid = recs[0].get("wikidata")
-        print(f"    [{i}/{len(needed_img)}] {name} ({qid})…", file=sys.stderr)
-        try:
-            images = fetch_images_for(name, qid)
-        except Exception as e:
-            print(f"      error: {e}", file=sys.stderr)
-            images = []
-        if images:
-            img_count += len(recs) * len(images)
-            for r in recs:
-                r["images"] = images
-            print(f"      → {len(images)} images", file=sys.stderr)
-        else:
-            print(f"      → no images found", file=sys.stderr)
-        # Save after each successful fetch for resumability
-        write_datafile(DATAFILE, records)
-        time.sleep(0.7)
+        existing = recs[0].get("images") or []
 
-    print(f"  → {img_count} image entries populated\n", file=sys.stderr)
+        # Pre-check: how many existing pass the new filter?
+        existing_kept = [e for e in existing if image_entry_passes(e)]
+        if len(existing_kept) >= IMAGES_PER_PRESIDENT:
+            # All 8 already pass — skip entirely (resumable)
+            print(f"    [{i}/{total}] {name}: all "
+                  f"{len(existing_kept)} pass filter, skipping",
+                  file=sys.stderr)
+            skipped_already_clean += 1
+            continue
+
+        try:
+            images, kept, dropped = fetch_images_for(name, qid, existing=existing)
+        except Exception as e:
+            print(f"    [{i}/{total}] {name}: error {e}", file=sys.stderr)
+            continue
+
+        new_count = max(0, len(images) - kept)
+        print(
+            f"    [{i}/{total}] {name}: kept {kept}, "
+            f"dropped {dropped}, fetched {new_count} new "
+            f"→ {len(images)} total",
+            file=sys.stderr,
+        )
+
+        if len(images) < MIN_GOOD_IMAGES:
+            short_after.append((name, len(images)))
+
+        for r in recs:
+            r["images"] = images
+        # Resumable: save after every president
+        write_datafile(DATAFILE, records)
+        time.sleep(0.5)
+
+    img_count_after = sum(len(r.get("images") or []) for r in records)
 
     # Final write (already saved per-iteration, but harmless)
     write_datafile(DATAFILE, records)
 
     # Summary
+    print("", file=sys.stderr)
     print("=" * 60, file=sys.stderr)
     with_summary = sum(1 for r in records if r.get("summary"))
     with_images = sum(1 for r in records if r.get("images"))
     print(f"  With summary: {with_summary} / {len(records)}", file=sys.stderr)
     print(f"  With images:  {with_images} / {len(records)}", file=sys.stderr)
+    print(f"  Skipped (already clean): {skipped_already_clean}",
+          file=sys.stderr)
+    print(f"  Images total: {img_count_before} → {img_count_after}",
+          file=sys.stderr)
+    if short_after:
+        print(f"  Presidents with < {MIN_GOOD_IMAGES} images:",
+              file=sys.stderr)
+        for n, c in short_after:
+            print(f"    • {n}: {c}", file=sys.stderr)
+    else:
+        print(f"  All presidents have ≥ {MIN_GOOD_IMAGES} images",
+              file=sys.stderr)
     print(f"\n  Written to {DATAFILE}", file=sys.stderr)
 
 
