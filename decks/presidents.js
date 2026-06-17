@@ -277,6 +277,10 @@ export async function init({ signal }) {
     rows.push(`<div class="row"><span class="label">Years</span><span class="val">${escapeHtml(fmtYears(c))}</span></div>`);
     // Party
     if (c.party) rows.push(`<div class="row"><span class="label">Party</span><span class="val">${partyBadge(c.party)}</span></div>`);
+    // Took office / Left office (predecessor + successor are mentioned
+    // in these notes, so we don't render separate rows for them).
+    if (c.entryNote) rows.push(`<div class="row"><span class="label">Took office</span><span class="val">${escapeHtml(c.entryNote)}</span></div>`);
+    if (c.exitNote) rows.push(`<div class="row"><span class="label">Left office</span><span class="val">${escapeHtml(c.exitNote)}</span></div>`);
     // VP(s)
     if (c.vps && c.vps.length) {
       const vpStr = c.vps.map(v => `${wikiLink(v.name)} <span style="color:var(--ink-faint)">(${escapeHtml(v.years)})</span>`).join("<br>");
@@ -293,9 +297,6 @@ export async function init({ signal }) {
     if (c.died) {
       rows.push(`<div class="row"><span class="label">Died</span><span class="val">${c.died}</span></div>`);
     }
-    // Predecessor / successor
-    rows.push(`<div class="row"><span class="label">Predecessor</span><span class="val">${c.predecessor ? wikiLink(c.predecessor) : "—"}</span></div>`);
-    rows.push(`<div class="row"><span class="label">Successor</span><span class="val">${c.successor ? wikiLink(c.successor) : "—"}</span></div>`);
     // Notable
     if (c.notable && c.notable.length) {
       const bullets = c.notable.map(n => `<div>· ${escapeHtml(n)}</div>`).join("");

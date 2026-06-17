@@ -15,6 +15,8 @@ window.PRESIDENTS_DATA = [
   notable: ["1st president; Founding Father", "Commanded Continental Army", "Set the two-term tradition"],
   summary: "George Washington (February 22, 1732 [O.S. February 11, 1731] – December 14, 1799) was a Founding Father and the first president of the United States, serving from 1789 to 1797. As commander of the Continental Army, Washington led Patriot forces to victory in the American Revolutionary War against the British Empire. He is commonly known as the Father of His Country for his role in bringing about American independence.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/960px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg", w: 600, h: 728}, {url: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg", w: 4628, h: 5619}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Portrait_of_George_Washington.jpeg/960px-Portrait_of_George_Washington.jpeg", w: 600, h: 731}],
+  entryNote: "Unanimously elected by Electoral College in 1789",
+  exitNote: "Did not seek third term (succeeded by John Adams)",
   wikipedia: "https://en.wikipedia.org/wiki/George_Washington",
   spotify: null
 },
@@ -34,6 +36,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Founding Father; signed Declaration of Independence", "Lost re-election to Jefferson", "Father of John Quincy Adams"],
   summary: "John Adams (October 30, 1735 – July 4, 1826) was a Founding Father and the second president of the United States from 1797 to 1801. Before his presidency, he was a leader of the American Revolution that achieved independence from Great Britain. During the latter part of the Revolutionary War and in the early years of the new nation, he served the Continental Congress of the United States as a senior diplomat in Europe. Adams was the first vice president of the United States, serving from 1789 to 1797.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/John_Adams_A18236.jpg/960px-John_Adams_A18236.jpg", w: 600, h: 728}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/75/John_Adams_Portrait.jpg", w: 6779, h: 8242}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/-Self-Portrait_with_Artist%27s_Brother-_MET_DP225435.jpg/960px--Self-Portrait_with_Artist%27s_Brother-_MET_DP225435.jpg", w: 600, h: 646}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/ADAMS%2CJohn-President_%28BEP_engraved_portrait%29.jpg/960px-ADAMS%2CJohn-President_%28BEP_engraved_portrait%29.jpg", w: 600, h: 694}],
+  entryNote: "Won 1796 election (succeeded Washington)",
+  exitNote: "Lost 1800 re-election to Thomas Jefferson",
   wikipedia: "https://en.wikipedia.org/wiki/John_Adams",
   spotify: null
 },
@@ -53,6 +57,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Author of the Declaration of Independence", "Louisiana Purchase (1803)", "Founded the University of Virginia"],
   summary: "Thomas Jefferson (April 13 [O.S. April 2], 1743 – July 4, 1826) was a Founding Father and the third president of the United States from 1801 to 1809. He was the second vice president under John Adams. Jefferson was the primary author of the Declaration of Independence, and a leading proponent of democracy, republicanism and natural rights.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29%28cropped%29.jpg", w: 732, h: 900}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/07/Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29.jpg", w: 2512, h: 2996}],
+  entryNote: "Won 1800 election (defeated incumbent John Adams)",
+  exitNote: "Did not seek third term (succeeded by James Madison)",
   wikipedia: "https://en.wikipedia.org/wiki/Thomas_Jefferson",
   spotify: null
 },
@@ -72,6 +78,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Father of the Constitution", "War of 1812"],
   summary: "James Madison (March 16, 1751 [O.S. March 5, 1750] – June 28, 1836) was an American statesman, diplomat, and Founding Father who served as the fourth president of the United States from 1809 to 1817. Madison was popularly acclaimed as the \"Father of the Constitution\" for his pivotal role in drafting and promoting the Constitution of the United States and the Bill of Rights.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/James_Madison.jpg/960px-James_Madison.jpg", w: 600, h: 730}, {url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/04_james_madison.jpg", w: 800, h: 452}, {url: "https://upload.wikimedia.org/wikipedia/commons/1/1d/James_Madison.jpg", w: 2465, h: 3000}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Image-taken-from-page-413-of-a-history-of-the-united-state--illustrated-etc_11236138986_o.jpg", w: 923, h: 1201}],
+  entryNote: "Won 1808 election (open seat after Jefferson declined third term)",
+  exitNote: "End of two terms (succeeded by James Monroe)",
   wikipedia: "https://en.wikipedia.org/wiki/James_Madison",
   spotify: null
 },
@@ -91,6 +99,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Monroe Doctrine (1823)", "'Era of Good Feelings'"],
   summary: "James Monroe (April 28, 1758 – July 4, 1831) was an American Founding Father who served as the fifth president of the United States from 1817 to 1825. He was the last Founding Father to serve as president as well as the last president of the Virginia dynasty. Monroe was a member of the Democratic-Republican Party, and his presidency coincided with the Era of Good Feelings, concluding the First Party System era of American politics. He issued the Monroe Doctrine, a policy of limiting European colonialism in the Americas.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/James_Monroe_by_Gilbert_Stuart_c1817.jpg/960px-James_Monroe_by_Gilbert_Stuart_c1817.jpg", w: 600, h: 712}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/James_Monroe_%281758-1831%29.jpg/960px-James_Monroe_%281758-1831%29.jpg", w: 600, h: 669}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/James_Monroe_%28Engraved_Portrait%29.jpg/960px-James_Monroe_%28Engraved_Portrait%29.jpg", w: 600, h: 813}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/24/James_Monroe_Portrait.jpg", w: 732, h: 927}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MONROE%2C_James-President_%28BEP_engraved_portrait%29.jpg/960px-MONROE%2C_James-President_%28BEP_engraved_portrait%29.jpg", w: 600, h: 734}, {url: "https://upload.wikimedia.org/wikipedia/commons/6/62/James_Monroe_%281758%E2%80%931831%29_1858_8.jpeg", w: 416, h: 500}],
+  entryNote: "Won 1816 election (open seat after Madison declined third term)",
+  exitNote: "End of two terms (succeeded by John Quincy Adams)",
   wikipedia: "https://en.wikipedia.org/wiki/James_Monroe",
   spotify: null
 },
@@ -110,6 +120,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Son of John Adams", "Lost re-election to Jackson"],
   summary: "John Quincy Adams ( ; July 11, 1767 – February 23, 1848) was the sixth president of the United States, serving from 1825 to 1829. He previously served as the eighth United States secretary of state from 1817 to 1825; minister to Great Britain, Prussia, and Russia; and senator for Massachusetts. After his presidency, Adams uniquely returned to Congress as a member of the lower house, where he died in 1848. He was the eldest son of John Adams, the second president, and First Lady Abigail Adams. Among his children were Charles Francis Adams Sr.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/John_Q._Adams-edit.jpg/960px-John_Q._Adams-edit.jpg", w: 600, h: 830}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/3a/JQA_Photo_Crop_%28cropped%29.jpg", w: 1712, h: 2194}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Half-length_crop_of_Portrait_of_John_Quincy_Adams_%281828%29.jpg/960px-Half-length_crop_of_Portrait_of_John_Quincy_Adams_%281828%29.jpg", w: 600, h: 900}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/78/Head_and_shoulders_crop_of_Portrait_of_John_Quincy_Adams_%281828%29_by_Gilbert_Stuart_and_Thomas_Sully_%28Harvard_University_Collection_H187%29.jpg", w: 373, h: 559}],
+  entryNote: "Won 1824 election in contingent House vote (open seat after Monroe)",
+  exitNote: "Lost 1828 re-election to Andrew Jackson",
   wikipedia: "https://en.wikipedia.org/wiki/John_Quincy_Adams",
   spotify: null
 },
@@ -129,6 +141,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Founded the Democratic Party", "Hero of New Orleans (War of 1812)", "Indian Removal Act"],
   summary: "Andrew Jackson (March 15, 1767 – June 8, 1845) was the seventh president of the United States from 1829 to 1837. He rose to fame as a U.S. Army general and served in both houses of the U.S. Congress. His political philosophy, which dominated his presidency, became the basis for the rise of Jacksonian democracy. His legacy is controversial: he has been praised as an advocate for white working Americans and preserving the union of states, and criticized for his racist policies, particularly towards Native Americans.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/960px-Andrew_jackson_head.jpg", w: 600, h: 728}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/1817_Ralph_Earl_Andrew_Jackson.jpg/960px-1817_Ralph_Earl_Andrew_Jackson.jpg", w: 600, h: 980}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Andrew_jackson_head_%28cropped%29.jpg", w: 2337, h: 2904}, {url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Andrew_Jackson_%2420_bill_2013_series_portrait.jpg", w: 416, h: 449}],
+  entryNote: "Won 1828 election (defeated incumbent John Quincy Adams)",
+  exitNote: "Did not seek third term (succeeded by Martin Van Buren)",
   wikipedia: "https://en.wikipedia.org/wiki/Andrew_Jackson",
   spotify: null
 },
@@ -148,6 +162,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Architect of the Democratic Party", "Panic of 1837"],
   summary: "Martin Van Buren (born Maarten Van Buren, December 5, 1782 – July 24, 1862) was the eighth president of the United States, serving from 1837 to 1841. Van Buren co-founded the Democratic Party with Andrew Jackson and became Jackson's vice president from 1833 to 1837.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Martin_Van_Buren.jpg/960px-Martin_Van_Buren.jpg", w: 600, h: 811}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/72/Martin_Van_Buren_by_Mathew_Brady_c1855-58-%284%29.jpg", w: 1277, h: 1600}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Colorized_portrait_of_MartinVanBuren.jpg/960px-Colorized_portrait_of_MartinVanBuren.jpg", w: 600, h: 751}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Former_President_Martin_Van_Buren%2C_half-length_portrait%2C_facing_right_LCCN96522273.jpg/960px-Former_President_Martin_Van_Buren%2C_half-length_portrait%2C_facing_right_LCCN96522273.jpg", w: 600, h: 745}, {url: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Daguerreotype_of_Martin_van_Buren.jpg", w: 333, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/c/c7/DVVanBuren.png", w: 935, h: 1170}],
+  entryNote: "Won 1836 election (succeeded Jackson)",
+  exitNote: "Lost 1840 re-election to William Henry Harrison",
   wikipedia: "https://en.wikipedia.org/wiki/Martin_Van_Buren",
   spotify: null
 },
@@ -167,6 +183,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Shortest presidency — died after 31 days", "Hero of Tippecanoe"],
   summary: "William Henry Harrison (February 9, 1773 – April 4, 1841) was the ninth president of the United States from March to April 1841. He died 31 days into his term, making him the shortest serving president and the first president to die in office. Immediately after his death, vice president John Tyler took over, ending the constitutional crisis that had been triggered by the question of presidential succession in the U.S. Constitution.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/William_Henry_Harrison_by_James_Reid_Lambdin%2C_1835.jpg/960px-William_Henry_Harrison_by_James_Reid_Lambdin%2C_1835.jpg", w: 600, h: 723}, {url: "https://upload.wikimedia.org/wikipedia/commons/d/df/09_william_henry_harrison.jpg", w: 800, h: 452}, {url: "https://upload.wikimedia.org/wikipedia/commons/8/87/242_of_%27A_School_History_of_the_United_States_..._Being_a_revision_and_rewriting_of_Swinton%27s_%22Condensed_School_History_of_the_United_States.%22%27_%2811129236866%29.jpg", w: 546, h: 656}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/A_memoir_of_the_public_service_of_William_Henry_Harrison_of_Ohio_-_DPLA_-_608eee60c13db7688ad601c086dd7e61_%28page_3%29.jpg/960px-A_memoir_of_the_public_service_of_William_Henry_Harrison_of_Ohio_-_DPLA_-_608eee60c13db7688ad601c086dd7e61_%28page_3%29.jpg", w: 600, h: 997}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Abraham_Lincoln%3B_a_history_%281890%29_%2814576060538%29.jpg/960px-Abraham_Lincoln%3B_a_history_%281890%29_%2814576060538%29.jpg", w: 600, h: 706}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2c/William_Henry_Harrison_crop.jpg", w: 2314, h: 2909}],
+  entryNote: "Won 1840 election (defeated incumbent Van Buren)",
+  exitNote: "Died in office April 1841 of pneumonia (succeeded by John Tyler)",
   wikipedia: "https://en.wikipedia.org/wiki/William_Henry_Harrison",
   spotify: null
 },
@@ -186,6 +204,8 @@ window.PRESIDENTS_DATA = [
   notable: ["First VP to assume presidency on death of predecessor", "Annexed Texas"],
   summary: "John Tyler (March 29, 1790 – January 18, 1862) was the tenth president of the United States, serving from 1841 to 1845, after briefly holding office as the tenth vice president in 1841. He was elected vice president on the 1840 Whig ticket with William Henry Harrison, succeeding to the presidency following Harrison's death 31 days after assuming office as president. Tyler was a stalwart supporter and advocate of states' rights, including regarding slavery, and he adopted nationalistic policies as president only when they did not infringe on the states' powers.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/WHOportTyler.jpg/960px-WHOportTyler.jpg", w: 600, h: 792}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/78/10_John_Tyler_3x4.jpg", w: 165, h: 220}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Abraham_Lincoln%3B_a_history_%281890%29_%2814576176648%29.jpg/960px-Abraham_Lincoln%3B_a_history_%281890%29_%2814576176648%29.jpg", w: 600, h: 839}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Abraham_Lincoln%3B_a_history_%281890%29_%2814739747096%29.jpg/960px-Abraham_Lincoln%3B_a_history_%281890%29_%2814739747096%29.jpg", w: 600, h: 834}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/John_Beauchamp_Jones_antebellum.jpg", w: 697, h: 932}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Tyler_%284359255867%29.jpg/960px-John_Tyler_%284359255867%29.jpg", w: 600, h: 786}, {url: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Tyler%2C_John%2C_by_Healy_%281842%2C_NPG_2019_13%29_%28cropped%29.jpg", w: 1246, h: 1619}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/John_Tyler_Photographic_Portrait_Extracted.png/960px-John_Tyler_Photographic_Portrait_Extracted.png", w: 600, h: 1056}],
+  entryNote: "Succeeded W. H. Harrison (death from pneumonia, April 1841)",
+  exitNote: "Did not seek election in his own right (succeeded by James K. Polk)",
   wikipedia: "https://en.wikipedia.org/wiki/John_Tyler",
   spotify: null
 },
@@ -205,6 +225,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Mexican-American War", "Acquired California and the Southwest"],
   summary: "James Knox Polk (; November 2, 1795 – June 15, 1849) was the 11th president of the United States, serving from 1845 to 1849. A protégé of Andrew Jackson and a member of the Democratic Party, he was an advocate of American expansionism and Jacksonian democracy. Polk saw Texas join the Union in his first year in office, one of the precipitating causes that soon led the U.S. into the Mexican–American War. The settlement of that war expanded American territory to the Pacific Ocean.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/JamesKnoxPolk.jpg/960px-JamesKnoxPolk.jpg", w: 600, h: 720}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/POLK%2C_James-President_%28BEP_engraved_portrait%29.jpg/960px-POLK%2C_James-President_%28BEP_engraved_portrait%29.jpg", w: 600, h: 749}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Portrait_of_James_K._Polk_by_Rebecca_Polk.jpg/960px-Portrait_of_James_K._Polk_by_Rebecca_Polk.jpg", w: 600, h: 728}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Portrait_of_James_Knox_Polk.jpg/960px-Portrait_of_James_Knox_Polk.jpg", w: 600, h: 722}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/52/Portrait_of_Lucius_Eugene_Polk.jpg", w: 328, h: 450}, {url: "https://upload.wikimedia.org/wikipedia/commons/8/87/Polk_crop.jpg", w: 1353, h: 1700}],
+  entryNote: "Won 1844 election (open seat after Tyler not nominated)",
+  exitNote: "Did not seek re-election (succeeded by Zachary Taylor)",
   wikipedia: "https://en.wikipedia.org/wiki/James_K._Polk",
   spotify: null
 },
@@ -224,6 +246,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Mexican-American War general", "Died in office (1850)"],
   summary: "Zachary Taylor (November 24, 1784 – July 9, 1850) was the 12th president of the United States, serving from 1849 until his death in 1850. Before his presidency, Taylor was a career officer in the United States Army, rising to the rank of major general and becoming a national hero for his victories in the Mexican–American War. As a result, he won election to the White House despite his vague political beliefs. His top priority as president was to preserve the Union. He died 16 months into his term from a stomach disease. Taylor had the third-shortest presidential term in U.S. history.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/5/51/Zachary_Taylor_restored_and_cropped.jpg", w: 780, h: 1026}, {url: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Colorized_portrait_of_Zachary_Taylor.jpeg", w: 780, h: 1026}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/35/Zachary_Taylor_restored_and_cropped_%283.5x4.5_cropped%29_%282%29.jpg", w: 780, h: 952}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Portrait_of_Zachary_Taylor_LCCN2003677898.jpg/960px-Portrait_of_Zachary_Taylor_LCCN2003677898.jpg", w: 600, h: 757}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TAYLOR%2C_Zachary-President_%28BEP_engraved_portrait%29.jpg/960px-TAYLOR%2C_Zachary-President_%28BEP_engraved_portrait%29.jpg", w: 600, h: 828}],
+  entryNote: "Won 1848 election (open seat after Polk declined re-election)",
+  exitNote: "Died in office July 1850 of gastroenteritis (succeeded by Millard Fillmore)",
   wikipedia: "https://en.wikipedia.org/wiki/Zachary_Taylor",
   spotify: null
 },
@@ -243,6 +267,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Last Whig president", "Compromise of 1850 / Fugitive Slave Act"],
   summary: "Millard Fillmore (January 7, 1800 – March 8, 1874) was the 13th president of the United States, serving from 1850 to 1853. He was the last president to be a member of the Whig Party while in the White House, and the last to be neither a Democrat nor a Republican. A former member of the U.S. House of Representatives, Fillmore was elected vice president in 1848, and succeeded to the presidency when Zachary Taylor died in 1850. Fillmore was instrumental in passing the Compromise of 1850, which led to a brief truce in the battle over the expansion of slavery.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Millard_Fillmore.jpg/960px-Millard_Fillmore.jpg", w: 600, h: 789}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Appletons%27_Millard_Fillmore.jpg/960px-Appletons%27_Millard_Fillmore.jpg", w: 600, h: 799}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/33/Millard_Fillmore_Better_Crop_%28cropped%29.jpg", w: 2195, h: 2689}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Millard_Fillmore%2C_three-quarter_length_portrait%2C_seated%2C_facing_left%29_-_Brady%2C_N.Y_LCCN96522448.jpg/960px-Millard_Fillmore%2C_three-quarter_length_portrait%2C_seated%2C_facing_left%29_-_Brady%2C_N.Y_LCCN96522448.jpg", w: 600, h: 745}],
+  entryNote: "Succeeded Taylor (death from gastroenteritis, July 1850)",
+  exitNote: "Lost Whig nomination in 1852 (succeeded by Franklin Pierce)",
   wikipedia: "https://en.wikipedia.org/wiki/Millard_Fillmore",
   spotify: null
 },
@@ -262,6 +288,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Kansas-Nebraska Act"],
   summary: "Franklin Pierce (November 23, 1804 – October 8, 1869) was the 14th president of the United States, serving from 1853 to 1857. A northern Democrat who believed that the abolitionist movement was a fundamental threat to national unity, he alienated anti-slavery groups by signing the Kansas–Nebraska Act and enforcing the Fugitive Slave Act. Conflict between North and South continued after Pierce's presidency, and, following Abraham Lincoln's victory in the 1860 presidential election, the Southern states seceded, resulting in the American Civil War.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Franklin_Pierce.jpg/960px-Franklin_Pierce.jpg", w: 600, h: 823}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Americana_1920_Pierce_Franklin.jpg/960px-Americana_1920_Pierce_Franklin.jpg", w: 600, h: 837}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Frank_Pierce_-_engrd._by_W.L._Ormsby_from_a_daguerreotype._LCCN00652473.jpg/960px-Frank_Pierce_-_engrd._by_W.L._Ormsby_from_a_daguerreotype._LCCN00652473.jpg", w: 600, h: 746}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Frank-Pierce.jpg", w: 638, h: 812}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/74/Mathew_Brady_-_Franklin_Pierce_-_alternate_crop_%28cropped%29%282%29.jpg", w: 2150, h: 2674}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Franklin_Pierce_%284359537713%29.jpg/960px-Franklin_Pierce_%284359537713%29.jpg", w: 600, h: 799}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Franklin_Pierce_%28Oval%29.png/960px-Franklin_Pierce_%28Oval%29.png", w: 600, h: 826}],
+  entryNote: "Won 1852 election (open seat after Fillmore denied nomination)",
+  exitNote: "Lost Democratic nomination in 1856 (succeeded by James Buchanan)",
   wikipedia: "https://en.wikipedia.org/wiki/Franklin_Pierce",
   spotify: null
 },
@@ -281,6 +309,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Last pre-Civil War president", "Often ranked among the worst"],
   summary: "James Buchanan Jr. (  bew-KAN-ən; April 23, 1791 – June 1, 1868) was the 15th president of the United States, serving from 1857 to 1861. He also served as the 17th United States secretary of state from 1845 to 1849 and represented Pennsylvania in both houses of the U.S. Congress. Buchanan was an advocate for states' rights, particularly regarding slavery, and argued for limiting the role of the federal government preceding the American Civil War.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/James_Buchanan_%28cropped%29.jpg/960px-James_Buchanan_%28cropped%29.jpg", w: 600, h: 768}, {url: "https://upload.wikimedia.org/wikipedia/commons/f/fd/James_Buchanan.jpg", w: 571, h: 714}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/BUCHANAN%2C_James-President_%28BEP_engraved_portrait%29.jpg/960px-BUCHANAN%2C_James-President_%28BEP_engraved_portrait%29.jpg", w: 600, h: 745}, {url: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Colorized_portrait_of_James_Buchanan.jpeg", w: 646, h: 777}, {url: "https://upload.wikimedia.org/wikipedia/commons/9/94/Ballots_of_Half_Century_Ago-_Buchanan_%26_Breckinridge_%284359408299%29.jpg", w: 816, h: 1536}],
+  entryNote: "Won 1856 election (succeeded Pierce)",
+  exitNote: "Did not seek re-election (succeeded by Abraham Lincoln)",
   wikipedia: "https://en.wikipedia.org/wiki/James_Buchanan",
   spotify: null
 },
@@ -300,6 +330,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Led Union through Civil War", "Emancipation Proclamation (1863)", "Assassinated at Ford's Theatre"],
   summary: "Abraham Lincoln (February 12, 1809 – April 15, 1865) was the 16th president of the United States, serving from 1861 until his assassination in 1865. He led the United States through the American Civil War, defeating the Confederacy and playing a major role in the abolition of slavery.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/960px-Abraham_Lincoln_O-77_matte_collodion_print.jpg", w: 600, h: 773}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg", w: 2126, h: 2835}],
+  entryNote: "Won 1860 election (open seat after Buchanan declined re-election)",
+  exitNote: "Assassinated April 1865 by John Wilkes Booth (succeeded by Andrew Johnson)",
   wikipedia: "https://en.wikipedia.org/wiki/Abraham_Lincoln",
   spotify: null
 },
@@ -319,6 +351,8 @@ window.PRESIDENTS_DATA = [
   notable: ["First president impeached (acquitted by one vote)"],
   summary: "Andrew Johnson (December 29, 1808 – July 31, 1875) was the 17th president of the United States, serving from 1865 to 1869. The 16th vice president, he assumed the presidency following the assassination of Abraham Lincoln. Johnson was a War Democrat who ran with Lincoln on the National Union Party ticket in the 1864 presidential election, coming to office as the American Civil War concluded. Johnson favored quick restoration of the seceded states to the Union without protection for the newly freed people who were formerly enslaved, as well as pardoning ex-Confederates.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/President_Andrew_Johnson.jpg/960px-President_Andrew_Johnson.jpg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/CRAFTS_%281868%29_p2.705_ANDREW_JOHNSON.jpg/960px-CRAFTS_%281868%29_p2.705_ANDREW_JOHNSON.jpg", w: 600, h: 662}, {url: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Americana_1920_Johnson_Andrew.jpg", w: 705, h: 997}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/01/Andrew_Johnson_%22locket_portrait%22_circa_1840_%28scanned_from_Brabson_1972%29.png", w: 552, h: 551}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Andrew_Johnson_%281%29.jpg/960px-Andrew_Johnson_%281%29.jpg", w: 600, h: 738}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Andrew_Johnson_%282%29.jpg/960px-Andrew_Johnson_%282%29.jpg", w: 600, h: 739}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Andrew_Johnson_%286267599733%29.jpg/960px-Andrew_Johnson_%286267599733%29.jpg", w: 600, h: 872}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Andrew_Johnson_-_3a53290u.png/960px-Andrew_Johnson_-_3a53290u.png", w: 600, h: 732}],
+  entryNote: "Succeeded Lincoln (assassination, April 1865)",
+  exitNote: "Lost Democratic nomination in 1868 (succeeded by Ulysses S. Grant)",
   wikipedia: "https://en.wikipedia.org/wiki/Andrew_Johnson",
   spotify: null
 },
@@ -338,6 +372,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Union Civil War commanding general", "Reconstruction-era president"],
   summary: "Ulysses S. Grant (born Hiram Ulysses Grant; April 27, 1822 – July 23, 1885) was the 18th president of the United States, serving from 1869 to 1877, and was the Commanding General of the Union Army, leading it to victory in the American Civil War in 1865.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Ugrant.jpeg/960px-Ugrant.jpeg", w: 600, h: 781}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Abraham_Lincoln_-_a_history_%281914%29_%2814767025481%29.jpg/960px-Abraham_Lincoln_-_a_history_%281914%29_%2814767025481%29.jpg", w: 600, h: 989}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Abraham_Lincoln%3B_a_history_%281890%29_%2814782536693%29.jpg/960px-Abraham_Lincoln%3B_a_history_%281890%29_%2814782536693%29.jpg", w: 600, h: 973}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Appletons%27_Ulysses_S._Grant.jpg/960px-Appletons%27_Ulysses_S._Grant.jpg", w: 600, h: 808}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/55/Armco_Bulletin%2C_July_1916_-_DPLA_-_3ac3551ee2ddc42e39e93db11f5948b4_%28page_21%29.jpg", w: 847, h: 1375}, {url: "https://upload.wikimedia.org/wikipedia/commons/9/98/Ulysses_S._Grant_1870-1880_%28cropped%29.jpg", w: 4087, h: 5072}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Atelier_Nadar_-_Robert_McLane_%281815-1898%29%2C_amerikanischer_Diplomat_%28Zeno_Fotografie%29.jpg/960px-Atelier_Nadar_-_Robert_McLane_%281815-1898%29%2C_amerikanischer_Diplomat_%28Zeno_Fotografie%29.jpg", w: 600, h: 814}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Brady%2C_Mathew_B._-_Ulysses_Simpson_Grant_%28Zeno_Fotografie%29.jpg/960px-Brady%2C_Mathew_B._-_Ulysses_Simpson_Grant_%28Zeno_Fotografie%29.jpg", w: 600, h: 719}],
+  entryNote: "Won 1868 election (open seat after Andrew Johnson)",
+  exitNote: "Did not seek third term (succeeded by Rutherford B. Hayes)",
   wikipedia: "https://en.wikipedia.org/wiki/Ulysses_S._Grant",
   spotify: null
 },
@@ -357,6 +393,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Disputed 1876 election", "Ended Reconstruction"],
   summary: "Rutherford Birchard Hayes ( ; October 4, 1822 – January 17, 1893) was the 19th president of the United States, serving from 1877 to 1881. He served as Cincinnati's city solicitor from 1858 to 1861 and was known as a staunch abolitionist who defended refugee slaves in court proceedings. At the start of the Civil War, Hayes left a fledgling political career to join the Union army. He was wounded five times, most seriously at the Battle of South Mountain in 1862. Hayes earned a reputation for bravery in combat, rising in the ranks to serve as brevet major general.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/President_Rutherford_Hayes_1870_-_1880_Restored.jpg/960px-President_Rutherford_Hayes_1870_-_1880_Restored.jpg", w: 600, h: 730}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg/960px-A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg", w: 600, h: 951}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Americana_1920_Hayes_Rutherford_Birchard.jpg/960px-Americana_1920_Hayes_Rutherford_Birchard.jpg", w: 600, h: 832}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Appleton%27s_Hayes_Rutherford.jpg/960px-Appleton%27s_Hayes_Rutherford.jpg", w: 600, h: 779}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Blindboonehisear00mrsm_0162_President_Hayes.jpg", w: 873, h: 1416}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/50/President_Rutherford_Hayes_1870_-_1880_Restored.jpg", w: 3031, h: 3688}],
+  entryNote: "Won disputed 1876 election via Compromise of 1877 (succeeded Grant)",
+  exitNote: "Did not seek re-election (succeeded by James A. Garfield)",
   wikipedia: "https://en.wikipedia.org/wiki/Rutherford_B._Hayes",
   spotify: null
 },
@@ -376,6 +414,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Assassinated 200 days into term"],
   summary: "James Abram Garfield (November 19, 1831 – September 19, 1881) was the 20th president of the United States, serving from March 1881 until his death in September that year after being shot in July. A preacher, lawyer, and Civil War general, Garfield served nine terms in the United States House of Representatives and is the only sitting member of the House to be elected president. Before he ran for president, the Ohio General Assembly had elected him to the U.S. Senate, a position he declined upon becoming president-elect.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Abram_Garfield%2C_photo_portrait_seated.jpg/960px-James_Abram_Garfield%2C_photo_portrait_seated.jpg", w: 600, h: 761}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Levi_Morton_-_Brady-Handy_portrait_-_standard_crop.jpg/960px-Levi_Morton_-_Brady-Handy_portrait_-_standard_crop.jpg", w: 600, h: 755}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/James_A._Garfield%2C_portrait_by_Gilman_in_the_LOC.jpg/960px-James_A._Garfield%2C_portrait_by_Gilman_in_the_LOC.jpg", w: 600, h: 698}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/James_Abram_Garfield_%28Engraved_Portrait%29.jpg/960px-James_Abram_Garfield_%28Engraved_Portrait%29.jpg", w: 600, h: 714}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Garfield_Ceramic_Portrait_Plate%2C_ca._1880_%284359522423%29.jpg/960px-Garfield_Ceramic_Portrait_Plate%2C_ca._1880_%284359522423%29.jpg", w: 600, h: 607}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/James_Abram_Garfield%2C_photo_portrait_seated_%28cropped%29.jpg/960px-James_Abram_Garfield%2C_photo_portrait_seated_%28cropped%29.jpg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/James_Abram_Garfield%2C_photo_portrait_seated_%28cropped%29%282%29.jpg/960px-James_Abram_Garfield%2C_photo_portrait_seated_%28cropped%29%282%29.jpg", w: 600, h: 776}],
+  entryNote: "Won 1880 election (open seat after Hayes declined re-election)",
+  exitNote: "Assassinated September 1881 by Charles Guiteau (succeeded by Chester A. Arthur)",
   wikipedia: "https://en.wikipedia.org/wiki/James_A._Garfield",
   spotify: null
 },
@@ -395,6 +435,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Pendleton Civil Service Act", "'Gentleman Boss'"],
   summary: "Chester Alan Arthur (October 5, 1829 – November 18, 1886) was the 21st president of the United States, serving from 1881 to 1885. A Republican from New York, he served as the 20th vice president under President James A. Garfield in 1881, assuming the presidency after Garfield's assassination. Arthur's administration saw the largest expansion of the U.S. Navy, the end of the so-called \"spoils system\", and the implementation of harsher restrictions for migrants entering from abroad.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Chester_A._Arthur_by_Abraham_Bogardus.jpg/960px-Chester_A._Arthur_by_Abraham_Bogardus.jpg", w: 600, h: 897}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/20_Chester_Arthur_3x4.jpg/960px-20_Chester_Arthur_3x4.jpg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/A_Chautauqua_boy_in_%2761_and_afterward%3B_reminiscences_by_David_B._Parker%2C_second_lieutenant%2C_Seventy-second_New_York%2C_detailed_superintendent_of_the_mails_of_the_Army_of_the_Potomac%2C_United_States_%2814576084228%29.jpg/960px-thumbnail.jpg", w: 600, h: 1016}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg/960px-A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg", w: 600, h: 951}, {url: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Chester_A._Arthur_by_Abraham_Bogardus_%28cropped%29_%282%29.jpg", w: 3429, h: 4496}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Arthur_Portrait_Advertising_Card%2C_ca._1880_%284359408695%29.jpg", w: 858, h: 1218}],
+  entryNote: "Succeeded Garfield (assassination, September 1881)",
+  exitNote: "Lost Republican nomination in 1884 (succeeded by Grover Cleveland)",
   wikipedia: "https://en.wikipedia.org/wiki/Chester_A._Arthur",
   spotify: null
 },
@@ -414,6 +456,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Only president to serve two non-consecutive terms (22nd)", "Pro-business Democrat"],
   summary: "Stephen Grover Cleveland (March 18, 1837 – June 24, 1908) was the 22nd and 24th president of the United States, serving from 1885 to 1889 and from 1893 to 1897. He was the first Democrat elected president after the American Civil War and the first U.S. president to serve nonconsecutive terms.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Grover_Cleveland_-_NARA_-_518139_%28cropped%29.jpg/960px-Grover_Cleveland_-_NARA_-_518139_%28cropped%29.jpg", w: 600, h: 773}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%22Our_cabinet%22_LCCN2001700387.jpg/960px-%22Our_cabinet%22_LCCN2001700387.jpg", w: 600, h: 481}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/%22Two_hearts_that_beat_as_one.%22_President_Cleveland._President_Cleveland%27s_bride_LCCN2009632234.jpg/960px-%22Two_hearts_that_beat_as_one.%22_President_Cleveland._President_Cleveland%27s_bride_LCCN2009632234.jpg", w: 600, h: 492}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/1787_Constitutional_Centennial_March_%284360096630%29.jpg/960px-1787_Constitutional_Centennial_March_%284360096630%29.jpg", w: 600, h: 782}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/1888DemocraticPoster.png/960px-1888DemocraticPoster.png", w: 600, h: 469}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/36/StephenGroverCleveland.jpg", w: 787, h: 1000}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Cleveland_and_Benjamin_Harrison_Portrait_Advertising_Cards%2C_ca._1888-1892_%284359960178%29.jpg/960px-Cleveland_and_Benjamin_Harrison_Portrait_Advertising_Cards%2C_ca._1888-1892_%284359960178%29.jpg", w: 600, h: 800}],
+  entryNote: "Won 1884 election (succeeded Arthur)",
+  exitNote: "Lost 1888 re-election to Benjamin Harrison",
   wikipedia: "https://en.wikipedia.org/wiki/Grover_Cleveland",
   spotify: null
 },
@@ -433,6 +477,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Grandson of William Henry Harrison", "Sherman Antitrust Act (1890)"],
   summary: "Benjamin Harrison (August 20, 1833 – March 13, 1901) was the 23rd president of the United States, serving from 1889 to 1893. He was a member of the Harrison family of Virginia—a grandson of the ninth president, William Henry Harrison, and a great-grandson of Benjamin Harrison V, a Founding Father. A Union army veteran and a Republican, he defeated incumbent Grover Cleveland to win the presidency in 1888.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Benjamin_Harrison%2C_head_and_shoulders_bw_photo%2C_1896.jpg/960px-Benjamin_Harrison%2C_head_and_shoulders_bw_photo%2C_1896.jpg", w: 600, h: 761}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg/960px-A_history_of_the_United_States_for_Catholic_schools_%281914%29_%2814595524908%29.jpg", w: 600, h: 951}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Americana_1921_Harrison_Benjamin.jpg/960px-Americana_1921_Harrison_Benjamin.jpg", w: 600, h: 836}, {url: "https://upload.wikimedia.org/wikipedia/commons/4/49/Pach_Brothers_-_Benjamin_Harrison_%28cropped%29_%28cropped%29.jpg", w: 2493, h: 3282}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Benjamin_Harrison_%281833-1901%29_%2810506768795%29.jpg/960px-Benjamin_Harrison_%281833-1901%29_%2810506768795%29.jpg", w: 600, h: 1026}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Benjamin_Harrison_%281833-1901%29_was_de_23e_president_van_de_Verenigde_Staten_van_Amerika_en_regeerde%2C_SFA002008343.jpg/960px-Benjamin_Harrison_%281833-1901%29_was_de_23e_president_van_de_Verenigde_Staten_van_Amerika_en_regeerde%2C_SFA002008343.jpg", w: 600, h: 860}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Benjamin_Harrison_-_DPLA_-_9ba556e8545562d8525d6e1ad4d9a85b.jpg/960px-Benjamin_Harrison_-_DPLA_-_9ba556e8545562d8525d6e1ad4d9a85b.jpg", w: 600, h: 778}],
+  entryNote: "Won 1888 election (defeated incumbent Cleveland)",
+  exitNote: "Lost 1892 re-election to Grover Cleveland",
   wikipedia: "https://en.wikipedia.org/wiki/Benjamin_Harrison",
   spotify: null
 },
@@ -452,6 +498,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Returned to office for non-consecutive 24th term", "Panic of 1893"],
   summary: "Stephen Grover Cleveland (March 18, 1837 – June 24, 1908) was the 22nd and 24th president of the United States, serving from 1885 to 1889 and from 1893 to 1897. He was the first Democrat elected president after the American Civil War and the first U.S. president to serve nonconsecutive terms.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Grover_Cleveland_-_NARA_-_518139_%28cropped%29.jpg/960px-Grover_Cleveland_-_NARA_-_518139_%28cropped%29.jpg", w: 600, h: 773}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%22Our_cabinet%22_LCCN2001700387.jpg/960px-%22Our_cabinet%22_LCCN2001700387.jpg", w: 600, h: 481}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/%22Two_hearts_that_beat_as_one.%22_President_Cleveland._President_Cleveland%27s_bride_LCCN2009632234.jpg/960px-%22Two_hearts_that_beat_as_one.%22_President_Cleveland._President_Cleveland%27s_bride_LCCN2009632234.jpg", w: 600, h: 492}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/1787_Constitutional_Centennial_March_%284360096630%29.jpg/960px-1787_Constitutional_Centennial_March_%284360096630%29.jpg", w: 600, h: 782}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/1888DemocraticPoster.png/960px-1888DemocraticPoster.png", w: 600, h: 469}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/36/StephenGroverCleveland.jpg", w: 787, h: 1000}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Cleveland_and_Benjamin_Harrison_Portrait_Advertising_Cards%2C_ca._1888-1892_%284359960178%29.jpg/960px-Cleveland_and_Benjamin_Harrison_Portrait_Advertising_Cards%2C_ca._1888-1892_%284359960178%29.jpg", w: 600, h: 800}],
+  entryNote: "Won 1892 election (defeated incumbent Benjamin Harrison)",
+  exitNote: "End of term (succeeded by McKinley)",
   wikipedia: "https://en.wikipedia.org/wiki/Grover_Cleveland",
   spotify: null
 },
@@ -471,6 +519,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Spanish-American War (1898)", "Assassinated in Buffalo (1901)"],
   summary: "William McKinley (January 29, 1843 – September 14, 1901) was the 25th president of the United States, serving from 1897 until his assassination in 1901. A member of the Republican Party, he led a realignment that made Republicans largely dominant in the industrial states and nationwide for decades. McKinley successfully led the U.S. in the Spanish–American War and oversaw a period of American expansionism, with the annexations of Hawaii, Puerto Rico, Guam, the Philippines, and American Samoa.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/William_mckinley.jpg/960px-William_mckinley.jpg", w: 600, h: 841}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/%22Presidential_Possibilities%22_Advertising_Card_Set%2C_ca._1892_%284360030022%29.jpg/960px-%22Presidential_Possibilities%22_Advertising_Card_Set%2C_ca._1892_%284360030022%29.jpg", w: 600, h: 321}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/30/McKinley_%28cropped%29.jpg", w: 2204, h: 2812}],
+  entryNote: "Won 1896 election (open seat after Cleveland declined re-election)",
+  exitNote: "Assassinated September 1901 by Leon Czolgosz (succeeded by Theodore Roosevelt)",
   wikipedia: "https://en.wikipedia.org/wiki/William_McKinley",
   spotify: null
 },
@@ -490,6 +540,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Youngest president to take office (42)", "Trust-buster; established National Parks", "Won Nobel Peace Prize"],
   summary: "Theodore Roosevelt Jr. (October 27, 1858 – January 6, 1919) was the 26th president of the United States, serving from 1901 to 1909. Previously serving six months as vice president under William McKinley, Roosevelt became president after McKinley's assassination in 1901. He was 42 years old upon his first inauguration, making him the youngest person to hold the office.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Theodore_Roosevelt_by_the_Pach_Bros.jpg/960px-Theodore_Roosevelt_by_the_Pach_Bros.jpg", w: 600, h: 716}, {url: "https://upload.wikimedia.org/wikipedia/commons/f/f6/After_the_capture._Roosevelt_quartering_the_robbers.jpg", w: 801, h: 550}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Theodore_Roosevelt_by_the_Pach_Bros_%284x5_cropped%29.jpg", w: 2680, h: 3355}],
+  entryNote: "Succeeded McKinley (assassination, September 1901)",
+  exitNote: "Did not seek re-election in 1908 (succeeded by William Howard Taft)",
   wikipedia: "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
   spotify: null
 },
@@ -509,6 +561,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Later Chief Justice of the Supreme Court", "Heaviest president on record"],
   summary: "William Howard Taft (September 15, 1857 – March 8, 1930) was the 27th president of the United States from 1909 to 1913 and the tenth chief justice of the United States from 1921 to 1930. He is the only person to have held both offices.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg/960px-Cabinet_card_of_William_Howard_Taft_by_Pach_Brothers_-_Cropped_to_image.jpg", w: 600, h: 850}, {url: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Taft_at_Trenton_LCCN2014687114.jpg", w: 737, h: 1024}, {url: "https://upload.wikimedia.org/wikipedia/commons/1/11/William_Howard_Taft_by_Pach_Brothers_%283x4_ropped%29_%28cropped%29.jpg", w: 3988, h: 4985}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Taft_in_auto_LCCN2014690877.jpg/960px-Taft_in_auto_LCCN2014690877.jpg", w: 600, h: 444}],
+  entryNote: "Won 1908 election (succeeded Theodore Roosevelt)",
+  exitNote: "Lost 1912 re-election to Woodrow Wilson (split GOP vote with T. Roosevelt)",
   wikipedia: "https://en.wikipedia.org/wiki/William_Howard_Taft",
   spotify: null
 },
@@ -528,6 +582,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Led US through WWI", "Pushed for League of Nations", "Federal Reserve, income tax"],
   summary: "Thomas Woodrow Wilson (December 28, 1856 – February 3, 1924) was the 28th president of the United States, serving from 1913 to 1921. He was the only Democrat to serve as president during the Progressive Era, when Republicans dominated the presidency and legislative branches. As president, Wilson made significant economic reforms and led the United States through World War I. He was the leading architect of the League of Nations, and his stance on foreign policy came to be known as Wilsonianism.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919.jpg/960px-Thomas_Woodrow_Wilson%2C_Harris_%26_Ewing_bw_photo_portrait%2C_1919.jpg", w: 600, h: 909}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/111-SC-11762_-_NARA_-_55183645.jpg/960px-111-SC-11762_-_NARA_-_55183645.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/111-SC-11763_-_NARA_-_55183647.jpg/960px-111-SC-11763_-_NARA_-_55183647.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/111-SC-11764_-_NARA_-_55183649.jpg/960px-111-SC-11764_-_NARA_-_55183649.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/111-SC-11765_-_NARA_-_55183651.jpg/960px-111-SC-11765_-_NARA_-_55183651.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/111-SC-12170_-_NARA_-_55184476.jpg/960px-111-SC-12170_-_NARA_-_55184476.jpg", w: 600, h: 393}, {url: "https://upload.wikimedia.org/wikipedia/commons/9/96/President_Woodrow_Wilson_Harris_%26_Ewing_%283x4_cropped_b%29.jpg", w: 6320, h: 8424}],
+  entryNote: "Won 1912 election (three-way race with Taft and T. Roosevelt)",
+  exitNote: "Did not seek re-election after stroke (succeeded by Warren G. Harding)",
   wikipedia: "https://en.wikipedia.org/wiki/Woodrow_Wilson",
   spotify: null
 },
@@ -547,6 +603,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Teapot Dome scandal", "Died in office (1923)"],
   summary: "Warren Gamaliel Harding (November 2, 1865 – August 2, 1923) was the 29th president of the United States, serving from 1921 until his death in 1923. A member of the Republican Party, he was one of the most popular presidents at the time of his death. After that, a number of scandals were exposed that greatly damaged his reputation.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/8/87/Warren_G_Harding_portrait_as_senator_June_1920.jpg", w: 891, h: 1184}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/29._W.G._Harding_%281921_-_1923%29.jpg/960px-29._W.G._Harding_%281921_-_1923%29.jpg", w: 600, h: 761}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/80-G-433311_%2831734228356%29.jpg/960px-80-G-433311_%2831734228356%29.jpg", w: 600, h: 467}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/AddText_10-15-11.48.49.png/960px-AddText_10-15-11.48.49.png", w: 600, h: 759}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/01/Armco_Bulletin%2C_August_1923_-_DPLA_-_1cb2287b74b9bfb6aa304cf64ece8a4d_%28page_2%29.jpg", w: 882, h: 1339}, {url: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Warren_G._Harding_1920s_portrait_%283x4_cropped%29_%28cropped%29.jpg", w: 4737, h: 6318}, {url: "https://upload.wikimedia.org/wikipedia/commons/4/41/Colorized_portrait_of_Warren_Harding.jpeg", w: 883, h: 1200}],
+  entryNote: "Won 1920 election (open seat after Wilson)",
+  exitNote: "Died in office August 1923 of heart attack (succeeded by Calvin Coolidge)",
   wikipedia: "https://en.wikipedia.org/wiki/Warren_G._Harding",
   spotify: null
 },
@@ -566,6 +624,8 @@ window.PRESIDENTS_DATA = [
   notable: ["'Silent Cal'", "Roaring Twenties economy"],
   summary: "Calvin Coolidge (born John Calvin Coolidge Jr.;  KOOL-ij; July 4, 1872 – January 5, 1933) was the 30th president of the United States, serving from 1923 to 1929. A Republican lawyer from Massachusetts, he had served as the 29th vice president from 1921 to 1923, under President Warren G. Harding, and as the 48th governor of Massachusetts from 1919 to 1921. Coolidge gained a reputation as a small-government conservative, with a taciturn personality and dry sense of humor that earned him the nickname \"Silent Cal\".",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/President_Calvin_Coolidge%2C_1924_portrait_photograph_%283x4_cropped%29.jpeg/960px-President_Calvin_Coolidge%2C_1924_portrait_photograph_%283x4_cropped%29.jpeg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Armco_Bulletin%2C_July_1924_-_DPLA_-_30cd8d123df1c613c147599a78f40273_%28page_2%29.jpg", w: 863, h: 1352}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/28/Armco_Bulletin%2C_May_-_June_1925_-_DPLA_-_61d465dd7fdf6924b9deac27b4ab8e43_%28page_2%29.jpg", w: 839, h: 1358}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Calvin_Coolidge_and_Charles_Lindbergh_LCCN2004662231.jpg/960px-Calvin_Coolidge_and_Charles_Lindbergh_LCCN2004662231.jpg", w: 600, h: 488}, {url: "https://upload.wikimedia.org/wikipedia/commons/4/4c/President_Calvin_Coolidge%2C_1924_portrait_photograph_%283x4_cropped_2%29.jpeg", w: 2412, h: 3212}],
+  entryNote: "Succeeded Harding (death from heart attack, August 1923)",
+  exitNote: "Did not seek re-election (succeeded by Herbert Hoover)",
   wikipedia: "https://en.wikipedia.org/wiki/Calvin_Coolidge",
   spotify: null
 },
@@ -585,6 +645,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Stock market crashed seven months into term", "Great Depression"],
   summary: "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was the 31st president of the United States, serving from 1929 to 1933. As a member of the Republican Party, he served as the third United States secretary of commerce from 1921 to 1928 before being elected president in 1928. His presidency was dominated by the Great Depression, and his policies and methods to combat it were seen as inadequate and overly conservative. Amid his unpopularity, he decisively lost re-election to Franklin D. Roosevelt in 1932.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/President_Hoover_portrait.jpg/960px-President_Hoover_portrait.jpg", w: 600, h: 799}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/111-SC-11874_-_NARA_-_55183873.jpg/960px-111-SC-11874_-_NARA_-_55183873.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Aboard_the_USS_Utah_%28BB-31%29_-_President-elect_Herbert_Hoover_150126-A-WQ129-043.jpg/960px-Aboard_the_USS_Utah_%28BB-31%29_-_President-elect_Herbert_Hoover_150126-A-WQ129-043.jpg", w: 600, h: 398}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/57/President_Hoover_portrait.jpg", w: 2174, h: 2896}],
+  entryNote: "Won 1928 election (open seat after Coolidge declined re-election)",
+  exitNote: "Lost 1932 re-election to Franklin D. Roosevelt",
   wikipedia: "https://en.wikipedia.org/wiki/Herbert_Hoover",
   spotify: null
 },
@@ -604,6 +666,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Led US through Great Depression and WWII", "Elected to four terms", "New Deal"],
   summary: "Franklin Delano Roosevelt (January 30, 1882 – April 12, 1945), also known as FDR, was the 32nd president of the United States, serving from 1933 until his death in 1945. He is the longest-serving US president and the only one to have served more than two terms. His first two terms were centered on combating the Great Depression, while his third and fourth focused on US involvement in World War II. A member of the Democratic Party, Roosevelt served in the New York State Senate from 1911 to 1913 and as the 44th governor of New York from 1929 to 1932.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/FDR_1944_Color_Portrait.jpg/960px-FDR_1944_Color_Portrait.jpg", w: 600, h: 865}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/FDR_1944_Color_Portrait_%28cropped%29%28b%29.jpg/960px-FDR_1944_Color_Portrait_%28cropped%29%28b%29.jpg", w: 600, h: 829}],
+  entryNote: "Won 1932 election (defeated incumbent Hoover)",
+  exitNote: "Died in office April 1945 of cerebral hemorrhage (succeeded by Harry S. Truman)",
   wikipedia: "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
   spotify: null
 },
@@ -623,6 +687,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Authorized atomic bombings of Japan", "Marshall Plan; NATO; Korean War"],
   summary: "Harry S. Truman  (May 8, 1884 – December 26, 1972) was the 33rd president of the United States, serving from 1945 to 1953. As the 34th vice president in 1945, he assumed the presidency upon the death of Franklin D. Roosevelt that year. Truman subsequently implemented the Marshall Plan in the aftermath of World War II to rebuild the economy of Western Europe, and established both the Truman Doctrine and NATO to contain the expansion of Soviet communism.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/0/0b/TRUMAN_58-766-06_%28cropped%29.jpg", w: 900, h: 1215}, {url: "https://upload.wikimedia.org/wikipedia/commons/6/60/Portrait_of_Harry_S._Truman.jpg", w: 550, h: 441}],
+  entryNote: "Succeeded FDR (death from cerebral hemorrhage, April 1945)",
+  exitNote: "Did not seek re-election in 1952 (succeeded by Dwight D. Eisenhower)",
   wikipedia: "https://en.wikipedia.org/wiki/Harry_S._Truman",
   spotify: null
 },
@@ -642,6 +708,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Allied Supreme Commander in WWII (D-Day)", "Interstate Highway System", "Ended Korean War"],
   summary: "Dwight David Eisenhower (born David Dwight Eisenhower; October 14, 1890 – March 28, 1969), also known as Ike, was the 34th president of the United States from 1953 to 1961. He led the Allied Expeditionary Force during the Second World War, launching decisive campaigns in North Africa and Normandy and becoming a General of the Army.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959.jpg/960px-Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959.jpg", w: 600, h: 749}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Yearbook_portrait_of_Dwight_David_Eisenhower_%281890%E2%80%931969%29_at_West_Point_in_1915.png/960px-Yearbook_portrait_of_Dwight_David_Eisenhower_%281890%E2%80%931969%29_at_West_Point_in_1915.png", w: 600, h: 821}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29.jpg/960px-Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29.jpg", w: 600, h: 749}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Portrait_of_President_Dwight_D._Eisenhower_-_NAID_207121715.jpg/960px-Portrait_of_President_Dwight_D._Eisenhower_-_NAID_207121715.jpg", w: 600, h: 840}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29%283%29.jpg/960px-Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29%283%29.jpg", w: 600, h: 784}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/02/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29%283%29.jpg", w: 2660, h: 3474}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29%282%29.jpg/960px-Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped%29%282%29.jpg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped2%29.jpg/960px-Dwight_D._Eisenhower%2C_official_photo_portrait%2C_May_29%2C_1959_%28cropped2%29.jpg", w: 600, h: 834}],
+  entryNote: "Won 1952 election (open seat after Truman declined re-election)",
+  exitNote: "End of two-term limit (succeeded by John F. Kennedy)",
   wikipedia: "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
   spotify: null
 },
@@ -661,6 +729,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Youngest elected president (43)", "Cuban Missile Crisis", "Assassinated in Dallas (1963)"],
   summary: "John Fitzgerald Kennedy (May 29, 1917 – November 22, 1963), also known as JFK, was the 35th president of the United States, serving from 1961 until his assassination in 1963. He was the youngest person elected president, at 43 years, and the first Catholic president. Kennedy served at the height of the Cold War, and the majority of his foreign policy concerned relations with the Soviet Union and Cuba. A member of the Democratic Party, Kennedy represented Massachusetts in both houses of the United States Congress before his presidency.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/960px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg", w: 600, h: 778}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/CAC_CC_001_18_23_0000_2219.jpg/960px-CAC_CC_001_18_23_0000_2219.jpg", w: 600, h: 472}, {url: "https://upload.wikimedia.org/wikipedia/commons/a/a7/John_F._Kennedy_%E2%80%93_Presidential_Portrait_%281960%29_%28cropped%29.jpg", w: 533, h: 711}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/22/John_F._Kennedy_%E2%80%93_Presidential_Portrait_%281960%29_%28cropped1%29.jpg", w: 531, h: 708}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/John_F._Kennedy_%E2%80%93_Presidential_Portrait_%281960%29.jpg/960px-John_F._Kennedy_%E2%80%93_Presidential_Portrait_%281960%29.jpg", w: 600, h: 748}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/David_Dubinsky_and_John_F._Kennedy.jpg/960px-David_Dubinsky_and_John_F._Kennedy.jpg", w: 600, h: 425}],
+  entryNote: "Won 1960 election (open seat after Eisenhower term-limited)",
+  exitNote: "Assassinated November 1963 by Lee Harvey Oswald (succeeded by Lyndon B. Johnson)",
   wikipedia: "https://en.wikipedia.org/wiki/John_F._Kennedy",
   spotify: null
 },
@@ -680,6 +750,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Civil Rights Act (1964) / Voting Rights Act (1965)", "Great Society; Medicare", "Escalated Vietnam War"],
   summary: "Lyndon Baines Johnson (August 27, 1908 – January 22, 1973), also known as LBJ, was the 36th president of the United States from 1963 to 1969. Johnson was vice president under John F. Kennedy from 1961 until Kennedy's assassination in 1963, when he assumed the presidency. Before becoming vice president, he served in both houses of the U.S. Congress, representing Texas as a member of the Democratic Party.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Lyndon_B._Johnson%2C_photo_portrait%2C_leaning_on_chair%2C_color_cropped.jpg/960px-Lyndon_B._Johnson%2C_photo_portrait%2C_leaning_on_chair%2C_color_cropped.jpg", w: 600, h: 954}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Bell_telephone_magazine_%281922%29_%2814569946137%29.jpg/960px-Bell_telephone_magazine_%281922%29_%2814569946137%29.jpg", w: 600, h: 960}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Buffalo_courier_express_johnson.jpg/960px-Buffalo_courier_express_johnson.jpg", w: 600, h: 476}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/CAC_CC_001_18_17_0000_1641.jpg/960px-CAC_CC_001_18_17_0000_1641.jpg", w: 600, h: 463}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/CAC_CC_001_18_29_0000_2827.jpg/960px-CAC_CC_001_18_29_0000_2827.jpg", w: 600, h: 464}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/CAC_CC_001_18_29_0000_2828.jpg/960px-CAC_CC_001_18_29_0000_2828.jpg", w: 600, h: 464}],
+  entryNote: "Succeeded JFK (assassination, November 1963)",
+  exitNote: "Did not seek re-election (succeeded by Richard Nixon)",
   wikipedia: "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
   spotify: null
 },
@@ -699,6 +771,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Opened relations with China", "Watergate scandal — only president to resign"],
   summary: "Richard Milhous Nixon (January 9, 1913 – April 22, 1994) was the 37th president of the United States, serving from 1969 until his resignation in 1974. A member of the Republican Party, he represented California in both houses of the United States Congress before serving as the 36th vice president under President Dwight D. Eisenhower from 1953 to 1961. His presidency saw the reduction of U.S.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Richard_Nixon_presidential_portrait.jpg/960px-Richard_Nixon_presidential_portrait.jpg", w: 600, h: 726}, {url: "https://upload.wikimedia.org/wikipedia/commons/9/91/%22Richard_Nixon%22.jpg", w: 415, h: 500}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Richard_Nixon_presidential_portrait_%281%29.jpg", w: 2205, h: 2939}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Richard_Nixon_Vice_Presidential_Portrait_Colorized.jpg/960px-Richard_Nixon_Vice_Presidential_Portrait_Colorized.jpg", w: 600, h: 760}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg/960px-Nixon_Official_Presidential_Portrait_07-08-1971_%28cropped%29.jpg", w: 600, h: 778}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Richard_Nixon_presidential_portrait_crop.jpg/960px-Richard_Nixon_presidential_portrait_crop.jpg", w: 600, h: 723}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Richard_Nixon_presidential_portrait_%281%29.jpg/960px-Richard_Nixon_presidential_portrait_%281%29.jpg", w: 600, h: 800}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Richard_Nixon_presidential_portrait_%28cropped%29.jpg/960px-Richard_Nixon_presidential_portrait_%28cropped%29.jpg", w: 600, h: 765}],
+  entryNote: "Won 1968 election (open seat after LBJ declined re-election)",
+  exitNote: "Resigned August 1974 amid Watergate (succeeded by Gerald Ford)",
   wikipedia: "https://en.wikipedia.org/wiki/Richard_Nixon",
   spotify: null
 },
@@ -718,6 +792,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Only unelected president (VP and POTUS)", "Pardoned Nixon"],
   summary: "Gerald Rudolph Ford Jr. (born Leslie Lynch King Jr.; July 14, 1913 – December 26, 2006) was the 38th president of the United States, serving from 1974 to 1977. He assumed the presidency after the resignation of Richard Nixon, under whom he served as the 40th vice president from 1973 to 1974, after the resignation of Spiro Agnew. A member of the Republican Party, Ford previously served in the U.S. House of Representatives from 1949 to 1973.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Gerald_Ford_presidential_portrait_%28cropped%29.jpg/960px-Gerald_Ford_presidential_portrait_%28cropped%29.jpg", w: 600, h: 748}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/21/20190303221255%21Gerald_Ford%2C_second_official_portrait_of_the_President_of_the_United_States%2C_February_1976_%28cropped%29.jpg", w: 455, h: 606}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/CAC_CC_001_18_13_0000_1258.jpg/960px-CAC_CC_001_18_13_0000_1258.jpg", w: 600, h: 467}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/CAC_CC_001_18_16_0000_1523a.jpg/960px-CAC_CC_001_18_16_0000_1523a.jpg", w: 600, h: 403}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/CAC_CC_001_18_16_0000_1523b.jpg/960px-CAC_CC_001_18_16_0000_1523b.jpg", w: 600, h: 403}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/36/Gerald_Ford_presidential_portrait_%28cropped%29.jpg", w: 2200, h: 2741}],
+  entryNote: "Succeeded Nixon (resignation, August 1974)",
+  exitNote: "Lost 1976 election to Jimmy Carter",
   wikipedia: "https://en.wikipedia.org/wiki/Gerald_Ford",
   spotify: null
 },
@@ -737,6 +813,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Camp David Accords", "Iran hostage crisis"],
   summary: "James Earl Carter Jr. (October 1, 1924 – December 29, 2024) was an American politician and humanitarian who served as the 39th president of the United States from 1977 to 1981. A member of the Democratic Party, Carter served as the 76th governor of Georgia from 1971 to 1975 and in the Georgia State Senate from 1963 to 1967. He lived longer than any other president in US history, reaching age 100.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/JimmyCarterPortrait2.jpg/960px-JimmyCarterPortrait2.jpg", w: 600, h: 737}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/DIG15252-020_%2853892303963%29.jpg/960px-DIG15252-020_%2853892303963%29.jpg", w: 600, h: 431}, {url: "https://upload.wikimedia.org/wikipedia/commons/3/31/Former_President_Jimmy_Carter_%2818835836972%29.jpg", w: 320, h: 256}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jimmy_Carter_-_2002_Nobel_Peace_Prize_Recipient.jpg/960px-Jimmy_Carter_-_2002_Nobel_Peace_Prize_Recipient.jpg", w: 600, h: 312}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Jimmy_Carter_and_the_Shah_cropped.png/960px-Jimmy_Carter_and_the_Shah_cropped.png", w: 600, h: 323}, {url: "https://upload.wikimedia.org/wikipedia/commons/d/d2/O_ex_presidente_americano_Jimmy_Carter_em_visita_ao_casar%C3%A3o_da_familia_Lundgren_em_1973%2C_em_Pernambuco.jpg", w: 433, h: 440}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Portrait_of_Jimmy_Carter_by_Ansel_Adams_%281979%29.jpg/960px-Portrait_of_Jimmy_Carter_by_Ansel_Adams_%281979%29.jpg", w: 600, h: 704}, {url: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Jimmy_Carter_Official_Portrait2_%283x4_cropped%29.jpg", w: 1528, h: 2027}],
+  entryNote: "Won 1976 election (defeated incumbent Ford)",
+  exitNote: "Lost 1980 re-election to Ronald Reagan",
   wikipedia: "https://en.wikipedia.org/wiki/Jimmy_Carter",
   spotify: null
 },
@@ -756,6 +834,8 @@ window.PRESIDENTS_DATA = [
   notable: ["End of the Cold War", "'Reaganomics'", "Iran-Contra affair"],
   summary: "Ronald Wilson Reagan (February 6, 1911 – June 5, 2004) was an American politician and actor who served as the 40th president of the United States from 1981 to 1989. A member of the Republican Party, he became an important figure in the American conservative movement. The period encompassing his presidency is known as the Reagan era.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ronald_Reagan_1981_presidential_portrait.jpg/960px-Ronald_Reagan_1981_presidential_portrait.jpg", w: 600, h: 750}, {url: "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg", w: 2399, h: 3000}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Portrait_of_President_Reagan_1981.jpg/960px-Official_Portrait_of_President_Reagan_1981.jpg", w: 600, h: 750}],
+  entryNote: "Won 1980 election (defeated incumbent Carter)",
+  exitNote: "End of two-term limit (succeeded by George H. W. Bush)",
   wikipedia: "https://en.wikipedia.org/wiki/Ronald_Reagan",
   spotify: null
 },
@@ -775,6 +855,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Persian Gulf War (1991)", "Fall of the Soviet Union"],
   summary: "George Herbert Walker Bush (June 12, 1924 – November 30, 2018) was the 41st president of the United States, serving from 1989 to 1993. Bush was Ronald Reagan's vice president from 1981 to 1989. He was the father of George W. Bush, the 43rd president of the United States.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/George_H._W._Bush_presidential_portrait_%28cropped%29.jpg/960px-George_H._W._Bush_presidential_portrait_%28cropped%29.jpg", w: 600, h: 788}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Burton_Lee_with_George_H.W._Bush.jpg/960px-Burton_Lee_with_George_H.W._Bush.jpg", w: 600, h: 391}, {url: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Bush_and_Ranger1.jpg", w: 245, h: 295}, {url: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Bush_cabinet_meeting_1989.jpeg", w: 415, h: 260}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Charles_D._Cook%2C_George_H.W._Bush..jpg/960px-Charles_D._Cook%2C_George_H.W._Bush..jpg", w: 600, h: 467}, {url: "https://upload.wikimedia.org/wikipedia/commons/2/2d/George_H._W._Bush_presidential_portrait_%28cropped_5%29.jpg", w: 1536, h: 2100}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/George_H._W._Bush_presidential_portrait_%28cropped%29.png/960px-George_H._W._Bush_presidential_portrait_%28cropped%29.png", w: 600, h: 761}],
+  entryNote: "Won 1988 election (open seat after Reagan term-limited)",
+  exitNote: "Lost 1992 re-election to Bill Clinton",
   wikipedia: "https://en.wikipedia.org/wiki/George_H._W._Bush",
   spotify: null
 },
@@ -794,6 +876,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Impeached over Lewinsky affair (acquitted)", "Budget surplus; NAFTA"],
   summary: "William Jefferson  Clinton (né Blythe III; born August 19, 1946) is an American former politician and lawyer  who served as the 42nd president of the United States from 1993 to 2001. A member of the Democratic Party, he previously served as the attorney general of Arkansas from 1977 to 1979 and as the governor of Arkansas from 1979 to 1981, and again from 1983 to 1992. His centrist \"Third Way\" political philosophy became known as Clintonism, which dominated his presidency and the succeeding decades of Democratic Party history.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/960px-Bill_Clinton.jpg", w: 600, h: 783}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Official_Portrait_of_President_William_Jefferson_Clinton_-_DPLA_-_4697184146b3b6e2d6791b8f3c297476.jpg/960px-Official_Portrait_of_President_William_Jefferson_Clinton_-_DPLA_-_4697184146b3b6e2d6791b8f3c297476.jpg", w: 600, h: 700}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Portrait_of_President_William_J._Clinton_-_DPLA_-_c0c2a532020926e797efec64043b1bd2.jpg/960px-Portrait_of_President_William_J._Clinton_-_DPLA_-_c0c2a532020926e797efec64043b1bd2.jpg", w: 600, h: 911}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bill_Clinton_Portrait_%283x4_cropped%29.jpg/960px-Bill_Clinton_Portrait_%283x4_cropped%29.jpg", w: 600, h: 798}, {url: "https://upload.wikimedia.org/wikipedia/commons/5/50/Bill_Clinton_%28cropped_4%29.jpg", w: 2251, h: 2960}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Official_Portrait_of_President_William_Jefferson_Clinton_%283x4_cropped%29.jpg/960px-Official_Portrait_of_President_William_Jefferson_Clinton_%283x4_cropped%29.jpg", w: 600, h: 798}],
+  entryNote: "Won 1992 election (defeated incumbent George H. W. Bush)",
+  exitNote: "End of two-term limit (succeeded by George W. Bush)",
   wikipedia: "https://en.wikipedia.org/wiki/Bill_Clinton",
   spotify: null
 },
@@ -813,6 +897,8 @@ window.PRESIDENTS_DATA = [
   notable: ["9/11 attacks", "Wars in Afghanistan and Iraq", "Son of George H. W. Bush"],
   summary: "George Walker Bush (born July 6, 1946) is an American former politician, businessman, and former United States Air Force officer who was the 43rd president of the United States, serving from 2001 to 2009. The eldest son of George H. W. Bush, the 41st president of the United States, he was the governor of Texas from 1995 to 2000.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/George-W-Bush.jpeg/960px-George-W-Bush.jpeg", w: 600, h: 794}, {url: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Darey_PresidentBush.jpg", w: 354, h: 328}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_W._Bush_Flies_Over_WTC_September_14%2C_2001.jpg/960px-George_W._Bush_Flies_Over_WTC_September_14%2C_2001.jpg", w: 600, h: 400}, {url: "https://upload.wikimedia.org/wikipedia/commons/8/84/George-W-Bush_%28cropped_2%29.jpeg", w: 2131, h: 2936}],
+  entryNote: "Won 2000 election (open seat after Clinton term-limited)",
+  exitNote: "End of two-term limit (succeeded by Barack Obama)",
   wikipedia: "https://en.wikipedia.org/wiki/George_W._Bush",
   spotify: null
 },
@@ -832,6 +918,8 @@ window.PRESIDENTS_DATA = [
   notable: ["First African-American president", "Affordable Care Act ('Obamacare')", "Killed Osama bin Laden"],
   summary: "Barack Hussein Obama II (born August 4, 1961) is an American politician who served as the 44th president of the United States from 2009 to 2017. A member of the Democratic Party, he was the first African American to serve as president. Obama previously served as a U.S. senator representing Illinois from 2005 to 2008 and as an Illinois state senator from 1997 to 2004.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/960px-President_Barack_Obama.jpg", w: 600, h: 749}, {url: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Barack_and_Michelle_with_a_two-year-old_Malia._%286316450354%29.jpg", w: 623, h: 629}, {url: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Obamamiltondavis1_%28cropped%29.jpg", w: 101, h: 137}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/960px-Official_portrait_of_Barack_Obama.jpg", w: 600, h: 817}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Obama_Portrait_2006.jpg/960px-Obama_Portrait_2006.jpg", w: 600, h: 900}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Barack_Obama_views_portrait_of_Michelle_Obama.jpg/960px-Barack_Obama_views_portrait_of_Michelle_Obama.jpg", w: 600, h: 389}, {url: "https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg", w: 2687, h: 3356}],
+  entryNote: "Won 2008 election (open seat after George W. Bush term-limited)",
+  exitNote: "End of two-term limit (succeeded by Donald Trump)",
   wikipedia: "https://en.wikipedia.org/wiki/Barack_Obama",
   spotify: null
 },
@@ -851,6 +939,8 @@ window.PRESIDENTS_DATA = [
   notable: ["First impeachment (acquitted) — Ukraine/Russia probes", "Tax Cuts and Jobs Act (2017)", "COVID-19 pandemic"],
   summary: "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who is the 47th president of the United States. A member of the Republican Party, he served as the 45th president from 2017 to 2021.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg/960px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg", w: 600, h: 771}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/960px-Donald_Trump_official_portrait.jpg", w: 600, h: 760}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/January_2025_Official_Presidential_Portrait_of_Donald_J._Trump.jpg/960px-January_2025_Official_Presidential_Portrait_of_Donald_J._Trump.jpg", w: 600, h: 776}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Donald_Trump_official_portrait_%28cropped%29.jpg/960px-Donald_Trump_official_portrait_%28cropped%29.jpg", w: 600, h: 827}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Donald_Trump_Portrait_%282025-2029%29.png/960px-Donald_Trump_Portrait_%282025-2029%29.png", w: 600, h: 600}],
+  entryNote: "Won 2016 election (succeeded Obama)",
+  exitNote: "Lost 2020 re-election to Joe Biden",
   wikipedia: "https://en.wikipedia.org/wiki/Donald_Trump",
   spotify: null
 },
@@ -870,6 +960,8 @@ window.PRESIDENTS_DATA = [
   notable: ["Oldest person elected president (78)", "Inflation Reduction Act; CHIPS Act"],
   summary: "Joseph Robinette Biden Jr. (born November 20, 1942) is an American former politician who was the 46th president of the United States from 2021 to 2025. A member of the Democratic Party, he represented Delaware in the United States Senate from 1973 to 2009 and also served as the 47th vice president under President Barack Obama from 2009 to 2017.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/960px-Joe_Biden_presidential_portrait.jpg", w: 600, h: 750}, {url: "https://upload.wikimedia.org/wikipedia/commons/0/06/Joe_Biden_Official_portrait_2021_2.png", w: 720, h: 935}, {url: "https://upload.wikimedia.org/wikipedia/commons/1/19/Joe_Biden_Official_portrait_2021.jpg", w: 300, h: 411}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Donald_Trump_official_portrait_%28cropped%29.jpg/960px-Donald_Trump_official_portrait_%28cropped%29.jpg", w: 600, h: 827}],
+  entryNote: "Won 2020 election (defeated incumbent Trump)",
+  exitNote: "Did not seek re-election (succeeded by Donald Trump)",
   wikipedia: "https://en.wikipedia.org/wiki/Joe_Biden",
   spotify: null
 },
@@ -889,6 +981,8 @@ window.PRESIDENTS_DATA = [
   notable: ["First president elected to non-consecutive terms since Cleveland", "47th president (also 45th)"],
   summary: "Donald John Trump (born June 14, 1946) is an American politician, media personality, and businessman who is the 47th president of the United States. A member of the Republican Party, he served as the 45th president from 2017 to 2021.",
   images: [{url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg/960px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29_%28cropped%29%282%29.jpg", w: 600, h: 771}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/960px-Donald_Trump_official_portrait.jpg", w: 600, h: 760}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/January_2025_Official_Presidential_Portrait_of_Donald_J._Trump.jpg/960px-January_2025_Official_Presidential_Portrait_of_Donald_J._Trump.jpg", w: 600, h: 776}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Donald_Trump_official_portrait_%28cropped%29.jpg/960px-Donald_Trump_official_portrait_%28cropped%29.jpg", w: 600, h: 827}, {url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Donald_Trump_Portrait_%282025-2029%29.png/960px-Donald_Trump_Portrait_%282025-2029%29.png", w: 600, h: 600}],
+  entryNote: "Won 2024 election (defeated Kamala Harris, first non-consecutive return since Cleveland)",
+  exitNote: "Currently serving",
   wikipedia: "https://en.wikipedia.org/wiki/Donald_Trump",
   spotify: null
 }
